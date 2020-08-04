@@ -14,12 +14,19 @@ basic_ostream<A, B>& operator << (basic_ostream<A, B>& os, const C& c) {
   return os << "]";
 }
 
-void print(string s) { cout << endl; }
+void print(string s) { 
+  cout << endl; 
+}
+
 template <class H, class... T>
 void print(string s, H h, T... t) {
-  do { cout << s[0]; s = s.substr(1);
+  bool ok = 1;
+  do { 
+    if (s[0] == '\"') ok = 0;
+    else cout << s[0] << reset;
+    s = s.substr(1);
   } while (s.size() && s[0] != ',');
-  cout << ": " << h;
+  if (ok) cout << ": " << h << reset;
   print(s, t...);
 }
 

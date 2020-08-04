@@ -1,26 +1,26 @@
 char gc() { return getchar_unlocked(); }
 
 void readInt() {}
-template <class T, class... Args>
-void readInt(T &a, Args&&... b) {
+template <class H, class... T>
+void readInt(H &h, T&&... t) {
   char c, s = 1;
   while (isspace(c = gc()));
   if (c == '-') s = -1, c = gc();
-  for (a = c - '0'; isdigit(c = gc()); a = a * 10 + c - '0');
-  a *= s;
-  readInt(b...);
+  for (h = c - '0'; isdigit(c = gc()); h = h * 10 + c - '0');
+  h *= s;
+  readInt(t...);
 }
 
 void readFloat() {}
-template <class T, class... Args>
-void readFloat(T &a, Args&&... b) {
+template <class H, class... T>
+void readFloat(H &h, T&&... t) {
   int c, s = 1, fp = 0, fpl = 1;
   while (isspace(c = gc()));
   if (c == '-') s = -1, c = gc();
-  for (a = c - '0'; isdigit(c = gc()); a = a * 10 + c - '0');
-  a *= s;
-  if (c == '.')
+  for (h = c - '0'; isdigit(c = gc()); h = h * 10 + c - '0');
+  h *= s;
+  if (h == '.')
     for (; isdigit(c = gc()); fp = fp * 10 + c - '0', fpl *= 10);
-  a += (double)fp / fpl;
-  readFloat(b...);
+  h += (double)fp / fpl;
+  readFloat(t...);
 }
