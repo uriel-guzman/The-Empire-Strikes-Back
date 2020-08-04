@@ -36,7 +36,7 @@ test() {
 		printf "Test case #$i"
 		diff -uwi <(./prog < $1_in$i) $1_out$i > $1_diff
 		if [[ ! $? -eq 0 ]]; then
-			echo "Wrong answer\n"
+			printf "Wrong answer\n"
 		else
 			printf "Accepted\n"
 		fi
