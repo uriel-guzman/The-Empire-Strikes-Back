@@ -51,8 +51,7 @@ random() {
 		
 		if [[ ! $? -eq 0 ]]; then
 			printf "${red} Wrong Answer ${noColor}\n"
-			rm -r gen prog brute
-			return
+			break
 		else
 			printf "${green} Accepted ${noColor}\n"
 		fi
