@@ -4,8 +4,22 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+#ifdef __APPLE__
+#define open "open"
+#else 
+#define open "xdg-open"
+#endif
+
+#define df(b, e) ((b) > (e))
+#define fore(i, b, e) for (auto i = (b) - df(b, e); i != e - df(b, e); i += 1 - 2 * df(b, e))
+#define sz(x) int(x.size())
+#define all(x) begin(x), end(x)
+#define f first
+#define s second
+#define pb push_back
+
 const bool printLinks = 0; // for aho-corasick, suffix-automaton, eertree
-const bool printString = 1; // for trie-based, string instead of chars
+const bool printString = 0; // for trie-based, string instead of chars
 
 const string colorRed = "red";
 const string colorBlue = "blue";
@@ -16,37 +30,78 @@ const string specialNodeColor = colorRed;
 
 #define dirLeftRight "LR"
 #define dirTopBottom "TB"
-#define dir dirLeftRight // Change here the direction
+#define dir dirTopBottom // Change here the direction
 
 /*-----------------------------------------------------------------------------------------------------------*/
 
-#ifdef __APPLE__
-  #define open "open"
-#else 
-  #define open "xdg-open"
-#endif
+static int numWeightedGraph[2] = {0, 0};
+static int numGraph[2] = {0, 0};
+static int numTrie = 0;
+static int numAho = 0;
+static int numSam = 0;
+static int numEertree = 0;
+static int numSegtree = 0;
 
-string run(const string name) {
-  const string file = name + ".dot";
-  const string image = name + ".png";
-  return string("dot -Tpng " + file + " -o " + image + " && " + open + " " + image);
-} 
-  
 /*-----------------------------------------------------------------------------------------------------------*/
 
-#define df(b, e) ((b) > (e))
-#define fore(i, b, e) for (auto i = (b) - df(b, e); i != e - df(b, e); i += 1 - 2 * df(b, e))
-#define sz(x) int(x.size())
-#define all(x) begin(x), end(x)
-#define f first
-#define s second
-#define pb push_back
+void run(const string file) {
+  const string image = file.substr(0, sz(file) - 4) + ".png"; // remove ".dot" and add ".png", 4 characters
+  const string magic = string("dot -Tpng " + file + " -o " + image + " && " + open + " " + image);
+  system(magic.c_str());
+}
+
+/*-----------------------------------------------------------------------------------------------------------*/
+
+template <class Edge>
+void drawGraph(const vector<Edge> arr[]) {
+  drawGraph(arr, [&]([[maybe_unused]]int u) {
+    return false;
+  });
+}
+
+template <class Edge, class Fun>
+void drawGraph(const vector<Edge> arr[], const Fun paintNode) {
+  // common sense, you will not print more than 100 nodes, you simply can't understand that amount of nodes :p
+  const int n = 100; 
+  vector<vector<Edge>> graph;
+  for (int u = 0; u < n; u++) {
+    graph.push_back({});
+    for (const auto v : arr[u])
+      graph.back().push_back(v);
+  }
+  drawGraph(graph, paintNode, 0);
+}
+
+/*-----------------------------------------------------------------------------------------------------------*/
+
+template <class Edge>
+void drawDigraph(const vector<Edge> arr[]) {
+  drawDigraph(arr, [&]([[maybe_unused]]int u) {
+    return false;
+  });
+}
+
+template <class Edge, class Fun>
+void drawDigraph(const vector<Edge> arr[], const Fun paintNode) {
+  // common sense, you will not print more than 100 nodes, you simply can't understand that amount of nodes :p
+  const int n = 100; 
+  vector<vector<Edge>> graph;
+  for (int u = 0; u < n; u++) {
+    graph.push_back({});
+    for (const auto v : arr[u])
+      graph.back().push_back(v);
+  }
+  drawGraph(graph, paintNode, 1);
+}
 
 /*-----------------------------------------------------------------------------------------------------------*/
 
 template <class Edge, class Fun>
 void drawGraph(const vector<vector<Edge>> &graph, const Fun paintNode, const bool directed) {
-  ofstream os{"draw_info/graph.dot"};
+  const string name = "weighted" + string(directed ? "Digraph" : "Graph");
+  const string file = "draw_info/" + name + to_string(++numWeightedGraph[directed]) + ".dot";
+
+  ofstream os{file.c_str()};
   os << (directed ? "digraph" : "graph");
   os << " G {" << endl;
   os << "rankdir=" << dir << endl;
@@ -67,14 +122,18 @@ void drawGraph(const vector<vector<Edge>> &graph, const Fun paintNode, const boo
         os << endl;
       }
   }
-
   os << "}" << endl;
-  system(run("draw_info/graph").c_str());
+
+  run(file);
 }
 
 template <class Fun>
 void drawGraph(const vector<vector<int>> &graph, const Fun paintNode, const bool directed) {
-  ofstream os{"draw_info/graph.dot"};
+  const string name = (directed ? "digraph" : "graph");
+  const string file = "draw_info/" + name + to_string(++numGraph[directed]) + ".dot";
+  cout << file << endl;
+
+  ofstream os{file.c_str()};
   os << (directed ? "digraph" : "graph");
   os << " G {" << endl;
   os << "rankdir=" << dir << endl;
@@ -93,53 +152,9 @@ void drawGraph(const vector<vector<int>> &graph, const Fun paintNode, const bool
         os << u << (directed ? " -> " : " -- ") << v << endl;
       }
   }
-
   os << "}" << endl;
-  system(run("draw_info/graph").c_str());
-}
 
-/*-----------------------------------------------------------------------------------------------------------*/
-
-template <class Edge, class Fun>
-void drawGraph(const vector<Edge> arr[], const Fun paintNode) {
-  // common sense, you will not print more than 100 nodes, you simply can't understand that amount of nodes :p
-  const int n = 100; 
-  vector<vector<Edge>> graph;
-  for (int u = 0; u < n; u++) {
-    graph.push_back({});
-    for (const auto v : arr[u])
-      graph.back().push_back(v);
-  }
-  drawGraph(graph, paintNode, 0);
-}
-
-template <class Edge>
-void drawGraph(const vector<Edge> arr[]) {
-  drawGraph(arr, [&]([[maybe_unused]]int u) {
-    return false;
-  });
-}
-
-/*-----------------------------------------------------------------------------------------------------------*/
-
-template <class Edge, class Fun>
-void drawDigraph(const vector<Edge> arr[], const Fun paintNode) {
-  // common sense, you will not print more than 100 nodes, you simply can't understand that amount of nodes :p
-  const int n = 100; 
-  vector<vector<Edge>> graph;
-  for (int u = 0; u < n; u++) {
-    graph.push_back({});
-    for (const auto v : arr[u])
-      graph.back().push_back(v);
-  }
-  drawGraph(graph, paintNode, 1);
-}
-
-template <class Edge>
-void drawDigraph(const vector<Edge> arr[]) {
-  drawDigraph(arr, [&]([[maybe_unused]]int u) {
-    return false;
-  });
+  run(file);
 }
 
 /*-----------------------------------------------------------------------------------------------------------*/
@@ -153,7 +168,10 @@ void drawTrie(const Trie &trie) {
 
 template <class Trie, class Fun>
 void drawTrie(const Trie &trie, const Fun paintNode) {
-  ofstream os{"draw_info/trie.dot"};
+  const string name = "trie";
+  const string file = "draw_info/" + name + to_string(++numTrie) + ".dot";
+
+  ofstream os{file.c_str()};
   os << "digraph";
   os << " G {" << endl;
   os << "rankdir=" << dir << endl;
@@ -178,9 +196,9 @@ void drawTrie(const Trie &trie, const Fun paintNode) {
   };
 
   dfs(0, "");
-
   os << "}" << endl;
-  system(run("draw_info/trie").c_str());
+
+  run(file);
 }
 
 /*-----------------------------------------------------------------------------------------------------------*/
@@ -194,7 +212,10 @@ void drawAho(const Aho &aho) {
 
 template <class Aho, class Fun>
 void drawAho(const Aho &aho, const Fun paintNode) {
-  ofstream os{"draw_info/aho.dot"};
+  const string name = "aho";
+  const string file = "draw_info/" + name + to_string(++numAho) + ".dot";
+
+  ofstream os{file.c_str()};
   os << "digraph";
   os << " G {" << endl;
   os << "rankdir=" << dir << endl;
@@ -223,9 +244,9 @@ void drawAho(const Aho &aho, const Fun paintNode) {
   };
 
   dfs(0, "");
-
   os << "}" << endl;
-  system(run("draw_info/aho").c_str());
+
+  run(file);
 }
 
 /*-----------------------------------------------------------------------------------------------------------*/
@@ -239,7 +260,10 @@ void drawSam(const SuffixAutomaton &sam) {
 
 template <class SuffixAutomaton, class Fun>
 void drawSam(const SuffixAutomaton &sam, const Fun paintNode) {
-  ofstream os{"draw_info/sam.dot"};
+  const string name = "sam";
+  const string file = "draw_info/" + name + to_string(++numSam) + ".dot";
+
+  ofstream os{file.c_str()};
   os << "digraph";
   os << " G {" << endl;
   os << "rankdir=" << dir << endl;
@@ -268,9 +292,9 @@ void drawSam(const SuffixAutomaton &sam, const Fun paintNode) {
   };
 
   dfs(0, "");
-
   os << "}" << endl;
-  system(run("draw_info/sam").c_str());
+
+  run(file);
 }
 
 /*-----------------------------------------------------------------------------------------------------------*/
@@ -284,7 +308,10 @@ void drawEertree(const Eertree &eert) {
 
 template <class Eertree, class Fun>
 void drawEertree(const Eertree &eert, const Fun paintNode) {
-  ofstream os{"draw_info/eertree.dot"};
+  const string name = "eertree";
+  const string file = "draw_info/" + name + to_string(++numEertree) + ".dot";
+
+  ofstream os{file.c_str()};
   os << "digraph";
   os << " G {" << endl;
   os << "rankdir=" << dir << endl;
@@ -331,9 +358,9 @@ void drawEertree(const Eertree &eert, const Fun paintNode) {
       dfs(v, string(2 - u % 2, c));
     }
   }
-
   os << "}" << endl;
-  system(run("draw_info/eertree").c_str());
+
+  run(file);
 }
 
 /*-----------------------------------------------------------------------------------------------------------*/
@@ -347,7 +374,10 @@ void drawSeg(Segtree* t) {
 
 template <class Segtree, class Fun>
 void drawSeg(Segtree *t, const Fun paintNode) {
-  ofstream os{"draw_info/segtree.dot"};
+  const string name = "segtree";
+  const string file = "draw_info/" + name + to_string(++numSegtree) + ".dot";
+
+  ofstream os{file.c_str()};
   os << "digraph";
   os << " G {" << endl;
   os << "rankdir=" << dir << endl;
@@ -369,9 +399,9 @@ void drawSeg(Segtree *t, const Fun paintNode) {
   };
 
   dfs(t, 1);
-
   os << "}" << endl;
-  system(run("draw_info/segtree").c_str());
+
+  run(file);
 }
 
 #endif
