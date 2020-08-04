@@ -1,0 +1,105 @@
+\babel@toc {english}{}
+\contentsline {section}{\numberline {1}Data structures}{3}{section.1}%
+\contentsline {subsection}{\numberline {1.1}Disjoint set with rollback}{3}{subsection.1.1}%
+\contentsline {subsection}{\numberline {1.2}Sparse table}{3}{subsection.1.2}%
+\contentsline {subsection}{\numberline {1.3}Min-Max queue}{3}{subsection.1.3}%
+\contentsline {subsection}{\numberline {1.4}Squirtle decomposition}{3}{subsection.1.4}%
+\contentsline {subsection}{\numberline {1.5}In-Out trick}{3}{subsection.1.5}%
+\contentsline {subsection}{\numberline {1.6}Parallel binary search}{3}{subsection.1.6}%
+\contentsline {subsection}{\numberline {1.7}Mo's algorithm}{4}{subsection.1.7}%
+\contentsline {subsection}{\numberline {1.8}Ordered tree}{4}{subsection.1.8}%
+\contentsline {subsection}{\numberline {1.9}Unordered tree}{4}{subsection.1.9}%
+\contentsline {subsection}{\numberline {1.10}D-dimensional Fenwick tree}{4}{subsection.1.10}%
+\contentsline {subsection}{\numberline {1.11}Dynamic segment tree}{5}{subsection.1.11}%
+\contentsline {subsection}{\numberline {1.12}Persistent segment tree}{5}{subsection.1.12}%
+\contentsline {subsection}{\numberline {1.13}Wavelet tree}{5}{subsection.1.13}%
+\contentsline {subsection}{\numberline {1.14}Li Chao tree}{5}{subsection.1.14}%
+\contentsline {subsection}{\numberline {1.15}Treap}{6}{subsection.1.15}%
+\contentsline {section}{\numberline {2}Graphs}{7}{section.2}%
+\contentsline {subsection}{\numberline {2.1}Tarjan algorithm (SCC)}{7}{subsection.2.1}%
+\contentsline {subsection}{\numberline {2.2}Kosaraju algorithm (SCC)}{7}{subsection.2.2}%
+\contentsline {subsection}{\numberline {2.3}Two Sat}{7}{subsection.2.3}%
+\contentsline {subsection}{\numberline {2.4}Topological sort}{7}{subsection.2.4}%
+\contentsline {subsection}{\numberline {2.5}Cutpoints and Bridges}{7}{subsection.2.5}%
+\contentsline {subsection}{\numberline {2.6}Detect a cycle}{7}{subsection.2.6}%
+\contentsline {subsection}{\numberline {2.7}Euler tour for Mo's in a tree}{7}{subsection.2.7}%
+\contentsline {subsection}{\numberline {2.8}Lowest common ancestor (LCA)}{7}{subsection.2.8}%
+\contentsline {subsection}{\numberline {2.9}Guni}{8}{subsection.2.9}%
+\contentsline {subsection}{\numberline {2.10}Centroid decomposition}{8}{subsection.2.10}%
+\contentsline {subsection}{\numberline {2.11}Heavy-light decomposition}{8}{subsection.2.11}%
+\contentsline {subsection}{\numberline {2.12}Link-Cut tree}{9}{subsection.2.12}%
+\contentsline {section}{\numberline {3}Flows}{10}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Dinic \footnotesize $\mathcal {O}(min(E \cdot flow, V^2E))$}{10}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}Min cost flow \footnotesize $\mathcal {O}(min(E \cdot flow, V^2E))$}{10}{subsection.3.2}%
+\contentsline {subsection}{\numberline {3.3}Hopcroft-Karp \footnotesize $\mathcal {O}(E \sqrt {V})$}{11}{subsection.3.3}%
+\contentsline {subsection}{\numberline {3.4}Hungarian \footnotesize $\mathcal {O}(N ^ 3)$}{11}{subsection.3.4}%
+\contentsline {section}{\numberline {4}Strings}{11}{section.4}%
+\contentsline {subsection}{\numberline {4.1}Hash}{11}{subsection.4.1}%
+\contentsline {subsection}{\numberline {4.2}KMP}{11}{subsection.4.2}%
+\contentsline {subsection}{\numberline {4.3}KMP automaton}{12}{subsection.4.3}%
+\contentsline {subsection}{\numberline {4.4}Z algorithm}{12}{subsection.4.4}%
+\contentsline {subsection}{\numberline {4.5}Manacher algorithm}{12}{subsection.4.5}%
+\contentsline {subsection}{\numberline {4.6}Suffix array}{12}{subsection.4.6}%
+\contentsline {subsection}{\numberline {4.7}Suffix automaton}{13}{subsection.4.7}%
+\contentsline {subsection}{\numberline {4.8}Aho corasick}{13}{subsection.4.8}%
+\contentsline {subsection}{\numberline {4.9}Eertree}{14}{subsection.4.9}%
+\contentsline {section}{\numberline {5}Dynamic Programming}{14}{section.5}%
+\contentsline {subsection}{\numberline {5.1}Steiner-tree DP}{14}{subsection.5.1}%
+\contentsline {subsection}{\numberline {5.2}Matrix Chain Multiplication}{14}{subsection.5.2}%
+\contentsline {subsection}{\numberline {5.3}Digit DP}{14}{subsection.5.3}%
+\contentsline {subsection}{\numberline {5.4}Knapsack 0/1}{15}{subsection.5.4}%
+\contentsline {subsection}{\numberline {5.5}Convex Hull Trick \footnotesize $\mathcal {O}(n^2)$ $\Rightarrow $ \footnotesize $\mathcal {O}(n)$}{15}{subsection.5.5}%
+\contentsline {subsection}{\numberline {5.6}Divide and conquer \footnotesize $\mathcal {O}(kn^2)$ $\Rightarrow $ \footnotesize $\mathcal {O}(k \cdot nlogn)$ }{15}{subsection.5.6}%
+\contentsline {subsection}{\numberline {5.7}Do all submasks of a mask A}{15}{subsection.5.7}%
+\contentsline {section}{\numberline {6}Game Theory}{15}{section.6}%
+\contentsline {subsection}{\numberline {6.1}Grundy Numbers}{15}{subsection.6.1}%
+\contentsline {section}{\numberline {7}Combinatorics}{15}{section.7}%
+\contentsline {subsection}{\numberline {7.1}Factorial}{15}{subsection.7.1}%
+\contentsline {subsection}{\numberline {7.2}Factorial mod $smallPrime$}{15}{subsection.7.2}%
+\contentsline {subsection}{\numberline {7.3}Lucas theorem}{16}{subsection.7.3}%
+\contentsline {subsection}{\numberline {7.4}N choose K}{16}{subsection.7.4}%
+\contentsline {subsection}{\numberline {7.5}Catalan}{16}{subsection.7.5}%
+\contentsline {subsection}{\numberline {7.6}Prime factors of N!}{16}{subsection.7.6}%
+\contentsline {section}{\numberline {8}Number Theory}{16}{section.8}%
+\contentsline {subsection}{\numberline {8.1}Goldbach conjecture}{16}{subsection.8.1}%
+\contentsline {subsection}{\numberline {8.2}Sieve of Eratosthenes}{16}{subsection.8.2}%
+\contentsline {subsection}{\numberline {8.3}Phi of euler}{16}{subsection.8.3}%
+\contentsline {subsection}{\numberline {8.4}Miller-Rabin}{16}{subsection.8.4}%
+\contentsline {subsection}{\numberline {8.5}Pollard-Rho}{16}{subsection.8.5}%
+\contentsline {subsection}{\numberline {8.6}Amount of divisors}{17}{subsection.8.6}%
+\contentsline {subsection}{\numberline {8.7}Bézout's identity}{17}{subsection.8.7}%
+\contentsline {subsection}{\numberline {8.8}GCD}{17}{subsection.8.8}%
+\contentsline {subsection}{\numberline {8.9}LCM}{17}{subsection.8.9}%
+\contentsline {subsection}{\numberline {8.10}Euclid}{17}{subsection.8.10}%
+\contentsline {subsection}{\numberline {8.11}Chinese remainder theorem}{17}{subsection.8.11}%
+\contentsline {section}{\numberline {9}Math}{17}{section.9}%
+\contentsline {subsection}{\numberline {9.1}Progressions}{17}{subsection.9.1}%
+\contentsline {subsection}{\numberline {9.2}Mod multiplication}{17}{subsection.9.2}%
+\contentsline {subsection}{\numberline {9.3}Fpow}{17}{subsection.9.3}%
+\contentsline {subsection}{\numberline {9.4}Fibonacci}{17}{subsection.9.4}%
+\contentsline {section}{\numberline {10}Geometry}{17}{section.10}%
+\contentsline {subsection}{\numberline {10.1}Point}{17}{subsection.10.1}%
+\contentsline {subsection}{\numberline {10.2}Angle Between Vectors}{18}{subsection.10.2}%
+\contentsline {subsection}{\numberline {10.3}Area Poligon}{18}{subsection.10.3}%
+\contentsline {subsection}{\numberline {10.4}Area Poligon In Circle}{18}{subsection.10.4}%
+\contentsline {subsection}{\numberline {10.5}Closest Pair Of Points}{18}{subsection.10.5}%
+\contentsline {subsection}{\numberline {10.6}Convex Hull}{19}{subsection.10.6}%
+\contentsline {subsection}{\numberline {10.7}Distance Point Line}{19}{subsection.10.7}%
+\contentsline {subsection}{\numberline {10.8}Get Circle}{19}{subsection.10.8}%
+\contentsline {subsection}{\numberline {10.9}Intersects Line}{19}{subsection.10.9}%
+\contentsline {subsection}{\numberline {10.10} Intersects Line Segment}{19}{subsection.10.10}%
+\contentsline {subsection}{\numberline {10.11} Intersects Segment}{19}{subsection.10.11}%
+\contentsline {subsection}{\numberline {10.12} Is Convex}{19}{subsection.10.12}%
+\contentsline {subsection}{\numberline {10.13} Perimeter}{19}{subsection.10.13}%
+\contentsline {subsection}{\numberline {10.14} Point In Convex Polygon logN}{19}{subsection.10.14}%
+\contentsline {subsection}{\numberline {10.15} Point In Polygon}{20}{subsection.10.15}%
+\contentsline {subsection}{\numberline {10.16} Point In Segment}{20}{subsection.10.16}%
+\contentsline {subsection}{\numberline {10.17} Points Of Tangency}{20}{subsection.10.17}%
+\contentsline {subsection}{\numberline {10.18} Projection}{20}{subsection.10.18}%
+\contentsline {subsection}{\numberline {10.19} Projection Line}{20}{subsection.10.19}%
+\contentsline {subsection}{\numberline {10.20} Reflection Line}{20}{subsection.10.20}%
+\contentsline {subsection}{\numberline {10.21} Signed Distance Point Line}{20}{subsection.10.21}%
+\contentsline {subsection}{\numberline {10.22} Sort Along Line}{20}{subsection.10.22}%
+\contentsline {subsection}{\numberline {10.23} Intersects Line Circle}{20}{subsection.10.23}%
+\contentsline {section}{\numberline {11}Bit tricks}{20}{section.11}%
+\contentsline {subsection}{\numberline {11.1}Bitset}{20}{subsection.11.1}%

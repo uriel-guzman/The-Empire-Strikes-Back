@@ -1,0 +1,77 @@
+\nsection{Strings}
+
+\subsection{Hash}
+\addfile{../Codes/Strings/Hash.cpp}
+
+\subsection{KMP} 
+\ncomment{period = $n - lps[n - 1]$, period($abcabc$) = 3, $n \mod{period} \equiv 0$}
+\addfile{../Codes/Strings/KMP.cpp}
+\vspace{-15pt}
+
+\subsection{KMP automaton}
+\addfile{../Codes/Strings/KMPAutomaton.cpp}
+
+\subsection{Z algorithm}
+\addfile{../Codes/Strings/Z.cpp}
+
+\subsection{Manacher algorithm}
+\addfile{../Codes/Strings/Manacher.cpp}
+
+\subsection{Suffix array}
+\vspace{-5pt}
+\setlist{nolistsep}
+\begin{itemize}[noitemsep]
+  \item Duplicates 
+  \ncomment{$\sum_{i = 1}^{n}{lcp[i]}$}
+
+  \item Longest Common Substring of various strings \\
+  Add \emph{notUsed} characters between strings, i.e. $a + \$ + b + \# + c$ \\ 
+  Use two-pointers to find a range $[l, r]$ such that all \emph{notUsed} characters are present, then $query(lcp[l + 1],..,lcp[r])$ for that window is the common length. \\
+
+
+\end{itemize}
+\addfile{../Codes/Strings/SuffixArray.cpp}
+\vspace{-15pt}
+
+% \subsection{Trie}
+% \addfile{../Codes/Strings/Trie.cpp}
+
+\subsection{Suffix automaton}
+\vspace{-5pt}
+\setlist{nolistsep}
+\begin{itemize}[noitemsep]
+  \item 
+  $len[u] - len[link[u]]$ = distinct strings
+
+  \item Number of different substrings (dp)
+  \begin{gather*}
+    diff(u)=1+\sum_{v \in trie[u]}{diff(v)}
+  \end{gather*}
+
+  \item Total length of all different substrings (2 x dp)
+  \begin{gather*}
+    totLen(u)=\sum_{v \in trie[u]}{diff(v) + totLen(v)}
+  \end{gather*}
+  
+  \item Leftmost occurrence
+  $pos[u] = len[u] - 1$ \\
+  if is \textbf{clone} then $pos[clone] = pos[q]$ 
+  
+  \item All occurrence positions
+  
+  \item Smallest cyclic shift \\
+  Construct sam of $s + s$, find the lexicographically smallest path of $sz(s)$
+ 
+  \item Shortest non-appearing string
+  \begin{gather*}
+    nonAppearing(u) = \min_{v \in trie[u]}{nonAppearing(v) + 1}
+  \end{gather*}
+\end{itemize}
+\addfile{../Codes/Strings/SuffixAutomaton.cpp}
+\vspace{-15pt}
+
+\subsection{Aho corasick}
+\addfile{../Codes/Strings/AhoCorasick.cpp}
+
+\subsection{Eertree}
+\addfile{../Codes/Strings/Eertree.cpp}

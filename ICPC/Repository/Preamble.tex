@@ -1,0 +1,131 @@
+\documentclass[5pt, twocolumn, a4paper, notitlepage, fleqn]{article} % Vertical
+% \documentclass[6pt, landscape, twocolumn, a4paper, notitlepage, fleqn]{article} % Horizontal
+\usepackage{hyperref}
+\usepackage[english, activeacute]{babel} %, spanish
+\usepackage[utf8]{inputenc}
+\usepackage{fancyhdr} % Fancy headers
+\usepackage{enumitem} % Enable enumerations
+\usepackage{amsbsy, amssymb, amsmath, mathtools} % Enable math symbols
+\usepackage{ifthen} % To enable some conditional programming in LaTeX
+\usepackage[usenames, dvipsnames]{xcolor} % extra colors
+\usepackage{geometry} % A simple way to change the length and layout of different elements
+\usepackage{lastpage}  % A simple way to go to the last page xd
+\usepackage{listings} % To add code
+\usepackage{graphicx, wrapfig} % To add images
+\usepackage{makeidx} % To make a index easily 
+% \usepackage{xcolor} % Extra colors
+\usepackage[T1]{fontenc} % Accented characters
+\usepackage{inconsolata} % A font type
+
+% Table stuff
+\usepackage{colortbl}
+% \usepackage[table,dvipsnames]{xcolor} % work x2 D:?
+
+% Límites de la hoja
+\geometry{
+	a4paper,
+	left = 1.4cm,
+	right = 1.4cm,
+	top = 1cm,
+	bottom = 1.5cm
+}
+
+% Línea divisora a la mitad
+\setlength{\columnseprule}{0.25pt}  
+
+% Colores 
+% \definecolor{Azul2}{RGB}{62, 0, 255}
+% \definecolor{Morado2}{RGB}{89, 0, 179}
+% \definecolor{Morado3}{RGB}{110, 30, 127}
+\definecolor{Rojo}{RGB}{255,0,0}
+\definecolor{Verde}{RGB}{0, 157, 161}
+\definecolor{Azul}{RGB}{0, 0, 255}
+\definecolor{AzulClaro}{RGB}{51, 51, 255}
+\definecolor{AzulClaro2}{RGB}{45, 146, 255}
+\definecolor{Magenta}{RGB}{255, 0, 255}
+\definecolor{Violeta}{RGB}{170, 0, 255}
+\definecolor{RojoOscuro}{RGB}{159, 73, 67}
+\definecolor{Morado}{RGB}{77, 0, 153}
+\definecolor{Naranja}{RGB}{255, 128, 0}
+\definecolor{AzulOscuro}{RGB}{0, 0, 128}
+\definecolor{Gris}{RGB}{198, 198, 198}
+
+% For code
+\lstset{aboveskip = 5pt}	
+\lstset{belowskip = 4pt}
+
+%%% Encabezado y pie de pagina
+% \pagestyle{fancy}
+% \fancyhead[LO]{\textbf{\title}}
+% \fancyhead[RO]{Page \thepage\ of \pageref{LastPage}}
+% \renewcommand{\headrulewidth}{0.25pt}
+
+% Configuración de Listings
+\newcommand\digitstyle{\color{Rojo}}
+\makeatletter
+\newcommand{\processDigit}[1]{\ifnum\lst@mode=\lst@Pmode\relax{\digitstyle #1}\else#1\fi}
+\makeatother
+\lstset{literate=
+	{0}{{{\processDigit{0}}}}1
+	{1}{{{\processDigit{1}}}}1
+	{2}{{{\processDigit{2}}}}1
+	{3}{{{\processDigit{3}}}}1
+	{4}{{{\processDigit{4}}}}1
+	{5}{{{\processDigit{5}}}}1
+	{6}{{{\processDigit{6}}}}1
+	{7}{{{\processDigit{7}}}}1
+	{8}{{{\processDigit{8}}}}1
+	{9}{{{\processDigit{9}}}}1,
+	morestring=[b]",
+	morestring=[b]',
+	morecomment=[l]//,	
+}
+
+\lstdefinestyle{mine}{
+	language = C++, 
+	basicstyle = \small\ttfamily, 
+	basewidth = {0.50em, 0.40em},
+	columns = fixed, fontadjust, resetmargins, xleftmargin = 5pt, xrightmargin = 5pt, showstringspaces = false,
+	flexiblecolumns = false, tabsize = 1, breaklines, breakatwhitespace = false, extendedchars = true,
+	% numbers = left, numberstyle = \tiny, stepnumber = 1, numbersep = 5pt,
+	frame = 0, framesep = 0pt,
+	stringstyle = \color{Naranja}\ttfamily,
+	commentstyle = \color{Magenta}\ttfamily,
+	keywordstyle = \slshape,
+	keywordstyle = {\color{AzulClaro}\bfseries},
+	keywordstyle = [2]{\color{Morado}},
+	keywordstyle = [3]{\color{RojoOscuro}\bfseries},
+	keywordstyle = [4]{\color{Violeta}},
+	keywordstyle = [5]{\color{AzulOscuro}},
+	keywordstyle = [6]{\color{Rojo}},
+	otherkeywords = {},
+	morekeywords = {lli, ld, string, decltype, ostream, basic_ostream, done, fi, echo, constexpr, then, uint32_t},
+	morekeywords = [2]{map, vector, queue, stack, set, multiset, pair, first, second, ordered_tree, deque, numeric_limits, bitset, unordered_tree},
+	morekeywords = [3]{fore, LOCAL, ulli, ii, A, B, C, H, K, F, T, P, V, df},
+	morekeywords = [4]{vi, Splay, RMQ, Dsu, MinQueue, Fenwick, LiChao, Seg, Lazy, Per, Wav, Dyn, Treap, Node, Edge,
+	 EdmondsKarp, Dinic, Mcmf, HopcroftKarp, Hungarian, Hash, SuffixAutomaton, AhoCorasick, Eertree, ConvexHull, DynamicHull, Point, Trie, debug, Line, Fun, Query, Update, Point, rge, chash, SuffixArray},
+	morekeywords = [5]{eb, pb, iter, begin, end, rbegin, rend, at, assign, insert, erase, swap, clear, emplace, emplace_back, 
+	emplace_front, top, push, push_back, push_front, pop, pop_back, pop_front, front, back, empty, resize, all, sz, qrank, qkth, 
+	size, reserve, find, count, erase, less, greater, __builtin_popcount, __builtin_parity, __builtin_clz, __builtin_ctz, shuffle, __builtin_bswap64, 
+	cos, sin, sqrtl, acos, min, max, abs, fabs, hypot, lower_bound, upper_bound, iterator, lsb, __lg, gcd, lcm, make_pair, uniform_int_distribution, sort,
+	unite, rollback, qwho, qsum, qmax, qmin, add, rem, update, query, pull, push, build, qleq, qsz, split, merge, splitsz, fun, run, go, test, random, diff, open},
+	morekeywords = [6]{LL, NULL, inf, eps, pi, eq, neq, geq, ge, le, leq},
+}
+
+\lstloadlanguages{C++}
+\lstnewenvironment{code}
+{\vspace{-10pt}}
+{\csname lst@SetFirstLabel\endcsname}
+{\csname lst@SaveFirstLabel\endcsname}
+\lstset {escapechar=@, style=mine}
+
+%%% Macros
+\def\nsection#1{\section{#1}\vspace{-10pt}}
+\def\ncomment#1{\vspace{-5pt} \begin{small} #1 \\ \end{small} \vspace{-5pt}}
+\newcommand{\comb}[2]{\left( \begin{array}{c} #1 #2 \end{array}\right)}
+\def\complexity#1{\texorpdfstring{\footnotesize$\mathcal{O}(#1)$}{O(#1)}}
+
+\newcommand\addfile[2][]{
+\vspace{-11pt}
+\lstinputlisting[style=mine, linerange={#1}]{#2}
+}

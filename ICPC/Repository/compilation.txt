@@ -1,0 +1,41 @@
+touch a_in{1..9} // make files a_in1, a_in2,..., a_in9
+tee {a..m}.cpp < tem.cpp // "" with tem.cpp like base
+cat > a_in1 // write on file a_in1
+gedit a_in1 // open file a_in1
+rm -r a.cpp // deletes file a.cpp :'(
+gedit ~/.zshenv
+go() {g++ --std=c++11 $2 -Wall -O2 $1.cpp && ./a.out}
+debug() { go $1 -DLOCAL < $2 } 
+run() { go $1 "" < $2 }
+
+test() {
+	g++ --std=c++11 $1.cpp -o prog 
+	for ((i = 1; ; i++)); do
+		[[ -f $1_in$i ]] || break
+		echo "Running on test #"$i
+		diff -uwi <(./prog < $1_in$i) $1_out$i > $1_diff
+		if [[ ! $? -eq 0 ]]; then
+			echo "Wrong answer on test #"$i
+			open $1_diff
+			return
+		fi
+	done
+	echo "Accepted"
+}
+
+random() { // Make small test cases!!!
+	g++ --std=c++11 gen.cpp -o gen 
+	g++ --std=c++11 $1.cpp -o prog 
+	g++ --std=c++11 brute.cpp -o brute 
+	for ((i = 1; i <= 234; i++)); do
+		echo "Running on test #"$i
+		./gen > in
+		diff -uwi <(./prog < in) <(./brute < in) > $1_diff
+		if [[ ! $? -eq 0 ]]; then
+			echo "Wrong answer on test #"$i
+			open $1_diff
+			return
+		fi
+	done
+	echo "Accepted"
+}

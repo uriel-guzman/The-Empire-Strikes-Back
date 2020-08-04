@@ -1,0 +1,39 @@
+\nsection{Math}
+
+\subsection{Progressions}
+\vspace{-10pt}
+\subsection*{Arithmetic progressions}
+\vspace{-10pt}
+\begin{gather*}
+a_n = a_1 + (n - 1) * diff \\
+\sum_{i = 1}^n a_i = n * \frac{a_1 + a_n}{2} 
+\end{gather*}
+\vspace{-25pt}
+
+\subsection*{Geometric progressions}
+\vspace{-10pt}
+\begin{gather*}
+a_n = a_1 * r^{n - 1} \\
+\sum_{k = 1}^{n} a_{1} * r^k = a_1 * \left( \frac{r^{n + 1} - 1}{r - 1} \right): r \neq 1
+\end{gather*}
+\vspace{-30pt}
+
+\subsection{Mod multiplication}
+\addfile{../Codes/Math/ModMul.cpp}
+
+\subsection{Fpow}
+\addfile{../Codes/Math/Fpow.cpp}
+
+\subsection{Fibonacci}
+\[
+\begin{bmatrix}
+    1  &  1      \\
+    1  &  0      
+\end{bmatrix}^{n}
+= 
+\begin{bmatrix}
+    fib_{n+1}  &  fib_{n}      \\
+    fib_{n}  &  fib_{n-1}      
+\end{bmatrix} 
+\]
+

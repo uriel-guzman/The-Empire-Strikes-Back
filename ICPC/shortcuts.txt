@@ -1,0 +1,57 @@
+go() {
+	g++-9 --std=c++$3 $2 -Wall -Wextra -O2 $1.cpp && ./a.out 
+}
+
+debug11() {
+	go $1 -DLOCAL 11 < $2
+}
+ 
+debug14() {
+	go $1 -DLOCAL 14 < $2
+}
+
+debug() {
+	go $1 -DLOCAL 17 < $2
+} 
+
+run() {
+	go $1 "" 17 < $2
+}
+
+test() {
+	g++-9 --std=c++17 $1.cpp -o prog 
+	
+	for ((i = 1; ; i++)); do
+		[[ -f $1_in$i ]] || break
+		echo "Running on test #"$i
+		diff -ci <(./prog < $1_in$i) $1_out$i > $1_diff
+		if [[ ! $? -eq 0 ]]; then
+			echo "Wrong answer on test #"$i
+			open $1_diff
+			return
+		fi
+	done
+	
+	echo "Accepted"
+	rm -r prog
+}
+
+random() {
+	g++-9 --std=c++17 gen.cpp -o gen 
+	g++-9 --std=c++17 $1.cpp -o prog 
+	g++-9 --std=c++17 brute.cpp -o brute 
+	
+	for ((i = 1; i <= 123; i++)); do
+		echo "Running on test #"$i
+		./gen > in
+		diff -ci <(./prog < in) <(./brute < in) > $1_diff
+		if [[ ! $? -eq 0 ]]; then
+			echo "Wrong answer on test #"$i
+			open $1_diff
+			return
+		fi
+	done
+	
+	echo "Accepted"
+	rm -r gen prog brute
+}

@@ -1,0 +1,52 @@
+\section{Bit tricks}
+\vspace{-5pt}
+
+% \rowcolors{3}{white}{lightgray}
+\begin{tabular}{ |p{3cm}|p{5cm}|  }
+  \hline  
+  \rowcolor{Azul} 
+  \multicolumn{2}{|c|}{Bits++} \\
+  \hline
+  \rowcolor{AzulClaro2} 
+  Operations on $int$ & Function \\
+  \hline
+  \texttt{x \& -x} & Least significant bit in $x$ \\
+  \rowcolor{Gris} 
+  \texttt{\_\_lg(x)} & Most significant bit in $x$ \\
+  \texttt{c = x\&-x, r = x+c; (((r\^{}x) >> 2)/c) | r} & Next number after $x$ with same number of bits set \\
+  \hline
+
+  \rowcolor{AzulClaro2} 
+  \_\_builtin\_ & Function \\
+  \hline 
+  popcount(x) & Amount of 1's in $x$ \\
+  \rowcolor{Gris} 
+  clz(x) & 0's to the \textbf{left} of biggest bit \\
+  ctz(x) & 0's to the \textbf{right} of smallest bit \\
+  \hline
+\end{tabular}
+
+\subsection{Bitset} 
+\vspace{-5pt}
+
+\begin{tabular}{ |p{3cm}|p{5cm}|  }
+  % \rowcolors{3}{gray}{white}
+  \hline 
+  \rowcolor{Azul} 
+  \multicolumn{2}{|c|}{Bitset<Size>} \\
+  \hline
+  \rowcolor{AzulClaro2} 
+  Operation & Function \\
+  \hline
+  \_Find\_first() & Least significant bit \\
+  \rowcolor{Gris} 
+  \_Find\_next(idx) & First set bit after index $idx$ \\
+  any(), none(), all() & Just what the expression says \\
+  \rowcolor{Gris} 
+  set(), reset(), flip() & Just what the expression says x2 \\
+  to\_string('.', 'A') & Print 011010 like .AA.A. \\
+  \hline
+\end{tabular}
+
+% 
+
