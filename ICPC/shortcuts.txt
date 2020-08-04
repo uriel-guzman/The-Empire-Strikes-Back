@@ -3,8 +3,10 @@ green='\x1B[0;32m'
 blue='\x1B[0;34m'
 noColor='\x1B[0m'
 
+alias FLAGS='-Wall -Wextra -Wshadow -D_GLIBCXX_ASSERTIONS -fmax-errors=3 -O2 -w'
+
 go() {
-	g++-9 --std=c++17 $2 $3 -Wall -Wextra -Wshadow -D_GLIBCXX_ASSERTIONS -fmax-errors=3 -O2 -w $1.cpp && ./a.out 
+	g++-9 --std=c++17 $2 $3 ${FLAGS} $1.cpp && ./a.out 
 }
 
 debug() {
