@@ -1,21 +1,22 @@
-go() {
-	g++-9 --std=c++$3 $2 -Wall -Wextra -O2 $1.cpp && ./a.out 
-}
+red='\x1B[0;31m'
+green='\x1B[0;32m'
+blue='\x1B[0;34m'
+noColor='\x1B[0m'
 
-debug11() {
-	go $1 -DLOCAL 11 < $2
-}
- 
-debug14() {
-	go $1 -DLOCAL 14 < $2
+go() {
+	g++-9 --std=c++17 $2 $3 -Wall -Wextra -Wshadow -D_GLIBCXX_ASSERTIONS -fmax-errors=3 -O2 -w $1.cpp && ./a.out 
 }
 
 debug() {
-	go $1 -DLOCAL 17 < $2
+	go $1 -DLOCAL "" < $2
+} 
+
+draw() {
+	go $1 -DLOCAL -DDRAW < $2
 } 
 
 run() {
-	go $1 "" 17 < $2
+	go $1 "" "" < $2
 }
 
 test() {
@@ -23,35 +24,39 @@ test() {
 	
 	for ((i = 1; ; i++)); do
 		[[ -f $1_in$i ]] || break
-		echo "Running on test #"$i
-		diff -ci <(./prog < $1_in$i) $1_out$i > $1_diff
+		printf "Test case #$i"
+		
+		diff -uwi <(./prog < $1_in$i) $1_out$i > $1_diff
+		
 		if [[ ! $? -eq 0 ]]; then
-			echo "Wrong answer on test #"$i
-			open $1_diff
-			return
+			printf "${red} Wrong Answer ${noColor}\n"
+		else
+			printf "${green} Accepted ${noColor}\n"
 		fi
 	done
 	
-	echo "Accepted"
 	rm -r prog
 }
 
-random() {
+random() { 
 	g++-9 --std=c++17 gen.cpp -o gen 
 	g++-9 --std=c++17 $1.cpp -o prog 
 	g++-9 --std=c++17 brute.cpp -o brute 
 	
-	for ((i = 1; i <= 123; i++)); do
-		echo "Running on test #"$i
+	for ((i = 1; i <= 300; i++)); do
+		printf "Test case #$i"
+		
 		./gen > in
-		diff -ci <(./prog < in) <(./brute < in) > $1_diff
+		diff -uwi <(./prog < in) <(./brute < in) > $1_diff
+		
 		if [[ ! $? -eq 0 ]]; then
-			echo "Wrong answer on test #"$i
-			open $1_diff
+			printf "${red} Wrong Answer ${noColor}\n"
+			rm -r gen prog brute
 			return
+		else
+			printf "${green} Accepted ${noColor}\n"
 		fi
 	done
 	
-	echo "Accepted"
 	rm -r gen prog brute
 }
