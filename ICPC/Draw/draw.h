@@ -5,18 +5,18 @@
 using namespace std;
 
 const bool printLinks = 0; // for aho-corasick, suffix-automaton, eertree
-const bool printString = 0; // for trie-based, string instead of chars
+const bool printString = 1; // for trie-based, string instead of chars
 
-const string red = "red";
-const string blue = "blue";
-const string purple = "\"#c9a9ff\"";
-const string normalNodeColor = purple;
-const string linkColor = red;
-const string specialNodeColor = red;
+const string colorRed = "red";
+const string colorBlue = "blue";
+const string colorPurple = "\"#c9a9ff\"";
+const string normalNodeColor = colorPurple;
+const string linkColor = colorRed;
+const string specialNodeColor = colorRed;
 
 #define dirLeftRight "LR"
 #define dirTopBottom "TB"
-#define dir dirTopBottom // Change here the direction
+#define dir dirLeftRight // Change here the direction
 
 /*-----------------------------------------------------------------------------------------------------------*/
 
@@ -117,7 +117,7 @@ template <class Edge>
 void drawGraph(const vector<Edge> arr[]) {
   drawGraph(arr, [&]([[maybe_unused]]int u) {
     return false;
-  }, 0);
+  });
 }
 
 /*-----------------------------------------------------------------------------------------------------------*/
@@ -139,7 +139,7 @@ template <class Edge>
 void drawDigraph(const vector<Edge> arr[]) {
   drawDigraph(arr, [&]([[maybe_unused]]int u) {
     return false;
-  }, 1);
+  });
 }
 
 /*-----------------------------------------------------------------------------------------------------------*/
