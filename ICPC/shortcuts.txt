@@ -3,10 +3,10 @@ green='\x1B[0;32m'
 blue='\x1B[0;34m'
 noColor='\x1B[0m'
 
-alias FLAGS='-Wall -Wextra -Wshadow -D_GLIBCXX_ASSERTIONS -fmax-errors=3 -O2 -w'
+alias flags='-Wall -Wextra -Wshadow -D_GLIBCXX_ASSERTIONS -fmax-errors=2 -O2 -w'
 
 go() {
-	g++-9 --std=c++17 $2 $3 ${FLAGS} $1.cpp && ./a.out 
+	g++-9 --std=c++17 $2 $3 ${flags} $1.cpp && ./a.out 
 }
 
 debug() {
@@ -15,6 +15,7 @@ debug() {
 
 draw() {
 	go $1 -DLOCAL -DDRAW < $2
+	createBooks
 } 
 
 run() {
@@ -31,7 +32,7 @@ test() {
 		diff -uwi <(./prog < $1_in$i) $1_out$i > $1_diff
 		
 		if [[ ! $? -eq 0 ]]; then
-			printf "${red} Wrong Answer ${noColor}\n"
+			printf "${red} Wrong answer ${noColor}\n"
 		else
 			printf "${green} Accepted ${noColor}\n"
 		fi
@@ -46,13 +47,13 @@ random() {
 	g++-9 --std=c++17 brute.cpp -o brute 
 	
 	for ((i = 1; i <= 300; i++)); do
-		printf "Test case #$i"
+		printf "Test case #${i}"
 		
 		./gen > in
 		diff -uwi <(./prog < in) <(./brute < in) > $1_diff
 		
 		if [[ ! $? -eq 0 ]]; then
-			printf "${red} Wrong Answer ${noColor}\n"
+			printf "${red} Wrong answer ${noColor}\n"
 			break
 		else
 			printf "${green} Accepted ${noColor}\n"
@@ -60,4 +61,92 @@ random() {
 	done
 	
 	rm -r gen prog brute
+}
+
+
+############## This is personal taste, just change to the properly directory ############
+
+alias bash='gedit ~/.zshenv'
+alias icpc='cd /Users/abraham/The-Empire-Strikes-Back' 
+
+# Folder where you store all the images (move this properly)
+drawingsDir='/Users/abraham/Desktop/Problems/drawings/' 
+
+##############################################################################
+
+mergeImages() {
+	dir=${drawingsDir}
+  
+	name=$1 # Name of the book, dumb
+	book=${dir}${name}.tex  # Name of the new file
+	
+	rm -r ${book} # Clear the previous version if exist
+	touch ${book} # Create the book file
+	
+	# Insert information to latex document to build the book
+	if [[ ${name} == 'segtree' ]]; then
+		# The segtree file have to be horizontal
+		echo '\\documentclass[landscape]{article}' >> ${book}
+	else
+		echo '\\documentclass{article}' >> ${book}
+	fi
+	echo '\\usepackage{graphicx, wrapfig, geometry}' >> ${book}
+	echo '\\geometry{a4paper,left=1cm,right=1cm,top=1cm,bottom=1cm}' >> ${book}
+	echo '\\begin{document}' >> ${book}
+	
+	# Insert all images
+	for ((i = 1; ; i++)); do
+		image=${dir}${name}${i}.png
+		[[ -f ${image} ]] || break # There isn't image, you have already finished :D
+		
+		echo '\\clearpage' >> ${book}
+		echo '\\newpage' >> ${book}
+		echo '\\begin{figure}' >> ${book}
+		echo '\\centering' >> ${book}
+		echo '\\includegraphics[scale=.5]{'${image}'}' >> ${book}
+		echo '\\end{figure}' >> ${book}
+	done	
+	echo '\\end{document}' >> ${book}
+	
+	# Create the pdf
+	pdflatex -pdf ${book}
+	
+	# When you have the pdf, erase every file
+	for ((i = 1; ; i++)); do
+		image=${dir}${name}${i}.png
+		file=${dir}${name}${i}.dot
+		[[ -f ${image} ]] || break
+		rm -r ${image} ${file} # Destroy them!!
+	done
+}
+
+createBooks() {
+	dir=${drawingsDir}
+	
+	cd ${dir} # Write all stuff here!
+	
+	# Array with names of all possible books
+	possibleBooks=("weightedGraph" "weightedDigraph" "digraph" "graph" "trie" "aho" "sam" "eertree" "segtree")
+	
+	# Way to open files according to the OS
+	openFile='xdg-open'
+	if [[ "$(uname)" == "Darwin" ]]; then
+		openFile='open'
+	fi
+	
+	for name in ${possibleBooks[@]}; do
+		mergeImages ${name}
+	done
+	
+	for name in ${possibleBooks[@]}; do
+		book=${dir}${name}.pdf
+		printf "Exist ${book} ?\n"
+		if [[ -f ${book} ]]; then
+			printf "Yes, open\n"
+			${openFile} ${book}
+		fi
+	done
+	
+	clear # Clean the terminal screen for a good view :D
+	cd # Return one folder back
 }
