@@ -1,9 +1,9 @@
-// Hasta no conseguir algo mejor xd
+template <class T>
+using Mat = vector<vector<T>>;
 
-typedef vector<vector<lli>> Mat;
-
-Mat operator * (Mat &A, Mat &B) {
-  Mat C(sz(A), vector<lli>(sz(B[0])));
+template <class T>
+Mat<T> operator * (Mat<T> &A, Mat<T> &B) {
+  Mat<T> C(sz(A), vector<T>(sz(B[0])));
   fore (k, 0, sz(A[0])) 
     fore (i, 0, sz(A))
       fore (j, 0, sz(B[0]))
@@ -11,8 +11,9 @@ Mat operator * (Mat &A, Mat &B) {
   return C;
 }
 
-Mat operator ^ (Mat &A, lli n) {
-  Mat C(sz(A), vector<lli>(sz(A)));
+template <class T>
+Mat<T> operator ^ (Mat<T> &A, lli n) {
+  Mat<T> C(sz(A), vector<T>(sz(A)));
   fore (i, 0, sz(A))
     C[i][i] = 1;
   for (; n > 0; n >>= 1) {
