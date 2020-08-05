@@ -44,10 +44,15 @@ static int numSegtree = 0;
 
 /*-----------------------------------------------------------------------------------------------------------*/
 
-void run(const string file) {
+void runFile(const string file) {
   const string image = file.substr(0, sz(file) - 4) + ".png"; // remove ".dot" and add ".png", 4 characters
-  const string magic = string("dot -Tpng " + file + " -o " + image + " && " + open + " " + image);
-  system(magic.c_str());
+  const string create = string("dot -Tpng " + file + " -o " + image);
+  // const string createAndOpen = string("dot -Tpng " + file + " -o " + image + " && " + open + " " + image);
+  system(create.c_str());
+}
+
+string getFile(const string &name, int id) {
+  return string("drawings/" + name + to_string(id) + ".dot");
 }
 
 /*-----------------------------------------------------------------------------------------------------------*/
@@ -99,7 +104,7 @@ void drawDigraph(const vector<Edge> arr[], const Fun paintNode) {
 template <class Edge, class Fun>
 void drawGraph(const vector<vector<Edge>> &graph, const Fun paintNode, const bool directed) {
   const string name = "weighted" + string(directed ? "Digraph" : "Graph");
-  const string file = "draw_info/" + name + to_string(++numWeightedGraph[directed]) + ".dot";
+  const string file = getFile(name, ++numWeightedGraph[directed]);
 
   ofstream os{file.c_str()};
   os << (directed ? "digraph" : "graph");
@@ -124,14 +129,13 @@ void drawGraph(const vector<vector<Edge>> &graph, const Fun paintNode, const boo
   }
   os << "}" << endl;
 
-  run(file);
+  runFile(file);
 }
 
 template <class Fun>
 void drawGraph(const vector<vector<int>> &graph, const Fun paintNode, const bool directed) {
   const string name = (directed ? "digraph" : "graph");
-  const string file = "draw_info/" + name + to_string(++numGraph[directed]) + ".dot";
-  cout << file << endl;
+  const string file = getFile(name, ++numGraph[directed]);
 
   ofstream os{file.c_str()};
   os << (directed ? "digraph" : "graph");
@@ -154,7 +158,7 @@ void drawGraph(const vector<vector<int>> &graph, const Fun paintNode, const bool
   }
   os << "}" << endl;
 
-  run(file);
+  runFile(file);
 }
 
 /*-----------------------------------------------------------------------------------------------------------*/
@@ -169,7 +173,7 @@ void drawTrie(const Trie &trie) {
 template <class Trie, class Fun>
 void drawTrie(const Trie &trie, const Fun paintNode) {
   const string name = "trie";
-  const string file = "draw_info/" + name + to_string(++numTrie) + ".dot";
+  const string file = getFile(name, ++numTrie);
 
   ofstream os{file.c_str()};
   os << "digraph";
@@ -198,7 +202,7 @@ void drawTrie(const Trie &trie, const Fun paintNode) {
   dfs(0, "");
   os << "}" << endl;
 
-  run(file);
+  runFile(file);
 }
 
 /*-----------------------------------------------------------------------------------------------------------*/
@@ -213,7 +217,7 @@ void drawAho(const Aho &aho) {
 template <class Aho, class Fun>
 void drawAho(const Aho &aho, const Fun paintNode) {
   const string name = "aho";
-  const string file = "draw_info/" + name + to_string(++numAho) + ".dot";
+  const string file = getFile(name, ++numAho);
 
   ofstream os{file.c_str()};
   os << "digraph";
@@ -246,7 +250,7 @@ void drawAho(const Aho &aho, const Fun paintNode) {
   dfs(0, "");
   os << "}" << endl;
 
-  run(file);
+  runFile(file);
 }
 
 /*-----------------------------------------------------------------------------------------------------------*/
@@ -261,7 +265,7 @@ void drawSam(const SuffixAutomaton &sam) {
 template <class SuffixAutomaton, class Fun>
 void drawSam(const SuffixAutomaton &sam, const Fun paintNode) {
   const string name = "sam";
-  const string file = "draw_info/" + name + to_string(++numSam) + ".dot";
+  const string file = getFile(name, ++numSam);
 
   ofstream os{file.c_str()};
   os << "digraph";
@@ -294,7 +298,7 @@ void drawSam(const SuffixAutomaton &sam, const Fun paintNode) {
   dfs(0, "");
   os << "}" << endl;
 
-  run(file);
+  runFile(file);
 }
 
 /*-----------------------------------------------------------------------------------------------------------*/
@@ -309,7 +313,7 @@ void drawEertree(const Eertree &eert) {
 template <class Eertree, class Fun>
 void drawEertree(const Eertree &eert, const Fun paintNode) {
   const string name = "eertree";
-  const string file = "draw_info/" + name + to_string(++numEertree) + ".dot";
+  const string file = getFile(name, ++numEertree);
 
   ofstream os{file.c_str()};
   os << "digraph";
@@ -360,7 +364,7 @@ void drawEertree(const Eertree &eert, const Fun paintNode) {
   }
   os << "}" << endl;
 
-  run(file);
+  runFile(file);
 }
 
 /*-----------------------------------------------------------------------------------------------------------*/
@@ -375,25 +379,25 @@ void drawSeg(Segtree* t) {
 template <class Segtree, class Fun>
 void drawSeg(Segtree *t, const Fun paintNode) {
   const string name = "segtree";
-  const string file = "draw_info/" + name + to_string(++numSegtree) + ".dot";
+  const string file = getFile(name, ++numSegtree);
 
   ofstream os{file.c_str()};
   os << "digraph";
   os << " G {" << endl;
   os << "rankdir=" << dir << endl;
-  os << "node [style=filled, shape=record, color=" << normalNodeColor << "]" << endl; // Shape of the node
+  os << "node [style=filled, shape = box, color=" << normalNodeColor << "]" << endl; // Shape of the node
 
   function<void(Segtree *t, int)> dfs = [&](Segtree *t, int x) {
     // t->push(); // is this a lazy segtree?
-    os << "node" << x << "[label = \"<f0> |<f1> ";
+    os << "node" << x << "[label = \"";
     os << "[" << t->l << "," << t->r << "] \\n " << paintNode(t);
-    os << " |<f2> \"]" << endl;
+    os << "\"]" << endl;
     if (t->L) {
-      os << "node" << x << ":f0 -> node" << (x * 2) << ":f1" << endl;
+      os << "node" << x << " -> node" << (x * 2) << endl;
       dfs(t->L, x * 2);
     }
     if (t->R) {
-      os << "node" << x << ":f2 -> node" << (x * 2 + 1) << ":f1" << endl;
+      os << "node" << x << " -> node" << (x * 2 + 1) << endl;
       dfs(t->R, x * 2 + 1);
     }
   };
@@ -401,7 +405,7 @@ void drawSeg(Segtree *t, const Fun paintNode) {
   dfs(t, 1);
   os << "}" << endl;
 
-  run(file);
+  runFile(file);
 }
 
 #endif
