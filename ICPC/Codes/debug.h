@@ -2,12 +2,12 @@
 using namespace std;
 
 template <class A, class B>
-ostream & operator << (ostream& os, pair<A, B> p) {
+ostream & operator << (ostream &os, const pair<A, B> &p) {
   return os << "(" << p.first << ", " << p.second << ")";
 }
 
 template <class A, class B, class C>
-basic_ostream<A, B>& operator << (basic_ostream<A, B>& os, const C& c) {
+basic_ostream<A, B> & operator << (basic_ostream<A, B> &os, const C &c) {
   os << "[";
   for (const auto &x : c)
     os << ", " + 2 * (&x == &*begin(c)) << x;
@@ -19,14 +19,14 @@ void print(string s) {
 }
 
 template <class H, class... T>
-void print(string s, H h, T... t) {
+void print(string s, const H &h, const T&... t) {
   bool ok = 1;
   do { 
     if (s[0] == '\"') ok = 0;
-    else cout << s[0] << reset;
+    else cout << "\033[1;94m" << s[0] << "\033[0m";
     s = s.substr(1);
   } while (s.size() && s[0] != ',');
-  if (ok) cout << ": " << h << reset;
+  if (ok) cout << ": " << "\033[3;95m" << h << "\033[0m";
   print(s, t...);
 }
 
