@@ -3,23 +3,21 @@ struct Seg {
   lli sum = 0;
   Seg *L, *R;
 
-  Seg(int l, int r) : l(l), r(r), L(0), R(0) {}
-
-  void pull() { 
-    sum = L->sum + R->sum; 
-  }
-
-  void build() {
+  Seg(int l, int r) : l(l), r(r), L(0), R(0) {
     if (l == r) {
       sum = a[l];
       return;
     }
     int m = (l + r) / 2;
-    (L = new Seg(l, m))->build();
-    (R = new Seg(m + 1, r))->build();
+    L = new Seg(l, m);
+    R = new Seg(m + 1, r);
     pull();
   }
 
+  void pull() { 
+    sum = L->sum + R->sum; 
+  }
+  
   void update(int p, lli v) {
     if (l == r) {
       sum += v;

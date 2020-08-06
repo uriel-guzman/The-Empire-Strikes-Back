@@ -3,7 +3,16 @@ struct Lazy {
   lli sum = 0, lazy = 0;
   Lazy *L, *R;
 
-  Lazy(int l, int r) : l(l), r(r), L(0), R(0) {}
+  Lazy(int l, int r) : l(l), r(r), L(0), R(0) {
+    if (l == r) {
+      sum = a[l];
+      return;
+    }
+    int m = (l + r) / 2;
+    L = new Lazy(l, m);
+    R = new Lazy(m + 1, r);
+    pull();
+  }
 
   void push() {
     if (!lazy)
@@ -18,17 +27,6 @@ struct Lazy {
 
   void pull() {
     sum = L->sum + R->sum;
-  }
-
-  void build() {
-    if (l == r) {
-      sum = a[l];
-      return;
-    }
-    int m = (l + r) / 2;
-    (L = new Lazy(l, m))->build();
-    (R = new Lazy(m + 1, r))->build();
-    pull();
   }
 
   void update(int ll, int rr, lli v) {
