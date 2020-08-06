@@ -4,11 +4,11 @@ cat > a_in1 // write on file a_in1
 gedit a_in1 // open file a_in1
 rm -r a.cpp // deletes file a.cpp :'(
 
-gedit ~/.zshenv // Write here everything that's below
-alias FLAGS='-Wall -Wextra -Wshadow -D_GLIBCXX_ASSERTIONS -fmax-errors=3 -O2 -w'
-go() {
-	g++ --std=c++11 $2 ${FLAGS} $1.cpp && ./a.out
-}
+red='\x1B[0;31m'
+green='\x1B[0;32m'
+noColor='\x1B[0m'
+alias flags='-Wall -Wextra -Wshadow -D_GLIBCXX_ASSERTIONS -fmax-errors=3 -O2 -w'
+go() { g++ --std=c++11 $2 ${flags} $1.cpp && ./a.out }
 debug() { go $1 -DLOCAL < $2 } 
 run() { go $1 "" < $2 }
 
@@ -21,10 +21,10 @@ random() { // Make small test cases!!!
 		./gen > in
 		diff -uwi <(./prog < in) <(./brute < in) > $1_diff
 		if [[ ! $? -eq 0 ]]; then
-			printf "Wrong answer\n"
+			printf "${red} Wrong answer ${noColor}\n"
 			break
 		else
-			printf "Accepted\n"
+			printf "${green} Accepted ${noColor}\n"
 		fi
 	done
 }
@@ -36,9 +36,9 @@ test() {
 		printf "Test case #$i"
 		diff -uwi <(./prog < $1_in$i) $1_out$i > $1_diff
 		if [[ ! $? -eq 0 ]]; then
-			printf "Wrong answer\n"
+			printf "${red} Wrong answer ${noColor}\n"
 		else
-			printf "Accepted\n"
+			printf "${green} Accepted ${noColor}\n"
 		fi
 	done
 }
