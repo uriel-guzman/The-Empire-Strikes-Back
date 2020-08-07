@@ -15,7 +15,8 @@ debug() {
 
 draw() {
 	go $1 -DLOCAL -DDRAW < $2
-	createBooks
+	printf "All drawings done\n"
+	createBooks 
 } 
 
 run() {
@@ -64,66 +65,58 @@ random() {
 }
 
 
-############## This is personal taste, just change to the properly directory ############
+############ This is just personal taste, just change to the properly directory ############
 
-alias bash='gedit ~/.zshenv'
-alias icpc='cd /Users/abraham/The-Empire-Strikes-Back' 
+alias bash='gedit ~/.zshenv' # Bash file xd
+alias icpc='cd /Users/abraham/The-Empire-Strikes-Back' # Folder of github
 
-# Folder where you store all the images (move this properly)
-drawingsDir='/Users/abraham/Desktop/Problems/drawings/' 
+drawingsDir='/Users/abraham/Desktop/Problems/drawings/' # Folder where you store all the images and stuff
 
-##############################################################################
+############################################################################################
 
 mergeImages() {
-	dir=${drawingsDir}
-  
 	name=$1 # Name of the book, dumb
-	book=${dir}${name}.tex  # Name of the new file
 	
-	rm -r ${book} # Clear the previous version if exist
-	touch ${book} # Create the book file
+	bookTEX=${drawingsDir}${name}.tex  # tex book file
+	touch ${bookTEX} # Create the book file
 	
 	# Insert information to latex document to build the book
 	if [[ ${name} == 'segtree' ]]; then
 		# The segtree file have to be horizontal
-		echo '\\documentclass[landscape]{article}' >> ${book}
+		echo '\\documentclass[landscape]{article}' >> ${bookTEX}
 	else
-		echo '\\documentclass{article}' >> ${book}
+		echo '\\documentclass{article}' >> ${bookTEX}
 	fi
-	echo '\\usepackage{graphicx, wrapfig, geometry}' >> ${book}
-	echo '\\geometry{a4paper,left=1cm,right=1cm,top=1cm,bottom=1cm}' >> ${book}
-	echo '\\begin{document}' >> ${book}
+	echo '\\usepackage{graphicx, wrapfig, geometry}' >> ${bookTEX}
+	echo '\\geometry{a4paper,left=1cm,right=1cm,top=1cm,bottom=1cm}' >> ${bookTEX}
+	echo '\\begin{document}' >> ${bookTEX}
 	
 	# Insert all images
 	for ((i = 1; ; i++)); do
-		image=${dir}${name}${i}.png
-		[[ -f ${image} ]] || break # There isn't image, you have already finished :D
+		image=${drawingsDir}${name}${i}.png
+		file=${drawingsDir}${name}${i}.dot
 		
-		echo '\\clearpage' >> ${book}
-		echo '\\newpage' >> ${book}
-		echo '\\begin{figure}' >> ${book}
-		echo '\\centering' >> ${book}
-		echo '\\includegraphics[scale=.5]{'${image}'}' >> ${book}
-		echo '\\end{figure}' >> ${book}
+		# To avoid stupid errors, just erase the .dot file and if the .dot file don't exist, then the image neither
+		[[ -f ${file} ]] || break # There isn't file for this image, then you have already finished :D
+		rm -r ${file}
+		
+		echo '\\clearpage' >> ${bookTEX}
+		echo '\\newpage' >> ${bookTEX}
+		echo '\\begin{figure}' >> ${bookTEX}
+		echo '\\centering' >> ${bookTEX}
+		echo '\\includegraphics[scale=.5]{'${image}'}' >> ${bookTEX}
+		echo '\\end{figure}' >> ${bookTEX}
 	done	
-	echo '\\end{document}' >> ${book}
+	echo '\\end{document}' >> ${bookTEX}
 	
 	# Create the pdf
-	pdflatex -pdf ${book}
-	
-	# When you have the pdf, erase every file
-	for ((i = 1; ; i++)); do
-		image=${dir}${name}${i}.png
-		file=${dir}${name}${i}.dot
-		[[ -f ${image} ]] || break
-		rm -r ${image} ${file} # Destroy them!!
-	done
+	pdflatex -pdf ${bookTEX}
 }
 
 createBooks() {
-	dir=${drawingsDir}
-	
-	cd ${dir} # Write all stuff here!
+	prevDir=$(pwd) # Current directory, but will be the previous after all of this stuff D:
+
+	cd ${drawingsDir} # Write all stuff here!
 	
 	# Array with names of all possible books
 	possibleBooks=("weightedGraph" "weightedDigraph" "digraph" "graph" "trie" "aho" "sam" "eertree" "segtree")
@@ -135,18 +128,30 @@ createBooks() {
 	fi
 	
 	for name in ${possibleBooks[@]}; do
-		mergeImages ${name}
+		bookTEX=${drawingsDir}${name}.tex
+		if [[ -f ${bookTEX} ]]; then 
+			rm -r ${bookTEX} # Clear everything you know about this to avoid stupid mistakes D:
+		fi
+		bookPDF=${drawingsDir}${name}.pdf
+		if [[ -f ${bookPDF} ]]; then 
+			rm -r ${bookPDF} # Clear everything you know about this to avoid stupid mistakes D: x2
+		fi
 	done
 	
 	for name in ${possibleBooks[@]}; do
-		book=${dir}${name}.pdf
-		printf "Exist ${book} ?\n"
-		if [[ -f ${book} ]]; then
-			printf "Yes, open\n"
-			${openFile} ${book}
+		bookPDF=${drawingsDir}${name}.pdf
+		mergeImages ${name}
+		printf "Exist ${bookPDF}?\n"
+		if [[ -f ${bookPDF} ]]; then
+			printf "Yes, open it C:\n"
+			${openFile} ${bookPDF}
+		else
+			printf "Nope :C\n"
 		fi
 	done
 	
 	clear # Clean the terminal screen for a good view :D
-	cd # Return one folder back
+	cd ${prevDir} # Return to the previous directory
+	
+	printf "All books done\n"
 }
