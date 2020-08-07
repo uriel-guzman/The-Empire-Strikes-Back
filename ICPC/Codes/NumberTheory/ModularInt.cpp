@@ -8,4 +8,5 @@ struct Modular {
   void operator += (const Modular &m) { *this = *this + m; }
   void operator -= (const Modular &m) { *this = *this - m; }
   void operator *= (const Modular &m) { *this = *this * m; }
+  friend ostream & operator << (ostream &os, const Modular &m) { return os << m.v; }
 };
