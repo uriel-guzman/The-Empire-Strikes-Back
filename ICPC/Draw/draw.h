@@ -41,6 +41,7 @@ static int numAho = 0;
 static int numSam = 0;
 static int numEertree = 0;
 static int numSegtree = 0;
+static int numLazy = 0;
 
 /*-----------------------------------------------------------------------------------------------------------*/
 
@@ -388,7 +389,47 @@ void drawSeg(Segtree *t, const Fun paintNode) {
   os << "node [style=filled, shape = box, color=" << normalNodeColor << "]" << endl; // Shape of the node
 
   function<void(Segtree *t, int)> dfs = [&](Segtree *t, int x) {
-    // t->push(); // is this a lazy segtree?
+    os << "node" << x << "[label = \"";
+    os << "[" << t->l << "," << t->r << "] \\n " << paintNode(t);
+    os << "\"]" << endl;
+    if (t->L) {
+      os << "node" << x << " -> node" << (x * 2) << endl;
+      dfs(t->L, x * 2);
+    }
+    if (t->R) {
+      os << "node" << x << " -> node" << (x * 2 + 1) << endl;
+      dfs(t->R, x * 2 + 1);
+    }
+  };
+
+  dfs(t, 1);
+  os << "}" << endl;
+
+  runFile(file);
+}
+
+/*-----------------------------------------------------------------------------------------------------------*/
+
+template <class Lazy>
+void drawLazy(Lazy *t) {
+  drawLazy(t, [&]([[maybe_unused]]Lazy *u) -> string {
+    return "";
+  });
+}
+
+template <class Lazy, class Fun>
+void drawLazy(Lazy *t, const Fun paintNode) {
+  const string name = "lazy";
+  const string file = getFile(name, ++numLazy);
+
+  ofstream os{file.c_str()};
+  os << "digraph";
+  os << " G {" << endl;
+  os << "rankdir=" << dir << endl;
+  os << "node [style=filled, shape = box, color=" << normalNodeColor << "]" << endl; // Shape of the node
+
+  function<void(Lazy*, int)> dfs = [&](Lazy *t, int x) {
+    t->push(); 
     os << "node" << x << "[label = \"";
     os << "[" << t->l << "," << t->r << "] \\n " << paintNode(t);
     os << "\"]" << endl;
