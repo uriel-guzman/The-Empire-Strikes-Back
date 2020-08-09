@@ -30,7 +30,7 @@ struct LiChao {
   lli query(lli x) {
     if (l == r) 
       return f(x);
-    int m = (l + r) / 2;
+    lli m = (l + r) / 2;
     if (x <= m)
       return min(f(x), L ? L->query(x) : inf);
     return min(f(x), R ? R->query(x) : inf);
