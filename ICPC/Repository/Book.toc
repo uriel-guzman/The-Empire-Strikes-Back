@@ -27,9 +27,9 @@
 \contentsline {subsection}{\numberline {2.9}Guni}{8}{subsection.2.9}%
 \contentsline {subsection}{\numberline {2.10}Centroid decomposition}{8}{subsection.2.10}%
 \contentsline {subsection}{\numberline {2.11}Heavy-light decomposition}{8}{subsection.2.11}%
-\contentsline {subsection}{\numberline {2.12}Link-Cut tree}{9}{subsection.2.12}%
-\contentsline {section}{\numberline {3}Flows}{10}{section.3}%
-\contentsline {subsection}{\numberline {3.1}Dinic \footnotesize $\mathcal {O}(min(E \cdot flow, V^2E))$}{10}{subsection.3.1}%
+\contentsline {subsection}{\numberline {2.12}Link-Cut tree}{8}{subsection.2.12}%
+\contentsline {section}{\numberline {3}Flows}{9}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Dinic \footnotesize $\mathcal {O}(min(E \cdot flow, V^2E))$}{9}{subsection.3.1}%
 \contentsline {subsection}{\numberline {3.2}Min cost flow \footnotesize $\mathcal {O}(min(E \cdot flow, V^2E))$}{10}{subsection.3.2}%
 \contentsline {subsection}{\numberline {3.3}Hopcroft-Karp \footnotesize $\mathcal {O}(E \sqrt {V})$}{11}{subsection.3.3}%
 \contentsline {subsection}{\numberline {3.4}Hungarian \footnotesize $\mathcal {O}(N ^ 3)$}{11}{subsection.3.4}%
@@ -40,7 +40,7 @@
 \contentsline {subsection}{\numberline {4.4}Z algorithm}{12}{subsection.4.4}%
 \contentsline {subsection}{\numberline {4.5}Manacher algorithm}{12}{subsection.4.5}%
 \contentsline {subsection}{\numberline {4.6}Suffix array}{12}{subsection.4.6}%
-\contentsline {subsection}{\numberline {4.7}Suffix automaton}{13}{subsection.4.7}%
+\contentsline {subsection}{\numberline {4.7}Suffix automaton}{12}{subsection.4.7}%
 \contentsline {subsection}{\numberline {4.8}Aho corasick}{13}{subsection.4.8}%
 \contentsline {subsection}{\numberline {4.9}Eertree}{14}{subsection.4.9}%
 \contentsline {section}{\numberline {5}Dynamic Programming}{14}{section.5}%
@@ -50,12 +50,13 @@
 \contentsline {subsection}{\numberline {5.4}Knapsack 0/1}{15}{subsection.5.4}%
 \contentsline {subsection}{\numberline {5.5}Convex Hull Trick \footnotesize $\mathcal {O}(n^2)$ $\Rightarrow $ \footnotesize $\mathcal {O}(n)$}{15}{subsection.5.5}%
 \contentsline {subsection}{\numberline {5.6}Divide and conquer \footnotesize $\mathcal {O}(kn^2)$ $\Rightarrow $ \footnotesize $\mathcal {O}(k \cdot nlogn)$ }{15}{subsection.5.6}%
-\contentsline {subsection}{\numberline {5.7}Do all submasks of a mask A}{15}{subsection.5.7}%
+\contentsline {subsection}{\numberline {5.7}Knuth optimization \footnotesize $\mathcal {O}(n^3)$ $\Rightarrow $ \footnotesize $\mathcal {O}(n^2)$ }{15}{subsection.5.7}%
+\contentsline {subsection}{\numberline {5.8}Do all submasks of a mask A}{15}{subsection.5.8}%
 \contentsline {section}{\numberline {6}Game Theory}{15}{section.6}%
 \contentsline {subsection}{\numberline {6.1}Grundy Numbers}{15}{subsection.6.1}%
 \contentsline {section}{\numberline {7}Combinatorics}{15}{section.7}%
 \contentsline {subsection}{\numberline {7.1}Factorial}{15}{subsection.7.1}%
-\contentsline {subsection}{\numberline {7.2}Factorial mod $smallPrime$}{15}{subsection.7.2}%
+\contentsline {subsection}{\numberline {7.2}Factorial mod $smallPrime$}{16}{subsection.7.2}%
 \contentsline {subsection}{\numberline {7.3}Lucas theorem}{16}{subsection.7.3}%
 \contentsline {subsection}{\numberline {7.4}N choose K}{16}{subsection.7.4}%
 \contentsline {subsection}{\numberline {7.5}Catalan}{16}{subsection.7.5}%
@@ -65,7 +66,7 @@
 \contentsline {subsection}{\numberline {8.2}Sieve of Eratosthenes}{16}{subsection.8.2}%
 \contentsline {subsection}{\numberline {8.3}Phi of euler}{16}{subsection.8.3}%
 \contentsline {subsection}{\numberline {8.4}Miller-Rabin}{16}{subsection.8.4}%
-\contentsline {subsection}{\numberline {8.5}Pollard-Rho}{16}{subsection.8.5}%
+\contentsline {subsection}{\numberline {8.5}Pollard-Rho}{17}{subsection.8.5}%
 \contentsline {subsection}{\numberline {8.6}Amount of divisors}{17}{subsection.8.6}%
 \contentsline {subsection}{\numberline {8.7}Bézout's identity}{17}{subsection.8.7}%
 \contentsline {subsection}{\numberline {8.8}GCD}{17}{subsection.8.8}%

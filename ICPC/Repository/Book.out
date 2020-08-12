@@ -49,56 +49,57 @@
 \BOOKMARK [2][-]{subsection.5.4}{Knapsack 0/1}{section.5}% 49
 \BOOKMARK [2][-]{subsection.5.5}{Convex Hull Trick O\(n2\) \040O\(n\)}{section.5}% 50
 \BOOKMARK [2][-]{subsection.5.6}{Divide and conquer O\(kn2\) \040O\(k nlogn\) }{section.5}% 51
-\BOOKMARK [2][-]{subsection.5.7}{Do all submasks of a mask A}{section.5}% 52
-\BOOKMARK [1][-]{section.6}{Game Theory}{}% 53
-\BOOKMARK [2][-]{subsection.6.1}{Grundy Numbers}{section.6}% 54
-\BOOKMARK [1][-]{section.7}{Combinatorics}{}% 55
-\BOOKMARK [2][-]{subsection.7.1}{Factorial}{section.7}% 56
-\BOOKMARK [2][-]{subsection.7.2}{Factorial mod smallPrime}{section.7}% 57
-\BOOKMARK [2][-]{subsection.7.3}{Lucas theorem}{section.7}% 58
-\BOOKMARK [2][-]{subsection.7.4}{N choose K}{section.7}% 59
-\BOOKMARK [2][-]{subsection.7.5}{Catalan}{section.7}% 60
-\BOOKMARK [2][-]{subsection.7.6}{Prime factors of N!}{section.7}% 61
-\BOOKMARK [1][-]{section.8}{Number Theory}{}% 62
-\BOOKMARK [2][-]{subsection.8.1}{Goldbach conjecture}{section.8}% 63
-\BOOKMARK [2][-]{subsection.8.2}{Sieve of Eratosthenes}{section.8}% 64
-\BOOKMARK [2][-]{subsection.8.3}{Phi of euler}{section.8}% 65
-\BOOKMARK [2][-]{subsection.8.4}{Miller-Rabin}{section.8}% 66
-\BOOKMARK [2][-]{subsection.8.5}{Pollard-Rho}{section.8}% 67
-\BOOKMARK [2][-]{subsection.8.6}{Amount of divisors}{section.8}% 68
-\BOOKMARK [2][-]{subsection.8.7}{B\351zout's identity}{section.8}% 69
-\BOOKMARK [2][-]{subsection.8.8}{GCD}{section.8}% 70
-\BOOKMARK [2][-]{subsection.8.9}{LCM}{section.8}% 71
-\BOOKMARK [2][-]{subsection.8.10}{Euclid}{section.8}% 72
-\BOOKMARK [2][-]{subsection.8.11}{Chinese remainder theorem}{section.8}% 73
-\BOOKMARK [1][-]{section.9}{Math}{}% 74
-\BOOKMARK [2][-]{subsection.9.1}{Progressions}{section.9}% 75
-\BOOKMARK [2][-]{subsection.9.2}{Mod multiplication}{section.9}% 76
-\BOOKMARK [2][-]{subsection.9.3}{Fpow}{section.9}% 77
-\BOOKMARK [2][-]{subsection.9.4}{Fibonacci}{section.9}% 78
-\BOOKMARK [1][-]{section.10}{Geometry}{}% 79
-\BOOKMARK [2][-]{subsection.10.1}{Point}{section.10}% 80
-\BOOKMARK [2][-]{subsection.10.2}{Angle Between Vectors}{section.10}% 81
-\BOOKMARK [2][-]{subsection.10.3}{Area Poligon}{section.10}% 82
-\BOOKMARK [2][-]{subsection.10.4}{Area Poligon In Circle}{section.10}% 83
-\BOOKMARK [2][-]{subsection.10.5}{Closest Pair Of Points}{section.10}% 84
-\BOOKMARK [2][-]{subsection.10.6}{Convex Hull}{section.10}% 85
-\BOOKMARK [2][-]{subsection.10.7}{Distance Point Line}{section.10}% 86
-\BOOKMARK [2][-]{subsection.10.8}{Get Circle}{section.10}% 87
-\BOOKMARK [2][-]{subsection.10.9}{Intersects Line}{section.10}% 88
-\BOOKMARK [2][-]{subsection.10.10}{ Intersects Line Segment}{section.10}% 89
-\BOOKMARK [2][-]{subsection.10.11}{ Intersects Segment}{section.10}% 90
-\BOOKMARK [2][-]{subsection.10.12}{ Is Convex}{section.10}% 91
-\BOOKMARK [2][-]{subsection.10.13}{ Perimeter}{section.10}% 92
-\BOOKMARK [2][-]{subsection.10.14}{ Point In Convex Polygon logN}{section.10}% 93
-\BOOKMARK [2][-]{subsection.10.15}{ Point In Polygon}{section.10}% 94
-\BOOKMARK [2][-]{subsection.10.16}{ Point In Segment}{section.10}% 95
-\BOOKMARK [2][-]{subsection.10.17}{ Points Of Tangency}{section.10}% 96
-\BOOKMARK [2][-]{subsection.10.18}{ Projection}{section.10}% 97
-\BOOKMARK [2][-]{subsection.10.19}{ Projection Line}{section.10}% 98
-\BOOKMARK [2][-]{subsection.10.20}{ Reflection Line}{section.10}% 99
-\BOOKMARK [2][-]{subsection.10.21}{ Signed Distance Point Line}{section.10}% 100
-\BOOKMARK [2][-]{subsection.10.22}{ Sort Along Line}{section.10}% 101
-\BOOKMARK [2][-]{subsection.10.23}{ Intersects Line Circle}{section.10}% 102
-\BOOKMARK [1][-]{section.11}{Bit tricks}{}% 103
-\BOOKMARK [2][-]{subsection.11.1}{Bitset}{section.11}% 104
+\BOOKMARK [2][-]{subsection.5.7}{Knuth optimization O\(n3\) \040O\(n2\) }{section.5}% 52
+\BOOKMARK [2][-]{subsection.5.8}{Do all submasks of a mask A}{section.5}% 53
+\BOOKMARK [1][-]{section.6}{Game Theory}{}% 54
+\BOOKMARK [2][-]{subsection.6.1}{Grundy Numbers}{section.6}% 55
+\BOOKMARK [1][-]{section.7}{Combinatorics}{}% 56
+\BOOKMARK [2][-]{subsection.7.1}{Factorial}{section.7}% 57
+\BOOKMARK [2][-]{subsection.7.2}{Factorial mod smallPrime}{section.7}% 58
+\BOOKMARK [2][-]{subsection.7.3}{Lucas theorem}{section.7}% 59
+\BOOKMARK [2][-]{subsection.7.4}{N choose K}{section.7}% 60
+\BOOKMARK [2][-]{subsection.7.5}{Catalan}{section.7}% 61
+\BOOKMARK [2][-]{subsection.7.6}{Prime factors of N!}{section.7}% 62
+\BOOKMARK [1][-]{section.8}{Number Theory}{}% 63
+\BOOKMARK [2][-]{subsection.8.1}{Goldbach conjecture}{section.8}% 64
+\BOOKMARK [2][-]{subsection.8.2}{Sieve of Eratosthenes}{section.8}% 65
+\BOOKMARK [2][-]{subsection.8.3}{Phi of euler}{section.8}% 66
+\BOOKMARK [2][-]{subsection.8.4}{Miller-Rabin}{section.8}% 67
+\BOOKMARK [2][-]{subsection.8.5}{Pollard-Rho}{section.8}% 68
+\BOOKMARK [2][-]{subsection.8.6}{Amount of divisors}{section.8}% 69
+\BOOKMARK [2][-]{subsection.8.7}{B\351zout's identity}{section.8}% 70
+\BOOKMARK [2][-]{subsection.8.8}{GCD}{section.8}% 71
+\BOOKMARK [2][-]{subsection.8.9}{LCM}{section.8}% 72
+\BOOKMARK [2][-]{subsection.8.10}{Euclid}{section.8}% 73
+\BOOKMARK [2][-]{subsection.8.11}{Chinese remainder theorem}{section.8}% 74
+\BOOKMARK [1][-]{section.9}{Math}{}% 75
+\BOOKMARK [2][-]{subsection.9.1}{Progressions}{section.9}% 76
+\BOOKMARK [2][-]{subsection.9.2}{Mod multiplication}{section.9}% 77
+\BOOKMARK [2][-]{subsection.9.3}{Fpow}{section.9}% 78
+\BOOKMARK [2][-]{subsection.9.4}{Fibonacci}{section.9}% 79
+\BOOKMARK [1][-]{section.10}{Geometry}{}% 80
+\BOOKMARK [2][-]{subsection.10.1}{Point}{section.10}% 81
+\BOOKMARK [2][-]{subsection.10.2}{Angle Between Vectors}{section.10}% 82
+\BOOKMARK [2][-]{subsection.10.3}{Area Poligon}{section.10}% 83
+\BOOKMARK [2][-]{subsection.10.4}{Area Poligon In Circle}{section.10}% 84
+\BOOKMARK [2][-]{subsection.10.5}{Closest Pair Of Points}{section.10}% 85
+\BOOKMARK [2][-]{subsection.10.6}{Convex Hull}{section.10}% 86
+\BOOKMARK [2][-]{subsection.10.7}{Distance Point Line}{section.10}% 87
+\BOOKMARK [2][-]{subsection.10.8}{Get Circle}{section.10}% 88
+\BOOKMARK [2][-]{subsection.10.9}{Intersects Line}{section.10}% 89
+\BOOKMARK [2][-]{subsection.10.10}{ Intersects Line Segment}{section.10}% 90
+\BOOKMARK [2][-]{subsection.10.11}{ Intersects Segment}{section.10}% 91
+\BOOKMARK [2][-]{subsection.10.12}{ Is Convex}{section.10}% 92
+\BOOKMARK [2][-]{subsection.10.13}{ Perimeter}{section.10}% 93
+\BOOKMARK [2][-]{subsection.10.14}{ Point In Convex Polygon logN}{section.10}% 94
+\BOOKMARK [2][-]{subsection.10.15}{ Point In Polygon}{section.10}% 95
+\BOOKMARK [2][-]{subsection.10.16}{ Point In Segment}{section.10}% 96
+\BOOKMARK [2][-]{subsection.10.17}{ Points Of Tangency}{section.10}% 97
+\BOOKMARK [2][-]{subsection.10.18}{ Projection}{section.10}% 98
+\BOOKMARK [2][-]{subsection.10.19}{ Projection Line}{section.10}% 99
+\BOOKMARK [2][-]{subsection.10.20}{ Reflection Line}{section.10}% 100
+\BOOKMARK [2][-]{subsection.10.21}{ Signed Distance Point Line}{section.10}% 101
+\BOOKMARK [2][-]{subsection.10.22}{ Sort Along Line}{section.10}% 102
+\BOOKMARK [2][-]{subsection.10.23}{ Intersects Line Circle}{section.10}% 103
+\BOOKMARK [1][-]{section.11}{Bit tricks}{}% 104
+\BOOKMARK [2][-]{subsection.11.1}{Bitset}{section.11}% 105
