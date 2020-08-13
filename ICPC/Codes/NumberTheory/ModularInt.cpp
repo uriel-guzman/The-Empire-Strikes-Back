@@ -13,7 +13,7 @@ struct Modular {
   void operator *= (const Modular &m) { *this = *this * m; }
   
   friend ostream & operator << (ostream &os, const Modular &m) { return os << m.v; }
-  friend istream & operator << (istream &os, const Modular &m) { return is >> m.v; }
+  friend istream & operator >> (istream &os, const Modular &m) { return is >> m.v; }
   
 private:
   static int minv(int a, int m) {
