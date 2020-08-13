@@ -17,8 +17,8 @@ struct Modular {
   
 private:
   static int minv(int a, int m) {
-		a %= m;
-		assert(a); // ensures this is valid
-		return a == 1 ? 1 : int(m - lli(minv(m, a)) * lli(m) / a);
-	}
+    a %= m;
+    assert(a);
+    return a == 1 ? 1 : int(m - lli(minv(m, a)) * lli(m) / a);
+  }
 };
