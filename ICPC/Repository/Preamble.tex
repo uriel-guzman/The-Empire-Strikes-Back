@@ -1,5 +1,5 @@
-\documentclass[5pt, twocolumn, a4paper, notitlepage, fleqn]{article} % Vertical
-% \documentclass[6pt, landscape, twocolumn, a4paper, notitlepage, fleqn]{article} % Horizontal
+\documentclass[5pt, twocolumn, a4paper, notitlepage, fleqn]{article} % Vertical way
+% \documentclass[6pt, landscape, twocolumn, a4paper, notitlepage, fleqn]{article} % Horizontal way
 \usepackage{hyperref}
 \usepackage[english, activeacute]{babel} %, spanish
 \usepackage[utf8]{inputenc}
@@ -21,7 +21,7 @@
 \usepackage{colortbl}
 % \usepackage[table,dvipsnames]{xcolor} % work x2 D:?
 
-% Límites de la hoja
+% Paper limits
 \geometry{
 	a4paper,
 	left = 1.4cm,
@@ -30,38 +30,28 @@
 	bottom = 1.5cm
 }
 
-% Línea divisora a la mitad
-\setlength{\columnseprule}{0.25pt}  
+\setlength{\columnseprule}{0.25pt}   % Line at the half of the page
 
-% Colores 
-% \definecolor{Azul2}{RGB}{62, 0, 255}
-% \definecolor{Morado2}{RGB}{89, 0, 179}
-% \definecolor{Morado3}{RGB}{110, 30, 127}
-\definecolor{Rojo}{RGB}{255,0,0}
-\definecolor{Verde}{RGB}{0, 157, 161}
-\definecolor{Azul}{RGB}{0, 0, 255}
-\definecolor{AzulClaro}{RGB}{51, 51, 255}
-\definecolor{AzulClaro2}{RGB}{45, 146, 255}
+% Personalized colors
+\definecolor{Red}{RGB}{255,0,0}
+\definecolor{Green}{RGB}{0, 157, 161}
+\definecolor{Blue}{RGB}{0, 0, 255}
+\definecolor{LightBlue}{RGB}{51, 51, 255}
+\definecolor{LightBlue2}{RGB}{45, 146, 255}
 \definecolor{Magenta}{RGB}{255, 0, 255}
-\definecolor{Violeta}{RGB}{170, 0, 255}
-\definecolor{RojoOscuro}{RGB}{159, 73, 67}
-\definecolor{Morado}{RGB}{77, 0, 153}
-\definecolor{Naranja}{RGB}{255, 128, 0}
-\definecolor{AzulOscuro}{RGB}{0, 0, 128}
-\definecolor{Gris}{RGB}{198, 198, 198}
+\definecolor{Violet}{RGB}{170, 0, 255}
+\definecolor{DarkRed}{RGB}{159, 73, 67}
+\definecolor{Purple}{RGB}{77, 0, 153}
+\definecolor{Orange}{RGB}{255, 128, 0}
+\definecolor{DarkBlue}{RGB}{0, 0, 128}
+\definecolor{Gray}{RGB}{198, 198, 198}
 
 % For code
 \lstset{aboveskip = 5pt}	
 \lstset{belowskip = 4pt}
 
-%%% Encabezado y pie de pagina
-% \pagestyle{fancy}
-% \fancyhead[LO]{\textbf{\title}}
-% \fancyhead[RO]{Page \thepage\ of \pageref{LastPage}}
-% \renewcommand{\headrulewidth}{0.25pt}
-
-% Configuración de Listings
-\newcommand\digitstyle{\color{Rojo}}
+% Configuration to detect digits
+\newcommand\digitstyle{\color{Red}}
 \makeatletter
 \newcommand{\processDigit}[1]{\ifnum\lst@mode=\lst@Pmode\relax{\digitstyle #1}\else#1\fi}
 \makeatother
@@ -81,7 +71,8 @@
 	morecomment=[l]//,	
 }
 
-\lstdefinestyle{mine}{
+% Listings configuration
+\lstdefinestyle{mine} {
 	language = C++, 
 	basicstyle = \small\ttfamily, 
 	basewidth = {0.50em, 0.40em},
@@ -89,17 +80,17 @@
 	flexiblecolumns = false, tabsize = 1, breaklines, breakatwhitespace = false, extendedchars = true,
 	% numbers = left, numberstyle = \tiny, stepnumber = 1, numbersep = 5pt,
 	frame = 0, framesep = 0pt,
-	stringstyle = \color{Naranja}\ttfamily,
+	stringstyle = \color{Orange}\ttfamily,
 	commentstyle = \color{Magenta}\ttfamily,
 	keywordstyle = \slshape,
-	keywordstyle = {\color{AzulClaro}\bfseries},
-	keywordstyle = [2]{\color{Morado}},
-	keywordstyle = [3]{\color{RojoOscuro}\bfseries},
-	keywordstyle = [4]{\color{Violeta}},
-	keywordstyle = [5]{\color{AzulOscuro}},
-	keywordstyle = [6]{\color{Rojo}},
+	keywordstyle = {\color{LightBlue}\bfseries},
+	keywordstyle = [2]{\color{Purple}},
+	keywordstyle = [3]{\color{DarkRed}\bfseries},
+	keywordstyle = [4]{\color{Violet}},
+	keywordstyle = [5]{\color{DarkBlue}},
+	keywordstyle = [6]{\color{Red}},
 	otherkeywords = {},
-	morekeywords = {gedit, lli, ld, string, decltype, ostream, basic_ostream, done, fi, printf, constexpr, then, uint32_t},
+	morekeywords = {lli, ld, string, decltype, ostream, basic_ostream, done, fi, printf, constexpr, then, uint32_t},
 	morekeywords = [2]{map, vector, queue, stack, set, multiset, pair, first, second, ordered_tree, deque, numeric_limits, bitset, unordered_tree},
 	morekeywords = [3]{fore, LOCAL, ulli, ii, A, B, C, H, K, F, T, P, V, df},
 	morekeywords = [4]{vi, Splay, RMQ, Dsu, MinQueue, Fenwick, LiChao, Seg, Lazy, Per, Wav, Dyn, Treap, Node, Edge,
@@ -121,11 +112,14 @@
 
 %%% Macros
 \def\nsection#1{\section{#1}\vspace{-10pt}}
+
 \def\ncomment#1{\vspace{-5pt} \begin{small} #1 \\ \end{small} \vspace{-5pt}}
+
 \newcommand{\comb}[2]{\left( \begin{array}{c} #1 #2 \end{array}\right)}
+
 \def\complexity#1{\texorpdfstring{\footnotesize$\mathcal{O}(#1)$}{O(#1)}}
 
 \newcommand\addfile[2][]{
-\vspace{-11pt}
-\lstinputlisting[style=mine, linerange={#1}]{#2}
+	\vspace{-11pt}
+	\lstinputlisting[style=mine, linerange={#1}]{#2}
 }

@@ -20,28 +20,23 @@ It can be reduced to $dp(i, x, small)$, and has to be solve like $f(r) - f(l - 1
 \subsection{Knapsack 0/1}
 \addfile[5-7]{../Codes/DynamicProgramming/Knapsack01.cpp}
 
-\subsection{Convex Hull Trick \complexity{n^2} $\Rightarrow$ \complexity{n}} 
-\vspace{-15pt}
-\begin{gather*}
-dp[i] = \min_{j < i}(dp[j] + b[j] * a[i]) \\
-dp[i][j] = \min_{k < j}(dp[i - 1][k] + b[k] * a[j]) \\
-b[j] \geq b[j + 1] \text{ optionally } a[i] \leq a[i + 1] 
-\end{gather*}
-\vspace{-15pt}
+\subsection{Convex Hull Trick \complexity{n^2} $\Rightarrow$ \complexity{n}}
+$ dp[i] = \min_{j < i}(dp[j] + b[j] * a[i]) $ \\
+$ dp[i][j] = \min_{k < j}(dp[i - 1][k] + b[k] * a[j]) $ \\
+$ b[j] \geq b[j + 1] \text{ optionally } a[i] \leq a[i + 1] $ \\ 
 \addfile[1-41]{../Codes/DynamicProgramming/ConvexHullTrick.cpp}
-\vspace{-15pt}
 
 \subsection{Divide and conquer \complexity{kn^2} $\Rightarrow$ \complexity{k \cdot nlogn} } 
 Split the array of size $n$ into $k$ continuous groups. $k \leq n$ \\
-$cost(a, c) + cost(b, d) \leq cost(a, d) + cost(b, c)$ with $a \leq b \leq c \leq d$ \\
+$ cost(a, c) + cost(b, d) \leq cost(a, d) + cost(b, c)$ with $a \leq b \leq c \leq d$ \\
 \addfile{../Codes/DynamicProgramming/DivideAndConquer.cpp}
 
 \subsection{Knuth optimization \complexity{n^3} $\Rightarrow$ \complexity{n^2} } 
-$dp[l][r] = \min_{l \leq k \leq r}\{dp[l][k] + dp[k][r]\} + cost(l, r)$ \\
+$ dp[l][r] = \min_{l \leq k \leq r}\{dp[l][k] + dp[k][r]\} + cost(l, r)$ \\
 \addfile[4]{../Codes/DynamicProgramming/knuth.cpp}
 \vspace{-15pt}
 
-\subsection{Do all submasks of a mask A}
+\subsection{Do all submasks of a mask}
 \begin{code}
 for (int B = A; B > 0; B = (B - 1) & A)
 \end{code}
