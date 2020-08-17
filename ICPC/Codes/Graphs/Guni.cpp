@@ -25,7 +25,7 @@ void guni(int u, int pr = 0, bool keep = 0) {
         add(color[who[i]]);
   add(color[u]);
   for (Query &q : queries[u])
-    ans[q.i] = sum;
+    ans[q.i] = count(q.x);
   if (keep == 0)
     fore (i, tin[u], tout[u] + 1)
       rem(color[who[i]]);
