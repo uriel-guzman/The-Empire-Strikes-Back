@@ -1,4 +1,4 @@
-vector<edge> graph[N];
+vector<Edge> graph[N];
 int dist[N];
 int n, m;
 
@@ -10,7 +10,7 @@ void bfs(int s) {
   while (!qu.empty()) {
     int u = qu.front();
     qu.pop();
-    for (edge &e : graph[u])
+    for (Edge &e : graph[u])
       if (dist[e.v] == -1) {
         dist[e.v] = dist[u] + e.dist;
         qu.push(e.v);
