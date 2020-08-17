@@ -1,16 +1,19 @@
 template <int mod>
 struct Modular {
   int v;
-  Modular(lli x = 0) : v(x % mod) {}
+  Modular(lli x = 0) : v(-mod < x && x < mod ? x : x % mod) {
+    if (v < 0) v += mod;
+    if (v >= mod) v -= mod;
+  }
 
   Modular operator + (const Modular &m) const { return Modular(v + m.v); }
   Modular operator - (const Modular &m) const { return Modular(v - m.v + mod); }
   Modular operator * (const Modular &m) const { return Modular(1LL * v * m.v); }
   Modular inv() const { return Modular(minv(v, mod)); } 
   
-  void operator += (const Modular &m) { *this = *this + m; }
-  void operator -= (const Modular &m) { *this = *this - m; }
-  void operator *= (const Modular &m) { *this = *this * m; }
+  Modular& operator += (const Modular &m) { return *this = *this + m; }
+  Modular& operator -= (const Modular &m) { return *this = *this - m; }
+  Modular& operator *= (const Modular &m) { return *this = *this * m; }
   
   friend ostream & operator << (ostream &os, const Modular &m) { return os << m.v; }
   friend istream & operator >> (istream &is, Modular &m) { return is >> m.v; }
