@@ -1,6 +1,6 @@
 lli divs(lli n) {
   lli cnt = 1LL;
-  for (lli p: primes) {
+  for (lli p : primes) {
     if (p * p * p > n)
       break;
     if (n % p == 0) {
