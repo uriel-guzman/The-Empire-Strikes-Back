@@ -10,6 +10,7 @@ struct Modular {
   Modular operator - (const Modular &m) const { return Modular(v - m.v + mod); }
   Modular operator * (const Modular &m) const { return Modular(1LL * v * m.v); }
   Modular inv() const { return Modular(minv(v, mod)); } 
+  Modular operator -() const { return Modular(-v); }
   
   Modular& operator += (const Modular &m) { return *this = *this + m; }
   Modular& operator -= (const Modular &m) { return *this = *this - m; }
