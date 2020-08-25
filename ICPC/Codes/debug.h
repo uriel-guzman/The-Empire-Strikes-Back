@@ -25,7 +25,7 @@ void print(string s, const H &h, const T&... t) {
     else cout << "\033[1;34m" << s[0] << reset;
     s = s.substr(1);
   } while (s.size() && s[0] != ',');
-  if (ok) cout << ": " << "\033[1;95m" << h << reset;
+  if (ok) cout << ": " << "\033[3;95m" << h << reset;
   print(s, t...);
 }
 
