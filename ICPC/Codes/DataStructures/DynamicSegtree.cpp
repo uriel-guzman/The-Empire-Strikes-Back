@@ -15,7 +15,7 @@ struct Dyn {
       sum += v;
       return;
     }
-    int m = (l + r) / 2;
+    int m = (l + r) >> 1;
     if (p <= m) {
       if (!L)
         L = new Dyn(l, m);
@@ -33,7 +33,7 @@ struct Dyn {
       return 0;
     if (ll <= l && r <= rr)
       return sum;
-    int m = (l + r) / 2;
+    int m = (l + r) >> 1;
     return (L ? L->qsum(ll, rr) : 0) + 
            (R ? R->qsum(ll, rr) : 0);
   }

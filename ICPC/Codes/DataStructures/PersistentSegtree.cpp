@@ -13,7 +13,7 @@ struct Per {
   void build() {
     if (l == r)
       return;
-    int m = (l + r) / 2;
+    int m = (l + r) >> 1;
     (L = new Per(l, m))->build();
     (R = new Per(m + 1, r))->build();
     pull();
@@ -40,5 +40,3 @@ struct Per {
     return L->qsum(ll, rr) + R->qsum(ll, rr);
   }
 };
-
-Per *tree[T];

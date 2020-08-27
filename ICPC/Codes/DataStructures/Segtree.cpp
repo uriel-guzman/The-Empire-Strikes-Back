@@ -8,7 +8,7 @@ struct Seg {
       sum = a[l];
       return;
     }
-    int m = (l + r) / 2;
+    int m = (l + r) >> 1;
     L = new Seg(l, m);
     R = new Seg(m + 1, r);
     pull();
@@ -23,7 +23,7 @@ struct Seg {
       sum += v;
       return;
     }
-    int m = (l + r) / 2;
+    int m = (l + r) >> 1;
     if (p <= m)
       L->update(p, v);
     else

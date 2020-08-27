@@ -11,7 +11,7 @@ struct Wav {
       return;
     amt.reserve(e - b + 1);
     amt.pb(0);
-    int m = (lo + hi) / 2;
+    int m = (lo + hi) >> 1;
     for (auto it = b; it != e; it++)
       amt.pb(amt.back() + (*it <= m));
     auto p = stable_partition(b, e, [=](int x) { 

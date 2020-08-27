@@ -8,7 +8,7 @@ struct Lazy {
       sum = a[l];
       return;
     }
-    int m = (l + r) / 2;
+    int m = (l + r) >> 1;
     L = new Lazy(l, m);
     R = new Lazy(m + 1, r);
     pull();
