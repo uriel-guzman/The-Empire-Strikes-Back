@@ -1,4 +1,35 @@
 \nsection{Combinatorics}
+\vspace{5pt}
+
+\begin{tabular}{ |p{1cm}|p{3cm}|p{3cm}|  }
+  \hline  
+  \rowcolor{Blue} 
+  \multicolumn{3}{|c|}{Combinatorics table} \\ \hline
+  \rowcolor{LightBlue2} 
+  Number & Factorial & Catalan \\ \hline
+  0 & 1 & 1 \\ \hline
+  \rowcolor{Gray} 
+  1 & 1 & 1 \\ \hline
+  2 & 2 & 2 \\ \hline
+  \rowcolor{Gray} 
+  3 & 6 & 5 \\ \hline
+  4 & 24 & 14 \\ \hline
+  \rowcolor{Gray} 
+  5 & 120 & 42 \\ \hline
+  6 & 720 & 132 \\ \hline
+  \rowcolor{Gray} 
+  7 & 5,040 & 429 \\ \hline
+  8 & 40,320 & 1,430 \\ \hline
+  \rowcolor{Gray} 
+  9 & 362,880 & 4,862 \\ \hline
+  10 & 3,628,800 & 16,796 \\ \hline
+  \rowcolor{Gray} 
+  11 & 39,916,800 & 58,786 \\ \hline
+  12 & 479,001,600 & 208,012 \\ \hline
+  \rowcolor{Gray} 
+  13 & 6,227,020,800 & 742,900 \\ \hline
+\end{tabular}
+\vspace{-5pt}
 
 \subsection{Factorial} 
 \addfile{../Codes/Combinatorics/Factorial.cpp}
@@ -6,34 +37,18 @@
 \subsection{Factorial mod $smallPrime$} 
 \addfile{../Codes/Combinatorics/FactorialModP.cpp}
 
-%
-% \begin{tabular}{l|l}
-% 0! =	1       &10! =	3.628.800 \\
-% 1! =	1       & 11! = 39.916.800  \\
-% 2! =	2       & 12! =	479.001.600	\\
-% 3! =	6       & 13! =	6.227.020.800	\\
-% 4! =	24      & 14! =	87.178.291.200	\\
-% 5! =	120          & 15! =	1.307.674.368.000	\\
-% 6! =	720   			 & 16! =	20.922.789.888.000	\\
-% 7! =	5.040        & 17! =	355.687.428.096.000	\\
-% 8! =	40.320	     & 18! =	6.402.373.705.728.000	\\
-% 9! =	362.880 	   & 19! =	121.645.100.408.832.000	\\
-% \end{tabular}
-
-% \subsection{Binomial indentities} 
-% \begin{gather*}
-% \sum_{i=0}^n\binom{n}{i}=2 ^ n \\
-% \sum_{i=0}^n i\binom{n}{i}=n*2^{n-1} \\
-% \sum_{i=0}^n i^2 = \frac{n(n+1)(2n+1)}{6} = \frac{n^3}{3} + \frac{n^2}{2} + \frac{n}{6} 
-% \end{gather*}
-
 \subsection{Lucas theorem}
-\ncomment{Convierte $\binom{n}{k} \bmod{p}$, con $n, k \geq 2e6$ y $p \leq 1e7$ }
+\ncomment{Changes $\binom{n}{k} \bmod{p}$, with $n \geq 2e6, k \geq 2e6$ and $p \leq 1e7$ }
 \begin{gather*}
 \binom{n}{k} \equiv \prod_{i = 0}^{n}\binom{n_i}{k_i} \bmod{p}
 \end{gather*}
+\vspace{-15pt}
 
-\addfile{../Codes/Combinatorics/Lucas.cpp}
+\subsection{Stars and bars}
+Enclosing $n$ objects in $k$ boxes
+\begin{gather*}
+\binom{n + k - 1}{k - 1} = \binom{n + k - 1}{n}
+\end{gather*}
 \vspace{-15pt}
 
 \subsection{N choose K}
@@ -48,6 +63,11 @@
 
 \subsection{Catalan}
 \addfile{../Codes/Combinatorics/Catalan.cpp}
+
+\subsection{Burnside's lemma}
+\begin{gather*}
+|classes| = \frac{1}{|G|} \cdot \sum_{x \in G} f(x)  
+\end{gather*}
 
 \subsection{Prime factors of N!}
 \addfile{../Codes/Combinatorics/FactorialFactors.cpp}

@@ -1,7 +1,7 @@
 # Fdb version 3
-["pdflatex"] 1598284565 "/Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/TheBook.tex" "/Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/TheBook.pdf" "TheBook" 1598284567
-  "/Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/TheBook.aux" 1598284566 8 a94a2480d3289e625eea47cd1b285758 ""
-  "/Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/TheBook.tex" 1598284563 543 bdced01ffe37292d0206969d567fa4f9 ""
+["pdflatex"] 1598656325 "/Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/TheBook.tex" "/Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/TheBook.pdf" "TheBook" 1598656327
+  "/Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/TheBook.aux" 1598656326 8 a94a2480d3289e625eea47cd1b285758 ""
+  "/Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/TheBook.tex" 1598656324 543 bdced01ffe37292d0206969d567fa4f9 ""
   "/usr/local/texlive/2020/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2020/texmf-dist/fonts/tfm/public/cm/cmr17.tfm" 1136768653 1292 296a67155bdbfc32aa9c636f21e91433 ""
   "/usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb" 1248133631 36299 5f9df58c2139e7edcf37c8fca4bd384d ""
@@ -62,14 +62,14 @@
   "/usr/local/texlive/2020/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1586288239 4811913 0be9a7e86c70a26e5e3042966bcd7097 ""
   "/usr/local/texlive/2020/texmf-var/web2c/pdftex/pdflatex.fmt" 1586288259 2432462 fd0fa20e9a3cb5f8169fd0ba1c955158 ""
   "/usr/local/texlive/2020/texmf.cnf" 1586288231 577 d60164b4589a341208aff7a667fbbdcb ""
-  "Chapters.pdf" 1598284557 524281 34f106ed36bb30c83d9d479931e4885e ""
+  "Chapters.pdf" 1598656244 517389 7bd6b8539d6f5cc91bfbf0d40646d091 ""
   "TeamPage.pdf" 1597379273 215928 8ddfdd589e5ad19ea1e9b85a6fd9a796 ""
-  "TheBook.aux" 1598284566 8 a94a2480d3289e625eea47cd1b285758 "pdflatex"
-  "TheBook.tex" 1598284563 543 bdced01ffe37292d0206969d567fa4f9 ""
+  "TheBook.aux" 1598656326 8 a94a2480d3289e625eea47cd1b285758 "pdflatex"
+  "TheBook.tex" 1598656324 543 bdced01ffe37292d0206969d567fa4f9 ""
   "fullTeam.JPG" 1597376448 131665 34939acd73eabbc413fb6b3b3874feb1 ""
   (generated)
-  "TheBook.aux"
-  "/Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/TheBook.log"
-  "TheBook.pdf"
-  "TheBook.log"
   "/Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/TheBook.pdf"
+  "TheBook.log"
+  "TheBook.pdf"
+  "/Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/TheBook.log"
+  "TheBook.aux"

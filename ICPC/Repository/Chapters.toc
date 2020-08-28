@@ -44,23 +44,24 @@
 \contentsline {subsection}{\numberline {4.8}Aho corasick}{13}{subsection.4.8}%
 \contentsline {subsection}{\numberline {4.9}Eertree}{14}{subsection.4.9}%
 \contentsline {section}{\numberline {5}Dynamic Programming}{14}{section.5}%
-\contentsline {subsection}{\numberline {5.1}Steiner-tree DP}{14}{subsection.5.1}%
-\contentsline {subsection}{\numberline {5.2}Matrix Chain Multiplication}{14}{subsection.5.2}%
-\contentsline {subsection}{\numberline {5.3}Digit DP}{14}{subsection.5.3}%
-\contentsline {subsection}{\numberline {5.4}Knapsack 0/1}{14}{subsection.5.4}%
-\contentsline {subsection}{\numberline {5.5}Convex Hull Trick \footnotesize $\mathcal {O}(n^2)$ $\Rightarrow $ \footnotesize $\mathcal {O}(n)$}{15}{subsection.5.5}%
-\contentsline {subsection}{\numberline {5.6}Divide and conquer \footnotesize $\mathcal {O}(kn^2)$ $\Rightarrow $ \footnotesize $\mathcal {O}(k \cdot nlogn)$ }{15}{subsection.5.6}%
-\contentsline {subsection}{\numberline {5.7}Knuth optimization \footnotesize $\mathcal {O}(n^3)$ $\Rightarrow $ \footnotesize $\mathcal {O}(n^2)$ }{15}{subsection.5.7}%
-\contentsline {subsection}{\numberline {5.8}Do all submasks of a mask}{15}{subsection.5.8}%
+\contentsline {subsection}{\numberline {5.1}Matrix Chain Multiplication}{14}{subsection.5.1}%
+\contentsline {subsection}{\numberline {5.2}Digit DP}{14}{subsection.5.2}%
+\contentsline {subsection}{\numberline {5.3}Knapsack 0/1}{14}{subsection.5.3}%
+\contentsline {subsection}{\numberline {5.4}Convex Hull Trick \footnotesize $\mathcal {O}(n^2)$ $\Rightarrow $ \footnotesize $\mathcal {O}(n)$}{14}{subsection.5.4}%
+\contentsline {subsection}{\numberline {5.5}Divide and conquer \footnotesize $\mathcal {O}(kn^2)$ $\Rightarrow $ \footnotesize $\mathcal {O}(k \cdot nlogn)$ }{15}{subsection.5.5}%
+\contentsline {subsection}{\numberline {5.6}Knuth optimization \footnotesize $\mathcal {O}(n^3)$ $\Rightarrow $ \footnotesize $\mathcal {O}(n^2)$ }{15}{subsection.5.6}%
+\contentsline {subsection}{\numberline {5.7}Do all submasks of a mask}{15}{subsection.5.7}%
 \contentsline {section}{\numberline {6}Game Theory}{15}{section.6}%
 \contentsline {subsection}{\numberline {6.1}Grundy Numbers}{15}{subsection.6.1}%
 \contentsline {section}{\numberline {7}Combinatorics}{15}{section.7}%
 \contentsline {subsection}{\numberline {7.1}Factorial}{15}{subsection.7.1}%
-\contentsline {subsection}{\numberline {7.2}Factorial mod $smallPrime$}{16}{subsection.7.2}%
+\contentsline {subsection}{\numberline {7.2}Factorial mod $smallPrime$}{15}{subsection.7.2}%
 \contentsline {subsection}{\numberline {7.3}Lucas theorem}{16}{subsection.7.3}%
-\contentsline {subsection}{\numberline {7.4}N choose K}{16}{subsection.7.4}%
-\contentsline {subsection}{\numberline {7.5}Catalan}{16}{subsection.7.5}%
-\contentsline {subsection}{\numberline {7.6}Prime factors of N!}{16}{subsection.7.6}%
+\contentsline {subsection}{\numberline {7.4}Stars and bars}{16}{subsection.7.4}%
+\contentsline {subsection}{\numberline {7.5}N choose K}{16}{subsection.7.5}%
+\contentsline {subsection}{\numberline {7.6}Catalan}{16}{subsection.7.6}%
+\contentsline {subsection}{\numberline {7.7}Burnside's lemma}{16}{subsection.7.7}%
+\contentsline {subsection}{\numberline {7.8}Prime factors of N!}{16}{subsection.7.8}%
 \contentsline {section}{\numberline {8}Number Theory}{16}{section.8}%
 \contentsline {subsection}{\numberline {8.1}Goldbach conjecture}{16}{subsection.8.1}%
 \contentsline {subsection}{\numberline {8.2}Sieve of Eratosthenes}{16}{subsection.8.2}%

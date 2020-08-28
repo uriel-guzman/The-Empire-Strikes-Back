@@ -208,8 +208,8 @@ INPUT /usr/local/texlive/2020/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm1
 INPUT /usr/local/texlive/2020/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm7.tfm
 OUTPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/Chapters.toc
 INPUT /usr/local/texlive/2020/texmf-var/fonts/map/pdftex/updmap/pdftex.map
-INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/ThinkTwiceCodeOnce.tex
-INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/ThinkTwiceCodeOnce.tex
+INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/Setup.tex
+INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/Setup.tex
 INPUT /usr/local/texlive/2020/texmf-dist/fonts/tfm/jknappen/ec/ecrm1200.tfm
 INPUT /usr/local/texlive/2020/texmf-dist/fonts/tfm/jknappen/ec/ecbx1200.tfm
 INPUT /usr/local/texlive/2020/texmf-dist/fonts/tfm/jknappen/ec/ecrm0900.tfm
@@ -377,14 +377,8 @@ INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Strings/Ah
 INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Strings/Eertree.cpp
 INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Strings/Eertree.cpp
 INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Strings/Eertree.cpp
-INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/DynamicProgramming.tex
-INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/DynamicProgramming.tex
-INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/DynamicProgramming/SteinerTree.png
-INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/DynamicProgramming/SteinerTree.png
-INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/DynamicProgramming/SteinerTree.png
-INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/DynamicProgramming/Steiner.cpp
-INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/DynamicProgramming/Steiner.cpp
-INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/DynamicProgramming/Steiner.cpp
+INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/DP.tex
+INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/DP.tex
 INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/DynamicProgramming/MatrixChainMultiplication.cpp
 INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/DynamicProgramming/MatrixChainMultiplication.cpp
 INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/DynamicProgramming/MatrixChainMultiplication.cpp
@@ -424,9 +418,6 @@ INPUT /usr/local/texlive/2020/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm1
 INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Combinatorics/FactorialModP.cpp
 INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Combinatorics/FactorialModP.cpp
 INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Combinatorics/FactorialModP.cpp
-INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Combinatorics/Lucas.cpp
-INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Combinatorics/Lucas.cpp
-INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Combinatorics/Lucas.cpp
 INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Combinatorics/Choose.cpp
 INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Combinatorics/Choose.cpp
 INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Combinatorics/Choose.cpp
