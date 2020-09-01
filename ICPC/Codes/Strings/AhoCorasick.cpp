@@ -48,4 +48,4 @@ struct AhoCorasick {
       u = go(u, c), ans += cnt[u];
     return ans;
   }
-} aho;
+};

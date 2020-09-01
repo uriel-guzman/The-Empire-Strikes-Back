@@ -26,4 +26,4 @@ struct Trie {
     }
     return isw[u];
   }
-} trie;
+};

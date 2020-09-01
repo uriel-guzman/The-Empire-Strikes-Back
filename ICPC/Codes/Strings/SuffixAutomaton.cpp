@@ -106,4 +106,4 @@ struct SuffixAutomaton {
     }
     return pos[u] - sz(s) + 1;
   }
-} sam;
+};

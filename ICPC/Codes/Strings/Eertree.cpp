@@ -31,4 +31,4 @@ struct Eertree {
     }
     last = trie[u][c];
   }
-} eert;
+};

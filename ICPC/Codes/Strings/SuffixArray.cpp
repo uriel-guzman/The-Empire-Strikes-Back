@@ -42,17 +42,11 @@ struct SuffixArray {
     fore (i, 0, sz(t)) {
       while (lo.f + 1 < lo.s) {
         int mid = (lo.f + lo.s) / 2;
-        if (at(mid, i) < t[i])
-          lo.f = mid;
-        else
-          lo.s = mid;
+        (at(mid, i) < t[i] ? lo.f : lo.s) = mid;
       }
       while (hi.f + 1 < hi.s) {
         int mid = (hi.f + hi.s) / 2;
-        if (t[i] < at(mid, i))
-          hi.s = mid;
-        else
-          hi.f = mid;
+        (t[i] < at(mid, i) ? hi.s : hi.f) = mid;
       }
       int p1 = (at(lo.f, i) == t[i] ? lo.f : lo.s);
       int p2 = (at(hi.s, i) == t[i] ? hi.s : hi.f);
