@@ -1,12 +1,3 @@
-const ld eps = 1e-9;
-#define eq(a, b) fabs((a) - (b)) <= eps
-#define neq(a, b) fabs((a) - (b)) > eps
-#define geq(a, b) (a) - (b) >= -eps
-#define ge(a, b) (a) - (b) > eps
-#define le(a, b) (b) - (a) > eps
-#define leq(a, b) (b) - (a) >= -eps
-#define sq(x) (x) * (x)
-
 int sgn(ld x) {
   return x > 0 ? 1 : (x < 0 ? -1 : 0);
 }
