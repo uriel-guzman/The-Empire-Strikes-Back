@@ -35,7 +35,7 @@ test() {
 		fi
 	fi
 	
-	printf "Test $1.cpp with ${input} ${output}\n"
+	# printf "Test $1.cpp with ${input} ${output}\n"
 		
 	for ((i = 1; ; i++)); do
 		[[ -f ${input}$i ]] || break
