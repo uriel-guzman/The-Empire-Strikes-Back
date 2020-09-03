@@ -1,6 +1,5 @@
-int pal[2][N];
-
-void manacher(string &s) {
+vector<vi> manacher(string &s) {
+  vector<vi> pal(2, vi(sz(s), 0));
   fore (k, 0, 2) {
     int l = 0, r = 0;
     fore (i, 0, sz(s)) {
@@ -13,4 +12,5 @@ void manacher(string &s) {
         l = p, r = q;
     }
   }
+  return pal;
 }

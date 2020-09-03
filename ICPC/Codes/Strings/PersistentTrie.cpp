@@ -35,4 +35,4 @@ struct PersistentTrie {
       s.pop_back();
     }
   }
-} trie;
+};

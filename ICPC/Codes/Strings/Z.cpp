@@ -1,6 +1,5 @@
-int z[N];
-
-void zf(string &s) {
+vi zf(string &s) {
+  vi z(sz(s), 0);
   for (int i = 1, l = 0, r = 0; i < sz(s); i++) {
     if (i <= r)
       z[i] = min(r - i + 1, z[i - l]);
@@ -9,4 +8,5 @@ void zf(string &s) {
     if (i + z[i] - 1 > r)
       l = i, r = i + z[i] - 1;
   }
+  return z;
 }
