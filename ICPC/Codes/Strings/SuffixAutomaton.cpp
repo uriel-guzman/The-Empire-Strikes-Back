@@ -65,7 +65,7 @@ struct SuffixAutomaton {
       occ[link[u]] += occ[u];
   }
 
-  int qocc(string &s, int u = 0) {
+  int queryOccurences(string &s, int u = 0) {
     for (char c : s) {
       if (!trie[u].count(c))
         return 0;

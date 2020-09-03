@@ -80,28 +80,29 @@
 \contentsline {subsection}{\numberline {9.3}Fpow}{17}{subsection.9.3}%
 \contentsline {subsection}{\numberline {9.4}Fibonacci}{17}{subsection.9.4}%
 \contentsline {section}{\numberline {10}Geometry}{17}{section.10}%
-\contentsline {subsection}{\numberline {10.1}Point}{17}{subsection.10.1}%
-\contentsline {subsection}{\numberline {10.2}Angle Between Vectors}{18}{subsection.10.2}%
-\contentsline {subsection}{\numberline {10.3}Area Poligon}{18}{subsection.10.3}%
-\contentsline {subsection}{\numberline {10.4}Area Poligon In Circle}{18}{subsection.10.4}%
-\contentsline {subsection}{\numberline {10.5}Closest Pair Of Points}{18}{subsection.10.5}%
-\contentsline {subsection}{\numberline {10.6}Convex Hull}{19}{subsection.10.6}%
-\contentsline {subsection}{\numberline {10.7}Distance Point Line}{19}{subsection.10.7}%
-\contentsline {subsection}{\numberline {10.8}Get Circle}{19}{subsection.10.8}%
-\contentsline {subsection}{\numberline {10.9}Intersects Line}{19}{subsection.10.9}%
-\contentsline {subsection}{\numberline {10.10} Intersects Line Segment}{19}{subsection.10.10}%
-\contentsline {subsection}{\numberline {10.11} Intersects Segment}{19}{subsection.10.11}%
-\contentsline {subsection}{\numberline {10.12} Is Convex}{19}{subsection.10.12}%
-\contentsline {subsection}{\numberline {10.13} Perimeter}{19}{subsection.10.13}%
-\contentsline {subsection}{\numberline {10.14} Point In Convex Polygon logN}{19}{subsection.10.14}%
-\contentsline {subsection}{\numberline {10.15} Point In Polygon}{20}{subsection.10.15}%
-\contentsline {subsection}{\numberline {10.16} Point In Segment}{20}{subsection.10.16}%
-\contentsline {subsection}{\numberline {10.17} Points Of Tangency}{20}{subsection.10.17}%
-\contentsline {subsection}{\numberline {10.18} Projection}{20}{subsection.10.18}%
-\contentsline {subsection}{\numberline {10.19} Projection Line}{20}{subsection.10.19}%
-\contentsline {subsection}{\numberline {10.20} Reflection Line}{20}{subsection.10.20}%
-\contentsline {subsection}{\numberline {10.21} Signed Distance Point Line}{20}{subsection.10.21}%
-\contentsline {subsection}{\numberline {10.22} Sort Along Line}{20}{subsection.10.22}%
-\contentsline {subsection}{\numberline {10.23} Intersects Line Circle}{20}{subsection.10.23}%
+\contentsline {subsection}{\numberline {10.1}Real}{17}{subsection.10.1}%
+\contentsline {subsection}{\numberline {10.2}Point}{17}{subsection.10.2}%
+\contentsline {subsection}{\numberline {10.3}Angle Between Vectors}{18}{subsection.10.3}%
+\contentsline {subsection}{\numberline {10.4}Area Poligon}{18}{subsection.10.4}%
+\contentsline {subsection}{\numberline {10.5}Area Poligon In Circle}{18}{subsection.10.5}%
+\contentsline {subsection}{\numberline {10.6}Closest Pair Of Points}{18}{subsection.10.6}%
+\contentsline {subsection}{\numberline {10.7}Convex Hull}{19}{subsection.10.7}%
+\contentsline {subsection}{\numberline {10.8}Distance Point Line}{19}{subsection.10.8}%
+\contentsline {subsection}{\numberline {10.9}Get Circle}{19}{subsection.10.9}%
+\contentsline {subsection}{\numberline {10.10}Intersects Line}{19}{subsection.10.10}%
+\contentsline {subsection}{\numberline {10.11} Intersects Line Segment}{19}{subsection.10.11}%
+\contentsline {subsection}{\numberline {10.12} Intersects Segment}{19}{subsection.10.12}%
+\contentsline {subsection}{\numberline {10.13} Is Convex}{19}{subsection.10.13}%
+\contentsline {subsection}{\numberline {10.14} Perimeter}{19}{subsection.10.14}%
+\contentsline {subsection}{\numberline {10.15} Point In Convex Polygon logN}{19}{subsection.10.15}%
+\contentsline {subsection}{\numberline {10.16} Point In Polygon}{20}{subsection.10.16}%
+\contentsline {subsection}{\numberline {10.17} Point In Segment}{20}{subsection.10.17}%
+\contentsline {subsection}{\numberline {10.18} Points Of Tangency}{20}{subsection.10.18}%
+\contentsline {subsection}{\numberline {10.19} Projection}{20}{subsection.10.19}%
+\contentsline {subsection}{\numberline {10.20} Projection Line}{20}{subsection.10.20}%
+\contentsline {subsection}{\numberline {10.21} Reflection Line}{20}{subsection.10.21}%
+\contentsline {subsection}{\numberline {10.22} Signed Distance Point Line}{20}{subsection.10.22}%
+\contentsline {subsection}{\numberline {10.23} Sort Along Line}{20}{subsection.10.23}%
+\contentsline {subsection}{\numberline {10.24} Intersects Line Circle}{20}{subsection.10.24}%
 \contentsline {section}{\numberline {11}Bit tricks}{20}{section.11}%
 \contentsline {subsection}{\numberline {11.1}Bitset}{20}{subsection.11.1}%
