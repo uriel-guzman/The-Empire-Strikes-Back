@@ -3,7 +3,7 @@ green='\x1B[0;32m'
 blue='\x1B[0;34m'
 noColor='\x1B[0m'
 
-alias flags='-Wall -Wextra -Wshadow -D_GLIBCXX_ASSERTIONS -fmax-errors=2 -O2 -w'
+alias flags='-Wall -Wextra -Wshadow -D_GLIBCXX_ASSERTIONS -fmax-errors=2 -O2'
 
 go() {
 	g++-9 --std=c++17 $2 $3 ${flags} $1.cpp && ./a.out 
@@ -15,7 +15,7 @@ debug() {
 
 draw() {
 	go $1 -DLOCAL -DDRAW < $2
-	printf "All drawings done\n"
+	# printf "All drawings done\n"
 	createBooks 
 } 
 
@@ -24,13 +24,24 @@ run() {
 }
 
 test() {
+	# test program input output
 	g++-9 --std=c++17 $1.cpp -o prog 
+	input="$1_in"
+	output="$1_out"
+	if [ $# -ge 2 ]; then
+		input=$2 
+		if [ $# -ge 3 ]; then
+			output=$3 
+		fi
+	fi
 	
+	printf "Test $1.cpp with ${input} ${output}\n"
+		
 	for ((i = 1; ; i++)); do
-		[[ -f $1_in$i ]] || break
+		[[ -f ${input}$i ]] || break
 		printf "Test case #$i"
 		
-		diff -uwi <(./prog < $1_in$i) $1_out$i > $1_diff
+		diff -uwi <(./prog < ${input}$i) ${output}$i > $1_diff
 		
 		if [[ ! $? -eq 0 ]]; then
 			printf "${red} Wrong answer ${noColor}\n"
@@ -64,7 +75,6 @@ random() {
 	rm -r gen prog brute
 }
 
-
 ############ This is just personal taste, just change to the properly directory ############
 
 alias bash='gedit ~/.zshenv' # Bash file xd
@@ -92,6 +102,7 @@ mergeImages() {
 	echo '\\begin{document}' >> ${bookTEX}
 	
 	# Insert all images
+	cnt=0
 	for ((i = 1; ; i++)); do
 		image=${drawingsDir}${name}${i}.png
 		file=${drawingsDir}${name}${i}.dot
@@ -99,6 +110,7 @@ mergeImages() {
 		# To avoid stupid errors, just erase the .dot file and if the .dot file don't exist, then the image neither
 		[[ -f ${file} ]] || break # There isn't file for this image, then you have already finished :D
 		rm -r ${file}
+		cnt=1
 		
 		echo '\\clearpage' >> ${bookTEX}
 		echo '\\newpage' >> ${bookTEX}
@@ -109,8 +121,10 @@ mergeImages() {
 	done	
 	echo '\\end{document}' >> ${bookTEX}
 	
-	# Create the pdf
-	pdflatex -pdf ${bookTEX}
+	# Create the pdf if cnt != 0
+	if [[ ${cnt} != 0 ]] ; then
+		pdflatex -pdf ${bookTEX}
+	fi
 }
 
 createBooks() {
@@ -150,7 +164,7 @@ createBooks() {
 		fi
 	done
 	
-	clear # Clean the terminal screen for a good view :D
+	# clear # Clean the terminal screen for a good view :D
 	cd ${prevDir} # Return to the previous directory
 	
 	printf "All books done\n"
