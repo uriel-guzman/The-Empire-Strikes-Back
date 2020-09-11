@@ -1,28 +1,23 @@
-int lg[N + 1], sp[1 + __lg(N)][N]; 
+template <class T, class F = function<T(const T&, const T&)>>
+struct Sparse {
+  int n;
+  vector<vector<T>> sp;
+  F fun;
 
-int query(int l, int r) {
-  int sum = 0LL;
-  fore (k, 1 + lg[N], 0)
-    if (l + (1 << k) - 1 <= r) {
-      sum += sp[k][l];
-      l += (1 << k);
+  Sparse(vector<T> &a, const F &fun) : n(sz(a)), fun(fun) {
+    sp.resize(1 + __lg(n));
+    sp[0] = a;
+    for (int k = 1; (1 << k) <= n; k++) {
+      sp[k].resize(n - (1 << k) + 1);
+      fore (l, 0, n - (1 << k) + 1) {
+        int r = l + (1 << (k - 1));
+        sp[k][l] = fun(sp[k - 1][l], sp[k - 1][r]);
+      }
     }
-  return sum;
-}
+  }
 
-int query(int l, int r) {
-  int k = lg[r - l + 1]; 
-  return min(sp[k][l], sp[k][r - (1 << k) + 1]);
-}
-
-void sparse() {
-  fore (i, 2, N + 1)
-    lg[i] = lg[i >> 1] + 1;
-  fore (i, 0, n)
-    sp[0][i] = a[i];
-  for (int k = 1; (1 << k) <= n; k++)
-    fore (l, 0, n - (1 << k) + 1) {
-      int r = l + (1 << (k - 1));
-      sp[k][l] = min(sp[k - 1][l], sp[k - 1][r]);
-    }
-}
+  T get(int l, int r) {
+    int k = __lg(r - l + 1);
+    return fun(sp[k][l], sp[k][r - (1 << k) + 1]);
+  }
+};
