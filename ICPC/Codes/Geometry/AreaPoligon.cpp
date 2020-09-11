@@ -1,6 +1,6 @@
-double area(vector<P> &p) {
+double area(vector<P> &pts) {
   double sum = 0;
   fore (i, 0, n)
-    sum += p[i].cross(p[(i + 1) % sz(p)]);
+    sum += pts[i].cross(pts[(i + 1) % sz(pts)]);
   return abs(sum / 2);
 }

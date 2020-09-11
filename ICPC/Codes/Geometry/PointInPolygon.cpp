@@ -1,7 +1,7 @@
-int pointInPolygon(const vector<P> &points, P p) { // O(N)
-	int n = sz(points), ans = 0;
+int pointInPolygon(const vector<P> &pts, P p) { // O(N)
+	int n = sz(pts), ans = 0;
 	fore (i, 0, n) {
-		P a = points[i], b = points[(i + 1) % n];
+		P a = pts[i], b = pts[(i + 1) % n];
 		if (pointInSegment(a, b, p)) 
       return -1; // on perimeter
 		if (a.y > b.y) 

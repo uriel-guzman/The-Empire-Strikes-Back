@@ -2,6 +2,19 @@ int sgn(ld x) {
   return x > 0 ? 1 : (x < 0 ? -1 : 0);
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
 template <class T>
 struct Point {
   typedef Point<T> P;
@@ -37,7 +50,8 @@ struct Point {
     return os << "(" << p.x << ", " << p.y << ")";
   }
 };
-typedef Point<double> P;
+
+using P = Point<double>;
 
 double ccw(P a, P b, P c) {
   return (b - a).cross(c - a);

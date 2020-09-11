@@ -1,14 +1,14 @@
 // log(n)
 // first preprocess: seg = process(points)
-// for each query: PInConvexPolygon(seg, p - Ps[0])
-vector<P> process(const vector<P> &Ps) {
-  int n = sz(Ps);
-  rotate(Ps.begin(), min_element(all(Ps), [&](P a, P b) {
+// for each query: PInConvexPolygon(seg, p - pts[0])
+vector<P> process(const vector<P> &pts) {
+  int n = sz(pts);
+  rotate(pts.begin(), min_element(all(pts), [&](P a, P b) {
     return a.x == b.x ? a.y < b.y : a.x < b.x;
-  }), Ps.end());
+  }), pts.end());
   vector<P> seg(n - 1);
   fore (i, 0, n - 1)
-    seg[i] = Ps[i + 1] - Ps[0];
+    seg[i] = pts[i + 1] - pts[0];
   return seg;
 } 
 

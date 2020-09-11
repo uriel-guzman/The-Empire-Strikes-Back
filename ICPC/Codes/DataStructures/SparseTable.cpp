@@ -4,8 +4,7 @@ struct Sparse {
   vector<vector<T>> sp;
   F fun;
 
-  Sparse(vector<T> &a, const F &fun) : n(sz(a)), fun(fun) {
-    sp.resize(1 + __lg(n));
+  Sparse(vector<T> &a, const F &fun) : n(sz(a)), sp(1 + __lg(n)), fun(fun) {
     sp[0] = a;
     for (int k = 1; (1 << k) <= n; k++) {
       sp[k].resize(n - (1 << k) + 1);
@@ -16,7 +15,7 @@ struct Sparse {
     }
   }
 
-  T get(int l, int r) {
+  T query(int l, int r) {
     int k = __lg(r - l + 1);
     return fun(sp[k][l], sp[k][r - (1 << k) + 1]);
   }
