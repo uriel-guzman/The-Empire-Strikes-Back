@@ -35,12 +35,12 @@
 \contentsline {subsection}{\numberline {3.4}Hungarian \footnotesize $\mathcal {O}(N ^ 3)$}{11}{subsection.3.4}%
 \contentsline {section}{\numberline {4}Strings}{11}{section.4}%
 \contentsline {subsection}{\numberline {4.1}Hash}{11}{subsection.4.1}%
-\contentsline {subsection}{\numberline {4.2}KMP}{11}{subsection.4.2}%
+\contentsline {subsection}{\numberline {4.2}KMP}{12}{subsection.4.2}%
 \contentsline {subsection}{\numberline {4.3}KMP automaton}{12}{subsection.4.3}%
 \contentsline {subsection}{\numberline {4.4}Z algorithm}{12}{subsection.4.4}%
 \contentsline {subsection}{\numberline {4.5}Manacher algorithm}{12}{subsection.4.5}%
 \contentsline {subsection}{\numberline {4.6}Suffix array}{12}{subsection.4.6}%
-\contentsline {subsection}{\numberline {4.7}Suffix automaton}{12}{subsection.4.7}%
+\contentsline {subsection}{\numberline {4.7}Suffix automaton}{13}{subsection.4.7}%
 \contentsline {subsection}{\numberline {4.8}Aho corasick}{13}{subsection.4.8}%
 \contentsline {subsection}{\numberline {4.9}Eertree}{14}{subsection.4.9}%
 \contentsline {section}{\numberline {5}Dynamic Programming}{14}{section.5}%
@@ -55,8 +55,8 @@
 \contentsline {subsection}{\numberline {6.1}Grundy Numbers}{15}{subsection.6.1}%
 \contentsline {section}{\numberline {7}Combinatorics}{15}{section.7}%
 \contentsline {subsection}{\numberline {7.1}Factorial}{15}{subsection.7.1}%
-\contentsline {subsection}{\numberline {7.2}Factorial mod $smallPrime$}{15}{subsection.7.2}%
-\contentsline {subsection}{\numberline {7.3}Lucas theorem}{15}{subsection.7.3}%
+\contentsline {subsection}{\numberline {7.2}Factorial mod $smallPrime$}{16}{subsection.7.2}%
+\contentsline {subsection}{\numberline {7.3}Lucas theorem}{16}{subsection.7.3}%
 \contentsline {subsection}{\numberline {7.4}Stars and bars}{16}{subsection.7.4}%
 \contentsline {subsection}{\numberline {7.5}N choose K}{16}{subsection.7.5}%
 \contentsline {subsection}{\numberline {7.6}Catalan}{16}{subsection.7.6}%
@@ -67,7 +67,7 @@
 \contentsline {subsection}{\numberline {8.2}Sieve of Eratosthenes}{16}{subsection.8.2}%
 \contentsline {subsection}{\numberline {8.3}Phi of euler}{16}{subsection.8.3}%
 \contentsline {subsection}{\numberline {8.4}Miller-Rabin}{16}{subsection.8.4}%
-\contentsline {subsection}{\numberline {8.5}Pollard-Rho}{16}{subsection.8.5}%
+\contentsline {subsection}{\numberline {8.5}Pollard-Rho}{17}{subsection.8.5}%
 \contentsline {subsection}{\numberline {8.6}Amount of divisors}{17}{subsection.8.6}%
 \contentsline {subsection}{\numberline {8.7}Bézout's identity}{17}{subsection.8.7}%
 \contentsline {subsection}{\numberline {8.8}GCD}{17}{subsection.8.8}%
@@ -79,13 +79,13 @@
 \contentsline {subsection}{\numberline {9.2}Mod multiplication}{17}{subsection.9.2}%
 \contentsline {subsection}{\numberline {9.3}Fpow}{17}{subsection.9.3}%
 \contentsline {subsection}{\numberline {9.4}Fibonacci}{17}{subsection.9.4}%
-\contentsline {section}{\numberline {10}Geometry}{17}{section.10}%
-\contentsline {subsection}{\numberline {10.1}Real}{17}{subsection.10.1}%
-\contentsline {subsection}{\numberline {10.2}Point}{17}{subsection.10.2}%
+\contentsline {section}{\numberline {10}Geometry}{18}{section.10}%
+\contentsline {subsection}{\numberline {10.1}Real}{18}{subsection.10.1}%
+\contentsline {subsection}{\numberline {10.2}Point}{18}{subsection.10.2}%
 \contentsline {subsection}{\numberline {10.3}Angle Between Vectors}{18}{subsection.10.3}%
 \contentsline {subsection}{\numberline {10.4}Area Poligon}{18}{subsection.10.4}%
 \contentsline {subsection}{\numberline {10.5}Area Poligon In Circle}{18}{subsection.10.5}%
-\contentsline {subsection}{\numberline {10.6}Closest Pair Of Points}{18}{subsection.10.6}%
+\contentsline {subsection}{\numberline {10.6}Closest Pair Of Points}{19}{subsection.10.6}%
 \contentsline {subsection}{\numberline {10.7}Convex Hull}{19}{subsection.10.7}%
 \contentsline {subsection}{\numberline {10.8}Distance Point Line}{19}{subsection.10.8}%
 \contentsline {subsection}{\numberline {10.9}Get Circle}{19}{subsection.10.9}%
@@ -93,8 +93,8 @@
 \contentsline {subsection}{\numberline {10.11} Intersects Line Segment}{19}{subsection.10.11}%
 \contentsline {subsection}{\numberline {10.12} Intersects Segment}{19}{subsection.10.12}%
 \contentsline {subsection}{\numberline {10.13} Is Convex}{19}{subsection.10.13}%
-\contentsline {subsection}{\numberline {10.14} Perimeter}{19}{subsection.10.14}%
-\contentsline {subsection}{\numberline {10.15} Point In Convex Polygon logN}{19}{subsection.10.15}%
+\contentsline {subsection}{\numberline {10.14} Perimeter}{20}{subsection.10.14}%
+\contentsline {subsection}{\numberline {10.15} Point In Convex Polygon logN}{20}{subsection.10.15}%
 \contentsline {subsection}{\numberline {10.16} Point In Polygon}{20}{subsection.10.16}%
 \contentsline {subsection}{\numberline {10.17} Point In Segment}{20}{subsection.10.17}%
 \contentsline {subsection}{\numberline {10.18} Points Of Tangency}{20}{subsection.10.18}%
@@ -104,5 +104,5 @@
 \contentsline {subsection}{\numberline {10.22} Signed Distance Point Line}{20}{subsection.10.22}%
 \contentsline {subsection}{\numberline {10.23} Sort Along Line}{20}{subsection.10.23}%
 \contentsline {subsection}{\numberline {10.24} Intersects Line Circle}{20}{subsection.10.24}%
-\contentsline {section}{\numberline {11}Bit tricks}{20}{section.11}%
-\contentsline {subsection}{\numberline {11.1}Bitset}{20}{subsection.11.1}%
+\contentsline {section}{\numberline {11}Bit tricks}{21}{section.11}%
+\contentsline {subsection}{\numberline {11.1}Bitset}{21}{subsection.11.1}%
