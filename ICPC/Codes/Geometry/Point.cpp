@@ -2,19 +2,6 @@ int sgn(ld x) {
   return x > 0 ? 1 : (x < 0 ? -1 : 0);
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 template <class T>
 struct Point {
   typedef Point<T> P;

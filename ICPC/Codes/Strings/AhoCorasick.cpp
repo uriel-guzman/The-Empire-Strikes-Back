@@ -31,10 +31,6 @@ struct AhoCorasick {
       int u = qu.front();
       qu.pop();
       for (auto &[c, v] : trie[u]) {
-        if (v == 0) {
-          v = trie[link[u]][c];
-          continue;
-        }
         link[v] = u ? go(link[u], c) : 0;
         cnt[v] += cnt[link[v]];
         qu.push(v);
