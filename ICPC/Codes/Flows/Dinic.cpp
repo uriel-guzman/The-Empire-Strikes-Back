@@ -7,8 +7,7 @@ struct Dinic {
       v(v), cap(cap), flow(0), inv(inv){}
   };
  
-  F eps = (F) 1e-9, lim = (F) 1e-9;
-  const bool scaling = 0;
+  F eps = (F) 1e-9;
   int s, t, n, m = 0;
   vector< vector<Edge> > g;
   vi dist, ptr;
@@ -22,7 +21,6 @@ struct Dinic {
   void add(int u, int v, F cap) {
     g[u].pb(Edge(v, cap, sz(g[v])));
     g[v].pb(Edge(u, 0, sz(g[u]) - 1));
-    lim = (scaling ? max(lim, cap) : lim);
     m += 2;
   }
  
@@ -31,9 +29,10 @@ struct Dinic {
     queue<int> qu({s});
     dist[s] = 0;
     while (sz(qu) && dist[t] == -1) {
-      int u = qu.front(); qu.pop();
+      int u = qu.front(); 
+      qu.pop();
       for (Edge &e : g[u]) if (dist[e.v] == -1) 
-        if (scaling ? e.cap - e.flow >= lim : e.cap - e.flow > eps) {
+        if (e.cap - e.flow > eps) {
           dist[e.v] = dist[u] + 1;
           qu.push(e.v);
         } 
@@ -60,12 +59,11 @@ struct Dinic {
  
   F maxFlow() {
     F flow = 0;
-    for (lim = scaling ? lim : 1; lim > eps; lim /= 2)
-      while (bfs()) {
-        fill(all(ptr), 0);
-        while (F pushed = dfs(s)) 
-          flow += pushed;
-      }
+    while (bfs()) {
+      fill(all(ptr), 0);
+      while (F pushed = dfs(s)) 
+        flow += pushed;
+    }
     return flow;
   }
 };

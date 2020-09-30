@@ -8,8 +8,7 @@ struct LiChao {
   lli l, r;
   LiChao *L, *R;
 
-  LiChao(lli l, lli r, Fun f = {}) :
-    l(l), r(r), f(f), L(0), R(0) {}
+  LiChao(lli l, lli r) : l(l), r(r), L(0), R(0) {}
 
   void add(Fun &g) {
     if (f(l) <= g(l) && f(r) <= g(r))

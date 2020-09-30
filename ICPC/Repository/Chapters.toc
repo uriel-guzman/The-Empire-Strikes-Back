@@ -27,11 +27,11 @@
 \contentsline {subsection}{\numberline {2.9}Guni}{8}{subsection.2.9}%
 \contentsline {subsection}{\numberline {2.10}Centroid decomposition}{8}{subsection.2.10}%
 \contentsline {subsection}{\numberline {2.11}Heavy-light decomposition}{8}{subsection.2.11}%
-\contentsline {subsection}{\numberline {2.12}Link-Cut tree}{8}{subsection.2.12}%
+\contentsline {subsection}{\numberline {2.12}Link-Cut tree}{9}{subsection.2.12}%
 \contentsline {section}{\numberline {3}Flows}{9}{section.3}%
 \contentsline {subsection}{\numberline {3.1}Dinic \footnotesize $\mathcal {O}(min(E \cdot flow, V^2E))$}{9}{subsection.3.1}%
 \contentsline {subsection}{\numberline {3.2}Min cost flow \footnotesize $\mathcal {O}(min(E \cdot flow, V^2E))$}{10}{subsection.3.2}%
-\contentsline {subsection}{\numberline {3.3}Hopcroft-Karp \footnotesize $\mathcal {O}(E \sqrt {V})$}{10}{subsection.3.3}%
+\contentsline {subsection}{\numberline {3.3}Hopcroft-Karp \footnotesize $\mathcal {O}(E \sqrt {V})$}{11}{subsection.3.3}%
 \contentsline {subsection}{\numberline {3.4}Hungarian \footnotesize $\mathcal {O}(N ^ 3)$}{11}{subsection.3.4}%
 \contentsline {section}{\numberline {4}Strings}{11}{section.4}%
 \contentsline {subsection}{\numberline {4.1}Hash}{11}{subsection.4.1}%
@@ -41,7 +41,7 @@
 \contentsline {subsection}{\numberline {4.5}Manacher algorithm}{12}{subsection.4.5}%
 \contentsline {subsection}{\numberline {4.6}Suffix array}{12}{subsection.4.6}%
 \contentsline {subsection}{\numberline {4.7}Suffix automaton}{13}{subsection.4.7}%
-\contentsline {subsection}{\numberline {4.8}Aho corasick}{13}{subsection.4.8}%
+\contentsline {subsection}{\numberline {4.8}Aho corasick}{14}{subsection.4.8}%
 \contentsline {subsection}{\numberline {4.9}Eertree}{14}{subsection.4.9}%
 \contentsline {section}{\numberline {5}Dynamic Programming}{14}{section.5}%
 \contentsline {subsection}{\numberline {5.1}Matrix Chain Multiplication}{14}{subsection.5.1}%
@@ -53,8 +53,8 @@
 \contentsline {subsection}{\numberline {5.7}Do all submasks of a mask}{15}{subsection.5.7}%
 \contentsline {section}{\numberline {6}Game Theory}{15}{section.6}%
 \contentsline {subsection}{\numberline {6.1}Grundy Numbers}{15}{subsection.6.1}%
-\contentsline {section}{\numberline {7}Combinatorics}{15}{section.7}%
-\contentsline {subsection}{\numberline {7.1}Factorial}{15}{subsection.7.1}%
+\contentsline {section}{\numberline {7}Combinatorics}{16}{section.7}%
+\contentsline {subsection}{\numberline {7.1}Factorial}{16}{subsection.7.1}%
 \contentsline {subsection}{\numberline {7.2}Factorial mod $smallPrime$}{16}{subsection.7.2}%
 \contentsline {subsection}{\numberline {7.3}Lucas theorem}{16}{subsection.7.3}%
 \contentsline {subsection}{\numberline {7.4}Stars and bars}{16}{subsection.7.4}%
@@ -66,7 +66,7 @@
 \contentsline {subsection}{\numberline {8.1}Goldbach conjecture}{16}{subsection.8.1}%
 \contentsline {subsection}{\numberline {8.2}Sieve of Eratosthenes}{16}{subsection.8.2}%
 \contentsline {subsection}{\numberline {8.3}Phi of euler}{16}{subsection.8.3}%
-\contentsline {subsection}{\numberline {8.4}Miller-Rabin}{16}{subsection.8.4}%
+\contentsline {subsection}{\numberline {8.4}Miller-Rabin}{17}{subsection.8.4}%
 \contentsline {subsection}{\numberline {8.5}Pollard-Rho}{17}{subsection.8.5}%
 \contentsline {subsection}{\numberline {8.6}Amount of divisors}{17}{subsection.8.6}%
 \contentsline {subsection}{\numberline {8.7}Bézout's identity}{17}{subsection.8.7}%
@@ -77,8 +77,8 @@
 \contentsline {section}{\numberline {9}Math}{17}{section.9}%
 \contentsline {subsection}{\numberline {9.1}Progressions}{17}{subsection.9.1}%
 \contentsline {subsection}{\numberline {9.2}Mod multiplication}{17}{subsection.9.2}%
-\contentsline {subsection}{\numberline {9.3}Fpow}{17}{subsection.9.3}%
-\contentsline {subsection}{\numberline {9.4}Fibonacci}{17}{subsection.9.4}%
+\contentsline {subsection}{\numberline {9.3}Fpow}{18}{subsection.9.3}%
+\contentsline {subsection}{\numberline {9.4}Fibonacci}{18}{subsection.9.4}%
 \contentsline {section}{\numberline {10}Geometry}{18}{section.10}%
 \contentsline {subsection}{\numberline {10.1}Real}{18}{subsection.10.1}%
 \contentsline {subsection}{\numberline {10.2}Point}{18}{subsection.10.2}%

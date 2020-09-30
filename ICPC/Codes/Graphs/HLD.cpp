@@ -23,17 +23,14 @@ void hld(int u, int h) {
 }
 
 template <class F>
-void processPath(int u, int v, F fun) {
+void processPath(int u, int v, F f) {
   for (; head[u] != head[v]; v = pr[head[v]]) {
-    if (dep[head[u]] > dep[head[v]]) 
-      swap(u, v);
-    fun(pos[head[v]], pos[v]);
+    if (dep[head[u]] > dep[head[v]]) swap(u, v);
+    f(pos[head[v]], pos[v]);
   }
-  if (dep[u] > dep[v]) 
-    swap(u, v);
-  if (u != v) 
-    fun(pos[heavy[u]], pos[v]);
-  fun(pos[u], pos[u]); // process lca(u, v) too?
+  if (dep[u] > dep[v]) swap(u, v);
+  if (u != v) f(pos[heavy[u]], pos[v]);
+  f(pos[u], pos[u]); // process lca(u, v) too?
 }
 
 void updatePath(int u, int v, lli z) {

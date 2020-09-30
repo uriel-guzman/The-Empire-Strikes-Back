@@ -57,12 +57,10 @@ void splay(Splay u) {
   push(u);
 }
 
-// puts u on the preferred path, splay (right subtree is empty)
+// puts u on the preferred path, then splay 
 void access(Splay u) {
   for (Splay v = u, last = 0; v; v = v->p) {
-    splay(v); // now switch virtual children, i don't know what this means!!
-    // if (last) v->vsub -= last->sub;
-    // if (v->ch[1]) v->vsub += v->ch[1]->sub;
+    splay(v); 
     v->ch[1] = last, pull(v), last = v;
   }
   splay(u);
