@@ -19,12 +19,12 @@ struct Hash {
   }
  
   Range cut(int l, int r) {
-    Range rge(l, r);
+    Range f(l, r);
     fore (i, 0, 2) {
-      rge[i] = (h[i][r + 1] - h[i][l] + mod[i]) % mod[i];
-      rge[i] = rge[i] * ipw[i][l] % mod[i];
+      f[i] = (h[i][r + 1] - h[i][l] + mod[i]) % mod[i];
+      f[i] = f[i] * ipw[i][l] % mod[i];
     }
-    return rge;
+    return f;
   }
 };
 
