@@ -19,7 +19,7 @@ struct Point {
   T dot(const P &p) { return x * p.x + y * p.y; }
   T cross(const P &p) { return x * p.y - y * p.x; }
   double length() const { return sqrtl(norm()); }
-  T norm() const { return sq(x) + sq(y); } 
+  T norm() const { return x * x + (y); } 
   double angle() { return atan2(y, x); }
 
   P perp() const { return P(-y, x); }
@@ -35,6 +35,10 @@ struct Point {
 
   friend ostream & operator << (ostream &os, P &p) {
     return os << "(" << p.x << ", " << p.y << ")";
+  }
+
+  friend istream & operator >> (istream &is, P &p) {
+    return cin >> p.x >> p.y;
   }
 };
 
