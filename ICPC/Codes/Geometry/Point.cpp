@@ -19,7 +19,7 @@ struct Point {
   T dot(const P &p) { return x * p.x + y * p.y; }
   T cross(const P &p) { return x * p.y - y * p.x; }
   double length() const { return sqrtl(norm()); }
-  T norm() const { return x * x + (y); } 
+  T norm() const { return x * x + y * y; } 
   double angle() { return atan2(y, x); }
 
   P perp() const { return P(-y, x); }
