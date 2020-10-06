@@ -1,13 +1,13 @@
 struct Dyn {
   int l, r;
   lli sum = 0;
-  Dyn *L, *R;
+  Dyn *ls, *rs;
 
-  Dyn(int l, int r) : l(l), r(r), L(0), R(0) {}
+  Dyn(int l, int r) : l(l), r(r), ls(0), rs(0) {}
 
   void pull() {
-    sum = (L ? L->sum : 0);
-    sum += (R ? R->sum : 0);
+    sum = (ls ? ls->sum : 0);
+    sum += (rs ? rs->sum : 0);
   }
 
   void update(int p, lli v) {
@@ -17,13 +17,11 @@ struct Dyn {
     }
     int m = (l + r) >> 1;
     if (p <= m) {
-      if (!L)
-        L = new Dyn(l, m);
-      L->update(p, v);
+      if (!ls) ls = new Dyn(l, m);
+      ls->update(p, v);
     } else {
-      if (!R)
-        R = new Dyn(m + 1, r);
-      R->update(p, v);
+      if (!rs) rs = new Dyn(m + 1, r);
+      rs->update(p, v);
     }
     pull();
   }
@@ -34,7 +32,7 @@ struct Dyn {
     if (ll <= l && r <= rr)
       return sum;
     int m = (l + r) >> 1;
-    return (L ? L->qsum(ll, rr) : 0) + 
-           (R ? R->qsum(ll, rr) : 0);
+    return (ls ? ls->qsum(ll, rr) : 0) + 
+           (rs ? rs->qsum(ll, rr) : 0);
   }
 };
