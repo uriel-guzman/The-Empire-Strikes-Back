@@ -1,7 +1,7 @@
 struct Seg {
   int l, r;
   lli sum = 0;
-  Seg *L, *R;
+  Seg *ls, *rs;
 
   Seg(int l, int r) : l(l), r(r), L(0), R(0) {
     if (l == r) {
@@ -9,13 +9,13 @@ struct Seg {
       return;
     }
     int m = (l + r) >> 1;
-    L = new Seg(l, m);
-    R = new Seg(m + 1, r);
+    ls = new Seg(l, m);
+    rs = new Seg(m + 1, r);
     pull();
   }
 
   void pull() { 
-    sum = L->sum + R->sum; 
+    sum = ls->sum + rs->sum; 
   }
   
   void update(int p, lli v) {
@@ -25,9 +25,9 @@ struct Seg {
     }
     int m = (l + r) >> 1;
     if (p <= m)
-      L->update(p, v);
+      ls->update(p, v);
     else
-      R->update(p, v);
+      rs->update(p, v);
     pull();
   }
 
@@ -36,6 +36,6 @@ struct Seg {
       return 0;
     if (ll <= l && r <= rr)
       return sum;
-    return L->qsum(ll, rr) + R->qsum(ll, rr);
+    return ls->qsum(ll, rr) + rs->qsum(ll, rr);
   }
 };
