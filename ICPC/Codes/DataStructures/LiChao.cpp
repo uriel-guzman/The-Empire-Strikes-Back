@@ -6,9 +6,9 @@ struct Fun {
 struct LiChao {
   Fun f;
   lli l, r;
-  LiChao *L, *R;
+  LiChao *ls, *rs;
 
-  LiChao(lli l, lli r) : l(l), r(r), L(0), R(0) {}
+  LiChao(lli l, lli r) : l(l), r(r), ls(0), rs(0) {}
 
   void add(Fun &g) {
     if (f(l) <= g(l) && f(r) <= g(r))
@@ -21,9 +21,9 @@ struct LiChao {
     if (g(m) < f(m))
       swap(f, g);
     if (g(l) <= f(l)) 
-      L = L ? (L->add(g), L) : new LiChao(l, m, g);
+      ls = ls ? (ls->add(g), ls) : new LiChao(l, m, g);
     else 
-     R = R ? (R->add(g), R) : new LiChao(m + 1, r, g);
+      rs = rs ? (rs->add(g), rs) : new LiChao(m + 1, r, g);
   }
 
   lli query(lli x) {
@@ -31,7 +31,7 @@ struct LiChao {
       return f(x);
     lli m = (l + r) >> 1;
     if (x <= m)
-      return min(f(x), L ? L->query(x) : inf);
-    return min(f(x), R ? R->query(x) : inf);
+      return min(f(x), ls ? ls->query(x) : inf);
+    return min(f(x), rs ? rs->query(x) : inf);
   }
 };

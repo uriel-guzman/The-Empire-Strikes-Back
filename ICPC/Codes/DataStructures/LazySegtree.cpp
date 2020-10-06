@@ -1,16 +1,16 @@
 struct Lazy {
   int l, r;
   lli sum = 0, lazy = 0;
-  Lazy *L, *R;
+  Lazy *ls, *rs;
 
-  Lazy(int l, int r) : l(l), r(r), L(0), R(0) {
+  Lazy(int l, int r) : l(l), r(r), ls(0), rs(0) {
     if (l == r) {
       sum = a[l];
       return;
     }
     int m = (l + r) >> 1;
-    L = new Lazy(l, m);
-    R = new Lazy(m + 1, r);
+    ls = new Lazy(l, m);
+    rs = new Lazy(m + 1, r);
     pull();
   }
 
@@ -19,8 +19,8 @@ struct Lazy {
       return;
     sum += (r - l + 1) * lazy;
     if (l != r) {
-      L->lazy += lazy;
-      R->lazy += lazy;
+      ls->lazy += lazy;
+      rs->lazy += lazy;
     }
     lazy = 0;
   }
@@ -38,8 +38,8 @@ struct Lazy {
       push();
       return;
     }
-    L->update(ll, rr, v);
-    R->update(ll, rr, v);
+    ls->update(ll, rr, v);
+    rs->update(ll, rr, v);
     pull();
   }
 
@@ -49,6 +49,6 @@ struct Lazy {
       return 0;
     if (ll <= l && r <= rr)
       return sum;
-    return L->qsum(ll, rr) + R->qsum(ll, rr);
+    return ls->qsum(ll, rr) + rs->qsum(ll, rr);
   }
 };
