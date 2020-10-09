@@ -1,13 +1,11 @@
 template <class Black, class T>
 struct StaticDynamic {
-  vector<Black> box;
-  vector<vector<T>> st;
-
-  explicit StaticDynamic(int n) box(1 + __lg(n)), st(1 + __lg(n)) {}
+  Black box[LogN];
+  vector<T> st[LogN];
 
   void insert(T &x) {
     int p = 0;
-    fore (i, 0, sz(st)) 
+    fore (i, 0, LogN) 
       if (st[i].empty()) {
         p = i;
         break;
