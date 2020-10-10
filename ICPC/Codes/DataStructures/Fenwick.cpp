@@ -3,7 +3,7 @@ struct Fenwick {
   #define lsb(x) (x & -x)
   vector<T> fenw;
 
-  Fenwick(int n = 0) : fenw(n + 1, {}) {}
+  Fenwick(int n = 0) : fenw(++n, {}) {}
 
   void update(int i, T v) {
     for (; i < sz(fenw); i += lsb(i))

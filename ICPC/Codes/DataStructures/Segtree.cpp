@@ -3,7 +3,7 @@ struct Seg {
   lli sum = 0;
   Seg *ls, *rs;
 
-  Seg(int l, int r) : l(l), r(r), L(0), R(0) {
+  Seg(int l, int r) : l(l), r(r), ls(0), rs(0) {
     if (l == r) {
       sum = a[l];
       return;

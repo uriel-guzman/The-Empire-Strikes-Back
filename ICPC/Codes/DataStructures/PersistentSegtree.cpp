@@ -1,12 +1,12 @@
 struct Per {
   int l, r;
   lli sum = 0;
-  Per *L, *R;
+  Per *ls, *rs;
 
-  Per(int l, int r) : l(l), r(r), L(0), R(0) {}
+  Per(int l, int r) : l(l), r(r), ls(0), ls(0) {}
 
   Per* pull() {
-    sum = L->sum + R->sum;
+    sum = ls->sum + rs->sum;
     return this;
   }
 
@@ -14,8 +14,8 @@ struct Per {
     if (l == r)
       return;
     int m = (l + r) >> 1;
-    (L = new Per(l, m))->build();
-    (R = new Per(m + 1, r))->build();
+    (ls = new Per(l, m))->build();
+    (rs = new Per(m + 1, r))->build();
     pull();
   }
 
@@ -27,8 +27,8 @@ struct Per {
       t->sum = v;
       return t;
     }
-    t->L = L->update(p, v);
-    t->R = R->update(p, v);
+    t->ls = ls->update(p, v);
+    t->rs = rs->update(p, v);
     return t->pull();
   }
 
@@ -37,6 +37,6 @@ struct Per {
       return 0;
     if (ll <= l && r <= rr)
       return sum;
-    return L->qsum(ll, rr) + R->qsum(ll, rr);
+    return ls->qsum(ll, rr) + rs->qsum(ll, rr);
   }
 };

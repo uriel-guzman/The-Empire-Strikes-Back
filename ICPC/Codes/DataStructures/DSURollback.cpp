@@ -2,7 +2,7 @@ struct Dsu {
   vector<int> pr, tot;
   stack<ii> what;
 
-  Dsu(int n = 0) : pr(n + 5), tot(n + 5, 1) {
+  Dsu(int n = 0) : pr(++n), tot(n, 1) {
     iota(all(pr), 0);
   }
 

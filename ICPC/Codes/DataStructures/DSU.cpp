@@ -1,7 +1,7 @@
 struct Dsu {
   vi pr;
 
-  Dsu(int n = 0) : pr(n + 5) {
+  Dsu(int n = 0) : pr(++n) {
     iota(all(pr), 0);
   }
 

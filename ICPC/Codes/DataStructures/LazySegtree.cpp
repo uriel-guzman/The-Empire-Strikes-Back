@@ -26,7 +26,7 @@ struct Lazy {
   }
 
   void pull() {
-    sum = L->sum + R->sum;
+    sum = ls->sum + rs->sum;
   }
 
   void update(int ll, int rr, lli v) {
