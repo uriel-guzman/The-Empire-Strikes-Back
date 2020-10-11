@@ -1,6 +1,6 @@
 struct Dsu {
-  vector<int> pr, tot;
-  stack<ii> what;
+  vi pr, tot;
+  stack<ii> mem;
 
   Dsu(int n = 0) : pr(++n), tot(n, 1) {
     iota(all(pr), 0);
@@ -12,25 +12,21 @@ struct Dsu {
 
   void unite(int u, int v) {
     u = find(u), v = find(v);
-    if (u == v)
-      what.emplace(-1, -1);
-    else {
+    if (u != v) {
       if (tot[u] < tot[v])
         swap(u, v);
-      what.emplace(u, v);
+      mem.emplace(u, v);
       tot[u] += tot[v];
       pr[v] = u;
     }
   }
 
-  ii rollback() {
-    ii last = what.top();
-    what.pop();
-    int u = last.f, v = last.s;
+  void rollback() {
+    auto [u, v] = mem.top();
+    mem.pop();
     if (u != -1) {
       tot[u] -= tot[v];
       pr[v] = v;
     }
-    return last;
   }
 };
