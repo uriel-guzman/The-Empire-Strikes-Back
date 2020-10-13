@@ -78,6 +78,18 @@ void drawGraph(const vector<Edge> arr[], const Fun paintNode) {
   drawGraph(graph, paintNode, 0);
 }
 
+template <class Edge>
+void drawGraph(const vector<vector<Edge>> &graph) {
+  drawGraph(graph, [&]([[maybe_unused]]int u) {
+    return false;
+  }, 0);
+}
+
+template <class Edge, class Fun>
+void drawGraph(const vector<vector<Edge>> &graph, const Fun paintNode) {
+  drawGraph(graph, paintNode, 0);
+}
+
 /*-----------------------------------------------------------------------------------------------------------*/
 
 template <class Edge>
@@ -97,6 +109,18 @@ void drawDigraph(const vector<Edge> arr[], const Fun paintNode) {
     for (const auto v : arr[u])
       graph.back().push_back(v);
   }
+  drawGraph(graph, paintNode, 1);
+}
+
+template <class Edge>
+void drawDigraph(const vector<vector<Edge>> &graph) {
+  drawGraph(graph, [&]([[maybe_unused]]int u) {
+    return false;
+  }, 1);
+}
+
+template <class Edge, class Fun>
+void drawDigraph(const vector<vector<Edge>> &graph, const Fun paintNode) {
   drawGraph(graph, paintNode, 1);
 }
 
