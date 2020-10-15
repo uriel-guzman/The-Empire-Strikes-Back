@@ -14,7 +14,7 @@ struct DynamicConnectivity {
   void add(int u, int v) {
     if (u > v) swap(u, v);
     mp[u][v] = ++timer;
-    queries.pb({'+', u, v, inf});
+    queries.pb({'+', u, v, INT_MAX});
   }
 
   void rem(int u, int v) {
