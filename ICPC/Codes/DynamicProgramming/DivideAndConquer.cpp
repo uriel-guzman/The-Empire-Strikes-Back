@@ -4,9 +4,9 @@ void dc(int cut, int l, int r, int optl, int optr) {
   int mid = (l + r) / 2;
   pair<lli, int> best = {inf, -1};
   fore (p, optl, min(mid, optr) + 1) {
-    lli nxtGroup = dp[~cut & 1][p - 1] + cost(p, mid);
-    if (nxtGroup < best.f)
-      best = {nxtGroup, p};
+    lli nxt = dp[~cut & 1][p - 1] + cost(p, mid);
+    if (nxt < best.f)
+      best = {nxt, p};
   }
   dp[cut & 1][mid] = best.f;
   int opt = best.s;
