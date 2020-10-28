@@ -2,12 +2,12 @@ Steps to use draw.h properly and don't make mistakes using this buggy code.
 
 * Use only the data structures that exist in this repository, other extern data structures won't work D:
 * Send a lambda function as a parameter to determine which nodes you want to paint in color red (works for all graph and trie-based).
-```cpp
-set<int> specialNodes = {1, 2, 3, 4};
-drawGraph(graph, [&](int u) {
-  return specialNodes.count(u);
-});
-```
+  ```cpp
+  set<int> specialNodes = {1, 2, 3, 4};
+  drawGraph(graph, [&](int u) {
+    return specialNodes.count(u);
+  });
+  ```
 
 * drawGraph(), drawDigraph()
   * For weighted graphs, define a structure like the one down below and write a method to print the edge.
