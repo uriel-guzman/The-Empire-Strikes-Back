@@ -34,13 +34,13 @@ drawGraph(graph, [&](int u) {
   
 * drawTrie(), drawAho(), drawSam(), drawEertree() 
   * To visualize strings instead of chars just set the flag properly.
-  ```cpp
-   const bool printString = 0; // for trie-based, string instead of chars
-  ```
+    ```cpp
+    const bool printString = 0; // for trie-based, string instead of chars
+    ```
   * To visualize the suffix-links just set the flag properly.
-  ```cpp
-  const bool printLinks = 0; // for aho-corasick, suffix-automaton, eertree
-   ```
+    ```cpp
+    const bool printLinks = 0; // for aho-corasick, suffix-automaton, eertree
+    ```
 
 
 * drawSeg(), drawLazy()
