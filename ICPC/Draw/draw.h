@@ -10,14 +10,6 @@ using namespace std;
 #define open "xdg-open"
 #endif
 
-#define df(b, e) ((b) > (e))
-#define fore(i, b, e) for (auto i = (b) - df(b, e); i != e - df(b, e); i += 1 - 2 * df(b, e))
-#define sz(x) int(x.size())
-#define all(x) begin(x), end(x)
-#define f first
-#define s second
-#define pb push_back
-
 const bool printLinks = 0; // for aho-corasick, suffix-automaton, eertree
 const bool printString = 0; // for trie-based, string instead of chars
 
@@ -46,7 +38,7 @@ static int numLazy = 0;
 /*-----------------------------------------------------------------------------------------------------------*/
 
 void runFile(const string file) {
-  const string image = file.substr(0, sz(file) - 4) + ".png"; // remove ".dot" and add ".png", 4 characters
+  const string image = file.substr(0, (int) file.size() - 4) + ".png"; // remove ".dot" and add ".png", 4 characters
   const string create = string("dot -Tpng " + file + " -o " + image);
   // const string createAndOpen = string("dot -Tpng " + file + " -o " + image + " && " + open + " " + image);
   system(create.c_str());
@@ -206,7 +198,7 @@ void drawTrie(const Trie &trie, const Fun paintNode) {
   os << "rankdir=" << dir << endl;
   
   // Trie printing
-  int n = sz(trie.trie);
+  int n = trie.trie.size();
   vector<bool> vis(n, 0);
   function<void(int, string)> dfs = [&](int u, string txt) {
     vis[u] = 1;
@@ -250,7 +242,7 @@ void drawAho(const Aho &aho, const Fun paintNode) {
   os << "rankdir=" << dir << endl;
 
   // Links printing
-  int n = sz(aho.trie);
+  int n = aho.trie.size();
   for (int u = 0; u < n && printLinks; u++) 
     os << u << " -> " << aho.link[u] << "[style=dotted, color=" << linkColor << "]" << endl;
 
@@ -298,7 +290,7 @@ void drawSam(const SuffixAutomaton &sam, const Fun paintNode) {
   os << "rankdir=" << dir << endl;
 
   // Links printing
-  int n = sz(sam.trie);
+  int n = sam.trie.size();
   for (int u = 0; u < n && printLinks; u++) 
     os << u << " -> " << sam.link[u] << "[style=dotted, color=" << linkColor << "]" << endl;
 
@@ -348,7 +340,7 @@ void drawEertree(const Eertree &eert, const Fun paintNode) {
   os << "0 [label=\"0\"]\n 1[label=\"-1\"]" << endl; // text instead of the nodes
 
   // Links printing
-  int n = sz(eert.trie);
+  int n = eert.trie.size();
   for (int u = 0; u < n && printLinks; u++) 
     os << u << " -> " << eert.link[u] << "[style=dotted, color=" << linkColor << "]" << endl;
   
@@ -375,7 +367,7 @@ void drawEertree(const Eertree &eert, const Fun paintNode) {
     }
   };
   // Two roots, check each one independently
-  fore (u, 0, 2) {
+  for (int u = 0; u < 2; u++) {
     string how = "[style=filled, color=" + normalNodeColor + "]";
     if (paintNode(u)) {
       how.pop_back();
