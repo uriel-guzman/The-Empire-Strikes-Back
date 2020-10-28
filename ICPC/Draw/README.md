@@ -22,19 +22,26 @@ drawGraph(graph, [&](int u) {
     };
     ```
   * Depending in the graph definition make sure to: 
-    Have at least 100 nodes for the array definition, furthermore, it only prints the first 100 nodes
+    Have at least 100 nodes for the array definition, furthermore, it only prints the first 100 nodes.
     ```cpp
     vector<int> graph[101]; // 101 is fine
     ```
-    Don't have an empty graph in the vector definition
+    Don't have an empty graph in the vector definition.
     ```cpp
     vector<vector<int>> graph; // opps graph.size() == 0 D:
     ```
   
-* drawTrie()
-* drawAho() 
-* drawSam() 
-* drawEertree() 
+  
+* drawTrie(), drawAho(), drawSam(), drawEertree() 
+  * To visualize strings instead of chars just set the flag properly.
+  ```cpp
+   const bool printString = 0; // for trie-based, string instead of chars
+  ```
+  * To visualize the suffix-links just set the flag properly.
+  ```cpp
+  const bool printLinks = 0; // for aho-corasick, suffix-automaton, eertree
+   ```
+
 
 * drawSeg(), drawLazy()
   * If you want information regarding the current node in the segtree, write down like string and send it in the lambda function paintNode().
