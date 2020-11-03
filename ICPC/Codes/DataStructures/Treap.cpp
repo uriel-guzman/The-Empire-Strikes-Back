@@ -1,75 +1,67 @@
 typedef struct Node* Treap;
 struct Node {
+  Treap ch[2] = {0, 0}, p = 0;
   uint32_t pri = rng();
-  int val;
-  Treap ch[2] = {0, 0};
   int sz = 1, flip = 0;
+  int val, sum = 0;
+
+  void push() {
+    if (flip) {
+      swap(ch[0], ch[1]);
+      for (auto ch : ch) if (ch != 0) {
+        ch->flip ^= 1;
+      } 
+      flip = 0;
+    }
+  }
+ 
+  Treap pull() {
+    #define gsz(t) (t ? t->sz : 0)
+    #define gsum(t) (t ? t->sum : 0)
+    sz = 1, sum = val;
+    for (auto ch : ch) if (ch != 0) {
+      ch->push();
+      sz += ch->sz;
+      sum += ch->sum;
+      ch->p = this;
+    }
+    p = 0;
+    return this;
+  }
+
   Node(int val) : val(val) {}
 };
 
-void push(Treap t) {
-  if (!t)
-    return;
-  if (t->flip) {
-    swap(t->ch[0], t->ch[1]);
-    for (Treap ch : t->ch) if (ch) 
-      ch->flip ^= 1;
-    t->flip = 0;
-  }
-}
-
-Treap pull(Treap t) {
-  #define gsz(t) (t ? t->sz : 0)
-  t->sz = 1;
-  for (Treap ch : t->ch) 
-    push(ch), t->sz += gsz(ch);
-  return t;
-}
-
 pair<Treap, Treap> split(Treap t, int val) {
   // <= val goes to the left, > val to the right
-  if (!t)
+  if (!t) 
     return {t, t};
-  push(t);
+  t->push();
   if (val < t->val) {
     auto p = split(t->ch[0], val);
     t->ch[0] = p.s;
-    return {p.f, pull(t)};
+    return {p.f, t->pull()};
+  } else {
+    auto p = split(t->ch[1], val);
+    t->ch[1] = p.f;
+    return {t->pull(), p.s};
   }
-  auto p = split(t->ch[1], val);
-  t->ch[1] = p.f;
-  return {pull(t), p.s};
-}
-
-pair<Treap, Treap> splitsz(Treap t, int sz) {
-  // <= sz goes to the left, > sz to the right
-  if (!t)
-    return {t, t};
-  push(t);
-  if (sz <= gsz(t->ch[0])) {
-    auto p = splitsz(t->ch[0], sz);
-    t->ch[0] = p.s;
-    return {p.f, pull(t)};
-  }
-  auto p = splitsz(t->ch[1], sz - gsz(t->ch[0]) - 1);
-  t->ch[1] = p.f;
-  return {pull(t), p.s};
 }
 
 Treap merge(Treap l, Treap r) {
   if (!l || !r)
     return l ? l : r;
-  push(l), push(r);
+  l->push(), r->push();
   if (l->pri > r->pri) 
-    return l->ch[1] = merge(l->ch[1], r), pull(l);
+    return l->ch[1] = merge(l->ch[1], r), l->pull();
   else
-    return r->ch[0] = merge(l, r->ch[0]), pull(r);
+    return r->ch[0] = merge(l, r->ch[0]), r->pull();
 }
 
 Treap qkth(Treap t, int k) { // 0-indexed
   if (!t)
     return t;
-  push(t);
+  t->push();
   int sz = gsz(t->ch[0]);
   if (sz == k)
     return t;
@@ -79,7 +71,7 @@ Treap qkth(Treap t, int k) { // 0-indexed
 int qrank(Treap t, int val) { // 0-indexed
   if (!t)
     return -1;
-  push(t);
+  t->push();
   if (val < t->val)
     return qrank(t->ch[0], val);
   if (t->val == val)
@@ -97,4 +89,21 @@ Treap erase(Treap t, int val) {
   auto p1 = split(t, val);
   auto p2 = split(p1.f, val - 1);
   return merge(p2.f, p1.s);
+}
+
+// Use this split for implicit treap aka rope
+pair<Treap, Treap> splitsz(Treap t, int sz) {
+  // <= sz goes to the left, > sz to the right
+  if (!t) 
+    return {t, t};
+  t->push();
+  if (sz <= gsz(t->ch[0])) {
+    auto p = splitsz(t->ch[0], sz);
+    t->ch[0] = p.s;
+    return {p.f, t->pull()};
+  } else {
+    auto p = splitsz(t->ch[1], sz - gsz(t->ch[0]) - 1);
+    t->ch[1] = p.f;
+    return {t->pull(), p.s};
+  }
 }
