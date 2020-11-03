@@ -1,3 +1,6 @@
+PS1="%F%B${blue2}`whoami`%f%F${orange} ~ %f%b";
+export PS1;
+
 ############ This is just personal taste, just change to the properly directory ############
 
 alias bash='gedit ~/.zshenv' # Bash file xd
