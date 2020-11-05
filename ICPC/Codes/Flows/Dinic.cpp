@@ -3,8 +3,7 @@ struct Dinic {
   struct Edge {
     int v, inv;
     F cap, flow;
-    Edge(int v, F cap, int inv) : 
-      v(v), cap(cap), flow(0), inv(inv){}
+    Edge(int v, F cap, int inv) : v(v), cap(cap), flow(0), inv(inv) {}
   };
  
   F eps = (F) 1e-9;
@@ -12,11 +11,7 @@ struct Dinic {
   vector< vector<Edge> > g;
   vi dist, ptr;
  
-  Dinic(int n, int ss = -1, int tt = -1) : 
-    n(n), g(n + 5), dist(n + 5), ptr(n + 5) {
-    s = ss == -1 ? n + 1 : ss;
-    t = tt == -1 ? n + 2 : tt;
-  }
+  Dinic(int n) : n(n), g(n), dist(n), ptr(n), s(n - 2), t(n - 1) {}
  
   void add(int u, int v, F cap) {
     g[u].pb(Edge(v, cap, sz(g[v])));

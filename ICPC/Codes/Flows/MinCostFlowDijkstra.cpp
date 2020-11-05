@@ -1,6 +1,5 @@
 template <class C, class F>
 struct Mcmf {
-  static constexpr F eps = (F) 1e-9;
   struct Edge {
     int u, v, inv;
     F cap, flow;
@@ -9,16 +8,13 @@ struct Mcmf {
       u(u), v(v), cost(cost), cap(cap), flow(0), inv(inv) {}
   };
 
+  F eps = (F) 1e-9;
   int s, t, tm, n, m = 0;
   vector< vector<Edge> > g;
   vector<Edge*> prev;
   vector<C> cost, pot;
-
-  Mcmf(int n, int ss = -1, int tt = -1):
-    n(n), g(n + 5), cost(n + 5), pot(n + 5, 0), prev(n + 5) {
-    s = ss == -1 ? n + 1 : ss;
-    t = tt == -1 ? n + 2 : tt;
-  }
+  
+  Mcmf(int n) : n(n), g(n), cost(n), pot(n, 0), prev(n), s(n - 2), t(n - 1) {} 
 
   void add(int u, int v, C cost, F cap) {
     g[u].pb(Edge(u, v, cost, cap, sz(g[v])));
