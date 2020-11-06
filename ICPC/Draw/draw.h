@@ -20,9 +20,9 @@ const string normalNodeColor = colorPurple;
 const string linkColor = colorRed;
 const string specialNodeColor = colorRed;
 
-#define dirLeftRight "LR"
-#define dirTopBottom "TB"
-#define dir dirTopBottom // Change here the direction
+const string dirLeftRight = "LR";
+const string dirTopBottom = "TB";
+const string dir = dirTopBottom; // Change here the direction
 
 /*-----------------------------------------------------------------------------------------------------------*/
 
