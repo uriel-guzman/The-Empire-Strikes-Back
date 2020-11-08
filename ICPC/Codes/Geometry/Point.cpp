@@ -24,7 +24,7 @@ struct Point {
     return P(x * cos(angle) - y * sin(angle), x * sin(angle) + y * cos(angle));
   }
 
-  friend ostream &operator << (ostream &os, P &p) { return os << "(" << p.x << ", " << p.y << ")"; }
+  friend ostream &operator << (ostream &os, const P &p) { return os << "(" << p.x << ", " << p.y << ")"; }
   friend istream &operator >> (istream &is, P &p) { return cin >> p.x >> p.y; }
 };
 
