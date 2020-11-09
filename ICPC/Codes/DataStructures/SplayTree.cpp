@@ -1,7 +1,7 @@
 typedef struct Node* Splay;
 struct Node {
   Splay ch[2] = {0, 0}, p = 0;
-  bool flip = 0;
+  bool rev = 0;
   int sz = 1;
 
   int dir() {
@@ -46,12 +46,12 @@ struct Node {
   }
 
   void push() {
-    if (flip) {
+    if (rev) {
       swap(ch[0], ch[1]);
       for (auto ch : ch) if (ch) {
-        ch->flip ^= 1;
+        ch->rev ^= 1;
       }
-      flip = 0;
+      rev = 0;
     }
   }
 

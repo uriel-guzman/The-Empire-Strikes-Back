@@ -11,7 +11,7 @@ void access(Splay u) {
 
 void rootify(Splay u) {
   // make u root of LCT component
-  access(u), u->flip ^= 1, access(u);
+  access(u), u->rev ^= 1, access(u);
   assert(!u->ch[0] && !u->ch[1]);
 }
 
