@@ -2,16 +2,16 @@ typedef struct Node* Treap;
 struct Node {
   Treap ch[2] = {0, 0}, p = 0;
   uint32_t pri = rng();
-  int sz = 1, flip = 0;
+  int sz = 1, rev = 0;
   int val, sum = 0;
 
   void push() {
-    if (flip) {
+    if (rev) {
       swap(ch[0], ch[1]);
       for (auto ch : ch) if (ch != 0) {
-        ch->flip ^= 1;
+        ch->rev ^= 1;
       } 
-      flip = 0;
+      rev = 0;
     }
   }
  
