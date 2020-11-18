@@ -15,7 +15,6 @@ using namespace std;
 #define f first
 #define s second
 #define pb push_back
-#define congrats uriel
 
 using lli = long long;
 using ld = long double;

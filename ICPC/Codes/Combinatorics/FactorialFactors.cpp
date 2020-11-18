@@ -1,4 +1,4 @@
-vector< pair<lli, int> > factorialFactors(int n) {
+vector< pair<lli, int> > factorialFactors(lli n) {
   vector< pair<lli, int> > fac;
   for (lli p : primes) {
     if (n < p)
