@@ -21,9 +21,9 @@ struct LiChao {
     if (g(m) < f(m))
       swap(f, g);
     if (g(l) <= f(l)) 
-      ls = ls ? (ls->add(g), ls) : new LiChao(l, m, g);
+     ls = ls ? (ls->add(g), ls) : new LiChao(l, m, g);
     else 
-      rs = rs ? (rs->add(g), rs) : new LiChao(m + 1, r, g);
+     rs = rs ? (rs->add(g), rs) : new LiChao(m + 1, r, g);
   }
 
   lli query(lli x) {
