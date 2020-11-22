@@ -1,10 +1,10 @@
 vector<P> convexHull(vector<P> &pts) {
-  int n = sz(pts);
   vector<P> low, up;
   sort(all(pts), [&](P a, P b) {
     return a.x == b.x ? a.y < b.y : a.x < b.x;
   });
   pts.erase(unique(all(pts)), pts.end());
+  int n = sz(pts);
   if (n <= 2) 
     return pts;
   fore (i, 0, n) {
