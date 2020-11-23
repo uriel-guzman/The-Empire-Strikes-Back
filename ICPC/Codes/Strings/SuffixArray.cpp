@@ -37,7 +37,7 @@ struct SuffixArray {
     return k < n ? s[k] : 'z' + 1;
   }
 
-  bool count(string &t) {
+  int count(string &t) {
     ii lo(0, n - 1), hi(0, n - 1);
     fore (i, 0, sz(t)) {
       while (lo.f + 1 < lo.s) {
