@@ -1,5 +1,5 @@
 template <class T>
-using Mat = vector<vector<T>>;
+using mat = vector<vector<T>>;
 
 template <class T>
 Mat<T> operator * (Mat<T> &A, Mat<T> &B) {
@@ -12,7 +12,7 @@ Mat<T> operator * (Mat<T> &A, Mat<T> &B) {
 }
 
 template <class T>
-Mat<T> operator ^ (Mat<T> &A, lli n) {
+Mat<T> fpow(Mat<T> &A, lli n) {
   Mat<T> C(sz(A), vector<T>(sz(A)));
   fore (i, 0, sz(A))
     C[i][i] = 1;

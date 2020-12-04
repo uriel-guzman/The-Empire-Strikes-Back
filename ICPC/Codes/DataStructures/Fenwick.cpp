@@ -1,4 +1,4 @@
-template <class T>
+  template <class T>
 struct Fenwick {
   #define lsb(x) (x & -x)
   vector<T> fenw;
