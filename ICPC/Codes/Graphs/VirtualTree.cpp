@@ -18,8 +18,7 @@ int virtualTree(vi &ver) {
     return tin[u] <= tin[v] && tout[v] <= tout[u];
   };
  
-  vi stk;
-  stk.pb(ver[0]);
+  vi stk = {ver[0]};
   fore (i, 1, sz(ver)) {
     int u = ver[i];
     while (sz(stk) >= 2 && !above(stk.back(), u)) {
