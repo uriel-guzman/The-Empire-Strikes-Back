@@ -1,11 +1,13 @@
 struct Trie {
-  vector< map<char, int> > trie;
-  vector<bool> isw;
+  struct Node : map<char, int> {
+    bool isWord = false;
+  };
+  vector<Node> trie;
 
   Trie() { newNode(); }
 
   int inline newNode() {
-    trie.pb({}), isw.pb(false);
+    trie.pb({});
     return sz(trie) - 1;
   }
 
@@ -15,7 +17,7 @@ struct Trie {
         trie[u][c] = newNode();
       u = trie[u][c];
     }
-    isw[u] = true;
+    trie[u].isWord = true;
   }
 
   bool find(string &s, int u = 0) {
@@ -24,6 +26,6 @@ struct Trie {
         return false;
       u = trie[u][c];
     }
-    return isw[u];
+    return trie[u].isWord;
   }
 };

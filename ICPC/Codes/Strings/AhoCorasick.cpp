@@ -1,11 +1,13 @@
 struct AhoCorasick {
-  vector< map<char, int> > trie;
-  vi link, cnt;
+  struct Node : map<char, int> {
+    int link = 0, cnt = 0;
+  };
+  vector<Node> trie;
 
   AhoCorasick() { newNode(); }
 
   int newNode() {
-    trie.pb({}), link.pb(0), cnt.pb(0);
+    trie.pb({});
     return sz(trie) - 1;
   }
 
@@ -15,12 +17,12 @@ struct AhoCorasick {
         trie[u][c] = newNode();
       u = trie[u][c];
     }
-    cnt[u]++;
+    trie[u].cnt++;
   }
 
   int go(int u, char c) {
     while (u && !trie[u].count(c))
-      u = link[u];
+      u = trie[u].link;
     return trie[u][c];
   }
 
@@ -31,8 +33,8 @@ struct AhoCorasick {
       int u = qu.front();
       qu.pop();
       for (auto &[c, v] : trie[u]) {
-        link[v] = u ? go(link[u], c) : 0;
-        cnt[v] += cnt[link[v]];
+        int l = (trie[v].link = u ? go(trie[u].link, c) : 0);
+        trie[v].cnt += trie[l].cnt;
         qu.push(v);
       }
     }
@@ -41,7 +43,7 @@ struct AhoCorasick {
   int match(string &s, int u = 0) {
     int ans = 0;
     for (char c : s)
-      u = go(u, c), ans += cnt[u];
+      u = go(u, c), ans += trie[u].cnt;
     return ans;
   }
 };

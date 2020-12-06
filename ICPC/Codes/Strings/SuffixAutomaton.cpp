@@ -1,45 +1,46 @@
 struct SuffixAutomaton {
-  vector< map<char, int> > trie;
-  vi link, len;
+  struct Node : map<char, int> {
+    int link = -1, len = 0;
+  };
+  vector<Node> trie;
   int last;
 
   SuffixAutomaton() { last = newNode(); }
 
   int newNode() {
-    trie.pb({}), link.pb(-1), len.pb(0);
+    trie.pb({});
     return sz(trie) - 1;
   }
 
   void extend(char c) {
     int u = newNode();
-    len[u] = len[last] + 1;
+    trie[u].len = trie[last].len + 1;
     int p = last;
     while (p != -1 && !trie[p].count(c)) {
       trie[p][c] = u;
-      p = link[p];
+      p = trie[p].link;
     }
     if (p == -1)
-      link[u] = 0;
+      trie[u].link = 0;
     else {
       int q = trie[p][c];
-      if (len[p] + 1 == len[q])
-        link[u] = q;
+      if (trie[p].len + 1 == trie[q].len)
+        trie[u].link = q;
       else {
         int clone = newNode();
-        len[clone] = len[p] + 1;
         trie[clone] = trie[q];
-        link[clone] = link[q];
+        trie[clone].len = trie[p].len + 1;
         while (p != -1 && trie[p][c] == q) {
           trie[p][c] = clone;
-          p = link[p];
+          p = trie[p].link;
         }
-        link[q] = link[u] = clone;
+        trie[q].link = trie[u].link = clone;
       }
     }
     last = u;
   }
 
-  string qkthSubstring(lli kth, int u = 0) {
+  string kthSubstring(lli kth, int u = 0) {
     // number of different substrings (dp)
     string s = "";
     while (kth > 0)
@@ -54,15 +55,17 @@ struct SuffixAutomaton {
   }
 
   void occurs() {
-    // occ[u] = 1, occ[clone] = 0
+    // trie[u].occ = 1, trie[clone].occ = 0
     vi who;
     fore (u, 1, sz(trie))
       who.pb(u);
     sort(all(who), [&](int u, int v) {
-      return len[u] > len[v];
+      return trie[u].len > trie[v].len;
     });
-    for (int u : who)
-      occ[link[u]] += occ[u];
+    for (int u : who) {
+      int l = trie[u].link;
+      trie[l].occ += trie[u].occ;
+    }
   }
 
   lli queryOccurences(string &s, int u = 0) {
@@ -71,15 +74,15 @@ struct SuffixAutomaton {
         return 0;
       u = trie[u][c];
     }
-    return occ[u];
+    return trie[u].occ;
   }
 
   int longestCommonSubstring(string &s, int u = 0) {
     int mx = 0, clen = 0;
     for (char c : s) {
       while (u && !trie[u].count(c)) {
-        u = link[u];
-        clen = len[u];
+        u = trie[u].link;
+        clen = trie[u].len;
       }
       if (trie[u].count(c))
         u = trie[u][c], clen++;
@@ -104,6 +107,6 @@ struct SuffixAutomaton {
         return -1;
       u = trie[u][c];
     }
-    return pos[u] - sz(s) + 1;
+    return trie[u].pos - sz(s) + 1;
   }
 };
