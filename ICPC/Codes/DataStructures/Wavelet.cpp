@@ -21,22 +21,22 @@ struct Wav {
     (rs = new Wav(m + 1, hi))->build(p, e);
   }
 
-  int qkth(int l, int r, int k) {
+  int kth(int l, int r, int k) {
     if (r < l)
       return 0;
     if (lo == hi)
       return lo;
     if (k <= amt[r] - amt[l - 1])
-      return ls->qkth(amt[l - 1] + 1, amt[r], k);
-    return rs->qkth(l - amt[l - 1], r - amt[r], k - amt[r] + amt[l - 1]);
+      return ls->kth(amt[l - 1] + 1, amt[r], k);
+    return rs->kth(l - amt[l - 1], r - amt[r], k - amt[r] + amt[l - 1]);
   }
 
-  int qleq(int l, int r, int mx) {
+  int leq(int l, int r, int mx) {
     if (r < l || mx < lo)
       return 0;
     if (hi <= mx)
       return r - l + 1;
-    return ls->qleq(amt[l - 1] + 1, amt[r], mx) +
-           rs->qleq(l - amt[l - 1], r - amt[r], mx);
+    return ls->leq(amt[l - 1] + 1, amt[r], mx) +
+           rs->leq(l - amt[l - 1], r - amt[r], mx);
   }
 };
