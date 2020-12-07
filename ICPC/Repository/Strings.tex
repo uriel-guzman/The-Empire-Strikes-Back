@@ -41,7 +41,7 @@
 \setlist{nolistsep}
 \begin{itemize}[noitemsep]
   \item 
-  $len[u] - len[link[u]]$ = distinct strings
+  $sam[u].len- sam[sam[u].link].len$ = distinct strings
 
   \item Number of different substrings (dp)
   \begin{gather*}
@@ -54,8 +54,8 @@
   \end{gather*}
   
   \item Leftmost occurrence
-  $pos[u] = len[u] - 1$ \\
-  if is \textbf{clone} then $pos[clone] = pos[q]$ 
+  $trie[u].pos = trie[u].len - 1$ \\
+  if it is \textbf{clone} then $trie[clone].pos = trie[q].pos$ 
   
   \item All occurrence positions
   

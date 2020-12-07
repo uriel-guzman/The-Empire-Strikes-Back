@@ -1,11 +1,10 @@
 # Fdb version 3
-["pdflatex"] 1607214778 "/Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/TeamPage.tex" "/Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/TeamPage.pdf" "TeamPage" 1607214778
-  "/Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/TeamPage.aux" 1607214778 8 a94a2480d3289e625eea47cd1b285758 ""
-  "/Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/TeamPage.tex" 1607214776 538 bc046f8c5e43ddd7cd93a3d9225747d8 ""
+["pdflatex"] 1607321038 "/Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/TeamPage.tex" "/Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/TeamPage.pdf" "TeamPage" 1607321040
+  "/Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/TeamPage.aux" 1607321040 8 a94a2480d3289e625eea47cd1b285758 ""
+  "/Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/TeamPage.tex" 1607321036 549 88b4d85f4bdbd383d9c8a86d5ef6bd6b ""
   "/usr/local/texlive/2020/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2020/texmf-dist/fonts/tfm/public/cm/cmr12.tfm" 1136768653 1288 655e228510b4c2a1abe905c368440826 ""
   "/usr/local/texlive/2020/texmf-dist/fonts/tfm/public/cm/cmr17.tfm" 1136768653 1292 296a67155bdbfc32aa9c636f21e91433 ""
-  "/usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb" 1248133631 35752 024fb6c41858982481f6968b5fc26508 ""
   "/usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb" 1248133631 32722 d7379af29a190c3f453aba36302ff5a9 ""
   "/usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb" 1248133631 32362 179c33bbf43f19adbb3825bb4e36e57a ""
   "/usr/local/texlive/2020/texmf-dist/tex/context/base/mkii/supp-pdf.mkii" 1461363279 71627 94eb9990bed73c364d7f53f960cc8c5b ""
@@ -25,12 +24,12 @@
   "/usr/local/texlive/2020/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1586288239 4811913 0be9a7e86c70a26e5e3042966bcd7097 ""
   "/usr/local/texlive/2020/texmf-var/web2c/pdftex/pdflatex.fmt" 1586288259 2432462 fd0fa20e9a3cb5f8169fd0ba1c955158 ""
   "/usr/local/texlive/2020/texmf.cnf" 1586288231 577 d60164b4589a341208aff7a667fbbdcb ""
-  "TeamPage.aux" 0 -1 0 "pdflatex"
-  "TeamPage.tex" 1607214776 538 bc046f8c5e43ddd7cd93a3d9225747d8 ""
+  "TeamPage.aux" 1607321040 8 a94a2480d3289e625eea47cd1b285758 "pdflatex"
+  "TeamPage.tex" 1607321036 549 88b4d85f4bdbd383d9c8a86d5ef6bd6b ""
   "udg.png" 1603684601 259207 f1ae5f119aa4d1bcb6df2dcdd3bda27f ""
   (generated)
   "/Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/TeamPage.log"
-  "TeamPage.log"
   "TeamPage.pdf"
-  "TeamPage.aux"
+  "TeamPage.log"
   "/Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/TeamPage.pdf"
+  "TeamPage.aux"

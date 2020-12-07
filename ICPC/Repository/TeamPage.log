@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.4.7)  5 DEC 2020 18:32
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.4.7)  7 DEC 2020 00:03
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -92,7 +92,12 @@ File: udg.png Graphic file (type png)
 <use udg.png>
 Package pdftex.def Info: udg.png  used on input line 10.
 (pdftex.def)             Requested size: 227.62204pt x 309.16698pt.
- [1
+
+
+LaTeX Font Warning: Font shape `OT1/cmr/m/n' in size <60> not available
+(Font)              size <24.88> substituted on input line 12.
+
+[1
 
 {/usr/local/texlive/2020/texmf-var/fonts/map/pdftex/updmap/pdftex.map} </Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/udg.png>]
 /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/TeamPage.tex:21: Undefined control sequence.
@@ -106,20 +111,25 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-(/Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/TeamPage.aux) ) 
+(/Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/TeamPage.aux)
+
+LaTeX Font Warning: Size substitutions with differences
+(Font)              up to 35.12pt have occurred.
+
+ ) 
 Here is how much of TeX's memory you used:
- 1204 strings out of 480608
- 18192 string characters out of 5903631
+ 1205 strings out of 480608
+ 18206 string characters out of 5903631
  251287 words of memory out of 5000000
- 17136 multiletter control sequences out of 15000+600000
+ 17137 multiletter control sequences out of 15000+600000
  532935 words of font info for 26 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  30i,4n,25p,240b,172s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb>
-Output written on /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/TeamPage.pdf (1 page, 226402 bytes).
+</usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb>
+Output written on /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/TeamPage.pdf (1 page, 215928 bytes).
 PDF statistics:
- 23 PDF objects out of 1000 (max. 8388607)
- 14 compressed objects within 1 object stream
+ 19 PDF objects out of 1000 (max. 8388607)
+ 11 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  6 words of extra memory for PDF output out of 10000 (max. 10000000)
 
