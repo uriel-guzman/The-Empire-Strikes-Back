@@ -2,6 +2,7 @@ struct SuffixAutomaton {
   struct Node : map<char, int> {
     int link = -1, len = 0;
   };
+  
   vector<Node> trie;
   int last;
 
@@ -108,5 +109,9 @@ struct SuffixAutomaton {
       u = trie[u][c];
     }
     return trie[u].pos - sz(s) + 1;
+  }
+
+  Node& operator [](int u) {
+    return trie[u];
   }
 };

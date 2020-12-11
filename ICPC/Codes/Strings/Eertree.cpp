@@ -34,4 +34,8 @@ struct Eertree {
     }
     last = trie[u][c];
   }
+
+  Node& operator [](int u) {
+    return trie[u];
+  }
 };

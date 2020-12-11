@@ -2,6 +2,7 @@ struct AhoCorasick {
   struct Node : map<char, int> {
     int link = 0, cnt = 0;
   };
+  
   vector<Node> trie;
 
   AhoCorasick() { newNode(); }
@@ -45,5 +46,9 @@ struct AhoCorasick {
     for (char c : s)
       u = go(u, c), ans += trie[u].cnt;
     return ans;
+  }
+
+  Node& operator [](int u) {
+    return trie[u];
   }
 };

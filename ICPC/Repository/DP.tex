@@ -6,6 +6,11 @@
 % \addfile{../Codes/DynamicProgramming/Steiner.cpp}
 % \vspace{-15pt}
 
+\subsection{All submasks of a mask}
+\begin{code}
+for (int B = A; B > 0; B = (B - 1) & A)
+\end{code}
+
 \subsection{Matrix Chain Multiplication}
 \addfile{../Codes/DynamicProgramming/MatrixChainMultiplication.cpp}
 
@@ -26,17 +31,11 @@ $ dp[i][j] = \min_{k < j}(dp[i - 1][k] + b[k] * a[j]) $ \\
 $ b[j] \geq b[j + 1] \text{ optionally } a[i] \leq a[i + 1] $ \\ 
 \addfile[1-41]{../Codes/DynamicProgramming/ConvexHullTrick.cpp}
 
-\subsection{Divide and conquer \complexity{kn^2} $\Rightarrow$ \complexity{k \cdot nlogn} } 
+\subsection{Divide and conquer \complexity{kn^2} $\Rightarrow$ \complexity{k \cdot nlogn}} 
 Split the array of size $n$ into $k$ continuous groups. $k \leq n$ \\
 $ cost(a, c) + cost(b, d) \leq cost(a, d) + cost(b, c)$ with $a \leq b \leq c \leq d$ \\
 \addfile{../Codes/DynamicProgramming/DivideAndConquer.cpp}
 
-\subsection{Knuth optimization \complexity{n^3} $\Rightarrow$ \complexity{n^2} } 
+\subsection{Knuth optimization \complexity{n^3} $\Rightarrow$ \complexity{n^2}} 
 $ dp[l][r] = \min_{l \leq k \leq r}\{dp[l][k] + dp[k][r]\} + cost(l, r)$ \\
 \addfile[4]{../Codes/DynamicProgramming/knuth.cpp}
-
-\subsection{Do all submasks of a mask}
-\begin{code}
-for (int B = A; B > 0; B = (B - 1) & A)
-\end{code}
-

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.4.7)  5 DEC 2020 18:33
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.4.7)  7 DEC 2020 00:04
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -125,20 +125,20 @@ File: l3backend-pdfmode.def 2020-03-12 L3 backend support: PDF mode
 ) (/Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/TheBook.aux)
 \openout1 = `TheBook.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 16.
-LaTeX Font Info:    ... okay on input line 16.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 16.
-LaTeX Font Info:    ... okay on input line 16.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 16.
-LaTeX Font Info:    ... okay on input line 16.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 16.
-LaTeX Font Info:    ... okay on input line 16.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 16.
-LaTeX Font Info:    ... okay on input line 16.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 16.
-LaTeX Font Info:    ... okay on input line 16.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 16.
-LaTeX Font Info:    ... okay on input line 16.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 15.
+LaTeX Font Info:    ... okay on input line 15.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 15.
+LaTeX Font Info:    ... okay on input line 15.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 15.
+LaTeX Font Info:    ... okay on input line 15.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 15.
+LaTeX Font Info:    ... okay on input line 15.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 15.
+LaTeX Font Info:    ... okay on input line 15.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 15.
+LaTeX Font Info:    ... okay on input line 15.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 15.
+LaTeX Font Info:    ... okay on input line 15.
 \AtBeginShipoutBox=\box49
  (/usr/local/texlive/2020/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
@@ -202,309 +202,309 @@ Package pdflscape Info: Auto-detected driver: pdftex on input line 81.
 <TeamPage.pdf, id=1, 614.295pt x 794.97pt>
 File: TeamPage.pdf Graphic file (type pdf)
 <use TeamPage.pdf>
-Package pdftex.def Info: TeamPage.pdf  used on input line 18.
+Package pdftex.def Info: TeamPage.pdf  used on input line 17.
 (pdftex.def)             Requested size: 614.29349pt x 794.96806pt.
 File: TeamPage.pdf Graphic file (type pdf)
 <use TeamPage.pdf>
-Package pdftex.def Info: TeamPage.pdf  used on input line 18.
+Package pdftex.def Info: TeamPage.pdf  used on input line 17.
 (pdftex.def)             Requested size: 614.29349pt x 794.96806pt.
 <TeamPage.pdf, id=4, page=1, 614.295pt x 794.97pt>
 File: TeamPage.pdf Graphic file (type pdf)
 <use TeamPage.pdf, page 1>
-Package pdftex.def Info: TeamPage.pdf , page1 used on input line 18.
+Package pdftex.def Info: TeamPage.pdf , page1 used on input line 17.
 (pdftex.def)             Requested size: 614.29349pt x 794.96806pt.
 File: TeamPage.pdf Graphic file (type pdf)
 <use TeamPage.pdf, page 1>
-Package pdftex.def Info: TeamPage.pdf , page1 used on input line 18.
+Package pdftex.def Info: TeamPage.pdf , page1 used on input line 17.
 (pdftex.def)             Requested size: 597.78697pt x 773.60669pt.
 File: TeamPage.pdf Graphic file (type pdf)
 <use TeamPage.pdf, page 1>
-Package pdftex.def Info: TeamPage.pdf , page1 used on input line 18.
+Package pdftex.def Info: TeamPage.pdf , page1 used on input line 17.
 (pdftex.def)             Requested size: 597.78697pt x 773.60669pt.
 File: TeamPage.pdf Graphic file (type pdf)
 <use TeamPage.pdf, page 1>
-Package pdftex.def Info: TeamPage.pdf , page1 used on input line 18.
+Package pdftex.def Info: TeamPage.pdf , page1 used on input line 17.
 (pdftex.def)             Requested size: 597.78697pt x 773.60669pt.
 File: TeamPage.pdf Graphic file (type pdf)
 <use TeamPage.pdf, page 1>
-Package pdftex.def Info: TeamPage.pdf , page1 used on input line 18.
+Package pdftex.def Info: TeamPage.pdf , page1 used on input line 17.
 (pdftex.def)             Requested size: 597.78697pt x 773.60669pt.
 [1
 
  </Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/TeamPage.pdf{/usr/local/texlive/2020/texmf-var/fonts/map/pdftex/updmap/pdftex.map}>]
-<Chapters.pdf, id=29, 597.50829pt x 845.0471pt>
+<Chapters.pdf, id=24, 597.50829pt x 845.0471pt>
 File: Chapters.pdf Graphic file (type pdf)
 <use Chapters.pdf>
-Package pdftex.def Info: Chapters.pdf  used on input line 21.
+Package pdftex.def Info: Chapters.pdf  used on input line 20.
 (pdftex.def)             Requested size: 597.50682pt x 845.04504pt.
 File: Chapters.pdf Graphic file (type pdf)
 <use Chapters.pdf>
-Package pdftex.def Info: Chapters.pdf  used on input line 21.
+Package pdftex.def Info: Chapters.pdf  used on input line 20.
 (pdftex.def)             Requested size: 597.50682pt x 845.04504pt.
-<Chapters.pdf, id=32, page=1, 597.50829pt x 845.0471pt>
+<Chapters.pdf, id=27, page=1, 597.50829pt x 845.0471pt>
 File: Chapters.pdf Graphic file (type pdf)
 <use Chapters.pdf, page 1>
-Package pdftex.def Info: Chapters.pdf , page1 used on input line 21.
+Package pdftex.def Info: Chapters.pdf , page1 used on input line 20.
 (pdftex.def)             Requested size: 597.50682pt x 845.04504pt.
 File: Chapters.pdf Graphic file (type pdf)
 <use Chapters.pdf, page 1>
-Package pdftex.def Info: Chapters.pdf , page1 used on input line 21.
+Package pdftex.def Info: Chapters.pdf , page1 used on input line 20.
 (pdftex.def)             Requested size: 597.53416pt x 845.08372pt.
 File: Chapters.pdf Graphic file (type pdf)
 <use Chapters.pdf, page 1>
-Package pdftex.def Info: Chapters.pdf , page1 used on input line 21.
+Package pdftex.def Info: Chapters.pdf , page1 used on input line 20.
 (pdftex.def)             Requested size: 597.53416pt x 845.08372pt.
 File: Chapters.pdf Graphic file (type pdf)
 <use Chapters.pdf, page 1>
-Package pdftex.def Info: Chapters.pdf , page1 used on input line 21.
+Package pdftex.def Info: Chapters.pdf , page1 used on input line 20.
 (pdftex.def)             Requested size: 597.53416pt x 845.08372pt.
 File: Chapters.pdf Graphic file (type pdf)
 <use Chapters.pdf, page 1>
-Package pdftex.def Info: Chapters.pdf , page1 used on input line 21.
+Package pdftex.def Info: Chapters.pdf , page1 used on input line 20.
 (pdftex.def)             Requested size: 597.53416pt x 845.08372pt.
  [1 </Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/Chapters.pdf>]
-<Chapters.pdf, id=77, page=2, 597.50829pt x 845.0471pt>
+<Chapters.pdf, id=72, page=2, 597.50829pt x 845.0471pt>
 File: Chapters.pdf Graphic file (type pdf)
 <use Chapters.pdf, page 2>
-Package pdftex.def Info: Chapters.pdf , page2 used on input line 21.
+Package pdftex.def Info: Chapters.pdf , page2 used on input line 20.
 (pdftex.def)             Requested size: 597.53416pt x 845.08372pt.
 File: Chapters.pdf Graphic file (type pdf)
 <use Chapters.pdf, page 2>
-Package pdftex.def Info: Chapters.pdf , page2 used on input line 21.
+Package pdftex.def Info: Chapters.pdf , page2 used on input line 20.
 (pdftex.def)             Requested size: 597.53416pt x 845.08372pt.
 File: Chapters.pdf Graphic file (type pdf)
 <use Chapters.pdf, page 2>
-Package pdftex.def Info: Chapters.pdf , page2 used on input line 21.
+Package pdftex.def Info: Chapters.pdf , page2 used on input line 20.
 (pdftex.def)             Requested size: 597.53416pt x 845.08372pt.
  [2 </Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/Chapters.pdf>]
-<Chapters.pdf, id=101, page=3, 597.50829pt x 845.0471pt>
+<Chapters.pdf, id=96, page=3, 597.50829pt x 845.0471pt>
 File: Chapters.pdf Graphic file (type pdf)
 <use Chapters.pdf, page 3>
-Package pdftex.def Info: Chapters.pdf , page3 used on input line 21.
+Package pdftex.def Info: Chapters.pdf , page3 used on input line 20.
 (pdftex.def)             Requested size: 597.53416pt x 845.08372pt.
 File: Chapters.pdf Graphic file (type pdf)
 <use Chapters.pdf, page 3>
-Package pdftex.def Info: Chapters.pdf , page3 used on input line 21.
+Package pdftex.def Info: Chapters.pdf , page3 used on input line 20.
 (pdftex.def)             Requested size: 597.53416pt x 845.08372pt.
 File: Chapters.pdf Graphic file (type pdf)
 <use Chapters.pdf, page 3>
-Package pdftex.def Info: Chapters.pdf , page3 used on input line 21.
+Package pdftex.def Info: Chapters.pdf , page3 used on input line 20.
 (pdftex.def)             Requested size: 597.53416pt x 845.08372pt.
  [3 </Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/Chapters.pdf>]
-<Chapters.pdf, id=106, page=4, 597.50829pt x 845.0471pt>
+<Chapters.pdf, id=101, page=4, 597.50829pt x 845.0471pt>
 File: Chapters.pdf Graphic file (type pdf)
 <use Chapters.pdf, page 4>
-Package pdftex.def Info: Chapters.pdf , page4 used on input line 21.
+Package pdftex.def Info: Chapters.pdf , page4 used on input line 20.
 (pdftex.def)             Requested size: 597.53416pt x 845.08372pt.
 File: Chapters.pdf Graphic file (type pdf)
 <use Chapters.pdf, page 4>
-Package pdftex.def Info: Chapters.pdf , page4 used on input line 21.
+Package pdftex.def Info: Chapters.pdf , page4 used on input line 20.
 (pdftex.def)             Requested size: 597.53416pt x 845.08372pt.
 File: Chapters.pdf Graphic file (type pdf)
 <use Chapters.pdf, page 4>
-Package pdftex.def Info: Chapters.pdf , page4 used on input line 21.
+Package pdftex.def Info: Chapters.pdf , page4 used on input line 20.
 (pdftex.def)             Requested size: 597.53416pt x 845.08372pt.
  [4 </Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/Chapters.pdf>]
-<Chapters.pdf, id=121, page=5, 597.50829pt x 845.0471pt>
+<Chapters.pdf, id=118, page=5, 597.50829pt x 845.0471pt>
 File: Chapters.pdf Graphic file (type pdf)
 <use Chapters.pdf, page 5>
-Package pdftex.def Info: Chapters.pdf , page5 used on input line 21.
+Package pdftex.def Info: Chapters.pdf , page5 used on input line 20.
 (pdftex.def)             Requested size: 597.53416pt x 845.08372pt.
 File: Chapters.pdf Graphic file (type pdf)
 <use Chapters.pdf, page 5>
-Package pdftex.def Info: Chapters.pdf , page5 used on input line 21.
+Package pdftex.def Info: Chapters.pdf , page5 used on input line 20.
 (pdftex.def)             Requested size: 597.53416pt x 845.08372pt.
 File: Chapters.pdf Graphic file (type pdf)
 <use Chapters.pdf, page 5>
-Package pdftex.def Info: Chapters.pdf , page5 used on input line 21.
+Package pdftex.def Info: Chapters.pdf , page5 used on input line 20.
 (pdftex.def)             Requested size: 597.53416pt x 845.08372pt.
  [5 </Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/Chapters.pdf>]
-<Chapters.pdf, id=125, page=6, 597.50829pt x 845.0471pt>
+<Chapters.pdf, id=122, page=6, 597.50829pt x 845.0471pt>
 File: Chapters.pdf Graphic file (type pdf)
 <use Chapters.pdf, page 6>
-Package pdftex.def Info: Chapters.pdf , page6 used on input line 21.
+Package pdftex.def Info: Chapters.pdf , page6 used on input line 20.
 (pdftex.def)             Requested size: 597.53416pt x 845.08372pt.
 File: Chapters.pdf Graphic file (type pdf)
 <use Chapters.pdf, page 6>
-Package pdftex.def Info: Chapters.pdf , page6 used on input line 21.
+Package pdftex.def Info: Chapters.pdf , page6 used on input line 20.
 (pdftex.def)             Requested size: 597.53416pt x 845.08372pt.
 File: Chapters.pdf Graphic file (type pdf)
 <use Chapters.pdf, page 6>
-Package pdftex.def Info: Chapters.pdf , page6 used on input line 21.
+Package pdftex.def Info: Chapters.pdf , page6 used on input line 20.
 (pdftex.def)             Requested size: 597.53416pt x 845.08372pt.
  [6 </Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/Chapters.pdf>]
-<Chapters.pdf, id=130, page=7, 597.50829pt x 845.0471pt>
+<Chapters.pdf, id=127, page=7, 597.50829pt x 845.0471pt>
 File: Chapters.pdf Graphic file (type pdf)
 <use Chapters.pdf, page 7>
-Package pdftex.def Info: Chapters.pdf , page7 used on input line 21.
+Package pdftex.def Info: Chapters.pdf , page7 used on input line 20.
 (pdftex.def)             Requested size: 597.53416pt x 845.08372pt.
 File: Chapters.pdf Graphic file (type pdf)
 <use Chapters.pdf, page 7>
-Package pdftex.def Info: Chapters.pdf , page7 used on input line 21.
+Package pdftex.def Info: Chapters.pdf , page7 used on input line 20.
 (pdftex.def)             Requested size: 597.53416pt x 845.08372pt.
 File: Chapters.pdf Graphic file (type pdf)
 <use Chapters.pdf, page 7>
-Package pdftex.def Info: Chapters.pdf , page7 used on input line 21.
+Package pdftex.def Info: Chapters.pdf , page7 used on input line 20.
 (pdftex.def)             Requested size: 597.53416pt x 845.08372pt.
  [7 </Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/Chapters.pdf>]
-<Chapters.pdf, id=134, page=8, 597.50829pt x 845.0471pt>
+<Chapters.pdf, id=131, page=8, 597.50829pt x 845.0471pt>
 File: Chapters.pdf Graphic file (type pdf)
 <use Chapters.pdf, page 8>
-Package pdftex.def Info: Chapters.pdf , page8 used on input line 21.
+Package pdftex.def Info: Chapters.pdf , page8 used on input line 20.
 (pdftex.def)             Requested size: 597.53416pt x 845.08372pt.
 File: Chapters.pdf Graphic file (type pdf)
 <use Chapters.pdf, page 8>
-Package pdftex.def Info: Chapters.pdf , page8 used on input line 21.
+Package pdftex.def Info: Chapters.pdf , page8 used on input line 20.
 (pdftex.def)             Requested size: 597.53416pt x 845.08372pt.
 File: Chapters.pdf Graphic file (type pdf)
 <use Chapters.pdf, page 8>
-Package pdftex.def Info: Chapters.pdf , page8 used on input line 21.
+Package pdftex.def Info: Chapters.pdf , page8 used on input line 20.
 (pdftex.def)             Requested size: 597.53416pt x 845.08372pt.
  [8 </Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/Chapters.pdf>]
-<Chapters.pdf, id=156, page=9, 597.50829pt x 845.0471pt>
+<Chapters.pdf, id=153, page=9, 597.50829pt x 845.0471pt>
 File: Chapters.pdf Graphic file (type pdf)
 <use Chapters.pdf, page 9>
-Package pdftex.def Info: Chapters.pdf , page9 used on input line 21.
+Package pdftex.def Info: Chapters.pdf , page9 used on input line 20.
 (pdftex.def)             Requested size: 597.53416pt x 845.08372pt.
 File: Chapters.pdf Graphic file (type pdf)
 <use Chapters.pdf, page 9>
-Package pdftex.def Info: Chapters.pdf , page9 used on input line 21.
+Package pdftex.def Info: Chapters.pdf , page9 used on input line 20.
 (pdftex.def)             Requested size: 597.53416pt x 845.08372pt.
 File: Chapters.pdf Graphic file (type pdf)
 <use Chapters.pdf, page 9>
-Package pdftex.def Info: Chapters.pdf , page9 used on input line 21.
+Package pdftex.def Info: Chapters.pdf , page9 used on input line 20.
 (pdftex.def)             Requested size: 597.53416pt x 845.08372pt.
  [9 </Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/Chapters.pdf>]
-<Chapters.pdf, id=160, page=10, 597.50829pt x 845.0471pt>
+<Chapters.pdf, id=157, page=10, 597.50829pt x 845.0471pt>
 File: Chapters.pdf Graphic file (type pdf)
 <use Chapters.pdf, page 10>
-Package pdftex.def Info: Chapters.pdf , page10 used on input line 21.
+Package pdftex.def Info: Chapters.pdf , page10 used on input line 20.
 (pdftex.def)             Requested size: 597.53416pt x 845.08372pt.
 File: Chapters.pdf Graphic file (type pdf)
 <use Chapters.pdf, page 10>
-Package pdftex.def Info: Chapters.pdf , page10 used on input line 21.
+Package pdftex.def Info: Chapters.pdf , page10 used on input line 20.
 (pdftex.def)             Requested size: 597.53416pt x 845.08372pt.
 File: Chapters.pdf Graphic file (type pdf)
 <use Chapters.pdf, page 10>
-Package pdftex.def Info: Chapters.pdf , page10 used on input line 21.
+Package pdftex.def Info: Chapters.pdf , page10 used on input line 20.
 (pdftex.def)             Requested size: 597.53416pt x 845.08372pt.
  [10 </Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/Chapters.pdf>]
-<Chapters.pdf, id=164, page=11, 597.50829pt x 845.0471pt>
+<Chapters.pdf, id=161, page=11, 597.50829pt x 845.0471pt>
 File: Chapters.pdf Graphic file (type pdf)
 <use Chapters.pdf, page 11>
-Package pdftex.def Info: Chapters.pdf , page11 used on input line 21.
+Package pdftex.def Info: Chapters.pdf , page11 used on input line 20.
 (pdftex.def)             Requested size: 597.53416pt x 845.08372pt.
 File: Chapters.pdf Graphic file (type pdf)
 <use Chapters.pdf, page 11>
-Package pdftex.def Info: Chapters.pdf , page11 used on input line 21.
+Package pdftex.def Info: Chapters.pdf , page11 used on input line 20.
 (pdftex.def)             Requested size: 597.53416pt x 845.08372pt.
 File: Chapters.pdf Graphic file (type pdf)
 <use Chapters.pdf, page 11>
-Package pdftex.def Info: Chapters.pdf , page11 used on input line 21.
+Package pdftex.def Info: Chapters.pdf , page11 used on input line 20.
 (pdftex.def)             Requested size: 597.53416pt x 845.08372pt.
  [11 </Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/Chapters.pdf>]
-<Chapters.pdf, id=168, page=12, 597.50829pt x 845.0471pt>
+<Chapters.pdf, id=165, page=12, 597.50829pt x 845.0471pt>
 File: Chapters.pdf Graphic file (type pdf)
 <use Chapters.pdf, page 12>
-Package pdftex.def Info: Chapters.pdf , page12 used on input line 21.
+Package pdftex.def Info: Chapters.pdf , page12 used on input line 20.
 (pdftex.def)             Requested size: 597.53416pt x 845.08372pt.
 File: Chapters.pdf Graphic file (type pdf)
 <use Chapters.pdf, page 12>
-Package pdftex.def Info: Chapters.pdf , page12 used on input line 21.
+Package pdftex.def Info: Chapters.pdf , page12 used on input line 20.
 (pdftex.def)             Requested size: 597.53416pt x 845.08372pt.
 File: Chapters.pdf Graphic file (type pdf)
 <use Chapters.pdf, page 12>
-Package pdftex.def Info: Chapters.pdf , page12 used on input line 21.
+Package pdftex.def Info: Chapters.pdf , page12 used on input line 20.
 (pdftex.def)             Requested size: 597.53416pt x 845.08372pt.
  [12 </Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/Chapters.pdf>]
-<Chapters.pdf, id=173, page=13, 597.50829pt x 845.0471pt>
+<Chapters.pdf, id=186, page=13, 597.50829pt x 845.0471pt>
 File: Chapters.pdf Graphic file (type pdf)
 <use Chapters.pdf, page 13>
-Package pdftex.def Info: Chapters.pdf , page13 used on input line 21.
+Package pdftex.def Info: Chapters.pdf , page13 used on input line 20.
 (pdftex.def)             Requested size: 597.53416pt x 845.08372pt.
 File: Chapters.pdf Graphic file (type pdf)
 <use Chapters.pdf, page 13>
-Package pdftex.def Info: Chapters.pdf , page13 used on input line 21.
+Package pdftex.def Info: Chapters.pdf , page13 used on input line 20.
 (pdftex.def)             Requested size: 597.53416pt x 845.08372pt.
 File: Chapters.pdf Graphic file (type pdf)
 <use Chapters.pdf, page 13>
-Package pdftex.def Info: Chapters.pdf , page13 used on input line 21.
+Package pdftex.def Info: Chapters.pdf , page13 used on input line 20.
 (pdftex.def)             Requested size: 597.53416pt x 845.08372pt.
  [13 </Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/Chapters.pdf>]
-<Chapters.pdf, id=203, page=14, 597.50829pt x 845.0471pt>
+<Chapters.pdf, id=200, page=14, 597.50829pt x 845.0471pt>
 File: Chapters.pdf Graphic file (type pdf)
 <use Chapters.pdf, page 14>
-Package pdftex.def Info: Chapters.pdf , page14 used on input line 21.
+Package pdftex.def Info: Chapters.pdf , page14 used on input line 20.
 (pdftex.def)             Requested size: 597.53416pt x 845.08372pt.
 File: Chapters.pdf Graphic file (type pdf)
 <use Chapters.pdf, page 14>
-Package pdftex.def Info: Chapters.pdf , page14 used on input line 21.
+Package pdftex.def Info: Chapters.pdf , page14 used on input line 20.
 (pdftex.def)             Requested size: 597.53416pt x 845.08372pt.
 File: Chapters.pdf Graphic file (type pdf)
 <use Chapters.pdf, page 14>
-Package pdftex.def Info: Chapters.pdf , page14 used on input line 21.
+Package pdftex.def Info: Chapters.pdf , page14 used on input line 20.
 (pdftex.def)             Requested size: 597.53416pt x 845.08372pt.
  [14 </Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/Chapters.pdf>]
-<Chapters.pdf, id=207, page=15, 597.50829pt x 845.0471pt>
+<Chapters.pdf, id=204, page=15, 597.50829pt x 845.0471pt>
 File: Chapters.pdf Graphic file (type pdf)
 <use Chapters.pdf, page 15>
-Package pdftex.def Info: Chapters.pdf , page15 used on input line 21.
+Package pdftex.def Info: Chapters.pdf , page15 used on input line 20.
 (pdftex.def)             Requested size: 597.53416pt x 845.08372pt.
 File: Chapters.pdf Graphic file (type pdf)
 <use Chapters.pdf, page 15>
-Package pdftex.def Info: Chapters.pdf , page15 used on input line 21.
+Package pdftex.def Info: Chapters.pdf , page15 used on input line 20.
 (pdftex.def)             Requested size: 597.53416pt x 845.08372pt.
 File: Chapters.pdf Graphic file (type pdf)
 <use Chapters.pdf, page 15>
-Package pdftex.def Info: Chapters.pdf , page15 used on input line 21.
+Package pdftex.def Info: Chapters.pdf , page15 used on input line 20.
 (pdftex.def)             Requested size: 597.53416pt x 845.08372pt.
  [15 </Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/Chapters.pdf>]
-<Chapters.pdf, id=211, page=16, 597.50829pt x 845.0471pt>
+<Chapters.pdf, id=208, page=16, 597.50829pt x 845.0471pt>
 File: Chapters.pdf Graphic file (type pdf)
 <use Chapters.pdf, page 16>
-Package pdftex.def Info: Chapters.pdf , page16 used on input line 21.
+Package pdftex.def Info: Chapters.pdf , page16 used on input line 20.
 (pdftex.def)             Requested size: 597.53416pt x 845.08372pt.
 File: Chapters.pdf Graphic file (type pdf)
 <use Chapters.pdf, page 16>
-Package pdftex.def Info: Chapters.pdf , page16 used on input line 21.
+Package pdftex.def Info: Chapters.pdf , page16 used on input line 20.
 (pdftex.def)             Requested size: 597.53416pt x 845.08372pt.
 File: Chapters.pdf Graphic file (type pdf)
 <use Chapters.pdf, page 16>
-Package pdftex.def Info: Chapters.pdf , page16 used on input line 21.
+Package pdftex.def Info: Chapters.pdf , page16 used on input line 20.
 (pdftex.def)             Requested size: 597.53416pt x 845.08372pt.
  [16 </Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/Chapters.pdf>]
-<Chapters.pdf, id=220, page=17, 597.50829pt x 845.0471pt>
+<Chapters.pdf, id=217, page=17, 597.50829pt x 845.0471pt>
 File: Chapters.pdf Graphic file (type pdf)
 <use Chapters.pdf, page 17>
-Package pdftex.def Info: Chapters.pdf , page17 used on input line 21.
+Package pdftex.def Info: Chapters.pdf , page17 used on input line 20.
 (pdftex.def)             Requested size: 597.53416pt x 845.08372pt.
 File: Chapters.pdf Graphic file (type pdf)
 <use Chapters.pdf, page 17>
-Package pdftex.def Info: Chapters.pdf , page17 used on input line 21.
+Package pdftex.def Info: Chapters.pdf , page17 used on input line 20.
 (pdftex.def)             Requested size: 597.53416pt x 845.08372pt.
 File: Chapters.pdf Graphic file (type pdf)
 <use Chapters.pdf, page 17>
-Package pdftex.def Info: Chapters.pdf , page17 used on input line 21.
+Package pdftex.def Info: Chapters.pdf , page17 used on input line 20.
 (pdftex.def)             Requested size: 597.53416pt x 845.08372pt.
  [17 </Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/Chapters.pdf>]
-<Chapters.pdf, id=224, page=18, 597.50829pt x 845.0471pt>
+<Chapters.pdf, id=221, page=18, 597.50829pt x 845.0471pt>
 File: Chapters.pdf Graphic file (type pdf)
 <use Chapters.pdf, page 18>
-Package pdftex.def Info: Chapters.pdf , page18 used on input line 21.
+Package pdftex.def Info: Chapters.pdf , page18 used on input line 20.
 (pdftex.def)             Requested size: 597.53416pt x 845.08372pt.
 File: Chapters.pdf Graphic file (type pdf)
 <use Chapters.pdf, page 18>
-Package pdftex.def Info: Chapters.pdf , page18 used on input line 21.
+Package pdftex.def Info: Chapters.pdf , page18 used on input line 20.
 (pdftex.def)             Requested size: 597.53416pt x 845.08372pt.
 File: Chapters.pdf Graphic file (type pdf)
 <use Chapters.pdf, page 18>
-Package pdftex.def Info: Chapters.pdf , page18 used on input line 21.
+Package pdftex.def Info: Chapters.pdf , page18 used on input line 20.
 (pdftex.def)             Requested size: 597.53416pt x 845.08372pt.
  [18 </Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/Chapters.pdf>]
-<fullTeam.JPG, id=229, 741.77126pt x 430.60875pt>
+<fullTeam.JPG, id=226, 741.77126pt x 430.60875pt>
 File: fullTeam.JPG Graphic file (type jpg)
 <use fullTeam.JPG>
-Package pdftex.def Info: fullTeam.JPG  used on input line 24.
+Package pdftex.def Info: fullTeam.JPG  used on input line 23.
 (pdftex.def)             Requested size: 483.69684pt x 280.79909pt.
  [19 </Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/fullTeam.JPG>] (/Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/TheBook.aux) ) 
 Here is how much of TeX's memory you used:
@@ -516,10 +516,10 @@ Here is how much of TeX's memory you used:
  1141 hyphenation exceptions out of 8191
  40i,18n,46p,339b,422s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/local/texlive/2020/texmf-dist/fonts/type1/public/inconsolata/Inconsolata-zi4b.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/inconsolata/Inconsolata-zi4r.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex9.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/cm-super/sfbx0900.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/cm-super/sfbx1000.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/cm-super/sfbx1200.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/cm-super/sfbx1440.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/cm-super/sfrm0900.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/cm-super/sfti0900.pfb>
-Output written on /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/TheBook.pdf (20 pages, 788022 bytes).
+Output written on /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/TheBook.pdf (20 pages, 785569 bytes).
 PDF statistics:
- 265 PDF objects out of 1000 (max. 8388607)
- 187 compressed objects within 2 object streams
+ 262 PDF objects out of 1000 (max. 8388607)
+ 184 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
  131 words of extra memory for PDF output out of 10000 (max. 10000000)
 

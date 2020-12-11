@@ -2,6 +2,7 @@ struct Trie {
   struct Node : map<char, int> {
     bool isWord = false;
   };
+  
   vector<Node> trie;
 
   Trie() { newNode(); }
@@ -27,5 +28,9 @@ struct Trie {
       u = trie[u][c];
     }
     return trie[u].isWord;
+  }
+
+  Node& operator [](int u) {
+    return trie[u];
   }
 };
