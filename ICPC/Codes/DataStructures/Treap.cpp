@@ -107,3 +107,13 @@ pair<Treap, Treap> splitsz(Treap t, int sz) {
     return {t->pull(), p.s};
   }
 }
+
+int pos(Treap t) {
+  int sz = gsz(t->ch[0]);
+  for (; t->p; t = t->p) {
+    Treap p = t->p;
+    if (p->ch[1] == t)
+      sz += gsz(p->ch[0]) + 1;
+  }
+  return sz + 1;
+}
