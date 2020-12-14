@@ -1,4 +1,3 @@
-
 # ~/.bashrc: executed by bash(1) for non-login shells.
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
@@ -93,13 +92,6 @@ alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
 
-# my custom aliases
-alias repo='cd /home/uriel/The\ Empire\ Strikes\ Back/'
-alias icpc='cd /home/uriel/ICPC/'
-alias vimrc='nvim ~/.vimrc'
-alias bashrc='nvim ~/.bashrc'
-alias bashcom='source ~/.bashrc'
-alias cucei='cd /home/uriel/CUCEI'
 
 #! /bin/bash   
 set -m
@@ -128,12 +120,26 @@ if ! shopt -oq posix; then
   fi
 fi
 
+# my custom aliases
+alias repo='cd /home/uriel/The\ Empire\ Strikes\ Back/'
+alias icpc='cd /home/uriel/ICPC/'
+alias vimrc='nvim ~/.vimrc'
+alias bashrc='nvim ~/.bashrc'
+alias bashcom='source ~/.bashrc'
+alias cucei='cd /home/uriel/CUCEI'
+
+
 #########shortcuts.txt#########
+alias pull='git pull origin master'
 
 red='\x1B[0;31m'
 green='\x1B[0;32m'
 blue='\x1B[0;34m'
 noColor='\x1B[0m'
+
+push() {
+  git add $1 && git commit -a -m $2 && git push origin master
+}
 
 go() {
 	g++ --std=c++17 $2 $3 -Wall -Wextra -Wshadow -D_GLIBCXX_ASSERTIONS -fmax-errors=3 -O2 -w $1.cpp && ./a.out 
