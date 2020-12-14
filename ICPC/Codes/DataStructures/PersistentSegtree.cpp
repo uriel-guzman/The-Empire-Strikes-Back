@@ -3,7 +3,7 @@ struct Per {
   lli sum = 0;
   Per *ls, *rs;
 
-  Per(int l, int r) : l(l), r(r), ls(0), ls(0) {}
+  Per(int l, int r) : l(l), r(r), ls(0), rs(0) {}
 
   Per* pull() {
     sum = ls->sum + rs->sum;
