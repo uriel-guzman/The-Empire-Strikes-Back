@@ -138,7 +138,7 @@ blue='\x1B[0;34m'
 noColor='\x1B[0m'
 
 push() {
-  git add $1 && git commit -a -m $2 && git push origin master
+  git add $1 && git commit -a -m "$2" && git push origin master
 }
 
 go() {
