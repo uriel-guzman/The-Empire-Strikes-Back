@@ -1,23 +1,27 @@
-PS1="%F%B${blue2}`whoami`%f%F${orange} ~ %f%b";
-export PS1;
+alias mysql=/usr/local/mysql/bin/mysql
+alias myBash='open ~/.zshenv' # Bash file xd
 
-############ This is just personal taste, just change to the properly directory ############
+drawingsDir='/Users/abraham/Problems/drawings/' # Folder where you store all the images and stuff
 
-alias bash='gedit ~/.zshenv' # Bash file xd
+######################## Github ########################
+
+alias problems='cd'
 alias icpc='cd /Users/abraham/The-Empire-Strikes-Back' # Folder of github
+alias pull='git pull origin master'
 
-drawingsDir='/Users/abraham/Desktop/Problems/drawings/' # Folder where you store all the images and stuff
+push() {
+  git add $1 && git commit -a -m "$2" && git push origin master
+}
 
-############################################################################################
+######################## C++ stuff ########################
 
 red='\x1B[0;31m'
 green='\x1B[0;32m'
 blue='\x1B[0;34m'
 noColor='\x1B[0m'
 
-alias flags='-Wall -Wextra -Wshadow -D_GLIBCXX_ASSERTIONS -fmax-errors=2 -O2'
-
 go() {
+  alias flags='-Wall -Wextra -Wshadow -fmax-errors=2 -O2'
 	g++-9 --std=c++17 $2 $3 ${flags} $1.cpp && ./a.out 
 }
 
@@ -84,7 +88,7 @@ random() {
 		fi
 	}
 	
-	for ((i = 1; i <= 300; i++)); do
+	for ((i = 1; i <= 500; i++)); do
 		printf "Test case #${i}"
 		
 		generateTestCase
@@ -182,3 +186,4 @@ createBooks() {
 	
 	printf "All books done\n"
 }
+

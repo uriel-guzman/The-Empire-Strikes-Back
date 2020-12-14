@@ -1,6 +1,6 @@
 // log(n)
 // first preprocess: seg = process(points)
-// for each query: PInConvexPolygon(seg, p - pts[0])
+// for each query: pointInConvexPolygon(seg, p - pts[0])
 vector<P> process(const vector<P> &pts) {
   int n = sz(pts);
   rotate(pts.begin(), min_element(all(pts), [&](P a, P b) {
@@ -12,7 +12,7 @@ vector<P> process(const vector<P> &pts) {
   return seg;
 } 
 
-bool PInConvexPolygon(const vector<P> &seg, const P &p) {
+bool pointInConvexPolygon(const vector<P> &seg, const P &p) {
   int n = sz(seg);
   if (neq(seg[0].cross(p), 0) && sgn(seg[0].cross(p)) != sgn(seg[0].cross(seg[n - 1])))
     return false;
