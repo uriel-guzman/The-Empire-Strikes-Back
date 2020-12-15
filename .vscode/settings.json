@@ -1,6 +1,11 @@
 {
   "files.associations": {
     "vector": "cpp",
-    "random": "cpp"
+    "random": "cpp",
+    "complex": "cpp",
+    "*.tcc": "cpp",
+    "unordered_map": "cpp",
+    "unordered_set": "cpp",
+    "rope": "cpp"
   }
 }
