@@ -1,10 +1,10 @@
-vector<P> intersectLineCircle(P a, P v, P c, double r){
+vector<P> intersectLineCircle(P a, P v, P c, ld r) {
   P p = proj_line(a, v, c);
-  double d = (p - c).length();
-  double h = sq(r) - sq(d);
-  if(h == 0) 
+  ld d = (p - c).length();
+  ld h = sq(r) - sq(d);
+  if (h == 0) 
 		return {p}; //line tangent to circle
-  else if(h < 0) 
+  else if (h < 0) 
 		return {}; //no intersection
   else {
     P u = v.unit() * sqrt(h);

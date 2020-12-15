@@ -1,13 +1,12 @@
-int pointInPolygon(const vector<P> &pts, P p) { // O(N)
-	int n = sz(pts), ans = 0;
-	fore (i, 0, n) {
-		P a = pts[i], b = pts[(i + 1) % n];
-		if (pointInSegment(a, b, p)) 
-      return -1; // on perimeter
-		if (a.y > b.y) 
-      swap(a,b);
-		if (a.y <= p.y && b.y > p.y && (a - p).cross(b - p) > 0) 
-      ans ^= 1;
-	}
-	return ans ? 1 : 0; // inside, outside
+bool crossesRay(P a, P b, P p) {
+	return (geq(b.y, p.y) - geq(a.y, p.y)) * sgn((a - p).cross(b - p)) > 0;
+}
+
+int pointInPolygon(const vector<P> &pts, P p) {
+	if (pointInPerimeter(pts, p)) 
+		return -1; // point in the perimeter
+	int rays = 0;
+  fore (i, 0, sz(pts))
+		rays += crossesRay(P[i], P[(i + 1) % sz(pts)], p);
+	return rays & 1; // 0: point outside, 1: point inside
 }

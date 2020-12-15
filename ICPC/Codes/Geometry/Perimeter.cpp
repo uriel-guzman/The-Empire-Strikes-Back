@@ -1,7 +1,6 @@
-double perimeter(vector<P> &pts){
-  int n = sz(pts);
-  double sum = 0;
-  fore (i, 0, n)
-    sum += (pts[(i + 1) % n] - pts[i]).length();
+ld perimeter(const vector<P> &pts){
+  ld sum = 0;
+  fore (i, 0, sz(pts))
+    sum += (pts[(i + 1) % sz(pts)] - pts[i]).length();
   return sum;
 }

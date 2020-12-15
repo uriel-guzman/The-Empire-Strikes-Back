@@ -1,33 +1,25 @@
-// log(n)
-// first preprocess: seg = process(points)
-// for each query: pointInConvexPolygon(seg, p - pts[0])
-vector<P> process(const vector<P> &pts) {
-  int n = sz(pts);
-  rotate(pts.begin(), min_element(all(pts), [&](P a, P b) {
-    return a.x == b.x ? a.y < b.y : a.x < b.x;
-  }), pts.end());
-  vector<P> seg(n - 1);
-  fore (i, 0, n - 1)
-    seg[i] = pts[i + 1] - pts[0];
-  return seg;
-} 
-
-bool pointInConvexPolygon(const vector<P> &seg, const P &p) {
-  int n = sz(seg);
-  if (neq(seg[0].cross(p), 0) && sgn(seg[0].cross(p)) != sgn(seg[0].cross(seg[n - 1])))
-    return false;
-  if (neq(seg[n - 1].cross(p), 0) && sgn(seg[n - 1].cross(p)) != sgn(seg[n - 1].cross(seg[0])))
-    return false;
-  if (eq(seg[0].cross(p), 0))
-    return geq(seg[0].length(), p.length());
-  int l = 0, r = n - 1;
-  while (r - l > 1) {
-    int m = l + ((r - l) >> 1);
-    if (geq(seg[m].cross(p), 0)) 
-      l = m;
-    else
-      r = m;
-  }
-  return eq(fabs(seg[l].cross(seg[l + 1])), fabs((p - seg[l]).cross(p - seg[l + 1])) + 
-          fabs(p.cross(seg[l])) + fabs(p.cross(seg[l + 1])));
+// point in convex polygon in O(log n)
+// make sure that P is convex and in ccw
+// before the queries, do the preprocess on P:
+// rotate(P.begin(), min_element(P.begin(), P.end()), P.end());
+// int right = max_element(P.begin(), P.end()) - P.begin();
+// returns 0 if p is outside, 1 if p is inside, -1 if p is in the perimeter
+//
+int pointInConvexPolygon(const vector<P> &pts, P p, int right) {
+	if (p < pts[0] || pts[right] < p)
+    return 0;
+	int orientation = sgn((pts[right] - pts[0]).cross(p - pts[0]));
+	if (orientation == 0) {
+		if (p == pts[0] || p == pts[right])
+      return -1;
+		return (right == 1 || right + 1 == sz(pts)) ? -1 : 1;
+	} else if (orientation < 0) {
+		auto r = lower_bound(pts.begin() + 1, pts.begin() + right, p);
+		int det = sgn((p - r[-1]).cross(r[0] - r[-1])) - 1;
+		return det == -2 ? 1 : det;
+	} else {
+		auto l = upper_bound(pts.rbegin(), pts.rend() - right - 1, p);
+		int det = sgn((p - l[0]).cross((l == pts.rbegin() ? pts[0] : l[-1]) - l[0])) - 1;
+		return det == -1 ? 1 : det;
+	}
 }
