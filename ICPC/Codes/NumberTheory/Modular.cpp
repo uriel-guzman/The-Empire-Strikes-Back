@@ -14,10 +14,7 @@ struct Modular {
   friend istream & operator >> (istream &is, Modular &m) { return is >> m.v; }
   
   int v;
-  Modular(lli x = 0) : v(-mod < x && x < mod ? x : x % mod) {
-    if (v < 0) v += mod;
-    if (v >= mod) v -= mod;
-  }
+  Modular(lli x = 0) : v((x %= mod) < 0 ? x + mod : x) {}
 private:
   static int minv(int a, int m) {
     a %= m;
