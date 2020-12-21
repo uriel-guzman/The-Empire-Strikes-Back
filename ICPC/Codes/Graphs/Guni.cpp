@@ -1,29 +1,28 @@
-int tin[N], tout[N], who[N], sz[N], heavy[N], color[N];
-int timer = 0;
+int cnt[C], color[N];
+int sz[N];
 
-int dfs(int u, int pr = 0){
-  sz[u] = 1, tin[u] = ++timer, who[timer] = u;
-  for (int v : graph[u]) if (v != pr) {
-    sz[u] += dfs(v, u);
-    if (sz[v] > sz[heavy[u]])
-      heavy[u] = v;
+int guni(int u, int p = 0) { 
+  sz[u] = 1; 
+  for (int &v : graph[u]) if (v != p) {
+    sz[u] += guni(v, u);
+    if (sz[v] > sz[graph[u][0]])
+      swap(v, graph[u][0]);
   }
-  return tout[u] = timer, sz[u];
+  return sz[u];
 }
 
-void guni(int u, int pr = 0, bool keep = 0) {
-  for (int v : graph[u])
-    if (v != pr && v != heavy[u])
-      guni(v, u, 0);
-  if (heavy[u])
-    guni(heavy[u], u, 1);
-  for (int v : graph[u])
-    if (v != pr && v != heavy[u])
-      fore (i, tin[v], tout[v] + 1)
-        add(color[who[i]]);
-  add(color[u]);
-  // Solve the subtree queries here
-  if (keep == 0)
-    fore (i, tin[u], tout[u] + 1)
-      rem(color[who[i]]);
+void compute(int u, int p, int x, bool dont) {
+  cnt[color[u]] += x;
+  for (int i = dont; i < sz(graph[u]); i++) // don't change it with a fore!!!
+    if (graph[u][i] != p)
+      compute(graph[u][i], p, x, 0);
+}
+
+void solve(int u, int p, bool keep = 0) {
+  fore (i, sz(graph[u]), 0)
+    if (graph[u][i] != p) 
+      solve(graph[u][i], u, !i);
+  compute(u, p, +1, 1); // add
+  // now cnt[i] has how many times the color i appears in the subtree of u
+  if (!keep) compute(u, p, -1, 0); // remove
 }
