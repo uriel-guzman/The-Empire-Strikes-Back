@@ -1,12 +1,12 @@
 const int LogN = 1 + __lg(N);
-int pr[LogN][N], dep[N];
+int par[LogN][N], dep[N];
 
-void dfs(int u, int pr[]) {
+void dfs(int u, int par[]) {
   for (int v : graph[u])
-    if (v != pr[u]) {
-      pr[v] = u;
+    if (v != par[u]) {
+      par[v] = u;
       dep[v] = dep[u] + 1;
-      dfs(v, pr);
+      dfs(v, par);
     }
 }
 
@@ -15,13 +15,13 @@ int lca(int u, int v){
     swap(u, v);
   fore (k, LogN, 0)
     if (dep[v] - dep[u] >= (1 << k))
-      v = pr[k][v];
+      v = par[k][v];
   if (u == v)
     return u;
   fore (k, LogN, 0)
-    if (pr[k][v] != pr[k][u])
-      u = pr[k][u], v = pr[k][v];
-  return pr[0][u];
+    if (par[k][v] != par[k][u])
+      u = par[k][u], v = par[k][v];
+  return par[0][u];
 }
 
 int dist(int u, int v) {
@@ -29,8 +29,8 @@ int dist(int u, int v) {
 }
 
 void init(int r) {
-  dfs(r, pr[0]);
+  dfs(r, par[0]);
   fore (k, 1, LogN)
     fore (u, 1, n + 1) 	
-      pr[k][u] = pr[k - 1][pr[k - 1][u]];		
+      par[k][u] = par[k - 1][par[k - 1][u]];		
 }

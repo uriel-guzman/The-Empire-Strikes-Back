@@ -1,13 +1,13 @@
 struct Dsu {
-  vi pr, tot;
+  vi par, tot;
   stack<ii> mem;
 
-  Dsu(int n = 0) : pr(++n), tot(n, 1) {
-    iota(all(pr), 0);
+  Dsu(int n = 1) : par(n + 1), tot(n + 1, 1) {
+    iota(all(par), 0);
   }
 
   int find(int u) {
-    return pr[u] == u ? u : find(pr[u]);
+    return par[u] == u ? u : find(par[u]);
   }
 
   void unite(int u, int v) {
@@ -17,7 +17,7 @@ struct Dsu {
         swap(u, v);
       mem.emplace(u, v);
       tot[u] += tot[v];
-      pr[v] = u;
+      par[v] = u;
     }
   }
 
@@ -26,7 +26,7 @@ struct Dsu {
     mem.pop();
     if (u != -1) {
       tot[u] -= tot[v];
-      pr[v] = v;
+      par[v] = v;
     }
   }
 };

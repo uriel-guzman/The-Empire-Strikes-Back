@@ -43,7 +43,7 @@
 \contentsline {subsection}{\numberline {4.2}KMP}{12}{subsection.4.2}%
 \contentsline {subsection}{\numberline {4.3}KMP automaton}{12}{subsection.4.3}%
 \contentsline {subsection}{\numberline {4.4}Z algorithm}{12}{subsection.4.4}%
-\contentsline {subsection}{\numberline {4.5}Manacher algorithm}{13}{subsection.4.5}%
+\contentsline {subsection}{\numberline {4.5}Manacher algorithm}{12}{subsection.4.5}%
 \contentsline {subsection}{\numberline {4.6}Suffix array}{13}{subsection.4.6}%
 \contentsline {subsection}{\numberline {4.7}Suffix automaton}{13}{subsection.4.7}%
 \contentsline {subsection}{\numberline {4.8}Aho corasick}{14}{subsection.4.8}%

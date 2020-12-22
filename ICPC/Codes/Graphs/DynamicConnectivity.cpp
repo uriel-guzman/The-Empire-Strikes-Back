@@ -3,7 +3,7 @@ struct DynamicConnectivity {
     int op, u, v, at;
   };
 
-  Dsu dsu; // dsu with rollback
+  Dsu dsu; // with rollback
   vector<Query> queries;
   map<ii, int> mp;
   int timer = -1;

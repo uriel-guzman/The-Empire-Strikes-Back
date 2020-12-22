@@ -3,7 +3,7 @@ struct HopcroftKarp {
   vector<vi> g;
   vi dist, match;
  
-  HopcroftKarp(int _n) : n(5 + _n), g(n + 5), dist(n + 5), match(n + 5, 0) {}
+  HopcroftKarp(int _n) : n(_n + 5), g(n), dist(n), match(n, 0) {} // 1-indexed!!
  
   void add(int u, int v) {
     g[u].pb(v), g[v].pb(u);
@@ -13,7 +13,7 @@ struct HopcroftKarp {
   bool bfs() {
     queue<int> qu;
     fill(all(dist), -1);
-    fore (u, 1, n + 1)  
+    fore (u, 1, n)  
       if (!match[u])
         dist[u] = 0, qu.push(u);
     while (!qu.empty()) {
@@ -41,7 +41,7 @@ struct HopcroftKarp {
   int maxMatching() {
     int tot = 0;
     while (bfs())
-      fore (u, 1, n + 1) 
+      fore (u, 1, n) 
         tot += match[u] ? 0 : dfs(u);
     return tot;
   }
