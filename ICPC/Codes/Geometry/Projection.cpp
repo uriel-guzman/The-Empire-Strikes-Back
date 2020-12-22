@@ -1,5 +1,4 @@
-P proj(P a, P v){
-  v = v / v.unit();
-  return v * a.dot(v);
+ld proj(P a, P b) {
+  return a.dot(b) / b.length();
 }
     

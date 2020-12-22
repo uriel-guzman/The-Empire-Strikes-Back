@@ -8,8 +8,19 @@ struct P {
   P operator * (ld k) const { return P(x * k, y * k); }
   P operator / (ld k) const { return P(x / k, y / k); }
 
-  ld dot(const P &p) const { return x * p.x + y * p.y; }
-  ld cross(const P &p) const { return x * p.y - y * p.x; }
+  ld dot(const P &p) const { 
+    // 0 if vectors are orthogonal
+    // - if vectors are pointing in opposite directions
+    // + if vectors are pointing in the same direction
+    return x * p.x + y * p.y; 
+  }
+  ld cross(const P &p) const { 
+    // 0 if collinear
+    // - if b is to the right of a
+    // + if b is to the left of a
+    // gives you 2 * area 
+    return x * p.y - y * p.x; 
+  }
   ld norm() const { return x * x + y * y; }
   ld length() const { return sqrtl(norm()); }
   ld angle() { return atan2(y, x); }
