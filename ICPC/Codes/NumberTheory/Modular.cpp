@@ -22,3 +22,15 @@ private:
     return a == 1 ? 1 : int(m - lli(minv(m, a)) * lli(m) / a);
   }
 };
+
+// for a variable modulo
+struct VarMod { int mod; };
+
+template <const VarMod& var>
+struct Modular {
+  static constexpr int const &mod = var.mod;
+  // same stuff of Modular class ... 
+};
+
+VarMod var = {2};
+using Mint = Modular<var>;
