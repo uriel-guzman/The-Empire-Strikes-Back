@@ -5,7 +5,7 @@ int guni(int u, int p = 0) {
   sz[u] = 1; 
   for (int &v : graph[u]) if (v != p) {
     sz[u] += guni(v, u);
-    if (sz[v] > sz[graph[u][0]])
+    if (sz[v] > sz[graph[u][0]] || p == graph[u][0])
       swap(v, graph[u][0]);
   }
   return sz[u];
