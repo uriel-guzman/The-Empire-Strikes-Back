@@ -11,9 +11,9 @@ int guni(int u, int p = 0) {
   return sz[u];
 }
 
-void compute(int u, int p, int x, bool dont) {
+void compute(int u, int p, int x, bool skip) {
   cnt[color[u]] += x;
-  for (int i = dont; i < sz(graph[u]); i++) // don't change it with a fore!!!
+  for (int i = skip; i < sz(graph[u]); i++) // don't change it with a fore!!!
     if (graph[u][i] != p)
       compute(graph[u][i], u, x, 0);
 }
