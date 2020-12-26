@@ -232,7 +232,7 @@ void drawGraph(const vector<vector<Edge>> &graph, T val[], const Fun paintNode, 
     how += ", label = \"" + to_string(u) + ", val: " + to_string(val[u]) + "\"]";
     if (paintNode(u)) {
       how.pop_back();
-      how += ", shape=doublecircle, color=" + specialNodeColor + "]";
+      how += ", color=" + specialNodeColor + "]";
     }
     os << u << how << endl;
     for (const Edge e : graph[u]) 
@@ -263,7 +263,7 @@ void drawGraph(const vector<vector<int>> &graph, const Fun paintNode, const bool
     string how = "[style=filled, color=" + normalNodeColor + "]";
     if (paintNode(u)) {
       how.pop_back();
-      how += ", shape=doublecircle, color=" + specialNodeColor + "]";
+      how += ", color=" + specialNodeColor + "]";
     }
     os << u << how << endl;
     for (const auto v : graph[u]) 
@@ -294,7 +294,7 @@ void drawGraph(const vector<vector<int>> &graph, T val[], const Fun paintNode, c
     how += ", label = \"" + to_string(u) + ", val: " + to_string(val[u]) + "\"]";
     if (paintNode(u)) {
       how.pop_back();
-      how += ", shape=doublecircle, color=" + specialNodeColor + "]";
+      how += ", color=" + specialNodeColor + "]";
     }
     os << u << how << endl;
     for (const auto v : graph[u]) 
@@ -335,7 +335,7 @@ void drawTrie(const Trie &trie, const Fun paintNode) {
     string how = "[style=filled, color=" + normalNodeColor + "]";
     if (paintNode(u)) {
       how.pop_back();
-      how += ", shape=doublecircle, color=" + specialNodeColor + "]";
+      how += ", color=" + specialNodeColor + "]";
     }
     os << u << how << endl;
     for (auto [c, v] : trie.trie[u]) if (v != u) {
@@ -373,7 +373,7 @@ void drawAho(const Aho &aho, const Fun paintNode) {
   // Links printing
   int n = aho.trie.size();
   for (int u = 0; u < n && printLinks; u++) 
-    os << u << " -> " << aho.link[u] << "[style=dotted, color=" << linkColor << "]" << endl;
+    os << u << " -> " << aho.trie[u].link << "[style=dotted, color=" << linkColor << "]" << endl;
 
   // Trie printing
   vector<bool> vis(n, 0);
@@ -383,7 +383,7 @@ void drawAho(const Aho &aho, const Fun paintNode) {
     string how = "[style=filled, color=" + normalNodeColor + "]";
     if (paintNode(u)) {
       how.pop_back();
-      how += ", shape=doublecircle, color=" + specialNodeColor + "]";
+      how += ", color=" + specialNodeColor + "]";
     }
     os << u << how << endl;
     for (auto [c, v] : aho.trie[u]) if (v != u) {
@@ -421,7 +421,7 @@ void drawSam(const SuffixAutomaton &sam, const Fun paintNode) {
   // Links printing
   int n = sam.trie.size();
   for (int u = 0; u < n && printLinks; u++) 
-    os << u << " -> " << sam.link[u] << "[style=dotted, color=" << linkColor << "]" << endl;
+    os << u << " -> " << sam.trie[u].link << "[style=dotted, color=" << linkColor << "]" << endl;
 
   // Trie printing
   vector<bool> vis(n, 0);
@@ -431,7 +431,7 @@ void drawSam(const SuffixAutomaton &sam, const Fun paintNode) {
     string how = "[style=filled, color=" + normalNodeColor + "]";
     if (paintNode(u)) {
       how.pop_back();
-      how += ", shape=doublecircle, color=" + specialNodeColor + "]";
+      how += ", color=" + specialNodeColor + "]";
     }
     os << u << how << endl;
     for (auto [c, v] : sam.trie[u]) if (v != u) {
@@ -471,7 +471,7 @@ void drawEertree(const Eertree &eert, const Fun paintNode) {
   // Links printing
   int n = eert.trie.size();
   for (int u = 0; u < n && printLinks; u++) 
-    os << u << " -> " << eert.link[u] << "[style=dotted, color=" << linkColor << "]" << endl;
+    os << u << " -> " << eert.trie[u].link << "[style=dotted, color=" << linkColor << "]" << endl;
   
   // Trie printing
   vector<bool> vis(n, 0);
@@ -481,7 +481,7 @@ void drawEertree(const Eertree &eert, const Fun paintNode) {
     string how = "[style=filled, color=" + normalNodeColor + "]";
     if (paintNode(u)) {
       how.pop_back();
-      how += ", shape=doublecircle, color=" + specialNodeColor + "]";
+      how += ", color=" + specialNodeColor + "]";
     }
     os << u << how << endl;
     for (auto [c, v] : eert.trie[u]) if (v != u) {
