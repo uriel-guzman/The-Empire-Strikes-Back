@@ -57,6 +57,13 @@ void drawGraph(const vector<Edge> arr[]) {
   });
 }
 
+template <class Edge, class T>
+void drawGraph(const vector<Edge> arr[], T val[]) {
+  drawGraph(arr, val, [&]([[maybe_unused]]int u) {
+    return false;
+  });
+}
+
 template <class Edge, class Fun>
 void drawGraph(const vector<Edge> arr[], const Fun paintNode) {
   // common sense, you will not print more than 100 nodes, you simply can't understand that amount of nodes :p
@@ -70,9 +77,29 @@ void drawGraph(const vector<Edge> arr[], const Fun paintNode) {
   drawGraph(graph, paintNode, 0);
 }
 
+template <class Edge, class T, class Fun>
+void drawGraph(const vector<Edge> arr[], T val[], const Fun paintNode) {
+  // common sense, you will not print more than 100 nodes, you simply can't understand that amount of nodes :p
+  const int n = 100; 
+  vector<vector<Edge>> graph;
+  for (int u = 0; u < n; u++) {
+    graph.push_back({});
+    for (const auto v : arr[u])
+      graph.back().push_back(v);
+  }
+  drawGraph(graph, val, paintNode, 0);
+}
+
 template <class Edge>
 void drawGraph(const vector<vector<Edge>> &graph) {
   drawGraph(graph, [&]([[maybe_unused]]int u) {
+    return false;
+  }, 0);
+}
+
+template <class Edge, class T>
+void drawGraph(const vector<vector<Edge>> &graph, T val[]) {
+  drawGraph(graph, val, [&]([[maybe_unused]]int u) {
     return false;
   }, 0);
 }
@@ -82,11 +109,23 @@ void drawGraph(const vector<vector<Edge>> &graph, const Fun paintNode) {
   drawGraph(graph, paintNode, 0);
 }
 
+template <class Edge, class T, class Fun>
+void drawGraph(const vector<vector<Edge>> &graph, T val[], const Fun paintNode) {
+  drawGraph(graph, val, paintNode, 0);
+}
+
 /*-----------------------------------------------------------------------------------------------------------*/
 
 template <class Edge>
 void drawDigraph(const vector<Edge> arr[]) {
   drawDigraph(arr, [&]([[maybe_unused]]int u) {
+    return false;
+  });
+}
+
+template <class Edge, class T>
+void drawDigraph(const vector<Edge> arr[], T val[]) {
+  drawDigraph(arr, val, [&]([[maybe_unused]]int u) {
     return false;
   });
 }
@@ -104,6 +143,19 @@ void drawDigraph(const vector<Edge> arr[], const Fun paintNode) {
   drawGraph(graph, paintNode, 1);
 }
 
+template <class Edge, class T, class Fun>
+void drawDigraph(const vector<Edge> arr[], T val[], const Fun paintNode) {
+  // common sense, you will not print more than 100 nodes, you simply can't understand that amount of nodes :p
+  const int n = 100; 
+  vector<vector<Edge>> graph;
+  for (int u = 0; u < n; u++) {
+    graph.push_back({});
+    for (const auto v : arr[u])
+      graph.back().push_back(v);
+  }
+  drawGraph(graph, val, paintNode, 1);
+}
+
 template <class Edge>
 void drawDigraph(const vector<vector<Edge>> &graph) {
   drawGraph(graph, [&]([[maybe_unused]]int u) {
@@ -111,8 +163,21 @@ void drawDigraph(const vector<vector<Edge>> &graph) {
   }, 1);
 }
 
+template <class Edge, class T>
+void drawDigraph(const vector<vector<Edge>> &graph, T val[]) {
+  drawGraph(graph, val, [&]([[maybe_unused]]int u) {
+    return false;
+  }, 1);
+}
+
+
 template <class Edge, class Fun>
 void drawDigraph(const vector<vector<Edge>> &graph, const Fun paintNode) {
+  drawGraph(graph, paintNode, 1);
+}
+
+template <class Edge, class T, class Fun>
+void drawDigraph(const vector<vector<Edge>> &graph, T val[], const Fun paintNode) {
   drawGraph(graph, paintNode, 1);
 }
 
@@ -149,6 +214,39 @@ void drawGraph(const vector<vector<Edge>> &graph, const Fun paintNode, const boo
   runFile(file);
 }
 
+template <class Edge, class T, class Fun>
+void drawGraph(const vector<vector<Edge>> &graph, T val[], const Fun paintNode, const bool directed) {
+  // print values in the nodes :D
+  const string name = "weighted" + string(directed ? "Digraph" : "Graph");
+  const string file = getFile(name, ++numWeightedGraph[directed]);
+
+  ofstream os{file.c_str()};
+  os << (directed ? "digraph" : "graph");
+  os << " G {" << endl;
+  os << "rankdir=" << dir << endl;
+
+  // Graph printing
+  int n = graph.size();
+  for (int u = 0; u < n; u++) if (graph[u].size()) {
+    string how = "[style=filled, color=" + normalNodeColor;
+    how += ", label = \"" + to_string(u) + ", val: " + to_string(val[u]) + "\"]";
+    if (paintNode(u)) {
+      how.pop_back();
+      how += ", shape=doublecircle, color=" + specialNodeColor + "]";
+    }
+    os << u << how << endl;
+    for (const Edge e : graph[u]) 
+      if (directed || u <= e.v) {
+        os << u << (directed ? " -> " : " -- ") << e.v;
+        os << " [label=\" " << e << "\"]";
+        os << endl;
+      }
+  }
+  os << "}" << endl;
+
+  runFile(file);
+}
+
 template <class Fun>
 void drawGraph(const vector<vector<int>> &graph, const Fun paintNode, const bool directed) {
   const string name = (directed ? "digraph" : "graph");
@@ -163,6 +261,37 @@ void drawGraph(const vector<vector<int>> &graph, const Fun paintNode, const bool
   int n = graph.size();
   for (int u = 0; u < n; u++) if (graph[u].size()) {
     string how = "[style=filled, color=" + normalNodeColor + "]";
+    if (paintNode(u)) {
+      how.pop_back();
+      how += ", shape=doublecircle, color=" + specialNodeColor + "]";
+    }
+    os << u << how << endl;
+    for (const auto v : graph[u]) 
+      if (directed || u <= v) {
+        os << u << (directed ? " -> " : " -- ") << v << endl;
+      }
+  }
+  os << "}" << endl;
+
+  runFile(file);
+}
+
+template <class T, class Fun>
+void drawGraph(const vector<vector<int>> &graph, T val[], const Fun paintNode, const bool directed) {
+  // print values in the nodes :D
+  const string name = (directed ? "digraph" : "graph");
+  const string file = getFile(name, ++numGraph[directed]);
+
+  ofstream os{file.c_str()};
+  os << (directed ? "digraph" : "graph");
+  os << " G {" << endl;
+  os << "rankdir=" << dir << endl;
+
+  // Graph printing
+  int n = graph.size();
+  for (int u = 0; u < n; u++) if (graph[u].size()) {
+    string how = "[style=filled, color=" + normalNodeColor;
+    how += ", label = \"" + to_string(u) + ", val: " + to_string(val[u]) + "\"]";
     if (paintNode(u)) {
       how.pop_back();
       how += ", shape=doublecircle, color=" + specialNodeColor + "]";
