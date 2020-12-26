@@ -15,7 +15,7 @@ void add(int u, int p, int x, bool skip) {
   cnt[color[u]] += x;
   for (int i = skip; i < sz(graph[u]); i++) // don't change it with a fore!!!
     if (graph[u][i] != p)
-      compute(graph[u][i], u, x, 0);
+      add(graph[u][i], u, x, 0);
 }
 
 void solve(int u, int p, bool keep = 0) {
