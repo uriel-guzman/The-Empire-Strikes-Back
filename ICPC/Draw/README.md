@@ -30,7 +30,17 @@ Steps to use draw.h properly and don't make mistakes using this buggy code.
     ```cpp
     vector<vector<int>> graph; // opps graph.size() == 0 D:
     ```
-  
+   * Print values of the nodes
+    ```cpp
+    int val[N];
+    vector<int> graph[N];
+    
+    // ... 
+    
+    drawGraph(graph, val, [&](int u) {
+      return val[u] == 7; // Yes, this colors every node that has val[u] == 7 in red!
+    });
+    ```
   
 * drawTrie(), drawAho(), drawSam(), drawEertree() 
   * To visualize strings instead of chars just set the flag properly.
