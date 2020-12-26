@@ -1,11 +1,8 @@
 alias mysql=/usr/local/mysql/bin/mysql
 alias myBash='open ~/.zshenv' # Bash file xd
 
-drawingsDir='/Users/abraham/Problems/drawings/' # Folder where you store all the images and stuff
-
 ######################## Github ########################
 
-alias problems='cd'
 alias icpc='cd /Users/abraham/The-Empire-Strikes-Back' # Folder of github
 alias pull='git pull origin master'
 
@@ -13,12 +10,25 @@ push() {
   git add $1 && git commit -a -m "$2" && git push origin master
 }
 
-######################## C++ stuff ########################
+######################## Programming ########################
+
+alias problems='cd /Users/abraham/Problems'
+drawingsDir='/Users/abraham/Problems/drawings/'
 
 red='\x1B[0;31m'
 green='\x1B[0;32m'
 blue='\x1B[0;34m'
 noColor='\x1B[0m'
+
+createContest() {
+	template='/Users/abraham/The-Empire-Strikes-Back/ICPC/Codes/Misc/tem.cpp'
+	tee {$1..$2}.cpp < ${template}
+ 	touch {$1..$2}
+}
+
+cleanContest() {
+	rm -r {$1..$2}.cpp {$1..$2}
+}
 
 go() {
   alias flags='-Wall -Wextra -Wshadow -fmax-errors=2 -O2'
@@ -176,6 +186,10 @@ createBooks() {
 	for name in ${possibleBooks[@]}; do
 		bookPDF=${drawingsDir}${name}.pdf
 		mergeImages ${name}
+		# The book is ready, but you need all books first
+	done
+
+	for name in ${possibleBooks[@]}; do
 		if [[ -f ${bookPDF} ]]; then
 			# If the book exist, then open it
 			${openFile} ${bookPDF}

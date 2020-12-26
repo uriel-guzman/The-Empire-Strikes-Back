@@ -1,17 +1,15 @@
-lli f(lli x, lli c, lli mod) {
-  return (mul(x, x, mod) + c) % mod;
-}
- 
 lli rho(lli n) {
   while (1) {
-    lli x = 2 + rng() % (n - 3), c = 1 + rng() % 20, y = f(x, c, n), g;
+    lli x = 2 + rng() % (n - 3), c = 1 + rng() % 20;
+    auto f = [&](lli x) { return (mul(x, x, n) + c) % n; };
+    lli y = f(x), g;
     while ((g = __gcd(n + y - x, n)) == 1)
-      x = f(x, c, n), y = f(f(y, c, n), c, n);
+      x = f(x), y = f(f(y));
     if (g != n) return g;
   } 
   return -1;
 }
- 
+
 void pollard(lli n, map<lli, int> &fac) {
   if (n == 1) return;
   if (n % 2 == 0) {
