@@ -1,9 +1,9 @@
-  template <class T>
+template <class T>
 struct Fenwick {
   #define lsb(x) (x & -x)
   vector<T> fenw;
 
-  Fenwick(int n = 0) : fenw(++n, {}) {}
+  Fenwick(int n = 1) : fenw(n + 1, {}) {}
 
   void update(int i, T v) {
     for (; i < sz(fenw); i += lsb(i))
