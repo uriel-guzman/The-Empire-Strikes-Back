@@ -68,20 +68,21 @@
 \BOOKMARK [2][-]{subsection.7.8}{Prime factors of N!}{section.7}% 68
 \BOOKMARK [1][-]{section.8}{Number Theory}{}% 69
 \BOOKMARK [2][-]{subsection.8.1}{Goldbach conjecture}{section.8}% 70
-\BOOKMARK [2][-]{subsection.8.2}{Sieve of Eratosthenes}{section.8}% 71
-\BOOKMARK [2][-]{subsection.8.3}{Phi of euler}{section.8}% 72
-\BOOKMARK [2][-]{subsection.8.4}{Miller-Rabin}{section.8}% 73
-\BOOKMARK [2][-]{subsection.8.5}{Pollard-Rho}{section.8}% 74
-\BOOKMARK [2][-]{subsection.8.6}{Amount of divisors}{section.8}% 75
-\BOOKMARK [2][-]{subsection.8.7}{B\351zout's identity}{section.8}% 76
-\BOOKMARK [2][-]{subsection.8.8}{GCD}{section.8}% 77
-\BOOKMARK [2][-]{subsection.8.9}{LCM}{section.8}% 78
-\BOOKMARK [2][-]{subsection.8.10}{Euclid}{section.8}% 79
-\BOOKMARK [2][-]{subsection.8.11}{Chinese remainder theorem}{section.8}% 80
-\BOOKMARK [1][-]{section.9}{Math}{}% 81
-\BOOKMARK [2][-]{subsection.9.1}{Progressions}{section.9}% 82
-\BOOKMARK [2][-]{subsection.9.2}{Mod multiplication}{section.9}% 83
-\BOOKMARK [2][-]{subsection.9.3}{Fpow}{section.9}% 84
-\BOOKMARK [2][-]{subsection.9.4}{Fibonacci}{section.9}% 85
-\BOOKMARK [1][-]{section.10}{Bit tricks}{}% 86
-\BOOKMARK [2][-]{subsection.10.1}{Bitset}{section.10}% 87
+\BOOKMARK [2][-]{subsection.8.2}{Prime numbers distribution}{section.8}% 71
+\BOOKMARK [2][-]{subsection.8.3}{Sieve of Eratosthenes}{section.8}% 72
+\BOOKMARK [2][-]{subsection.8.4}{Phi of euler}{section.8}% 73
+\BOOKMARK [2][-]{subsection.8.5}{Miller-Rabin}{section.8}% 74
+\BOOKMARK [2][-]{subsection.8.6}{Pollard-Rho}{section.8}% 75
+\BOOKMARK [2][-]{subsection.8.7}{Amount of divisors}{section.8}% 76
+\BOOKMARK [2][-]{subsection.8.8}{B\351zout's identity}{section.8}% 77
+\BOOKMARK [2][-]{subsection.8.9}{GCD}{section.8}% 78
+\BOOKMARK [2][-]{subsection.8.10}{LCM}{section.8}% 79
+\BOOKMARK [2][-]{subsection.8.11}{Euclid}{section.8}% 80
+\BOOKMARK [2][-]{subsection.8.12}{Chinese remainder theorem}{section.8}% 81
+\BOOKMARK [1][-]{section.9}{Math}{}% 82
+\BOOKMARK [2][-]{subsection.9.1}{Progressions}{section.9}% 83
+\BOOKMARK [2][-]{subsection.9.2}{Mod multiplication}{section.9}% 84
+\BOOKMARK [2][-]{subsection.9.3}{Fpow}{section.9}% 85
+\BOOKMARK [2][-]{subsection.9.4}{Fibonacci}{section.9}% 86
+\BOOKMARK [1][-]{section.10}{Bit tricks}{}% 87
+\BOOKMARK [2][-]{subsection.10.1}{Bitset}{section.10}% 88
