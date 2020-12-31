@@ -2,7 +2,7 @@ struct TwoSat {
   int n;
   vector<vi> imp;
 
-  TwoSat(int _n) : n(_n), imp(2 * n) {}
+  TwoSat(int _n) : n(_n + 1), imp(2 * n) {}
 
   void either(int a, int b) {
     a = max(2 * a, -1 - 2 * a);
