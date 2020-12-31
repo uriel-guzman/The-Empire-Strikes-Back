@@ -12,7 +12,9 @@ def solve(file, dir, out):
   out.write("    \"prefix\": \"{}\",\n".format(name))
   out.write("    \"body\": [\n")
   for line in cppFile:
-    out.write("    \"{}\",\n".format(line[:-1]))
+    if line.endswith("\n"):
+      line = line[:-1]
+    out.write("    \"{}\",\n".format(line))
   out.write("    ],\n")
   out.write("    \"description:\" \"{}\"\n".format(file))  
   out.write("  },\n")
