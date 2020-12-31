@@ -1,6 +1,5 @@
 import os
 
-
 def solve(file, dir, out):
   # print(file, dir)
   cppFile = open(dir, "r")
@@ -27,19 +26,15 @@ def main():
   out.write("{\n")
 
   for subdir, dirs, files in os.walk(rootdir):
-      if subdir.endswith("Misc"): 
-        continue
+    for file in files:
+      #print os.path.join(subdir, file)
+      filepath = subdir + os.sep + file
 
-      for file in files:
-          #print os.path.join(subdir, file)
-          filepath = subdir + os.sep + file
-
-          if filepath.endswith(".cpp"):
-            solve(file, filepath, out)
+      if filepath.endswith(".cpp"):
+        solve(file, filepath, out)
 
   out.write("}\n")
   out.close()
-
             
 if __name__ == "__main__":
     main()
