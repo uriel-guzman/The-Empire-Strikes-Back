@@ -21,7 +21,7 @@ def main():
   print("Create snippets")
   rootdir = r'/Users/abraham/The-Empire-Strikes-Back/ICPC/Codes/'
 
-  out = open("/Users/abraham/Library/Application Support/Code/User/snippets/cpp.json", "a")
+  out = open("/Users/abraham/Library/Application Support/Code/User/snippets/cpp.json", "w")
   out.write("{\n")
 
   for subdir, dirs, files in os.walk(rootdir):
