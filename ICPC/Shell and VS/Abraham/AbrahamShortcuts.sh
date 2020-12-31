@@ -1,13 +1,14 @@
 alias mysql=/usr/local/mysql/bin/mysql
 alias myBash='open ~/.zshenv' # Bash file xd
+alias sourceMyBash='source .zshenv' 
 
 ######################## Github ########################
 
 alias icpc='cd /Users/abraham/The-Empire-Strikes-Back' # Folder of github
-alias pull='git pull origin master'
+alias pull='git pull origin master && python3 /Users/abraham/The-Empire-Strikes-Back/ICPC/Shell\ and\ VS/Abraham/createSnippets.py'
 
 push() {
-  git add $1 && git commit -a -m "$2" && git push origin master
+	git add $1 && git commit -a -m "$2" && git push origin master
 }
 
 ######################## Programming ########################
@@ -24,26 +25,16 @@ createContest() {
 	tem='/Users/abraham/The-Empire-Strikes-Back/ICPC/Codes/Misc/tem.cpp'
 		
 	begin=$1
-	if [ $# -ge 2 ]; then
-		end=$2 	
-		tee {${begin}..${end}}.cpp < ${tem}
- 		touch {${begin}..${end}} 
-	else 
-		tee ${begin}.cpp < ${tem} 
- 		touch ${begin} 
-	fi	
+	end=$2 	
+	tee {${begin}..${end}}.cpp < ${tem}
+ 	touch {${begin}..${end}} 	
 }
 
 eraseContest() {
 	begin=$1
-	if [ $# -ge 2 ]; then
-		end=$2 
-		rm -r {${begin}..${end}}.cpp 
-		rm -r {${begin}..${end}} 
-	else
-		rm -r ${begin}.cpp 
-		rm -r ${begin} 
-	fi
+	end=$2 
+	rm -r {${begin}..${end}}.cpp 
+	rm -r {${begin}..${end}} 
 }
 
 go() {
@@ -208,3 +199,4 @@ createBooks() {
 
 	exit
 }
+

@@ -1,5 +1,8 @@
 import os
 
+dirIcpc = r'/Users/abraham/The-Empire-Strikes-Back/ICPC/Codes/'
+cppJson = "/Users/abraham/Library/Application Support/Code/User/snippets/cpp.json"
+
 def solve(file, dir, out):
   # print(file, dir)
   cppFile = open(dir, "r")
@@ -19,10 +22,10 @@ def solve(file, dir, out):
   out.write("  },\n")
 
 def main():
-  print("Create snippets")
-  rootdir = r'/Users/abraham/The-Empire-Strikes-Back/ICPC/Codes/'
+  print("Snippets up to date.")
+  rootdir = dirIcpc
 
-  out = open("/Users/abraham/Library/Application Support/Code/User/snippets/cpp.json", "w")
+  out = open(cppJson, "w")
   out.write("{\n")
 
   for subdir, dirs, files in os.walk(rootdir):
