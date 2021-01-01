@@ -12,12 +12,19 @@ def solve(file, dir, out):
 
   out.write("  \"{}\": {{\n".format(name))
   out.write("    \"prefix\": \"{}\",\n".format(name))
+
   out.write("    \"body\": [\n")
-  for line in cppFile:
+  for line in cppFile: 
+    line2 = str("")
+    for c in line:
+      if c == '\\' or c == '\$' or c == '\"':
+        line2 += '\\' # special dummy characters
+      line2 += c
     if line.endswith("\n"):
-      line = line[:-1]
-    out.write("    \"{}\",\n".format(line))
+      line2 = line2[:-1]
+    out.write("    \"{}\",\n".format(line2))
   out.write("    ],\n")
+
   out.write("    \"description:\" \"{}\"\n".format(file))  
   out.write("  },\n")
 
