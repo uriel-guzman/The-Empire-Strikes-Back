@@ -1,4 +1,4 @@
-template <int mod>
+template <int &mod>
 struct Modular {
   Modular operator + (const Modular &m) const { return Modular(v + m.v); }
   Modular operator - (const Modular &m) const { return Modular(v - m.v + mod); }
@@ -23,14 +23,6 @@ private:
   }
 };
 
-// for a variable modulo
-struct VarMod { int mod; };
-
-template <const VarMod& var>
-struct Modular {
-  static constexpr int const &mod = var.mod;
-  // same stuff of Modular class ... 
-};
-
-VarMod var = {2};
-using Mint = Modular<var>;
+// for a variable modulo or normal one
+extern int mod = 1e9 + 7;
+using Mint = Modular<mod>;
