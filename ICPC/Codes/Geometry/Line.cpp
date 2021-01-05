@@ -22,8 +22,15 @@ struct Line {
 
   P intersection(Line l) { 
     // intersectLines(a1, v1, a2, v2)
-    if (intersects(l) != 1)
-      return P(NAN, NAN);
+    // always check intersects() first!
     return a + v * ((l.a - a).cross(l.v) / v.cross(l.v));
+  }
+
+  P projection(P p) {
+    return a + v * proj(p - a, v);
+  }
+
+  P reflection(P p) {
+    return 2 * a - p + v * 2 * proj(p - a, v);
   }
 };
