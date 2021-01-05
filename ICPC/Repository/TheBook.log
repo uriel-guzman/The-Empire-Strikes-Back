@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.4.7)  7 DEC 2020 00:04
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.4.7)  30 DEC 2020 12:30
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -417,7 +417,7 @@ File: Chapters.pdf Graphic file (type pdf)
 Package pdftex.def Info: Chapters.pdf , page12 used on input line 20.
 (pdftex.def)             Requested size: 597.53416pt x 845.08372pt.
  [12 </Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/Chapters.pdf>]
-<Chapters.pdf, id=186, page=13, 597.50829pt x 845.0471pt>
+<Chapters.pdf, id=170, page=13, 597.50829pt x 845.0471pt>
 File: Chapters.pdf Graphic file (type pdf)
 <use Chapters.pdf, page 13>
 Package pdftex.def Info: Chapters.pdf , page13 used on input line 20.
@@ -473,7 +473,7 @@ File: Chapters.pdf Graphic file (type pdf)
 Package pdftex.def Info: Chapters.pdf , page16 used on input line 20.
 (pdftex.def)             Requested size: 597.53416pt x 845.08372pt.
  [16 </Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/Chapters.pdf>]
-<Chapters.pdf, id=217, page=17, 597.50829pt x 845.0471pt>
+<Chapters.pdf, id=212, page=17, 597.50829pt x 845.0471pt>
 File: Chapters.pdf Graphic file (type pdf)
 <use Chapters.pdf, page 17>
 Package pdftex.def Info: Chapters.pdf , page17 used on input line 20.
@@ -501,25 +501,39 @@ File: Chapters.pdf Graphic file (type pdf)
 Package pdftex.def Info: Chapters.pdf , page18 used on input line 20.
 (pdftex.def)             Requested size: 597.53416pt x 845.08372pt.
  [18 </Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/Chapters.pdf>]
-<fullTeam.JPG, id=226, 741.77126pt x 430.60875pt>
+<Chapters.pdf, id=226, page=19, 597.50829pt x 845.0471pt>
+File: Chapters.pdf Graphic file (type pdf)
+<use Chapters.pdf, page 19>
+Package pdftex.def Info: Chapters.pdf , page19 used on input line 20.
+(pdftex.def)             Requested size: 597.53416pt x 845.08372pt.
+File: Chapters.pdf Graphic file (type pdf)
+<use Chapters.pdf, page 19>
+Package pdftex.def Info: Chapters.pdf , page19 used on input line 20.
+(pdftex.def)             Requested size: 597.53416pt x 845.08372pt.
+File: Chapters.pdf Graphic file (type pdf)
+<use Chapters.pdf, page 19>
+Package pdftex.def Info: Chapters.pdf , page19 used on input line 20.
+(pdftex.def)             Requested size: 597.53416pt x 845.08372pt.
+ [19 </Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/Chapters.pdf>]
+<fullTeam.JPG, id=230, 741.77126pt x 430.60875pt>
 File: fullTeam.JPG Graphic file (type jpg)
 <use fullTeam.JPG>
 Package pdftex.def Info: fullTeam.JPG  used on input line 23.
 (pdftex.def)             Requested size: 483.69684pt x 280.79909pt.
- [19 </Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/fullTeam.JPG>] (/Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/TheBook.aux) ) 
+ [20 </Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/fullTeam.JPG>] (/Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/TheBook.aux) ) 
 Here is how much of TeX's memory you used:
- 3270 strings out of 480608
- 49353 string characters out of 5903631
+ 3273 strings out of 480608
+ 49444 string characters out of 5903631
  295086 words of memory out of 5000000
- 19146 multiletter control sequences out of 15000+600000
+ 19149 multiletter control sequences out of 15000+600000
  532637 words of font info for 25 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  40i,18n,46p,339b,422s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/local/texlive/2020/texmf-dist/fonts/type1/public/inconsolata/Inconsolata-zi4b.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/inconsolata/Inconsolata-zi4r.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex9.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/cm-super/sfbx0900.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/cm-super/sfbx1000.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/cm-super/sfbx1200.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/cm-super/sfbx1440.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/cm-super/sfrm0900.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/cm-super/sfti0900.pfb>
-Output written on /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/TheBook.pdf (20 pages, 785569 bytes).
+Output written on /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/TheBook.pdf (21 pages, 787992 bytes).
 PDF statistics:
- 262 PDF objects out of 1000 (max. 8388607)
- 184 compressed objects within 2 object streams
+ 266 PDF objects out of 1000 (max. 8388607)
+ 186 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
- 131 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 136 words of extra memory for PDF output out of 10000 (max. 10000000)
 

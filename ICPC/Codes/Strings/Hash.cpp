@@ -1,8 +1,8 @@
 vi mod = {999727999, 999992867, 1000000123, 1000002193, 1000003211, 1000008223, 1000009999, 1000027163, 1070777777};
 
 struct H : array<lli, 2> {
-  #define oper(op) friend H operator op (H a, H b) { \
-  fore (i, 0, sz(a)) a[i] = (a[i] op b[i] + mod[i]) % mod[i]; \
+  #define oper(op) friend H operator op (H a, H b) { \ 
+  fore (i, 0, sz(a)) a[i] = (a[i] op b[i] + mod[i]) % mod[i]; \ 
   return a; }
   oper(+) oper(-) oper(*)
 } pw[N], ipw[N];

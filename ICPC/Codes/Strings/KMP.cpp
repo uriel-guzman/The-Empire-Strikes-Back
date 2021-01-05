@@ -4,8 +4,7 @@ vi lps(string &s) {
   fore (i, 1, sz(s)) {
     while (j && s[i] != s[j])
       j = p[j - 1];
-    if (s[i] == s[j])
-      j++;
+    j += (s[i] == s[j]);
     p[i] = j;
   }
   return p;

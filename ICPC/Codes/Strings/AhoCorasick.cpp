@@ -1,6 +1,7 @@
 struct AhoCorasick {
   struct Node : map<char, int> {
-    int link = 0, cnt = 0;
+    int link = 0, out = 0;
+    int cnt = 0, isw = 0;
   };
   
   vector<Node> trie;
@@ -18,7 +19,7 @@ struct AhoCorasick {
         trie[u][c] = newNode();
       u = trie[u][c];
     }
-    trie[u].cnt++;
+    trie[u].cnt++, trie[u].isw = 1;
   }
 
   int go(int u, char c) {
@@ -36,6 +37,7 @@ struct AhoCorasick {
       for (auto &[c, v] : trie[u]) {
         int l = (trie[v].link = u ? go(trie[u].link, c) : 0);
         trie[v].cnt += trie[l].cnt;
+        trie[v].out = trie[l].isw ? l : trie[l].out;
         qu.push(v);
       }
     }
@@ -43,8 +45,12 @@ struct AhoCorasick {
 
   int match(string &s, int u = 0) {
     int ans = 0;
-    for (char c : s)
-      u = go(u, c), ans += trie[u].cnt;
+    for (char c : s) {
+      u = go(u, c);
+      ans += trie[u].cnt;
+      for (int x = u; x != 0; x = trie[x].out) 
+        // pass over all elements of the implicit vector
+    }
     return ans;
   }
 

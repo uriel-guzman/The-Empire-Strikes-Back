@@ -1,21 +1,45 @@
-void add(int u, int v) {
-  graph[u].pb(v);
-  rgraph[v].pb(u);
-}
+struct TwoSat {
+  int n;
+  vector<vi> imp;
 
-void implication(int u, int v) {
-  #define neg(u) ((n) + (u))
-  add(u, v);
-  add(neg(v), neg(u));
-}
+  TwoSat(int _n) : n(_n + 1), imp(2 * n) {}
 
-pair<bool, vi> satisfy(int n) {
-  kosaraju(2 * n); // size of the two-sat is 2 * n 
-  vi ans(n + 1, 0);
-  fore (u, 1, n + 1) {
-    if (scc[u] == scc[neg(u)])
-      return {0, ans};
-    ans[u] = scc[u] > scc[neg(u)];
+  void either(int a, int b) {
+    a = max(2 * a, -1 - 2 * a);
+    b = max(2 * b, -1 - 2 * b);
+    imp[a ^ 1].pb(b);
+    imp[b ^ 1].pb(a);
   }
-  return {1, ans};
-}
+
+  void implies(int a, int b) { either(~a, b); }
+  void setVal(int a) { either(a, a); }
+
+  vi solve() {
+    int k = sz(imp);
+    vi s, b, id(sz(imp));
+
+    function<void(int)> dfs = [&](int u) { 
+      b.pb(id[u] = sz(s));
+      s.pb(u);
+      for (int v : imp[u]) {
+        if (!id[v]) dfs(v);
+        else while (id[v] < b.back()) b.pop_back();
+      }
+      if (id[u] == b.back()) 
+        for (b.pop_back(), ++k; id[u] < sz(s); s.pop_back())
+          id[s.back()] = k;
+    };
+
+    fore (u, 0, sz(imp)) 
+      if (!id[u]) dfs(u);
+
+    vi val(n);
+    fore (u, 0, n) {
+      int x = 2 * u;
+      if (id[x] == id[x ^ 1])
+        return {};
+      val[u] = id[x] < id[x ^ 1];
+    }
+    return val;
+  }
+};

@@ -35,6 +35,15 @@ struct P {
   bool operator != (const P &p) const { return neq(x, p.x) || neq(y, p.y); }
   friend ostream &operator << (ostream &os, const P &p) { return os << "(" << p.x << ", " << p.y << ")"; }
   friend istream &operator >> (istream &is, P &p) { return cin >> p.x >> p.y; }
+
+  int cuad() const {
+    if (x > 0 && y >= 0) return 0;
+    if (x <= 0 && y > 0) return 1;
+    if (x < 0 && y <= 0) return 2;
+    if (x >= 0 && y < 0) return 3;
+    assert(x == 0 && y == 0);
+    return -1;
+  }
 };
 
 ld ccw(P a, P b, P c) { 

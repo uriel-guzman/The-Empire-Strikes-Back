@@ -1,13 +1,14 @@
 alias mysql=/usr/local/mysql/bin/mysql
 alias myBash='open ~/.zshenv' # Bash file xd
+alias sourceMyBash='source .zshenv' 
 
 ######################## Github ########################
 
 alias icpc='cd /Users/abraham/The-Empire-Strikes-Back' # Folder of github
-alias pull='git pull origin master'
+alias pull='git pull origin master && python3 /Users/abraham/The-Empire-Strikes-Back/ICPC/Shell\ and\ VS/Abraham/createSnippets.py'
 
 push() {
-  git add $1 && git commit -a -m "$2" && git push origin master
+	git add $1 && git commit -a -m "$2" && git push origin master
 }
 
 ######################## Programming ########################
@@ -21,17 +22,23 @@ blue='\x1B[0;34m'
 noColor='\x1B[0m'
 
 createContest() {
-	template='/Users/abraham/The-Empire-Strikes-Back/ICPC/Codes/Misc/tem.cpp'
-	tee {$1..$2}.cpp < ${template}
- 	touch {$1..$2}
+	tem='/Users/abraham/The-Empire-Strikes-Back/ICPC/Codes/Misc/tem.cpp'
+		
+	begin=$1
+	end=$2 	
+	tee {${begin}..${end}}.cpp < ${tem}
+ 	touch {${begin}..${end}} 	
 }
 
-cleanContest() {
-	rm -r {$1..$2}.cpp {$1..$2}
+eraseContest() {
+	begin=$1
+	end=$2 
+	rm -r {${begin}..${end}}.cpp 
+	rm -r {${begin}..${end}} 
 }
 
 go() {
-  alias flags='-Wall -Wextra -Wshadow -fmax-errors=2 -O2'
+	alias flags='-Wall -Wextra -Wshadow -fmax-errors=2 -O2'
 	g++-9 --std=c++17 $2 $3 ${flags} $1.cpp && ./a.out 
 }
 
@@ -42,7 +49,7 @@ debug() {
 
 draw() {
 	go $1 -DLOCAL -DDRAW < $2
-	createBooks 
+	osascript -e "tell application \"Terminal\" to do script \"createBooks\""
 	printf "\n"
 } 
 
@@ -98,7 +105,7 @@ random() {
 		fi
 	}
 	
-	for ((i = 1; i <= 500; i++)); do
+	for ((i = 1; i <= 150; i++)); do
 		printf "Test case #${i}"
 		
 		generateTestCase
@@ -118,16 +125,12 @@ random() {
 createBooks() {
 	prevDir=$(pwd) # Current directory, but will be the previous after all of this stuff D:
 	
-	cd ${drawingsDir} # Write all stuff here!
+	cd ${drawingsDir}
 	
 	# Array with names of all possible books
 	possibleBooks=("weightedGraph" "weightedDigraph" "digraph" "graph" "trie" "aho" "sam" "eertree" "segtree")
 	
-	# Way to open files according to the OS
-	openFile='xdg-open'
-	if [[ "$(uname)" == "Darwin" ]]; then
-		openFile='open'
-	fi
+	openFile='open'
 	
 	for name in ${possibleBooks[@]}; do
 		bookTEX=${drawingsDir}${name}.tex
@@ -186,10 +189,6 @@ createBooks() {
 	for name in ${possibleBooks[@]}; do
 		bookPDF=${drawingsDir}${name}.pdf
 		mergeImages ${name}
-		# The book is ready, but you need all books first
-	done
-
-	for name in ${possibleBooks[@]}; do
 		if [[ -f ${bookPDF} ]]; then
 			# If the book exist, then open it
 			${openFile} ${bookPDF}
@@ -197,7 +196,7 @@ createBooks() {
 	done
 	
 	cd ${prevDir} # Return to the previous directory
-	
-	printf "All books done\n"
+
+	exit
 }
 
