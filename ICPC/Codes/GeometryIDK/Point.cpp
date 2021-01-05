@@ -14,6 +14,7 @@ struct P {
     // + if vectors are pointing in the same direction
     return x * p.x + y * p.y; 
   }
+
   ld cross(const P &p) const { 
     // 0 if collinear
     // - if b is to the right of a
@@ -21,6 +22,7 @@ struct P {
     // gives you 2 * area 
     return x * p.y - y * p.x; 
   }
+  
   ld norm() const { return x * x + y * y; }
   ld length() const { return sqrtl(norm()); }
   ld angle() { return atan2(y, x); }
