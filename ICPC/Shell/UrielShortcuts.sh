@@ -128,7 +128,6 @@ alias bashrc='nvim ~/.bashrc'
 alias bashcom='source ~/.bashrc'
 alias cucei='cd /home/uriel/CUCEI'
 
-
 #########shortcuts.txt#########
 alias pull='git pull origin master'
 
@@ -188,8 +187,8 @@ test() {
 
 random() { 
 	# random a
-	g++ --std=c++17 $1.cpp -o prog 
-	g++ --std=c++17 brute.cpp -o brute 
+	g++ --std=c++17 -Wall -Wextra -Wshadow -D_GLIBCXX_ASSERTIONS -fmax-errors=3 -O2 -w $1.cpp -o prog
+	g++ --std=c++17 -Wall -Wextra -Wshadow -D_GLIBCXX_ASSERTIONS -fmax-errors=3 -O2 -w brute.cpp -o brute
 	
 	if [[ -f "gen.cpp" ]]; then
 		 # C++ version, so first compile it
@@ -218,8 +217,6 @@ random() {
 			printf "${green} Accepted ${noColor}\n"
 		fi
 	done
-	
-	rm -r prog brute
 }
 
 createBooks() {
