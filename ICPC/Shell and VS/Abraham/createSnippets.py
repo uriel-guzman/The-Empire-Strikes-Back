@@ -36,6 +36,8 @@ def main():
   out.write("{\n")
 
   for subdir, dirs, files in os.walk(rootdir):
+    if subdir.endswith("GeometryIDK") or subdir.endswith("GeometryIDK/InsideStruct"):
+      continue
     for file in files:
       #print os.path.join(subdir, file)
       filepath = subdir + os.sep + file
