@@ -13,16 +13,25 @@ def solve(file, dir, out):
   out.write("  \"{}\": {{\n".format(name))
   out.write("    \"prefix\": \"{}\",\n".format(name))
 
+  def getBody(cppFile): 
+    codeByLines = list()
+    for line in cppFile: 
+      printableLine = str("")
+
+      for c in line: 
+        if c == '\\' or c == '\$' or c == '\"':
+          printableLine += '\\' # special dummy characters
+        printableLine += c
+      
+      if line.endswith("\n"):
+        printableLine = printableLine[:-1]
+      codeByLines.append(printableLine)
+      
+    return codeByLines
+
   out.write("    \"body\": [\n")
-  for line in cppFile: 
-    line2 = str("")
-    for c in line:
-      if c == '\\' or c == '\$' or c == '\"':
-        line2 += '\\' # special dummy characters
-      line2 += c
-    if line.endswith("\n"):
-      line2 = line2[:-1]
-    out.write("    \"{}\",\n".format(line2))
+  for line in getBody(cppFile):
+    out.write("    \"{}\",\n".format(line))
   out.write("    ],\n")
 
   out.write("    \"description:\" \"{}\"\n".format(file))  

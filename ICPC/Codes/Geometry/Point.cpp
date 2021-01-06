@@ -28,13 +28,14 @@ struct Pt {
   
   ld angle() { 
     ld ang = atan2(y, x); 
-    if (ang < 0) ang += 2 * pi;
-    return ang;
+    return ang + (ang < 0 ? 2 * pi : 0);
   }
 
   Pt perp() const { return Pt(-y, x); }
   Pt unit() const { return (*this) / length(); }
   Pt rotate(ld angle) const {
+    // counter-clockwise rotation in radians
+    // degree = radian * 180 / pi
     return Pt(x * cos(angle) - y * sin(angle), x * sin(angle) + y * cos(angle));
   }
 
