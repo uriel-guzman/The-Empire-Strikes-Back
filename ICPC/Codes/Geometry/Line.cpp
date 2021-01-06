@@ -30,6 +30,6 @@ struct Line {
   }
 
   Pt reflection(Pt p) {
-    return 2 * a - p + v * 2 * proj(p - a, v);
+    return a * 2 - p + v * 2 * proj(p - a, v);
   }
 };

@@ -25,7 +25,12 @@ struct Pt {
   
   ld norm() const { return x * x + y * y; }
   ld length() const { return sqrtl(norm()); }
-  ld angle() { return atan2(y, x); }
+  
+  ld angle() { 
+    ld ang = atan2(y, x); 
+    if (ang < 0) ang += 2 * pi;
+    return ang;
+  }
 
   Pt perp() const { return Pt(-y, x); }
   Pt unit() const { return (*this) / length(); }

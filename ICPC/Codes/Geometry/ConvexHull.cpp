@@ -1,6 +1,6 @@
-vector<P> convexHull(const vector<P> &pts) {
-  vector<P> low, up;
-  sort(all(pts), [&](P a, P b) {
+Poly convexHull(const Poly &pts) {
+  Poly low, up;
+  sort(all(pts), [&](Pt a, Pt b) {
     return a.x == b.x ? a.y < b.y : a.x < b.x;
   });
   pts.erase(unique(all(pts)), pts.end());

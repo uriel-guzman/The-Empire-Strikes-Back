@@ -1,4 +1,3 @@
-ld proj(P a, P b) {
+ld proj(Pt a, Pt b) {
   return a.dot(b) / b.length();
 }
-    
