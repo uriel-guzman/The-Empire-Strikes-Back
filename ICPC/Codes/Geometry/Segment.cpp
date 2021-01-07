@@ -1,11 +1,11 @@
 struct Seg {
-  Pt a, b, ab;
+  Pt a, b, v;
 
-  Seg(Pt a, Pt b) : a(a), b(b), ab(b - a) {}
+  Seg(Pt a, Pt b) : a(a), b(b), v(b - a) {}
   
   bool contains(Pt p) {
     // pointInSegment(a, b, p)
-    return eq(ab.cross(p - a), 0) && leq((a - p).dot(b - p), 0);
+    return eq(v.cross(p - a), 0) && leq((a - p).dot(b - p), 0);
   }
 
   int intersects(Seg s) {
@@ -18,8 +18,9 @@ struct Seg {
 
   Pt intersection(Seg s) { 
     // Line.intersection(l), with a twist
-    // always check intersects() first!
-    Pt u1 = ab.unit(), u2 = s.ab.unit();
+    if (intersects(s) != 1)
+      return Pt(NAN, NAN);
+    Pt u1 = v.unit(), u2 = s.v.unit();
     return a + u1 * ((s.a - a).cross(u2) / u1.cross(u2));
   }
 };
