@@ -18,9 +18,6 @@ struct Seg {
 
   Pt intersection(Seg s) { 
     // Line.intersection(l), with a twist
-    if (intersects(s) != 1)
-      return Pt(NAN, NAN);
-    Pt u1 = v.unit(), u2 = s.v.unit();
-    return a + u1 * ((s.a - a).cross(u2) / u1.cross(u2));
+    return a + v * ((s.a - a).cross(s.v) / v.cross(s.v));
   }
 };
