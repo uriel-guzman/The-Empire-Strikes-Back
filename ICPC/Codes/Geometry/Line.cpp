@@ -15,6 +15,13 @@ struct Line {
     return 1;
   }
 
+  int intersects(Seg s) { 
+    // intersectLineSegmentInfo(a, v, c, d)
+    if (eq(v.cross(s.v), 0))
+      return eq((s.a - a).cross(v), 0) ? -1 : 0;
+    return sgn(v.cross(s.a - a)) != sgn(v.cross(s.b - a));
+  }
+
   bool parallel(Line l) {
     return eq(v.cross(l.v), 0);
   }
