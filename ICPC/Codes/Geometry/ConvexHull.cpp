@@ -1,4 +1,4 @@
-Poly convexHull(const Poly &pts) {
+Poly convexHull(Poly pts) {
   Poly low, up;
   sort(all(pts), [&](Pt a, Pt b) {
     return a.x == b.x ? a.y < b.y : a.x < b.x;
