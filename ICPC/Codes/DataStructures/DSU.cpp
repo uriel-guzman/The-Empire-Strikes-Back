@@ -1,4 +1,4 @@
-struct Dsu {
+ istruct Dsu {
   vi par;
 
   Dsu(int n = 1) : par(n + 1) {
