@@ -4,19 +4,16 @@ struct Line {
   Line(Pt a, Pt b) : a(a), v((b - a).unit()) {}
 
   bool contains(Pt p) {
-    // pointInLine(a, v, p)
     return eq((p - a).cross(v), 0);  
   }
 
   int intersects(Line l) { 
-    // intersectLinesInfo(a1, v1, a2, v2)
     if (eq(v.cross(l.v), 0))
       return eq((l.a - a).cross(v), 0) ? -1 : 0;
     return 1;
   }
 
   int intersects(Seg s) { 
-    // intersectLineSegmentInfo(a, v, c, d)
     if (eq(v.cross(s.v), 0))
       return eq((s.a - a).cross(v), 0) ? -1 : 0;
     return sgn(v.cross(s.a - a)) != sgn(v.cross(s.b - a));
@@ -26,10 +23,9 @@ struct Line {
     return eq(v.cross(l.v), 0);
   }
 
-  Pt intersection(Line l) { 
-    // intersectLines(a1, v1, a2, v2)
-    // always check intersects() first!
-    return a + v * ((l.a - a).cross(l.v) / v.cross(l.v));
+  template <class T>
+  Pt intersection(T t) { 
+    return a + v * ((t.a - a).cross(t.v) / v.cross(t.v));
   }
 
   Pt projection(Pt p) {

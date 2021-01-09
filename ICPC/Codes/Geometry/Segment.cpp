@@ -14,7 +14,8 @@ struct Seg {
     return sgn(s.v.cross(a - s.a)) != sgn(s.v.cross(b - s.a)); 
   }
 
-  Pt intersection(Seg s) { 
-    return a + v * ((s.a - a).cross(s.v) / v.cross(s.v));
+  template <class T>
+  Pt intersection(T t) { 
+    return a + v * ((t.a - a).cross(t.v) / v.cross(t.v));
   }
 };
