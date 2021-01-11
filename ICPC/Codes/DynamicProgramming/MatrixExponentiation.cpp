@@ -1,5 +1,5 @@
 template <class T>
-using mat = vector<vector<T>>;
+using Mat = vector<vector<T>>;
 
 template <class T>
 Mat<T> operator * (Mat<T> &A, Mat<T> &B) {
