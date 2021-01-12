@@ -1,7 +1,8 @@
 struct Line {
-  Pt a, v;
+  Pt a, b, v;
 
-  Line(Pt a, Pt b) : a(a), v((b - a).unit()) {}
+  Line() {}
+  Line(Pt a, Pt b) : a(a), b(b), v((b - a).unit()) {}
 
   bool contains(Pt p) {
     return eq((p - a).cross(v), 0);  

@@ -1,6 +1,7 @@
 struct Seg {
   Pt a, b, v;
 
+  Seg() {}
   Seg(Pt a, Pt b) : a(a), b(b), v(b - a) {}
   
   bool contains(Pt p) {
