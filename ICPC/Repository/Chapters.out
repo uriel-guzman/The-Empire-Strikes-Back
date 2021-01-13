@@ -86,3 +86,26 @@
 \BOOKMARK [2][-]{subsection.9.4}{Fibonacci}{section.9}% 86
 \BOOKMARK [1][-]{section.10}{Bit tricks}{}% 87
 \BOOKMARK [2][-]{subsection.10.1}{Bitset}{section.10}% 88
+\BOOKMARK [2][-]{subsection.10.2}{Real}{section.10}% 89
+\BOOKMARK [1][-]{section.11}{Points}{}% 90
+\BOOKMARK [2][-]{subsection.11.1}{Points}{section.11}% 91
+\BOOKMARK [2][-]{subsection.11.2}{Angle between vectors}{section.11}% 92
+\BOOKMARK [2][-]{subsection.11.3}{Closest pair of points}{section.11}% 93
+\BOOKMARK [2][-]{subsection.11.4}{Projection}{section.11}% 94
+\BOOKMARK [1][-]{section.12}{Lines and segments}{}% 95
+\BOOKMARK [2][-]{subsection.12.1}{Line}{section.12}% 96
+\BOOKMARK [2][-]{subsection.12.2}{Segment}{section.12}% 97
+\BOOKMARK [2][-]{subsection.12.3}{Distance point segment}{section.12}% 98
+\BOOKMARK [2][-]{subsection.12.4}{Distance segment segment}{section.12}% 99
+\BOOKMARK [1][-]{section.13}{Circles}{}% 100
+\BOOKMARK [2][-]{subsection.13.1}{Circle}{section.13}% 101
+\BOOKMARK [2][-]{subsection.13.2}{Distance point circle}{section.13}% 102
+\BOOKMARK [1][-]{section.14}{Polygons}{}% 103
+\BOOKMARK [2][-]{subsection.14.1}{Area of polygon}{section.14}% 104
+\BOOKMARK [2][-]{subsection.14.2}{Convex-Hull}{section.14}% 105
+\BOOKMARK [2][-]{subsection.14.3}{Cut polygon by a line}{section.14}% 106
+\BOOKMARK [2][-]{subsection.14.4}{Perimeter}{section.14}% 107
+\BOOKMARK [2][-]{subsection.14.5}{Point in polygon}{section.14}% 108
+\BOOKMARK [1][-]{section.15}{Geometry misc}{}% 109
+\BOOKMARK [2][-]{subsection.15.1}{Radial order}{section.15}% 110
+\BOOKMARK [2][-]{subsection.15.2}{Sort along a line}{section.15}% 111
