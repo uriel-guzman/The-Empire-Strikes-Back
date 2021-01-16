@@ -1,5 +1,4 @@
 struct Cir {
-  #define sq(x) (x) * (x)
   Pt o;
   ld r;
   Cir() {}
@@ -74,5 +73,22 @@ struct Cir {
     Line cb(mcb, mcb + (b - c).perp());
     Pt p = ab.intersection(cb);
     return Cir(p, (p - a).length());
+  }
+
+  ld commonArea(Cir c) {
+    if (le(r, c.r))
+      return c.commonArea(*this);
+    ld d = (o - c.o).length();
+    if (leq(d + c.r, r)) return c.r * c.r * pi;
+    if (geq(d, r + c.r)) return 0.0;
+    auto angle = [&](ld a, ld b, ld c) {
+      return acos((a * a + b * b - c * c) / 2 / a / b);
+    };
+    auto cut = [&](ld a, ld r) {
+      return (a - sin(a)) * r * r / 2;
+    };
+    ld a1 = angle(d, r, c.r);
+    ld a2 = angle(d, c.r, r);
+    return cut(a1 * 2, r) + cut(a2 * 2, c.r);
   }
 };
