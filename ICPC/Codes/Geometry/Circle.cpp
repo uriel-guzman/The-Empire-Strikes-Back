@@ -33,39 +33,38 @@ struct Cir {
     return o + (p - o).unit() * r;
   }
 
-  pair<Pt, Pt> tangency(Pt p) {
+  vector<Pt> tangency(Pt p) {
     // pointsOfTangency
     // point outside the circle
     Pt v = (p - o).unit() * r;
     ld d2 = (p - o).norm(), d = sqrt(d2);
+    if (leq(d, 0)) return {}; // on circle, no tangent
     Pt v1 = v * (r / d), v2 = v.perp() * (sqrt(d2 - r * r) / d);
     return {o + v1 - v2, o + v1 + v2};
   }
 
-  vector<Pt> intersection(Cir c) {
-    // intersectionCircles
-    Pt d = c.o - o;
-    ld d2 = d.norm();
-    if (eq(d2, 0)) return {}; // concentric circles
-    ld pd = (d2 + r * r - c.r * c.r) / 2;
-    ld h2 = r * r - pd * pd / d2;
-    Pt p = o + d * pd / d2;
-    if (eq(h2, 0)) return {p}; // circles touch at one point
-    if (le(h2, 0)) return {}; // circles don't intersect
-    Pt u = d.perp() * sqrt(h2 / d2);
-    return {p - u, p + u}; // circles intersects twice
+  vector<Pt> intersection(Cir c) { // by Retired_MiFaFaOvO
+    ld d = (c.o - o).length();
+    if (eq(d, 0)) return {}; // concentric circles
+    if (ge(d, r + c.r)) return {}; // circles don't intersect
+    Pt v = (c.o - o).unit();
+    ld a = (r * r + d * d - c.r * c.r) / (2 * d);
+    Pt p = o + v * a;
+    if (eq(r + c.r, d)) return {p}; // circles touch at one point
+    ld h = sqrt(r * r - a * a);
+    Pt q = v.perp() * h;
+    return {p - q, p + q}; // circles intersects twice
   }
 
-  template <class T>
-  vector<Pt> intersection(T t) {
-    // intersectLineCircle and intersectSegmentCircle
+  template <class L>
+  vector<Pt> intersection(L l) {
     // for a segment you need to check that the point lies on the segment
-    ld h2 = sq(r) - sq(t.v.cross(o - t.a)) / t.v.norm();
-    Pt p = t.a + t.v * t.v.dot(o - t.a) / t.v.norm();
+    ld h2 = r * r - l.v.cross(o - l.a) * l.v.cross(o - l.a) / l.v.norm();
+    Pt p = l.a + l.v * l.v.dot(o - l.a) / l.v.norm();
     if (eq(h2, 0)) return {p}; // line tangent to circle
     if (le(h2, 0)) return {}; // no intersection
-    Pt u = t.v.unit() * sqrt(h2);
-    return {p - u, p + u}; // two points of intersection (chord)
+    Pt q = l.v.unit() * sqrt(h2);
+    return {p - q, p + q}; // two points of intersection (chord)
   }
 
   Cir get(Pt a, Pt b, Pt c) {
