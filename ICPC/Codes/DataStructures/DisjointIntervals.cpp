@@ -1,21 +1,21 @@
-struct Range {
+struct Interval {
   int l, r;
-  bool operator < (const Range& rge) const {
-    return l < rge.l;
+  bool operator < (const Interval &it) const {
+    return l < it.l;
   }
 };
 
-struct DisjointIntervals : set<Range> {
-  void add(Range rge) {
-    iterator p = lower_bound(rge), q = p; 
-    if (p != begin() && rge.l <= (--p)->r)
-      rge.l = p->l, --q;
-    for (; q != end() && q->l <= rge.r; erase(q++))
-      rge.r = max(rge.r, q->r);
-    insert(rge); 
+struct DisjointIntervals : set<Interval> {
+  void add(Interval it) {
+    iterator p = lower_bound(it), q = p; 
+    if (p != begin() && it.l <= (--p)->r)
+      it.l = p->l, --q;
+    for (; q != end() && q->l <= it.r; erase(q++))
+      it.r = max(it.r, q->r);
+    insert(it); 
   }
 
   void add(int l, int r) {
-    add(Range{l, r});
+    add(Interval{l, r});
   }
 };

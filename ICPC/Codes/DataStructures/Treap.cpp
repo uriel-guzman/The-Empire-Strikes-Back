@@ -58,25 +58,25 @@ Treap merge(Treap l, Treap r) {
     return r->ch[0] = merge(l, r->ch[0]), r->pull();
 }
 
-Treap qkth(Treap t, int k) { // 0-indexed
+Treap kth(Treap t, int k) { // 0-indexed
   if (!t)
     return t;
   t->push();
   int sz = gsz(t->ch[0]);
   if (sz == k)
     return t;
-  return k < sz ? qkth(t->ch[0], k) : qkth(t->ch[1], k - sz - 1);
+  return k < sz ? kth(t->ch[0], k) : kth(t->ch[1], k - sz - 1);
 }
 
-int qrank(Treap t, int val) { // 0-indexed
+int rank(Treap t, int val) { // 0-indexed
   if (!t)
     return -1;
   t->push();
   if (val < t->val)
-    return qrank(t->ch[0], val);
+    return rank(t->ch[0], val);
   if (t->val == val)
     return gsz(t->ch[0]);
-  return gsz(t->ch[0]) + qrank(t->ch[1], val) + 1;
+  return gsz(t->ch[0]) + rank(t->ch[1], val) + 1;
 }
 
 Treap insert(Treap t, int val) {
