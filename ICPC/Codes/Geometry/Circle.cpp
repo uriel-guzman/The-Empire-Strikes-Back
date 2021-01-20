@@ -66,7 +66,7 @@ struct Cir {
     return {p - q, p + q}; // two points of intersection (chord)
   }
 
-  Cir get(Pt a, Pt b, Pt c) {
+  Cir circumcenter(Pt a, Pt b, Pt c) {
     // find circle that passes through points a, b, c
     Pt mab = (a + b) / 2, mcb = (b + c) / 2;
     Line ab(mab, mab + (b - a).perp());
