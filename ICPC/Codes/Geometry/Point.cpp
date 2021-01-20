@@ -57,3 +57,5 @@ struct Pt {
     return -1;
   }  
 };
+
+using Poly = vector<Pt>;
