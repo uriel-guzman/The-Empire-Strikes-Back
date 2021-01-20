@@ -1,4 +1,4 @@
-int sgn(ld x) { return x > 0 ? 1 : (x < 0 ? -1 : 0); }
+int sgn(ld x) { return ge(x, 0) ? 1 : (le(x, 0) ? -1 : 0); } 
 
 struct Pt {
   ld x, y;
@@ -28,7 +28,7 @@ struct Pt {
   
   ld angle() { 
     ld ang = atan2(y, x); 
-    return ang + (ang < 0 ? 2 * pi : 0);
+    return ang + (ang < 0 ? 2 * acos(-1) : 0);
   }
 
   Pt perp() const { return Pt(-y, x); }
@@ -37,6 +37,10 @@ struct Pt {
     // counter-clockwise rotation in radians
     // degree = radian * 180 / pi
     return Pt(x * cos(angle) - y * sin(angle), x * sin(angle) + y * cos(angle));
+  }
+
+  int dir(Pt a, Pt b) {
+    return sgn((a - *this).cross(b - *this));
   }
 
   bool operator == (Pt p) const { return eq(x, p.x) && eq(y, p.y); }
@@ -51,9 +55,5 @@ struct Pt {
     if (x >= 0 && y < 0) return 3;
     assert(x == 0 && y == 0);
     return -1;
-  }
+  }  
 };
-
-ld ccw(Pt a, Pt b, Pt c) { 
-  return (b - a).cross(c - a); 
-}
