@@ -26,7 +26,7 @@ struct Pt {
   ld norm() const { return x * x + y * y; }
   ld length() const { return sqrtl(norm()); }
   
-  ld angle() { 
+  ld angle() const { 
     ld ang = atan2(y, x); 
     return ang + (ang < 0 ? 2 * acos(-1) : 0);
   }
@@ -42,20 +42,25 @@ struct Pt {
   int dir(Pt a, Pt b) {
     return sgn((a - *this).cross(b - *this));
   }
-
-  bool operator == (Pt p) const { return eq(x, p.x) && eq(y, p.y); }
-  bool operator != (Pt p) const { return neq(x, p.x) || neq(y, p.y); }
-  friend ostream &operator << (ostream &os, const Pt &p) { return os << "(" << p.x << ", " << p.y << ")"; }
-  friend istream &operator >> (istream &is, Pt &p) { return cin >> p.x >> p.y; }
-
+  
   int cuad() const {
     if (x > 0 && y >= 0) return 0;
     if (x <= 0 && y > 0) return 1;
     if (x < 0 && y <= 0) return 2;
     if (x >= 0 && y < 0) return 3;
-    assert(x == 0 && y == 0);
     return -1;
   }  
+
+  bool operator == (Pt p) const { return eq(x, p.x) && eq(y, p.y); }
+  bool operator != (Pt p) const { return neq(x, p.x) || neq(y, p.y); }
+  
+  friend ostream &operator << (ostream &os, const Pt &p) { 
+    return os << "(" << p.x << ", " << p.y << ")"; 
+  }
+  
+  friend istream &operator >> (istream &is, Pt &p) { 
+    return is >> p.x >> p.y; 
+  }
 };
 
 using Poly = vector<Pt>;
