@@ -1,4 +1,4 @@
-int sgn(ld x) { return ge(x, 0) ? 1 : (le(x, 0) ? -1 : 0); } 
+int sgn(ld a) { return (a > eps) - (a < -eps); }
 
 struct Pt {
   ld x, y;

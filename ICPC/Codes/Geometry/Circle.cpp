@@ -42,14 +42,13 @@ struct Cir {
     return {o + v1 - v2, o + v1 + v2};
   }
 
-  vector<Pt> intersection(Cir c) { // by Retired_MiFaFaOvO
+  vector<Pt> intersection(Cir c) { 
     ld d = (c.o - o).length();
-    if (eq(d, 0)) return {}; // concentric circles
-    if (ge(d, r + c.r)) return {}; // circles don't intersect
+    if (eq(d, 0) || ge(d, r + c.r) || le(d, abs(r - c.r))) return {}; // circles don't intersect
     Pt v = (c.o - o).unit();
     ld a = (r * r + d * d - c.r * c.r) / (2 * d);
     Pt p = o + v * a;
-    if (eq(r + c.r, d)) return {p}; // circles touch at one point
+    if (eq(d, r + c.r) || eq(d, abs(r - c.r))) return {p}; // circles touch at one point
     ld h = sqrt(r * r - a * a);
     Pt q = v.perp() * h;
     return {p - q, p + q}; // circles intersects twice
