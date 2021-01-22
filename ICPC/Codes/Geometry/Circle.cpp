@@ -6,34 +6,28 @@ struct Cir {
   Cir(Pt o, ld r) : o(o), r(r) {}
 
   int inside(Cir c) {
-    // circleInsideCircle
     // -1: internally, 0: overlap, 1: inside
-    ld l = r - c.r - (o - c.o).length();
+    ld l = c.r - r - (o - c.o).length();
     return ge(l, 0) ? 1 : eq(l, 0) ? -1 : 0;
   }
 
   int outside(Cir c) {
-    // circleOutsideCircle
     // -1: externally, 0: overlap, 1: outside
     ld l = (o - c.o).length() - r - c.r;
     return ge(l, 0) ? 1 : eq(l, 0) ? -1 : 0;
   }
 
   int contains(Pt p) {
-    // pointInCircle
     // -1: perimeter, 0: outside, 1: inside
     ld l = (p - o).length() - r;
     return le(l, 0) ? 1 : eq(l, 0) ? -1 : 0;
   }
 
   Pt projection(Pt p) {
-    // projectionPointCircle
-    // point outside the circle
     return o + (p - o).unit() * r;
   }
 
   vector<Pt> tangency(Pt p) {
-    // pointsOfTangency
     // point outside the circle
     Pt v = (p - o).unit() * r;
     ld d2 = (p - o).norm(), d = sqrt(d2);
@@ -68,8 +62,8 @@ struct Cir {
   Cir circumcenter(Pt a, Pt b, Pt c) {
     // find circle that passes through points a, b, c
     Pt mab = (a + b) / 2, mcb = (b + c) / 2;
-    Line ab(mab, mab + (b - a).perp());
-    Line cb(mcb, mcb + (b - c).perp());
+    Seg ab(mab, mab + (b - a).perp());
+    Seg cb(mcb, mcb + (b - c).perp());
     Pt p = ab.intersection(cb);
     return Cir(p, (p - a).length());
   }
