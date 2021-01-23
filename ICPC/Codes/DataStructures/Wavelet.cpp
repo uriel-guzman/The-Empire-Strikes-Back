@@ -4,9 +4,7 @@ struct Wav {
   Wav *ls, *rs;
   vi amt;
 
-  Wav(int lo, int hi) : lo(lo), hi(hi), ls(0), rs(0) {}
-
-  void build(iter b, iter e) { // array 1-indexed
+  Wav(int lo, int hi, iter b, iter e) : lo(lo), hi(hi) { // array 1-indexed
     if (lo == hi || b == e)
       return;
     amt.reserve(e - b + 1);
@@ -17,8 +15,8 @@ struct Wav {
     auto p = stable_partition(b, e, [&](int x) { 
       return x <= m; 
     });
-    (ls = new Wav(lo, m))->build(b, p);
-    (rs = new Wav(m + 1, hi))->build(p, e);
+    ls = new Wav(lo, m, b, p);
+    rs = new Wav(m + 1, hi, p, e);
   }
 
   int kth(int l, int r, int k) {
