@@ -24,9 +24,9 @@ struct Line {
     return eq(v.cross(l.v), 0);
   }
 
-  template <class T>
-  Pt intersection(T t) { 
-    return a + v * ((t.a - a).cross(t.v) / v.cross(t.v));
+  template <class Line>
+  Pt intersection(Line l) { // can be a segment too
+    return a + v * ((l.a - a).cross(l.v) / v.cross(l.v));
   }
 
   Pt projection(Pt p) {

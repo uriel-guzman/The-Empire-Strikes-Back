@@ -48,8 +48,8 @@ struct Cir {
     return {p - q, p + q}; // circles intersects twice
   }
 
-  template <class L>
-  vector<Pt> intersection(L l) {
+  template <class Line>
+  vector<Pt> intersection(Line l) {
     // for a segment you need to check that the point lies on the segment
     ld h2 = r * r - l.v.cross(o - l.a) * l.v.cross(o - l.a) / l.v.norm();
     Pt p = l.a + l.v * l.v.dot(o - l.a) / l.v.norm();
@@ -59,13 +59,13 @@ struct Cir {
     return {p - q, p + q}; // two points of intersection (chord)
   }
 
-  Cir circumcenter(Pt a, Pt b, Pt c) {
+  Cir(Pt a, Pt b, Pt c) {
     // find circle that passes through points a, b, c
     Pt mab = (a + b) / 2, mcb = (b + c) / 2;
     Seg ab(mab, mab + (b - a).perp());
     Seg cb(mcb, mcb + (b - c).perp());
-    Pt p = ab.intersection(cb);
-    return Cir(p, (p - a).length());
+    o = ab.intersection(cb);
+    r = (o - a).length();
   }
 
   ld commonArea(Cir c) {
