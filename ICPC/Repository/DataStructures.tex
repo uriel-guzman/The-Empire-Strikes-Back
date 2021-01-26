@@ -6,6 +6,8 @@
 \subsection{Disjoint set with rollback}
 \addfile{../Codes/DataStructures/DSURollback.cpp}
 
+\horizontalLine
+
 \subsection{Min-Max queue}
 \addfile{../Codes/DataStructures/MinMaxQueue.cpp}
 
@@ -34,49 +36,56 @@
 To make it faster, change the order to $hilbert(l, r)$ \\
 \addfile{../Codes/DataStructures/HilbertOrder.cpp}
 
-\subsection*{Mo's algorithm with updates in \complexity{n^{\frac{5}{3}}} }
+% \subsection*{Mo's algorithm with updates in \complexity{n^{\frac{5}{3}}} }
   
-\setlist{nolistsep}
-\begin{itemize}[noitemsep]
-  \item Choose a $block$ of size $n^{\frac{2}{3}}$
-  \item Do a normal Mo's algorithm, in the $Query$ definition add an extra variable for the $updatesSoFar$ 
-  \item Sort the queries by the order $(l /block$, $r / block$, $updatesSoFar)$
-  \item If the update lies inside the current query, update the data structure properly \\
-  \begin{code}
-   struct Update {
-     int pos, prv, nxt;
-   };
+% \setlist{nolistsep}
+% \begin{itemize}[noitemsep]
+%   \item Choose a $block$ of size $n^{\frac{2}{3}}$
+%   \item Do a normal Mo's algorithm, in the $Query$ definition add an extra variable for the $updatesSoFar$ 
+%   \item Sort the queries by the order $(l /block$, $r / block$, $updatesSoFar)$
+%   \item If the update lies inside the current query, update the data structure properly \\
+%   \begin{code}
+%    struct Update {
+%      int pos, prv, nxt;
+%    };
   
-   void undo(Update &u) {
-     if (l <= u.pos && u.pos <= r) {
-       rem(u.pos);
-       a[u.pos] = u.prv;
-       add(u.pos);
-     } else {
-       a[u.pos] = u.prv;
-     }
-   }
-  \end{code}
+%    void undo(Update &u) {
+%      if (l <= u.pos && u.pos <= r) {
+%        rem(u.pos);
+%        a[u.pos] = u.prv;
+%        add(u.pos);
+%      } else {
+%        a[u.pos] = u.prv;
+%      }
+%    }
+%   \end{code}
     
-  \item Solve the problem :D \\
-  \begin{code}
-   l = queries[0].l, r = l - 1, upd = sz(updates) - 1;
-   for (Query &q : queries) {
-     while (upd < q.upd)
-       dodo(updates[++upd]);
-     while (upd > q.upd)
-       undo(updates[upd--]);
-     // write down the normal Mo's algorithm
-   }
-  \end{code}
-\end{itemize}
-\vspace{-15pt}
+%   \item Solve the problem :D \\
+%   \begin{code}
+%    l = queries[0].l, r = l - 1, upd = sz(updates) - 1;
+%    for (Query &q : queries) {
+%      while (upd < q.upd)
+%        dodo(updates[++upd]);
+%      while (upd > q.upd)
+%        undo(updates[upd--]);
+%      // write down the normal Mo's algorithm
+%    }
+%   \end{code}
+% \end{itemize}
+% \vspace{-15pt}
 
 \subsection{Static to dynamic}
 \addfile{../Codes/DataStructures/Static2Dynamic.cpp}
 
+\horizontalLine
+
 \subsection{Disjoint intervals}
 \addfile{../Codes/DataStructures/DisjointIntervals.cpp}
+
+\subsection{Interval tree}
+\addfile{../Codes/DataStructures/IntervalTree.cpp}
+
+\horizontalLine
 
 \subsection{Ordered tree}
 \addfile{../Codes/DataStructures/OrderedTree.cpp}
@@ -105,10 +114,10 @@ To make it faster, change the order to $hilbert(l, r)$ \\
 \subsection{Li Chao tree}
 \addfile{../Codes/DataStructures/LiChao.cpp}
 
-\subsection{Explicit Treap}
+\subsection{Explicit treap}
 \addfile[1-93]{../Codes/DataStructures/Treap.cpp}
 
-\subsection{Implicit Treap}
+\subsection{Implicit treap}
 \addfile[95]{../Codes/DataStructures/Treap.cpp}
 
 \subsection{Splay tree}

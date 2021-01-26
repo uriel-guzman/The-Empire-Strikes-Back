@@ -1,9 +1,11 @@
+bitset<N> isPrime;
+
 void phiSieve() {
-  isp.set(); // bitset<N> is faster
+  isPrime.set(); // bitset<N> is faster
   iota(phi, phi + N, 0);
-  fore (i, 2, N) if (isp[i]) 
+  fore (i, 2, N) if (isPrime[i]) 
     for (int j = i; j < N; j += i) {
-      isp[j] = (i == j);
+      isPrime[j] = (i == j);
       phi[j] /= i;
       phi[j] *= i - 1;
     }

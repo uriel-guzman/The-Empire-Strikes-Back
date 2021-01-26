@@ -28,17 +28,3 @@ random() { // Make small test cases!!!
 		fi
 	done
 }
-
-test() {
-	g++ --std=c++11 $1.cpp -o prog 
-	for ((i = 1; i <= 50; i++)); do
-		[[ -f $1_in$i ]] || break
-		printf "Test case #$i"
-		diff -uwi <(./prog < $1_in$i) $1_out$i > $1_diff
-		if [[ ! $? -eq 0 ]]; then
-			printf "${red} Wrong answer ${noColor}\n"
-		else
-			printf "${green} Accepted ${noColor}\n"
-		fi
-	done
-}

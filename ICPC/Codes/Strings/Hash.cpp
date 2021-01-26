@@ -1,8 +1,8 @@
 vi mod = {999727999, 999992867, 1000000123, 1000002193, 1000003211, 1000008223, 1000009999, 1000027163, 1070777777};
 
-struct H : array<lli, 2> {
+struct H : array<int, 2> {
   #define oper(op) friend H operator op (H a, H b) { \ 
-  fore (i, 0, sz(a)) a[i] = (a[i] op b[i] + mod[i]) % mod[i]; \ 
+  fore (i, 0, sz(a)) a[i] = (1LL * a[i] op b[i] + mod[i]) % mod[i]; \ 
   return a; }
   oper(+) oper(-) oper(*)
 } pw[N], ipw[N];
@@ -22,7 +22,12 @@ struct Hash {
   }
 };
 
-const int P = uniform_int_distribution<int>(27, min(mod[0], mod[1]) - 1)(rng);
+int inv(int a, int m) {
+  a %= m;
+  return a == 1 ? 1 : int(m - lli(inv(m, a)) * lli(m) / a);
+}
+
+const int P = uniform_int_distribution<int>(MaxAlpha + 1, min(mod[0], mod[1]) - 1)(rng);
 pw[0] = ipw[0] = {1, 1};
 H Q = {inv(P, mod[0]), inv(P, mod[1])};
 fore (i, 1, N) {
@@ -30,12 +35,12 @@ fore (i, 1, N) {
   ipw[i] = ipw[i - 1] * Q;
 }
 
-// Save {l, r} in the struct and when you do a cut
+// Save len in the struct and when you do a cut
 H merge(vector<H> &cuts) {
   F f = {0, 0};
   fore (i, sz(cuts), 0) {
     F g = cuts[i];
-    f = g + f * pw[g.r - g.l + 1];
+    f = g + f * pw[g.len];
   }
   return f;
 }

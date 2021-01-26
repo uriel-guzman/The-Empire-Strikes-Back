@@ -8,104 +8,111 @@
 \BOOKMARK [2][-]{subsection.1.7}{Mo's algorithm}{section.1}% 8
 \BOOKMARK [2][-]{subsection.1.8}{Static to dynamic}{section.1}% 9
 \BOOKMARK [2][-]{subsection.1.9}{Disjoint intervals}{section.1}% 10
-\BOOKMARK [2][-]{subsection.1.10}{Ordered tree}{section.1}% 11
-\BOOKMARK [2][-]{subsection.1.11}{Unordered tree}{section.1}% 12
-\BOOKMARK [2][-]{subsection.1.12}{D-dimensional Fenwick tree}{section.1}% 13
-\BOOKMARK [2][-]{subsection.1.13}{Dynamic segment tree}{section.1}% 14
-\BOOKMARK [2][-]{subsection.1.14}{Persistent segment tree}{section.1}% 15
-\BOOKMARK [2][-]{subsection.1.15}{Wavelet tree}{section.1}% 16
-\BOOKMARK [2][-]{subsection.1.16}{Li Chao tree}{section.1}% 17
-\BOOKMARK [2][-]{subsection.1.17}{Explicit Treap}{section.1}% 18
-\BOOKMARK [2][-]{subsection.1.18}{Implicit Treap}{section.1}% 19
-\BOOKMARK [2][-]{subsection.1.19}{Splay tree}{section.1}% 20
-\BOOKMARK [1][-]{section.2}{Graphs}{}% 21
-\BOOKMARK [2][-]{subsection.2.1}{Tarjan algorithm \(SCC\)}{section.2}% 22
-\BOOKMARK [2][-]{subsection.2.2}{Kosaraju algorithm \(SCC\)}{section.2}% 23
-\BOOKMARK [2][-]{subsection.2.3}{Two Sat}{section.2}% 24
-\BOOKMARK [2][-]{subsection.2.4}{Topological sort}{section.2}% 25
-\BOOKMARK [2][-]{subsection.2.5}{Cutpoints and Bridges}{section.2}% 26
-\BOOKMARK [2][-]{subsection.2.6}{Detect a cycle}{section.2}% 27
-\BOOKMARK [2][-]{subsection.2.7}{Euler tour for Mo's in a tree}{section.2}% 28
-\BOOKMARK [2][-]{subsection.2.8}{Lowest common ancestor \(LCA\)}{section.2}% 29
-\BOOKMARK [2][-]{subsection.2.9}{Isomorphism}{section.2}% 30
-\BOOKMARK [2][-]{subsection.2.10}{Guni}{section.2}% 31
-\BOOKMARK [2][-]{subsection.2.11}{Centroid decomposition}{section.2}% 32
-\BOOKMARK [2][-]{subsection.2.12}{Heavy-light decomposition}{section.2}% 33
-\BOOKMARK [2][-]{subsection.2.13}{Link-Cut tree}{section.2}% 34
-\BOOKMARK [1][-]{section.3}{Flows}{}% 35
-\BOOKMARK [2][-]{subsection.3.1}{Dinic O\(min\(E flow, V2E\)\)}{section.3}% 36
-\BOOKMARK [2][-]{subsection.3.2}{Min cost flow O\(min\(E flow, V2E\)\)}{section.3}% 37
-\BOOKMARK [2][-]{subsection.3.3}{Hopcroft-Karp O\(E V\)}{section.3}% 38
-\BOOKMARK [2][-]{subsection.3.4}{Hungarian O\(N \0403\)}{section.3}% 39
-\BOOKMARK [1][-]{section.4}{Strings}{}% 40
-\BOOKMARK [2][-]{subsection.4.1}{Hash}{section.4}% 41
-\BOOKMARK [2][-]{subsection.4.2}{KMP}{section.4}% 42
-\BOOKMARK [2][-]{subsection.4.3}{KMP automaton}{section.4}% 43
-\BOOKMARK [2][-]{subsection.4.4}{Z algorithm}{section.4}% 44
-\BOOKMARK [2][-]{subsection.4.5}{Manacher algorithm}{section.4}% 45
-\BOOKMARK [2][-]{subsection.4.6}{Suffix array}{section.4}% 46
-\BOOKMARK [2][-]{subsection.4.7}{Suffix automaton}{section.4}% 47
-\BOOKMARK [2][-]{subsection.4.8}{Aho corasick}{section.4}% 48
-\BOOKMARK [2][-]{subsection.4.9}{Eertree}{section.4}% 49
-\BOOKMARK [1][-]{section.5}{Dynamic Programming}{}% 50
-\BOOKMARK [2][-]{subsection.5.1}{All submasks of a mask}{section.5}% 51
-\BOOKMARK [2][-]{subsection.5.2}{Matrix Chain Multiplication}{section.5}% 52
-\BOOKMARK [2][-]{subsection.5.3}{Digit DP}{section.5}% 53
-\BOOKMARK [2][-]{subsection.5.4}{Knapsack 0/1}{section.5}% 54
-\BOOKMARK [2][-]{subsection.5.5}{Convex Hull Trick O\(n2\) \040O\(n\)}{section.5}% 55
-\BOOKMARK [2][-]{subsection.5.6}{Divide and conquer O\(kn2\) \040O\(k nlogn\)}{section.5}% 56
-\BOOKMARK [2][-]{subsection.5.7}{Knuth optimization O\(n3\) \040O\(n2\)}{section.5}% 57
-\BOOKMARK [1][-]{section.6}{Game Theory}{}% 58
-\BOOKMARK [2][-]{subsection.6.1}{Grundy Numbers}{section.6}% 59
-\BOOKMARK [1][-]{section.7}{Combinatorics}{}% 60
-\BOOKMARK [2][-]{subsection.7.1}{Factorial}{section.7}% 61
-\BOOKMARK [2][-]{subsection.7.2}{Factorial mod smallPrime}{section.7}% 62
-\BOOKMARK [2][-]{subsection.7.3}{Lucas theorem}{section.7}% 63
-\BOOKMARK [2][-]{subsection.7.4}{Stars and bars}{section.7}% 64
-\BOOKMARK [2][-]{subsection.7.5}{N choose K}{section.7}% 65
-\BOOKMARK [2][-]{subsection.7.6}{Catalan}{section.7}% 66
-\BOOKMARK [2][-]{subsection.7.7}{Burnside's lemma}{section.7}% 67
-\BOOKMARK [2][-]{subsection.7.8}{Prime factors of N!}{section.7}% 68
-\BOOKMARK [1][-]{section.8}{Number Theory}{}% 69
-\BOOKMARK [2][-]{subsection.8.1}{Goldbach conjecture}{section.8}% 70
-\BOOKMARK [2][-]{subsection.8.2}{Prime numbers distribution}{section.8}% 71
-\BOOKMARK [2][-]{subsection.8.3}{Sieve of Eratosthenes}{section.8}% 72
-\BOOKMARK [2][-]{subsection.8.4}{Phi of euler}{section.8}% 73
-\BOOKMARK [2][-]{subsection.8.5}{Miller-Rabin}{section.8}% 74
-\BOOKMARK [2][-]{subsection.8.6}{Pollard-Rho}{section.8}% 75
-\BOOKMARK [2][-]{subsection.8.7}{Amount of divisors}{section.8}% 76
-\BOOKMARK [2][-]{subsection.8.8}{B\351zout's identity}{section.8}% 77
-\BOOKMARK [2][-]{subsection.8.9}{GCD}{section.8}% 78
-\BOOKMARK [2][-]{subsection.8.10}{LCM}{section.8}% 79
-\BOOKMARK [2][-]{subsection.8.11}{Euclid}{section.8}% 80
-\BOOKMARK [2][-]{subsection.8.12}{Chinese remainder theorem}{section.8}% 81
-\BOOKMARK [1][-]{section.9}{Math}{}% 82
-\BOOKMARK [2][-]{subsection.9.1}{Progressions}{section.9}% 83
-\BOOKMARK [2][-]{subsection.9.2}{Mod multiplication}{section.9}% 84
-\BOOKMARK [2][-]{subsection.9.3}{Fpow}{section.9}% 85
-\BOOKMARK [2][-]{subsection.9.4}{Fibonacci}{section.9}% 86
-\BOOKMARK [1][-]{section.10}{Bit tricks}{}% 87
-\BOOKMARK [2][-]{subsection.10.1}{Bitset}{section.10}% 88
-\BOOKMARK [2][-]{subsection.10.2}{Real}{section.10}% 89
-\BOOKMARK [1][-]{section.11}{Points}{}% 90
-\BOOKMARK [2][-]{subsection.11.1}{Points}{section.11}% 91
-\BOOKMARK [2][-]{subsection.11.2}{Angle between vectors}{section.11}% 92
-\BOOKMARK [2][-]{subsection.11.3}{Closest pair of points}{section.11}% 93
-\BOOKMARK [2][-]{subsection.11.4}{Projection}{section.11}% 94
-\BOOKMARK [1][-]{section.12}{Lines and segments}{}% 95
-\BOOKMARK [2][-]{subsection.12.1}{Line}{section.12}% 96
-\BOOKMARK [2][-]{subsection.12.2}{Segment}{section.12}% 97
-\BOOKMARK [2][-]{subsection.12.3}{Distance point segment}{section.12}% 98
-\BOOKMARK [2][-]{subsection.12.4}{Distance segment segment}{section.12}% 99
-\BOOKMARK [1][-]{section.13}{Circles}{}% 100
-\BOOKMARK [2][-]{subsection.13.1}{Circle}{section.13}% 101
-\BOOKMARK [2][-]{subsection.13.2}{Distance point circle}{section.13}% 102
-\BOOKMARK [1][-]{section.14}{Polygons}{}% 103
-\BOOKMARK [2][-]{subsection.14.1}{Area of polygon}{section.14}% 104
-\BOOKMARK [2][-]{subsection.14.2}{Convex-Hull}{section.14}% 105
-\BOOKMARK [2][-]{subsection.14.3}{Cut polygon by a line}{section.14}% 106
-\BOOKMARK [2][-]{subsection.14.4}{Perimeter}{section.14}% 107
-\BOOKMARK [2][-]{subsection.14.5}{Point in polygon}{section.14}% 108
-\BOOKMARK [1][-]{section.15}{Geometry misc}{}% 109
-\BOOKMARK [2][-]{subsection.15.1}{Radial order}{section.15}% 110
-\BOOKMARK [2][-]{subsection.15.2}{Sort along a line}{section.15}% 111
+\BOOKMARK [2][-]{subsection.1.10}{Interval tree}{section.1}% 11
+\BOOKMARK [2][-]{subsection.1.11}{Ordered tree}{section.1}% 12
+\BOOKMARK [2][-]{subsection.1.12}{Unordered tree}{section.1}% 13
+\BOOKMARK [2][-]{subsection.1.13}{D-dimensional Fenwick tree}{section.1}% 14
+\BOOKMARK [2][-]{subsection.1.14}{Dynamic segment tree}{section.1}% 15
+\BOOKMARK [2][-]{subsection.1.15}{Persistent segment tree}{section.1}% 16
+\BOOKMARK [2][-]{subsection.1.16}{Wavelet tree}{section.1}% 17
+\BOOKMARK [2][-]{subsection.1.17}{Li Chao tree}{section.1}% 18
+\BOOKMARK [2][-]{subsection.1.18}{Explicit treap}{section.1}% 19
+\BOOKMARK [2][-]{subsection.1.19}{Implicit treap}{section.1}% 20
+\BOOKMARK [2][-]{subsection.1.20}{Splay tree}{section.1}% 21
+\BOOKMARK [1][-]{section.2}{Graphs}{}% 22
+\BOOKMARK [2][-]{subsection.2.1}{Topological sort}{section.2}% 23
+\BOOKMARK [2][-]{subsection.2.2}{Tarjan algorithm \(SCC\)}{section.2}% 24
+\BOOKMARK [2][-]{subsection.2.3}{Kosaraju algorithm \(SCC\)}{section.2}% 25
+\BOOKMARK [2][-]{subsection.2.4}{Cutpoints and Bridges}{section.2}% 26
+\BOOKMARK [2][-]{subsection.2.5}{Two Sat}{section.2}% 27
+\BOOKMARK [2][-]{subsection.2.6}{Detect a cycle}{section.2}% 28
+\BOOKMARK [2][-]{subsection.2.7}{Euler tour for Mo's in a tree}{section.2}% 29
+\BOOKMARK [2][-]{subsection.2.8}{Isomorphism}{section.2}% 30
+\BOOKMARK [2][-]{subsection.2.9}{Dynamic Connectivity}{section.2}% 31
+\BOOKMARK [1][-]{section.3}{Tree queries}{}% 32
+\BOOKMARK [2][-]{subsection.3.1}{Lowest common ancestor \(LCA\)}{section.3}% 33
+\BOOKMARK [2][-]{subsection.3.2}{Virtual tree}{section.3}% 34
+\BOOKMARK [2][-]{subsection.3.3}{Guni}{section.3}% 35
+\BOOKMARK [2][-]{subsection.3.4}{Centroid decomposition}{section.3}% 36
+\BOOKMARK [2][-]{subsection.3.5}{Heavy-light decomposition}{section.3}% 37
+\BOOKMARK [2][-]{subsection.3.6}{Link-Cut tree}{section.3}% 38
+\BOOKMARK [1][-]{section.4}{Flows}{}% 39
+\BOOKMARK [2][-]{subsection.4.1}{Dinic O\(min\(E flow, V2E\)\)}{section.4}% 40
+\BOOKMARK [2][-]{subsection.4.2}{Min cost flow O\(min\(E flow, V2E\)\)}{section.4}% 41
+\BOOKMARK [2][-]{subsection.4.3}{Hopcroft-Karp O\(E V\)}{section.4}% 42
+\BOOKMARK [2][-]{subsection.4.4}{Hungarian O\(N \0403\)}{section.4}% 43
+\BOOKMARK [1][-]{section.5}{Strings}{}% 44
+\BOOKMARK [2][-]{subsection.5.1}{Hash}{section.5}% 45
+\BOOKMARK [2][-]{subsection.5.2}{KMP}{section.5}% 46
+\BOOKMARK [2][-]{subsection.5.3}{KMP automaton}{section.5}% 47
+\BOOKMARK [2][-]{subsection.5.4}{Z algorithm}{section.5}% 48
+\BOOKMARK [2][-]{subsection.5.5}{Manacher algorithm}{section.5}% 49
+\BOOKMARK [2][-]{subsection.5.6}{Suffix array}{section.5}% 50
+\BOOKMARK [2][-]{subsection.5.7}{Suffix automaton}{section.5}% 51
+\BOOKMARK [2][-]{subsection.5.8}{Aho corasick}{section.5}% 52
+\BOOKMARK [2][-]{subsection.5.9}{Eertree}{section.5}% 53
+\BOOKMARK [1][-]{section.6}{Dynamic Programming}{}% 54
+\BOOKMARK [2][-]{subsection.6.1}{All submasks of a mask}{section.6}% 55
+\BOOKMARK [2][-]{subsection.6.2}{Matrix Chain Multiplication}{section.6}% 56
+\BOOKMARK [2][-]{subsection.6.3}{Digit DP}{section.6}% 57
+\BOOKMARK [2][-]{subsection.6.4}{Knapsack 0/1}{section.6}% 58
+\BOOKMARK [2][-]{subsection.6.5}{Convex Hull Trick O\(n2\) \040O\(n\)}{section.6}% 59
+\BOOKMARK [2][-]{subsection.6.6}{Divide and conquer O\(kn2\) \040O\(k nlogn\)}{section.6}% 60
+\BOOKMARK [2][-]{subsection.6.7}{Knuth optimization O\(n3\) \040O\(n2\)}{section.6}% 61
+\BOOKMARK [1][-]{section.7}{Game Theory}{}% 62
+\BOOKMARK [2][-]{subsection.7.1}{Grundy Numbers}{section.7}% 63
+\BOOKMARK [1][-]{section.8}{Combinatorics}{}% 64
+\BOOKMARK [2][-]{subsection.8.1}{Factorial}{section.8}% 65
+\BOOKMARK [2][-]{subsection.8.2}{Factorial mod smallPrime}{section.8}% 66
+\BOOKMARK [2][-]{subsection.8.3}{Lucas theorem}{section.8}% 67
+\BOOKMARK [2][-]{subsection.8.4}{Stars and bars}{section.8}% 68
+\BOOKMARK [2][-]{subsection.8.5}{N choose K}{section.8}% 69
+\BOOKMARK [2][-]{subsection.8.6}{Catalan}{section.8}% 70
+\BOOKMARK [2][-]{subsection.8.7}{Burnside's lemma}{section.8}% 71
+\BOOKMARK [2][-]{subsection.8.8}{Prime factors of N!}{section.8}% 72
+\BOOKMARK [1][-]{section.9}{Number Theory}{}% 73
+\BOOKMARK [2][-]{subsection.9.1}{Goldbach conjecture}{section.9}% 74
+\BOOKMARK [2][-]{subsection.9.2}{Prime numbers distribution}{section.9}% 75
+\BOOKMARK [2][-]{subsection.9.3}{Sieve of Eratosthenes}{section.9}% 76
+\BOOKMARK [2][-]{subsection.9.4}{Phi of euler}{section.9}% 77
+\BOOKMARK [2][-]{subsection.9.5}{Miller-Rabin}{section.9}% 78
+\BOOKMARK [2][-]{subsection.9.6}{Pollard-Rho}{section.9}% 79
+\BOOKMARK [2][-]{subsection.9.7}{Amount of divisors}{section.9}% 80
+\BOOKMARK [2][-]{subsection.9.8}{B\351zout's identity}{section.9}% 81
+\BOOKMARK [2][-]{subsection.9.9}{GCD}{section.9}% 82
+\BOOKMARK [2][-]{subsection.9.10}{LCM}{section.9}% 83
+\BOOKMARK [2][-]{subsection.9.11}{Euclid}{section.9}% 84
+\BOOKMARK [2][-]{subsection.9.12}{Chinese remainder theorem}{section.9}% 85
+\BOOKMARK [1][-]{section.10}{Math}{}% 86
+\BOOKMARK [2][-]{subsection.10.1}{Progressions}{section.10}% 87
+\BOOKMARK [2][-]{subsection.10.2}{Fpow}{section.10}% 88
+\BOOKMARK [2][-]{subsection.10.3}{Fibonacci}{section.10}% 89
+\BOOKMARK [1][-]{section.11}{Bit tricks}{}% 90
+\BOOKMARK [2][-]{subsection.11.1}{Bitset}{section.11}% 91
+\BOOKMARK [2][-]{subsection.11.2}{Real}{section.11}% 92
+\BOOKMARK [1][-]{section.12}{Points}{}% 93
+\BOOKMARK [2][-]{subsection.12.1}{Points}{section.12}% 94
+\BOOKMARK [2][-]{subsection.12.2}{Angle between vectors}{section.12}% 95
+\BOOKMARK [2][-]{subsection.12.3}{Closest pair of points}{section.12}% 96
+\BOOKMARK [2][-]{subsection.12.4}{Projection}{section.12}% 97
+\BOOKMARK [2][-]{subsection.12.5}{KD-Tree}{section.12}% 98
+\BOOKMARK [1][-]{section.13}{Lines and segments}{}% 99
+\BOOKMARK [2][-]{subsection.13.1}{Line}{section.13}% 100
+\BOOKMARK [2][-]{subsection.13.2}{Distance point line}{section.13}% 101
+\BOOKMARK [2][-]{subsection.13.3}{Distance point segment}{section.13}% 102
+\BOOKMARK [2][-]{subsection.13.4}{Segment}{section.13}% 103
+\BOOKMARK [2][-]{subsection.13.5}{Distance segment segment}{section.13}% 104
+\BOOKMARK [1][-]{section.14}{Circles}{}% 105
+\BOOKMARK [2][-]{subsection.14.1}{Circle}{section.14}% 106
+\BOOKMARK [2][-]{subsection.14.2}{Distance point circle}{section.14}% 107
+\BOOKMARK [2][-]{subsection.14.3}{Minimum enclosing circle}{section.14}% 108
+\BOOKMARK [1][-]{section.15}{Polygons}{}% 109
+\BOOKMARK [2][-]{subsection.15.1}{Area of polygon}{section.15}% 110
+\BOOKMARK [2][-]{subsection.15.2}{Convex-Hull}{section.15}% 111
+\BOOKMARK [2][-]{subsection.15.3}{Cut polygon by a line}{section.15}% 112
+\BOOKMARK [2][-]{subsection.15.4}{Perimeter}{section.15}% 113
+\BOOKMARK [2][-]{subsection.15.5}{Point in polygon}{section.15}% 114
+\BOOKMARK [2][-]{subsection.15.6}{Is convex}{section.15}% 115
+\BOOKMARK [1][-]{section.16}{Geometry misc}{}% 116
+\BOOKMARK [2][-]{subsection.16.1}{Radial order}{section.16}% 117
+\BOOKMARK [2][-]{subsection.16.2}{Sort along a line}{section.16}% 118

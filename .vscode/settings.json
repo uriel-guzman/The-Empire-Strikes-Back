@@ -6,6 +6,7 @@
     "*.tcc": "cpp",
     "unordered_map": "cpp",
     "unordered_set": "cpp",
-    "rope": "cpp"
+    "rope": "cpp",
+    "numeric": "cpp"
   }
 }

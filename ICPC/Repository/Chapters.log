@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.4.7)  13 JAN 2021 13:30
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.4.7)  25 JAN 2021 18:49
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -505,13 +505,13 @@ File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 LaTeX Font Info:    Trying to load font information for U+msb on input line 3.
  (/usr/local/texlive/2020/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-))
+) [1
+
+{/usr/local/texlive/2020/texmf-var/fonts/map/pdftex/updmap/pdftex.map}])
 \tf@toc=\write4
 \openout4 = `Chapters.toc'.
 
- [1
-
-{/usr/local/texlive/2020/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] (/Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/Setup.tex
+ (/Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/Setup.tex
 Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on input line 6.
 LaTeX Font Info:    Trying to load font information for T1+zi4 on input line 6.
  (/usr/local/texlive/2020/texmf-dist/tex/latex/inconsolata/t1zi4.fd
@@ -524,21 +524,31 @@ LaTeX Font Info:    Font shape `T1/zi4/b/n' will be
 (Font)              scaled to size 9.0pt on input line 1.
 ) (/Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Misc/debug.h
 consecutive:
-) (/Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Misc/random.cpp) (/Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Misc/fastio2.cpp) (/Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/compilation.txt
-Underfull \vbox (badness 1087) has occurred while \output is active []
-
- [2]) (/Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Misc/BumpAllocator.cpp)) (/Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/DataStructures.tex (/Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/DataStructures/DSURollback.cpp) (/Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/DataStructures/MinMaxQueue.cpp) (/Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/DataStructures/SparseTable.cpp)
-<squirtle.png, id=713, 303.1325pt x 315.1775pt>
-File: squirtle.png Graphic file (type png)
-<use squirtle.png>
-Package pdftex.def Info: squirtle.png  used on input line 21.
-(pdftex.def)             Requested size: 42.67912pt x 44.37462pt.
- (/Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/DataStructures/SqrtDecomposition.cpp) (/Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/DataStructures/InOutTrick.cpp) (/Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/DataStructures/ParallelBinarySearch.cpp [3 </Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/squirtle.png (PNG copy)>]) (/Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/DataStructures/Mos.cpp) (/Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/DataStructures/HilbertOrder.cpp)
-Underfull \hbox (badness 1377) in paragraph at lines 43--44
-[]\T1/cmr/m/n/10 Sort the queries by the or-der $\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 l=block$\T1/cmr/m/n/10 , $\OML/cmm/m/it/10 r=block$\T1/cmr/m/n/10 ,
+) (/Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Misc/random.cpp) (/Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/compilation.txt) (/Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Misc/BumpAllocator.cpp)) (/Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/DataStructures.tex (/Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/DataStructures/DSURollback.cpp [2])
+Overfull \hbox (5.0pt too wide) in paragraph at lines 9--10
+[] 
  []
 
-(/Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/DataStructures/Static2Dynamic.cpp) (/Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/DataStructures/DisjointIntervals.cpp) (/Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/DataStructures/OrderedTree.cpp [4]) (/Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/DataStructures/UnorderedTree.cpp
+(/Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/DataStructures/MinMaxQueue.cpp) (/Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/DataStructures/SparseTable.cpp)
+<squirtle.png, id=733, 303.1325pt x 315.1775pt>
+File: squirtle.png Graphic file (type png)
+<use squirtle.png>
+Package pdftex.def Info: squirtle.png  used on input line 23.
+(pdftex.def)             Requested size: 42.67912pt x 44.37462pt.
+
+Underfull \vbox (badness 2600) has occurred while \output is active []
+
+ (/Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/DataStructures/SqrtDecomposition.cpp) (/Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/DataStructures/InOutTrick.cpp) (/Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/DataStructures/ParallelBinarySearch.cpp) (/Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/DataStructures/Mos.cpp [3 </Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/squirtle.png (PNG copy)>]) (/Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/DataStructures/HilbertOrder.cpp) (/Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/DataStructures/Static2Dynamic.cpp)
+Overfull \hbox (5.0pt too wide) in paragraph at lines 80--81
+[] 
+ []
+
+(/Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/DataStructures/DisjointIntervals.cpp) (/Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/DataStructures/IntervalTree.cpp)
+Overfull \hbox (5.0pt too wide) in paragraph at lines 88--89
+[] 
+ []
+
+(/Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/DataStructures/OrderedTree.cpp [4]) (/Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/DataStructures/UnorderedTree.cpp
 consecutive:
 ) (/Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/DataStructures/FenwickND.cpp) (/Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/DataStructures/DynamicSegtree.cpp) (/Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/DataStructures/PersistentSegtree.cpp) (/Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/DataStructures/Wavelet.cpp
 Underfull \vbox (badness 1939) has occurred while \output is active []
@@ -554,18 +564,20 @@ consecutive:
 ) (/Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/DataStructures/Splay.cpp
 Underfull \vbox (badness 1939) has occurred while \output is active []
 
-)) (/Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/Graphs.tex (/Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Graphs/Tarjan.cpp [7]) (/Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Graphs/Kosaraju.cpp) (/Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Graphs/TwoSat.cpp
+)) (/Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/Graphs.tex (/Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Graphs/Topsort.cpp) (/Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Graphs/Tarjan.cpp [7]) (/Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Graphs/Kosaraju.cpp) (/Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Graphs/CutpointsAndBridges.cpp
 Underfull \vbox (badness 1939) has occurred while \output is active []
 
-) (/Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Graphs/Topsort.cpp) (/Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Graphs/CutpointsAndBridges.cpp) (/Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Graphs/Cycle.cpp)
-Underfull \vbox (badness 10000) has occurred while \output is active []
+)
+Overfull \hbox (5.0pt too wide) in paragraph at lines 30--31
+[] 
+ []
 
- [8] (/Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Graphs/LCA.cpp) (/Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Graphs/Isomorphism.cpp
+(/Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Graphs/TwoSat.cpp) (/Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Graphs/Cycle.cpp) [8] (/Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Graphs/Isomorphism.cpp
 consecutive:
-) (/Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Graphs/Guni.cpp) (/Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Graphs/Centroid.cpp) (/Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Graphs/HLD.cpp [9]) (/Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Graphs/LinkCutTree.cpp
+) (/Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Graphs/DynamicConnectivity.cpp) (/Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Graphs/LCA.cpp) (/Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Graphs/VirtualTree.cpp [9]) (/Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Graphs/Guni.cpp) (/Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Graphs/Centroid.cpp) (/Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Graphs/HLD.cpp) (/Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Graphs/LinkCutTree.cpp
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-)) (/Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/Flows.tex
+ [10])) (/Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/Flows.tex
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 (hyperref)                removing `\cdot' on input line 5.
@@ -574,7 +586,7 @@ Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 (hyperref)                removing `superscript' on input line 5.
 
-(/Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Flows/Dinic.cpp [10])
+(/Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Flows/Dinic.cpp)
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 (hyperref)                removing `\cdot' on input line 10.
@@ -583,28 +595,31 @@ Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 (hyperref)                removing `superscript' on input line 10.
 
-(/Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Flows/MinCostFlow.cpp)
+(/Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Flows/MinCostFlow.cpp [11])
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 (hyperref)                removing `\@ifnextchar' on input line 15.
 
-(/Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Flows/HopcroftKarp.cpp [11])
+(/Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Flows/HopcroftKarp.cpp)
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 (hyperref)                removing `superscript' on input line 18.
 
-(/Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Flows/Hungarian.cpp)) (/Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/Strings.tex (/Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Strings/Hash.cpp) (/Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Strings/KMP.cpp) (/Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Strings/KMPAutomaton.cpp [12]) (/Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Strings/Z.cpp) (/Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Strings/Manacher.cpp)
+(/Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Flows/Hungarian.cpp
+Underfull \vbox (badness 2894) has occurred while \output is active []
+
+ [12])) (/Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/Strings.tex (/Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Strings/Hash.cpp) (/Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Strings/KMP.cpp) (/Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Strings/KMPAutomaton.cpp) (/Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Strings/Z.cpp) (/Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Strings/Manacher.cpp)
 Underfull \hbox (badness 10000) in paragraph at lines 27--30
 
  []
 
-(/Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Strings/SuffixArray.cpp) (/Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Strings/SuffixAutomaton.cpp [13]
+[13] (/Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Strings/SuffixArray.cpp)
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-) (/Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Strings/AhoCorasick.cpp [14]) (/Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Strings/Eertree.cpp
+ (/Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Strings/SuffixAutomaton.cpp [14]) (/Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Strings/AhoCorasick.cpp) (/Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Strings/Eertree.cpp
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-)) (/Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/DP.tex (/Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/DynamicProgramming/MatrixChainMultiplication.cpp) (/Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/DynamicProgramming/Digit.cpp) (/Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/DynamicProgramming/Knapsack01.cpp
+ [15])) (/Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/DP.tex (/Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/DynamicProgramming/MatrixChainMultiplication.cpp) (/Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/DynamicProgramming/Digit.cpp) (/Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/DynamicProgramming/Knapsack01.cpp
 consecutive:
 )
 
@@ -623,7 +638,7 @@ Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 (hyperref)                removing `math shift' on input line 28.
 
-(/Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/DynamicProgramming/ConvexHullTrick.cpp [15])
+(/Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/DynamicProgramming/ConvexHullTrick.cpp)
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 (hyperref)                removing `superscript' on input line 34.
@@ -644,7 +659,7 @@ Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 (hyperref)                removing `\cdot' on input line 34.
 
-(/Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/DynamicProgramming/DivideAndConquer.cpp)
+(/Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/DynamicProgramming/DivideAndConquer.cpp [16])
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 (hyperref)                removing `superscript' on input line 39.
@@ -672,7 +687,10 @@ Overfull \hbox (4.1941pt too wide) in paragraph at lines 8--8
 []|\T1/cmr/m/n/9 Number| 
  []
 
-(/Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Combinatorics/Factorial.cpp)
+
+Underfull \vbox (badness 2538) has occurred while \output is active []
+
+ (/Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Combinatorics/Factorial.cpp)
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 (hyperref)                removing `math shift' on input line 36.
@@ -681,14 +699,43 @@ Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 (hyperref)                removing `math shift' on input line 36.
 
-(/Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Combinatorics/FactorialModP.cpp [16]) (/Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Combinatorics/Lucas.cpp) (/Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Combinatorics/Choose.cpp) (/Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Combinatorics/Catalan.cpp) (/Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Combinatorics/FactorialFactors.cpp)) (/Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/NumberTheory.tex (/Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/NumberTheory/BitSieve.cpp) (/Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/NumberTheory/FactorizeSieve.cpp) (/Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/NumberTheory/PhiSieve.cpp) (/Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/NumberTheory/Phi.cpp) (/Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/NumberTheory/MillerRabin.cpp [17]) (/Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/NumberTheory/PollardRho.cpp) (/Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/NumberTheory/AmountOfDivisors.cpp)
+(/Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Combinatorics/FactorialModP.cpp) (/Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Combinatorics/Lucas.cpp) (/Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Combinatorics/Choose.cpp [17]) (/Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Combinatorics/Catalan.cpp) (/Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Combinatorics/FactorialFactors.cpp)) (/Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/NumberTheory.tex (/Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/NumberTheory/FactorizeSieve.cpp
+consecutive:
+) (/Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/NumberTheory/PhiSieve.cpp
+consecutive:
+) (/Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/NumberTheory/Phi.cpp) (/Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/NumberTheory/MillerRabin.cpp) (/Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/NumberTheory/PollardRho.cpp) (/Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/NumberTheory/AmountOfDivisors.cpp [18])
 Underfull \hbox (badness 10000) in paragraph at lines 105--109
 
  []
 
-(/Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/NumberTheory/Euclid.cpp) (/Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/NumberTheory/ChineseRemainderTheorem.cpp)) (/Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/Math.tex (/Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Math/ModMul.cpp) (/Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Math/Fpow.cpp)) (/Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/Bits.tex [18]) (/Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/Geometry.tex (/Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Misc/Real.cpp) (/Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Geometry/Point.cpp) (/Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Geometry/AngleBetweenVectors.cpp) (/Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Geometry/ClosestPairOfPoints.cpp) (/Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Geometry/Projection.cpp) [19] (/Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Geometry/Line.cpp) (/Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Geometry/Segment.cpp) (/Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Geometry/distancePointSegment.cpp) (/Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Geometry/distanceSegmentSegment.cpp) (/Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Geometry/Circle.cpp [20]) (/Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Geometry/distancePointCircle.cpp) (/Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Geometry/AreaPolygon.cpp) (/Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Geometry/ConvexHull.cpp) (/Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Geometry/CutPolygonLine.cpp) (/Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Geometry/Perimeter.cpp) (/Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Geometry/PointInPolygon.cpp) (/Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Geometry/RadialOrder.cpp) [21] (/Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Geometry/sortAlongLine.cpp)) 
+(/Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/NumberTheory/Euclid.cpp) (/Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/NumberTheory/ChineseRemainderTheorem.cpp)) (/Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/Math.tex (/Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Math/Fpow.cpp)) (/Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/Bits.tex) (/Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/Geometry.tex (/Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Misc/Real.cpp) (/Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Geometry/Point.cpp [19]) (/Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Geometry/AngleBetweenVectors.cpp) (/Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Geometry/ClosestPairOfPoints.cpp) (/Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Geometry/Projection.cpp) (/Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Geometry/KDTree.cpp
+consecutive:
+)
+Overfull \hbox (5.0pt too wide) in paragraph at lines 28--30
+[] 
+ []
+
+(/Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Geometry/Line.cpp [20]) (/Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Geometry/distancePointLine.cpp) (/Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Geometry/distancePointSegment.cpp) (/Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Geometry/Segment.cpp) (/Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Geometry/distanceSegmentSegment.cpp)
+Overfull \hbox (5.0pt too wide) in paragraph at lines 49--51
+[] 
+ []
+
+(/Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Geometry/Circle.cpp
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [21]) (/Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Geometry/distancePointCircle.cpp) (/Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Geometry/minEnclosingCircle.cpp)
+Overfull \hbox (5.0pt too wide) in paragraph at lines 64--66
+[] 
+ []
+
+(/Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Geometry/AreaPolygon.cpp) (/Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Geometry/ConvexHull.cpp) (/Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Geometry/CutPolygonLine.cpp) (/Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Geometry/Perimeter.cpp) (/Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Geometry/PointInPolygon.cpp) (/Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Geometry/IsConvex.cpp)
+Overfull \hbox (5.0pt too wide) in paragraph at lines 88--90
+[] 
+ []
+
+(/Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Geometry/RadialOrder.cpp [22]) (/Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Geometry/sortAlongLine.cpp)) 
 AED: lastpage setting LastPage
-[22
+[23
 
 ]
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 21.
@@ -697,22 +744,22 @@ Package atveryend Info: Empty hook `AfterLastShipout' on input line 21.
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 21.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 21.
 Package rerunfilecheck Info: File `Chapters.out' has not changed.
-(rerunfilecheck)             Checksum: 147A32B87F733439C19FEA74CF8B3FC1;7106.
+(rerunfilecheck)             Checksum: BD3C30D1B731C658AB794B12E3521609;7559.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 21.
  ) 
 Here is how much of TeX's memory you used:
- 15754 strings out of 480608
- 243401 string characters out of 5903631
- 1136847 words of memory out of 5000000
- 28462 multiletter control sequences out of 15000+600000
- 551441 words of font info for 73 fonts, out of 8000000 for 9000
+ 15924 strings out of 480608
+ 246947 string characters out of 5903631
+ 1114975 words of memory out of 5000000
+ 28480 multiletter control sequences out of 15000+600000
+ 551106 words of font info for 72 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  62i,10n,122p,349b,2226s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/local/texlive/2020/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}{/usr/local/texlive/2020/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}{/usr/local/texlive/2020/texmf-dist/fonts/enc/dvips/inconsolata/i4-t1-0.enc}</usr/local/texlive/2020/texmf-dist/fonts/type1/public/inconsolata/Inconsolata-zi4b.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/inconsolata/Inconsolata-zi4r.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex9.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/cm-super/sfbx0900.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/cm-super/sfbx1000.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/cm-super/sfbx1200.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/cm-super/sfbx1440.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/cm-super/sfrm0900.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/cm-super/sfti0900.pfb>
-Output written on /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/Chapters.pdf (22 pages, 512379 bytes).
+{/usr/local/texlive/2020/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}{/usr/local/texlive/2020/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}{/usr/local/texlive/2020/texmf-dist/fonts/enc/dvips/inconsolata/i4-t1-0.enc}</usr/local/texlive/2020/texmf-dist/fonts/type1/public/inconsolata/Inconsolata-zi4b.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/inconsolata/Inconsolata-zi4r.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex9.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/cm-super/sfbx0900.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/cm-super/sfbx1000.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/cm-super/sfbx1200.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/cm-super/sfbx1440.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/cm-super/sfrm0900.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/cm-super/sfti0900.pfb>
+Output written on /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/Chapters.pdf (23 pages, 509604 bytes).
 PDF statistics:
- 3767 PDF objects out of 4296 (max. 8388607)
- 3682 compressed objects within 37 object streams
- 2590 named destinations out of 2984 (max. 500000)
- 894 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 3965 PDF objects out of 4296 (max. 8388607)
+ 3878 compressed objects within 39 object streams
+ 2731 named destinations out of 2984 (max. 500000)
+ 950 words of extra memory for PDF output out of 10000 (max. 10000000)
 

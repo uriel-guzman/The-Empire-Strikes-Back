@@ -4,7 +4,9 @@ int virtualTree(vi &ver) {
   auto byDfs = [&](int u, int v) {
     return tin[u] < tin[v];
   };
- 
+  auto above = [&](int u, int v) {
+    return tin[u] <= tin[v] && tout[v] <= tout[u];
+  };
   sort(all(ver), byDfs);
   int k = sz(ver);
   fore (i, 1, k)
@@ -13,11 +15,6 @@ int virtualTree(vi &ver) {
   ver.erase(unique(all(ver)), ver.end());
   for (int u : ver)
     virt[u].clear();
- 
-  auto above = [&](int u, int v) {
-    return tin[u] <= tin[v] && tout[v] <= tout[u];
-  };
- 
   vi stk = {ver[0]};
   fore (i, 1, sz(ver)) {
     int u = ver[i];
@@ -31,6 +28,5 @@ int virtualTree(vi &ver) {
     virt[stk.end()[-2]].pb(stk.back());
     stk.pop_back();
   }
- 
   return stk[0];
 }

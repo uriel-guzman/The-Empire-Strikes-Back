@@ -87,35 +87,37 @@
 	keywordstyle = [2]{\color{Purple}\bfseries},
 	keywordstyle = [3]{\color{DarkRed}\bfseries},
 	keywordstyle = [4]{\color{Violet}\bfseries},
-	keywordstyle = [5]{\color{DarkBlue}},
-	keywordstyle = [6]{\color{Red}},
+	keywordstyle = [5]{\color{Red}},
+	keywordstyle = [6]{\color{DarkBlue}},
 	otherkeywords = {},
 	morekeywords = {
-		lli, ld, decltype, ostream, basic_ostream, done, fi, printf, constexpr, then, uint32_t
+		lli, ld, decltype, ostream, istream, basic_ostream, done, fi, printf, constexpr, then, uint32_t
 	},
 	morekeywords = [2] {
 		map, vi, vector, function, queue, stack, set, multiset, pair, first, second, ordered_tree, deque, 
-		numeric_limits, bitset, unordered_tree, array, string
+		numeric_limits, bitset, unordered_tree, array, string, iterator
 	},
 	morekeywords = [3] { 
-		fore, LOCAL, ulli, ii, LogN, N, A, Q, B, C, H, K, F, T, P, V, df, op
+		fore, LOCAL, ulli, ii, LogN, N, A, Q, B, C, H, K, F, T, P, V, df, op, LLONG_MIN, LLONG_MAX, Args
 	},
 	morekeywords = [4] { 
 		Dsu, MinQueue, Sparse, Query, StaticDynamic, Black, Range, DisjointIntervals, Fenwick, Dyn, Seg, Lazy, Per, Wav,
 		Fun, LiChao, Treap, Node, Splay, TwoSat, Dinic, Edge, Mcmf, HopcroftKarp, Hungarian, Hash, SuffixArray, SuffixAutomaton, AhoCorasick,
-		Eertree, DynamicHull, Line, Pt, Cir, Poly, Radial, Update
+		Eertree, DynamicHull, Line, Pt, Cir, Poly, Radial, Update, Interval, ITree, KDTree, DynamicConnectivity
 	},
-	morekeywords = [5] {
+	morekeywords = [6] {
 		eb, pb, iter, begin, end, rbegin, rend, at, assign, insert, erase, swap, clear, emplace, emplace_back, 
 		emplace_front, top, push, push_back, push_front, pop, pop_back, pop_front, front, back, empty, resize, all, sz, qrank, qkth, 
 		size, reserve, find, count, erase, less, greater, __builtin_popcount, __builtin_parity, __builtin_clz, __builtin_ctz, shuffle, 
-		__builtin_bswap64, cos, sin, sqrtl, acos, min, max, abs, fabs, hypot, lower_bound, upper_bound, iterator, lsb, __lg, gcd, lcm, 
+		__builtin_bswap64, cos, sin, sqrtl, acos, min, max, abs, fabs, hypot, lower_bound, upper_bound, lsb, __lg, gcd, lcm, 
 		make_pair, uniform_int_distribution, sort, unite, rollback, qwho, qsum, qmax, qmin, add, rem, update, query, pull, push, build, 
-		kth, qsz, split, merge, splitsz, fun, run, go, test, random, diff, open, dot, cross, perp, norm, length, angle, unit, rotate,
+		kth, qsz, split, merge, splitsz, fun, run, go, test, random, diff, open, dot, cross, perp, norm, length, angle, unit, rotate, dir,
 		cuad, contains, intersects, intersection, parallel, projection, reflection, inside, outside, tangency, get, cmp, rank, pos, 
-		either, implies, setVal, solve
+		either, implies, setVal, solve, near, overlapping, contained, sgn, nth_element, nearest, 
+		newNode, extend, kthSubstring, occurs, queryOccurences, longestCommonSubstring, smallestCyclicShift, leftmost, pushLinks,
+		match, isect, 
 	},
-	morekeywords = [6]{
+	morekeywords = [5]{
 		LL, NULL, inf, eps, lim, pi, eq, neq, geq, ge, le, leq
 	},
 }
@@ -128,7 +130,7 @@
 \lstset {escapechar=@, style=mine}
 
 %%% Macros
-\def\nsection#1{\section{#1}\vspace{-10pt}}
+\def\nsection#1{\section{#1}\vspace{-5pt}}
 
 \def\ncomment#1{\vspace{-5pt} \begin{small} #1 \\ \end{small} \vspace{-5pt}}
 
@@ -140,3 +142,6 @@
 	\vspace{-10pt}
 	\lstinputlisting[style=mine, linerange={#1}]{#2}
 }
+
+
+\def\horizontalLine{\vspace{-5pt} \noindent\rule{\textwidth / 2}{0.5pt}}

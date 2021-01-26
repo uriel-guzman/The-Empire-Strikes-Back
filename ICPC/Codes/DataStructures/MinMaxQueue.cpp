@@ -1,7 +1,6 @@
-template <class T>
-struct MinQueue : deque< pair<T, int> > {
+struct MinQueue : deque< pair<lli, int> > {
   // add a element to the right {val, pos}
-  void add(T val, int pos) { 
+  void add(lli val, int pos) { 
     while (!empty() && back().f >= val)
       pop_back();
     emplace_back(val, pos);
@@ -12,5 +11,5 @@ struct MinQueue : deque< pair<T, int> > {
       pop_front();
   }
 
-  T qmin() { return front().f; }
+  lli qmin() { return front().f; }
 };
