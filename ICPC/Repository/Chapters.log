@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.4.7)  25 JAN 2021 18:49
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.4.7)  25 JAN 2021 19:17
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -574,7 +574,7 @@ Overfull \hbox (5.0pt too wide) in paragraph at lines 30--31
 
 (/Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Graphs/TwoSat.cpp) (/Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Graphs/Cycle.cpp) [8] (/Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Graphs/Isomorphism.cpp
 consecutive:
-) (/Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Graphs/DynamicConnectivity.cpp) (/Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Graphs/LCA.cpp) (/Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Graphs/VirtualTree.cpp [9]) (/Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Graphs/Guni.cpp) (/Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Graphs/Centroid.cpp) (/Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Graphs/HLD.cpp) (/Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Graphs/LinkCutTree.cpp
+) (/Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Graphs/DynamicConnectivity.cpp) (/Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Graphs/LCA.cpp) (/Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Graphs/VirtualTree.cpp) (/Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Graphs/Guni.cpp [9]) (/Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Graphs/Centroid.cpp) (/Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Graphs/HLD.cpp) (/Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Graphs/LinkCutTree.cpp
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [10])) (/Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/Flows.tex
@@ -605,18 +605,15 @@ Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 (hyperref)                removing `superscript' on input line 18.
 
-(/Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Flows/Hungarian.cpp
-Underfull \vbox (badness 2894) has occurred while \output is active []
+(/Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Flows/Hungarian.cpp)) (/Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/Strings.tex (/Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Strings/Hash.cpp [12]) (/Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Strings/KMP.cpp
+Underfull \vbox (badness 1675) has occurred while \output is active []
 
- [12])) (/Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/Strings.tex (/Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Strings/Hash.cpp) (/Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Strings/KMP.cpp) (/Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Strings/KMPAutomaton.cpp) (/Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Strings/Z.cpp) (/Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Strings/Manacher.cpp)
+) (/Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Strings/KMPAutomaton.cpp) (/Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Strings/Z.cpp) (/Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Strings/Manacher.cpp)
 Underfull \hbox (badness 10000) in paragraph at lines 27--30
 
  []
 
-[13] (/Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Strings/SuffixArray.cpp)
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- (/Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Strings/SuffixAutomaton.cpp [14]) (/Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Strings/AhoCorasick.cpp) (/Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Strings/Eertree.cpp
+(/Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Strings/SuffixArray.cpp [13]) (/Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Strings/SuffixAutomaton.cpp [14]) (/Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Strings/AhoCorasick.cpp) (/Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Strings/Eertree.cpp
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [15])) (/Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/DP.tex (/Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/DynamicProgramming/MatrixChainMultiplication.cpp) (/Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/DynamicProgramming/Digit.cpp) (/Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/DynamicProgramming/Knapsack01.cpp
@@ -659,7 +656,7 @@ Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 (hyperref)                removing `\cdot' on input line 34.
 
-(/Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/DynamicProgramming/DivideAndConquer.cpp [16])
+(/Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/DynamicProgramming/DivideAndConquer.cpp)
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 (hyperref)                removing `superscript' on input line 39.
@@ -680,7 +677,10 @@ Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 (hyperref)                removing `superscript' on input line 39.
 
-(/Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/DynamicProgramming/knuth.cpp
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [16] (/Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/DynamicProgramming/knuth.cpp
 consecutive:
 )) (/Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/GameTheory.tex (/Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/GameTheory/GrundyNumbers.cpp)) (/Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/Combinatorics.tex
 Overfull \hbox (4.1941pt too wide) in paragraph at lines 8--8
@@ -688,7 +688,7 @@ Overfull \hbox (4.1941pt too wide) in paragraph at lines 8--8
  []
 
 
-Underfull \vbox (badness 2538) has occurred while \output is active []
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
  (/Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Combinatorics/Factorial.cpp)
 
@@ -748,18 +748,18 @@ Package rerunfilecheck Info: File `Chapters.out' has not changed.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 21.
  ) 
 Here is how much of TeX's memory you used:
- 15924 strings out of 480608
- 246947 string characters out of 5903631
+ 15905 strings out of 480608
+ 246669 string characters out of 5903631
  1114975 words of memory out of 5000000
- 28480 multiletter control sequences out of 15000+600000
+ 28476 multiletter control sequences out of 15000+600000
  551106 words of font info for 72 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  62i,10n,122p,349b,2226s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2020/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}{/usr/local/texlive/2020/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}{/usr/local/texlive/2020/texmf-dist/fonts/enc/dvips/inconsolata/i4-t1-0.enc}</usr/local/texlive/2020/texmf-dist/fonts/type1/public/inconsolata/Inconsolata-zi4b.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/inconsolata/Inconsolata-zi4r.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex9.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/cm-super/sfbx0900.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/cm-super/sfbx1000.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/cm-super/sfbx1200.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/cm-super/sfbx1440.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/cm-super/sfrm0900.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/cm-super/sfti0900.pfb>
-Output written on /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/Chapters.pdf (23 pages, 509604 bytes).
+Output written on /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/Chapters.pdf (23 pages, 509180 bytes).
 PDF statistics:
- 3965 PDF objects out of 4296 (max. 8388607)
- 3878 compressed objects within 39 object streams
- 2731 named destinations out of 2984 (max. 500000)
+ 3947 PDF objects out of 4296 (max. 8388607)
+ 3860 compressed objects within 39 object streams
+ 2716 named destinations out of 2984 (max. 500000)
  950 words of extra memory for PDF output out of 10000 (max. 10000000)
 
