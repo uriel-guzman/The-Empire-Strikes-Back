@@ -39,7 +39,7 @@ struct Pt {
     return Pt(x * cos(angle) - y * sin(angle), x * sin(angle) + y * cos(angle));
   }
 
-  int dir(Pt a, Pt b) {
+  int dir(Pt a, Pt b) const {
     return sgn((a - *this).cross(b - *this));
   }
   
@@ -58,9 +58,11 @@ struct Pt {
     return os << "(" << p.x << ", " << p.y << ")"; 
   }
   
-  friend istream &operator >> (istream &is, Pt &p) { 
-    return is >> p.x >> p.y; 
-  }
+  void read() {
+    lli x, y;
+    cin >> x >> y;
+    *this = Pt(x, y);
+  }  
 };
 
 using Poly = vector<Pt>;
