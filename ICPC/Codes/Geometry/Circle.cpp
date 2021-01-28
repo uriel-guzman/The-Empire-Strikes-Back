@@ -6,21 +6,18 @@ struct Cir {
   Cir(Pt o, ld r) : o(o), r(r) {}
 
   int inside(Cir c) {
-    // -1: internally, 0: overlap, 1: inside
     ld l = c.r - r - (o - c.o).length();
-    return ge(l, 0) ? 1 : eq(l, 0) ? -1 : 0;
+    return ge(l, 0) ? IN : eq(l, 0) ? ON : OVERLAP;
   }
 
   int outside(Cir c) {
-    // -1: externally, 0: overlap, 1: outside
     ld l = (o - c.o).length() - r - c.r;
-    return ge(l, 0) ? 1 : eq(l, 0) ? -1 : 0;
+    return ge(l, 0) ? OUT : eq(l, 0) ? ON : OVERLAP;
   }
 
   int contains(Pt p) {
-    // -1: perimeter, 0: outside, 1: inside
     ld l = (p - o).length() - r;
-    return le(l, 0) ? 1 : eq(l, 0) ? -1 : 0;
+    return le(l, 0) ? IN : eq(l, 0) ? ON : OUT;
   }
 
   Pt projection(Pt p) {
@@ -75,13 +72,12 @@ struct Cir {
     if (leq(d + c.r, r)) return c.r * c.r * pi;
     if (geq(d, r + c.r)) return 0.0;
     auto angle = [&](ld a, ld b, ld c) {
-      return acos((a * a + b * b - c * c) / 2 / a / b);
+      return acos((a * a + b * b - c * c) / (2 * a * b));
     };
     auto cut = [&](ld a, ld r) {
       return (a - sin(a)) * r * r / 2;
     };
-    ld a1 = angle(d, r, c.r);
-    ld a2 = angle(d, c.r, r);
+    ld a1 = angle(d, r, c.r), a2 = angle(d, c.r, r);
     return cut(a1 * 2, r) + cut(a2 * 2, c.r);
   }
 };

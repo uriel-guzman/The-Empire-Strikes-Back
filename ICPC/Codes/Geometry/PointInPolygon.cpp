@@ -5,8 +5,8 @@ int contains(const Poly &pts, Pt p) {
     if (ge(a.y, b.y)) 
       swap(a, b);
     if (Seg(a, b).contains(p))
-      return -1; // lies on the perimeter
+      return ON;
     rays ^= (leq(a.y, p.y) && le(p.y, b.y) && ge((a - p).cross(b - p), 0));
   }
-  return rays & 1; // odd: inside, even: out
+  return rays & 1 ? IN : OUT; 
 }

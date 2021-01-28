@@ -9,19 +9,15 @@ struct Line {
   }
 
   int intersects(Line l) { 
-    if (eq(v.cross(l.v), 0)) // -1: infinite intersection, 0: none
-      return eq((l.a - a).cross(v), 0) ? -1 : 0; 
-    return 1; // 1 point intersection
+    if (eq(v.cross(l.v), 0)) 
+      return eq((l.a - a).cross(v), 0) ? INF : 0; 
+    return 1; 
   }
 
   int intersects(Seg s) { 
-    if (eq(v.cross(s.v), 0)) // -1: infinite intersection, 0: none
-      return eq((s.a - a).cross(v), 0) ? -1 : 0;
+    if (eq(v.cross(s.v), 0)) 
+      return eq((s.a - a).cross(v), 0) ? INF : 0;
     return sgn(v.cross(s.a - a)) != sgn(v.cross(s.b - a)); 
-  }
-
-  bool parallel(Line l) {
-    return eq(v.cross(l.v), 0);
   }
 
   template <class Line>

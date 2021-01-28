@@ -9,8 +9,8 @@ pair<Pt, Pt> closestPairOfPoints(Poly &pts) {
   fore (i, 0, sz(pts)) {
     while (pos < i && geq(pts[i].y - pts[pos].y, ans))
       st.erase(pts[pos++]);
-    auto lo = st.lower_bound(Pt{pts[i].x - ans - eps, -inf});
-    auto hi = st.upper_bound(Pt{pts[i].x + ans + eps, -inf});
+    auto lo = st.lower_bound(Pt(pts[i].x - ans - eps, -inf));
+    auto hi = st.upper_bound(Pt(pts[i].x + ans + eps, -inf));
     for (auto it = lo; it != hi; ++it) {
       ld d = (pts[i] - *it).length();
       if (le(d, ans)) 

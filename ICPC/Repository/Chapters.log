@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.4.7)  25 JAN 2021 19:17
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.4.7)  28 JAN 2021 01:29
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -530,7 +530,7 @@ Overfull \hbox (5.0pt too wide) in paragraph at lines 9--10
  []
 
 (/Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/DataStructures/MinMaxQueue.cpp) (/Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/DataStructures/SparseTable.cpp)
-<squirtle.png, id=733, 303.1325pt x 315.1775pt>
+<squirtle.png, id=743, 303.1325pt x 315.1775pt>
 File: squirtle.png Graphic file (type png)
 <use squirtle.png>
 Package pdftex.def Info: squirtle.png  used on input line 23.
@@ -621,61 +621,61 @@ consecutive:
 )
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `superscript' on input line 28.
+(hyperref)                removing `superscript' on input line 27.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 28.
+(hyperref)                removing `math shift' on input line 27.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\Rightarrow' on input line 28.
+(hyperref)                removing `\Rightarrow' on input line 27.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 28.
+(hyperref)                removing `math shift' on input line 27.
 
 (/Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/DynamicProgramming/ConvexHullTrick.cpp)
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `superscript' on input line 34.
+(hyperref)                removing `superscript' on input line 33.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 34.
+(hyperref)                removing `math shift' on input line 33.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\Rightarrow' on input line 34.
+(hyperref)                removing `\Rightarrow' on input line 33.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 34.
+(hyperref)                removing `math shift' on input line 33.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\cdot' on input line 34.
+(hyperref)                removing `\cdot' on input line 33.
 
 (/Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/DynamicProgramming/DivideAndConquer.cpp)
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `superscript' on input line 39.
+(hyperref)                removing `superscript' on input line 38.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 39.
+(hyperref)                removing `math shift' on input line 38.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\Rightarrow' on input line 39.
+(hyperref)                removing `\Rightarrow' on input line 38.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 39.
+(hyperref)                removing `math shift' on input line 38.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `superscript' on input line 39.
+(hyperref)                removing `superscript' on input line 38.
 
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
@@ -687,10 +687,7 @@ Overfull \hbox (4.1941pt too wide) in paragraph at lines 8--8
 []|\T1/cmr/m/n/9 Number| 
  []
 
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- (/Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Combinatorics/Factorial.cpp)
+(/Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Combinatorics/Factorial.cpp)
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 (hyperref)                removing `math shift' on input line 36.
@@ -708,14 +705,14 @@ Underfull \hbox (badness 10000) in paragraph at lines 105--109
 
  []
 
-(/Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/NumberTheory/Euclid.cpp) (/Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/NumberTheory/ChineseRemainderTheorem.cpp)) (/Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/Math.tex (/Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Math/Fpow.cpp)) (/Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/Bits.tex) (/Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/Geometry.tex (/Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Misc/Real.cpp) (/Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Geometry/Point.cpp [19]) (/Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Geometry/AngleBetweenVectors.cpp) (/Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Geometry/ClosestPairOfPoints.cpp) (/Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Geometry/Projection.cpp) (/Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Geometry/KDTree.cpp
+(/Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/NumberTheory/Euclid.cpp) (/Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/NumberTheory/ChineseRemainderTheorem.cpp)) (/Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/Math.tex (/Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Math/Fpow.cpp)) (/Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/Bits.tex) (/Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/Geometry.tex (/Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Geometry/ABCGeometry.cpp) (/Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Geometry/Point.cpp [19]) (/Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Geometry/AngleBetweenVectors.cpp) (/Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Geometry/ClosestPairOfPoints.cpp) (/Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Geometry/Projection.cpp) (/Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Geometry/KDTree.cpp
 consecutive:
 )
 Overfull \hbox (5.0pt too wide) in paragraph at lines 28--30
 [] 
  []
 
-(/Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Geometry/Line.cpp [20]) (/Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Geometry/distancePointLine.cpp) (/Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Geometry/distancePointSegment.cpp) (/Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Geometry/Segment.cpp) (/Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Geometry/distanceSegmentSegment.cpp)
+(/Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Geometry/Line.cpp [20]) (/Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Geometry/Segment.cpp) (/Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Geometry/distancePointLine.cpp) (/Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Geometry/distancePointSegment.cpp) (/Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Geometry/distanceSegmentSegment.cpp)
 Overfull \hbox (5.0pt too wide) in paragraph at lines 49--51
 [] 
  []
@@ -723,17 +720,17 @@ Overfull \hbox (5.0pt too wide) in paragraph at lines 49--51
 (/Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Geometry/Circle.cpp
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [21]) (/Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Geometry/distancePointCircle.cpp) (/Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Geometry/minEnclosingCircle.cpp)
-Overfull \hbox (5.0pt too wide) in paragraph at lines 64--66
+ [21]) (/Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Geometry/distancePointCircle.cpp) (/Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Geometry/minEnclosingCircle.cpp) (/Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Geometry/commonAreaCirclePolygon.cpp)
+Overfull \hbox (5.0pt too wide) in paragraph at lines 67--69
 [] 
  []
 
-(/Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Geometry/AreaPolygon.cpp) (/Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Geometry/ConvexHull.cpp) (/Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Geometry/CutPolygonLine.cpp) (/Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Geometry/Perimeter.cpp) (/Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Geometry/PointInPolygon.cpp) (/Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Geometry/IsConvex.cpp)
-Overfull \hbox (5.0pt too wide) in paragraph at lines 88--90
+(/Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Geometry/AreaPolygon.cpp) (/Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Geometry/ConvexHull.cpp) (/Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Geometry/CutPolygonLine.cpp) (/Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Geometry/Perimeter.cpp) (/Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Geometry/PointInPolygon.cpp) (/Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Geometry/PointInConvexPolygon.cpp [22]) (/Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Geometry/IsConvex.cpp)
+Overfull \hbox (5.0pt too wide) in paragraph at lines 94--96
 [] 
  []
 
-(/Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Geometry/RadialOrder.cpp [22]) (/Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Geometry/sortAlongLine.cpp)) 
+(/Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Geometry/RadialOrder.cpp) (/Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Geometry/sortAlongLine.cpp)) 
 AED: lastpage setting LastPage
 [23
 
@@ -744,22 +741,22 @@ Package atveryend Info: Empty hook `AfterLastShipout' on input line 21.
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 21.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 21.
 Package rerunfilecheck Info: File `Chapters.out' has not changed.
-(rerunfilecheck)             Checksum: BD3C30D1B731C658AB794B12E3521609;7559.
+(rerunfilecheck)             Checksum: 5CF7D52F73B9E167759B2E8E026F9398;7718.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 21.
  ) 
 Here is how much of TeX's memory you used:
- 15905 strings out of 480608
- 246669 string characters out of 5903631
- 1114975 words of memory out of 5000000
- 28476 multiletter control sequences out of 15000+600000
+ 15959 strings out of 480608
+ 247798 string characters out of 5903631
+ 1144083 words of memory out of 5000000
+ 28499 multiletter control sequences out of 15000+600000
  551106 words of font info for 72 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  62i,10n,122p,349b,2226s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2020/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}{/usr/local/texlive/2020/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}{/usr/local/texlive/2020/texmf-dist/fonts/enc/dvips/inconsolata/i4-t1-0.enc}</usr/local/texlive/2020/texmf-dist/fonts/type1/public/inconsolata/Inconsolata-zi4b.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/inconsolata/Inconsolata-zi4r.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex9.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/cm-super/sfbx0900.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/cm-super/sfbx1000.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/cm-super/sfbx1200.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/cm-super/sfbx1440.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/cm-super/sfrm0900.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/cm-super/sfti0900.pfb>
-Output written on /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/Chapters.pdf (23 pages, 509180 bytes).
+Output written on /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/Chapters.pdf (23 pages, 510936 bytes).
 PDF statistics:
- 3947 PDF objects out of 4296 (max. 8388607)
- 3860 compressed objects within 39 object streams
- 2716 named destinations out of 2984 (max. 500000)
- 950 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 3985 PDF objects out of 4296 (max. 8388607)
+ 3898 compressed objects within 39 object streams
+ 2741 named destinations out of 2984 (max. 500000)
+ 966 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -90,7 +90,7 @@
 \contentsline {subsection}{\numberline {10.3}Fibonacci}{19}{subsection.10.3}%
 \contentsline {section}{\numberline {11}Bit tricks}{19}{section.11}%
 \contentsline {subsection}{\numberline {11.1}Bitset}{19}{subsection.11.1}%
-\contentsline {subsection}{\numberline {11.2}Real}{19}{subsection.11.2}%
+\contentsline {subsection}{\numberline {11.2}Geometry}{19}{subsection.11.2}%
 \contentsline {section}{\numberline {12}Points}{19}{section.12}%
 \contentsline {subsection}{\numberline {12.1}Points}{19}{subsection.12.1}%
 \contentsline {subsection}{\numberline {12.2}Angle between vectors}{20}{subsection.12.2}%
@@ -99,21 +99,23 @@
 \contentsline {subsection}{\numberline {12.5}KD-Tree}{20}{subsection.12.5}%
 \contentsline {section}{\numberline {13}Lines and segments}{20}{section.13}%
 \contentsline {subsection}{\numberline {13.1}Line}{20}{subsection.13.1}%
-\contentsline {subsection}{\numberline {13.2}Distance point line}{21}{subsection.13.2}%
-\contentsline {subsection}{\numberline {13.3}Distance point segment}{21}{subsection.13.3}%
-\contentsline {subsection}{\numberline {13.4}Segment}{21}{subsection.13.4}%
-\contentsline {subsection}{\numberline {13.5}Distance segment segment}{21}{subsection.13.5}%
+\contentsline {subsection}{\numberline {13.2}Segment}{21}{subsection.13.2}%
+\contentsline {subsection}{\numberline {13.3}Distance point-line}{21}{subsection.13.3}%
+\contentsline {subsection}{\numberline {13.4}Distance point-segment}{21}{subsection.13.4}%
+\contentsline {subsection}{\numberline {13.5}Distance segment-segment}{21}{subsection.13.5}%
 \contentsline {section}{\numberline {14}Circles}{21}{section.14}%
 \contentsline {subsection}{\numberline {14.1}Circle}{21}{subsection.14.1}%
-\contentsline {subsection}{\numberline {14.2}Distance point circle}{22}{subsection.14.2}%
+\contentsline {subsection}{\numberline {14.2}Distance point-circle}{22}{subsection.14.2}%
 \contentsline {subsection}{\numberline {14.3}Minimum enclosing circle}{22}{subsection.14.3}%
+\contentsline {subsection}{\numberline {14.4}Common area circle-polygon}{22}{subsection.14.4}%
 \contentsline {section}{\numberline {15}Polygons}{22}{section.15}%
 \contentsline {subsection}{\numberline {15.1}Area of polygon}{22}{subsection.15.1}%
 \contentsline {subsection}{\numberline {15.2}Convex-Hull}{22}{subsection.15.2}%
 \contentsline {subsection}{\numberline {15.3}Cut polygon by a line}{22}{subsection.15.3}%
 \contentsline {subsection}{\numberline {15.4}Perimeter}{22}{subsection.15.4}%
 \contentsline {subsection}{\numberline {15.5}Point in polygon}{22}{subsection.15.5}%
-\contentsline {subsection}{\numberline {15.6}Is convex}{22}{subsection.15.6}%
-\contentsline {section}{\numberline {16}Geometry misc}{22}{section.16}%
-\contentsline {subsection}{\numberline {16.1}Radial order}{22}{subsection.16.1}%
+\contentsline {subsection}{\numberline {15.6}Point in convex-polygon}{22}{subsection.15.6}%
+\contentsline {subsection}{\numberline {15.7}Is convex}{23}{subsection.15.7}%
+\contentsline {section}{\numberline {16}Geometry misc}{23}{section.16}%
+\contentsline {subsection}{\numberline {16.1}Radial order}{23}{subsection.16.1}%
 \contentsline {subsection}{\numberline {16.2}Sort along a line}{23}{subsection.16.2}%
