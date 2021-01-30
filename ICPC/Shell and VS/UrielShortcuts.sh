@@ -134,6 +134,7 @@ alias pull='git pull origin master'
 red='\x1B[0;31m'
 green='\x1B[0;32m'
 blue='\x1B[0;34m'
+cyan='\x1B[0;36m'
 noColor='\x1B[0m'
 
 push() {
@@ -189,10 +190,12 @@ random() {
 	# random a
 	g++ --std=c++17 -Wall -Wextra -Wshadow -D_GLIBCXX_ASSERTIONS -fmax-errors=3 -O2 -w $1.cpp -o prog
 	g++ --std=c++17 -Wall -Wextra -Wshadow -D_GLIBCXX_ASSERTIONS -fmax-errors=3 -O2 -w brute.cpp -o brute
+
+  tle=${2:-0}
 	
 	if [[ -f "gen.cpp" ]]; then
 		 # C++ version, so first compile it
-		g++ --std=c++17 gen.cpp -o gen 
+		g++-9 --std=c++17 gen.cpp -o gen 
 	fi
 	
 	generateTestCase() {
@@ -204,19 +207,50 @@ random() {
 		fi
 	}
 	
-	for ((i = 1; i <= 300; i++)); do
-		printf "Test case #${i}"
-		
+  showFailedTestCase() {
+    printf "\n${cyan}Input ${noColor}\n"
+    (cat in)
+    printf "\n${cyan}Output ❌${noColor}\n"
+    (./prog < in)
+    printf "\n${cyan}Answer ✅${noColor}\n"
+    (./brute < in)
+  }
+
+	for ((i = 1; i <= 150; i++)); do
 		generateTestCase
-		diff -uwi <(./prog < in) <(./brute < in) > $1_diff
-		
+
+    start_time="$(date -u +%s.%N)"
+    end_time="$(date -u +%s.%N)"
+    prog_in="$(./prog < in)"
+    elapsed="$(echo "($end_time-$start_time)*1000" | bc)"
+
+    if [[ $tle -ne 0 ]]; then
+      printf "${blue}"
+      printf %.0f "${elapsed}"
+      printf "ms ${noColor}"
+    fi
+
+    printf "Test case #${i}"
+
+    if [[ $tle -ne 0 ]]; then
+      if (( $(echo "$elapsed > $tle" | bc -l) )); then 
+        printf "${blue} Time limit exceeded ${noColor}\n"
+        break
+      fi
+    fi
+
+		diff -uwi <(echo $prog_in) <(./brute < in) > $1_diff
+
 		if [[ ! $? -eq 0 ]]; then
 			printf "${red} Wrong answer ${noColor}\n"
+      showFailedTestCase
 			break
 		else
 			printf "${green} Accepted ${noColor}\n"
 		fi
 	done
+
+	rm prog && rm brute
 }
 
 createBooks() {
@@ -302,3 +336,4 @@ createBooks() {
 	printf "All books done\n"
 }
 ############################################
+
