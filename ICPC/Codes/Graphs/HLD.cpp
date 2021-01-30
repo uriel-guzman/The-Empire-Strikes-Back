@@ -7,7 +7,7 @@ int dfs(int u) {
     par[v] = u;
     dep[v] = dep[u] + 1;
     sz[u] += dfs(v);
-    if (sz[v] > sz[graph[u][0]])
+    if (graph[u][0] == par[u] || sz[v] > sz[graph[u][0]])
       swap(v, graph[u][0]); 
   }
   return sz[u];
