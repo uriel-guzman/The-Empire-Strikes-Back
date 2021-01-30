@@ -14,6 +14,7 @@ green='\x1B[0;32m'
 blue='\x1B[0;34m'
 noColor='\x1B[0m'
 
+
 alias flags='-Wall -Wextra -Wshadow -D_GLIBCXX_ASSERTIONS -fmax-errors=2 -O2'
 
 push() {
@@ -71,8 +72,8 @@ test() {
 
 random() { 
 	# random a
-	g++-7 --std=c++17 $1.cpp -o prog 
-	g++-7 --std=c++17 brute.cpp -o brute 
+	g++ --std=c++17 -Wall -Wextra -Wshadow -D_GLIBCXX_ASSERTIONS -fmax-errors=3 -O2 -w $1.cpp -o prog
+	g++ --std=c++17 -Wall -Wextra -Wshadow -D_GLIBCXX_ASSERTIONS -fmax-errors=3 -O2 -w brute.cpp -o brute
 	
 	if [[ -f "gen.cpp" ]]; then
 		 # C++ version, so first compile it

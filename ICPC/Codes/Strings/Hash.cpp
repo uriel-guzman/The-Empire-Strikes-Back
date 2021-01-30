@@ -37,9 +37,9 @@ fore (i, 1, N) {
 
 // Save len in the struct and when you do a cut
 H merge(vector<H> &cuts) {
-  F f = {0, 0};
+  H f = {0, 0};
   fore (i, sz(cuts), 0) {
-    F g = cuts[i];
+    H g = cuts[i];
     f = g + f * pw[g.len];
   }
   return f;
