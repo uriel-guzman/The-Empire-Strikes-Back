@@ -5,7 +5,7 @@ struct Line {
   Line(Pt a, Pt b) : a(a), b(b), v((b - a).unit()) {}
 
   bool contains(Pt p) {
-    return eq((p - a).cross(v), 0);  
+    return eq((p - a).cross(b - a), 0);  
   }
 
   int intersects(Line l) { 
