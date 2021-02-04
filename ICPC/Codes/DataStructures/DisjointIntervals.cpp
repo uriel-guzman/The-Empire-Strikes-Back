@@ -6,16 +6,23 @@ struct Interval {
 };
 
 struct DisjointIntervals : set<Interval> {
-  void add(Interval it) {
-    iterator p = lower_bound(it), q = p; 
-    if (p != begin() && it.l <= (--p)->r)
-      it.l = p->l, --q;
-    for (; q != end() && q->l <= it.r; erase(q++))
-      it.r = max(it.r, q->r);
-    insert(it); 
+  void add(int l, int r) {
+    auto it = lower_bound({l, -1});
+    if (it != begin() && l <= prev(it)->r)  
+      l = (--it)->l;
+    for (; it != end() && it->l <= r; erase(it++)) 
+      r = max(r, it->r);
+    insert({l, r});
   }
 
-  void add(int l, int r) {
-    add(Interval{l, r});
+  void rem(int l, int r) {
+    auto it = lower_bound({l, -1});
+    if (it != begin() && l <= prev(it)->r)  
+      --it;
+    int mn = l, mx = r;
+    for (; it != end() && it->l <= r; erase(it++)) 
+      mn = min(mn, it->l), mx = max(mx, it->r);
+    if (mn < l) insert({mn, l - 1});
+    if (r < mx) insert({r + 1, mx});
   }
 };
