@@ -1,8 +1,9 @@
-lli fpow(lli x, lli y, lli mod) {
-  lli r = 1;
-  for (; y > 0; y >>= 1) {
-    if (y & 1) r = mul(r, x, mod);
-    x = mul(x, x, mod);
+template <class T>
+T fpow(T x, lli n) {
+  T r(1);
+  for (; n > 0; n >>= 1) {
+    if (n & 1) r = r * x;
+    x = x * x;
   }
   return r;
 }
