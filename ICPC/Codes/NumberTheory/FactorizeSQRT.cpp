@@ -1,17 +1,14 @@
 map<int, int> factorize(lli n) {
-  map<int, int> f;
-
-  for (int pr : primes) {
-    if (pr > n)
+  map<int, int> cnt;
+  for (int p : primes) {
+    if (p > n)
       break;
-    while (n % pr == 0) {
-      f[pr]++;
-      n /= pr;
+    while (n % p == 0) {
+      cnt[p]++;
+      n /= p;
     }
   }
-
   if (n > 1)
-    f[n]++;
-
-  return f;
+    cnt[n]++;
+  return cnt;
 }

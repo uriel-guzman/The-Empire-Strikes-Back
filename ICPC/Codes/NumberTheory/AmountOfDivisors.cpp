@@ -1,7 +1,7 @@
-lli divs(lli n) {
+lli amountOfDivisors(lli n) {
   lli cnt = 1LL;
-  for (lli p : primes) {
-    if (p * p * p > n)
+  for (int p : primes) {
+    if (1LL * p * p * p > n)
       break;
     if (n % p == 0) {
       lli k = 0;
