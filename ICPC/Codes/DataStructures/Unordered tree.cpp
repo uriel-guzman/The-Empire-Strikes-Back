@@ -1,7 +1,7 @@
 #include <ext/pb_ds/assoc_container.hpp>
 using namespace __gnu_pbds;
 
-struct chash {
+struct CustomHash {
   const uint64_t C = uint64_t(2e18 * 3) + 71;
   const int R = rng();
   uint64_t operator ()(uint64_t x) const {
@@ -9,4 +9,4 @@ struct chash {
 };
 
 template <class K, class V = null_type>
-using unordered_tree = gp_hash_table<K, V, chash>;
+using unordered_tree = gp_hash_table<K, V, CustomHash>;

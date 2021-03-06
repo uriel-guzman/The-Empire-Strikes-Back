@@ -5,11 +5,8 @@ struct StaticDynamic {
 
   void insert(T &x) {
     int p = 0;
-    fore (i, 0, LogN) 
-      if (st[i].empty()) {
-        p = i;
-        break;
-      }
+    while (p < LogN && !st[p].empty()) 
+      p++;
     st[p].pb(x);
     fore (i, 0, p) {
       st[p].insert(st[p].end(), all(st[i]));

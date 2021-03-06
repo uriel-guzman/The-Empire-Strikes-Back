@@ -234,63 +234,63 @@ INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Misc/BumpA
 INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Misc/BumpAllocator.cpp
 INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/DataStructures.tex
 INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/DataStructures.tex
-INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/DataStructures/DSURollback.cpp
-INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/DataStructures/DSURollback.cpp
-INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/DataStructures/DSURollback.cpp
-INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/DataStructures/MinMaxQueue.cpp
-INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/DataStructures/MinMaxQueue.cpp
-INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/DataStructures/MinMaxQueue.cpp
-INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/DataStructures/SparseTable.cpp
-INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/DataStructures/SparseTable.cpp
-INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/DataStructures/SparseTable.cpp
-INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/squirtle.png
-INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/squirtle.png
-INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/squirtle.png
-INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/DataStructures/SqrtDecomposition.cpp
-INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/DataStructures/SqrtDecomposition.cpp
-INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/DataStructures/SqrtDecomposition.cpp
-INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/DataStructures/InOutTrick.cpp
-INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/DataStructures/InOutTrick.cpp
-INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/DataStructures/InOutTrick.cpp
-INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/DataStructures/ParallelBinarySearch.cpp
-INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/DataStructures/ParallelBinarySearch.cpp
-INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/DataStructures/ParallelBinarySearch.cpp
+INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/DataStructures/DSU Rollback.cpp
+INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/DataStructures/DSU Rollback.cpp
+INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/DataStructures/DSU Rollback.cpp
+INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/DataStructures/Monotone Queue.cpp
+INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/DataStructures/Monotone Queue.cpp
+INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/DataStructures/Monotone Queue.cpp
 INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/DataStructures/Mos.cpp
 INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/DataStructures/Mos.cpp
 INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/DataStructures/Mos.cpp
-INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/DataStructures/HilbertOrder.cpp
-INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/DataStructures/HilbertOrder.cpp
-INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/DataStructures/HilbertOrder.cpp
-INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/DataStructures/Static2Dynamic.cpp
-INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/DataStructures/Static2Dynamic.cpp
-INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/DataStructures/Static2Dynamic.cpp
-INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/DataStructures/DisjointIntervals.cpp
-INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/DataStructures/DisjointIntervals.cpp
-INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/DataStructures/DisjointIntervals.cpp
-INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/DataStructures/IntervalTree.cpp
-INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/DataStructures/IntervalTree.cpp
-INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/DataStructures/IntervalTree.cpp
-INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/DataStructures/OrderedTree.cpp
-INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/DataStructures/OrderedTree.cpp
-INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/DataStructures/OrderedTree.cpp
-INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/DataStructures/UnorderedTree.cpp
-INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/DataStructures/UnorderedTree.cpp
-INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/DataStructures/UnorderedTree.cpp
-INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/DataStructures/FenwickND.cpp
-INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/DataStructures/FenwickND.cpp
-INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/DataStructures/FenwickND.cpp
-INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/DataStructures/DynamicSegtree.cpp
-INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/DataStructures/DynamicSegtree.cpp
-INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/DataStructures/DynamicSegtree.cpp
-INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/DataStructures/PersistentSegtree.cpp
-INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/DataStructures/PersistentSegtree.cpp
-INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/DataStructures/PersistentSegtree.cpp
+INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/DataStructures/Hilbert Order.cpp
+INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/DataStructures/Hilbert Order.cpp
+INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/DataStructures/Hilbert Order.cpp
+INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/DataStructures/Static to dynamic.cpp
+INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/DataStructures/Static to dynamic.cpp
+INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/DataStructures/Static to dynamic.cpp
+INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/DataStructures/Disjoint Intervals.cpp
+INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/DataStructures/Disjoint Intervals.cpp
+INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/DataStructures/Disjoint Intervals.cpp
+INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/DataStructures/Interval Tree.cpp
+INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/DataStructures/Interval Tree.cpp
+INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/DataStructures/Interval Tree.cpp
+INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/DataStructures/Sparse Table.cpp
+INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/DataStructures/Sparse Table.cpp
+INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/DataStructures/Sparse Table.cpp
+INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/squirtle.png
+INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/squirtle.png
+INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/squirtle.png
+INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/DataStructures/Sqrt Decomposition.cpp
+INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/DataStructures/Sqrt Decomposition.cpp
+INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/DataStructures/Sqrt Decomposition.cpp
+INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/DataStructures/Parallel Binary Search.cpp
+INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/DataStructures/Parallel Binary Search.cpp
+INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/DataStructures/Parallel Binary Search.cpp
+INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/DataStructures/Fenwick ND.cpp
+INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/DataStructures/Fenwick ND.cpp
+INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/DataStructures/Fenwick ND.cpp
+INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/DataStructures/Fenwick2D Offline.cpp
+INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/DataStructures/Fenwick2D Offline.cpp
+INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/DataStructures/Fenwick2D Offline.cpp
+INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/DataStructures/Dynamic Segtree.cpp
+INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/DataStructures/Dynamic Segtree.cpp
+INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/DataStructures/Dynamic Segtree.cpp
+INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/DataStructures/Persistent Segtree.cpp
+INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/DataStructures/Persistent Segtree.cpp
+INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/DataStructures/Persistent Segtree.cpp
 INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/DataStructures/Wavelet.cpp
 INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/DataStructures/Wavelet.cpp
 INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/DataStructures/Wavelet.cpp
-INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/DataStructures/LiChao.cpp
-INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/DataStructures/LiChao.cpp
-INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/DataStructures/LiChao.cpp
+INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/DataStructures/Li Chao.cpp
+INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/DataStructures/Li Chao.cpp
+INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/DataStructures/Li Chao.cpp
+INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/DataStructures/Ordered tree.cpp
+INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/DataStructures/Ordered tree.cpp
+INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/DataStructures/Ordered tree.cpp
+INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/DataStructures/Unordered tree.cpp
+INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/DataStructures/Unordered tree.cpp
+INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/DataStructures/Unordered tree.cpp
 INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/DataStructures/Treap.cpp
 INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/DataStructures/Treap.cpp
 INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/DataStructures/Treap.cpp
