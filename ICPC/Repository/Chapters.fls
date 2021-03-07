@@ -237,9 +237,12 @@ INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/DataStructures.tex
 INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/DataStructures/DSU Rollback.cpp
 INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/DataStructures/DSU Rollback.cpp
 INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/DataStructures/DSU Rollback.cpp
-INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/DataStructures/Monotone Queue.cpp
-INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/DataStructures/Monotone Queue.cpp
-INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/DataStructures/Monotone Queue.cpp
+INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/DataStructures/Monotone queue.cpp
+INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/DataStructures/Monotone queue.cpp
+INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/DataStructures/Monotone queue.cpp
+INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/DataStructures/Stack queue.cpp
+INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/DataStructures/Stack queue.cpp
+INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/DataStructures/Stack queue.cpp
 INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/DataStructures/Mos.cpp
 INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/DataStructures/Mos.cpp
 INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/DataStructures/Mos.cpp
@@ -270,9 +273,6 @@ INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/DataStruct
 INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/DataStructures/Fenwick ND.cpp
 INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/DataStructures/Fenwick ND.cpp
 INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/DataStructures/Fenwick ND.cpp
-INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/DataStructures/Fenwick2D Offline.cpp
-INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/DataStructures/Fenwick2D Offline.cpp
-INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/DataStructures/Fenwick2D Offline.cpp
 INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/DataStructures/Dynamic Segtree.cpp
 INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/DataStructures/Dynamic Segtree.cpp
 INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/DataStructures/Dynamic Segtree.cpp
@@ -302,21 +302,21 @@ INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/DataStruct
 INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/DataStructures/Splay.cpp
 INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/Graphs.tex
 INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/Graphs.tex
-INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Graphs/Topsort.cpp
-INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Graphs/Topsort.cpp
-INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Graphs/Topsort.cpp
+INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Graphs/Topological sort.cpp
+INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Graphs/Topological sort.cpp
+INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Graphs/Topological sort.cpp
 INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Graphs/Tarjan.cpp
 INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Graphs/Tarjan.cpp
 INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Graphs/Tarjan.cpp
 INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Graphs/Kosaraju.cpp
 INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Graphs/Kosaraju.cpp
 INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Graphs/Kosaraju.cpp
-INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Graphs/CutpointsAndBridges.cpp
-INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Graphs/CutpointsAndBridges.cpp
-INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Graphs/CutpointsAndBridges.cpp
-INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Graphs/TwoSat.cpp
-INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Graphs/TwoSat.cpp
-INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Graphs/TwoSat.cpp
+INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Graphs/Cutpoints and bridges.cpp
+INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Graphs/Cutpoints and bridges.cpp
+INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Graphs/Cutpoints and bridges.cpp
+INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Graphs/Two sat.cpp
+INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Graphs/Two sat.cpp
+INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Graphs/Two sat.cpp
 INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Graphs/Cycle.cpp
 INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Graphs/Cycle.cpp
 INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Graphs/Cycle.cpp
@@ -330,15 +330,15 @@ INPUT /usr/local/texlive/2020/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm1
 INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Graphs/Isomorphism.cpp
 INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Graphs/Isomorphism.cpp
 INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Graphs/Isomorphism.cpp
-INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Graphs/DynamicConnectivity.cpp
-INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Graphs/DynamicConnectivity.cpp
-INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Graphs/DynamicConnectivity.cpp
+INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Graphs/Dynamic connectivity.cpp
+INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Graphs/Dynamic connectivity.cpp
+INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Graphs/Dynamic connectivity.cpp
 INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Graphs/LCA.cpp
 INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Graphs/LCA.cpp
 INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Graphs/LCA.cpp
-INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Graphs/VirtualTree.cpp
-INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Graphs/VirtualTree.cpp
-INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Graphs/VirtualTree.cpp
+INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Graphs/Virtual tree.cpp
+INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Graphs/Virtual tree.cpp
+INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Graphs/Virtual tree.cpp
 INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Graphs/Guni.cpp
 INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Graphs/Guni.cpp
 INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Graphs/Guni.cpp
@@ -348,21 +348,21 @@ INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Graphs/Cen
 INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Graphs/HLD.cpp
 INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Graphs/HLD.cpp
 INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Graphs/HLD.cpp
-INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Graphs/LinkCutTree.cpp
-INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Graphs/LinkCutTree.cpp
-INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Graphs/LinkCutTree.cpp
+INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Graphs/Link-Cut tree.cpp
+INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Graphs/Link-Cut tree.cpp
+INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Graphs/Link-Cut tree.cpp
 INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/Flows.tex
 INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/Flows.tex
 INPUT /usr/local/texlive/2020/texmf-dist/fonts/tfm/jknappen/ec/ecbx0800.tfm
 INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Flows/Dinic.cpp
 INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Flows/Dinic.cpp
 INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Flows/Dinic.cpp
-INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Flows/MinCostFlow.cpp
-INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Flows/MinCostFlow.cpp
-INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Flows/MinCostFlow.cpp
-INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Flows/HopcroftKarp.cpp
-INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Flows/HopcroftKarp.cpp
-INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Flows/HopcroftKarp.cpp
+INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Flows/Min-Cost flow.cpp
+INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Flows/Min-Cost flow.cpp
+INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Flows/Min-Cost flow.cpp
+INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Flows/Hopcroft karp.cpp
+INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Flows/Hopcroft karp.cpp
+INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Flows/Hopcroft karp.cpp
 INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Flows/Hungarian.cpp
 INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Flows/Hungarian.cpp
 INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Flows/Hungarian.cpp
@@ -374,9 +374,9 @@ INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Strings/Ha
 INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Strings/KMP.cpp
 INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Strings/KMP.cpp
 INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Strings/KMP.cpp
-INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Strings/KMPAutomaton.cpp
-INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Strings/KMPAutomaton.cpp
-INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Strings/KMPAutomaton.cpp
+INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Strings/KMP automaton.cpp
+INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Strings/KMP automaton.cpp
+INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Strings/KMP automaton.cpp
 INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Strings/Z.cpp
 INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Strings/Z.cpp
 INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Strings/Z.cpp
@@ -384,46 +384,46 @@ INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Strings/Ma
 INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Strings/Manacher.cpp
 INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Strings/Manacher.cpp
 INPUT /usr/local/texlive/2020/texmf-dist/fonts/tfm/jknappen/ec/ecti0900.tfm
-INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Strings/SuffixArray.cpp
-INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Strings/SuffixArray.cpp
-INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Strings/SuffixArray.cpp
+INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Strings/Suffix array.cpp
+INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Strings/Suffix array.cpp
+INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Strings/Suffix array.cpp
 INPUT /usr/local/texlive/2020/texmf-dist/fonts/tfm/jknappen/ec/ecbx0900.tfm
-INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Strings/SuffixAutomaton.cpp
-INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Strings/SuffixAutomaton.cpp
-INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Strings/SuffixAutomaton.cpp
-INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Strings/AhoCorasick.cpp
-INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Strings/AhoCorasick.cpp
-INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Strings/AhoCorasick.cpp
+INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Strings/Suffix automaton.cpp
+INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Strings/Suffix automaton.cpp
+INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Strings/Suffix automaton.cpp
+INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Strings/Aho Corasick.cpp
+INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Strings/Aho Corasick.cpp
+INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Strings/Aho Corasick.cpp
 INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Strings/Eertree.cpp
 INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Strings/Eertree.cpp
 INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Strings/Eertree.cpp
-INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/DP.tex
-INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/DP.tex
-INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/DynamicProgramming/MatrixChainMultiplication.cpp
-INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/DynamicProgramming/MatrixChainMultiplication.cpp
-INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/DynamicProgramming/MatrixChainMultiplication.cpp
+INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/DynamicProgramming.tex
+INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/DynamicProgramming.tex
+INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/DynamicProgramming/Matrix chain multiplication.cpp
+INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/DynamicProgramming/Matrix chain multiplication.cpp
+INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/DynamicProgramming/Matrix chain multiplication.cpp
 INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/DynamicProgramming/Digit.cpp
 INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/DynamicProgramming/Digit.cpp
 INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/DynamicProgramming/Digit.cpp
-INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/DynamicProgramming/Knapsack01.cpp
-INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/DynamicProgramming/Knapsack01.cpp
-INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/DynamicProgramming/Knapsack01.cpp
+INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/DynamicProgramming/Knapsack 01.cpp
+INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/DynamicProgramming/Knapsack 01.cpp
+INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/DynamicProgramming/Knapsack 01.cpp
 INPUT /usr/local/texlive/2020/texmf-dist/fonts/tfm/jknappen/ec/ecrm0600.tfm
 INPUT /usr/local/texlive/2020/texmf-dist/fonts/tfm/jknappen/ec/ecrm0500.tfm
-INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/DynamicProgramming/ConvexHullTrick.cpp
-INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/DynamicProgramming/ConvexHullTrick.cpp
-INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/DynamicProgramming/ConvexHullTrick.cpp
-INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/DynamicProgramming/DivideAndConquer.cpp
-INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/DynamicProgramming/DivideAndConquer.cpp
-INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/DynamicProgramming/DivideAndConquer.cpp
-INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/DynamicProgramming/knuth.cpp
-INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/DynamicProgramming/knuth.cpp
-INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/DynamicProgramming/knuth.cpp
+INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/DynamicProgramming/Convex hull trick.cpp
+INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/DynamicProgramming/Convex hull trick.cpp
+INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/DynamicProgramming/Convex hull trick.cpp
+INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/DynamicProgramming/Divide and conquer.cpp
+INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/DynamicProgramming/Divide and conquer.cpp
+INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/DynamicProgramming/Divide and conquer.cpp
+INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/DynamicProgramming/Knuth.cpp
+INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/DynamicProgramming/Knuth.cpp
+INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/DynamicProgramming/Knuth.cpp
 INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/GameTheory.tex
 INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/GameTheory.tex
-INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/GameTheory/GrundyNumbers.cpp
-INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/GameTheory/GrundyNumbers.cpp
-INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/GameTheory/GrundyNumbers.cpp
+INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/GameTheory/Grundy numbers.cpp
+INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/GameTheory/Grundy numbers.cpp
+INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/GameTheory/Grundy numbers.cpp
 INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/Combinatorics.tex
 INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/Combinatorics.tex
 INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Combinatorics/Factorial.cpp
@@ -435,9 +435,9 @@ INPUT /usr/local/texlive/2020/texmf-dist/fonts/tfm/public/cm/cmsy10.tfm
 INPUT /usr/local/texlive/2020/texmf-dist/fonts/tfm/public/cm/cmex10.tfm
 INPUT /usr/local/texlive/2020/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam10.tfm
 INPUT /usr/local/texlive/2020/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm10.tfm
-INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Combinatorics/FactorialModP.cpp
-INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Combinatorics/FactorialModP.cpp
-INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Combinatorics/FactorialModP.cpp
+INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Combinatorics/Factorial mod small prime.cpp
+INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Combinatorics/Factorial mod small prime.cpp
+INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Combinatorics/Factorial mod small prime.cpp
 INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Combinatorics/Lucas.cpp
 INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Combinatorics/Lucas.cpp
 INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Combinatorics/Lucas.cpp
@@ -447,35 +447,35 @@ INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Combinator
 INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Combinatorics/Catalan.cpp
 INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Combinatorics/Catalan.cpp
 INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Combinatorics/Catalan.cpp
-INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Combinatorics/FactorialFactors.cpp
-INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Combinatorics/FactorialFactors.cpp
-INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Combinatorics/FactorialFactors.cpp
+INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Combinatorics/Factorial factors.cpp
+INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Combinatorics/Factorial factors.cpp
+INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Combinatorics/Factorial factors.cpp
 INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/NumberTheory.tex
 INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/NumberTheory.tex
-INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/NumberTheory/FactorizeSieve.cpp
-INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/NumberTheory/FactorizeSieve.cpp
-INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/NumberTheory/FactorizeSieve.cpp
-INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/NumberTheory/PhiSieve.cpp
-INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/NumberTheory/PhiSieve.cpp
-INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/NumberTheory/PhiSieve.cpp
+INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/NumberTheory/Factorize sieve.cpp
+INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/NumberTheory/Factorize sieve.cpp
+INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/NumberTheory/Factorize sieve.cpp
+INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/NumberTheory/Phi sieve.cpp
+INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/NumberTheory/Phi sieve.cpp
+INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/NumberTheory/Phi sieve.cpp
 INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/NumberTheory/Phi.cpp
 INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/NumberTheory/Phi.cpp
 INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/NumberTheory/Phi.cpp
-INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/NumberTheory/MillerRabin.cpp
-INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/NumberTheory/MillerRabin.cpp
-INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/NumberTheory/MillerRabin.cpp
-INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/NumberTheory/PollardRho.cpp
-INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/NumberTheory/PollardRho.cpp
-INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/NumberTheory/PollardRho.cpp
-INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/NumberTheory/AmountOfDivisors.cpp
-INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/NumberTheory/AmountOfDivisors.cpp
-INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/NumberTheory/AmountOfDivisors.cpp
+INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/NumberTheory/Miller Rabin.cpp
+INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/NumberTheory/Miller Rabin.cpp
+INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/NumberTheory/Miller Rabin.cpp
+INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/NumberTheory/Pollard Rho.cpp
+INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/NumberTheory/Pollard Rho.cpp
+INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/NumberTheory/Pollard Rho.cpp
+INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/NumberTheory/Amount of divisors.cpp
+INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/NumberTheory/Amount of divisors.cpp
+INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/NumberTheory/Amount of divisors.cpp
 INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/NumberTheory/Euclid.cpp
 INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/NumberTheory/Euclid.cpp
 INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/NumberTheory/Euclid.cpp
-INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/NumberTheory/ChineseRemainderTheorem.cpp
-INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/NumberTheory/ChineseRemainderTheorem.cpp
-INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/NumberTheory/ChineseRemainderTheorem.cpp
+INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/NumberTheory/Chinese remainder theorem.cpp
+INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/NumberTheory/Chinese remainder theorem.cpp
+INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/NumberTheory/Chinese remainder theorem.cpp
 INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/Math.tex
 INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/Math.tex
 INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Math/Fpow.cpp
@@ -485,78 +485,78 @@ INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/Bits.tex
 INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/Bits.tex
 INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/Geometry.tex
 INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/Geometry.tex
-INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Geometry/ABCGeometry.cpp
-INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Geometry/ABCGeometry.cpp
-INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Geometry/ABCGeometry.cpp
+INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Geometry/Geometry.cpp
+INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Geometry/Geometry.cpp
+INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Geometry/Geometry.cpp
 INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Geometry/Point.cpp
 INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Geometry/Point.cpp
 INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Geometry/Point.cpp
-INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Geometry/AngleBetweenVectors.cpp
-INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Geometry/AngleBetweenVectors.cpp
-INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Geometry/AngleBetweenVectors.cpp
-INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Geometry/ClosestPairOfPoints.cpp
-INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Geometry/ClosestPairOfPoints.cpp
-INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Geometry/ClosestPairOfPoints.cpp
+INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Geometry/Angle between vectors.cpp
+INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Geometry/Angle between vectors.cpp
+INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Geometry/Angle between vectors.cpp
+INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Geometry/Closest pair of points.cpp
+INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Geometry/Closest pair of points.cpp
+INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Geometry/Closest pair of points.cpp
 INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Geometry/Projection.cpp
 INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Geometry/Projection.cpp
 INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Geometry/Projection.cpp
-INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Geometry/KDTree.cpp
-INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Geometry/KDTree.cpp
-INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Geometry/KDTree.cpp
+INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Geometry/KD Tree.cpp
+INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Geometry/KD Tree.cpp
+INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Geometry/KD Tree.cpp
 INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Geometry/Line.cpp
 INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Geometry/Line.cpp
 INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Geometry/Line.cpp
 INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Geometry/Segment.cpp
 INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Geometry/Segment.cpp
 INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Geometry/Segment.cpp
-INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Geometry/distancePointLine.cpp
-INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Geometry/distancePointLine.cpp
-INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Geometry/distancePointLine.cpp
-INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Geometry/distancePointSegment.cpp
-INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Geometry/distancePointSegment.cpp
-INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Geometry/distancePointSegment.cpp
-INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Geometry/distanceSegmentSegment.cpp
-INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Geometry/distanceSegmentSegment.cpp
-INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Geometry/distanceSegmentSegment.cpp
+INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Geometry/Distance point line.cpp
+INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Geometry/Distance point line.cpp
+INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Geometry/Distance point line.cpp
+INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Geometry/Distance point segment.cpp
+INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Geometry/Distance point segment.cpp
+INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Geometry/Distance point segment.cpp
+INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Geometry/Distance segment segment.cpp
+INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Geometry/Distance segment segment.cpp
+INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Geometry/Distance segment segment.cpp
 INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Geometry/Circle.cpp
 INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Geometry/Circle.cpp
 INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Geometry/Circle.cpp
-INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Geometry/distancePointCircle.cpp
-INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Geometry/distancePointCircle.cpp
-INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Geometry/distancePointCircle.cpp
-INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Geometry/minEnclosingCircle.cpp
-INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Geometry/minEnclosingCircle.cpp
-INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Geometry/minEnclosingCircle.cpp
-INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Geometry/commonAreaCirclePolygon.cpp
-INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Geometry/commonAreaCirclePolygon.cpp
-INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Geometry/commonAreaCirclePolygon.cpp
-INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Geometry/AreaPolygon.cpp
-INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Geometry/AreaPolygon.cpp
-INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Geometry/AreaPolygon.cpp
-INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Geometry/ConvexHull.cpp
-INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Geometry/ConvexHull.cpp
-INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Geometry/ConvexHull.cpp
-INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Geometry/CutPolygonLine.cpp
-INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Geometry/CutPolygonLine.cpp
-INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Geometry/CutPolygonLine.cpp
+INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Geometry/Distance point circle.cpp
+INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Geometry/Distance point circle.cpp
+INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Geometry/Distance point circle.cpp
+INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Geometry/Minimum enclosing circle.cpp
+INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Geometry/Minimum enclosing circle.cpp
+INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Geometry/Minimum enclosing circle.cpp
+INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Geometry/Common area circle polygon.cpp
+INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Geometry/Common area circle polygon.cpp
+INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Geometry/Common area circle polygon.cpp
+INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Geometry/Area polygon.cpp
+INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Geometry/Area polygon.cpp
+INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Geometry/Area polygon.cpp
+INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Geometry/Convex hull.cpp
+INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Geometry/Convex hull.cpp
+INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Geometry/Convex hull.cpp
+INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Geometry/Cut polygon line.cpp
+INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Geometry/Cut polygon line.cpp
+INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Geometry/Cut polygon line.cpp
 INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Geometry/Perimeter.cpp
 INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Geometry/Perimeter.cpp
 INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Geometry/Perimeter.cpp
-INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Geometry/PointInPolygon.cpp
-INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Geometry/PointInPolygon.cpp
-INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Geometry/PointInPolygon.cpp
-INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Geometry/PointInConvexPolygon.cpp
-INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Geometry/PointInConvexPolygon.cpp
-INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Geometry/PointInConvexPolygon.cpp
-INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Geometry/IsConvex.cpp
-INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Geometry/IsConvex.cpp
-INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Geometry/IsConvex.cpp
-INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Geometry/RadialOrder.cpp
-INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Geometry/RadialOrder.cpp
-INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Geometry/RadialOrder.cpp
-INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Geometry/sortAlongLine.cpp
-INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Geometry/sortAlongLine.cpp
-INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Geometry/sortAlongLine.cpp
+INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Geometry/Point in polygon.cpp
+INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Geometry/Point in polygon.cpp
+INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Geometry/Point in polygon.cpp
+INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Geometry/Point in convex polygon.cpp
+INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Geometry/Point in convex polygon.cpp
+INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Geometry/Point in convex polygon.cpp
+INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Geometry/Is convex.cpp
+INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Geometry/Is convex.cpp
+INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Geometry/Is convex.cpp
+INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Geometry/Radial order.cpp
+INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Geometry/Radial order.cpp
+INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Geometry/Radial order.cpp
+INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Geometry/Sort along line.cpp
+INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Geometry/Sort along line.cpp
+INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Geometry/Sort along line.cpp
 INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/Chapters.aux
 INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/Chapters.out
 INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/Chapters.out
@@ -568,10 +568,12 @@ INPUT /usr/local/texlive/2020/texmf-dist/fonts/type1/public/inconsolata/Inconsol
 INPUT /usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex9.pfb
 INPUT /usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb
 INPUT /usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb
+INPUT /usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb
 INPUT /usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb
 INPUT /usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb
 INPUT /usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb
 INPUT /usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb
+INPUT /usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb
 INPUT /usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb
 INPUT /usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb
 INPUT /usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb

@@ -9,53 +9,21 @@
 \horizontalLine
 
 \subsection{Monotone queue}
-\addfile{../Codes/DataStructures/Monotone Queue.cpp}
+\addfile{../Codes/DataStructures/Monotone queue.cpp}
+
+\subsection{Stack queue}
+\addfile{../Codes/DataStructures/Stack queue.cpp}
 
 \subsection{Mo's algorithm}
-\addfile{../Codes/DataStructures/Mos.cpp}
+\addfile[3-19]{../Codes/DataStructures/Mos.cpp}
 To make it faster, change the order to $hilbert(l, r)$ \\
 \addfile{../Codes/DataStructures/Hilbert Order.cpp}
 
-% \subsection*{Mo's algorithm with updates in \complexity{n^{\frac{5}{3}}} }
-  
-% \setlist{nolistsep}
-% \begin{itemize}[noitemsep]
-%   \item Choose a $block$ of size $n^{\frac{2}{3}}$
-%   \item Do a normal Mo's algorithm, in the $Query$ definition add an extra variable for the $updatesSoFar$ 
-%   \item Sort the queries by the order $(l /block$, $r / block$, $updatesSoFar)$
-%   \item If the update lies inside the current query, update the data structure properly \\
-%   \begin{code}
-%    struct Update {
-%      int pos, prv, nxt;
-%    };
-  
-%    void undo(Update &u) {
-%      if (l <= u.pos && u.pos <= r) {
-%        rem(u.pos);
-%        a[u.pos] = u.prv;
-%        add(u.pos);
-%      } else {
-%        a[u.pos] = u.prv;
-%      }
-%    }
-%   \end{code}
-    
-%   \item Solve the problem :D \\
-%   \begin{code}
-%    l = queries[0].l, r = l - 1, upd = sz(updates) - 1;
-%    for (Query &q : queries) {
-%      while (upd < q.upd)
-%        dodo(updates[++upd]);
-%      while (upd > q.upd)
-%        undo(updates[upd--]);
-%      // write down the normal Mo's algorithm
-%    }
-%   \end{code}
-% \end{itemize}
-% \vspace{-15pt}
-
 \subsection{Static to dynamic}
 \addfile{../Codes/DataStructures/Static to dynamic.cpp}
+
+
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \nsection{Intervals}
@@ -66,8 +34,11 @@ To make it faster, change the order to $hilbert(l, r)$ \\
 \subsection{Interval tree}
 \addfile{../Codes/DataStructures/Interval Tree.cpp}
 
+
+
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\nsection{Range queries}
+\nsection{Static range queries}
 
 \subsection{Sparse table}
 \addfile{../Codes/DataStructures/Sparse Table.cpp}
@@ -89,11 +60,12 @@ To make it faster, change the order to $hilbert(l, r)$ \\
 \subsection{Parallel binary search}
 \addfile{../Codes/DataStructures/Parallel Binary Search.cpp}
 
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\nsection{Dynamic range queries}
 \subsection{D-dimensional Fenwick tree}
 \addfile[1-28]{../Codes/DataStructures/Fenwick ND.cpp}
-
-\subsection{Fenwick tree 2D}
-\addfile{../Codes/DataStructures/Fenwick2D Offline.cpp}
 
 % \subsection{Segment tree}
 % \addfile{../Codes/DataStructures/Segtree.cpp}
@@ -114,8 +86,9 @@ To make it faster, change the order to $hilbert(l, r)$ \\
 \addfile{../Codes/DataStructures/Li Chao.cpp}
 
 
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\nsection{Trees}
+\nsection{Binary trees}
 
 \subsection{Ordered tree}
 \addfile{../Codes/DataStructures/Ordered tree.cpp}

@@ -12,12 +12,9 @@ struct DynamicHull : multiset<Line, less<>> {
   }
  
   bool isect(iterator x, iterator y) {
-    if (y == end())
-      return x->p = inf, 0;
-    if (x->m == y->m) 
-      x->p = (x->c > y->c ? inf : -inf);
-    else 
-      x->p = div(x->c - y->c, y->m - x->m);
+    if (y == end()) return x->p = inf, 0;
+    if (x->m == y->m) x->p = x->c > y->c ? inf : -inf;
+    else x->p = div(x->c - y->c, y->m - x->m);
     return x->p >= y->p;
   }
 
