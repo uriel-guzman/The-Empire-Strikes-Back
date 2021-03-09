@@ -1,5 +1,5 @@
 template <class C>
-pair<C, vi> Hungarian(vector< vector<C> > &a) {
+pair<C, vi> Hungarian(vector<vector<C>> &a) {
   int n = sz(a), m = sz(a[0]), p, q, j, k; // n <= m
  vector<C> fx(n, numeric_limits<C>::min()), fy(m, 0);
   vi x(n, -1), y(m, -1);
