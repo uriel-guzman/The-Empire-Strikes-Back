@@ -2,24 +2,23 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-#ifdef LOCAL
-#include "debug.h"
-#else
-#define debug(...) 
-#endif
-
-#define df(b, e) ((b) > (e))
-#define fore(i, b, e) for (auto i = (b) - df(b, e); i != e - df(b, e); i += 1 - 2 * df(b, e))
+#define fore(i, l, r) for (auto i = (l) - ((l) > (r)); i != (r) - ((l) > (r)); i += 1 - 2 * ((l) > (r)))
 #define sz(x) int(x.size())
 #define all(x) begin(x), end(x)
 #define f first
 #define s second
 #define pb push_back
 
-using lli = long long;
 using ld = long double;
+using lli = long long;
 using ii = pair<int, int>;
 using vi = vector<int>;
+
+#ifdef LOCAL
+  #include "debug.h"
+#else
+  #define debug(...) 
+#endif
 
 int main() {
   cin.tie(0)->sync_with_stdio(0), cout.tie(0);
