@@ -15,9 +15,9 @@ using ii = pair<int, int>;
 using vi = vector<int>;
 
 #ifdef LOCAL
-  #include "debug.h"
+#include "debug.h"
 #else
-  #define debug(...) 
+#define debug(...) 
 #endif
 
 int main() {
