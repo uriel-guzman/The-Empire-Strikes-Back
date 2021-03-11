@@ -9,7 +9,7 @@ void factorizeSieve() {
 
 map<int, int> factorize(int n) {
   map<int, int> cnt;
-  while (n > 0) {
+  while (n > 1) {
     cnt[factor[n]]++;
     n /= factor[n];
   }
