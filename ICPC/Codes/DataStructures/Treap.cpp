@@ -3,7 +3,7 @@ struct Node {
   Treap ls = 0, rs = 0;
   unsigned pri = rng();
   int val, sz = 1;
-  // define more variable here
+  // define more variables here
 
   void push() {
     // propagate like segtree, values aren't modified!!
@@ -19,17 +19,18 @@ struct Node {
   Node(int val) : val(val) {}
 };
 
-pair<Treap, Treap> split(Treap t, int val) { // {<= val, > val} 
+template <class F>
+pair<Treap, Treap> split(Treap t, const F &leq) { // {<= val, > val} 
   if (!t) return {t, t};
   t->push();
-  if (val < t->val) {
-    auto p = split(t->ls, val);
-    t->ls = p.s;
-    return {p.f, t->pull()};
-  } else {
-    auto p = split(t->rs, val);
+  if (leq(t)) {
+    auto p = split(t->rs, leq);
     t->rs = p.f;
     return {t->pull(), p.s};
+  } else {
+    auto p = split(t->ls, leq);
+    t->ls = p.s;
+    return {p.f, t->pull()};
   }
 }
 
@@ -42,38 +43,42 @@ Treap merge(Treap l, Treap r) {
     return r->ls = merge(l, r->ls), r->pull();
 }
 
-void insert(Treap &t, int val) {
-  auto p1 = split(t, val);
-  auto p2 = split(p1.f, val - 1);
-  t = merge(p2.f, merge(new Node(val), p1.s));
-}
-
-void erase(Treap &t, int val) {
-  auto p1 = split(t, val);
-  auto p2 = split(p1.f, val - 1);
-  t = merge(p2.f, p1.s);
-}
-
-// Use this split for implicit treap aka rope
-pair<Treap, Treap> split(Treap t, int sz) {
-  if (!t) return {t, t};
-  t->push();
-  if (sz <= sz(t->ls)) {
-    auto p = split(t->ls, sz);
-    t->ls = p.s;
-    return {p.f, t->pull()};
-  } else {
-    auto p = split(t->rs, sz - sz(t->ls) - 1);
-    t->rs = p.f;
-    return {t->pull(), p.s};
-  }
+pair<Treap, Treap> leftmost(Treap t, int k) {
+  return split(t, [&](Treap t) {
+    int sz = sz(t->ls) + 1;
+    if (k >= sz) {
+      k -= sz;
+      return true;
+    }
+    return false;
+  });
 }
 
 int pos(Treap t) { // add parent in Node definition
   int sz = sz(t->ls);
-  for (; t->par; t = t->par) {
-    Treap par = t->par;
-    if (par->rs == t) sz += sz(par->ls) + 1;
+  for (; t->p; t = t->p) {
+    Treap p = t->p;
+    if (p->rs == t) sz += sz(p->ls) + 1;
   }
   return sz + 1;
+}
+
+void insert(Treap &t, int val) {
+  auto p1 = split(t, [&](Treap t) {
+    return t->val <= val;
+  });
+  auto p2 = split(p1.f, [&](Treap t) {
+    return t->val <= val - 1;
+  });
+  t = merge(p2.f, merge(new Node(val), p1.s));
+}
+
+void erase(Treap &t, int val) {
+  auto p1 = split(t, [&](Treap t) {
+    return t->val <= val;
+  });
+  auto p2 = split(p1.f, [&](Treap t) {
+    return t->val <= val - 1;
+  });
+  t = merge(p2.f, p1.s);
 }
