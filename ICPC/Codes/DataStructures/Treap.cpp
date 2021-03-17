@@ -56,29 +56,27 @@ pair<Treap, Treap> leftmost(Treap t, int k) {
 
 int pos(Treap t) { // add parent in Node definition
   int sz = sz(t->ls);
-  for (; t->p; t = t->p) {
-    Treap p = t->p;
+  for (; t->par; t = t->par) {
+    Treap p = t->par;
     if (p->rs == t) sz += sz(p->ls) + 1;
   }
   return sz + 1;
 }
 
-void insert(Treap &t, int val) {
-  auto p1 = split(t, [&](Treap t) {
+pair<Treap, Treap> split(Treap t, int val) {
+  return split(t, [&](Treap t) {
     return t->val <= val;
   });
-  auto p2 = split(p1.f, [&](Treap t) {
-    return t->val <= val - 1;
-  });
+}
+
+void insert(Treap &t, int val) {
+  auto p1 = split(t, val);
+  auto p2 = split(p1.f, val - 1);
   t = merge(p2.f, merge(new Node(val), p1.s));
 }
 
 void erase(Treap &t, int val) {
-  auto p1 = split(t, [&](Treap t) {
-    return t->val <= val;
-  });
-  auto p2 = split(p1.f, [&](Treap t) {
-    return t->val <= val - 1;
-  });
+  auto p1 = split(t, val);
+  auto p2 = split(p1.f, val - 1);
   t = merge(p2.f, p1.s);
 }
