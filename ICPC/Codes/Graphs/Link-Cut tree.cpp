@@ -95,5 +95,5 @@ Splay queryPath(Splay u, Splay v) {
 }
 
 Splay querySubtree(Splay u, Splay v) {
-  reroot(u), access(v), v; // vir + self
+  return reroot(u), access(v), v; // vir + self
 }
