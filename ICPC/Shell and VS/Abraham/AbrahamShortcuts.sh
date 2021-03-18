@@ -1,6 +1,5 @@
 alias mysql=/usr/local/mysql/bin/mysql
-alias myBash='open ~/.zshenv' # Bash file xd
-alias sourceMyBash='source .zshenv' 
+alias myBash='gedit ~/.zshenv' # Bash file 
 
 ######################## Github ########################
 
@@ -19,108 +18,172 @@ drawingsDir='/Users/abraham/Problems/drawings/'
 red='\x1B[0;31m'
 green='\x1B[0;32m'
 blue='\x1B[0;34m'
+gray='\x1B[0;90m'
+cyan='\x1B[0;36m'
 noColor='\x1B[0m'
 
-createContest() {
+create() {
 	tem='/Users/abraham/The-Empire-Strikes-Back/ICPC/Codes/Misc/tem.cpp'
-		
+
 	begin=$1
-	end=$2 	
-	tee {${begin}..${end}}.cpp < ${tem}
- 	touch {${begin}..${end}} 	
+	end=$1
+	if [ $# -ge 2 ]; then
+		# Then this is a contest, so input is needed
+		end=$2 			
+		tee {${begin}..${end}}.cpp < ${tem}
+		touch {${begin}..${end}} 
+	else
+		# A single file
+		tee ${begin}.cpp < ${tem}
+		open ${begin}.cpp
+		touch in
+	fi
 }
 
-eraseContest() {
+erase() {
 	begin=$1
-	end=$2 
-	rm -r {${begin}..${end}}.cpp 
-	rm -r {${begin}..${end}} 
+	end=$1
+	if [ $# -ge 2 ]; then
+		end=$2 
+		rm -r {${begin}..${end}}.cpp 
+		rm -r {${begin}..${end}} 
+	else 	
+		rm -r ${begin}.cpp
+		rm -r ${begin}
+	fi
 }
 
-go() {
-	alias flags='-Wall -Wextra -Wshadow -fmax-errors=2 -O2'
-	g++-9 --std=c++17 $2 $3 ${flags} $1.cpp && ./a.out 
+timer() {
+	start=$(ruby -e 'puts (Time.now.to_f * 1000).to_i')
+	$@
+	end=$(ruby -e 'puts (Time.now.to_f * 1000).to_i')
+	elapsed=$((end - start))
+	printf "\n=====\nUsed: ${elapsed} ms\n"
+}
+
+compilation() {
+	alias flags='-Wall -Wextra -Wshadow -fmax-errors=3 -w'
+	g++-9 --std=c++17 $2 ${flags} $1.cpp -o $1.out 
 }
 
 debug() {
-	go $1 -DLOCAL "" < $2
-	printf "\n"
-} 
-
-draw() {
-	go $1 -DLOCAL -DDRAW < $2
-	osascript -e "tell application \"Terminal\" to do script \"createBooks\""
+	compilation $1 -DLOCAL 
+	timer ./$1.out < $2
 	printf "\n"
 } 
 
 run() {
-	go $1 "" "" < $2	
+	compilation $1 ""  
+	timer ./$1.out < $2
 	printf "\n"
 }
 
-test() {
-	# test program input output
-	g++-9 --std=c++17 $1.cpp -o prog 
-	input="$1_in"
-	output="$1_out"
-	if [ $# -ge 2 ]; then
-		input=$2 
-		if [ $# -ge 3 ]; then
-			output=$3 
-		fi
-	fi
-	
-	for ((i = 1; ; i++)); do
-		[[ -f ${input}$i ]] || break
-		printf "Test case #$i"
-		
-		diff -uwi <(./prog < ${input}$i) ${output}$i > $1_diff
-		
-		if [[ ! $? -eq 0 ]]; then
-			printf "${red} Wrong answer ${noColor}\n"
-		else
-			printf "${green} Accepted ${noColor}\n"
-		fi
-	done
-	
-	rm -r prog
-}
 
-random() { 
-	# random a
-	g++-9 --std=c++17 $1.cpp -o prog 
-	g++-9 --std=c++17 brute.cpp -o brute 
+random() {
+	# random file
+	
+	compilation $1 "" 
+	compilation brute ""
 	
 	if [[ -f "gen.cpp" ]]; then
 		 # C++ version, so first compile it
-		g++-9 --std=c++17 gen.cpp -o gen 
+		compilation gen ""
 	fi
 	
 	generateTestCase() {
 		# looks for the .cpp generator first, then the .py generator
 		if [[ -f "gen.cpp" ]]; then
-			./gen > in
+			./gen.out > in
 		else
 			python3 gen.py | cat > in 
 		fi
 	}
 	
-	for ((i = 1; i <= 150; i++)); do
+	for ((i = 1; i <= 300; i++)); do
+		generateTestCase
+		
 		printf "Test case #${i}"
 		
-		generateTestCase
-		diff -uwi <(./prog < in) <(./brute < in) > $1_diff
+		diff -uwi <(./$1.out < in) <(./brute.out < in) > /dev/null
 		
-		if [[ ! $? -eq 0 ]]; then
+		if [[ $? -eq 0 ]]; then
+			printf "${green} Accepted ${noColor}\n"
+		else
 			printf "${red} Wrong answer ${noColor}\n"
 			break
-		else
-			printf "${green} Accepted ${noColor}\n"
 		fi
 	done
-	
-	rm -r prog brute
 }
+
+
+omegaup() {
+	# Run it like:
+	# omegaup program, without extension
+	# at the gen.cpp file, use int main(int k)
+	# k = 1, easy test cases
+	# k = 2, medium test cases
+	# k = 3, hard test cases
+
+	myDir=$(pwd)
+
+	g++-9 --std=c++17 $1.cpp -o prog
+	g++-9 --std=c++17 gen.cpp -o gen 
+	
+	# Create folder
+	problemName="problem_${1}"
+	mkdir ${problemName}
+	
+	# Add solution and generator to the folder
+	tee "${folderDir}/sol.cpp" < ${1}.cpp
+	tee "${folderDir}/gen.cpp" < gen.cpp
+	
+	folderDir="${myDir}/${problemName}"
+	cd ${folderDir}
+	
+	# Create cases and statements folder
+	mkdir "cases"
+	mkdir "statements"
+	cd "${folderDir}/statements"
+	touch "es.markdown"
+	
+	echo "# Descripción" >> "es.markdown"
+	echo "Historia del problema" >> "es.markdown"
+	echo "# Entrada\n Variables en \`rojo\`, solo \$texto\$\n" >> "es.markdown"
+	echo "# Salida\n Como queremos la salida" >> "es.markdown"
+	echo "#Ejemplo\n ||input\n ||output\n ||end\n" >> "es.markdown"
+	
+	casesDir="${folderDir}/cases"
+
+	cd ${myDir}	
+	
+	# Weak test cases
+	for ((i = 1; i <= 30; i++)); do
+		input="${casesDir}/${i}.in"
+		output="${casesDir}/${i}.out"
+		./gen.out > ${input}
+		./$1.out < ${input} > ${output}	
+	done
+	
+	# Medium test cases
+	for ((i = 1; i <= 30; i++)); do
+		input="${casesDir}/medium.${i}.in"
+		output="${casesDir}/medium.${i}.out"
+		./gen.out medium > ${input}
+		./$1.out < ${input} > ${output}	
+	done
+	
+	# Big test cases
+	for ((i = 1; i <= 40; i++)); do
+		input="${casesDir}/big.${i}.in"
+		output="${casesDir}/big.${i}.out"
+		./gen.out is big > ${input}
+		./$1.out < ${input} > ${output}	
+	done
+
+	
+	clear
+	printf "Ready to omegaup\n"
+}	
 
 createBooks() {
 	prevDir=$(pwd) # Current directory, but will be the previous after all of this stuff D:
@@ -199,4 +262,3 @@ createBooks() {
 
 	exit
 }
-
