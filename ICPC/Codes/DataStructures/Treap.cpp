@@ -16,7 +16,9 @@ struct Node {
     return this;
   }
 
-  Node(int val) : val(val) {}
+  Node(int val) : val(val) {
+    pull();
+  }
 };
 
 template <class F>
