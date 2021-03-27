@@ -1,8 +1,0 @@
-C++11
-  auto, lambda, nullptr, mt19937, using
-  
-C++14
-
-C++17
-  auto [x,y], gcd(), lcm()
-
