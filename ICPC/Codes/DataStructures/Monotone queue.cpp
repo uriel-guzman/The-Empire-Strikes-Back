@@ -1,16 +1,17 @@
-struct MonotoneQueue : deque<pair<lli, int>> {
-  void add(lli val, int pos) {
-    while (!empty() && back().f >= val) 
-      pop_back();
-    emplace_back(val, pos);
+template <class T>
+struct MonotoneQueue {
+  deque<pair<T, int>> q;
+
+  void add(T val, int pos) {
+    while (!q.empty() && q.back().f >= val) q.pop_back();
+    q.emplace_back(val, pos);
   }
 
   void remove(int pos) {
-    while (front().s < pos)
-      pop_front();
+    while (q.front().s < pos) q.pop_front();
   }
 
-  lli query() {
-    return front().f;
+  T query() {
+    return q.front().f;
   }
 }; 

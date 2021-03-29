@@ -13,8 +13,7 @@ struct Dsu {
   void unite(int u, int v) {
     u = find(u), v = find(v);
     if (u != v) {
-      if (tot[u] < tot[v])
-        swap(u, v);
+      if (tot[u] < tot[v]) swap(u, v);
       mem.emplace(u, v);
       tot[u] += tot[v];
       par[v] = u;

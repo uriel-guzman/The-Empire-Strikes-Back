@@ -1,23 +1,23 @@
 \nsection{Strings}
 
-\subsection{Hash}
+\subsection{Hash \complexity{N}}
 \addfile{../Codes/Strings/Hash.cpp}
 
-\subsection{KMP} 
+\subsection{KMP \complexity{N}} 
 \ncomment{period = $n - p[n - 1]$, period($abcabc$) = 3, $n \mod{period} \equiv 0$}
 \addfile{../Codes/Strings/KMP.cpp}
 \vspace{-15pt}
 
-\subsection{KMP automaton}
+\subsection{KMP automaton \complexity{Alphabet \cdot N}}
 \addfile{../Codes/Strings/KMP automaton.cpp}
 
-\subsection{Z algorithm}
+\subsection{Z algorithm \complexity{N}}
 \addfile{../Codes/Strings/Z.cpp}
 
-\subsection{Manacher algorithm}
+\subsection{Manacher algorithm \complexity{N}}
 \addfile{../Codes/Strings/Manacher.cpp}
 
-\subsection{Suffix array}
+\subsection{Suffix array \complexity{N \cdot log N}}
 \vspace{-5pt}
 \setlist{nolistsep}
 \begin{itemize}[noitemsep]
@@ -36,7 +36,7 @@
 % \subsection{Trie}
 % \addfile{../Codes/Strings/Trie.cpp}
 
-\subsection{Suffix automaton}
+\subsection{Suffix automaton \complexity{\sum s_i}}
 \vspace{-5pt}
 \setlist{nolistsep}
 \begin{itemize}[noitemsep]
@@ -59,7 +59,7 @@
   
   \item All occurrence positions
   
-  \item Smallest cyclic shift \\
+  \item Smallest cyclic shift 
   Construct sam of $s + s$, find the lexicographically smallest path of $sz(s)$
  
   \item Shortest non-appearing string
@@ -70,8 +70,8 @@
 \addfile{../Codes/Strings/Suffix automaton.cpp}
 \vspace{-15pt}
 
-\subsection{Aho corasick}
+\subsection{Aho corasick \complexity{\sum s_i}}
 \addfile{../Codes/Strings/Aho Corasick.cpp}
 
-\subsection{Eertree}
+\subsection{Eertree \complexity{\sum s_i}}
 \addfile{../Codes/Strings/Eertree.cpp}

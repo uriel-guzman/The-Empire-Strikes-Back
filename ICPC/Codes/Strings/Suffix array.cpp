@@ -1,16 +1,14 @@
 struct SuffixArray {
   int n;
   string s;
-  vi sa, lcp;
+  vector<int> sa, lcp;
   
   SuffixArray(string &s) : n(sz(s) + 1), s(s), sa(n), lcp(n) {
-    vi top(max(256, n)), rk(n);
-    fore (i, 0, n)
-      top[rk[i] = s[i] & 255]++;
+    vector<int> top(max(256, n)), rk(n);
+    fore (i, 0, n) top[rk[i] = s[i] & 255]++;
     partial_sum(all(top), top.begin());
-    fore (i, 0, n)
-      sa[--top[rk[i]]] = i;
-    vi sb(n);
+    fore (i, 0, n) sa[--top[rk[i]]] = i;
+    vector<int> sb(n);
     for (int len = 1, j; len < n; len <<= 1) {
       fore (i, 0, n) {
         j = (sa[i] - len + n) % n;

@@ -8,6 +8,10 @@
     "unordered_set": "cpp",
     "rope": "cpp",
     "numeric": "cpp",
-    "valarray": "cpp"
+    "valarray": "cpp",
+    "algorithm": "cpp",
+    "regex": "cpp",
+    "bit": "cpp",
+    "fstream": "cpp"
   }
 }

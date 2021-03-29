@@ -1,16 +1,16 @@
 struct Lazy {
   int l, r;
+  Lazy *left, *right;
   lli sum = 0, lazy = 0;
-  Lazy *ls, *rs;
 
-  Lazy(int l, int r) : l(l), r(r), ls(0), rs(0) {
+  Lazy(int l, int r) : l(l), r(r), left(0), right(0) {
     if (l == r) {
       sum = a[l];
       return;
     }
     int m = (l + r) >> 1;
-    ls = new Lazy(l, m);
-    rs = new Lazy(m + 1, r);
+    left = new Lazy(l, m);
+    right = new Lazy(m + 1, r);
     pull();
   }
 
@@ -19,14 +19,14 @@ struct Lazy {
       return;
     sum += (r - l + 1) * lazy;
     if (l != r) {
-      ls->lazy += lazy;
-      rs->lazy += lazy;
+      left->lazy += lazy;
+      right->lazy += lazy;
     }
     lazy = 0;
   }
 
   void pull() {
-    sum = ls->sum + rs->sum;
+    sum = left->sum + right->sum;
   }
 
   void update(int ll, int rr, lli v) {
@@ -38,17 +38,17 @@ struct Lazy {
       push();
       return;
     }
-    ls->update(ll, rr, v);
-    rs->update(ll, rr, v);
+    left->update(ll, rr, v);
+    right->update(ll, rr, v);
     pull();
   }
 
-  lli qsum(int ll, int rr) {
+  lli query(int ll, int rr) {
     push();
     if (rr < l || r < ll)
       return 0;
     if (ll <= l && r <= rr)
       return sum;
-    return ls->qsum(ll, rr) + rs->qsum(ll, rr);
+    return left->query(ll, rr) + right->query(ll, rr);
   }
 };

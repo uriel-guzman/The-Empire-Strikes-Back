@@ -1,13 +1,13 @@
 struct Dyn {
   int l, r;
   lli mx = -inf;
-  Dyn *ls, *rs;
+  Dyn *left, *right;
 
-  Dyn(int l, int r) : l(l), r(r), ls(0), rs(0) {}
+  Dyn(int l, int r) : l(l), r(r), left(0), right(0) {}
 
   void pull() {
-    mx = max(mx, (ls ? ls->mx : -inf));
-    mx = max(mx, (rs ? rs->mx : -inf));
+    mx = max(mx, (left ? left->mx : -inf));
+    mx = max(mx, (right ? right->mx : -inf));
   }
 
   void update(int p, lli v) {
@@ -17,11 +17,11 @@ struct Dyn {
     }
     int m = (l + r) >> 1;
     if (p <= m) {
-      if (!ls) ls = new Dyn(l, m);
-      ls->update(p, v);
+      if (!left) left = new Dyn(l, m);
+      left->update(p, v);
     } else {
-      if (!rs) rs = new Dyn(m + 1, r);
-      rs->update(p, v);
+      if (!right) right = new Dyn(m + 1, r);
+      right->update(p, v);
     }
     pull();
   }
@@ -32,23 +32,23 @@ struct Dyn {
     if (ll <= l && r <= rr)
       return mx;
     int m = (l + r) >> 1;
-    return max((ls ? ls->qmax(ll, rr) : 0), 
-           (rs ? rs->qmax(ll, rr) : 0));
+    return max((left ? left->qmax(ll, rr) : 0), 
+           (right ? right->qmax(ll, rr) : 0));
   }
 };
 
 struct Seg2D {
   int x1, x2;
+  Seg2D *left, *right;
   Dyn* tree;
-  Seg2D *ls, *rs;
 
-  Seg2D(int x1, int x2, int y1, int y2) : x1(x1), x2(x2), tree(0), ls(0), rs(0) {
+  Seg2D(int x1, int x2, int y1, int y2) : x1(x1), x2(x2), tree(0), left(0), right(0) {
     tree = new Dyn(y1, y2);
     if (x1 == x2) 
       return;
     int m = (x1 + x2) >> 1;
-    ls = new Seg2D(x1, m, y1, y2);
-    rs = new Seg2D(m + 1, x2, y1, y2);
+    left = new Seg2D(x1, m, y1, y2);
+    right = new Seg2D(m + 1, x2, y1, y2);
   }
 
   void pull(int y, lli v) {
@@ -62,9 +62,9 @@ struct Seg2D {
     }
     int m = (x1 + x2) >> 1;
     if (x <= m)
-      ls->update(x, y, v);
+      left->update(x, y, v);
     else
-      rs->update(x, y, v);
+      right->update(x, y, v);
     pull(y, v);
   }
 
@@ -73,6 +73,6 @@ struct Seg2D {
       return -inf;
     if (xx1 <= x1 && x2 <= xx2)
       return tree->qmax(yy1, yy2);
-    return max(ls->qmax(xx1, xx2, yy1, yy2), rs->qmax(xx1, xx2, yy1, yy2));
+    return max(left->qmax(xx1, xx2, yy1, yy2), right->qmax(xx1, xx2, yy1, yy2));
   }
 };

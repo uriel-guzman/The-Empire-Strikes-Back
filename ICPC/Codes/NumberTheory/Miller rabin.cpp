@@ -10,10 +10,8 @@ bool miller(lli n) {
     return x != n - 1 && i != k;
   };
   for (lli p : {2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37}) {
-    if (compo(p))
-      return 0;
-    if (compo(2 + rng() % (n - 3)))
-      return 0;
+    if (compo(p)) return 0;
+    if (compo(2 + rng() % (n - 3))) return 0;
   }
   return 1;
 }

@@ -40,7 +40,7 @@ void updatePath(int u, int v, lli z) {
 lli queryPath(int u, int v) {
   lli sum = 0;
   processPath(u, v, [&](int l, int r) {
-    sum += tree->qsum(l, r);
+    sum += tree->query(l, r);
   });
   return sum;
 }

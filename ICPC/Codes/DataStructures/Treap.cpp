@@ -1,6 +1,6 @@
 typedef struct Node* Treap;
 struct Node {
-  Treap ls = 0, rs = 0;
+  Treap left = 0, right = 0;
   unsigned pri = rng();
   int val, sz = 1;
   // define more variables here
@@ -11,8 +11,8 @@ struct Node {
 
   Treap pull() {
     #define sz(t) (t ? t->sz : 0)
-    sz = 1 + sz(ls) + sz(rs);
-    // merge(ls, this), merge(this, rs)
+    sz = 1 + sz(left) + sz(right);
+    // merge(l, this), merge(this, r)
     return this;
   }
 
@@ -26,12 +26,12 @@ pair<Treap, Treap> split(Treap t, const F &leq) { // {<= val, > val}
   if (!t) return {t, t};
   t->push();
   if (leq(t)) {
-    auto p = split(t->rs, leq);
-    t->rs = p.f;
+    auto p = split(t->right, leq);
+    t->right = p.f;
     return {t->pull(), p.s};
   } else {
-    auto p = split(t->ls, leq);
-    t->ls = p.s;
+    auto p = split(t->left, leq);
+    t->left = p.s;
     return {p.f, t->pull()};
   }
 }
@@ -40,14 +40,14 @@ Treap merge(Treap l, Treap r) {
   if (!l || !r) return l ? l : r;
   l->push(), r->push();
   if (l->pri > r->pri) 
-    return l->rs = merge(l->rs, r), l->pull();
+    return l->right = merge(l->right, r), l->pull();
   else
-    return r->ls = merge(l, r->ls), r->pull();
+    return r->left = merge(l, r->left), r->pull();
 }
 
 pair<Treap, Treap> leftmost(Treap t, int k) {
   return split(t, [&](Treap t) {
-    int sz = sz(t->ls) + 1;
+    int sz = sz(t->left) + 1;
     if (k >= sz) {
       k -= sz;
       return true;
@@ -57,10 +57,10 @@ pair<Treap, Treap> leftmost(Treap t, int k) {
 }
 
 int pos(Treap t) { // add parent in Node definition
-  int sz = sz(t->ls);
+  int sz = sz(t->left);
   for (; t->par; t = t->par) {
     Treap p = t->par;
-    if (p->rs == t) sz += sz(p->ls) + 1;
+    if (p->right == t) sz += sz(p->left) + 1;
   }
   return sz + 1;
 }

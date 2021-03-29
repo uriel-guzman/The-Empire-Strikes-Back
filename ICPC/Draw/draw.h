@@ -537,13 +537,13 @@ void drawSeg(Segtree *t, const Fun paintNode) {
     os << "node" << x << "[label = \"";
     os << "[" << t->l << "," << t->r << "] \\n " << paintNode(t);
     os << "\"]" << endl;
-    if (t->ls) {
+    if (t->left) {
       os << "node" << x << " -> node" << (x * 2) << endl;
-      dfs(t->ls, x * 2);
+      dfs(t->left, x * 2);
     }
-    if (t->rs) {
+    if (t->right) {
       os << "node" << x << " -> node" << (x * 2 + 1) << endl;
-      dfs(t->rs, x * 2 + 1);
+      dfs(t->right, x * 2 + 1);
     }
   };
 
@@ -578,13 +578,13 @@ void drawLazy(Lazy *t, const Fun paintNode) {
     os << "node" << x << "[label = \"";
     os << "[" << t->l << "," << t->r << "] \\n " << paintNode(t);
     os << "\"]" << endl;
-    if (t->ls) {
+    if (t->left) {
       os << "node" << x << " -> node" << (x * 2) << endl;
-      dfs(t->ls, x * 2);
+      dfs(t->left, x * 2);
     }
-    if (t->rs) {
+    if (t->right) {
       os << "node" << x << " -> node" << (x * 2 + 1) << endl;
-      dfs(t->rs, x * 2 + 1);
+      dfs(t->right, x * 2 + 1);
     }
   };
 

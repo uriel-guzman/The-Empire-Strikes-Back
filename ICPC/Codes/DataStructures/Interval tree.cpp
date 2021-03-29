@@ -3,11 +3,11 @@ struct Interval {
 };
 
 struct ITree {
-  ITree *ls, *rs;
+  ITree *left, *right;
   vector<Interval> cur;
   lli m;
 
-  ITree(vector<Interval> &vec, lli l = LLONG_MAX, lli r = LLONG_MIN) : ls(0), rs(0) {
+  ITree(vector<Interval> &vec, lli l = LLONG_MAX, lli r = LLONG_MIN) : left(0), right(0) {
     if (l > r) { // not sorted yet
       sort(all(vec), [&](Interval a, Interval b) {
         return a.l < b.l;
@@ -20,9 +20,9 @@ struct ITree {
     for (auto it : vec) 
       (it.r < m ? lo : m < it.l ? hi : cur).pb(it);
     if (!lo.empty())
-      ls = new ITree(lo, l, m);
+      left = new ITree(lo, l, m);
     if (!hi.empty())
-      rs = new ITree(hi, m + 1, r);
+      right = new ITree(hi, m + 1, r);
   }  
 
   template <class F>
@@ -31,10 +31,10 @@ struct ITree {
       for (auto &it : cur)
         f(it);
     }
-    if (ls && l <= m)
-      ls->near(l, r, f);
-    if (rs && m < r)
-      rs->near(l, r, f);
+    if (left && l <= m)
+      left->near(l, r, f);
+    if (right && m < r)
+      right->near(l, r, f);
   }
 
   template <class F>

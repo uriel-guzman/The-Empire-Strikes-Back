@@ -1,13 +1,13 @@
 template <class C>
-pair<C, vi> Hungarian(vector<vector<C>> &a) {
+pair<C, vector<int>> Hungarian(vector<vector<C>> &a) {
   int n = sz(a), m = sz(a[0]), p, q, j, k; // n <= m
  vector<C> fx(n, numeric_limits<C>::min()), fy(m, 0);
-  vi x(n, -1), y(m, -1);
+  vector<int> x(n, -1), y(m, -1);
   fore (i, 0, n)
     fore (j, 0, m)
       fx[i] = max(fx[i], a[i][j]);
   fore (i, 0, n) {
-    vi t(m, -1), s(n + 1, i);
+    vector<int> t(m, -1), s(n + 1, i);
     for (p = q = 0; p <= q && x[i] < 0; p++)
       for (k = s[p], j = 0; j < m && x[i] < 0; j++)
         if (abs(fx[k] + fy[j] - a[k][j]) < eps && t[j] < 0) {

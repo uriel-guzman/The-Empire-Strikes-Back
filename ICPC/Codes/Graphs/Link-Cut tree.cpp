@@ -1,15 +1,17 @@
 typedef struct Node* Splay;
 struct Node {
-  Splay l = 0, r = 0, par = 0;
+  Splay left = 0, right = 0, par = 0;
   bool rev = 0;
-  int sub = 1, vir = 0;
-  int self = 0, path = 0;
+  int sz = 1;
+  int sub = 0, vsub = 0; // subtree
+  int path = 0; // path
+  int self = 0; // node info
   
   void push() {
     if (rev) {
-      swap(l, r);
-      if (l) l->rev ^= 1;
-      if (r) r->rev ^= 1;
+      swap(left, right);
+      if (left) left->rev ^= 1;
+      if (right) right->rev ^= 1;
       rev = 0;
     }
   }
@@ -17,25 +19,31 @@ struct Node {
   void pull() {
     #define sub(u) (u ? u->sub : 0)
     #define path(u) (u ? u->path : 0)
-    sub = vir + sub(l) + sub(r) + self;
-    path = path(l) + self + path(r);
+    #define sz(u) (u ? u->sz : 0)
+    sz = 1 + sz(left) + sz(right);
+    sub = vsub + sub(left) + sub(right) + self;
+    path = path(left) + self + path(right);
+  }
+
+  void virSub(Splay v, int add) {
+    vsub += 1LL * add * sub(v);
   }
 };
 
 void splay(Splay u) {
   auto assign = [&](Splay u, Splay v, bool d) {
-    (d == 0 ? u->l : u->r) = v;
+    (d == 0 ? u->left : u->right) = v;
     if (v) v->par = u;
   };
   auto dir = [&](Splay u) {
     Splay p = u->par;
     if (!p) return -1;
-    return p->l == u ? 0 : (p->r == u ? 1 : -1);
+    return p->left == u ? 0 : (p->right == u ? 1 : -1);
   };
   auto rotate = [&](Splay u) {
     Splay p = u->par, g = p->par;
     int d = dir(u);
-    assign(p, d ? u->l : u->r, d);
+    assign(p, d ? u->left : u->right, d);
     if (dir(p) == -1) u->par = g;
     else assign(g, u, dir(p));
     assign(u, p, !d);
@@ -53,12 +61,10 @@ void splay(Splay u) {
 
 void access(Splay u) {
   Splay last = 0;
-  for (Splay v = u; v; v = v->par) {
+  for (Splay v = u; v; last = v, v = v->par) {
     splay(v);
-    v->vir += sub(v->r);
-    v->r = last;
-    v->vir -= sub(v->r);
-    last = v;
+    v->virSub(v->right, +1);
+    v->virSub(v->right = last, -1);
     v->pull();
   }
   splay(u);
@@ -71,14 +77,14 @@ void reroot(Splay u) {
 
 void link(Splay u, Splay v) {
   reroot(v), access(u);
-  u->vir += sub(v);
+  u->virSub(v, +1);
   v->par = u;
   u->pull();
 }
 
 void cut(Splay u, Splay v) {
   reroot(v), access(u);
-  u->l = 0, v->par = 0;
+  u->left = 0, v->par = 0;
   u->pull();
 }
 
@@ -95,5 +101,5 @@ Splay queryPath(Splay u, Splay v) {
 
 Splay querySubtree(Splay u, Splay x) {
   // query subtree of u where x is outside
-  return reroot(x), access(u), u; // vir + self
+  return reroot(x), access(u), u; // vsub + self
 }

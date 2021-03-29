@@ -12,7 +12,7 @@ struct Mcmf {
   vector< vector<Edge> > g;
   vector<Edge*> prev;
   vector<C> cost;
-  vi state;
+  vector<int> state;
 
   Mcmf(int n) : n(n), g(n), cost(n), state(n), prev(n), s(n - 2), t(n - 1) {}
 

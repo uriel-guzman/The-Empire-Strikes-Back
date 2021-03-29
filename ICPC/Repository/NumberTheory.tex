@@ -9,22 +9,22 @@
 \subsection{Prime numbers distribution}
 Amount of primes approximately $\frac{n}{\ln(n)}$
 
-\subsection{Sieve of Eratosthenes}
+\subsection{Sieve of Eratosthenes \complexity{N \cdot log(log N)} }
 To factorize divide $x$ by $factor[x]$ until is equal to $1$ \\
 \addfile[3]{../Codes/NumberTheory/Factorize sieve.cpp} 
 Use it if you need a huge amount of $phi[x]$ up to some N 
 \addfile[3]{../Codes/NumberTheory/Phi sieve.cpp} 
 
-\subsection{Phi of euler}
+\subsection{Phi of euler \complexity{\sqrt{N}}}
 \addfile{../Codes/NumberTheory/Phi.cpp}
 
-\subsection{Miller-Rabin}
+\subsection{Miller-Rabin \complexity{Witnesses \cdot (log N) ^ 3}}
 \addfile{../Codes/NumberTheory/Miller Rabin.cpp}
 
-\subsection{Pollard-Rho}
+\subsection{Pollard-Rho \complexity{N ^ {1/4}}}
 \addfile{../Codes/NumberTheory/Pollard Rho.cpp}
 
-\subsection{Amount of divisors}
+\subsection{Amount of divisors \complexity{N ^ {1/3}}}
 \addfile{../Codes/NumberTheory/Amount of divisors.cpp}
 
 % 2 3 5 7 11 13 17 19 23 29
@@ -102,7 +102,7 @@ Use it if you need a huge amount of $phi[x]$ up to some N
 % \addfile{../Codes/NumberTheory/LCM.cpp}
 \vspace{-15pt}
 
-\subsection{Euclid}
+\subsection{Euclid \complexity{log (a \cdot b)}}
 \addfile{../Codes/NumberTheory/Euclid.cpp}
 
 \subsection{Chinese remainder theorem}

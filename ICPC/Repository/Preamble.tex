@@ -1,4 +1,4 @@
-\documentclass[5pt, twocolumn, a4paper, notitlepage, fleqn]{article} % Vertical way
+\documentclass[3pt, twocolumn, a4paper, notitlepage, fleqn]{article} % Vertical way
 % \documentclass[6pt, landscape, twocolumn, a4paper, notitlepage, fleqn]{article} % Horizontal way
 \usepackage{hyperref}
 \usepackage[english, activeacute]{babel} %, spanish
@@ -75,7 +75,7 @@
 \lstdefinestyle{mine} {
 	language = C++, 
 	basicstyle = \small\ttfamily, 
-	basewidth = {0.50em, 0.40em},
+	basewidth = {0.48em, 0.5em},
 	columns = fixed, fontadjust, resetmargins, xleftmargin = 5pt, xrightmargin = 5pt, showstringspaces = false,
 	flexiblecolumns = false, tabsize = 1, breaklines, breakatwhitespace = false, extendedchars = true,
 	% numbers = left, numberstyle = \tiny, stepnumber = 1, numbersep = 5pt,
@@ -137,7 +137,8 @@
 
 \newcommand{\comb}[2]{\left( \begin{array}{c} #1 #2 \end{array}\right)}
 
-\def\complexity#1{\texorpdfstring{\footnotesize$\mathcal{O}(#1)$}{O(#1)}}
+% \footnotesize
+\def\complexity#1{\texorpdfstring{$\mathcal{O}(#1)$}{O(#1)}}
 
 \newcommand\addfile[2][]{
 	\vspace{-10pt}

@@ -7,7 +7,6 @@ void phiSieve() {
   fore (i, 2, N) if (isPrime[i]) 
     for (int j = i; j < N; j += i) {
       isPrime[j] = (i == j);
-      phi[j] /= i;
-      phi[j] *= i - 1;
+      phi[j] = phi[j] / i * (i - 1);
     }
 }
