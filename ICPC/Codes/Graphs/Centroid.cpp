@@ -1,7 +1,7 @@
 int cdp[N], sz[N];
 bitset<N> rem;
 
-int dfsz(int u, int p = 0) {
+int dfsz(int u, int p = -1) {
   sz[u] = 1;
   for (int v : graph[u])
     if (v != p && !rem[v])
@@ -9,14 +9,14 @@ int dfsz(int u, int p = 0) {
   return sz[u];
 }
 
-int centroid(int u, int n, int p = 0) {
+int centroid(int u, int n, int p = -1) {
   for (int v : graph[u])
     if (v != p && !rem[v] && 2 * sz[v] > n)
       return centroid(v, n, u);
   return u;
 }
 
-void solve(int u, int p = 0) {
+void solve(int u, int p = -1) {
   cdp[u = centroid(u, dfsz(u))] = p;
   rem[u] = true;
   for (int v : graph[u])

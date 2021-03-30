@@ -1,6 +1,6 @@
-vi virt[N];
+vector<int> virt[N];
  
-int virtualTree(vi &ver) {
+int virtualTree(vector<int> &ver) {
   auto byDfs = [&](int u, int v) {
     return tin[u] < tin[v];
   };

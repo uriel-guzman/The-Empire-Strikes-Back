@@ -1,6 +1,6 @@
 struct TwoSat {
   int n;
-  vector<vi> imp;
+  vector<vector<int>> imp;
 
   TwoSat(int _n) : n(_n + 1), imp(2 * n) {}
 
@@ -14,9 +14,9 @@ struct TwoSat {
   void implies(int a, int b) { either(~a, b); }
   void setVal(int a) { either(a, a); }
 
-  vi solve() {
+  vector<int> solve() {
     int k = sz(imp);
-    vi s, b, id(sz(imp));
+    vector<int> s, b, id(sz(imp));
 
     function<void(int)> dfs = [&](int u) { 
       b.pb(id[u] = sz(s));
@@ -30,14 +30,12 @@ struct TwoSat {
           id[s.back()] = k;
     };
 
+    vector<int> val(n);
     fore (u, 0, sz(imp)) 
       if (!id[u]) dfs(u);
-
-    vi val(n);
     fore (u, 0, n) {
       int x = 2 * u;
-      if (id[x] == id[x ^ 1])
-        return {};
+      if (id[x] == id[x ^ 1]) return {};
       val[u] = id[x] < id[x ^ 1];
     }
     return val;

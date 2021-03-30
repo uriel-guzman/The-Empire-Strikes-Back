@@ -1,7 +1,7 @@
 int tin[N], fup[N];
 int timer = 0;
 
-void cutpoints(int u, int p = 0) {
+void cutpoints(int u, int p = -1) {
   tin[u] = fup[u] = ++timer;
   int children = 0;
   for (int v : graph[u]) if (v != p) {
@@ -9,11 +9,9 @@ void cutpoints(int u, int p = 0) {
       ++children;
       cutpoints(v, u);
       fup[u] = min(fup[u], fup[v]);
-      if (fup[v] >= tin[u] && p)
+      if (fup[v] >= tin[u] && !(p == -1 && children < 2))
         // u is a cutpoint
     }
     fup[u] = min(fup[u], tin[v]);
   }
-  if (!p && children > 1)
-    // u is a cutpoint
 }
