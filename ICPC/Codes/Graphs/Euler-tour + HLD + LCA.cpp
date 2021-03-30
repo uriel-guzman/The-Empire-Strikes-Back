@@ -56,7 +56,7 @@ lli querySubtree(int u) {
 }
 
 int lca(int u, int v) {
-  int last = -1; // NOT TESTED YET!!!!!
+  int last = -1; 
   processPath(u, v, [&](int l, int r) {
     last = who[l]; 
   });
