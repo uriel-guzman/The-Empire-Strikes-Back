@@ -1,38 +1,38 @@
+template <class T>
 struct SuffixArray {
   int n;
-  string s;
-  vector<int> sa, lcp;
+  T s;
+  vector<int> sa, ra, lcp;
   
-  SuffixArray(string &s) : n(sz(s) + 1), s(s), sa(n), lcp(n) {
-    vector<int> top(max(256, n)), rk(n);
-    fore (i, 0, n) top[rk[i] = s[i] & 255]++;
-    partial_sum(all(top), top.begin());
-    fore (i, 0, n) sa[--top[rk[i]]] = i;
-    vector<int> sb(n);
-    for (int len = 1, j; len < n; len <<= 1) {
-      fore (i, 0, n) {
-        j = (sa[i] - len + n) % n;
-        sb[top[rk[j]]++] = j;
-      }
-      sa[sb[top[0] = 0]] = j = 0;
+  SuffixArray(const T &a) : n(sz(a) + 1), s(a), sa(n), ra(n), lcp(n) {
+    s.pb(0); // something 
+    for (int i = 0; i < n; i++) sa[i] = i, ra[i] = s[i];
+    for(int k = 0; k < n; k ? k *= 2 : k++) {
+      vector<int> nsa(sa), nra(n), cnt(max(n, 260));
+      fore (i, 0, n) nsa[i] = (nsa[i] - k + n) % n, cnt[ra[i]]++;
+      partial_sum(all(cnt), cnt.begin());
+      fore (i, n, 0) sa[--cnt[ra[nsa[i]]]] = nsa[i];
+      int r = 0;
       fore (i, 1, n) {
-        if (rk[sb[i]] != rk[sb[i - 1]] || rk[sb[i] + len] != rk[sb[i - 1] + len])
-          top[++j] = i;
-        sa[sb[i]] = j;
+        if (ra[sa[i]] != ra[sa[i - 1]] || ra[(sa[i] + k) % n] != ra[(sa[i - 1] + k) % n]) r++;
+        nra[sa[i]] = r; 
       }
-      copy(all(sa), rk.begin());
-      copy(all(sb), sa.begin());
-      if (j >= n - 1)
-        break;
+      ra = nra;
+      if (ra[sa[n - 1]] == n - 1) break;
     }
-    for (int i = 0, j = rk[lcp[0] = 0], k = 0; i < n - 1; i++, k++) 
-      while (k >= 0 && s[i] != s[sa[j - 1] + k])
-        lcp[j] = k--, j = rk[sa[j] + 1];  
+    for (int i = 0, k = 0; i < n; i++, k -= !!k) {
+      if (ra[i] == n - 1) {
+        k = 0;
+        continue;
+      }
+      int j = sa[ra[i] + 1];
+      while (i + k < n and j + k < n and s[i + k] == s[j + k]) k++;
+      lcp[ra[i]] = k;
+    }
   }
 
-  char at(int i, int j) {
-    int k = sa[i] + j;
-    return k < n ? s[k] : 'z' + 1;
+  auto at(int i, int j) {
+    return sa[i] + j < n ? s[sa[i] + j] : 'z' + 1;
   }
 
   int count(string &t) {
