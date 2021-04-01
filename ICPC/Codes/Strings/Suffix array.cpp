@@ -35,7 +35,7 @@ struct SuffixArray {
     return sa[i] + j < n ? s[sa[i] + j] : 'z' + 1;
   }
 
-  int count(string &t) {
+  int count(T &t) {
     ii lo(0, n - 1), hi(0, n - 1);
     fore (i, 0, sz(t)) {
       while (lo.f + 1 < lo.s) {
