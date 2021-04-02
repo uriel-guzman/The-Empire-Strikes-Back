@@ -4,31 +4,22 @@ struct SuffixArray {
   T s;
   vector<int> sa, ra, lcp;
   
-  SuffixArray(const T &a) : n(sz(a) + 1), s(a), sa(n), ra(n), lcp(n) {
-    s.pb(0); // something 
-    for (int i = 0; i < n; i++) sa[i] = i, ra[i] = s[i];
-    for(int k = 0; k < n; k ? k *= 2 : k++) {
-      vector<int> nsa(sa), nra(n), cnt(max(n, 260));
-      fore (i, 0, n) nsa[i] = (nsa[i] - k + n) % n, cnt[ra[i]]++;
+  SuffixArray(const T &a) : n(sz(a) + 1), s(a), sa(n), rk(n), lcp(n) {
+    s.pb(0);
+    fore (i, 0, n) sa[i] = i, rk[i] = s[i];
+    for (int k = 0; k < n; k ? k *= 2 : k++) {
+      vector<int> nsa(sa), nrk(n), cnt(max(260, n));
+      fore (i, 0, n) nsa[i] = (nsa[i] - k + n) % n, cnt[rk[i]]++;
       partial_sum(all(cnt), cnt.begin());
-      fore (i, n, 0) sa[--cnt[ra[nsa[i]]]] = nsa[i];
-      int r = 0;
-      fore (i, 1, n) {
-        if (ra[sa[i]] != ra[sa[i - 1]] || ra[(sa[i] + k) % n] != ra[(sa[i - 1] + k) % n]) r++;
-        nra[sa[i]] = r; 
-      }
-      ra = nra;
-      if (ra[sa[n - 1]] == n - 1) break;
+      fore (i, n, 0) sa[--cnt[rk[nsa[i]]]] = nsa[i];
+      for (int i = 1, r = 0; i < n; i++) 
+        nrk[sa[i]] = r += rk[sa[i]] != rk[sa[i - 1]] || rk[(sa[i] + k) % n] != rk[(sa[i - 1] + k) % n];;
+      rk.swap(nrk);
+      if (rk[sa[n - 1]] == n - 1) break;
     }
-    for (int i = 0, k = 0; i < n; i++, k -= !!k) {
-      if (ra[i] == n - 1) {
-        k = 0;
-        continue;
-      }
-      int j = sa[ra[i] + 1];
-      while (i + k < n and j + k < n and s[i + k] == s[j + k]) k++;
-      lcp[ra[i]] = k;
-    }
+    for (int i = 0, j = rk[lcp[0] = 0], k = 0; i < n - 1; i++, k++) 
+      while (k >= 0 && s[i] != s[sa[j - 1] + k])
+        lcp[j] = k--, j = rk[sa[j] + 1];  
   }
 
   auto at(int i, int j) {
