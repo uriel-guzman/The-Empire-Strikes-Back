@@ -53,14 +53,6 @@ erase() {
 	fi
 }
 
-timer() {
-	start=$(ruby -e 'puts (Time.now.to_f * 1000).to_i')
-	$@
-	end=$(ruby -e 'puts (Time.now.to_f * 1000).to_i')
-	elapsed=$((end - start))
-	printf "\n=====\nUsed: ${elapsed} ms\n"
-}
-
 compilation() {
 	alias flags='-Wall -Wextra -Wshadow -fmax-errors=3 -w'
 	g++-9 --std=c++17 $2 ${flags} $1.cpp -o $1.out 
@@ -68,14 +60,14 @@ compilation() {
 
 debug() {
 	compilation $1 -DLOCAL 
-	timer ./$1.out < $2
-	printf "\n"
+	./$1.out < $2
+	rm -r ./$1.out
 } 
 
 run() {
 	compilation $1 ""  
-	timer ./$1.out < $2
-	printf "\n"
+	./$1.out < $2
+	rm -r ./$1.out
 }
 
 
@@ -126,11 +118,12 @@ omegaup() {
 
 	myDir=$(pwd)
 
-	g++-9 --std=c++17 $1.cpp -o prog
-	g++-9 --std=c++17 gen.cpp -o gen 
+	compilation $1 "" 
+	compilation gen "" 
 	
 	# Create folder
 	problemName="problem_${1}"
+	rm -r ${problemName}
 	mkdir ${problemName}
 	
 	# Add solution and generator to the folder
@@ -152,12 +145,27 @@ omegaup() {
 	echo "# Salida\n Como queremos la salida" >> "es.markdown"
 	echo "#Ejemplo\n ||input\n ||output\n ||end\n" >> "es.markdown"
 	
+	echo "# Límites\n" >> "es.markdown"
+	echo "- \$1 \leq n \leq 10^5$" >> "es.markdown"
+	echo "\n----------\n" >> "es.markdown"
+	
+	echo "# Subtareas\n" >> "es.markdown"
+	echo "Para un 10 % de los casos:\n" >> "es.markdown"
+	echo "- \$1 \leq n \leq 10$" >> "es.markdown"
+	echo "\n----------\n" >> "es.markdown"
+	
+	echo "Para un 40 % de los casos (agrupados):\n" >> "es.markdown"
+	echo "- \$1 \leq n \leq 10$" >> "es.markdown"
+	echo "\n----------\n" >> "es.markdown"
+  
+	echo "- Para un 50 % de los casos (agrupados) los límites originales." >> "es.markdown"
+	
 	casesDir="${folderDir}/cases"
 
 	cd ${myDir}	
 	
 	# Weak test cases
-	for ((i = 1; i <= 30; i++)); do
+	for ((i = 1; i <= 10; i++)); do
 		input="${casesDir}/${i}.in"
 		output="${casesDir}/${i}.out"
 		./gen.out > ${input}
@@ -165,7 +173,7 @@ omegaup() {
 	done
 	
 	# Medium test cases
-	for ((i = 1; i <= 30; i++)); do
+	for ((i = 1; i <= 40; i++)); do
 		input="${casesDir}/medium.${i}.in"
 		output="${casesDir}/medium.${i}.out"
 		./gen.out medium > ${input}
@@ -173,7 +181,7 @@ omegaup() {
 	done
 	
 	# Big test cases
-	for ((i = 1; i <= 40; i++)); do
+	for ((i = 1; i <= 50; i++)); do
 		input="${casesDir}/big.${i}.in"
 		output="${casesDir}/big.${i}.out"
 		./gen.out is big > ${input}
