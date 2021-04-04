@@ -58,11 +58,9 @@ struct Pt {
     return os << "(" << p.x << ", " << p.y << ")"; 
   }
   
-  void read() {
-    lli x, y;
-    cin >> x >> y;
-    *this = Pt(x, y);
-  }  
+  friend istream &operator >> (istream &is, Pt &p) {
+    return is >> p.x >> p.y;
+  } 
 };
 
 using Poly = vector<Pt>;

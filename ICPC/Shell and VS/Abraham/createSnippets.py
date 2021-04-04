@@ -1,7 +1,7 @@
 import os
 
-dirIcpc = r'/Users/abraham/The-Empire-Strikes-Back/ICPC/Codes/'
-cppJson = "/Users/abraham/Library/Application Support/Code/User/snippets/cpp.json"
+dirIcpc = r'/Users/abrahammurillo/The-Empire-Strikes-Back/ICPC/Codes/'
+cppJson = "/Users/abrahammurillo/Library/Application Support/Code/User/snippets/cpp.json"
 
 def solve(file, dir, out):
   # print(file, dir)

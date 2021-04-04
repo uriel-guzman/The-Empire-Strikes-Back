@@ -2,7 +2,7 @@ template <class T>
 struct SuffixArray {
   int n;
   T s;
-  vector<int> sa, ra, lcp;
+  vector<int> sa, rk, lcp;
   
   SuffixArray(const T &a) : n(sz(a) + 1), s(a), sa(n), rk(n), lcp(n) {
     s.pb(0);
