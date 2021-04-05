@@ -33,11 +33,11 @@ struct Queue {
     b.push(x);
   }
  
-  void pop() {
+  T pop() {
     if (a.empty())
       while (!b.empty())
         a.push(b.pop());
-    a.pop();
+    return a.pop();
   }
  
   T query() {
