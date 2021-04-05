@@ -7,6 +7,5 @@ T upperBound(T lo, T hi, F ok) {
 		else
 			hi = mid;
 	}
-
 	return ok(hi) ? hi : ok(lo) ? lo : -1;
 }
