@@ -15,6 +15,7 @@ struct Frac {
   friend ostream & operator << (ostream &os, const Frac &f) { return os << f.n << "/" << f.d; }
 
   Frac operator - () const { return Frac(-n, d); }
+  double operator ()() const { return double(n) / double(d); }
   Frac operator * (const Frac &f) { return Frac(n * f.n, d * f.d); }
   Frac operator / (const Frac &f) { return Frac(n * f.d, d * f.n); }
 

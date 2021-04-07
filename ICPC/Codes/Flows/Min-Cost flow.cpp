@@ -8,18 +8,17 @@ struct Mcmf {
   };
 
   F eps = (F) 1e-9;
-  int s, t, n, m = 0;
-  vector< vector<Edge> > g;
+  int s, t, n;
+  vector<vector<Edge>> graph;
   vector<Edge*> prev;
   vector<C> cost;
   vector<int> state;
 
-  Mcmf(int n) : n(n), g(n), cost(n), state(n), prev(n), s(n - 2), t(n - 1) {}
+  Mcmf(int n) : n(n), graph(n), cost(n), state(n), prev(n), s(n - 2), t(n - 1) {}
 
   void add(int u, int v, C cost, F cap) {
-    g[u].pb(Edge(u, v, cost, cap, sz(g[v])));
-    g[v].pb(Edge(v, u, -cost, 0, sz(g[u]) - 1));
-    m += 2;
+    graph[u].pb(Edge(u, v, cost, cap, sz(graph[v])));
+    graph[v].pb(Edge(v, u, -cost, 0, sz(graph[u]) - 1));
   }
 
   bool bfs() {
@@ -31,7 +30,7 @@ struct Mcmf {
     while (sz(qu)) {
       int u = qu.front(); qu.pop_front();
       state[u] = 2;
-      for (Edge &e : g[u]) if (e.cap - e.flow > eps)
+      for (Edge &e : graph[u]) if (e.cap - e.flow > eps)
         if (cost[u] + e.cost < cost[e.v]) {
           cost[e.v] = cost[u] + e.cost;
           prev[e.v] = &e;
@@ -53,7 +52,7 @@ struct Mcmf {
         pushed = min(pushed, e->cap - e->flow);
       for (Edge* e = prev[t]; e != nullptr; e = prev[e->u]) {
         e->flow += pushed;
-        g[e->v][e->inv].flow -= pushed;
+        graph[e->v][e->inv].flow -= pushed;
         cost += e->cost * pushed;
       }
       flow += pushed;
