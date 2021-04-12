@@ -9,14 +9,13 @@ struct Wav {
       return;
     amt.reserve(e - b + 1);
     amt.pb(0);
-    int m = (lo + hi) >> 1;
+    int mid = (lo + hi) >> 1;
+    auto leq = [mid](int x) { return x <= mid; };
     for (auto it = b; it != e; it++)
-      amt.pb(amt.back() + (*it <= m));
-    auto p = stable_partition(b, e, [&](int x) { 
-      return x <= m; 
-    });
-    left = new Wav(lo, m, b, p);
-    right = new Wav(m + 1, hi, p, e);
+      amt.pb(amt.back() + leq(*it));
+    auto p = stable_partition(b, e, leq);
+    left = new Wav(lo, mid, b, p);
+    right = new Wav(mid + 1, hi, p, e);
   }
 
   int kth(int l, int r, int k) {
@@ -29,12 +28,12 @@ struct Wav {
     return right->kth(l - amt[l - 1], r - amt[r], k - amt[r] + amt[l - 1]);
   }
 
-  int leq(int l, int r, int mx) {
-    if (r < l || mx < lo)
+  int count(int l, int r, int x, int y) {
+    if (r < l || y < x || y < lo || hi < x ) 
       return 0;
-    if (hi <= mx)
+    if (x <= lo && hi <= y) 
       return r - l + 1;
-    return left->leq(amt[l - 1] + 1, amt[r], mx) +
-           right->leq(l - amt[l - 1], r - amt[r], mx);
+    return left->count(amt[l - 1] + 1, amt[r], x, y) +
+           right->count(l - amt[l - 1], r - amt[r], x, y);
   }
 };

@@ -1,7 +1,7 @@
 # Fdb version 3
-["pdflatex"] 1617837779 "/Users/abrahammurillo/The-Empire-Strikes-Back/ICPC/Repository/Chapters.tex" "/Users/abrahammurillo/The-Empire-Strikes-Back/ICPC/Repository/Chapters.pdf" "Chapters" 1617838053
-  "/Users/abrahammurillo/The-Empire-Strikes-Back/ICPC/Repository/Chapters.aux" 1617837779 8 a94a2480d3289e625eea47cd1b285758 ""
-  "/Users/abrahammurillo/The-Empire-Strikes-Back/ICPC/Repository/Chapters.tex" 1617837966 380 4cd6aa1b2fce466673bcc399f9863e4d ""
+["pdflatex"] 1617837779 "/Users/abrahammurillo/The-Empire-Strikes-Back/ICPC/Repository/Chapters.tex" "/Users/abrahammurillo/The-Empire-Strikes-Back/ICPC/Repository/Chapters.pdf" "Chapters" 1618239542
+  "/Users/abrahammurillo/The-Empire-Strikes-Back/ICPC/Repository/Chapters.aux" 1617845044 8 a94a2480d3289e625eea47cd1b285758 ""
+  "/Users/abrahammurillo/The-Empire-Strikes-Back/ICPC/Repository/Chapters.tex" 1617845150 380 4cd6aa1b2fce466673bcc399f9863e4d ""
   "/Users/abrahammurillo/The-Empire-Strikes-Back/ICPC/Repository/enumitem.sty" 0 -1 0 ""
   "/usr/local/texlive/2021basic/texmf-dist/tex/generic/atbegshi/atbegshi.sty" 1575674566 24708 5584a51a7101caf7e6bbf1fc27d8f7b1 ""
   "/usr/local/texlive/2021basic/texmf-dist/tex/generic/babel-english/english.ldf" 1496785618 7008 9ff5fdcc865b01beca2b0fe4a46231d4 ""
@@ -43,10 +43,10 @@
   "/usr/local/texlive/2021basic/texmf-dist/web2c/texmf.cnf" 1616443989 39972 3d6bb4d9d719e93193fa020b58adf5d4 ""
   "/usr/local/texlive/2021basic/texmf-var/web2c/pdftex/pdflatex.fmt" 1617836023 2057445 787f75ef7bd5e74cb251e550862ce9f5 ""
   "/usr/local/texlive/2021basic/texmf.cnf" 1616691442 628 e23d78b1be89c53495d66eec94d2300d ""
-  "Chapters.tex" 1617837966 380 4cd6aa1b2fce466673bcc399f9863e4d ""
-  "Preamble.tex" 1617837994 5868 4f4126f3666bb3cdf1c224bd1235d61b ""
+  "Chapters.tex" 1617845150 380 4cd6aa1b2fce466673bcc399f9863e4d ""
+  "Preamble.tex" 1617844564 5868 4f4126f3666bb3cdf1c224bd1235d61b ""
   "enumitem.sty" 0 -1 0 ""
   (generated)
   "Chapters.log"
-  "/Users/abrahammurillo/The-Empire-Strikes-Back/ICPC/Repository/Chapters.pdf"
   "/Users/abrahammurillo/The-Empire-Strikes-Back/ICPC/Repository/Chapters.log"
+  "/Users/abrahammurillo/The-Empire-Strikes-Back/ICPC/Repository/Chapters.pdf"
