@@ -6,11 +6,11 @@ Mint choose(int n, int k) {
   return fac[n] * ifac[k] * ifac[n - k];
 }
 
-fac[0] = 1;
-fore (i, 1, N)
-  fac[i] = fac[i - 1] * i;
-
-ifac[N - 1] = fac[N - 1].inv();
-fore (i, N - 1, 0)
-  ifac[i] = ifac[i + 1] * (i + 1);
-
+void factorial(int n) {
+  fac[0] = 1;
+  fore (i, 1, n)
+    fac[i] = fac[i - 1] * i;
+  ifac[n - 1] = fac[n - 1].inv();
+  fore (i, n - 1, 0)
+    ifac[i] = ifac[i + 1] * (i + 1);
+}
