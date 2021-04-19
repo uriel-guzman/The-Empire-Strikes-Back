@@ -1,20 +1,20 @@
 template <int p>
-struct Mod {
-  Mod operator + (const Mod &m) const { return Mod(v + m.v); }
-  Mod operator - (const Mod &m) const { return Mod(v - m.v + p); }
-  Mod operator * (const Mod &m) const { return Mod(1LL * v * m.v); }
-  Mod inv() const { return Mod(minv(v, p)); } 
-  Mod operator - () const { return Mod(-v); }
+struct Modular {
+  Modular operator + (const Modular &m) const { return Modular(v + m.v); }
+  Modular operator - (const Modular &m) const { return Modular(v - m.v + p); }
+  Modular operator * (const Modular &m) const { return Modular(1LL * v * m.v); }
+  Modular inv() const { return Modular(minv(v, p)); } 
+  Modular operator - () const { return Modular(-v); }
   
-  Mod& operator += (const Mod &m) { return *this = *this + m; }
-  Mod& operator -= (const Mod &m) { return *this = *this - m; }
-  Mod& operator *= (const Mod &m) { return *this = *this * m; }
+  Modular& operator += (const Modular &m) { return *this = *this + m; }
+  Modular& operator -= (const Modular &m) { return *this = *this - m; }
+  Modular& operator *= (const Modular &m) { return *this = *this * m; }
   
-  friend ostream & operator << (ostream &os, const Mod &m) { return os << m.v; }
-  friend istream & operator >> (istream &is, Mod &m) { return is >> m.v; }
+  friend ostream & operator << (ostream &os, const Modular &m) { return os << m.v; }
+  friend istream & operator >> (istream &is, Modular &m) { return is >> m.v; }
   
   int v;
-  Mod(lli x = 0) : v((x %= p) < 0 ? x + p : x) {}
+  Modular(lli x = 0) : v((x %= p) < 0 ? x + p : x) {}
 private:
   static int minv(int a, int m) {
     a %= m;
@@ -24,4 +24,4 @@ private:
 };
  
 // for a variable modulo or normal one
-using Mint = Mod<int(1e9) + 7>;
+using Mint = Modular<int(1e9) + 7>;
