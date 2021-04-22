@@ -17,14 +17,6 @@ struct Fenwick {
     return v;
   }
 
-  T at(int i) {
-    T v = fenw[i];
-    int j = i - lsb(i);
-    for (--i; i != j; i -= lsb(i))
-      v -= fenw[i];
-    return v;
-  }
-
   int lower_bound(T v) {
     int i = 0;
     fore (k, 1 + __lg(sz(fenw)), 0)

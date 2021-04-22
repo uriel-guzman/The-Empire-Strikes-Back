@@ -1,7 +1,7 @@
 bitset<N> isPrime;
 vi primes;
 
-void getPrimes() {
+void sieve() {
   isPrime.set();
   isPrime[0] = isPrime[1] = 0;
   for (int i = 2; i * i < N; ++i) if (isPrime[i])

@@ -4,7 +4,7 @@ vector<Query> queries;
 const int blo = sqrt(N);
 sort(all(queries), [&] (Query &a, Query &b) {
   const int ga = a.l / blo, gb = b.l / blo;
-  if (ga == gb) return a.r < b.r; 
+  if (ga == gb) return ga & 1 ? a.r < b.r : a.r > b.r; 
   return a.l < b.l;
 });
 
