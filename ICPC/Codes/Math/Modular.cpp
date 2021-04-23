@@ -23,5 +23,4 @@ private:
   }
 };
  
-// for a variable modulo or normal one
 using Mint = Modular<int(1e9) + 7>;
