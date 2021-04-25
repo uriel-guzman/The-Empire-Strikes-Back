@@ -1,9 +1,9 @@
-\section{Combinatorics}
+\section{Math}
 
 \begin{tabular}{ |p{1cm}|p{3cm}|p{3cm}|  }
   \hline  
   \rowcolor{Blue} 
-  \multicolumn{3}{|c|}{Combinatorics table} \\ \hline
+  \multicolumn{3}{|c|}{Math table} \\ \hline
   \rowcolor{LightBlue2} 
   Number & Factorial & Catalan \\ \hline
   0 & 1 & 1 \\ \hline
@@ -31,17 +31,17 @@
 \vspace{-5pt}
 
 \subsection{Factorial} 
-\addfile{../Codes/Combinatorics/Factorial.cpp} 
+\addfile{../Codes/Math/Factorial.cpp} 
 
 \subsection{Factorial mod $smallPrime$} 
-\addfile{../Codes/Combinatorics/Factorial mod small prime.cpp}
+\addfile{../Codes/Math/Factorial mod small prime.cpp}
 
 \subsection{Lucas theorem}
 \ncomment{Changes $\binom{n}{k} \bmod{p}$, with $n \geq 2e6, k \geq 2e6$ and $p \leq 1e7$ }
 \begin{gather*}
 \binom{n}{k} \equiv \prod_{i = 0}^{n}\binom{n_i}{k_i} \bmod{p}
 \end{gather*}
-\addfile{../Codes/Combinatorics/Lucas.cpp}
+\addfile{../Codes/Math/Lucas.cpp}
 \vspace{-15pt}
 
 \subsection{Stars and bars}
@@ -58,11 +58,11 @@ Enclosing $n$ objects in $k$ boxes
 \binom{n}{k_1, k_2, ..., k_m} = \frac{n!}{k_1! * k_2! * ... * k_m!}
 \end{gather*}
 
-\addfile{../Codes/Combinatorics/Choose.cpp}
+\addfile{../Codes/Math/Choose.cpp}
 \vspace{-15pt}
 
 \subsection{Catalan}
-\addfile{../Codes/Combinatorics/Catalan.cpp}
+\addfile{../Codes/Math/Catalan.cpp}
 
 \subsection{Burnside's lemma}
 \begin{gather*}
@@ -70,4 +70,4 @@ Enclosing $n$ objects in $k$ boxes
 \end{gather*}
 
 \subsection{Prime factors of N!}
-\addfile{../Codes/Combinatorics/Factorial factors.cpp}
+\addfile{../Codes/Math/Factorial factors.cpp}

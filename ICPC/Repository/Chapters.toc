@@ -1,0 +1,124 @@
+\babel@toc {english}{}
+\contentsline {section}{\numberline {1}Data structures}{2}{section.1}%
+\contentsline {subsection}{\numberline {1.1}DSU with rollback}{2}{subsection.1.1}%
+\contentsline {subsection}{\numberline {1.2}Monotone queue}{3}{subsection.1.2}%
+\contentsline {subsection}{\numberline {1.3}Stack queue}{3}{subsection.1.3}%
+\contentsline {subsection}{\numberline {1.4}Mo's algorithm $\mathcal {O}((N + Q) \cdot \sqrt {N} \cdot F)$ }{3}{subsection.1.4}%
+\contentsline {subsection}{\numberline {1.5}Static to dynamic $\mathcal {O}(N \cdot F \cdot log N)$}{3}{subsection.1.5}%
+\contentsline {section}{\numberline {2}Intervals}{4}{section.2}%
+\contentsline {subsection}{\numberline {2.1}Disjoint intervals}{4}{subsection.2.1}%
+\contentsline {subsection}{\numberline {2.2}Interval tree}{4}{subsection.2.2}%
+\contentsline {section}{\numberline {3}Static range queries}{4}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Sparse table}{4}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}Squirtle decomposition}{4}{subsection.3.2}%
+\contentsline {subsection}{\numberline {3.3}Parallel binary search $\mathcal {O}((N + Q) \cdot log N \cdot F)$}{5}{subsection.3.3}%
+\contentsline {section}{\numberline {4}Dynamic range queries}{5}{section.4}%
+\contentsline {subsection}{\numberline {4.1}D-dimensional Fenwick tree}{5}{subsection.4.1}%
+\contentsline {subsection}{\numberline {4.2}Dynamic segment tree}{5}{subsection.4.2}%
+\contentsline {subsection}{\numberline {4.3}Persistent segment tree}{5}{subsection.4.3}%
+\contentsline {subsection}{\numberline {4.4}Wavelet tree}{6}{subsection.4.4}%
+\contentsline {subsection}{\numberline {4.5}Li Chao tree}{6}{subsection.4.5}%
+\contentsline {section}{\numberline {5}Binary trees}{6}{section.5}%
+\contentsline {subsection}{\numberline {5.1}Ordered tree}{6}{subsection.5.1}%
+\contentsline {subsection}{\numberline {5.2}Unordered tree}{6}{subsection.5.2}%
+\contentsline {subsection}{\numberline {5.3}Treap}{6}{subsection.5.3}%
+\contentsline {subsection}{\numberline {5.4}Implicit treap (Rope)}{7}{subsection.5.4}%
+\contentsline {section}{\numberline {6}Graphs}{7}{section.6}%
+\contentsline {subsection}{\numberline {6.1}Topological sort $\mathcal {O}(V + E)$}{7}{subsection.6.1}%
+\contentsline {subsection}{\numberline {6.2}Tarjan algorithm (SCC) $\mathcal {O}(V + E)$}{7}{subsection.6.2}%
+\contentsline {subsection}{\numberline {6.3}Kosaraju algorithm (SCC) $\mathcal {O}(V + E)$}{7}{subsection.6.3}%
+\contentsline {subsection}{\numberline {6.4}Cutpoints and Bridges $\mathcal {O}(V + E)$}{7}{subsection.6.4}%
+\contentsline {subsection}{\numberline {6.5}Two Sat $\mathcal {O}(V + E)$}{7}{subsection.6.5}%
+\contentsline {subsection}{\numberline {6.6}Detect a cycle $\mathcal {O}(V + E)$}{8}{subsection.6.6}%
+\contentsline {subsection}{\numberline {6.7}Euler tour for Mo's in a tree $\mathcal {O}((V + E) \cdot \sqrt {V})$}{8}{subsection.6.7}%
+\contentsline {subsection}{\numberline {6.8}Isomorphism $\mathcal {O}(V + E)$}{8}{subsection.6.8}%
+\contentsline {subsection}{\numberline {6.9}Dynamic connectivity $\mathcal {O}((N + Q) \cdot logQ)$}{8}{subsection.6.9}%
+\contentsline {section}{\numberline {7}Tree queries}{8}{section.7}%
+\contentsline {subsection}{\numberline {7.1}Lowest common ancestor (LCA)}{8}{subsection.7.1}%
+\contentsline {subsection}{\numberline {7.2}Virtual tree}{9}{subsection.7.2}%
+\contentsline {subsection}{\numberline {7.3}Guni}{9}{subsection.7.3}%
+\contentsline {subsection}{\numberline {7.4}Centroid decomposition}{9}{subsection.7.4}%
+\contentsline {subsection}{\numberline {7.5}Heavy-light decomposition}{9}{subsection.7.5}%
+\contentsline {subsection}{\numberline {7.6}Link-Cut tree}{10}{subsection.7.6}%
+\contentsline {section}{\numberline {8}Flows}{11}{section.8}%
+\contentsline {subsection}{\numberline {8.1}Dinic $\mathcal {O}(min(E \cdot flow, V^2E))$}{11}{subsection.8.1}%
+\contentsline {subsection}{\numberline {8.2}Min cost flow $\mathcal {O}(min(E \cdot flow, V^2E))$}{11}{subsection.8.2}%
+\contentsline {subsection}{\numberline {8.3}Hopcroft-Karp $\mathcal {O}(E \sqrt {V})$}{12}{subsection.8.3}%
+\contentsline {subsection}{\numberline {8.4}Hungarian $\mathcal {O}(N ^ 3)$}{12}{subsection.8.4}%
+\contentsline {section}{\numberline {9}Strings}{12}{section.9}%
+\contentsline {subsection}{\numberline {9.1}Hash $\mathcal {O}(N)$}{12}{subsection.9.1}%
+\contentsline {subsection}{\numberline {9.2}KMP $\mathcal {O}(N)$}{13}{subsection.9.2}%
+\contentsline {subsection}{\numberline {9.3}KMP automaton $\mathcal {O}(Alphabet \cdot N)$}{13}{subsection.9.3}%
+\contentsline {subsection}{\numberline {9.4}Z algorithm $\mathcal {O}(N)$}{13}{subsection.9.4}%
+\contentsline {subsection}{\numberline {9.5}Manacher algorithm $\mathcal {O}(N)$}{13}{subsection.9.5}%
+\contentsline {subsection}{\numberline {9.6}Suffix array $\mathcal {O}(N \cdot log N)$}{13}{subsection.9.6}%
+\contentsline {subsection}{\numberline {9.7}Suffix automaton $\mathcal {O}(\DOTSB \sum@ \slimits@ s_i)$}{14}{subsection.9.7}%
+\contentsline {subsection}{\numberline {9.8}Aho corasick $\mathcal {O}(\DOTSB \sum@ \slimits@ s_i)$}{15}{subsection.9.8}%
+\contentsline {subsection}{\numberline {9.9}Eertree $\mathcal {O}(\DOTSB \sum@ \slimits@ s_i)$}{15}{subsection.9.9}%
+\contentsline {section}{\numberline {10}Dynamic Programming}{15}{section.10}%
+\contentsline {subsection}{\numberline {10.1}All submasks of a mask}{15}{subsection.10.1}%
+\contentsline {subsection}{\numberline {10.2}Matrix Chain Multiplication}{15}{subsection.10.2}%
+\contentsline {subsection}{\numberline {10.3}Digit DP}{15}{subsection.10.3}%
+\contentsline {subsection}{\numberline {10.4}Knapsack 0/1}{16}{subsection.10.4}%
+\contentsline {subsection}{\numberline {10.5}Convex Hull Trick $\mathcal {O}(n^2)$ $\Rightarrow $ $\mathcal {O}(n)$}{16}{subsection.10.5}%
+\contentsline {subsection}{\numberline {10.6}Divide and conquer $\mathcal {O}(kn^2)$ $\Rightarrow $ $\mathcal {O}(k \cdot nlogn)$}{16}{subsection.10.6}%
+\contentsline {subsection}{\numberline {10.7}Knuth optimization $\mathcal {O}(n^3)$ $\Rightarrow $ $\mathcal {O}(n^2)$}{16}{subsection.10.7}%
+\contentsline {section}{\numberline {11}Game Theory}{16}{section.11}%
+\contentsline {subsection}{\numberline {11.1}Grundy Numbers}{16}{subsection.11.1}%
+\contentsline {section}{\numberline {12}Math}{17}{section.12}%
+\contentsline {subsection}{\numberline {12.1}Factorial}{17}{subsection.12.1}%
+\contentsline {subsection}{\numberline {12.2}Factorial mod $smallPrime$}{17}{subsection.12.2}%
+\contentsline {subsection}{\numberline {12.3}Lucas theorem}{17}{subsection.12.3}%
+\contentsline {subsection}{\numberline {12.4}Stars and bars}{17}{subsection.12.4}%
+\contentsline {subsection}{\numberline {12.5}N choose K}{17}{subsection.12.5}%
+\contentsline {subsection}{\numberline {12.6}Catalan}{17}{subsection.12.6}%
+\contentsline {subsection}{\numberline {12.7}Burnside's lemma}{17}{subsection.12.7}%
+\contentsline {subsection}{\numberline {12.8}Prime factors of N!}{17}{subsection.12.8}%
+\contentsline {section}{\numberline {13}Number Theory}{17}{section.13}%
+\contentsline {subsection}{\numberline {13.1}Goldbach conjecture}{17}{subsection.13.1}%
+\contentsline {subsection}{\numberline {13.2}Prime numbers distribution}{17}{subsection.13.2}%
+\contentsline {subsection}{\numberline {13.3}Sieve of Eratosthenes $\mathcal {O}(N \cdot log(log N))$ }{17}{subsection.13.3}%
+\contentsline {subsection}{\numberline {13.4}Phi of euler $\mathcal {O}(\sqrt {N})$}{18}{subsection.13.4}%
+\contentsline {subsection}{\numberline {13.5}Miller-Rabin $\mathcal {O}(Witnesses \cdot (log N) ^ 3)$}{18}{subsection.13.5}%
+\contentsline {subsection}{\numberline {13.6}Pollard-Rho $\mathcal {O}(N ^ {1/4})$}{18}{subsection.13.6}%
+\contentsline {subsection}{\numberline {13.7}Amount of divisors $\mathcal {O}(N ^ {1/3})$}{18}{subsection.13.7}%
+\contentsline {subsection}{\numberline {13.8}Bézout's identity}{18}{subsection.13.8}%
+\contentsline {subsection}{\numberline {13.9}GCD}{18}{subsection.13.9}%
+\contentsline {subsection}{\numberline {13.10}LCM}{18}{subsection.13.10}%
+\contentsline {subsection}{\numberline {13.11}Euclid $\mathcal {O}(log (a \cdot b))$}{18}{subsection.13.11}%
+\contentsline {subsection}{\numberline {13.12}Chinese remainder theorem}{18}{subsection.13.12}%
+\contentsline {section}{\numberline {14}Math}{18}{section.14}%
+\contentsline {subsection}{\numberline {14.1}Progressions}{18}{subsection.14.1}%
+\contentsline {subsection}{\numberline {14.2}Fpow}{18}{subsection.14.2}%
+\contentsline {subsection}{\numberline {14.3}Fibonacci}{18}{subsection.14.3}%
+\contentsline {section}{\numberline {15}Bit tricks}{19}{section.15}%
+\contentsline {subsection}{\numberline {15.1}Bitset}{19}{subsection.15.1}%
+\contentsline {section}{\numberline {16}Geometry 222}{19}{section.16}%
+\contentsline {section}{\numberline {17}Points}{19}{section.17}%
+\contentsline {subsection}{\numberline {17.1}Points}{19}{subsection.17.1}%
+\contentsline {subsection}{\numberline {17.2}Angle between vectors}{19}{subsection.17.2}%
+\contentsline {subsection}{\numberline {17.3}Closest pair of points $\mathcal {O}(N \cdot log N)$}{19}{subsection.17.3}%
+\contentsline {subsection}{\numberline {17.4}Projection}{19}{subsection.17.4}%
+\contentsline {subsection}{\numberline {17.5}KD-Tree}{19}{subsection.17.5}%
+\contentsline {section}{\numberline {18}Lines and segments}{20}{section.18}%
+\contentsline {subsection}{\numberline {18.1}Line}{20}{subsection.18.1}%
+\contentsline {subsection}{\numberline {18.2}Segment}{20}{subsection.18.2}%
+\contentsline {subsection}{\numberline {18.3}Distance point-line}{20}{subsection.18.3}%
+\contentsline {subsection}{\numberline {18.4}Distance point-segment}{20}{subsection.18.4}%
+\contentsline {subsection}{\numberline {18.5}Distance segment-segment}{20}{subsection.18.5}%
+\contentsline {section}{\numberline {19}Circles}{20}{section.19}%
+\contentsline {subsection}{\numberline {19.1}Circle}{20}{subsection.19.1}%
+\contentsline {subsection}{\numberline {19.2}Distance point-circle}{21}{subsection.19.2}%
+\contentsline {subsection}{\numberline {19.3}Minimum enclosing circle $\mathcal {O}(N)$ wow!!}{21}{subsection.19.3}%
+\contentsline {subsection}{\numberline {19.4}Common area circle-polygon $\mathcal {O}(N)$}{21}{subsection.19.4}%
+\contentsline {section}{\numberline {20}Polygons}{21}{section.20}%
+\contentsline {subsection}{\numberline {20.1}Area of polygon $\mathcal {O}(N)$}{21}{subsection.20.1}%
+\contentsline {subsection}{\numberline {20.2}Convex-Hull $\mathcal {O}(N \cdot logN)$}{21}{subsection.20.2}%
+\contentsline {subsection}{\numberline {20.3}Cut polygon by a line $\mathcal {O}(N)$}{22}{subsection.20.3}%
+\contentsline {subsection}{\numberline {20.4}Perimeter $\mathcal {O}(N)$}{22}{subsection.20.4}%
+\contentsline {subsection}{\numberline {20.5}Point in polygon $\mathcal {O}(N)$}{22}{subsection.20.5}%
+\contentsline {subsection}{\numberline {20.6}Point in convex-polygon $\mathcal {O}(logN)$}{22}{subsection.20.6}%
+\contentsline {subsection}{\numberline {20.7}Is convex $\mathcal {O}(N)$}{22}{subsection.20.7}%
+\contentsline {section}{\numberline {21}Geometry misc}{22}{section.21}%
+\contentsline {subsection}{\numberline {21.1}Radial order}{22}{subsection.21.1}%
+\contentsline {subsection}{\numberline {21.2}Sort along a line $\mathcal {O}(N \cdot logN)$}{22}{subsection.21.2}%
