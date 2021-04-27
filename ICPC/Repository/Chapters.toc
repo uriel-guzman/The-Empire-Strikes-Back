@@ -33,8 +33,8 @@
 \contentsline {subsection}{\numberline {6.7}Euler tour for Mo's in a tree $\mathcal {O}((V + E) \cdot \sqrt {V})$}{8}{subsection.6.7}%
 \contentsline {subsection}{\numberline {6.8}Isomorphism $\mathcal {O}(V + E)$}{8}{subsection.6.8}%
 \contentsline {subsection}{\numberline {6.9}Dynamic connectivity $\mathcal {O}((N + Q) \cdot logQ)$}{8}{subsection.6.9}%
-\contentsline {section}{\numberline {7}Tree queries}{8}{section.7}%
-\contentsline {subsection}{\numberline {7.1}Lowest common ancestor (LCA)}{8}{subsection.7.1}%
+\contentsline {section}{\numberline {7}Tree queries}{9}{section.7}%
+\contentsline {subsection}{\numberline {7.1}Lowest common ancestor (LCA)}{9}{subsection.7.1}%
 \contentsline {subsection}{\numberline {7.2}Virtual tree}{9}{subsection.7.2}%
 \contentsline {subsection}{\numberline {7.3}Guni}{9}{subsection.7.3}%
 \contentsline {subsection}{\numberline {7.4}Centroid decomposition}{9}{subsection.7.4}%

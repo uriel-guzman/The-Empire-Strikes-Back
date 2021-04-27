@@ -7,9 +7,10 @@ struct SuffixArray {
   SuffixArray(const T &a) : n(sz(a) + 1), s(a), sa(n), rk(n), lcp(n) {
     s.pb(0);
     fore (i, 0, n) sa[i] = i, rk[i] = s[i];
+    vector<int> nsa(n), nrk(n), cnt(max(260, n));
     for (int k = 0; k < n; k ? k *= 2 : k++) {
-      vector<int> nsa(sa), nrk(n), cnt(max(260, n));
-      fore (i, 0, n) nsa[i] = (nsa[i] - k + n) % n, cnt[rk[i]]++;
+      fill(all(cnt), 0);
+      fore (i, 0, n) nsa[i] = (sa[i] - k + n) % n, cnt[rk[i]]++;
       partial_sum(all(cnt), cnt.begin());
       fore (i, n, 0) sa[--cnt[rk[nsa[i]]]] = nsa[i];
       for (int i = 1, r = 0; i < n; i++) 
@@ -27,22 +28,17 @@ struct SuffixArray {
   }
 
   int count(T &t) {
-    ii lo(0, n - 1), hi(0, n - 1);
+    int l = 0, r = n - 1;
     fore (i, 0, sz(t)) {
-      while (lo.f + 1 < lo.s) {
-        int mid = (lo.f + lo.s) / 2;
-        (at(mid, i) < t[i] ? lo.f : lo.s) = mid;
+      int p = l, q = r;
+      for (int k = n; k > 0; k >>= 1) {
+        while (p + k < r && at(p + k, i) < t[i]) p += k;
+        while (q - k > l && t[i] < at(q - k, i)) q -= k;
       }
-      while (hi.f + 1 < hi.s) {
-        int mid = (hi.f + hi.s) / 2;
-        (t[i] < at(mid, i) ? hi.s : hi.f) = mid;
-      }
-      int p1 = (at(lo.f, i) == t[i] ? lo.f : lo.s);
-      int p2 = (at(hi.s, i) == t[i] ? hi.s : hi.f);
-      if (at(p1, i) != t[i] || at(p2, i) != t[i] || p1 > p2) 
-        return 0;
-      lo = hi = ii(p1, p2);
+      l = (at(p, i) == t[i] ? p : p + 1);
+      r = (at(q, i) == t[i] ? q : q - 1);
+      if (at(l, i) != t[i] && at(r, i) != t[i] || l > r) return 0;
     }
-    return lo.s - lo.f + 1;
+    return r - l + 1;
   }
 };
