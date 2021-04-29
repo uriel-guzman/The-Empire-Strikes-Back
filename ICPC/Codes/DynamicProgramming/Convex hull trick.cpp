@@ -6,6 +6,7 @@ struct Line {
   lli operator ()(lli x) const { return m * x + c; }
 };
 
+template <bool Max>
 struct DynamicHull : multiset<Line, less<>> {
   lli div(lli a, lli b) { 
     return a / b - ((a ^ b) < 0 && a % b); 
@@ -19,6 +20,7 @@ struct DynamicHull : multiset<Line, less<>> {
   }
 
   void add(lli m, lli c) {
+    if (!Max) m = -m, c = -c;
     auto z = insert({m, c, 0}), y = z++, x = y;
     while (isect(y, z)) z = erase(z);
     if (x != begin() && isect(--x, y))
@@ -30,6 +32,6 @@ struct DynamicHull : multiset<Line, less<>> {
   lli query(lli x) {
     if (empty()) return 0LL;
     auto f = *lower_bound(x);
-    return f(x); 
+    return Max ? f(x) : -f(x); 
   }
 };
