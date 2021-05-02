@@ -38,7 +38,7 @@
 \contentsline {subsection}{\numberline {7.2}Virtual tree}{9}{subsection.7.2}%
 \contentsline {subsection}{\numberline {7.3}Guni}{9}{subsection.7.3}%
 \contentsline {subsection}{\numberline {7.4}Centroid decomposition}{9}{subsection.7.4}%
-\contentsline {subsection}{\numberline {7.5}Heavy-light decomposition}{9}{subsection.7.5}%
+\contentsline {subsection}{\numberline {7.5}Heavy-light decomposition and Euler tour}{9}{subsection.7.5}%
 \contentsline {subsection}{\numberline {7.6}Link-Cut tree}{10}{subsection.7.6}%
 \contentsline {section}{\numberline {8}Flows}{11}{section.8}%
 \contentsline {subsection}{\numberline {8.1}Dinic $\mathcal {O}(min(E \cdot flow, V^2E))$}{11}{subsection.8.1}%
@@ -92,28 +92,29 @@
 \contentsline {subsection}{\numberline {14.2}Fpow}{18}{subsection.14.2}%
 \contentsline {subsection}{\numberline {14.3}Fibonacci}{18}{subsection.14.3}%
 \contentsline {section}{\numberline {15}Bit tricks}{19}{section.15}%
-\contentsline {subsection}{\numberline {15.1}Bitset}{19}{subsection.15.1}%
-\contentsline {section}{\numberline {16}Geometry 222}{19}{section.16}%
+\contentsline {subsection}{\numberline {15.1}Xor Basis}{19}{subsection.15.1}%
+\contentsline {subsection}{\numberline {15.2}Bitset}{19}{subsection.15.2}%
+\contentsline {section}{\numberline {16}Geometry}{19}{section.16}%
 \contentsline {section}{\numberline {17}Points}{19}{section.17}%
 \contentsline {subsection}{\numberline {17.1}Points}{19}{subsection.17.1}%
 \contentsline {subsection}{\numberline {17.2}Angle between vectors}{19}{subsection.17.2}%
 \contentsline {subsection}{\numberline {17.3}Closest pair of points $\mathcal {O}(N \cdot log N)$}{19}{subsection.17.3}%
-\contentsline {subsection}{\numberline {17.4}Projection}{19}{subsection.17.4}%
-\contentsline {subsection}{\numberline {17.5}KD-Tree}{19}{subsection.17.5}%
+\contentsline {subsection}{\numberline {17.4}Projection}{20}{subsection.17.4}%
+\contentsline {subsection}{\numberline {17.5}KD-Tree}{20}{subsection.17.5}%
 \contentsline {section}{\numberline {18}Lines and segments}{20}{section.18}%
 \contentsline {subsection}{\numberline {18.1}Line}{20}{subsection.18.1}%
 \contentsline {subsection}{\numberline {18.2}Segment}{20}{subsection.18.2}%
 \contentsline {subsection}{\numberline {18.3}Distance point-line}{20}{subsection.18.3}%
 \contentsline {subsection}{\numberline {18.4}Distance point-segment}{20}{subsection.18.4}%
-\contentsline {subsection}{\numberline {18.5}Distance segment-segment}{20}{subsection.18.5}%
-\contentsline {section}{\numberline {19}Circles}{20}{section.19}%
-\contentsline {subsection}{\numberline {19.1}Circle}{20}{subsection.19.1}%
+\contentsline {subsection}{\numberline {18.5}Distance segment-segment}{21}{subsection.18.5}%
+\contentsline {section}{\numberline {19}Circles}{21}{section.19}%
+\contentsline {subsection}{\numberline {19.1}Circle}{21}{subsection.19.1}%
 \contentsline {subsection}{\numberline {19.2}Distance point-circle}{21}{subsection.19.2}%
 \contentsline {subsection}{\numberline {19.3}Minimum enclosing circle $\mathcal {O}(N)$ wow!!}{21}{subsection.19.3}%
 \contentsline {subsection}{\numberline {19.4}Common area circle-polygon $\mathcal {O}(N)$}{21}{subsection.19.4}%
-\contentsline {section}{\numberline {20}Polygons}{21}{section.20}%
-\contentsline {subsection}{\numberline {20.1}Area of polygon $\mathcal {O}(N)$}{21}{subsection.20.1}%
-\contentsline {subsection}{\numberline {20.2}Convex-Hull $\mathcal {O}(N \cdot logN)$}{21}{subsection.20.2}%
+\contentsline {section}{\numberline {20}Polygons}{22}{section.20}%
+\contentsline {subsection}{\numberline {20.1}Area of polygon $\mathcal {O}(N)$}{22}{subsection.20.1}%
+\contentsline {subsection}{\numberline {20.2}Convex-Hull $\mathcal {O}(N \cdot logN)$}{22}{subsection.20.2}%
 \contentsline {subsection}{\numberline {20.3}Cut polygon by a line $\mathcal {O}(N)$}{22}{subsection.20.3}%
 \contentsline {subsection}{\numberline {20.4}Perimeter $\mathcal {O}(N)$}{22}{subsection.20.4}%
 \contentsline {subsection}{\numberline {20.5}Point in polygon $\mathcal {O}(N)$}{22}{subsection.20.5}%

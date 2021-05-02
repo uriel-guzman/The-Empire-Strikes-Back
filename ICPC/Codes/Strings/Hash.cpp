@@ -1,9 +1,9 @@
 struct Hash : array<int, 2> {
   static constexpr int mod = 1e9 + 7;
-  #define oper(op) friend Hash operator op (Hash a, Hash b) {\
-    fore (i, 0, sz(a)) a[i] = (1LL * a[i] op b[i] + mod) % mod;\ 
-    return a; } \
-
+  #define oper(op) friend Hash operator op (Hash a, Hash b) { \
+    fore (i, 0, sz(a)) a[i] = (1LL * a[i] op b[i] + mod) % mod; \ 
+    return a; \
+  } 
   oper(+) oper(-) oper(*)
 } pw[N], ipw[N];
 

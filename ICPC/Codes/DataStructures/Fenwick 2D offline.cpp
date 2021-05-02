@@ -9,7 +9,7 @@ struct Fenwick2D {
     for (auto &v : mp) {
       sort(all(v));
       v.erase(unique(all(v)), v.end());
-      fenw[&v - &mp[0]].resize(sz(v));
+      fenw[&v - &mp[0]].resize(sz(v), T());
     } 
   }
 
@@ -27,7 +27,7 @@ struct Fenwick2D {
   }
 
   T query(int x, int y) {
-    T v = 0;
+    T v = T();
     for (; x >= 0; x &= x + 1, --x) {
       int i = upper_bound(all(mp[x]), y) - mp[x].begin() - 1;
       for (; i >= 0; i &= i + 1, --i)

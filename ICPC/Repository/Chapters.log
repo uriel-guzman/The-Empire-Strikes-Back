@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021) (preloaded format=pdflatex 2021.4.24)  27 APR 2021 16:04
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021) (preloaded format=pdflatex 2021.4.24)  2 MAY 2021 00:50
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -562,7 +562,7 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `\cdot' on input line 22.
 
 (/Users/abrahammurillo/The-Empire-Strikes-Back/ICPC/Repository/../Codes/DataStructures/Static to dynamic.cpp [3]) (/Users/abrahammurillo/The-Empire-Strikes-Back/ICPC/Repository/../Codes/DataStructures/Disjoint Intervals.cpp) (/Users/abrahammurillo/The-Empire-Strikes-Back/ICPC/Repository/../Codes/DataStructures/Interval Tree.cpp) (/Users/abrahammurillo/The-Empire-Strikes-Back/ICPC/Repository/../Codes/DataStructures/Sparse Table.cpp)
-<squirtle.png, id=903, 303.1325pt x 315.1775pt>
+<squirtle.png, id=908, 303.1325pt x 315.1775pt>
 File: squirtle.png Graphic file (type png)
 <use squirtle.png>
 Package pdftex.def Info: squirtle.png  used on input line 56.
@@ -602,7 +602,12 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (/Users/abrahammurillo/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Graphs/Dynamic connectivity.cpp)
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [8] (/Users/abrahammurillo/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Graphs/LCA.cpp) (/Users/abrahammurillo/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Graphs/Virtual tree.cpp) (/Users/abrahammurillo/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Graphs/Guni.cpp) (/Users/abrahammurillo/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Graphs/Centroid.cpp) (/Users/abrahammurillo/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Graphs/Euler-tour + HLD + LCA.cpp [9]) (/Users/abrahammurillo/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Graphs/Link-Cut tree.cpp
+ [8] (/Users/abrahammurillo/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Graphs/LCA.cpp) (/Users/abrahammurillo/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Graphs/Virtual tree.cpp) (/Users/abrahammurillo/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Graphs/Guni.cpp) (/Users/abrahammurillo/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Graphs/Centroid.cpp)
+Underfull \hbox (badness 1067) in paragraph at lines 58--58
+[]\T1/cmr/bx/n/12 Heavy-light de-com-po-si-tion and Eu-ler
+ []
+
+(/Users/abrahammurillo/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Graphs/Euler-tour + HLD + LCA.cpp [9]) (/Users/abrahammurillo/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Graphs/Link-Cut tree.cpp
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [10])) (/Users/abrahammurillo/The-Empire-Strikes-Back/ICPC/Repository/Flows.tex
@@ -633,10 +638,7 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `superscript' on input line 18.
 
-
-Underfull \vbox (badness 4981) has occurred while \output is active []
-
- (/Users/abrahammurillo/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Flows/Hungarian.cpp)) (/Users/abrahammurillo/The-Empire-Strikes-Back/ICPC/Repository/Strings.tex (/Users/abrahammurillo/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Strings/Hash.cpp [12]) (/Users/abrahammurillo/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Strings/KMP.cpp)
+(/Users/abrahammurillo/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Flows/Hungarian.cpp)) (/Users/abrahammurillo/The-Empire-Strikes-Back/ICPC/Repository/Strings.tex (/Users/abrahammurillo/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Strings/Hash.cpp [12]) (/Users/abrahammurillo/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Strings/KMP.cpp)
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `\cdot' on input line 11.
@@ -664,10 +666,10 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `subscript' on input line 39.
 
-(/Users/abrahammurillo/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Strings/Suffix automaton.cpp
+(/Users/abrahammurillo/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Strings/Suffix automaton.cpp)
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [14])
+ [14]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `\sum@' on input line 73.
@@ -761,7 +763,10 @@ Overfull \hbox (4.1941pt too wide) in paragraph at lines 8--8
 []|\T1/cmr/m/n/9 Number| 
  []
 
-[16] (/Users/abrahammurillo/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Math/Factorial.cpp)
+
+Underfull \vbox (badness 1038) has occurred while \output is active []
+
+ [16] (/Users/abrahammurillo/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Math/Factorial.cpp)
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 36.
@@ -812,22 +817,19 @@ Underfull \hbox (badness 10000) in paragraph at lines 100--104
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `\cdot' on input line 105.
 
-(/Users/abrahammurillo/The-Empire-Strikes-Back/ICPC/Repository/../Codes/NumberTheory/Euclid.cpp) (/Users/abrahammurillo/The-Empire-Strikes-Back/ICPC/Repository/../Codes/NumberTheory/Chinese remainder theorem.cpp)) (/Users/abrahammurillo/The-Empire-Strikes-Back/ICPC/Repository/Math.tex (/Users/abrahammurillo/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Math/Fpow.cpp)) (/Users/abrahammurillo/The-Empire-Strikes-Back/ICPC/Repository/Bits.tex [18]) (/Users/abrahammurillo/The-Empire-Strikes-Back/ICPC/Repository/Geometry.tex (/Users/abrahammurillo/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Geometry/Geometry.cpp) (/Users/abrahammurillo/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Geometry/Point.cpp) (/Users/abrahammurillo/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Geometry/Angle between vectors.cpp)
+(/Users/abrahammurillo/The-Empire-Strikes-Back/ICPC/Repository/../Codes/NumberTheory/Euclid.cpp) (/Users/abrahammurillo/The-Empire-Strikes-Back/ICPC/Repository/../Codes/NumberTheory/Chinese remainder theorem.cpp)) (/Users/abrahammurillo/The-Empire-Strikes-Back/ICPC/Repository/Math.tex (/Users/abrahammurillo/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Math/Fpow.cpp)) (/Users/abrahammurillo/The-Empire-Strikes-Back/ICPC/Repository/Bits.tex [18] (/Users/abrahammurillo/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Math/Xor Basis.cpp)) (/Users/abrahammurillo/The-Empire-Strikes-Back/ICPC/Repository/Geometry.tex (/Users/abrahammurillo/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Geometry/Geometry.cpp) (/Users/abrahammurillo/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Geometry/Point.cpp) (/Users/abrahammurillo/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Geometry/Angle between vectors.cpp)
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `\cdot' on input line 13.
 
-(/Users/abrahammurillo/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Geometry/Closest pair of points.cpp) (/Users/abrahammurillo/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Geometry/Projection.cpp) (/Users/abrahammurillo/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Geometry/KD Tree.cpp
+(/Users/abrahammurillo/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Geometry/Closest pair of points.cpp [19]) (/Users/abrahammurillo/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Geometry/Projection.cpp) (/Users/abrahammurillo/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Geometry/KD Tree.cpp
 consecutive:
-[19]) (/Users/abrahammurillo/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Geometry/Line.cpp) (/Users/abrahammurillo/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Geometry/Segment.cpp) (/Users/abrahammurillo/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Geometry/Distance point line.cpp) (/Users/abrahammurillo/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Geometry/Distance point segment.cpp) (/Users/abrahammurillo/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Geometry/Distance segment segment.cpp) (/Users/abrahammurillo/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Geometry/Circle.cpp [20])
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- (/Users/abrahammurillo/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Geometry/Distance point circle.cpp) (/Users/abrahammurillo/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Geometry/Minimum enclosing circle.cpp) (/Users/abrahammurillo/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Geometry/Common area circle polygon.cpp) (/Users/abrahammurillo/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Geometry/Area polygon.cpp)
+) (/Users/abrahammurillo/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Geometry/Line.cpp) (/Users/abrahammurillo/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Geometry/Segment.cpp) (/Users/abrahammurillo/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Geometry/Distance point line.cpp) (/Users/abrahammurillo/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Geometry/Distance point segment.cpp [20]) (/Users/abrahammurillo/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Geometry/Distance segment segment.cpp) (/Users/abrahammurillo/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Geometry/Circle.cpp) (/Users/abrahammurillo/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Geometry/Distance point circle.cpp) (/Users/abrahammurillo/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Geometry/Minimum enclosing circle.cpp) (/Users/abrahammurillo/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Geometry/Common area circle polygon.cpp [21]) (/Users/abrahammurillo/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Geometry/Area polygon.cpp)
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `\cdot' on input line 65.
 
-(/Users/abrahammurillo/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Geometry/Convex hull.cpp [21]) (/Users/abrahammurillo/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Geometry/Cut polygon line.cpp) (/Users/abrahammurillo/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Geometry/Perimeter.cpp) (/Users/abrahammurillo/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Geometry/Point in polygon.cpp) (/Users/abrahammurillo/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Geometry/Point in convex polygon.cpp) (/Users/abrahammurillo/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Geometry/Is convex.cpp) (/Users/abrahammurillo/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Geometry/Radial order.cpp)
+(/Users/abrahammurillo/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Geometry/Convex hull.cpp) (/Users/abrahammurillo/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Geometry/Cut polygon line.cpp) (/Users/abrahammurillo/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Geometry/Perimeter.cpp) (/Users/abrahammurillo/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Geometry/Point in polygon.cpp) (/Users/abrahammurillo/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Geometry/Point in convex polygon.cpp) (/Users/abrahammurillo/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Geometry/Is convex.cpp) (/Users/abrahammurillo/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Geometry/Radial order.cpp)
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `\cdot' on input line 90.
@@ -836,21 +838,21 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 AED: lastpage setting LastPage
 [22] (/Users/abrahammurillo/The-Empire-Strikes-Back/ICPC/Repository/Chapters.aux)
 Package rerunfilecheck Info: File `Chapters.out' has not changed.
-(rerunfilecheck)             Checksum: A6A783EF0C176D55EB9C0EBFBFA432B0;19132.
+(rerunfilecheck)             Checksum: E33FBC57BFA02D53229BE4D10288BA1B;19302.
  ) 
 Here is how much of TeX's memory you used:
- 18697 strings out of 478994
- 287596 string characters out of 5858184
- 1755764 words of memory out of 5000000
- 32895 multiletter control sequences out of 15000+600000
+ 18746 strings out of 478994
+ 288437 string characters out of 5858184
+ 1760904 words of memory out of 5000000
+ 32911 multiletter control sequences out of 15000+600000
  420658 words of font info for 73 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  76i,10n,123p,420b,2250s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2021/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}{/usr/local/texlive/2021/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}{/usr/local/texlive/2021/texmf-dist/fonts/enc/dvips/inconsolata/i4-t1-0.enc}</usr/local/texlive/2021/texmf-dist/fonts/type1/public/inconsolata/Inconsolata-zi4b.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/inconsolata/Inconsolata-zi4r.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex9.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/cm-super/sfbx0900.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/cm-super/sfbx1000.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/cm-super/sfbx1200.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/cm-super/sfbx1440.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/cm-super/sfrm0900.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/cm-super/sfti0900.pfb>
-Output written on /Users/abrahammurillo/The-Empire-Strikes-Back/ICPC/Repository/Chapters.pdf (22 pages, 587333 bytes).
+Output written on /Users/abrahammurillo/The-Empire-Strikes-Back/ICPC/Repository/Chapters.pdf (22 pages, 589123 bytes).
 PDF statistics:
- 3942 PDF objects out of 4296 (max. 8388607)
- 3850 compressed objects within 39 object streams
- 2677 named destinations out of 2984 (max. 500000)
- 990 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 3982 PDF objects out of 4296 (max. 8388607)
+ 3890 compressed objects within 39 object streams
+ 2707 named destinations out of 2984 (max. 500000)
+ 998 words of extra memory for PDF output out of 10000 (max. 10000000)
 

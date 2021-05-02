@@ -1,6 +1,6 @@
 template <class T, int ...N> 
 struct Fenwick {
-  T v = 0;
+  T v = T();
   void update(T v) { this->v += v; }
   T query() { return v; }  
 };
