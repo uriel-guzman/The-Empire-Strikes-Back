@@ -8,5 +8,5 @@ T ternary(T lo, T hi, F f) {
     else
       lo = m1;
   }
-  return min(f(lo), f(hi));
+  return f(lo) <= f(hi) ? lo : hi;
 }
