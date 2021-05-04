@@ -1,7 +1,7 @@
 vi order;
 int indeg[N];
 
-void topsort() { // first fill the indeg[]
+void topologicalSort() { // first fill the indeg[]
   queue<int> qu;
   fore (u, 1, n + 1)
     if (indeg[u] == 0)

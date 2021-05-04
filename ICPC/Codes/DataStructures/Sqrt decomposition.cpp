@@ -11,7 +11,7 @@ int query(int l, int r, int x) {
   while (l <= r) 
     if (l % BLOCK == 0 && l + BLOCK - 1 <= r) {
       tot += cnt[blo[l]][x];
-      l += B;
+      l += BLOCK;
     } else {
       tot += (a[l] == x);
       l++;
