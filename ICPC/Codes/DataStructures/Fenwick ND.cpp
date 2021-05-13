@@ -7,21 +7,20 @@ struct Fenwick {
 
 template <class T, int N, int ...M>
 struct Fenwick<T, N, M...> {
-  #define lsb(x) (x & -x)
-  Fenwick<T, M...> fenw[N + 1];
+  Fenwick<T, M...> fenw[N];
 
   template <typename... Args>
   void update(int i, Args... args) {
-    for (; i <= N; i += lsb(i))
+    for (; i < N; i |= i + 1)
       fenw[i].update(args...);
   } 
 
   template <typename... Args>
   T query(int l, int r, Args... args) {
     T v = 0;
-    for (; r > 0; r -= lsb(r))
+    for (; r >= 0; r &= r + 1, --r)
       v += fenw[r].query(args...);
-    for (--l; l > 0; l -= lsb(l))
+    for (--l; l >= 0; l &= l + 1, --l)
       v -= fenw[l].query(args...);
     return v;
   }

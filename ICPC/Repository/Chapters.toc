@@ -13,7 +13,7 @@
 \contentsline {subsection}{\numberline {3.2}Squirtle decomposition}{4}{subsection.3.2}%
 \contentsline {subsection}{\numberline {3.3}Parallel binary search $\mathcal {O}((N + Q) \cdot log N \cdot F)$}{5}{subsection.3.3}%
 \contentsline {section}{\numberline {4}Dynamic range queries}{5}{section.4}%
-\contentsline {subsection}{\numberline {4.1}D-dimensional Fenwick tree}{5}{subsection.4.1}%
+\contentsline {subsection}{\numberline {4.1}Fenwick tree}{5}{subsection.4.1}%
 \contentsline {subsection}{\numberline {4.2}Dynamic segment tree}{5}{subsection.4.2}%
 \contentsline {subsection}{\numberline {4.3}Persistent segment tree}{5}{subsection.4.3}%
 \contentsline {subsection}{\numberline {4.4}Wavelet tree}{6}{subsection.4.4}%
@@ -33,8 +33,8 @@
 \contentsline {subsection}{\numberline {6.7}Euler tour for Mo's in a tree $\mathcal {O}((V + E) \cdot \sqrt {V})$}{8}{subsection.6.7}%
 \contentsline {subsection}{\numberline {6.8}Isomorphism $\mathcal {O}(V + E)$}{8}{subsection.6.8}%
 \contentsline {subsection}{\numberline {6.9}Dynamic connectivity $\mathcal {O}((N + Q) \cdot logQ)$}{8}{subsection.6.9}%
-\contentsline {section}{\numberline {7}Tree queries}{9}{section.7}%
-\contentsline {subsection}{\numberline {7.1}Lowest common ancestor (LCA)}{9}{subsection.7.1}%
+\contentsline {section}{\numberline {7}Tree queries}{8}{section.7}%
+\contentsline {subsection}{\numberline {7.1}Lowest common ancestor (LCA)}{8}{subsection.7.1}%
 \contentsline {subsection}{\numberline {7.2}Virtual tree}{9}{subsection.7.2}%
 \contentsline {subsection}{\numberline {7.3}Guni}{9}{subsection.7.3}%
 \contentsline {subsection}{\numberline {7.4}Centroid decomposition}{9}{subsection.7.4}%
@@ -52,8 +52,8 @@
 \contentsline {subsection}{\numberline {9.4}Z algorithm $\mathcal {O}(N)$}{13}{subsection.9.4}%
 \contentsline {subsection}{\numberline {9.5}Manacher algorithm $\mathcal {O}(N)$}{13}{subsection.9.5}%
 \contentsline {subsection}{\numberline {9.6}Suffix array $\mathcal {O}(N \cdot log N)$}{13}{subsection.9.6}%
-\contentsline {subsection}{\numberline {9.7}Suffix automaton $\mathcal {O}(\DOTSB \sum@ \slimits@ s_i)$}{14}{subsection.9.7}%
-\contentsline {subsection}{\numberline {9.8}Aho corasick $\mathcal {O}(\DOTSB \sum@ \slimits@ s_i)$}{15}{subsection.9.8}%
+\contentsline {subsection}{\numberline {9.7}Suffix automaton $\mathcal {O}(\DOTSB \sum@ \slimits@ s_i)$}{13}{subsection.9.7}%
+\contentsline {subsection}{\numberline {9.8}Aho corasick $\mathcal {O}(\DOTSB \sum@ \slimits@ s_i)$}{14}{subsection.9.8}%
 \contentsline {subsection}{\numberline {9.9}Eertree $\mathcal {O}(\DOTSB \sum@ \slimits@ s_i)$}{15}{subsection.9.9}%
 \contentsline {section}{\numberline {10}Dynamic Programming}{15}{section.10}%
 \contentsline {subsection}{\numberline {10.1}All submasks of a mask}{15}{subsection.10.1}%

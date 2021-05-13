@@ -57,12 +57,21 @@ struct Treap {
     });
   }
 
-  friend int pos(Treap *t) {
-    int sz = t->left->sz;
-    for (; t->par; t = t->par) {
-      Treap p = t->par;
-      if (p->right == t) sz += p->left->sz + 1;
-    }
-    return sz;
+  auto split(int x) {
+    return split([&](Treap* n) {
+      return n->val <= x;
+    });
+  }
+
+  Treap* insert(int x) {
+    auto &&[leq, ge] = split(x);
+    return leq->merge(new Treap(x))->merge(ge);
+  }
+
+  Treap* erase(int x) {
+    auto &&[leq, ge] = split(x);
+    auto &&[le, eq] = leq->split(x - 1); 
+    auto &&[kill, keep] = eq->leftmost(1);
+    return le->merge(keep)->merge(ge);
   }
 } *Treap::null = new Treap;

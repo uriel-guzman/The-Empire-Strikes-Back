@@ -1,29 +1,28 @@
 template <class T>
 struct Fenwick {
-  #define lsb(x) (x & -x)
   vector<T> fenw;
 
-  Fenwick(int n = 1) : fenw(n + 1, T()) {}
+  Fenwick(int n) : fenw(n, T()) {}
 
   void update(int i, T v) {
-    for (; i < sz(fenw); i += lsb(i))
+    for (; i < sz(fenw); i |= i + 1)
       fenw[i] += v;
   }
 
   T query(int i) {
     T v = T();
-    for (; i > 0; i -= lsb(i))
+    for (; i >= 0; i &= i + 1, --i)
       v += fenw[i];
     return v;
   }
 
   int lower_bound(T v) {
-    int i = 0;
+    int pos = 0;
     fore (k, 1 + __lg(sz(fenw)), 0)
-      if (i + (1 << k) < sz(fenw) && v - fenw[i + (1 << k)] > 0) {
-        i += (1 << k);
-        v -= fenw[i];
+      if (pos + (1 << k) <= sz(fenw) && fenw[pos + (1 << k) - 1] < v) {
+        pos += (1 << k);
+        v -= fenw[pos - 1];
       }
-    return i + 1;
+    return pos + (v == 0);
   }
 };
