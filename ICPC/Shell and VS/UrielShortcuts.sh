@@ -43,7 +43,7 @@ esac
 # uncomment for a colored prompt, if the terminal has the capability; turned
 # off by default to not distract the user: the focus in a terminal window
 # should be on the output of commands, not on the prompt
-#force_color_prompt=yes
+force_color_prompt=yes
 
 if [ -n "$force_color_prompt" ]; then
     if [ -x /usr/bin/tput ] && tput setaf 1 >&/dev/null; then
@@ -56,17 +56,23 @@ if [ -n "$force_color_prompt" ]; then
     fi
 fi
 
+git_branch() {
+  git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/'
+}
+
 if [ "$color_prompt" = yes ]; then
-    PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
+  PS1="${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u\[\033[00m\]:\[\033[01;34m\]\W\[\033[00m\]\[\033[01;35m\] \$(git_branch)\[\033[00m\]\$ "
 else
-    PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
+  PS1="${debian_chroot:+($debian_chroot)}\u:\W\$ \$(git_branch)\$ "
 fi
+
 unset color_prompt force_color_prompt
+
 
 # If this is an xterm set the title to user@host:dir
 case "$TERM" in
 xterm*|rxvt*)
-    PS1="\[\e]0;${debian_chroot:+($debian_chroot)}\u@\h: \w\a\]$PS1"
+  PS1="\[\e]0;${debian_chroot:+($debian_chroot)}\u@\h: \w\a\] $PS1"
     ;;
 *)
     ;;
@@ -120,13 +126,18 @@ if ! shopt -oq posix; then
   fi
 fi
 
+# personal configurations
+export VISUAL=nvim;
+export EDITOR=nvim;
+
 # my custom aliases
+alias vim='cd ~/.config/nvim'
 alias repo='cd /home/uriel/The\ Empire\ Strikes\ Back/'
 alias icpc='cd /home/uriel/ICPC/'
-alias vimrc='nvim ~/.vimrc'
 alias bashrc='nvim ~/.bashrc'
 alias bashcom='source ~/.bashrc'
 alias cucei='cd /home/uriel/CUCEI'
+alias nvim="/usr/bin/neovim5.0"
 
 #########shortcuts.txt#########
 alias pull='git pull origin master'
@@ -136,6 +147,10 @@ green='\x1B[0;32m'
 blue='\x1B[0;34m'
 cyan='\x1B[0;36m'
 noColor='\x1B[0m'
+
+cfc() {
+  icpc && mkdir $1 && cd $1 && nvim a.cpp
+}
 
 push() {
   git add $1 && git commit -a -m "$2" && git push origin master
@@ -183,7 +198,7 @@ test() {
 		fi
 	done
 	
-	rm -r prog
+	rm prog && rm brute
 }
 
 random() { 
@@ -216,7 +231,7 @@ random() {
     (./brute < in)
   }
 
-	for ((i = 1; i <= 150; i++)); do
+	for ((i = 1; i <= 500; i++)); do
 		generateTestCase
 
     start_time="$(date -u +%s.%N)"
@@ -335,5 +350,11 @@ createBooks() {
 	
 	printf "All books done\n"
 }
+
 ############################################
 
+export PATH=$PATH:"/usr/bin"
+
+export NVM_DIR="$HOME/.nvim"
+[ -s "$NVM_DIR/nvim.sh" ] && \. "$NVM_DIR/nvim.sh"  # This loads nvim
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
