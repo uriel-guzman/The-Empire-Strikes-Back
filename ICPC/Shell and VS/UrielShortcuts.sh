@@ -45,6 +45,13 @@ esac
 # should be on the output of commands, not on the prompt
 force_color_prompt=yes
 
+green='\[\033[01;32m\]'
+blue='\[\033[01;34m\]'
+magenta='\[\033[01;35m\]'
+white='\[\033[01;00m\]'
+cyan='\[\033[01;36m\]'
+yellow='\[\033[01;33m\]'
+
 if [ -n "$force_color_prompt" ]; then
     if [ -x /usr/bin/tput ] && tput setaf 1 >&/dev/null; then
 	# We have color support; assume it's compliant with Ecma-48
@@ -57,13 +64,13 @@ if [ -n "$force_color_prompt" ]; then
 fi
 
 git_branch() {
-  git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/'
+  git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/( \1)/'
 }
 
 if [ "$color_prompt" = yes ]; then
-  PS1="${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u\[\033[00m\]:\[\033[01;34m\]\W\[\033[00m\]\[\033[01;35m\] \$(git_branch)\[\033[00m\]\$ "
+  PS1="${debian_chroot:+($debian_chroot)}${green}\u${white}: ${blue}\w${magenta} \$(git_branch)${white} \n  ${white}↳${white} "
 else
-  PS1="${debian_chroot:+($debian_chroot)}\u:\W\$ \$(git_branch)\$ "
+  PS1="${debian_chroot:+($debian_chroot)}\u:\w\$ \$(git_branch)\$ "
 fi
 
 unset color_prompt force_color_prompt
@@ -72,7 +79,7 @@ unset color_prompt force_color_prompt
 # If this is an xterm set the title to user@host:dir
 case "$TERM" in
 xterm*|rxvt*)
-  PS1="\[\e]0;${debian_chroot:+($debian_chroot)}\u@\h: \w\a\] $PS1"
+  PS1="\[\e]0;${debian_chroot:+($debian_chroot)}\u@\h: \w\a\]$PS1"
     ;;
 *)
     ;;
@@ -140,8 +147,6 @@ alias cucei='cd /home/uriel/CUCEI'
 alias nvim="/usr/bin/neovim5.0"
 
 #########shortcuts.txt#########
-alias pull='git pull origin master'
-
 red='\x1B[0;31m'
 green='\x1B[0;32m'
 blue='\x1B[0;34m'
@@ -152,205 +157,76 @@ cfc() {
   icpc && mkdir $1 && cd $1 && nvim a.cpp
 }
 
-push() {
-  git add $1 && git commit -a -m "$2" && git push origin master
-}
-
-go() {
-	g++ --std=c++17 $2 $3 -Wall -Wextra -Wshadow -D_GLIBCXX_ASSERTIONS -fmax-errors=3 -O2 -w $1.cpp && ./a.out 
+compilation() {
+	alias flags='-Wall -Wextra -Wshadow -fmax-errors=3 -w'
+	g++-10 --std=c++17 $2 ${flags} $1.cpp -o $1.out 
 }
 
 debug() {
-	go $1 -DLOCAL "" < $2
-} 
+	file=$1
+	input=$1
 
-draw() {
-	go $1 -DLOCAL -DDRAW < $2
-	createBooks
-}
-
-run() {
-	go $1 "" "" < $2
-}
-
-test() {
-	# test program input output
-	g++ --std=c++17 $1.cpp -o prog 
-	input="$1_in"
-	output="$1_out"
 	if [ $# -ge 2 ]; then
-		input=$2 
-		if [ $# -ge 3 ]; then
-			output=$3 
-		fi
+		input=$2
 	fi
 	
-	for ((i = 1; ; i++)); do
-		[[ -f ${input}$i ]] || break
-		printf "Test case #$i"
-		
-		diff -uwi <(./prog < ${input}$i) ${output}$i > $1_diff
-		
-		if [[ ! $? -eq 0 ]]; then
-			printf "${red} Wrong answer ${noColor}\n"
-		else
-			printf "${green} Accepted ${noColor}\n"
-		fi
-	done
+	compilation ${file} -DLOCAL 
+
+
+	./${file}.out < ${input}
+	rm -r ./${file}.out
+} 
+
+run() {
+	file=$1
+	input=$1
+
+	if [ $# -ge 2 ]; then
+		input=$2
+	fi
 	
-	rm prog && rm brute
+	compilation ${file} ""
+
+
+	./${file}.out < ${input}
+	rm -r ./${file}.out
 }
 
-random() { 
-	# random a
-	g++ --std=c++17 -Wall -Wextra -Wshadow -D_GLIBCXX_ASSERTIONS -fmax-errors=3 -O2 -w $1.cpp -o prog
-	g++ --std=c++17 -Wall -Wextra -Wshadow -D_GLIBCXX_ASSERTIONS -fmax-errors=3 -O2 -w brute.cpp -o brute
-
-  tle=${2:-0}
+random() {
+	# random file
+	
+	compilation $1 "" 
+	compilation brute ""
 	
 	if [[ -f "gen.cpp" ]]; then
 		 # C++ version, so first compile it
-		g++-9 --std=c++17 gen.cpp -o gen 
+		compilation gen ""
 	fi
 	
 	generateTestCase() {
 		# looks for the .cpp generator first, then the .py generator
 		if [[ -f "gen.cpp" ]]; then
-			./gen > in
+			./gen.out > in
 		else
 			python3 gen.py | cat > in 
 		fi
 	}
 	
-  showFailedTestCase() {
-    printf "\n${cyan}Input ${noColor}\n"
-    (cat in)
-    printf "\n${cyan}Output ❌${noColor}\n"
-    (./prog < in)
-    printf "\n${cyan}Answer ✅${noColor}\n"
-    (./brute < in)
-  }
-
 	for ((i = 1; i <= 500; i++)); do
 		generateTestCase
-
-    start_time="$(date -u +%s.%N)"
-    end_time="$(date -u +%s.%N)"
-    prog_in="$(./prog < in)"
-    elapsed="$(echo "($end_time-$start_time)*1000" | bc)"
-
-    if [[ $tle -ne 0 ]]; then
-      printf "${blue}"
-      printf %.0f "${elapsed}"
-      printf "ms ${noColor}"
-    fi
-
-    printf "Test case #${i}"
-
-    if [[ $tle -ne 0 ]]; then
-      if (( $(echo "$elapsed > $tle" | bc -l) )); then 
-        printf "${blue} Time limit exceeded ${noColor}\n"
-        break
-      fi
-    fi
-
-		diff -uwi <(echo $prog_in) <(./brute < in) > $1_diff
-
-		if [[ ! $? -eq 0 ]]; then
-			printf "${red} Wrong answer ${noColor}\n"
-      showFailedTestCase
-			break
-		else
+		
+		printf "Test case #${i}"
+		
+		diff -uwi <(./$1.out < in) <(./brute.out < in) > diff$1
+		
+		if [[ $? -eq 0 ]]; then
 			printf "${green} Accepted ${noColor}\n"
-		fi
-	done
-
-	rm prog && rm brute
-}
-
-createBooks() {
-	prevDir=$(pwd) # Current directory, but will be the previous after all of this stuff D:
-  drawingsDir='/home/uriel/ICPC/drawings/'; # Folder where you store all the images and stuff
-	
-	cd ${drawingsDir} # Write all stuff here!
-	
-	# Array with names of all possible books
-	possibleBooks=("weightedGraph" "weightedDigraph" "digraph" "graph" "trie" "aho" "sam" "eertree" "segtree")
-	
-	# Way to open files according to the OS
-	openFile='xdg-open'
-	if [[ "$(uname)" == "Darwin" ]]; then
-		openFile='open'
-	fi
-	
-	for name in ${possibleBooks[@]}; do
-		bookTEX=${drawingsDir}${name}.tex
-		if [[ -f ${bookTEX} ]]; then 
-			rm -r ${bookTEX} # Clear everything you know about this to avoid stupid mistakes D:
-		fi
-		bookPDF=${drawingsDir}${name}.pdf
-		if [[ -f ${bookPDF} ]]; then 
-			rm -r ${bookPDF} # Clear everything you know about this to avoid stupid mistakes D: x2
-		fi
-	done
-	
-	mergeImages() {
-		name=$1 # Name of the book, dumb
-	
-		bookTEX=${drawingsDir}${name}.tex  # tex book file
-		touch ${bookTEX} # Create the book file
-		
-		# Insert information to latex document to build the book
-		if [[ ${name} == 'segtree' ]]; then
-			# The segtree file have to be horizontal
-			echo '\documentclass[landscape]{article}' >> ${bookTEX}
 		else
-			echo '\documentclass{article}' >> ${bookTEX}
-		fi
-		echo '\usepackage{graphicx, wrapfig, geometry}' >> ${bookTEX}
-		echo '\geometry{a4paper,left=1cm,right=1cm,top=1cm,bottom=1cm}' >> ${bookTEX}
-		echo '\begin{document}' >> ${bookTEX}
-		
-		# Insert all images
-		cnt=0
-		for ((i = 1; ; i++)); do
-			image=${drawingsDir}${name}${i}.png
-			file=${drawingsDir}${name}${i}.dot
-			
-			# To avoid stupid errors, just erase the .dot file and if the .dot file don't exist, then the image neither
-			[[ -f ${file} ]] || break # There isn't file for this image, then you have already finished :D
-			rm -r ${file}
-			cnt=1
-			
-			echo '\clearpage' >> ${bookTEX}
-			echo '\newpage' >> ${bookTEX}
-			echo '\begin{figure}' >> ${bookTEX}
-			echo '\centering' >> ${bookTEX}
-			echo '\includegraphics[scale=.5]{'${image}'}' >> ${bookTEX}
-			echo '\end{figure}' >> ${bookTEX}
-		done	
-		echo '\end{document}' >> ${bookTEX}
-		
-		# Create the pdf if cnt != 0
-		if [[ ${cnt} != 0 ]] ; then
-			pdflatex -pdf ${bookTEX}
-		fi
-	}
-	
-	for name in ${possibleBooks[@]}; do
-		bookPDF=${drawingsDir}${name}.pdf
-		mergeImages ${name}
-		if [[ -f ${bookPDF} ]]; then
-			# If the book exist, then open it
-			${openFile} ${bookPDF}
+			printf "${red} Wrong answer ${noColor}\n"
+			break
 		fi
 	done
-	
-	cd ${prevDir} # Return to the previous directory
-	
-	printf "All books done\n"
 }
-
 ############################################
 
 export PATH=$PATH:"/usr/bin"
