@@ -2,16 +2,14 @@ alias myBash='open ~/.zshenv' # Bash file
 
 ######################## Github ########################
 
-alias icpc='cd /Users/abrahammurillo/The-Empire-Strikes-Back' # Folder of github
-alias pull='git pull origin master && python3 /Users/abrahammurillo/The-Empire-Strikes-Back/ICPC/Shell\ and\ VS/Abraham/createSnippets.py'
+alias icpc='cd /Users/abraham/The-Empire-Strikes-Back' # Folder of github
 
-push() {
-	git add $1 && git commit -a -m "$2" && git push origin master
-}
+alias snippets='python3 /Users/abraham/The-Empire-Strikes-Back/ICPC/Shell\ and\ VS/Abraham/createSnippets.py'
+
 
 ######################## Programming ########################
 
-alias problems='cd /Users/abrahammurillo/Problems'
+alias problems='cd /Users/abraham/Problems'
 
 red='\x1B[0;31m'
 green='\x1B[0;32m'
@@ -21,7 +19,7 @@ cyan='\x1B[0;36m'
 noColor='\x1B[0m'
 
 create() {
-	tem='/Users/abrahammurillo/The-Empire-Strikes-Back/ICPC/Codes/Misc/template.cpp'
+	tem='/Users/abraham/The-Empire-Strikes-Back/ICPC/Codes/Misc/template.cpp'
 
 	begin=$1
 	end=$1
@@ -54,7 +52,7 @@ erase() {
 
 compilation() {
 	alias flags='-Wall -Wextra -Wshadow -fmax-errors=3 -w'
-	g++-10 --std=c++17 $2 ${flags} $1.cpp -o $1.out 
+	g++-11 --std=c++17 $2 ${flags} $1.cpp -o $1.out 
 }
 
 debug() {
