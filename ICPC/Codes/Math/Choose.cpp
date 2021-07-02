@@ -5,8 +5,10 @@ lli choose(int n, int k) {
 }
 
 lli choose(int n, int k) {
-  double r = 1;
-  fore (i, 1, k + 1)
-    r = r * (n - k + i) / i;
-  return lli(r + 0.01);
+  lli r = 1;
+  int to = min(k, n - k);
+  if (to < 0) return 0;
+  fore (i, 0, to)
+    r = r * (n - i) / (i + 1);
+  return r;
 }
