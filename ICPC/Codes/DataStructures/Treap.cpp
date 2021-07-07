@@ -65,13 +65,14 @@ struct Treap {
 
   Treap* insert(int x) {
     auto &&[leq, ge] = split(x);
-    return leq->merge(new Treap(x))->merge(ge);
+    // auto &&[le, eq] = split(x); // uncomment for set
+    return leq->merge(new Treap(x))->merge(ge); // change leq for le for set
   }
 
   Treap* erase(int x) {
     auto &&[leq, ge] = split(x);
     auto &&[le, eq] = leq->split(x - 1); 
-    auto &&[kill, keep] = eq->leftmost(1);
-    return le->merge(keep)->merge(ge);
+    auto &&[kill, keep] = eq->leftmost(1); // comment for set
+    return le->merge(keep)->merge(ge); // le->merge(ge) for set
   }
 } *Treap::null = new Treap;

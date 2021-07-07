@@ -60,4 +60,9 @@ struct Dinic {
     }
     return flow;
   }
+
+  bool leftSide(int u) {
+    // left side comes from sink
+    return dist[u] != -1;
+  }
 };

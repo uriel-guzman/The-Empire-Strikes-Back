@@ -8,7 +8,7 @@ fore (it, 0, 1 + __lg(N)) {
       int mid = (lo[i] + hi[i]) / 2;
       solve[mid].emplace(i);
     }
-  fore (x, 0, n) {
+  fore (x, 0, n) { // 0th-indexed
     // simulate
     while (!solve[x].empty()) {
       int i = solve[x].front();

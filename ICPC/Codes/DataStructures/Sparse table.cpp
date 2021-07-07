@@ -15,7 +15,8 @@ struct Sparse {
   }
 
   T query(int l, int r) {
-    int k = __lg(r - l + 1);
+    #warning Can give TLE D:, change it to a log table
+    int k = __lg(r - l + 1); 
     return f(sp[k][l], sp[k][r - (1 << k) + 1]);
   }
 };

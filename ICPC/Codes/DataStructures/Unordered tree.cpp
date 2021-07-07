@@ -9,4 +9,4 @@ struct CustomHash {
 };
 
 template <class K, class V = null_type>
-using unordered_tree = gp_hash_table<K, V, CustomHash>;
+using UnorderedTree = gp_hash_table<K, V, CustomHash>;

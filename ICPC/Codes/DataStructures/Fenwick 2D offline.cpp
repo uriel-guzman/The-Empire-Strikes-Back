@@ -2,20 +2,20 @@ template <class T>
 struct Fenwick2D {
   vector<vector<T>> fenw;
   vector<vi> mp;
-
+  // 1) add update points, 2) build, 3) update/query
   Fenwick2D(int n = 1) : mp(n), fenw(n) {}
+  
+  void add(int x, int y) { 
+    for (; x < sz(fenw); x |= x + 1) 
+      mp[x].pb(y);
+  }
 
-  void build() {
+  void build() { 
     for (auto &v : mp) {
       sort(all(v));
       v.erase(unique(all(v)), v.end());
       fenw[&v - &mp[0]].resize(sz(v), T());
     } 
-  }
-
-  void add(int x, int y) {
-    for (; x < sz(fenw); x |= x + 1) 
-      mp[x].pb(y);
   }
 
   void update(int x, int y, T v) {

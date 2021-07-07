@@ -2,7 +2,7 @@ void solve(int cut, int l, int r, int optl, int optr) {
   if (r < l)
     return;
   int mid = (l + r) / 2;
-  pair<lli, int> best = {inf, -1};
+  pair<lli, int> best = {INF, -1};
   fore (p, optl, min(mid, optr) + 1) 
     best = min(best, {dp[~cut & 1][p - 1] + cost(p, mid), p});
   dp[cut & 1][mid] = best.f;

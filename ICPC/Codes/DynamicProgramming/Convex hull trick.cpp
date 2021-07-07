@@ -1,4 +1,4 @@
-// for doubles, use inf = 1/.0, div(a,b) = a / b
+// for doubles, use INF = 1/.0, div(a,b) = a / b
 struct Line {
   mutable lli m, c, p; 
   bool operator < (const Line &l) const { return m < l.m; }
@@ -13,8 +13,8 @@ struct DynamicHull : multiset<Line, less<>> {
   }
  
   bool isect(iterator x, iterator y) {
-    if (y == end()) return x->p = inf, 0;
-    if (x->m == y->m) x->p = x->c > y->c ? inf : -inf;
+    if (y == end()) return x->p = INF, 0;
+    if (x->m == y->m) x->p = x->c > y->c ? INF : -INF;
     else x->p = div(x->c - y->c, y->m - x->m);
     return x->p >= y->p;
   }

@@ -1,5 +1,5 @@
 template <class C>
-pair<C, vector<int>> Hungarian(vector<vector<C>> &a) {
+pair<C, vector<int>> Hungarian(vector<vector<C>> &a) { // max assignment
   int n = sz(a), m = sz(a[0]), p, q, j, k; // n <= m
  vector<C> fx(n, numeric_limits<C>::min()), fy(m, 0);
   vector<int> x(n, -1), y(m, -1);
