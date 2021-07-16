@@ -1,4 +1,4 @@
-pair<Pt, Pt> closestPairOfPoints(Poly &pts) {
+pair<Pt, Pt> closestPairOfPoints(vector<Pt> &pts) {
   sort(all(pts), [&](Pt a, Pt b) { 
     return le(a.y, b.y); 
   });

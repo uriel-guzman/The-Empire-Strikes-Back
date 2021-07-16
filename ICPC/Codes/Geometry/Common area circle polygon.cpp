@@ -1,4 +1,4 @@
-ld commonArea(const Cir &c, const Poly &poly) {
+ld commonArea(const Cir &c, const vector<Pt> &poly) {
   auto arg = [&](Pt p, Pt q) {
     return atan2(p.cross(q), p.dot(q));
   };

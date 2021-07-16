@@ -1,5 +1,5 @@
-Poly convexHull(Poly pts) {
-  Poly low, up;
+vector<Pt> convexHull(vector<Pt> pts) {
+  vector<Pt> low, up;
   sort(all(pts), [&](Pt a, Pt b) {
     return a.x == b.x ? a.y < b.y : a.x < b.x;
   });

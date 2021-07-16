@@ -1,5 +1,5 @@
-Poly cut(const Poly &pts, Line l) {
-  Poly ans;
+vector<Pt> cut(const vector<Pt> &pts, Line l) {
+  vector<Pt> ans;
   int n = sz(pts);
   fore (i, 0, n) {
     int j = (i + 1) % n;

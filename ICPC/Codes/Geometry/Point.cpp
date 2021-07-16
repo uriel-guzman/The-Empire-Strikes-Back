@@ -62,5 +62,3 @@ struct Pt {
     return is >> p.x >> p.y;
   } 
 };
-
-using Poly = vector<Pt>;

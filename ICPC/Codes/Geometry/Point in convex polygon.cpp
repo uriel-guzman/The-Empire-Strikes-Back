@@ -1,4 +1,4 @@
-bool contains(const Poly &a, Pt p) {
+bool contains(const vector<Pt> &a, Pt p) {
   int lo = 1, hi = sz(a) - 1;
   if (a[0].dir(a[lo], a[hi]) > 0) 
     swap(lo, hi);

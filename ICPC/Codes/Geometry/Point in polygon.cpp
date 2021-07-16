@@ -1,4 +1,4 @@
-int contains(const Poly &pts, Pt p) {
+int contains(const vector<Pt> &pts, Pt p) {
   int rays = 0, n = sz(pts);
   fore (i, 0, n) {
     Pt a = pts[i], b = pts[(i + 1) % n];
