@@ -1,5 +1,5 @@
 template <class T>
-int minRotation(vector<T> &s) {
+int minRotation(T &s) {
   int n = sz(s), i = 0, j = 1;
   while (i < n && j < n) {
     int k = 0;

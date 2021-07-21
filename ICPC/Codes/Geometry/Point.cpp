@@ -1,5 +1,3 @@
-int sgn(ld a) { return (a > eps) - (a < -eps); }
-
 struct Pt {
   ld x, y;
   explicit Pt(ld x = 0, ld y = 0) : x(x), y(y) {}
@@ -40,6 +38,7 @@ struct Pt {
   }
 
   int dir(Pt a, Pt b) const {
+    // where am I on the line directed line ab
     return sgn((a - *this).cross(b - *this));
   }
   

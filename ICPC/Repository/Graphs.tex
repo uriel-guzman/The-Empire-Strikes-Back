@@ -19,16 +19,6 @@
 \subsection{Detect a cycle \complexity{V + E}}
 \addfile{../Codes/Graphs/Cycle.cpp}
 
-\subsection{Euler tour for Mo's in a tree \complexity{(V + E) \cdot \sqrt{V}}}
-\vspace{-5pt}
-Mo's in a tree, extended euler tour \small{tin[u] = ++timer, tout[u] = ++timer} 
-\vspace{-5pt}
-\begin{itemize}[noitemsep]
-  \item u = lca(u, v), query(tin[u], tin[v]) 
-  \item u $\neq$ lca(u, v), query(tout[u], tin[v]) + query(tin[$lca$], tin[$lca$])
-\end{itemize}
-\vspace{-10pt}
-
 \subsection{Isomorphism \complexity{V + E}}
 \addfile[4]{../Codes/Graphs/Isomorphism.cpp}
 
@@ -38,6 +28,16 @@ Mo's in a tree, extended euler tour \small{tin[u] = ++timer, tout[u] = ++timer}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \nsection{Tree queries}
+
+\subsection{Euler tour for Mo's in a tree \complexity{(V + E) \cdot \sqrt{V}}}
+\vspace{-5pt}
+Mo's in a tree, extended euler tour \small{tin[u] = ++timer, tout[u] = ++timer} 
+\vspace{-5pt}
+\begin{itemize}[noitemsep]
+  \item u = lca(u, v), query(tin[u], tin[v]) 
+  \item u $\neq$ lca(u, v), query(tout[u], tin[v]) + query(tin[$lca$], tin[$lca$])
+\end{itemize}
+\vspace{-10pt}
 
 \subsection{Lowest common ancestor (LCA)}
 \ncomment{build: \complexity{N \cdot log N}, query: \complexity{log N}}

@@ -28,7 +28,8 @@ struct Mcmf {
     qu.push_back(s);
     state[s] = 1, cost[s] = 0;
     while (sz(qu)) {
-      int u = qu.front(); qu.pop_front();
+      int u = qu.front();
+      qu.pop_front();
       state[u] = 2;
       for (Edge &e : graph[u]) if (e.cap - e.flow > eps)
         if (cost[u] + e.cost < cost[e.v]) {

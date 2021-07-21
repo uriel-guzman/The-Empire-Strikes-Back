@@ -1,9 +1,6 @@
 struct Hash : array<int, 2> {
   static constexpr int mod = 1e9 + 7;
-  #define oper(op) friend Hash operator op (Hash a, Hash b) { \
-    fore (i, 0, sz(a)) a[i] = (1LL * a[i] op b[i] + mod) % mod; \ 
-    return a; \
-  } 
+#define oper(op) friend Hash operator op (Hash a, Hash b) { fore (i, 0, sz(a)) a[i] = (1LL * a[i] op b[i] + mod) % mod; return a; } 
   oper(+) oper(-) oper(*)
 } pw[N], ipw[N];
 
@@ -22,15 +19,13 @@ struct Hashing {
   }
 };
 
-{
-  pw[0] = ipw[0] = {1, 1};
-  #warning "Ensure all base[i] >= alphabet"
-  Hash base = {12367453, 14567893};
-  Hash inv = {::inv(base[0], base.mod), ::inv(base[1], base.mod)};
-  fore (i, 1, N) {
-    pw[i] = pw[i - 1] * base;
-    ipw[i] = ipw[i - 1] * inv;
-  }
+#warning "Ensure all base[i] > alphabet"
+pw[0] = ipw[0] = {1, 1};
+Hash base = {12367453, 14567893};
+Hash inv = {::inv(base[0], base.mod), ::inv(base[1], base.mod)};
+fore (i, 1, N) {
+  pw[i] = pw[i - 1] * base;
+  ipw[i] = ipw[i - 1] * inv;
 }
 
 // Save len in the struct and when you do a cut
