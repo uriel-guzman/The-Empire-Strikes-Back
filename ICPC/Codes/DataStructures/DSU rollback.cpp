@@ -17,6 +17,8 @@ struct Dsu {
       mem.emplace(u, v);
       tot[u] += tot[v];
       par[v] = u;
+    } else {
+      mem.emplace(-1, -1);
     }
   }
 

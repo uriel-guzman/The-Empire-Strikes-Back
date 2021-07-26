@@ -10,7 +10,7 @@ ull rho(ull n) {
 }
 
 // if used multiple times, try memorization!!
-// maybe try to factoring small numbers with sieve
+// try factoring small numbers with sieve
 void pollard(ull n, map<ull, int> &fac) {
   if (n == 1) return;
   if (miller(n)) {

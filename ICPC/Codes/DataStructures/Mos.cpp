@@ -4,7 +4,6 @@ struct Query {
 
 vector<Query> queries;
 
-// N = 1e6, so aprox. sqrt(N) +/- C
 const int BLOCK = sqrt(N);
 sort(all(queries), [&] (Query &a, Query &b) {
   const int ga = a.l / BLOCK, gb = b.l / BLOCK;

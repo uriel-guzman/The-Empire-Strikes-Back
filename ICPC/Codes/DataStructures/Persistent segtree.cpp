@@ -19,17 +19,17 @@ struct Per {
     pull();
   }
 
-  Per* update(int p, lli v) {
+   Per* update(int p, lli v) {
     if (p < l || r < p)
       return this;
-    Per* t = new Per(l, r);
+    Per* tmp = new Per(l, r);
     if (l == r) {
-      t->sum = v;
-      return t;
+      tmp->sum = v;
+      return tmp;
     }
-    t->left = left->update(p, v);
-    t->right = right->update(p, v);
-    return t->pull();
+    tmp->left = left->update(p, v);
+    tmp->right = right->update(p, v);
+    return tmp->pull();
   }
 
   lli query(int ll, int rr) {

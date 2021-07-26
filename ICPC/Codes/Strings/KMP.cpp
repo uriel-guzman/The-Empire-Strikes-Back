@@ -1,5 +1,5 @@
 template <class T>
-vector<int> lps(T &s) {
+vector<int> lps(T s) {
   vector<int> p(sz(s), 0);
   for (int j = 0, i = 1; i < sz(s); i++) {
     while (j && s[i] != s[j]) j = p[j - 1];

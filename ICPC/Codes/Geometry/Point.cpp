@@ -23,6 +23,7 @@ struct Pt {
     
   ld norm() const { return x * x + y * y; }
   ld length() const { return sqrtl(norm()); }
+  Pt unit() const { return (*this) / length(); }
   
   ld angle() const { 
     ld ang = atan2(y, x); 
@@ -30,7 +31,6 @@ struct Pt {
   }
 
   Pt perp() const { return Pt(-y, x); }
-  Pt unit() const { return (*this) / length(); }
   Pt rotate(ld angle) const {
     // counter-clockwise rotation in radians
     // degree = radian * 180 / pi
@@ -42,16 +42,10 @@ struct Pt {
     return sgn((a - *this).cross(b - *this));
   }
   
-  int cuad() const {
-    if (x > 0 && y >= 0) return 0;
-    if (x <= 0 && y > 0) return 1;
-    if (x < 0 && y <= 0) return 2;
-    if (x >= 0 && y < 0) return 3;
-    return -1;
-  }  
-
+  bool operator < (Pt p) const { return eq(x, p.x) ? le(y, p.y) : le(x, p.x); }
+  bool operator > (Pt p) const { return eq(x, p.x) ? ge(y, p.y) : ge(x, p.x); }
   bool operator == (Pt p) const { return eq(x, p.x) && eq(y, p.y); }
-  bool operator != (Pt p) const { return neq(x, p.x) || neq(y, p.y); }
+  bool operator != (Pt p) const { return neq(x, p.x) && neq(y, p.y); }
   
   friend ostream &operator << (ostream &os, const Pt &p) { 
     return os << "(" << p.x << ", " << p.y << ")"; 
