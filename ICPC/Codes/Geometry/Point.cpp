@@ -1,5 +1,5 @@
 struct Pt {
-point.cpp  ld x, y;
+  ld x, y;
   explicit Pt(ld x = 0, ld y = 0) : x(x), y(y) {}
   Pt operator + (Pt p) const { return Pt(x + p.x, y + p.y); }
   Pt operator - (Pt p) const { return Pt(x - p.x, y - p.y); }
