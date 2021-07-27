@@ -9,16 +9,16 @@ using namespace std;
 #define s second
 #define pb push_back
 
-using ld = long double;
-using lli = long long;
-using ii = pair<int, int>;
-using vi = vector<int>;
-
 #ifdef LOCAL
 #include "debug.h"
 #else
 #define debug(...) 
 #endif
+
+using ld = long double;
+using lli = long long;
+using ii = pair<int, int>;
+using vi = vector<int>;
 
 int main() {
   cin.tie(0)->sync_with_stdio(0), cout.tie(0);

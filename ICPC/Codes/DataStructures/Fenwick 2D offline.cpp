@@ -1,37 +1,50 @@
 template <class T>
-struct Fenwick2D {
+struct Fenwick2D { // add, build then update, query
   vector<vector<T>> fenw;
-  vector<vi> mp;
-  // 1) add update points, 2) build, 3) update/query
-  Fenwick2D(int n = 1) : mp(n), fenw(n) {}
-  
-  void add(int x, int y) { 
-    for (; x < sz(fenw); x |= x + 1) 
-      mp[x].pb(y);
+  vector<vector<int>> ys;
+  vector<int> xs;
+  vector<ii> pts;
+
+  void add(int x, int y) {
+    pts.pb({x, y});
   }
 
-  void build() { 
-    for (auto &v : mp) {
-      sort(all(v));
-      v.erase(unique(all(v)), v.end());
-      fenw[&v - &mp[0]].resize(sz(v), T());
-    } 
-  }
+  void build() {
+    sort(all(pts));
+    for (auto &&[x, y] : pts) {
+      if (xs.empty() || x != xs.back())  
+        xs.pb(x);
+      swap(x, y);
+    }
+    fenw.resize(sz(xs)), ys.resize(sz(xs));
+    sort(all(pts));
+    for (auto &&[x, y] : pts) {
+      swap(x, y);
+      int i = lower_bound(all(xs), x) - xs.begin();
+      for (; i < sz(fenw); i |= i + 1) 
+        if (ys[i].empty() || y != ys[i].back())
+          ys[i].pb(y);
+    }
+    fore (i, 0, sz(fenw))
+      fenw[i].resize(sz(ys[i]), T());
+  } 
 
   void update(int x, int y, T v) {
-    for (; x < sz(fenw); x |= x + 1) {
-      int i = lower_bound(all(mp[x]), y) - mp[x].begin();
-      for (; i < sz(fenw[x]); i |= i + 1)
-        fenw[x][i] += v;
+    int i = lower_bound(all(xs), x) - xs.begin();
+    for (; i < sz(fenw); i |= i + 1) {
+      int j = lower_bound(all(ys[i]), y) - ys[i].begin();
+      for (; j < sz(fenw[i]); j |= j + 1)
+        fenw[i][j] += v;
     }
-  }
+  } 
 
   T query(int x, int y) {
     T v = T();
-    for (; x >= 0; x &= x + 1, --x) {
-      int i = upper_bound(all(mp[x]), y) - mp[x].begin() - 1;
-      for (; i >= 0; i &= i + 1, --i)
-        v += fenw[x][i];
+    int i = upper_bound(all(xs), x) - xs.begin() - 1;
+    for (; i >= 0; i &= i + 1, --i) {
+      int j = upper_bound(all(ys[i]), y) - ys[i].begin() - 1;
+      for (; j >= 0; j &= j + 1, --j)
+        v += fenw[i][j];
     }
     return v;
   }

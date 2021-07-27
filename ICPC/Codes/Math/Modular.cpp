@@ -7,14 +7,12 @@ struct Modular {
     if (x < 0) x += p;
     v = x;
   }
-  
+
   Modular operator + (const Modular &m) const { return Modular(v + m.v); }
   Modular operator - (const Modular &m) const { return Modular(v - m.v + p); }
   Modular operator * (const Modular &m) const { return Modular(1LL * v * m.v); }
   Modular operator / (const Modular &m) const { return *this * m.inv(); }
-  
   Modular inv() const { return Modular(minv(v, p)); } 
-  Modular operator - () const { return Modular(-v); }
   
   Modular& operator += (const Modular &m) { return *this = *this + m; }
   Modular& operator -= (const Modular &m) { return *this = *this - m; }
