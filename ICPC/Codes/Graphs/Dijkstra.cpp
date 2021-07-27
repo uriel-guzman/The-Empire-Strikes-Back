@@ -1,10 +1,10 @@
-const int inf = 1e9;
+const int INF = 1e9;
 vector<Edge> graph[N];
 int dist[N];
 int n, m;
 
 void dijkstra(int s) {
-  fill_n(dist, n + 1, inf);
+  fill_n(dist, n + 1, INF);
   priority_queue< tuple<int, int> > pq; // {dist, node}
   pq.emplace(dist[s] = 0, s);
   while (!pq.empty()) {

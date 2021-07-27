@@ -10,7 +10,7 @@ pair<C, vector<int>> Hungarian(vector<vector<C>> &a) { // max assignment
     vector<int> t(m, -1), s(n + 1, i);
     for (p = q = 0; p <= q && x[i] < 0; p++)
       for (k = s[p], j = 0; j < m && x[i] < 0; j++)
-        if (abs(fx[k] + fy[j] - a[k][j]) < eps && t[j] < 0) {
+        if (abs(fx[k] + fy[j] - a[k][j]) < EPS && t[j] < 0) {
           s[++q] = y[j], t[j] = k;
           if (s[q] < 0) for (p = j; p >= 0; j = p)
             y[j] = k = t[j], p = x[k], x[k] = j;

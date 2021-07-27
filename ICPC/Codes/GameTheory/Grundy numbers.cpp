@@ -9,7 +9,7 @@ int mex(set<int> &st) {
 
 int grundy(int n) {
   if (n < 0)  
-    return inf;
+    return INF;
   if (n == 0)
     return 0;
   int &g = mem[n];

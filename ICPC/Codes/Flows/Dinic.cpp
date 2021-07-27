@@ -6,7 +6,7 @@ struct Dinic {
     Edge(int v, F cap, int inv) : v(v), cap(cap), flow(0), inv(inv) {}
   };
  
-  F eps = (F) 1e-9;
+  F EPS = (F) 1e-9;
   int s, t, n;
   vector<vector<Edge>> graph;
   vector<int> dist, ptr;
@@ -26,7 +26,7 @@ struct Dinic {
       int u = qu.front(); 
       qu.pop();
       for (Edge &e : graph[u]) if (dist[e.v] == -1) 
-        if (e.cap - e.flow > eps) {
+        if (e.cap - e.flow > EPS) {
           dist[e.v] = dist[u] + 1;
           qu.push(e.v);
         } 
@@ -35,13 +35,13 @@ struct Dinic {
   }
  
   F dfs(int u, F flow = numeric_limits<F>::max()) {
-    if (flow <= eps || u == t)
+    if (flow <= EPS || u == t)
       return max<F>(0, flow);
     for (int &i = ptr[u]; i < sz(graph[u]); i++) {
       Edge &e = graph[u][i];
-      if (e.cap - e.flow > eps && dist[u] + 1 == dist[e.v]) {
+      if (e.cap - e.flow > EPS && dist[u] + 1 == dist[e.v]) {
        F pushed = dfs(e.v, min<F>(flow, e.cap - e.flow));
-        if (pushed > eps) {
+        if (pushed > EPS) {
           e.flow += pushed;
           graph[e.v][e.inv].flow -= pushed;
           return pushed;

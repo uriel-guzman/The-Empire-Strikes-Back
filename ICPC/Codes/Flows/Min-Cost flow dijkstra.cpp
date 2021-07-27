@@ -7,7 +7,7 @@ struct Mcmf {
     Edge(int u, int v, C cost, F cap, int inv) : u(u), v(v), cost(cost), cap(cap), flow(0), inv(inv) {}
   };
 
-  F eps = (F) 1e-9;
+  F EPS = (F) 1e-9;
   int s, t, n;
   vector<vector<Edge>> graph;
   vector<Edge*> prev;
@@ -30,7 +30,7 @@ struct Mcmf {
       pq.pop();
       if (c != cost[u])
         continue;
-      for (Edge &e : graph[u]) if (e.cap - e.flow > eps)
+      for (Edge &e : graph[u]) if (e.cap - e.flow > EPS)
         if (cost[u] + e.cost + pot[u] - pot[e.v] < cost[e.v]) {
           cost[e.v] = cost[u] + e.cost + pot[u] - pot[e.v];
           prev[e.v] = &e;

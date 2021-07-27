@@ -1,13 +1,13 @@
 struct Dyn {
   int l, r;
-  lli mx = -inf;
+  lli mx = -INF;
   Dyn *left, *right;
 
   Dyn(int l, int r) : l(l), r(r), left(0), right(0) {}
 
   void pull() {
-    mx = max(mx, (left ? left->mx : -inf));
-    mx = max(mx, (right ? right->mx : -inf));
+    mx = max(mx, (left ? left->mx : -INF));
+    mx = max(mx, (right ? right->mx : -INF));
   }
 
   void update(int p, lli v) {
@@ -28,7 +28,7 @@ struct Dyn {
 
   lli qmax(int ll, int rr) {
     if (rr < l || r < ll || r < l)
-      return -inf;
+      return -INF;
     if (ll <= l && r <= rr)
       return mx;
     int m = (l + r) >> 1;
@@ -70,7 +70,7 @@ struct Seg2D {
 
   lli qmax(int xx1, int xx2, int yy1, int yy2) {
     if (xx2 < x1 || x2 < xx1)
-      return -inf;
+      return -INF;
     if (xx1 <= x1 && x2 <= xx2)
       return tree->qmax(yy1, yy2);
     return max(left->qmax(xx1, xx2, yy1, yy2), right->qmax(xx1, xx2, yy1, yy2));

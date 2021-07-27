@@ -1,5 +1,5 @@
 struct Fun {
-  lli m = 0, c = inf;
+  lli m = 0, c = INF;
   lli operator ()(lli x) const { return m * x + c; }
 };
 
@@ -30,7 +30,7 @@ struct LiChao {
       return f(x);
     lli m = (l + r) >> 1;
     if (x <= m)
-      return min(f(x), left ? left->query(x) : inf);
-    return min(f(x), right ? right->query(x) : inf);
+      return min(f(x), left ? left->query(x) : INF);
+    return min(f(x), right ? right->query(x) : INF);
   }
 };

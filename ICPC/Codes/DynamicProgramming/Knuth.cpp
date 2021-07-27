@@ -11,7 +11,7 @@ fore (len, 1, n + 1)
       opt[l][r] = l;
       continue;
     }
-    dp[l][r] = inf;
+    dp[l][r] = INF;
     fore (k, opt[l][r - 1], opt[l + 1][r] + 1) {
       lli cur = dp[l][k] + dp[k][r] + cost(l, r);
       if (cur < dp[l][r]) {
