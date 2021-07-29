@@ -1,17 +1,17 @@
 const int LogN = 1 + __lg(N);
-int par[LogN][N], dep[N];
+int par[LogN][N], depth[N];
 
 void dfs(int u, int par[]) {
   for (int v : graph[u])
     if (v != par[u]) {
       par[v] = u;
-      dep[v] = dep[u] + 1;
+      depth[v] = depth[u] + 1;
       dfs(v, par);
     }
 }
 
 int lca(int u, int v){
-  if (dep[u] > dep[v])
+  if (depth[u] > depth[v])
     swap(u, v);
   fore (k, LogN, 0)
     if (dep[v] - dep[u] >= (1 << k))
@@ -25,7 +25,7 @@ int lca(int u, int v){
 }
 
 int dist(int u, int v) {
-  return dep[u] + dep[v] - 2 * dep[lca(u, v)];
+  return depth[u] + depth[v] - 2 * depth[lca(u, v)];
 }
 
 void init(int r) {
