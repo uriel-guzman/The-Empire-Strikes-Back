@@ -17,8 +17,6 @@ struct Modular {
   friend ostream & operator << (ostream &os, const Modular &m) { return os << m.v; }
 private:
   static int minv(int a, int m) {
-    a %= m;
-    assert(a);
-    return a == 1 ? 1 : int(m - lli(minv(m, a)) * lli(m) / a);
+    return a %= m, assert(a), a == 1 ? 1 : int(m - lli(minv(m, a)) * lli(m) / a);
   }
 };
