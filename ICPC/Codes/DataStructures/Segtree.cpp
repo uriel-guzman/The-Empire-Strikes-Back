@@ -1,41 +1,41 @@
+template <class T>
 struct Seg {
   int l, r;
   Seg *left, *right;
-  lli sum = 0;
+  T val;
 
-  Seg(int l, int r) : l(l), r(r), left(0), right(0) {
+  template <class Arr>
+  Seg(int l, int r, Arr a) : l(l), r(r), left(0), right(0) {
     if (l == r) {
-      sum = a[l];
+      val = T(a[l]);
       return;
     }
     int m = (l + r) >> 1;
-    left = new Seg(l, m);
-    right = new Seg(m + 1, r);
+    left = new Seg(l, m, a);
+    right = new Seg(m + 1, r, a);
     pull();
   }
 
   void pull() { 
-    sum = left->sum + right->sum; 
+    val = left->val + right->val; 
   }
   
-  void update(int p, lli v) {
+  template <class... Args>
+  void update(int p, const Args&... args) {
     if (l == r) {
-      sum += v;
+      val = T(args...);
       return;
     }
     int m = (l + r) >> 1;
-    if (p <= m)
-      left->update(p, v);
-    else
-      right->update(p, v);
+    (p <= m ? left : right)->update(p, args...);
     pull();
   }
-
-  lli query(int ll, int rr) {
+  
+  T query(int ll, int rr) {
     if (rr < l || r < ll)
-      return 0;
+      return T();
     if (ll <= l && r <= rr)
-      return sum;
+      return val;
     return left->query(ll, rr) + right->query(ll, rr);
   }
 };

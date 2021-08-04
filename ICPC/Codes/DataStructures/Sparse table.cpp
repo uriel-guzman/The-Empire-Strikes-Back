@@ -1,12 +1,15 @@
 template <class T, class F = function<T(const T&, const T&)>>
 struct Sparse {
-  vector<vector<T>> sp;
+  vector<T> sp[25]; 
   F f;
-  
-  Sparse(const vector<T> &a, const F &f) : sp(1 + __lg(sz(a))), f(f) {
+  int n;
+
+  Sparse(T* begin, T* end, const F &f) : Sparse(vector<T>(begin, end), f) {}
+
+  Sparse(const vector<T> &a, const F &f) : f(f), n(sz(a)) {
     sp[0] = a;
-    for (int k = 1; (1 << k) <= sz(sp[0]); k++) {
-      sp[k].resize(sz(sp[0]) - (1 << k) + 1);
+    for (int k = 1; (1 << k) <= n; k++) {
+      sp[k].resize(n - (1 << k) + 1);
       fore (l, 0, sz(sp[k])) {
         int r = l + (1 << (k - 1));
         sp[k][l] = f(sp[k - 1][l], sp[k - 1][r]);

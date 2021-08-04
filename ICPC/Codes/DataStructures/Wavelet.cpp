@@ -1,16 +1,18 @@
 struct Wav {
-  #define iter int* // vector<int>::iterator
   int lo, hi;
   Wav *left, *right;
   vector<int> amt;
 
-  Wav(int lo, int hi, iter b, iter e) : lo(lo), hi(hi) { // array 1-indexed
+  template <class Iter>
+  Wav(int lo, int hi, Iter b, Iter e) : lo(lo), hi(hi) { // array 1-indexed
     if (lo == hi || b == e)
       return;
     amt.reserve(e - b + 1);
     amt.pb(0);
     int mid = (lo + hi) >> 1;
-    auto leq = [mid](int x) { return x <= mid; };
+    auto leq = [mid](auto x) { 
+      return x <= mid; 
+    };
     for (auto it = b; it != e; it++)
       amt.pb(amt.back() + leq(*it));
     auto p = stable_partition(b, e, leq);

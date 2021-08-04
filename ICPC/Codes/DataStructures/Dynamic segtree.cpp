@@ -1,38 +1,39 @@
+template <class T>
 struct Dyn {
   int l, r;
   Dyn *left, *right;
-  lli sum = 0;
+  T val;
 
   Dyn(int l, int r) : l(l), r(r), left(0), right(0) {}
 
   void pull() {
-    sum = (left ? left->sum : 0);
-    sum += (right ? right->sum : 0);
+    val = (left ? left->val : T()) + (right ? right->val : T());
   }
 
-  void update(int p, lli v) {
+  template <class... Args>
+  void update(int p, const Args&... args) {
     if (l == r) {
-      sum += v;
+      val = T(args...);
       return;
     }
     int m = (l + r) >> 1;
     if (p <= m) {
       if (!left) left = new Dyn(l, m);
-      left->update(p, v);
+      left->update(p, args...);
     } else {
       if (!right) right = new Dyn(m + 1, r);
-      right->update(p, v);
+      right->update(p, args...);
     }
     pull();
   }
 
-  lli query(int ll, int rr) {
+  T query(int ll, int rr) {
     if (rr < l || r < ll || r < l)
-      return 0;
+      return T();
     if (ll <= l && r <= rr)
-      return sum;
+      return val;
     int m = (l + r) >> 1;
-    return (left ? left->query(ll, rr) : 0) + 
-           (right ? right->query(ll, rr) : 0);
+    return (left ? left->query(ll, rr) : T()) + 
+           (right ? right->query(ll, rr) : T());
   }
 };

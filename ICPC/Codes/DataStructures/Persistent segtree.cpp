@@ -1,12 +1,13 @@
+template <class T>
 struct Per {
   int l, r;
   Per *left, *right;
-  lli sum = 0;
+  T val;
 
   Per(int l, int r) : l(l), r(r), left(0), right(0) {}
 
   Per* pull() {
-    sum = left->sum + right->sum;
+    val = left->val + right->val;
     return this;
   }
 
@@ -19,24 +20,25 @@ struct Per {
     pull();
   }
 
-   Per* update(int p, lli v) {
+  template <class... Args>
+  Per* update(int p, const Args&... args) {
     if (p < l || r < p)
       return this;
     Per* tmp = new Per(l, r);
     if (l == r) {
-      tmp->sum = v;
+      tmp->val = T(args...);
       return tmp;
     }
-    tmp->left = left->update(p, v);
-    tmp->right = right->update(p, v);
+    tmp->left = left->update(p, args...);
+    tmp->right = right->update(p, args...);
     return tmp->pull();
   }
 
-  lli query(int ll, int rr) {
+  T query(int ll, int rr) {
     if (r < ll || rr < l)
-      return 0;
+      return T();
     if (ll <= l && r <= rr)
-      return sum;
+      return val;
     return left->query(ll, rr) + right->query(ll, rr);
   }
 };
