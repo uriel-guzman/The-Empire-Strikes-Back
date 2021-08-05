@@ -1,9 +1,11 @@
+// 1-indexed
 struct TwoSat {
   int n;
   vector<vector<int>> imp;
 
   TwoSat(int _n) : n(_n + 1), imp(2 * n) {}
 
+  // a || b
   void either(int a, int b) {
     a = max(2 * a, -1 - 2 * a);
     b = max(2 * b, -1 - 2 * b);
@@ -11,9 +13,20 @@ struct TwoSat {
     imp[b ^ 1].pb(a);
   }
 
+  // if a then b
+  // a  b   a => b
+  // F  F     T
+  // T  T     T
+  // F  T     T
+  // T  F     F
   void implies(int a, int b) { either(~a, b); }
+
+  // setVal(a): set a = true
+  // setVal(~a): set a = false
   void setVal(int a) { either(a, a); }
 
+
+  // {}: means there isn't a solution
   vector<int> solve() {
     int k = sz(imp);
     vector<int> s, b, id(sz(imp));
