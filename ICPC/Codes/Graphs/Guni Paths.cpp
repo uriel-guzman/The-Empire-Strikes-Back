@@ -1,5 +1,5 @@
 // How many simple paths of distance K exists.
-vi graph[N];
+vector<int> graph[N];
 int cnt[C]; // cnt[x] store the amount of paths with length x
 int sz[N];
 int depth[N]; // depth[u] <- distance from root to u

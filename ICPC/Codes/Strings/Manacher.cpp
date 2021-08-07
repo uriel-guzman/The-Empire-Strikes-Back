@@ -1,6 +1,6 @@
 template <class T>
-vector<vi> manacher(T &s) {
-  vector<vi> pal(2, vi(sz(s), 0));
+vector<vector<int>> manacher(T &s) {
+  vector<vector<int>> pal(2, vector<int>(sz(s), 0));
   fore (k, 0, 2) {
     int l = 0, r = 0;
     fore (i, 0, sz(s)) {

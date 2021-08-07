@@ -1,5 +1,5 @@
 struct Dsu {
-  vi par;
+  vector<int> par;
 
   Dsu(int n = 1) : par(n + 1) {
     iota(all(par), 0);

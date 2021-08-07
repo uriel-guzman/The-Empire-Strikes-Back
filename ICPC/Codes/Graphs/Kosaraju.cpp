@@ -1,6 +1,6 @@
 int scc[N], k = 0;
 char vis[N];
-vi order;
+vector<int> order;
 
 void dfs1(int u) {
   vis[u] = 1;

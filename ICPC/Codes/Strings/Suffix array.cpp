@@ -2,10 +2,9 @@ template <class T>
 struct SuffixArray {
   int n;
   T s;
-  vector<int> sa, rank;
-  vector<vi> sp;
+  vector<int> sa, rank, sp[25]; 
 
-  SuffixArray(const T &x) : n(sz(x) + 1), s(x), sa(n), rank(n), sp(1 + __lg(n), vi(n, 0)) {
+  SuffixArray(const T &x) : n(sz(x) + 1), s(x), sa(n), rank(n) {
     s.pb(0);
     fore (i, 0, n) sa[i] = i, rank[i] = s[i];
     vector<int> nsa(n), cnt(max(260, n));
@@ -20,14 +19,17 @@ struct SuffixArray {
         rank[sa[i]] = r;
       }
     }
+    sp[0].resize(n);
     for (int i = 0, j = rank[0], k = 0; i < n - 1; i++, k++) 
       while (k >= 0 && s[i] != s[sa[j - 1] + k])
         sp[0][j] = k--, j = rank[sa[j] + 1];  
-    for (int k = 1; (1 << k) < n; k++) 
+    for (int k = 1; (1 << k) < n; k++) {
+      sp[k].resize(n - (1 << k) + 1);
       fore (l, 0, n - (1 << (k - 1))) {
         int r = l + (1 << (k - 1)); 
         sp[k][l] = min(sp[k - 1][l], sp[k - 1][r]);
       }
+    }
   }
 
   int lcp(int l, int r) { 

@@ -12,6 +12,9 @@
     "algorithm": "cpp",
     "regex": "cpp",
     "bit": "cpp",
-    "fstream": "cpp"
+    "fstream": "cpp",
+    "bitset": "cpp",
+    "iosfwd": "cpp",
+    "iterator": "cpp"
   }
 }

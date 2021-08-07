@@ -9,7 +9,7 @@ vector<T> FWHT(vector<T> f) {
         if (op == '|') f[i] += (inv ? -1 : 1) * f[j];
         if (op == '&') f[j] += (inv ? -1 : 1) * f[i];
       }
-  if (op == '^' and inv)
-    for (auto& i : f) i /= n;
+  if (op == '^' && inv)
+    for (auto &i : f) i /= n;
   return f;
 }

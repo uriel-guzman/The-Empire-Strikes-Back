@@ -1,6 +1,6 @@
-vector< pair<lli, int> > factorialFactors(lli n) {
-  vector< pair<lli, int> > fac;
-  for (lli p : primes) {
+vector<ii> factorialFactors(lli n) {
+  vector<ii> fac;
+  for (auto p : primes) {
     if (n < p)
       break;
     lli mul = 1LL, k = 0;

@@ -1,4 +1,4 @@
-vi order;
+vector<int> order;
 int indeg[N];
 
 void topologicalSort() { // first fill the indeg[]

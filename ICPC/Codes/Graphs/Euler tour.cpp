@@ -1,4 +1,3 @@
-vi graph[N];
 int tin[N], tout[N], who[2 * N];
 int timer = 0;
 int n;

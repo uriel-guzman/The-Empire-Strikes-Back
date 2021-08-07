@@ -1,5 +1,5 @@
 bitset<N> isPrime;
-vi primes;
+vector<int> primes;
 
 void sieve() {
   isPrime.set();

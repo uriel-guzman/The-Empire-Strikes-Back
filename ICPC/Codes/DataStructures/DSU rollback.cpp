@@ -1,5 +1,5 @@
 struct Dsu {
-  vi par, tot;
+  vector<int> par, tot;
   stack<ii> mem;
 
   Dsu(int n = 1) : par(n + 1), tot(n + 1, 1) {

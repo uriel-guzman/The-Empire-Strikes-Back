@@ -1,12 +1,14 @@
 struct AhoCorasick {
   struct Node : map<char, int> {
-    int link = 0, out = 0;
+    int link = 0, up = 0;
     int cnt = 0, isw = 0;
   };
   
   vector<Node> trie;
-
-  AhoCorasick() { newNode(); }
+  
+  AhoCorasick() { 
+    newNode(); 
+  }
 
   int newNode() {
     trie.pb({});
@@ -22,7 +24,7 @@ struct AhoCorasick {
     trie[u].cnt++, trie[u].isw = 1;
   }
 
-  int go(int u, char c) {
+  int next(int u, char c) {
     while (u && !trie[u].count(c))
       u = trie[u].link;
     return trie[u][c];
@@ -35,21 +37,25 @@ struct AhoCorasick {
       int u = qu.front();
       qu.pop();
       for (auto &[c, v] : trie[u]) {
-        int l = (trie[v].link = u ? go(trie[u].link, c) : 0);
+        int l = (trie[v].link = u ? next(trie[u].link, c) : 0);
         trie[v].cnt += trie[l].cnt;
-        trie[v].out = trie[l].isw ? l : trie[l].out;
+        trie[v].up = trie[l].isw ? l : trie[l].up;
         qu.push(v);
       }
     }
   }
 
+  template <class F>
+  void goUp(int u, F f) {
+    for (; u != 0; u = trie[u].up) 
+      f(u);
+  }
+
   int match(string &s, int u = 0) {
     int ans = 0;
     for (char c : s) {
-      u = go(u, c);
+      u = next(u, c);
       ans += trie[u].cnt;
-      for (int x = u; x != 0; x = trie[x].out) 
-        // pass over all elements of the implicit vector
     }
     return ans;
   }

@@ -1,10 +1,10 @@
 bool isPrime(lli n) {
   if (n == 1)
     return false;
-  for (int pr : primes) {
-    if (n % pr == 0)
+  for (auto p : primes) {
+    if (n % p == 0)
       return false;
-    if (1ll * pr * pr > n)
+    if (1LL * p * p > n)
       return true;
   }
   return true;

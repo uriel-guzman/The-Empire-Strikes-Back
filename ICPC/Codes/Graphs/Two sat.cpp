@@ -3,7 +3,7 @@ struct TwoSat {
   int n;
   vector<vector<int>> imp;
 
-  TwoSat(int _n) : n(_n + 1), imp(2 * n) {}
+  TwoSat(int k) : n(k + 1), imp(2 * n) {}
 
   // a || b
   void either(int a, int b) {
@@ -19,12 +19,15 @@ struct TwoSat {
   // T  T     T
   // F  T     T
   // T  F     F
-  void implies(int a, int b) { either(~a, b); }
+  void implies(int a, int b) { 
+    either(~a, b); 
+  }
 
   // setVal(a): set a = true
   // setVal(~a): set a = false
-  void setVal(int a) { either(a, a); }
-
+  void setVal(int a) { 
+    either(a, a); 
+  }
 
   // {}: means there isn't a solution
   vector<int> solve() {

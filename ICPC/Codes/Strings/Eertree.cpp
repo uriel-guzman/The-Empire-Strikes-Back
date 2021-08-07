@@ -6,7 +6,7 @@ struct Eertree {
   vector<Node> trie;
   string s = "$";
   int last;
-
+  
   Eertree() {
     last = newNode(), newNode();
     trie[0].link = 1, trie[1].len = -1;
@@ -17,7 +17,7 @@ struct Eertree {
     return sz(trie) - 1;
   }
 
-  int go(int u) {
+  int next(int u) {
     while (s[sz(s) - trie[u].len - 2] != s.back()) 
       u = trie[u].link;
     return u;
@@ -25,11 +25,11 @@ struct Eertree {
 
   void extend(char c) {
     s += c;
-    int u = go(last);
+    int u = next(last);
     if (!trie[u][c]) {
       int v = newNode();
       trie[v].len = trie[u].len + 2;
-      trie[v].link = trie[go(trie[u].link)][c];
+      trie[v].link = trie[next(trie[u].link)][c];
       trie[u][c] = v;
     }
     last = trie[u][c];

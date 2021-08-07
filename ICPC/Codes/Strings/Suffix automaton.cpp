@@ -5,8 +5,10 @@ struct SuffixAutomaton {
   
   vector<Node> trie;
   int last;
-
-  SuffixAutomaton() { last = newNode(); }
+  
+  SuffixAutomaton() { 
+    last = newNode(); 
+  }
 
   int newNode() {
     trie.pb({});

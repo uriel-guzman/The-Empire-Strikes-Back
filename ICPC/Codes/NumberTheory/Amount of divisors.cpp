@@ -1,6 +1,6 @@
 ull amountOfDivisors(ull n) {
   ull cnt = 1;
-  for (int p : primes) {
+  for (auto p : primes) {
     if (1LL * p * p * p > n) break;
     if (n % p == 0) {
       ull k = 0;
