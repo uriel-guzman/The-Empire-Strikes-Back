@@ -1,6 +1,6 @@
 int dp(int l, int r) {
   if (l > r)
-    return 0LL;
+    return 0;
   int &ans = mem[l][r];
   if (!done[l][r]) {
     done[l][r] = true, ans = inf;

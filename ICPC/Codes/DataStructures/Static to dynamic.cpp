@@ -1,11 +1,11 @@
 template <class Black, class T>
 struct StaticDynamic {
-  Black box[LogN];
-  vector<T> st[LogN];
+  Black box[25];
+  vector<T> st[25];
 
   void insert(T &x) {
     int p = 0;
-    while (p < LogN && !st[p].empty()) 
+    while (p < 25 && !st[p].empty()) 
       p++;
     st[p].pb(x);
     fore (i, 0, p) {

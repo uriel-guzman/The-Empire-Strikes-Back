@@ -1,8 +1,7 @@
 const int BLOCK = sqrt(N);
 int blo[N]; // blo[i] = i / BLOCK
 
-void update(int i) {
-}
+void update(int i) {}
 
 int query(int l, int r) {  
   while (l <= r) 
