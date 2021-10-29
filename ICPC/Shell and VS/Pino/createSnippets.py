@@ -1,7 +1,7 @@
 import os
 
 dirIcpc = r'/Users/pino/Documents/The-Empire-Strikes-Back/ICPC/Codes/'
-cppJson = "/Users/pino/Library/Application Support/Code/User/snippets/cpp.json"
+cppJson = "/Users/pino/Documents/Competitive Programming/.vscode/snippets.code-snippets"
 
 def solve(file, dir, out):
   # print(file, dir)
