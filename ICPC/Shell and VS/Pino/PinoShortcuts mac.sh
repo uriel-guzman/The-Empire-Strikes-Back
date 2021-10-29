@@ -209,5 +209,5 @@ omegaup() {
 
 update() {
   git pull origin master
-  python3 /Users/pino/Documents/The-Empire-Strikes-Back/ICPC/Shell\ and\ VS/Pino/createSnippets.py'
+  python3 /Users/pino/Documents/The-Empire-Strikes-Back/ICPC/Shell\ and\ VS/Pino/createSnippets.py
 }
