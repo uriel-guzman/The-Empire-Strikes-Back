@@ -16,21 +16,21 @@ struct XorBasis {
     return 0;
   }
 
-  int find(int x) {
+  optional<int> find(int x) {
     // which number is needed to generate x
     // num ^ (num ^ x) = x
     int num = 0; 
     fore (i, D, 0) if ((x >> i) & 1) {
-      if (!basis[i]) return -1;
+      if (!basis[i]) return nullopt;
       x ^= basis[i];
       num |= (1 << i);
     }
-    return num;
+    return optional(num);
   }
 
-  int operator [](lli k) {
+  optional<int> operator [](lli k) {
     lli tot = (1LL << n);
-    if (k > tot) return -1;
+    if (k > tot) return nullopt;
     int num = 0;
     fore (i, D, 0) if (basis[i]) {
       lli low = tot / 2;
@@ -39,6 +39,6 @@ struct XorBasis {
       if (low < k) k -= low;
       tot /= 2;
     }
-    return num;
+    return optional(num);
   }
 };
