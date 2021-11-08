@@ -29,14 +29,12 @@ struct TwoSat {
     either(a, a); 
   }
 
-  // {}: means there isn't a solution
-  vector<int> solve() {
+  optional<vector<int>> solve() {
     int k = sz(imp);
     vector<int> s, b, id(sz(imp));
 
     function<void(int)> dfs = [&](int u) { 
-      b.pb(id[u] = sz(s));
-      s.pb(u);
+      b.pb(id[u] = sz(s)), s.pb(u);
       for (int v : imp[u]) {
         if (!id[v]) dfs(v);
         else while (id[v] < b.back()) b.pop_back();
@@ -51,9 +49,9 @@ struct TwoSat {
       if (!id[u]) dfs(u);
     fore (u, 0, n) {
       int x = 2 * u;
-      if (id[x] == id[x ^ 1]) return {};
+      if (id[x] == id[x ^ 1]) return nullopt;
       val[u] = id[x] < id[x ^ 1];
     }
-    return val;
+    return optional(val);
   }
 };
