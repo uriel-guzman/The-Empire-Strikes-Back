@@ -9,10 +9,10 @@ int dfsz(int u, int p = -1) {
   return sz[u];
 }
 
-int centroid(int u, int n, int p = -1) {
+int centroid(int u, int size, int p = -1) {
   for (int v : graph[u])
-    if (v != p && !rem[v] && 2 * sz[v] > n)
-      return centroid(v, n, u);
+    if (v != p && !rem[v] && 2 * sz[v] > size)
+      return centroid(v, size, u);
   return u;
 }
 

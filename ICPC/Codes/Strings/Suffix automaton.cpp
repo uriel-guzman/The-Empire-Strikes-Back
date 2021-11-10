@@ -57,7 +57,7 @@ struct SuffixAutomaton {
     return s;
   }
 
-  void occurs() {
+  void substringOccurrences() {
     // trie[u].occ = 1, trie[clone].occ = 0
     vi who;
     fore (u, 1, sz(trie))
@@ -71,7 +71,7 @@ struct SuffixAutomaton {
     }
   }
 
-  lli queryOccurences(string &s, int u = 0) {
+  lli occurences(string &s, int u = 0) {
     for (char c : s) {
       if (!trie[u].count(c))
         return 0;

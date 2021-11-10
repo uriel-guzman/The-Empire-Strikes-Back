@@ -1,208 +1,234 @@
-alias myBash='open ~/.zshenv' # Bash file 
+alias myBash="open ~/.zshenv"
+alias saveMyBash="source ~/.zshenv" 
 
-######################## Github ########################
+user="/Users/abraham"
+icpcDir="${user}/The-Empire-Strikes-Back/ICPC"
 
-alias icpc='cd /Users/abraham/The-Empire-Strikes-Back' # Folder of github
-
-alias snippets='python3 /Users/abraham/The-Empire-Strikes-Back/ICPC/Shell\ and\ VS/Abraham/createSnippets.py'
-
-
-######################## Programming ########################
-
-alias problems='cd /Users/abraham/Problems'
+alias icpc="cd ${icpcDir}" 
+alias problems="cd ${user}/Problems"
+alias snippets="python3 ${icpcDir}/Shell\ and\ VS/Abraham/createSnippets.py"
 
 red='\x1B[0;31m'
 green='\x1B[0;32m'
 blue='\x1B[0;34m'
 gray='\x1B[0;90m'
 cyan='\x1B[0;36m'
-noColor='\x1B[0m'
+removeColor='\x1B[0m'
+
+icpcPush() {
+  git add $1 
+  git commit -a -m "$2"
+  git push origin master
+}
+
+icpcPull() {
+  git pull origin master
+  snippets
+}
 
 create() {
-	tem='/Users/abraham/The-Empire-Strikes-Back/ICPC/Codes/Misc/template.cpp'
+  templateCode="${icpcDir}/Codes/Misc/Template.cpp"
 
-	begin=$1
-	end=$1
-	if [ $# -ge 2 ]; then
-		# Then this is a contest, so input is needed
-		end=$2 			
-		tee {${begin}..${end}}.cpp < ${tem}
-		touch {${begin}..${end}} 
-	else
-		# A single file
-			
-		tee ${begin}.cpp < ${tem}
-		open ${begin}.cpp
-		touch in
-	fi
+  begin=$1
+  end=$1
+  if [ $# -ge 2 ]; then
+    # It's a contest
+    end=$2
+    tee {${begin}..${end}}.cpp < ${templateCode}
+    touch {${begin}..${end}} 
+  else
+    # A single file
+    tee ${begin}.cpp < ${templateCode}
+    open ${begin}.cpp
+    touch in
+  fi
 }
 
 erase() {
-	begin=$1
-	end=$1
-	if [ $# -ge 2 ]; then
-		end=$2 
-		rm -r {${begin}..${end}}.cpp 
-		rm -r {${begin}..${end}} 
-	else 	
-		rm -r ${begin}.cpp
-		rm -r ${begin}
-	fi
+  # Erase anything in between [begin, end]
+  begin=$1
+  end=$1
+  if [ $# -ge 2 ]; then
+    end=$2 
+    rm -r {${begin}..${end}}.cpp 
+    rm -r {${begin}..${end}} 
+  else
+    rm -r ${begin}.cpp
+    rm -r ${begin}
+  fi
 }
 
-compilation() {
-	alias flags='-Wall -Wextra -Wshadow -fmax-errors=3 -w'
-	g++-11 --std=c++17 $2 ${flags} $1.cpp -o $1.out 
+compile() {
+  # Compiles 'file' with g++ and using 'moreFlags'
+  file=$1
+  moreFlags=""
+  if [ $# -ge 2 ]; then
+    moreFlags=$2
+  fi
+  alias flags='-Wall -Wextra -Wshadow -fmax-errors=3 -w -mcmodel=medium'
+  g++-11 --std=c++17 ${moreFlags} ${flags} ${file}.cpp -o ${file}.out 
 }
 
 debug() {
-	file=$1
-	input=$1
+  # debug cppFile [input]
+  cppFile=$1
+  input=$1
+  if [ $# -ge 2 ]; then
+    input=$2
+  fi
 
-	if [ $# -ge 2 ]; then
-		input=$2
-	fi
-	
-	compilation ${file} -DLOCAL 
+  compile ${cppFile} -DLOCAL
 
-
-	./${file}.out < ${input}
-	rm -r ./${file}.out
+  ./${cppFile}.out < ${input}
+  rm -r ./${cppFile}.out
 } 
 
 run() {
-	file=$1
-	input=$1
+  # debug cppFile [input]
+  cppFile=$1
+  input=$1
+  if [ $# -ge 2 ]; then
+    input=$2
+  fi
 
-	if [ $# -ge 2 ]; then
-		input=$2
-	fi
-	
-	compilation ${file} ""
+  compile ${cppFile}
 
-
-	./${file}.out < ${input}
-	rm -r ./${file}.out
+  ./${cppFile}.out < ${input}
+  rm -r ./${cppFile}.out
 }
 
 random() {
-	# random file
-	
-	compilation $1 "" 
-	compilation brute ""
-	
-	if [[ -f "gen.cpp" ]]; then
-		 # C++ version, so first compile it
-		compilation gen ""
-	fi
-	
-	generateTestCase() {
-		# looks for the .cpp generator first, then the .py generator
-		if [[ -f "gen.cpp" ]]; then
-			./gen.out > in
-		else
-			python3 gen.py | cat > in 
-		fi
-	}
-	
-	for ((i = 1; i <= 300; i++)); do
-		generateTestCase
-		
-		printf "Test case #${i}"
-		
-		diff -uwi <(./$1.out < in) <(./brute.out < in) > diff$1
-		
-		if [[ $? -eq 0 ]]; then
-			printf "${green} Accepted ${noColor}\n"
-		else
-			printf "${red} Wrong answer ${noColor}\n"
-			break
-		fi
-	done
+  # random solution [bruteForceSolution] [testCaseGenerator]
+
+  solution=$1
+  bruteForceSolution="brute"
+  testCaseGenerator="gen"
+  if [ $# -ge 2 ]; then
+    bruteForceSolution=$2
+    if [ $# -ge 3 ]; then
+      testCaseGenerator=$3
+    fi
+  fi
+
+  compile ${solution} 
+  compile ${bruteForceSolution}
+
+  if [[ -f ${testCaseGenerator}.cpp ]]; then
+    # C++ version, so first compile it
+    compile ${testCaseGenerator}
+  fi
+
+  generateTestCase() {
+    # cpp > py testCaseGenerator
+    if [[ -f ${testCaseGenerator}.cpp ]]; then
+      ./${testCaseGenerator}.out > in
+    else
+      python3 ${testCaseGenerator}.py | cat > in 
+    fi
+  }
+
+  for ((i = 1; i <= 300; i++)); do
+    generateTestCase
+
+    printf "Test case #${i}"
+
+    diff -uwi <(./${solution}.out < in) <(./${bruteForceSolution}.out < in) > diff${solution}
+
+    if [[ $? -eq 0 ]]; then
+      printf "${green} Accepted ${removeColor}\n"
+    else
+      printf "${red} Wrong answer ${removeColor}\n"
+      break
+    fi
+  done
 }
 
-
 omegaup() {
-	# Run it like:
-	# omegaup program, without extension
-	# at the gen.cpp file, use int main(int k)
-	# k = 1, easy test cases
-	# k = 2, medium test cases
-	# k = 3, hard test cases
+  # omegaup solution [testCaseGenerator]
+  # Inside the gen.cpp file you should need to add main(int k)
+  # k will be {{1:easy}, {2:medium}, {3:hard}}
 
-	myDir=$(pwd)
+  myDir=$(pwd)
 
-	compilation $1 "" 
-	compilation gen "" 
-	
-	# Create folder
-	problemName="problem_${1}"
-	rm -r ${problemName}
-	mkdir ${problemName}
-	
-	# Add solution and generator to the folder
-	tee "${folderDir}/sol.cpp" < ${1}.cpp
-	tee "${folderDir}/gen.cpp" < gen.cpp
-	
-	folderDir="${myDir}/${problemName}"
-	cd ${folderDir}
-	
-	# Create cases and statements folder
-	mkdir "cases"
-	mkdir "statements"
-	cd "${folderDir}/statements"
-	touch "es.markdown"
-	
-	echo "# Descripción" >> "es.markdown"
-	echo "Historia del problema" >> "es.markdown"
-	echo "# Entrada\n Variables en \`rojo\`, solo \$texto\$\n" >> "es.markdown"
-	echo "# Salida\n Como queremos la salida" >> "es.markdown"
-	echo "#Ejemplo\n || input\n || output\n || description \n || end\n" >> "es.markdown"
-	
-	echo "# Límites\n" >> "es.markdown"
-	echo "- \$1 \leq n \leq 10^5$" >> "es.markdown"
-	echo "\n----------\n" >> "es.markdown"
-	
-	echo "# Subtareas\n" >> "es.markdown"
-	echo "Para un 10 % de los casos:\n" >> "es.markdown"
-	echo "- \$1 \leq n \leq 10$" >> "es.markdown"
-	echo "\n----------\n" >> "es.markdown"
-	
-	echo "Para un 40 % de los casos (agrupados):\n" >> "es.markdown"
-	echo "- \$1 \leq n \leq 10$" >> "es.markdown"
-	echo "\n----------\n" >> "es.markdown"
-  
-	echo "Para un 50 % de los casos (agrupados) los límites originales." >> "es.markdown"
-	
-	casesDir="${folderDir}/cases"
+  solution=$1
+  testCaseGenerator="gen"
 
-	cd ${myDir}	
-	
-	# Weak test cases
-	for ((i = 1; i <= 3; i++)); do
-		input="${casesDir}/${i}.in"
-		output="${casesDir}/${i}.out"
-		./gen.out > ${input}
-		./$1.out < ${input} > ${output}	
-	done
-	
-	# Medium test cases
-	for ((i = 1; i <= 12; i++)); do
-		input="${casesDir}/bunch1.medium.${i}.in"
-		output="${casesDir}/bunch1.medium.${i}.out"
-		./gen.out medium > ${input}
-		./$1.out < ${input} > ${output}	
-	done
-	
-	# Big test cases
-	for ((i = 1; i <= 15; i++)); do
-		input="${casesDir}/bunch2.hard.${i}.in"
-		output="${casesDir}/bunch2.hard.${i}.out"
-		./gen.out is big > ${input}
-		./$1.out < ${input} > ${output}	
-	done
+  if [ $# -ge 2 ]; then
+    testCaseGenerator=$2
+  fi
 
-	
-	clear
-	printf "Ready to omegaup\n"
-}	
+  compile ${solution} "" 
+  compile ${testCaseGenerator} "" 
+
+  # Create folder
+  problemName="problem_${solution}"
+  rm -r ${problemName}
+  mkdir ${problemName}
+
+  # Add solution and generator to the folder
+  tee "${folderDir}/sol.cpp" < ${solution}.cpp
+  tee "${folderDir}/gen.cpp" < ${testCaseGenerator}.cpp
+
+  folderDir="${myDir}/${problemName}"
+  cd ${folderDir}
+
+  # Create cases and statements folder
+  mkdir "cases"
+  mkdir "statements"
+
+  # Add description on es.markdown
+  cd "${folderDir}/statements"
+  touch "es.markdown"
+
+  echo "# Descripción" >> "es.markdown"
+  echo "Historia del problema" >> "es.markdown"
+  echo "# Entrada\n Variables en \`rojo\`, solo \$texto\$\n" >> "es.markdown"
+  echo "# Salida\n Esto es la salida" >> "es.markdown"
+  echo "#Ejemplo\n || input\n || output\n || description \n || end\n" >> "es.markdown"
+
+  echo "# Límites\n" >> "es.markdown"
+  echo "- \$1 \leq n \leq 10^5$" >> "es.markdown"
+  echo "\n----------\n" >> "es.markdown"
+
+  echo "# Subtareas\n" >> "es.markdown"
+  echo "Para un 10 % de los casos:\n" >> "es.markdown"
+  echo "- \$1 \leq n \leq 10$" >> "es.markdown"
+  echo "\n----------\n" >> "es.markdown"
+
+  echo "Para un 40 % de los casos (agrupados):\n" >> "es.markdown"
+  echo "- \$1 \leq n \leq 10$" >> "es.markdown"
+  echo "\n----------\n" >> "es.markdown"
+
+  echo "Para un 50 % de los casos (agrupados) los límites originales." >> "es.markdown"
+
+  testCasesDir="${folderDir}/cases"
+
+  cd ${myDir}	
+
+  # Weak test cases
+  for ((i = 1; i <= 3; i++)); do
+    input="${testCasesDir}/${i}.in"
+    output="${testCasesDir}/${i}.out"
+    ./${testCaseGenerator}.out > ${input}
+    ./${solution}.out < ${input} > ${output}	
+  done
+
+  # Medium test cases
+  for ((i = 1; i <= 12; i++)); do
+  input="${testCasesDir}/bunch1.medium.${i}.in"
+  output="${testCasesDir}/bunch1.medium.${i}.out"
+  ./${testCaseGenerator}.out medium > ${input}
+  ./${solution}.out < ${input} > ${output}	
+  done
+
+  # Big test cases
+  for ((i = 1; i <= 15; i++)); do
+  input="${testCasesDir}/bunch2.hard.${i}.in"
+  output="${testCasesDir}/bunch2.hard.${i}.out"
+  ./${testCaseGenerator}.out is big > ${input}
+  ./${solution}.out < ${input} > ${output}	
+  done
+
+  clear
+  printf "Ready to omegaup\n"
+}

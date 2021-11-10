@@ -11,18 +11,18 @@ int guni(int u, int p = -1) {
   return sz[u];
 }
 
-void add(int u, int p, int x, bool skip) {
-  cnt[color[u]] += x;
-  for (int i = skip; i < sz(graph[u]); i++) // don't change it with a fore!!!
+void update(int u, int p, int add, bool skip) {
+  cnt[color[u]] += add;
+  for (int i = skip; i < sz(graph[u]); i++) // !!! don't use fore
     if (graph[u][i] != p)
-      add(graph[u][i], u, x, 0);
+      update(graph[u][i], u, add, 0);
 }
 
 void solve(int u, int p = -1, bool keep = 0) {
   fore (i, sz(graph[u]), 0)
     if (graph[u][i] != p) 
       solve(graph[u][i], u, !i);
-  add(u, p, +1, 1); // add
+  update(u, p, +1, 1); // add
   // now cnt[i] has how many times the color i appears in the subtree of u
-  if (!keep) add(u, p, -1, 0); // remove
+  if (!keep) update(u, p, -1, 0); // remove
 }

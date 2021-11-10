@@ -24,18 +24,33 @@ struct Eertree {
   }
 
   void extend(char c) {
-    s += c;
-    int u = next(last);
-    if (!trie[u][c]) {
+    s.push_back(c);
+    last = next(last);
+    if (!trie[last][c]) {
       int v = newNode();
-      trie[v].len = trie[u].len + 2;
-      trie[v].link = trie[next(trie[u].link)][c];
-      trie[u][c] = v;
+      trie[v].len = trie[last].len + 2;
+      trie[v].link = trie[next(trie[last].link)][c];
+      trie[last][c] = v;
     }
-    last = trie[u][c];
+    last = trie[last][c];
   }
 
   Node& operator [](int u) {
     return trie[u];
+  }
+
+  void substringOccurrences() {
+    fore (u, sz(s), 0) {
+      trie[trie[u].link].occ += trie[u].occ;
+    } 
+  }
+
+  lli occurences(string &s, int u = 0) {
+    for (char c : s) {
+      if (!trie[u].count(c))
+        return 0;
+      u = trie[u][c];
+    }
+    return trie[u].occ;
   }
 };
