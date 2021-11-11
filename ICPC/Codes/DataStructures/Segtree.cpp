@@ -16,12 +16,12 @@ struct Seg {
     pull();
   }
 
-  void pull() { 
-    val = left->val + right->val; 
+  void pull() {
+    val = left->val + right->val;
   }
-  
+
   template <class... Args>
-  void update(int p, const Args&... args) {
+  void update(int p, const Args &...args) {
     if (l == r) {
       val = T(args...);
       return;
@@ -30,7 +30,7 @@ struct Seg {
     (p <= m ? left : right)->update(p, args...);
     pull();
   }
-  
+
   T query(int ll, int rr) {
     if (rr < l || r < ll)
       return T();

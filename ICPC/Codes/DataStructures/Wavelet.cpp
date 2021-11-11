@@ -4,15 +4,13 @@ struct Wav {
   vector<int> amt;
 
   template <class Iter>
-  Wav(int lo, int hi, Iter b, Iter e) : lo(lo), hi(hi) { // array 1-indexed
+  Wav(int lo, int hi, Iter b, Iter e) : lo(lo), hi(hi) {  // array 1-indexed
     if (lo == hi || b == e)
       return;
     amt.reserve(e - b + 1);
     amt.pb(0);
     int mid = (lo + hi) >> 1;
-    auto leq = [mid](auto x) { 
-      return x <= mid; 
-    };
+    auto leq = [mid](auto x) { return x <= mid; };
     for (auto it = b; it != e; it++)
       amt.pb(amt.back() + leq(*it));
     auto p = stable_partition(b, e, leq);
@@ -31,11 +29,10 @@ struct Wav {
   }
 
   int count(int l, int r, int x, int y) {
-    if (r < l || y < x || y < lo || hi < x ) 
+    if (r < l || y < x || y < lo || hi < x)
       return 0;
-    if (x <= lo && hi <= y) 
+    if (x <= lo && hi <= y)
       return r - l + 1;
-    return left->count(amt[l - 1] + 1, amt[r], x, y) +
-           right->count(l - amt[l - 1], r - amt[r], x, y);
+    return left->count(amt[l - 1] + 1, amt[r], x, y) + right->count(l - amt[l - 1], r - amt[r], x, y);
   }
 };

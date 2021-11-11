@@ -15,13 +15,13 @@ gray='\x1B[0;90m'
 cyan='\x1B[0;36m'
 removeColor='\x1B[0m'
 
-icpcPush() {
+mypush() {
   git add $1 
   git commit -a -m "$2"
   git push origin master
 }
 
-icpcPull() {
+mypull() {
   git pull origin master
   snippets
 }
