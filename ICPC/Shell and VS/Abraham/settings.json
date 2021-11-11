@@ -4,17 +4,19 @@
   "editor.scrollbar.verticalScrollbarSize": 0,
   "editor.scrollbar.horizontalScrollbarSize": 0,
   "editor.minimap.enabled": false,
+  "breadcrumbs.enabled": false,
   "editor.tabCompletion": "on",
   "editor.snippetSuggestions": "inline",
   "editor.suggestSelection": "first",
   "editor.tokenColorCustomizations": {
+    // [Theme name]: { custom colors }
     "[Ra Silver]": {
       "comments": "#ff00ff",
       "strings": "#ff8000",
       "functions": "#000080",
       "keywords": "#3333ff",
       "numbers": "#FF0000",
-      //  "variables": "#aa0090",
+      // "variables": "#aa0090",
       "types": "#aa00ff",
     },
     "[GitHub Dark]": {
@@ -22,38 +24,40 @@
       "strings": "#f38c16",
       "keywords": "#6a6aff",
       "numbers": "#d63434",
-      // "variables": "#aa0090",
+      "variables": "#aa0090",
       "types": "#c46df0",
       "functions": "#8b92ff",
     }
   },
+  // "workbench.colorCustomizations": {
+  //   "editorError.foreground": "#00000000",
+  //   "editorWarning.foreground": "#00000000",
+  //   "editorInfo.foreground": "#00000000"
+  // }
   "terminal.explorerKind": "external",
   "workbench.colorTheme": "Ra Silver",
-  /*
-    https://clang.llvm.org/docs/ClangFormatStyleOptions.html
-    { 
-      BasedOnStyle: Google, 
-      UseTab: Never, 
-      IndentWidth: 2, 
-      TabWidth: 2, 
-      BreakBeforeBraces: Attach, 
-      AllowShortBlocksOnASingleLine: Empty, 
-      AllowShortEnumsOnASingleLine: true,
-      AllowShortFunctionsOnASingleLine: Empty,
-      AllowShortIfStatementsOnASingleLine: true, 
-      AllowShortLoopsOnASingleLine: true,
-      IndentCaseLabels: false, 
-      ColumnLimit: 150, 
-      AccessModifierOffset: -4, 
-      Cpp11BracedListStyle: true, 
-      PointerAlignment: Right,
-      BreakBeforeTernaryOperators: true,
-      AlignOperands: OAS_Align 
-    }
-  */
   "C_Cpp.updateChannel": "Insiders",
-  "C_Cpp.clang_format_fallbackStyle": "{ BasedOnStyle: Google, UseTab: Never, IndentWidth: 2, TabWidth: 2, BreakBeforeBraces: Attach, AllowShortBlocksOnASingleLine: Empty, AllowShortEnumsOnASingleLine: true, AllowShortFunctionsOnASingleLine: Empty, AllowShortIfStatementsOnASingleLine: false,  AllowShortLoopsOnASingleLine: false, IndentCaseLabels: false, ColumnLimit: 150, AccessModifierOffset: -4, Cpp11BracedListStyle: true, PointerAlignment: Left, BreakBeforeTernaryOperators: true, AlignOperands: Align }",
+  // https://clang.llvm.org/docs/ClangFormatStyleOptions.html
+  "C_Cpp.clang_format_fallbackStyle": "{ \
+    AccessModifierOffset: -4, \
+    AllowShortBlocksOnASingleLine: Empty, \
+    AllowShortEnumsOnASingleLine: true, \
+    AllowShortLambdasOnASingleLine: Empty, \
+    AllowShortFunctionsOnASingleLine: Empty, \
+    AllowShortIfStatementsOnASingleLine: false, \
+    AllowShortLoopsOnASingleLine: false, \
+    BasedOnStyle: Google, \
+    BreakBeforeBraces: Attach, \
+    BreakBeforeTernaryOperators: true, \
+    ColumnLimit: 150, \
+    Cpp11BracedListStyle: true, \
+    ForEachMacros: ['fore'], \
+    IndentWidth: 2, \
+    NamespaceIndentation: All, \
+    PointerAlignment: Right, \
+    ReferenceAlignment: Left, \
+    TabWidth: 2, \
+    UseTab: Never }",
   "editor.formatOnSave": true,
   "files.autoSave": "afterDelay",
-  "breadcrumbs.enabled": false,
 }
