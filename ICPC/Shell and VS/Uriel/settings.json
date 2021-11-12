@@ -1,0 +1,38 @@
+{
+  "workbench.iconTheme": "vscode-icons",
+  "C_Cpp.updateChannel": "Insiders",
+  "editor.minimap.enabled": false,
+  "editor.scrollbar.verticalScrollbarSize": 0,
+  "editor.parameterHints.enabled": false,
+  "breadcrumbs.enabled": false,
+  "files.saveConflictResolution": "overwriteFileOnDisk",
+  "vsicons.dontShowNewVersionMessage": true,
+  "workbench.sideBar.location": "left",
+  "diffEditor.ignoreTrimWhitespace": false,
+  "vim.useSystemClipboard": true,
+  "editor.lineNumbers": "relative",
+  "terminal.explorerKind": "external",
+  //  https://clang.llvm.org/docs/ClangFormatStyleOptions.html
+  "C_Cpp.clang_format_fallbackStyle": "{ \
+    AccessModifierOffset: -4, \
+    AllowShortBlocksOnASingleLine: Empty, \
+    AllowShortEnumsOnASingleLine: true, \
+    AllowShortLambdasOnASingleLine: Empty, \
+    AllowShortFunctionsOnASingleLine: Empty, \
+    AllowShortIfStatementsOnASingleLine: false, \
+    AllowShortLoopsOnASingleLine: false, \
+    BasedOnStyle: Google, \
+    BreakBeforeBraces: Attach, \
+    BreakBeforeTernaryOperators: true, \
+    ColumnLimit: 150, \
+    Cpp11BracedListStyle: true, \
+    ForEachMacros: ['fore'], \
+    IndentWidth: 2, \
+    NamespaceIndentation: All, \
+    PointerAlignment: Left, \
+    TabWidth: 2, \
+    UseTab: Never }",
+  "editor.formatOnSave": true,
+  "files.autoSave": "afterDelay",
+  "editor.wordWrap": "on"
+}
