@@ -1,11 +1,17 @@
-template <class T, int ...N> 
+template <class T, int... N>
 struct Fenwick {
   T v = T();
-  void update(T v) { this->v += v; }
-  T query() { return v; }  
+
+  void update(T v) {
+    this->v += v;
+  }
+
+  T query() {
+    return v;
+  }
 };
 
-template <class T, int N, int ...M>
+template <class T, int N, int... M>
 struct Fenwick<T, N, M...> {
   Fenwick<T, M...> fenw[N];
 
@@ -13,7 +19,7 @@ struct Fenwick<T, N, M...> {
   void update(int i, Args... args) {
     for (; i < N; i |= i + 1)
       fenw[i].update(args...);
-  } 
+  }
 
   template <typename... Args>
   T query(int l, int r, Args... args) {

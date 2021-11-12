@@ -8,4 +8,3 @@ fore (A, 0, (1 << k))
     fore (v, k, n)
       umin(dp[v][A], dp[u][A] + dist[u][v]);
   }
-

@@ -2,11 +2,11 @@ alias myBash="open ~/.zshenv"
 alias saveMyBash="source ~/.zshenv" 
 
 user="/Users/abraham"
-icpcDir="${user}/The-Empire-Strikes-Back/ICPC"
+icpcDir="${user}/**/ICPC"
 
 alias icpc="cd ${icpcDir}" 
 alias problems="cd ${user}/Problems"
-alias snippets="python3 ${icpcDir}/Shell\ and\ VS/Abraham/createSnippets.py"
+alias snippets="python3 ${icpcDir}/Shell\ and\ VS/createSnippets.py"
 
 red='\x1B[0;31m'
 green='\x1B[0;32m'
@@ -15,13 +15,13 @@ gray='\x1B[0;90m'
 cyan='\x1B[0;36m'
 removeColor='\x1B[0m'
 
-mypush() {
+myPush() {
   git add $1 
   git commit -a -m "$2"
   git push origin master
 }
 
-mypull() {
+myPull() {
   git pull origin master
   snippets
 }

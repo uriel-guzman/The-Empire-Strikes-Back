@@ -1,4 +1,4 @@
-vector<Pt> cut(const vector<Pt> &pts, Line l) {
+vector<Pt> cut(const vector<Pt>& pts, Line l) {
   vector<Pt> ans;
   int n = sz(pts);
   fore (i, 0, n) {

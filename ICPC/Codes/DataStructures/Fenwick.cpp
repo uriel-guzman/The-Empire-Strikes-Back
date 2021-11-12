@@ -1,7 +1,7 @@
 template <class T>
 struct Fenwick {
   vector<T> fenw;
-  
+
   Fenwick(int n) : fenw(n, T()) {} // 0-indexed
 
   void update(int i, T v) {

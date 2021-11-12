@@ -2,7 +2,7 @@
 int dp(int i, int x, bool small, bool big, bool nonzero) {
   if (i == sz(r))
     return x % k == 0 && nonzero;
-  int &ans = mem state;
+  int& ans = mem state;
   if (done state != timer) {
     done state = timer;
     ans = 0;
@@ -14,6 +14,6 @@ int dp(int i, int x, bool small, bool big, bool nonzero) {
       bool nonzero2 = nonzero | (x > 0);
       ans += dp(i + 1, (x * 10 + y) % k, small2, big2, nonzero2);
     }
-  } 
+  }
   return ans;
 }

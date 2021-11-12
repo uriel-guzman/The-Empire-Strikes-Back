@@ -17,10 +17,12 @@ struct Dyn {
     }
     int m = (l + r) >> 1;
     if (p <= m) {
-      if (!left) left = new Dyn(l, m);
+      if (!left)
+        left = new Dyn(l, m);
       left->update(p, v);
     } else {
-      if (!right) right = new Dyn(m + 1, r);
+      if (!right)
+        right = new Dyn(m + 1, r);
       right->update(p, v);
     }
     pull();
@@ -32,8 +34,7 @@ struct Dyn {
     if (ll <= l && r <= rr)
       return mx;
     int m = (l + r) >> 1;
-    return max((left ? left->qmax(ll, rr) : 0), 
-           (right ? right->qmax(ll, rr) : 0));
+    return max((left ? left->qmax(ll, rr) : 0), (right ? right->qmax(ll, rr) : 0));
   }
 };
 
@@ -44,7 +45,7 @@ struct Seg2D {
 
   Seg2D(int x1, int x2, int y1, int y2) : x1(x1), x2(x2), tree(0), left(0), right(0) {
     tree = new Dyn(y1, y2);
-    if (x1 == x2) 
+    if (x1 == x2)
       return;
     int m = (x1 + x2) >> 1;
     left = new Seg2D(x1, m, y1, y2);

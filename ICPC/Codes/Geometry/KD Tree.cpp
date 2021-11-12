@@ -6,8 +6,8 @@ struct Pt {
 };
 
 struct KDTree {
-  // p.pos(0) = x, p.pos(1) = y, p.pos(2) = z
-  #define iter Pt* // vector<Pt>::iterator
+// p.pos(0) = x, p.pos(1) = y, p.pos(2) = z
+#define iter Pt* // vector<Pt>::iterator
   KDTree *left, *right;
   Pt p;
   ld val;
@@ -29,7 +29,7 @@ struct KDTree {
 
   pair<ld, Pt> nearest(Pt q) {
     if (!left && !right) // take care if is needed a different one
-      return make_pair((p - q).norm(), p); 
+      return make_pair((p - q).norm(), p);
     pair<ld, Pt> best;
     if (q.pos(k) <= val) {
       best = left->nearest(q);

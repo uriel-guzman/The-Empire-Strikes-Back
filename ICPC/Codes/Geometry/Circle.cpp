@@ -28,18 +28,21 @@ struct Cir {
     // point outside the circle
     Pt v = (p - o).unit() * r;
     ld d2 = (p - o).norm(), d = sqrt(d2);
-    if (leq(d, 0)) return {}; // on circle, no tangent
+    if (leq(d, 0))
+      return {}; // on circle, no tangent
     Pt v1 = v * (r / d), v2 = v.perp() * (sqrt(d2 - r * r) / d);
     return {o + v1 - v2, o + v1 + v2};
   }
 
-  vector<Pt> intersection(Cir c) { 
+  vector<Pt> intersection(Cir c) {
     ld d = (c.o - o).length();
-    if (eq(d, 0) || ge(d, r + c.r) || le(d, abs(r - c.r))) return {}; // circles don't intersect
+    if (eq(d, 0) || ge(d, r + c.r) || le(d, abs(r - c.r)))
+      return {}; // circles don't intersect
     Pt v = (c.o - o).unit();
     ld a = (r * r + d * d - c.r * c.r) / (2 * d);
     Pt p = o + v * a;
-    if (eq(d, r + c.r) || eq(d, abs(r - c.r))) return {p}; // circles touch at one point
+    if (eq(d, r + c.r) || eq(d, abs(r - c.r)))
+      return {p}; // circles touch at one point
     ld h = sqrt(r * r - a * a);
     Pt q = v.perp() * h;
     return {p - q, p + q}; // circles intersects twice
@@ -50,8 +53,10 @@ struct Cir {
     // for a segment you need to check that the point lies on the segment
     ld h2 = r * r - l.v.cross(o - l.a) * l.v.cross(o - l.a) / l.v.norm();
     Pt p = l.a + l.v * l.v.dot(o - l.a) / l.v.norm();
-    if (eq(h2, 0)) return {p}; // line tangent to circle
-    if (le(h2, 0)) return {}; // no intersection
+    if (eq(h2, 0))
+      return {p}; // line tangent to circle
+    if (le(h2, 0))
+      return {}; // no intersection
     Pt q = l.v.unit() * sqrt(h2);
     return {p - q, p + q}; // two points of intersection (chord)
   }
@@ -69,8 +74,10 @@ struct Cir {
     if (le(r, c.r))
       return c.commonArea(*this);
     ld d = (o - c.o).length();
-    if (leq(d + c.r, r)) return c.r * c.r * pi;
-    if (geq(d, r + c.r)) return 0.0;
+    if (leq(d + c.r, r))
+      return c.r * c.r * pi;
+    if (geq(d, r + c.r))
+      return 0.0;
     auto angle = [&](ld a, ld b, ld c) {
       return acos((a * a + b * b - c * c) / (2 * a * b));
     };

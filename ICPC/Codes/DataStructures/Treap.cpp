@@ -1,11 +1,11 @@
 struct Treap {
-  static Treap *null;
+  static Treap* null;
   Treap *left, *right;
   unsigned pri = rng(), sz = 0;
   int val = 0;
 
-  void push() { 
-    // propagate like segtree, key-values aren't modified!! 
+  void push() {
+    // propagate like segtree, key-values aren't modified!!
   }
 
   Treap* pull() {
@@ -14,15 +14,19 @@ struct Treap {
     return this;
   }
 
-  Treap() { left = right = null; }
+  Treap() {
+    left = right = null;
+  }
+
   Treap(int val) : val(val) {
     left = right = null;
     pull();
   }
 
   template <class F>
-  pair<Treap*, Treap*> split(const F &leq) { // {<= val, > val} 
-    if (this == null) return {null, null};
+  pair<Treap*, Treap*> split(const F& leq) { // {<= val, > val}
+    if (this == null)
+      return {null, null};
     push();
     if (leq(this)) {
       auto p = right->split(leq);
@@ -36,8 +40,10 @@ struct Treap {
   }
 
   Treap* merge(Treap* other) {
-    if (this == null) return other;
-    if (other == null) return this;
+    if (this == null)
+      return other;
+    if (other == null)
+      return this;
     push(), other->push();
     if (pri > other->pri) {
       return right = right->merge(other), pull();
@@ -64,15 +70,15 @@ struct Treap {
   }
 
   Treap* insert(int x) {
-    auto &&[leq, ge] = split(x);
+    auto&& [leq, ge] = split(x);
     // auto &&[le, eq] = split(x); // uncomment for set
     return leq->merge(new Treap(x))->merge(ge); // change leq for le for set
   }
 
   Treap* erase(int x) {
-    auto &&[leq, ge] = split(x);
-    auto &&[le, eq] = leq->split(x - 1); 
-    auto &&[kill, keep] = eq->leftmost(1); // comment for set
+    auto&& [leq, ge] = split(x);
+    auto&& [le, eq] = leq->split(x - 1);
+    auto&& [kill, keep] = eq->leftmost(1); // comment for set
     return le->merge(keep)->merge(ge); // le->merge(ge) for set
   }
-} *Treap::null = new Treap;
+}* Treap::null = new Treap;

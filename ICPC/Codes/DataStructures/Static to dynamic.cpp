@@ -3,9 +3,9 @@ struct StaticDynamic {
   Black box[25];
   vector<T> st[25];
 
-  void insert(T &x) {
+  void insert(T& x) {
     int p = 0;
-    while (p < 25 && !st[p].empty()) 
+    while (p < 25 && !st[p].empty())
       p++;
     st[p].pb(x);
     fore (i, 0, p) {
@@ -17,4 +17,3 @@ struct StaticDynamic {
     box[p].init();
   }
 };
-

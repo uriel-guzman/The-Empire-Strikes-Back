@@ -11,23 +11,23 @@ struct Fenwick2D { // add, build then update, query
 
   void build() {
     sort(all(pts));
-    for (auto &&[x, y] : pts) {
-      if (xs.empty() || x != xs.back())  
+    for (auto&& [x, y] : pts) {
+      if (xs.empty() || x != xs.back())
         xs.pb(x);
       swap(x, y);
     }
     fenw.resize(sz(xs)), ys.resize(sz(xs));
     sort(all(pts));
-    for (auto &&[x, y] : pts) {
+    for (auto&& [x, y] : pts) {
       swap(x, y);
       int i = lower_bound(all(xs), x) - xs.begin();
-      for (; i < sz(fenw); i |= i + 1) 
+      for (; i < sz(fenw); i |= i + 1)
         if (ys[i].empty() || y != ys[i].back())
           ys[i].pb(y);
     }
     fore (i, 0, sz(fenw))
       fenw[i].resize(sz(ys[i]), T());
-  } 
+  }
 
   void update(int x, int y, T v) {
     int i = lower_bound(all(xs), x) - xs.begin();
@@ -36,7 +36,7 @@ struct Fenwick2D { // add, build then update, query
       for (; j < sz(fenw[i]); j |= j + 1)
         fenw[i][j] += v;
     }
-  } 
+  }
 
   T query(int x, int y) {
     T v = T();

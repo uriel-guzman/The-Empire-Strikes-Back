@@ -4,10 +4,11 @@ struct Mcmf {
     int u, v, inv;
     F cap, flow;
     C cost;
-    Edge(int u, int v, C cost, F cap, int inv) : u(u), v(v), cost(cost), cap(cap), flow(0), inv(inv) {}
+    Edge(int u, int v, C cost, F cap, int inv)
+        : u(u), v(v), cost(cost), cap(cap), flow(0), inv(inv) {}
   };
 
-  F EPS = (F) 1e-9;
+  F EPS = (F)1e-9;
   int s, t, n;
   vector<vector<Edge>> graph;
   vector<Edge*> prev;
@@ -31,22 +32,24 @@ struct Mcmf {
       int u = qu.front();
       qu.pop_front();
       state[u] = 2;
-      for (Edge &e : graph[u]) if (e.cap - e.flow > EPS)
-        if (cost[u] + e.cost < cost[e.v]) {
-          cost[e.v] = cost[u] + e.cost;
-          prev[e.v] = &e;
-          if (state[e.v] == 2 || (sz(qu) && cost[qu.front()] > cost[e.v]))
-            qu.push_front(e.v);
-          else if (state[e.v] == 0)
-            qu.push_back(e.v);
-          state[e.v] = 1;
-        }
+      for (Edge& e : graph[u])
+        if (e.cap - e.flow > EPS)
+          if (cost[u] + e.cost < cost[e.v]) {
+            cost[e.v] = cost[u] + e.cost;
+            prev[e.v] = &e;
+            if (state[e.v] == 2 || (sz(qu) && cost[qu.front()] > cost[e.v]))
+              qu.push_front(e.v);
+            else if (state[e.v] == 0)
+              qu.push_back(e.v);
+            state[e.v] = 1;
+          }
     }
     return cost[t] != numeric_limits<C>::max();
   }
 
   pair<C, F> minCostFlow() {
-    C cost = 0; F flow = 0;
+    C cost = 0;
+    F flow = 0;
     while (bfs()) {
       F pushed = numeric_limits<F>::max();
       for (Edge* e = prev[t]; e != nullptr; e = prev[e->u])

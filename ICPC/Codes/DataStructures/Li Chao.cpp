@@ -1,6 +1,8 @@
 struct Fun {
   lli m = 0, c = INF;
-  lli operator ()(lli x) const { return m * x + c; }
+  lli operator()(lli x) const {
+    return m * x + c;
+  }
 };
 
 struct LiChao {
@@ -10,7 +12,7 @@ struct LiChao {
 
   LiChao(lli l, lli r, Fun f) : l(l), r(r), f(f) left(0), right(0) {}
 
-  void add(Fun &g) {
+  void add(Fun& g) {
     if (f(l) <= g(l) && f(r) <= g(r))
       return;
     if (g(l) < f(l) && g(r) < f(r)) {
@@ -18,15 +20,16 @@ struct LiChao {
       return;
     }
     lli m = (l + r) >> 1;
-    if (g(m) < f(m)) swap(f, g);
-    if (g(l) <= f(l)) 
-     left = left ? (left->add(g), left) : new LiChao(l, m, g);
-    else 
-     right = right ? (right->add(g), right) : new LiChao(m + 1, r, g);
+    if (g(m) < f(m))
+      swap(f, g);
+    if (g(l) <= f(l))
+      left = left ? (left->add(g), left) : new LiChao(l, m, g);
+    else
+      right = right ? (right->add(g), right) : new LiChao(m + 1, r, g);
   }
 
   lli query(lli x) {
-    if (l == r) 
+    if (l == r)
       return f(x);
     lli m = (l + r) >> 1;
     if (x <= m)

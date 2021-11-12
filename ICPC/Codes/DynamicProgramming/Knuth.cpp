@@ -1,7 +1,7 @@
 lli dp[N][N];
 int opt[N][N];
 
-fore (len, 1, n + 1) 
+fore (len, 1, n + 1)
   fore (l, 0, n) {
     int r = l + len - 1;
     if (r > n - 1)

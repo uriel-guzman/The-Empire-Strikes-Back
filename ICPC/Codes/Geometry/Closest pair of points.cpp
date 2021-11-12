@@ -1,6 +1,6 @@
-pair<Pt, Pt> closestPairOfPoints(vector<Pt> &pts) {
-  sort(all(pts), [&](Pt a, Pt b) { 
-    return le(a.y, b.y); 
+pair<Pt, Pt> closestPairOfPoints(vector<Pt>& pts) {
+  sort(all(pts), [&](Pt a, Pt b) {
+    return le(a.y, b.y);
   });
   set<Pt> st;
   ld ans = INF;
@@ -13,7 +13,7 @@ pair<Pt, Pt> closestPairOfPoints(vector<Pt> &pts) {
     auto hi = st.upper_bound(Pt(pts[i].x + ans + eps, -INF));
     for (auto it = lo; it != hi; ++it) {
       ld d = (pts[i] - *it).length();
-      if (le(d, ans)) 
+      if (le(d, ans))
         ans = d, p = pts[i], q = *it;
     }
     st.insert(pts[i]);

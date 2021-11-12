@@ -21,7 +21,7 @@ struct Seg {
   }
 
   template <class... Args>
-  void update(int p, const Args &...args) {
+  void update(int p, const Args&... args) {
     if (l == r) {
       val = T(args...);
       return;
