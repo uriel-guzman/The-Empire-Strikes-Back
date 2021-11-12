@@ -8,8 +8,9 @@
   "editor.tabCompletion": "on",
   "editor.snippetSuggestions": "inline",
   "editor.suggestSelection": "first",
+  "terminal.explorerKind": "external",
+  "workbench.colorTheme": "Ra Silver",
   "editor.tokenColorCustomizations": {
-    // [Theme name]: { custom colors }
     "[Ra Silver]": {
       "comments": "#ff00ff",
       "strings": "#ff8000",
@@ -29,35 +30,58 @@
       "functions": "#8b92ff",
     }
   },
-  // "workbench.colorCustomizations": {
-  //   "editorError.foreground": "#00000000",
-  //   "editorWarning.foreground": "#00000000",
-  //   "editorInfo.foreground": "#00000000"
-  // }
-  "terminal.explorerKind": "external",
-  "workbench.colorTheme": "Ra Silver",
+  "editor.formatOnSave": true,
+  "files.autoSave": "afterDelay",
   "C_Cpp.updateChannel": "Insiders",
   // https://clang.llvm.org/docs/ClangFormatStyleOptions.html
   "C_Cpp.clang_format_fallbackStyle": "{ \
     AccessModifierOffset: -4, \
+    AlignEscapedNewlinesLeft: true, \
+    AlignTrailingComments: false, \
+    AllowAllParametersOfDeclarationOnNextLine: true, \
     AllowShortBlocksOnASingleLine: Empty, \
     AllowShortEnumsOnASingleLine: true, \
-    AllowShortLambdasOnASingleLine: Empty, \
     AllowShortFunctionsOnASingleLine: Empty, \
     AllowShortIfStatementsOnASingleLine: false, \
+    AllowShortLambdasOnASingleLine: Empty, \
     AllowShortLoopsOnASingleLine: false, \
-    BasedOnStyle: Google, \
+    AlwaysBreakBeforeMultilineStrings: true, \
+    AlwaysBreakTemplateDeclarations: true, \
+    BinPackArguments: false, \
+    BinPackParameters: false, \
+    BreakBeforeBinaryOperators: false, \
     BreakBeforeBraces: Attach, \
-    BreakBeforeTernaryOperators: true, \
-    ColumnLimit: 150, \
+    BreakConstructorInitializersBeforeComma: false, \
+    ColumnLimit: 100, \
+    CommentPragmas: '^@atd', \
+    ConstructorInitializerAllOnOneLineOrOnePerLine: true, \
+    ConstructorInitializerIndentWidth: 4, \
+    ContinuationIndentWidth: 4, \
     Cpp11BracedListStyle: true, \
-    ForEachMacros: ['fore'], \
+    DerivePointerAlignment: false, \
+    ExperimentalAutoDetectBinPacking: true, \
+    IndentCaseLabels: false, \
+    IndentFunctionDeclarationAfterType: false, \
     IndentWidth: 2, \
+    MaxEmptyLinesToKeep: 1, \
     NamespaceIndentation: All, \
-    PointerAlignment: Right, \
-    ReferenceAlignment: Left, \
+    ObjCSpaceBeforeProtocolList: false, \
+    PenaltyBreakBeforeFirstCallParameter: 10, \
+    PenaltyBreakComment: 60, \
+    PenaltyBreakFirstLessLess: 20, \
+    PenaltyBreakString: 1000, \
+    PenaltyExcessCharacter: 1000000, \
+    PenaltyReturnTypeOnItsOwnLine: 200, \
+    PointerAlignment: Left, \
+    SpaceAfterControlStatementKeyword: true, \
+    SpaceBeforeAssignmentOperators: true, \
+    SpaceInEmptyParentheses: false, \
+    SpacesBeforeTrailingComments: 1, \
+    SpacesInAngles: false, \
+    SpacesInCStyleCastParentheses: false, \
+    SpacesInParentheses: false, \
+    Standard: Cpp11, \
     TabWidth: 2, \
-    UseTab: Never }",
-  "editor.formatOnSave": true,
-  "files.autoSave": "afterDelay",
+    UseTab: Never, \
+    ForEachMacros: ['fore']}",
 }
