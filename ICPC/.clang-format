@@ -4,7 +4,6 @@ AlignEscapedNewlinesLeft: true
 AlignTrailingComments: false
 AllowAllParametersOfDeclarationOnNextLine: true
 AllowShortBlocksOnASingleLine: Empty
-AllowShortEnumsOnASingleLine: true
 AllowShortFunctionsOnASingleLine: true
 AllowShortIfStatementsOnASingleLine: false
 AllowShortLambdasOnASingleLine: Empty
