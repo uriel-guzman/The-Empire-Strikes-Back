@@ -2,12 +2,12 @@ struct SuffixAutomaton {
   struct Node : map<char, int> {
     int link = -1, len = 0;
   };
-  
+
   vector<Node> trie;
   int last;
-  
-  SuffixAutomaton() { 
-    last = newNode(); 
+
+  SuffixAutomaton() {
+    last = newNode();
   }
 
   int newNode() {
@@ -47,7 +47,7 @@ struct SuffixAutomaton {
     // number of different substrings (dp)
     string s = "";
     while (kth > 0)
-      for (auto &[c, v] : trie[u]) {
+      for (auto& [c, v] : trie[u]) {
         if (kth <= diff(v)) {
           s.pb(c), kth--, u = v;
           break;
@@ -71,7 +71,7 @@ struct SuffixAutomaton {
     }
   }
 
-  lli occurences(string &s, int u = 0) {
+  lli occurences(string& s, int u = 0) {
     for (char c : s) {
       if (!trie[u].count(c))
         return 0;
@@ -80,7 +80,7 @@ struct SuffixAutomaton {
     return trie[u].occ;
   }
 
-  int longestCommonSubstring(string &s, int u = 0) {
+  int longestCommonSubstring(string& s, int u = 0) {
     int mx = 0, clen = 0;
     for (char c : s) {
       while (u && !trie[u].count(c)) {
@@ -104,7 +104,7 @@ struct SuffixAutomaton {
     return s;
   }
 
-  int leftmost(string &s, int u = 0) {
+  int leftmost(string& s, int u = 0) {
     for (char c : s) {
       if (!trie[u].count(c))
         return -1;
@@ -113,7 +113,7 @@ struct SuffixAutomaton {
     return trie[u].pos - sz(s) + 1;
   }
 
-  Node& operator [](int u) {
+  Node& operator[](int u) {
     return trie[u];
   }
 };

@@ -4,4 +4,4 @@ const ld EPS = 1e-20;
 #define geq(a, b) ((a) - (b) >= -EPS)
 #define leq(a, b) ((a) - (b) <= +EPS)
 #define ge(a, b) ((a) - (b) > +EPS)
-#define le(a, b) ((a) - (b) < -EPS) 
+#define le(a, b) ((a) - (b) < -EPS)

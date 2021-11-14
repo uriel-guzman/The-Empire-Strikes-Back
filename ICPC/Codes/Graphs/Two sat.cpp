@@ -19,37 +19,42 @@ struct TwoSat {
   // T  T     T
   // F  T     T
   // T  F     F
-  void implies(int a, int b) { 
-    either(~a, b); 
+  void implies(int a, int b) {
+    either(~a, b);
   }
 
   // setVal(a): set a = true
   // setVal(~a): set a = false
-  void setVal(int a) { 
-    either(a, a); 
+  void setVal(int a) {
+    either(a, a);
   }
 
   optional<vector<int>> solve() {
     int k = sz(imp);
     vector<int> s, b, id(sz(imp));
 
-    function<void(int)> dfs = [&](int u) { 
+    function<void(int)> dfs = [&](int u) {
       b.pb(id[u] = sz(s)), s.pb(u);
       for (int v : imp[u]) {
-        if (!id[v]) dfs(v);
-        else while (id[v] < b.back()) b.pop_back();
+        if (!id[v])
+          dfs(v);
+        else
+          while (id[v] < b.back())
+            b.pop_back();
       }
-      if (id[u] == b.back()) 
+      if (id[u] == b.back())
         for (b.pop_back(), ++k; id[u] < sz(s); s.pop_back())
           id[s.back()] = k;
     };
 
     vector<int> val(n);
-    fore (u, 0, sz(imp)) 
-      if (!id[u]) dfs(u);
+    fore (u, 0, sz(imp))
+      if (!id[u])
+        dfs(u);
     fore (u, 0, n) {
       int x = 2 * u;
-      if (id[x] == id[x ^ 1]) return nullopt;
+      if (id[x] == id[x ^ 1])
+        return nullopt;
       val[u] = id[x] < id[x ^ 1];
     }
     return optional(val);

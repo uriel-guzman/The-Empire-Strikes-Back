@@ -10,7 +10,7 @@ void dfs(int u, int par[]) {
     }
 }
 
-int lca(int u, int v){
+int lca(int u, int v) {
   if (depth[u] > depth[v])
     swap(u, v);
   fore (k, LogN, 0)
@@ -31,6 +31,6 @@ int dist(int u, int v) {
 void init(int r) {
   dfs(r, par[0]);
   fore (k, 1, LogN)
-    fore (u, 1, n + 1) 	
-      par[k][u] = par[k - 1][par[k - 1][u]];		
+    fore (u, 1, n + 1)
+      par[k][u] = par[k - 1][par[k - 1][u]];
 }

@@ -9,7 +9,7 @@ lli f(lli x) {
   return mp[x];
 }
 
-lli hsh(int u, int p = -1) { 
+lli hsh(int u, int p = -1) {
   dp[u] = h[u] = 0;
   for (int v : graph[u]) {
     if (v == p)
