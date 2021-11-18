@@ -4,6 +4,7 @@ AlignEscapedNewlinesLeft: true
 AlignTrailingComments: false
 AllowAllParametersOfDeclarationOnNextLine: true
 AllowShortBlocksOnASingleLine: Empty
+AllowShortEnumsOnASingleLine: true
 AllowShortFunctionsOnASingleLine: Empty
 AllowShortIfStatementsOnASingleLine: false
 AllowShortLambdasOnASingleLine: Empty
@@ -47,4 +48,4 @@ SpacesInParentheses: false
 Standard: Cpp11
 TabWidth: 2
 UseTab: Never
-ForEachMacros: ['fore']
+IfMacros: ['fore']
