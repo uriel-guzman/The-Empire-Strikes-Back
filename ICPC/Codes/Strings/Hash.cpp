@@ -1,13 +1,18 @@
 struct Hash : array<int, 2> {
   static constexpr int mod = 1e9 + 7;
-#define oper(op) friend Hash operator op (Hash a, Hash b) { fore (i, 0, sz(a)) a[i] = (1LL * a[i] op b[i] + mod) % mod; return a; } 
+#define oper(op)                               \
+  friend Hash operator op(Hash a, Hash b) {    \
+    fore (i, 0, sz(a))                         \
+      a[i] = (1LL * a[i] op b[i] + mod) % mod; \
+    return a;                                  \
+  }
   oper(+) oper(-) oper(*)
 } pw[N], ipw[N];
 
 struct Hashing {
   vector<Hash> h;
 
-  Hashing(string &s) : h(sz(s) + 1) {
+  Hashing(string& s) : h(sz(s) + 1) {
     fore (i, 0, sz(s)) {
       int x = s[i] - 'a' + 1;
       h[i + 1] = h[i] + pw[i] * Hash{x, x};
@@ -29,7 +34,7 @@ fore (i, 1, N) {
 }
 
 // Save len in the struct and when you do a cut
-Hash merge(vector<Hash> &cuts) {
+Hash merge(vector<Hash>& cuts) {
   Hash f = {0, 0};
   fore (i, sz(cuts), 0) {
     Hash g = cuts[i];

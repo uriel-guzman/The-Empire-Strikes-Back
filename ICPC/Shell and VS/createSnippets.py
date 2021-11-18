@@ -64,4 +64,4 @@ def main():
   print("Snippets up to date.")
             
 if __name__ == "__main__":
-    main()
+  main()

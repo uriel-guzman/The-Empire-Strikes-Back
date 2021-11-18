@@ -1,6 +1,6 @@
 Mint fac(int i) {
   static vector<Mint> dp(1, 1);
-  while (dp.size() <= i) 
+  while (dp.size() <= i)
     dp.pb(dp.back() * dp.size());
   return dp[i];
 }
