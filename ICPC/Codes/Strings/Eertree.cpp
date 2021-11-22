@@ -7,8 +7,8 @@ struct Eertree {
   string s = "$";
   int last;
 
-  Eertree() {
-    last = newNode(), newNode();
+  Eertree(int n = 1) {
+    trie.reserve(n), last = newNode(), newNode();
     trie[0].link = 1, trie[1].len = -1;
   }
 
@@ -40,7 +40,9 @@ struct Eertree {
   }
 
   void substringOccurrences() {
-    fore (u, sz(s), 0) { trie[trie[u].link].occ += trie[u].occ; }
+    fore (u, sz(s), 0) {
+      trie[trie[u].link].occ += trie[u].occ;
+    }
   }
 
   lli occurences(string& s, int u = 0) {

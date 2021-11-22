@@ -6,16 +6,20 @@ struct Modular {
 
   Modular operator+(Modular m) {
     return Modular((v + m.v) % M);
-  };
+  }
+
   Modular operator-(Modular m) {
     return Modular((v - m.v + M) % M);
-  };
+  }
+
   Modular operator*(Modular m) {
     return Modular((1LL * v * m.v) % M);
-  };
+  }
+
   Modular operator/(Modular m) {
     return *this * m.inv();
-  };
+  }
+
   Modular inv() {
     return this->pow(M - 2);
   }
@@ -23,12 +27,15 @@ struct Modular {
   Modular& operator+=(Modular m) {
     return *this = *this + m;
   }
+
   Modular& operator-=(Modular m) {
     return *this = *this - m;
   }
+
   Modular& operator*=(Modular m) {
     return *this = *this * m;
   }
+
   Modular& operator/=(Modular m) {
     return *this = *this / m;
   }
@@ -36,6 +43,7 @@ struct Modular {
   friend ostream& operator<<(ostream& os, Modular m) {
     return os << m.v;
   }
+
   template <class T>
   bool operator==(T x) {
     return v == x;

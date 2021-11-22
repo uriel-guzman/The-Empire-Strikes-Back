@@ -5,8 +5,8 @@ struct Trie {
 
   vector<Node> trie;
 
-  Trie() {
-    newNode();
+  Trie(int n = 1) {
+    trie.reserve(n), newNode();
   }
 
   int inline newNode() {

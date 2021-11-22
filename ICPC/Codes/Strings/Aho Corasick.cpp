@@ -6,8 +6,8 @@ struct AhoCorasick {
 
   vector<Node> trie;
 
-  AhoCorasick() {
-    newNode();
+  AhoCorasick(int n = 1) {
+    trie.reserve(n), newNode();
   }
 
   int newNode() {

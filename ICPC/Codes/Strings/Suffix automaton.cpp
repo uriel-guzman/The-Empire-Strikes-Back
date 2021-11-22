@@ -6,8 +6,8 @@ struct SuffixAutomaton {
   vector<Node> trie;
   int last;
 
-  SuffixAutomaton() {
-    last = newNode();
+  SuffixAutomaton(int n = 1) {
+    trie.reserve(2 * n), last = newNode();
   }
 
   int newNode() {
@@ -59,9 +59,8 @@ struct SuffixAutomaton {
 
   void substringOccurrences() {
     // trie[u].occ = 1, trie[clone].occ = 0
-    vi who;
-    fore (u, 1, sz(trie))
-      who.pb(u);
+    vi who(sz(trie) - 1);
+    iota(all(who), 1);
     sort(all(who), [&](int u, int v) {
       return trie[u].len > trie[v].len;
     });
