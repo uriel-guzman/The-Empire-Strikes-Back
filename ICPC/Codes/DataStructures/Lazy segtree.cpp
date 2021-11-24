@@ -29,7 +29,7 @@ struct Lazy {
   }
 
   void pull() {
-    sum = left->sum + right->sum;
+    val = left->val + right->val;
   }
 
   void update(int ll, int rr, L v) {
