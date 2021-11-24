@@ -1,6 +1,6 @@
 struct LinkCut {
   struct Node {
-    Splay left{0}, right{0}, par{0};
+    Node *left{0}, *right{0}, *par{0};
     bool rev = 0;
     int sz = 1;
     int sub = 0, vsub = 0; // subtree
