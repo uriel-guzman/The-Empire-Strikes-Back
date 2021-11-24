@@ -10,7 +10,7 @@ void topologicalSort() { // first fill the indeg[]
     int u = qu.front();
     qu.pop();
     order.pb(u);
-    for (int v : graph[u])
+    for (auto& v : graph[u])
       if (--indeg[v] == 0)
         qu.push(v);
   }

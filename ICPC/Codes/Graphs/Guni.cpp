@@ -14,7 +14,7 @@ int guni(int u, int p = -1) {
 
 void update(int u, int p, int add, bool skip) {
   cnt[color[u]] += add;
-  for (int i = skip; i < sz(graph[u]); i++) // !!! don't use fore
+  for (int i = skip; i < sz(graph[u]); i++) // don't use fore !!!
     if (graph[u][i] != p)
       update(graph[u][i], u, add, 0);
 }

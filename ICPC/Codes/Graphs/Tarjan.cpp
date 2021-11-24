@@ -7,7 +7,7 @@ void tarjan(int u) {
   tin[u] = fup[u] = ++timer;
   still[u] = true;
   stk.push(u);
-  for (int v : graph[u]) {
+  for (auto& v : graph[u]) {
     if (!tin[v])
       tarjan(v);
     if (still[v])

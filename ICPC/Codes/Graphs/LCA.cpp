@@ -2,7 +2,7 @@ const int LogN = 1 + __lg(N);
 int par[LogN][N], depth[N];
 
 void dfs(int u, int par[]) {
-  for (int v : graph[u])
+  for (auto& v : graph[u])
     if (v != par[u]) {
       par[v] = u;
       depth[v] = depth[u] + 1;

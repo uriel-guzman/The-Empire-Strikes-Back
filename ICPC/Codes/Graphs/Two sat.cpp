@@ -32,7 +32,6 @@ struct TwoSat {
   optional<vector<int>> solve() {
     int k = sz(imp);
     vector<int> s, b, id(sz(imp));
-
     function<void(int)> dfs = [&](int u) {
       b.pb(id[u] = sz(s)), s.pb(u);
       for (int v : imp[u]) {
@@ -46,7 +45,6 @@ struct TwoSat {
         for (b.pop_back(), ++k; id[u] < sz(s); s.pop_back())
           id[s.back()] = k;
     };
-
     vector<int> val(n);
     fore (u, 0, sz(imp))
       if (!id[u])

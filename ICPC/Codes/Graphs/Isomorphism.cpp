@@ -1,4 +1,3 @@
-vi graph[N];
 lli dp[N], h[N];
 
 lli f(lli x) {
@@ -11,7 +10,7 @@ lli f(lli x) {
 
 lli hsh(int u, int p = -1) {
   dp[u] = h[u] = 0;
-  for (int v : graph[u]) {
+  for (auto& v : graph[u]) {
     if (v == p)
       continue;
     dp[u] += hsh(v, u);

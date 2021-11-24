@@ -1,12 +1,12 @@
-int par[N], nxt[N], dep[N], sz[N];
+int par[N], nxt[N], depth[N], sz[N];
 int tin[N], tout[N], who[N], timer = 0;
-Lazy* tree;
 
 int dfs(int u) {
+  sz[u] = 1;
   for (auto& v : graph[u])
     if (v != par[u]) {
       par[v] = u;
-      dep[v] = dep[u] + 1;
+      depth[v] = depth[u] + 1;
       sz[u] += dfs(v);
       if (graph[u][0] == par[u] || sz[v] > sz[graph[u][0]])
         swap(v, graph[u][0]);
@@ -15,8 +15,7 @@ int dfs(int u) {
 }
 
 void hld(int u) {
-  tin[u] = ++timer;
-  who[timer] = u;
+  tin[u] = ++timer, who[timer] = u;
   for (auto& v : graph[u])
     if (v != par[u]) {
       nxt[v] = (v == graph[u][0] ? nxt[u] : v);
@@ -25,16 +24,16 @@ void hld(int u) {
   tout[u] = timer;
 }
 
-template <class F>
+template <bool OverEdges = 0, class F>
 void processPath(int u, int v, F f) {
   for (; nxt[u] != nxt[v]; u = par[nxt[u]]) {
-    if (dep[nxt[u]] < dep[nxt[v]])
+    if (depth[nxt[u]] < depth[nxt[v]])
       swap(u, v);
     f(tin[nxt[u]], tin[u]);
   }
-  if (dep[u] < dep[v])
+  if (depth[u] < depth[v])
     swap(u, v);
-  f(tin[v] + overEdges, tin[u]); // overEdges???
+  f(tin[v] + OverEdges, tin[u]);
 }
 
 void updatePath(int u, int v, lli z) {
