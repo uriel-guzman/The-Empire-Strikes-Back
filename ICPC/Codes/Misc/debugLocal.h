@@ -43,4 +43,6 @@ void print(string s, const H& h, const T&... t) {
   print(s.substr(pos + 1), t...);
 }
 
-#define debug(...) print(string(#__VA_ARGS__) + ",", __VA_ARGS__)
+#define debug(...)                                  \
+  cout << __FUNCTION__ << "(" << __LINE__ << "): "; \
+  print(string(#__VA_ARGS__) + ",", __VA_ARGS__)
