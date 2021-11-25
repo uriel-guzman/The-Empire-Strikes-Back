@@ -1,38 +1,35 @@
-template <class T, class L>
 struct Lazy {
   int l, r;
   Lazy *left, *right;
-  T val;
-  L lazy = {};
+  lli sum = 0, lazy = 0;
 
-  template <class Arr>
-  Lazy(int l, int r, const Arr& a) : l(l), r(r), left(0), right(0) {
+  Lazy(int l, int r) : l(l), r(r), left(0), right(0) {
     if (l == r) {
-      val = T(a[l]);
+      sum = a[l];
       return;
     }
     int m = (l + r) >> 1;
-    left = new Lazy(l, m, a);
-    right = new Lazy(m + 1, r, a);
+    left = new Lazy(l, m);
+    right = new Lazy(m + 1, r);
     pull();
   }
 
   void push() {
     if (!lazy)
       return;
-    val.apply(lazy, l, r);
+    sum += (r - l + 1) * lazy;
     if (l != r) {
-      left->lazy = left->lazy + lazy;
-      right->lazy = right->lazy + lazy;
+      left->lazy += lazy;
+      right->lazy += lazy;
     }
     lazy = 0;
   }
 
   void pull() {
-    val = left->val + right->val;
+    sum = left->sum + right->sum;
   }
 
-  void update(int ll, int rr, L v) {
+  void update(int ll, int rr, lli v) {
     push();
     if (rr < l || r < ll)
       return;
@@ -46,12 +43,12 @@ struct Lazy {
     pull();
   }
 
-  T query(int ll, int rr) {
+  lli query(int ll, int rr) {
     push();
     if (rr < l || r < ll)
-      return T();
+      return 0;
     if (ll <= l && r <= rr)
-      return val;
+      return sum;
     return left->query(ll, rr) + right->query(ll, rr);
   }
 };
