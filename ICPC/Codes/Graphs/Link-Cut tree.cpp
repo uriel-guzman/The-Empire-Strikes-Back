@@ -115,6 +115,27 @@ struct LinkCut {
     return splay(&a[u]), a[u].par ? -1 : u;
   }
 
+  int depth(int u) {
+    access(u);
+    return a[u].left ? a[u].left->sz : 0;
+  }
+
+  // get k-th parent on path to root
+  int ancestor(int u, int k) {
+    k = depth(u) - k;
+    assert(k >= 0);
+    for (;; a[u].push()) {
+      int sz = a[u].left->sz;
+      if (sz == k)
+        return access(u), u;
+      if (sz < k)
+        k -= sz + 1, u = u->ch[1];
+      else
+        u = u->ch[0];
+    }
+    assert(0);
+  }
+
   lli queryPath(int u, int v) {
     reroot(u), access(v);
     return a[v].path;

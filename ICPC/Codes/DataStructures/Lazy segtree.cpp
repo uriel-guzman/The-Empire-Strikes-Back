@@ -1,54 +1,80 @@
+template <class Node>
 struct Lazy {
   int l, r;
   Lazy *left, *right;
-  lli sum = 0, lazy = 0;
+  Node node;
 
-  Lazy(int l, int r) : l(l), r(r), left(0), right(0) {
+  template <class Arr>
+  Lazy(int l, int r, Arr& a) : l(l), r(r), left(0), right(0) {
     if (l == r) {
-      sum = a[l];
+      node.val = {a[l]};
       return;
     }
     int m = (l + r) >> 1;
-    left = new Lazy(l, m);
-    right = new Lazy(m + 1, r);
+    left = new Lazy(l, m, a);
+    right = new Lazy(m + 1, r, a);
     pull();
   }
 
   void push() {
-    if (!lazy)
-      return;
-    sum += (r - l + 1) * lazy;
-    if (l != r) {
-      left->lazy += lazy;
-      right->lazy += lazy;
+    if (node.lazy()) {
+      int m = (l + r) >> 1;
+      left->node.apply(l, m, node.lazy);
+      right->node.apply(m + 1, r, node.lazy);
+      node.lazy = {};
     }
-    lazy = 0;
   }
 
   void pull() {
-    sum = left->sum + right->sum;
+    node.val = left->node.val + right->node.val;
   }
 
-  void update(int ll, int rr, lli v) {
-    push();
+  template <class... Args>
+  void update(int ll, int rr, const Args&... args) {
     if (rr < l || r < ll)
       return;
     if (ll <= l && r <= rr) {
-      lazy += v;
-      push();
+      node.apply(l, r, typename Node::Lazy(args...));
       return;
     }
-    left->update(ll, rr, v);
-    right->update(ll, rr, v);
+    push();
+    left->update(ll, rr, args...);
+    right->update(ll, rr, args...);
     pull();
   }
 
-  lli query(int ll, int rr) {
-    push();
+  auto query(int ll, int rr) {
     if (rr < l || r < ll)
-      return 0;
+      return typename Node::Value();
     if (ll <= l && r <= rr)
-      return sum;
+      return node.val;
+    push();
     return left->query(ll, rr) + right->query(ll, rr);
+  }
+};
+
+struct Node {
+  struct Lazy {
+    int add;
+    Lazy(int x = 0) : add(x) {}
+
+    inline bool operator()() const {
+      return add != 0;
+    }
+  } lazy;
+
+  struct Value {
+    int sum;
+    Value(int x = 0) : sum(x) {}
+
+    friend Value operator+(Value l, const Value& r) {
+      l.sum += r.sum;
+      return l;
+    }
+  } val;
+
+  inline void apply(int l, int r, const Lazy& tag) {
+    val.sum += tag.add;
+    lazy.add += tag.add;
   }
 };
