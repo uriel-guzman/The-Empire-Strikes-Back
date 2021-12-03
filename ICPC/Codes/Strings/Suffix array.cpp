@@ -25,7 +25,7 @@ struct SuffixArray {
         break;
     }
     dp[0].assign(n, 0);
-    for (int i = 0, j = pos[0], k = 0; i < n; ++i, ++k) {
+    for (int i = 0, j = pos[0], k = 0; i < n - 1; ++i, ++k) {
       while (k >= 0 && s[i] != s[sa[j - 1] + k])
         dp[0][j] = k--, j = pos[sa[j] + 1];
     }
@@ -71,7 +71,7 @@ struct SuffixArray {
     int common = lcp(a.f, b.f);
     int szA = a.s - a.f + 1, szB = b.s - b.f + 1;
     if (common >= min(szA, szB))
-      return szA == szB ? a < b : szA < szB;
+      return tie(szA, a) < tie(szB, b);
     return s[a.f + common] < s[b.f + common];
   }
 };
