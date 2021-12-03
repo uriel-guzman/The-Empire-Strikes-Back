@@ -2,7 +2,7 @@ template <const int M>
 struct Modular {
   int v;
   Modular(int a = 0) : v(a) {}
-  Modular(int64_t a) : v((a < 0 ? M - -a % M : a) % M) {}
+  Modular(lli a) : v((a < 0 ? M - -a % M : a) % M) {}
 
   Modular operator+(Modular m) {
     return Modular((v + m.v) % M);
