@@ -1,44 +1,36 @@
-struct Hash : array<int, 2> {
-  static constexpr int mod = 1e9 + 7;
-#define oper(op)                               \
-  friend Hash operator op(Hash a, Hash b) {    \
-    fore (i, 0, sz(a))                         \
-      a[i] = (1LL * a[i] op b[i] + mod) % mod; \
-    return a;                                  \
-  }
-  oper(+) oper(-) oper(*)
-} pw[N], ipw[N];
+using Hash = int; // maybe an arrray<int, 2>
+Hash pw[N], ipw[N];
 
 struct Hashing {
+  static constexpr int P = 10166249, M = 1070777777;
   vector<Hash> h;
 
-  Hashing(string& s) : h(sz(s) + 1) {
+  static void init() {
+    const int Q = inv(P, M);
+    pw[0] = ipw[0] = 1;
+    fore (i, 1, N) {
+      pw[i] = 1LL * pw[i - 1] * P % M;
+      ipw[i] = 1LL * ipw[i - 1] * Q % M;
+    }
+  }
+
+  Hashing(string& s) : h(sz(s) + 1, 0) {
     fore (i, 0, sz(s)) {
-      int x = s[i] - 'a' + 1;
-      h[i + 1] = h[i] + pw[i] * Hash{x, x};
+      lli x = s[i] - 'a' + 1;
+      h[i + 1] = (h[i] + x * pw[i]) % M;
     }
   }
 
   Hash query(int l, int r) {
-    return (h[r + 1] - h[l]) * ipw[l];
+    return 1LL * (h[r + 1] - h[l] + M) * ipw[l] % M;
+  }
+
+  friend pair<Hash, int> merge(vector<pair<Hash, int>>& cuts) {
+    pair<Hash, int> ans = {0, 0};
+    fore (i, sz(cuts), 0) {
+      ans.f = (cuts[i].f + 1LL * ans.f * pw[cuts[i].s] % M) % M;
+      ans.s += cuts[i].s;
+    }
+    return ans;
   }
 };
-
-#warning "Ensure all base[i] > alphabet"
-pw[0] = ipw[0] = {1, 1};
-Hash base = {12367453, 14567893};
-Hash inv = {::inv(base[0], base.mod), ::inv(base[1], base.mod)};
-fore (i, 1, N) {
-  pw[i] = pw[i - 1] * base;
-  ipw[i] = ipw[i - 1] * inv;
-}
-
-// Save len in the struct and when you do a cut
-Hash merge(vector<Hash>& cuts) {
-  Hash f = {0, 0};
-  fore (i, sz(cuts), 0) {
-    Hash g = cuts[i];
-    f = g + f * pw[g.len];
-  }
-  return f;
-}
