@@ -36,9 +36,11 @@ struct Pt {
   ld norm() const {
     return x * x + y * y;
   }
+
   ld length() const {
     return sqrtl(norm());
   }
+
   Pt unit() const {
     return (*this) / length();
   }
@@ -65,12 +67,15 @@ struct Pt {
   bool operator<(Pt p) const {
     return eq(x, p.x) ? le(y, p.y) : le(x, p.x);
   }
+
   bool operator>(Pt p) const {
     return eq(x, p.x) ? ge(y, p.y) : ge(x, p.x);
   }
+
   bool operator==(Pt p) const {
     return eq(x, p.x) && eq(y, p.y);
   }
+
   bool operator!=(Pt p) const {
     return neq(x, p.x) && neq(y, p.y);
   }

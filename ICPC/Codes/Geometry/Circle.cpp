@@ -75,7 +75,7 @@ struct Cir {
       return c.commonArea(*this);
     ld d = (o - c.o).length();
     if (leq(d + c.r, r))
-      return c.r * c.r * pi;
+      return c.r * c.r * PI;
     if (geq(d, r + c.r))
       return 0.0;
     auto angle = [&](ld a, ld b, ld c) {
