@@ -53,6 +53,7 @@ struct Pt {
   Pt perp() const {
     return Pt(-y, x);
   }
+
   Pt rotate(ld angle) const {
     // counter-clockwise rotation in radians
     // degree = radian * 180 / pi
@@ -77,7 +78,7 @@ struct Pt {
   }
 
   bool operator!=(Pt p) const {
-    return neq(x, p.x) && neq(y, p.y);
+    return !(*this == p);
   }
 
   friend ostream& operator<<(ostream& os, const Pt& p) {
