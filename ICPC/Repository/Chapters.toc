@@ -20,110 +20,110 @@
 \contentsline {subsection}{\numberline {4.1}Ordered tree}{6}{subsection.4.1}%
 \contentsline {subsection}{\numberline {4.2}Treap}{6}{subsection.4.2}%
 \contentsline {subsection}{\numberline {4.3}Implicit treap (Rope)}{6}{subsection.4.3}%
-\contentsline {section}{\numberline {5}Graphs}{6}{section.5}%
-\contentsline {subsection}{\numberline {5.1}Topological sort $\mathcal {O}(V + E)$}{6}{subsection.5.1}%
-\contentsline {subsection}{\numberline {5.2}Tarjan algorithm (SCC) $\mathcal {O}(V + E)$}{6}{subsection.5.2}%
+\contentsline {section}{\numberline {5}Graphs}{7}{section.5}%
+\contentsline {subsection}{\numberline {5.1}Topological sort $\mathcal {O}(V + E)$}{7}{subsection.5.1}%
+\contentsline {subsection}{\numberline {5.2}Tarjan algorithm (SCC) $\mathcal {O}(V + E)$}{7}{subsection.5.2}%
 \contentsline {subsection}{\numberline {5.3}Kosaraju algorithm (SCC) $\mathcal {O}(V + E)$}{7}{subsection.5.3}%
 \contentsline {subsection}{\numberline {5.4}Cutpoints and Bridges $\mathcal {O}(V + E)$}{7}{subsection.5.4}%
 \contentsline {subsection}{\numberline {5.5}Two Sat $\mathcal {O}(V + E)$}{7}{subsection.5.5}%
-\contentsline {subsection}{\numberline {5.6}Detect a cycle $\mathcal {O}(V + E)$}{7}{subsection.5.6}%
-\contentsline {subsection}{\numberline {5.7}Isomorphism $\mathcal {O}(V + E)$}{7}{subsection.5.7}%
+\contentsline {subsection}{\numberline {5.6}Detect a cycle $\mathcal {O}(V + E)$}{8}{subsection.5.6}%
+\contentsline {subsection}{\numberline {5.7}Isomorphism $\mathcal {O}(V + E)$}{8}{subsection.5.7}%
 \contentsline {subsection}{\numberline {5.8}Dynamic connectivity $\mathcal {O}((N + Q) \cdot logQ)$}{8}{subsection.5.8}%
 \contentsline {section}{\numberline {6}Tree queries}{8}{section.6}%
 \contentsline {subsection}{\numberline {6.1}Euler tour for Mo's in a tree $\mathcal {O}((V + E) \cdot \sqrt {V})$}{8}{subsection.6.1}%
 \contentsline {subsection}{\numberline {6.2}Lowest common ancestor (LCA)}{8}{subsection.6.2}%
-\contentsline {subsection}{\numberline {6.3}Virtual tree}{8}{subsection.6.3}%
+\contentsline {subsection}{\numberline {6.3}Virtual tree}{9}{subsection.6.3}%
 \contentsline {subsection}{\numberline {6.4}Guni}{9}{subsection.6.4}%
 \contentsline {subsection}{\numberline {6.5}Centroid decomposition}{9}{subsection.6.5}%
 \contentsline {subsection}{\numberline {6.6}Heavy-light decomposition and Euler tour}{9}{subsection.6.6}%
-\contentsline {subsection}{\numberline {6.7}Link-Cut tree}{9}{subsection.6.7}%
-\contentsline {section}{\numberline {7}Flows}{10}{section.7}%
-\contentsline {subsection}{\numberline {7.1}Dinic $\mathcal {O}(min(E \cdot flow, V^2E))$}{10}{subsection.7.1}%
+\contentsline {subsection}{\numberline {6.7}Link-Cut tree}{10}{subsection.6.7}%
+\contentsline {section}{\numberline {7}Flows}{11}{section.7}%
+\contentsline {subsection}{\numberline {7.1}Dinic $\mathcal {O}(min(E \cdot flow, V^2E))$}{11}{subsection.7.1}%
 \contentsline {subsection}{\numberline {7.2}Min cost flow $\mathcal {O}(min(E \cdot flow, V^2E))$}{11}{subsection.7.2}%
-\contentsline {subsection}{\numberline {7.3}Hopcroft-Karp $\mathcal {O}(E \sqrt {V})$}{11}{subsection.7.3}%
+\contentsline {subsection}{\numberline {7.3}Hopcroft-Karp $\mathcal {O}(E \sqrt {V})$}{12}{subsection.7.3}%
 \contentsline {subsection}{\numberline {7.4}Hungarian $\mathcal {O}(N ^ 3)$}{12}{subsection.7.4}%
-\contentsline {section}{\numberline {8}Strings}{12}{section.8}%
-\contentsline {subsection}{\numberline {8.1}Hash $\mathcal {O}(N)$}{12}{subsection.8.1}%
-\contentsline {subsection}{\numberline {8.2}KMP $\mathcal {O}(N)$}{12}{subsection.8.2}%
-\contentsline {subsection}{\numberline {8.3}KMP automaton $\mathcal {O}(Alphabet \cdot N)$}{12}{subsection.8.3}%
-\contentsline {subsection}{\numberline {8.4}Z algorithm $\mathcal {O}(N)$}{12}{subsection.8.4}%
+\contentsline {section}{\numberline {8}Strings}{13}{section.8}%
+\contentsline {subsection}{\numberline {8.1}Hash $\mathcal {O}(N)$}{13}{subsection.8.1}%
+\contentsline {subsection}{\numberline {8.2}KMP $\mathcal {O}(N)$}{13}{subsection.8.2}%
+\contentsline {subsection}{\numberline {8.3}KMP automaton $\mathcal {O}(Alphabet * N)$}{13}{subsection.8.3}%
+\contentsline {subsection}{\numberline {8.4}Z algorithm $\mathcal {O}(N)$}{13}{subsection.8.4}%
 \contentsline {subsection}{\numberline {8.5}Manacher algorithm $\mathcal {O}(N)$}{13}{subsection.8.5}%
-\contentsline {subsection}{\numberline {8.6}Suffix array $\mathcal {O}(N \cdot log N)$}{13}{subsection.8.6}%
-\contentsline {subsection}{\numberline {8.7}Suffix automaton $\mathcal {O}(\DOTSB \sum@ \slimits@ s_i)$}{13}{subsection.8.7}%
-\contentsline {subsection}{\numberline {8.8}Aho corasick $\mathcal {O}(\DOTSB \sum@ \slimits@ s_i)$}{14}{subsection.8.8}%
-\contentsline {subsection}{\numberline {8.9}Eertree $\mathcal {O}(\DOTSB \sum@ \slimits@ s_i)$}{15}{subsection.8.9}%
-\contentsline {section}{\numberline {9}Dynamic Programming}{15}{section.9}%
-\contentsline {subsection}{\numberline {9.1}All submasks of a mask}{15}{subsection.9.1}%
-\contentsline {subsection}{\numberline {9.2}Matrix Chain Multiplication}{15}{subsection.9.2}%
-\contentsline {subsection}{\numberline {9.3}Digit DP}{15}{subsection.9.3}%
-\contentsline {subsection}{\numberline {9.4}Knapsack 0/1}{15}{subsection.9.4}%
-\contentsline {subsection}{\numberline {9.5}Convex Hull Trick $\mathcal {O}(n^2)$ $\Rightarrow $ $\mathcal {O}(n)$}{15}{subsection.9.5}%
-\contentsline {subsection}{\numberline {9.6}Divide and conquer $\mathcal {O}(kn^2)$ $\Rightarrow $ $\mathcal {O}(k \cdot nlogn)$}{16}{subsection.9.6}%
-\contentsline {subsection}{\numberline {9.7}Knuth optimization $\mathcal {O}(n^3)$ $\Rightarrow $ $\mathcal {O}(n^2)$}{16}{subsection.9.7}%
-\contentsline {section}{\numberline {10}Game Theory}{16}{section.10}%
-\contentsline {subsection}{\numberline {10.1}Grundy Numbers}{16}{subsection.10.1}%
-\contentsline {section}{\numberline {11}Math}{16}{section.11}%
-\contentsline {subsection}{\numberline {11.1}Factorial}{16}{subsection.11.1}%
-\contentsline {subsection}{\numberline {11.2}Factorial mod $smallPrime$}{16}{subsection.11.2}%
-\contentsline {subsection}{\numberline {11.3}Lucas theorem}{17}{subsection.11.3}%
-\contentsline {subsection}{\numberline {11.4}Stars and bars}{17}{subsection.11.4}%
-\contentsline {subsection}{\numberline {11.5}N choose K}{17}{subsection.11.5}%
-\contentsline {subsection}{\numberline {11.6}Catalan}{17}{subsection.11.6}%
-\contentsline {subsection}{\numberline {11.7}Burnside's lemma}{17}{subsection.11.7}%
-\contentsline {subsection}{\numberline {11.8}Prime factors of N!}{17}{subsection.11.8}%
-\contentsline {section}{\numberline {12}Number Theory}{17}{section.12}%
-\contentsline {subsection}{\numberline {12.1}Goldbach conjecture}{17}{subsection.12.1}%
-\contentsline {subsection}{\numberline {12.2}Prime numbers distribution}{17}{subsection.12.2}%
-\contentsline {subsection}{\numberline {12.3}Sieve of Eratosthenes $\mathcal {O}(N \cdot log(log N))$ }{17}{subsection.12.3}%
-\contentsline {subsection}{\numberline {12.4}Phi of euler $\mathcal {O}(\sqrt {N})$}{17}{subsection.12.4}%
-\contentsline {subsection}{\numberline {12.5}Miller-Rabin $\mathcal {O}(Witnesses \cdot (log N) ^ 3)$}{17}{subsection.12.5}%
-\contentsline {subsection}{\numberline {12.6}Pollard-Rho $\mathcal {O}(N ^ {1/4})$}{18}{subsection.12.6}%
-\contentsline {subsection}{\numberline {12.7}Amount of divisors $\mathcal {O}(N ^ {1/3})$}{18}{subsection.12.7}%
-\contentsline {subsection}{\numberline {12.8}Bézout's identity}{18}{subsection.12.8}%
-\contentsline {subsection}{\numberline {12.9}GCD}{18}{subsection.12.9}%
-\contentsline {subsection}{\numberline {12.10}LCM}{18}{subsection.12.10}%
-\contentsline {subsection}{\numberline {12.11}Euclid $\mathcal {O}(log (a \cdot b))$}{18}{subsection.12.11}%
-\contentsline {subsection}{\numberline {12.12}Chinese remainder theorem}{18}{subsection.12.12}%
-\contentsline {section}{\numberline {13}Math}{18}{section.13}%
-\contentsline {subsection}{\numberline {13.1}Progressions}{18}{subsection.13.1}%
-\contentsline {subsection}{\numberline {13.2}Fpow}{18}{subsection.13.2}%
-\contentsline {subsection}{\numberline {13.3}Fibonacci}{18}{subsection.13.3}%
-\contentsline {section}{\numberline {14}Probability}{18}{section.14}%
-\contentsline {subsection}{\numberline {14.1}Conditional}{18}{subsection.14.1}%
-\contentsline {subsection}{\numberline {14.2}Bayes theorem}{18}{subsection.14.2}%
-\contentsline {subsection}{\numberline {14.3}Binomial}{18}{subsection.14.3}%
-\contentsline {subsection}{\numberline {14.4}Geometric}{18}{subsection.14.4}%
-\contentsline {subsection}{\numberline {14.5}Poisson}{19}{subsection.14.5}%
-\contentsline {subsection}{\numberline {14.6}Expected value}{19}{subsection.14.6}%
-\contentsline {section}{\numberline {15}Bit tricks}{19}{section.15}%
-\contentsline {subsection}{\numberline {15.1}Xor Basis}{19}{subsection.15.1}%
-\contentsline {subsection}{\numberline {15.2}Bitset}{19}{subsection.15.2}%
-\contentsline {section}{\numberline {16}Geometry}{19}{section.16}%
-\contentsline {section}{\numberline {17}Points}{19}{section.17}%
-\contentsline {subsection}{\numberline {17.1}Points}{19}{subsection.17.1}%
-\contentsline {subsection}{\numberline {17.2}Angle between vectors}{20}{subsection.17.2}%
-\contentsline {subsection}{\numberline {17.3}Closest pair of points $\mathcal {O}(N \cdot log N)$}{20}{subsection.17.3}%
-\contentsline {subsection}{\numberline {17.4}Projection}{20}{subsection.17.4}%
-\contentsline {subsection}{\numberline {17.5}KD-Tree}{20}{subsection.17.5}%
-\contentsline {section}{\numberline {18}Lines and segments}{20}{section.18}%
-\contentsline {subsection}{\numberline {18.1}Line}{20}{subsection.18.1}%
-\contentsline {subsection}{\numberline {18.2}Segment}{21}{subsection.18.2}%
-\contentsline {subsection}{\numberline {18.3}Distance point-line}{21}{subsection.18.3}%
-\contentsline {subsection}{\numberline {18.4}Distance point-segment}{21}{subsection.18.4}%
-\contentsline {subsection}{\numberline {18.5}Distance segment-segment}{21}{subsection.18.5}%
-\contentsline {section}{\numberline {19}Circles}{21}{section.19}%
-\contentsline {subsection}{\numberline {19.1}Circle}{21}{subsection.19.1}%
-\contentsline {subsection}{\numberline {19.2}Distance point-circle}{22}{subsection.19.2}%
-\contentsline {subsection}{\numberline {19.3}Minimum enclosing circle $\mathcal {O}(N)$ wow!!}{22}{subsection.19.3}%
-\contentsline {subsection}{\numberline {19.4}Common area circle-polygon $\mathcal {O}(N)$}{22}{subsection.19.4}%
-\contentsline {section}{\numberline {20}Polygons}{22}{section.20}%
-\contentsline {subsection}{\numberline {20.1}Area of polygon $\mathcal {O}(N)$}{22}{subsection.20.1}%
-\contentsline {subsection}{\numberline {20.2}Convex-Hull $\mathcal {O}(N \cdot logN)$}{22}{subsection.20.2}%
-\contentsline {subsection}{\numberline {20.3}Cut polygon by a line $\mathcal {O}(N)$}{22}{subsection.20.3}%
-\contentsline {subsection}{\numberline {20.4}Perimeter $\mathcal {O}(N)$}{22}{subsection.20.4}%
-\contentsline {subsection}{\numberline {20.5}Point in polygon $\mathcal {O}(N)$}{22}{subsection.20.5}%
-\contentsline {subsection}{\numberline {20.6}Point in convex-polygon $\mathcal {O}(logN)$}{22}{subsection.20.6}%
-\contentsline {subsection}{\numberline {20.7}Is convex $\mathcal {O}(N)$}{23}{subsection.20.7}%
-\contentsline {section}{\numberline {21}Geometry misc}{23}{section.21}%
-\contentsline {subsection}{\numberline {21.1}Radial order}{23}{subsection.21.1}%
-\contentsline {subsection}{\numberline {21.2}Sort along a line $\mathcal {O}(N \cdot logN)$}{23}{subsection.21.2}%
+\contentsline {subsection}{\numberline {8.6}Suffix array $\mathcal {O}(N * log N)$}{14}{subsection.8.6}%
+\contentsline {subsection}{\numberline {8.7}Suffix automaton $\mathcal {O}(\DOTSB \sum@ \slimits@ s_i)$}{14}{subsection.8.7}%
+\contentsline {subsection}{\numberline {8.8}Aho corasick $\mathcal {O}(\DOTSB \sum@ \slimits@ s_i)$}{15}{subsection.8.8}%
+\contentsline {subsection}{\numberline {8.9}Eertree $\mathcal {O}(\DOTSB \sum@ \slimits@ s_i)$}{16}{subsection.8.9}%
+\contentsline {section}{\numberline {9}Dynamic Programming}{16}{section.9}%
+\contentsline {subsection}{\numberline {9.1}All submasks of a mask}{16}{subsection.9.1}%
+\contentsline {subsection}{\numberline {9.2}Matrix Chain Multiplication}{16}{subsection.9.2}%
+\contentsline {subsection}{\numberline {9.3}Digit DP}{16}{subsection.9.3}%
+\contentsline {subsection}{\numberline {9.4}Knapsack 0/1}{16}{subsection.9.4}%
+\contentsline {subsection}{\numberline {9.5}Convex Hull Trick $\mathcal {O}(n^2)$ $\Rightarrow $ $\mathcal {O}(n)$}{16}{subsection.9.5}%
+\contentsline {subsection}{\numberline {9.6}Divide and conquer $\mathcal {O}(kn^2)$ $\Rightarrow $ $\mathcal {O}(k \cdot nlogn)$}{17}{subsection.9.6}%
+\contentsline {subsection}{\numberline {9.7}Knuth optimization $\mathcal {O}(n^3)$ $\Rightarrow $ $\mathcal {O}(n^2)$}{17}{subsection.9.7}%
+\contentsline {section}{\numberline {10}Game Theory}{17}{section.10}%
+\contentsline {subsection}{\numberline {10.1}Grundy Numbers}{17}{subsection.10.1}%
+\contentsline {section}{\numberline {11}Math}{17}{section.11}%
+\contentsline {subsection}{\numberline {11.1}Factorial}{17}{subsection.11.1}%
+\contentsline {subsection}{\numberline {11.2}Factorial mod $smallPrime$}{17}{subsection.11.2}%
+\contentsline {subsection}{\numberline {11.3}Lucas theorem}{18}{subsection.11.3}%
+\contentsline {subsection}{\numberline {11.4}Stars and bars}{18}{subsection.11.4}%
+\contentsline {subsection}{\numberline {11.5}N choose K}{18}{subsection.11.5}%
+\contentsline {subsection}{\numberline {11.6}Catalan}{18}{subsection.11.6}%
+\contentsline {subsection}{\numberline {11.7}Burnside's lemma}{18}{subsection.11.7}%
+\contentsline {subsection}{\numberline {11.8}Prime factors of N!}{18}{subsection.11.8}%
+\contentsline {section}{\numberline {12}Number Theory}{18}{section.12}%
+\contentsline {subsection}{\numberline {12.1}Goldbach conjecture}{18}{subsection.12.1}%
+\contentsline {subsection}{\numberline {12.2}Prime numbers distribution}{18}{subsection.12.2}%
+\contentsline {subsection}{\numberline {12.3}Sieve of Eratosthenes $\mathcal {O}(N \cdot log(log N))$ }{18}{subsection.12.3}%
+\contentsline {subsection}{\numberline {12.4}Phi of euler $\mathcal {O}(\sqrt {N})$}{18}{subsection.12.4}%
+\contentsline {subsection}{\numberline {12.5}Miller-Rabin $\mathcal {O}(Witnesses \cdot (log N) ^ 3)$}{18}{subsection.12.5}%
+\contentsline {subsection}{\numberline {12.6}Pollard-Rho $\mathcal {O}(N ^ {1/4})$}{19}{subsection.12.6}%
+\contentsline {subsection}{\numberline {12.7}Amount of divisors $\mathcal {O}(N ^ {1/3})$}{19}{subsection.12.7}%
+\contentsline {subsection}{\numberline {12.8}Bézout's identity}{19}{subsection.12.8}%
+\contentsline {subsection}{\numberline {12.9}GCD}{19}{subsection.12.9}%
+\contentsline {subsection}{\numberline {12.10}LCM}{19}{subsection.12.10}%
+\contentsline {subsection}{\numberline {12.11}Euclid $\mathcal {O}(log (a \cdot b))$}{19}{subsection.12.11}%
+\contentsline {subsection}{\numberline {12.12}Chinese remainder theorem}{19}{subsection.12.12}%
+\contentsline {section}{\numberline {13}Math}{19}{section.13}%
+\contentsline {subsection}{\numberline {13.1}Progressions}{19}{subsection.13.1}%
+\contentsline {subsection}{\numberline {13.2}Fpow}{19}{subsection.13.2}%
+\contentsline {subsection}{\numberline {13.3}Fibonacci}{19}{subsection.13.3}%
+\contentsline {section}{\numberline {14}Probability}{19}{section.14}%
+\contentsline {subsection}{\numberline {14.1}Conditional}{19}{subsection.14.1}%
+\contentsline {subsection}{\numberline {14.2}Bayes theorem}{19}{subsection.14.2}%
+\contentsline {subsection}{\numberline {14.3}Binomial}{20}{subsection.14.3}%
+\contentsline {subsection}{\numberline {14.4}Geometric}{20}{subsection.14.4}%
+\contentsline {subsection}{\numberline {14.5}Poisson}{20}{subsection.14.5}%
+\contentsline {subsection}{\numberline {14.6}Expected value}{20}{subsection.14.6}%
+\contentsline {section}{\numberline {15}Bit tricks}{20}{section.15}%
+\contentsline {subsection}{\numberline {15.1}Xor Basis}{20}{subsection.15.1}%
+\contentsline {subsection}{\numberline {15.2}Bitset}{20}{subsection.15.2}%
+\contentsline {section}{\numberline {16}Geometry}{20}{section.16}%
+\contentsline {section}{\numberline {17}Points}{20}{section.17}%
+\contentsline {subsection}{\numberline {17.1}Points}{20}{subsection.17.1}%
+\contentsline {subsection}{\numberline {17.2}Angle between vectors}{21}{subsection.17.2}%
+\contentsline {subsection}{\numberline {17.3}Closest pair of points $\mathcal {O}(N \cdot log N)$}{21}{subsection.17.3}%
+\contentsline {subsection}{\numberline {17.4}Projection}{21}{subsection.17.4}%
+\contentsline {subsection}{\numberline {17.5}KD-Tree}{21}{subsection.17.5}%
+\contentsline {section}{\numberline {18}Lines and segments}{21}{section.18}%
+\contentsline {subsection}{\numberline {18.1}Line}{21}{subsection.18.1}%
+\contentsline {subsection}{\numberline {18.2}Segment}{22}{subsection.18.2}%
+\contentsline {subsection}{\numberline {18.3}Distance point-line}{22}{subsection.18.3}%
+\contentsline {subsection}{\numberline {18.4}Distance point-segment}{22}{subsection.18.4}%
+\contentsline {subsection}{\numberline {18.5}Distance segment-segment}{22}{subsection.18.5}%
+\contentsline {section}{\numberline {19}Circles}{22}{section.19}%
+\contentsline {subsection}{\numberline {19.1}Circle}{22}{subsection.19.1}%
+\contentsline {subsection}{\numberline {19.2}Distance point-circle}{23}{subsection.19.2}%
+\contentsline {subsection}{\numberline {19.3}Minimum enclosing circle $\mathcal {O}(N)$ wow!!}{23}{subsection.19.3}%
+\contentsline {subsection}{\numberline {19.4}Common area circle-polygon $\mathcal {O}(N)$}{23}{subsection.19.4}%
+\contentsline {section}{\numberline {20}Polygons}{23}{section.20}%
+\contentsline {subsection}{\numberline {20.1}Area of polygon $\mathcal {O}(N)$}{23}{subsection.20.1}%
+\contentsline {subsection}{\numberline {20.2}Convex-Hull $\mathcal {O}(N \cdot logN)$}{23}{subsection.20.2}%
+\contentsline {subsection}{\numberline {20.3}Cut polygon by a line $\mathcal {O}(N)$}{23}{subsection.20.3}%
+\contentsline {subsection}{\numberline {20.4}Perimeter $\mathcal {O}(N)$}{23}{subsection.20.4}%
+\contentsline {subsection}{\numberline {20.5}Point in polygon $\mathcal {O}(N)$}{24}{subsection.20.5}%
+\contentsline {subsection}{\numberline {20.6}Point in convex-polygon $\mathcal {O}(logN)$}{24}{subsection.20.6}%
+\contentsline {subsection}{\numberline {20.7}Is convex $\mathcal {O}(N)$}{24}{subsection.20.7}%
+\contentsline {section}{\numberline {21}Geometry misc}{24}{section.21}%
+\contentsline {subsection}{\numberline {21.1}Radial order}{24}{subsection.21.1}%
+\contentsline {subsection}{\numberline {21.2}Sort along a line $\mathcal {O}(N \cdot logN)$}{24}{subsection.21.2}%

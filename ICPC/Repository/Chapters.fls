@@ -1249,42 +1249,42 @@ INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/Combinatorics.tex
 INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/Combinatorics.tex
 INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/Combinatorics.tex
 INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/Combinatorics.tex
-INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Math/Factorial.cpp
-INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Math/Factorial.cpp
-INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Math/Factorial.cpp
-INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Math/Factorial.cpp
-INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Math/Factorial.cpp
-INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Math/Factorial.cpp
-INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Math/Factorial mod small prime.cpp
-INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Math/Factorial mod small prime.cpp
-INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Math/Factorial mod small prime.cpp
-INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Math/Factorial mod small prime.cpp
-INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Math/Factorial mod small prime.cpp
-INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Math/Factorial mod small prime.cpp
-INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Math/Lucas.cpp
-INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Math/Lucas.cpp
-INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Math/Lucas.cpp
-INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Math/Lucas.cpp
-INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Math/Lucas.cpp
-INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Math/Lucas.cpp
-INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Math/Choose.cpp
-INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Math/Choose.cpp
-INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Math/Choose.cpp
-INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Math/Choose.cpp
-INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Math/Choose.cpp
-INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Math/Choose.cpp
-INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Math/Catalan.cpp
-INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Math/Catalan.cpp
-INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Math/Catalan.cpp
-INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Math/Catalan.cpp
-INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Math/Catalan.cpp
-INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Math/Catalan.cpp
-INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Math/Factorial factors.cpp
-INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Math/Factorial factors.cpp
-INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Math/Factorial factors.cpp
-INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Math/Factorial factors.cpp
-INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Math/Factorial factors.cpp
-INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Math/Factorial factors.cpp
+INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Math/Combinatorics/Factorial.cpp
+INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Math/Combinatorics/Factorial.cpp
+INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Math/Combinatorics/Factorial.cpp
+INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Math/Combinatorics/Factorial.cpp
+INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Math/Combinatorics/Factorial.cpp
+INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Math/Combinatorics/Factorial.cpp
+INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Math/Combinatorics/Factorial mod small prime.cpp
+INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Math/Combinatorics/Factorial mod small prime.cpp
+INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Math/Combinatorics/Factorial mod small prime.cpp
+INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Math/Combinatorics/Factorial mod small prime.cpp
+INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Math/Combinatorics/Factorial mod small prime.cpp
+INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Math/Combinatorics/Factorial mod small prime.cpp
+INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Math/Combinatorics/Lucas.cpp
+INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Math/Combinatorics/Lucas.cpp
+INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Math/Combinatorics/Lucas.cpp
+INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Math/Combinatorics/Lucas.cpp
+INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Math/Combinatorics/Lucas.cpp
+INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Math/Combinatorics/Lucas.cpp
+INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Math/Combinatorics/Choose.cpp
+INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Math/Combinatorics/Choose.cpp
+INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Math/Combinatorics/Choose.cpp
+INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Math/Combinatorics/Choose.cpp
+INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Math/Combinatorics/Choose.cpp
+INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Math/Combinatorics/Choose.cpp
+INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Math/Combinatorics/Catalan.cpp
+INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Math/Combinatorics/Catalan.cpp
+INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Math/Combinatorics/Catalan.cpp
+INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Math/Combinatorics/Catalan.cpp
+INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Math/Combinatorics/Catalan.cpp
+INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/Math/Combinatorics/Catalan.cpp
+INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/NumberTheory/Factorial factors.cpp
+INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/NumberTheory/Factorial factors.cpp
+INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/NumberTheory/Factorial factors.cpp
+INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/NumberTheory/Factorial factors.cpp
+INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/NumberTheory/Factorial factors.cpp
+INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/../Codes/NumberTheory/Factorial factors.cpp
 INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/NumberTheory.tex
 INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/NumberTheory.tex
 INPUT /Users/abraham/The-Empire-Strikes-Back/ICPC/Repository/NumberTheory.tex

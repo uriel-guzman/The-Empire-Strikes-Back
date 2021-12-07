@@ -2,7 +2,7 @@ alias myBash="open ~/.zshenv"
 alias saveMyBash="source ~/.zshenv" 
 
 user="/Users/abraham"
-icpcDir="${user}/**/ICPC"
+icpcDir="${user}/The-Empire-Strikes-Back/ICPC"
 
 alias icpc="cd ${icpcDir}" 
 alias problems="cd ${user}/Problems"
@@ -16,14 +16,18 @@ cyan='\x1B[0;36m'
 removeColor='\x1B[0m'
 
 myPush() {
-  git add $1 
-  git commit -a -m "$2"
+  git commit -m "$1"
   git push origin master
 }
 
 myPull() {
   git pull origin master
   snippets
+}
+
+solve() {
+  open $1.cpp
+  open $1
 }
 
 create() {
@@ -65,8 +69,23 @@ compile() {
   if [ $# -ge 2 ]; then
     moreFlags=$2
   fi
+
   alias flags='-Wall -Wextra -Wshadow -fmax-errors=3 -w -mcmodel=medium'
   g++-11 --std=c++17 ${moreFlags} ${flags} ${file}.cpp -o ${file}.out 
+}
+
+run() {
+  # debug cppFile [input]
+  cppFile=$1
+  input=$1
+  if [ $# -ge 2 ]; then
+    input=$2
+  fi
+
+  compile ${cppFile}
+
+  ./${cppFile}.out < ${input}
+  rm -r ./${cppFile}.out
 }
 
 debug() {
@@ -82,20 +101,6 @@ debug() {
   ./${cppFile}.out < ${input}
   rm -r ./${cppFile}.out
 } 
-
-run() {
-  # debug cppFile [input]
-  cppFile=$1
-  input=$1
-  if [ $# -ge 2 ]; then
-    input=$2
-  fi
-
-  compile ${cppFile}
-
-  ./${cppFile}.out < ${input}
-  rm -r ./${cppFile}.out
-}
 
 random() {
   # random solution [bruteForceSolution] [testCaseGenerator]
@@ -141,94 +146,4 @@ random() {
       break
     fi
   done
-}
-
-omegaup() {
-  # omegaup solution [testCaseGenerator]
-  # Inside the gen.cpp file you should need to add main(int k)
-  # k will be {{1:easy}, {2:medium}, {3:hard}}
-
-  myDir=$(pwd)
-
-  solution=$1
-  testCaseGenerator="gen"
-
-  if [ $# -ge 2 ]; then
-    testCaseGenerator=$2
-  fi
-
-  compile ${solution} "" 
-  compile ${testCaseGenerator} "" 
-
-  # Create folder
-  problemName="problem_${solution}"
-  rm -r ${problemName}
-  mkdir ${problemName}
-
-  # Add solution and generator to the folder
-  tee "${folderDir}/sol.cpp" < ${solution}.cpp
-  tee "${folderDir}/gen.cpp" < ${testCaseGenerator}.cpp
-
-  folderDir="${myDir}/${problemName}"
-  cd ${folderDir}
-
-  # Create cases and statements folder
-  mkdir "cases"
-  mkdir "statements"
-
-  # Add description on es.markdown
-  cd "${folderDir}/statements"
-  touch "es.markdown"
-
-  echo "# Descripción" >> "es.markdown"
-  echo "Historia del problema" >> "es.markdown"
-  echo "# Entrada\n Variables en \`rojo\`, solo \$texto\$\n" >> "es.markdown"
-  echo "# Salida\n Esto es la salida" >> "es.markdown"
-  echo "#Ejemplo\n || input\n || output\n || description \n || end\n" >> "es.markdown"
-
-  echo "# Límites\n" >> "es.markdown"
-  echo "- \$1 \leq n \leq 10^5$" >> "es.markdown"
-  echo "\n----------\n" >> "es.markdown"
-
-  echo "# Subtareas\n" >> "es.markdown"
-  echo "Para un 10 % de los casos:\n" >> "es.markdown"
-  echo "- \$1 \leq n \leq 10$" >> "es.markdown"
-  echo "\n----------\n" >> "es.markdown"
-
-  echo "Para un 40 % de los casos (agrupados):\n" >> "es.markdown"
-  echo "- \$1 \leq n \leq 10$" >> "es.markdown"
-  echo "\n----------\n" >> "es.markdown"
-
-  echo "Para un 50 % de los casos (agrupados) los límites originales." >> "es.markdown"
-
-  testCasesDir="${folderDir}/cases"
-
-  cd ${myDir}	
-
-  # Weak test cases
-  for ((i = 1; i <= 3; i++)); do
-    input="${testCasesDir}/${i}.in"
-    output="${testCasesDir}/${i}.out"
-    ./${testCaseGenerator}.out > ${input}
-    ./${solution}.out < ${input} > ${output}	
-  done
-
-  # Medium test cases
-  for ((i = 1; i <= 12; i++)); do
-  input="${testCasesDir}/bunch1.medium.${i}.in"
-  output="${testCasesDir}/bunch1.medium.${i}.out"
-  ./${testCaseGenerator}.out medium > ${input}
-  ./${solution}.out < ${input} > ${output}	
-  done
-
-  # Big test cases
-  for ((i = 1; i <= 15; i++)); do
-  input="${testCasesDir}/bunch2.hard.${i}.in"
-  output="${testCasesDir}/bunch2.hard.${i}.out"
-  ./${testCaseGenerator}.out is big > ${input}
-  ./${solution}.out < ${input} > ${output}	
-  done
-
-  clear
-  printf "Ready to omegaup\n"
 }
