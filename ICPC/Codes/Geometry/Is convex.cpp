@@ -1,4 +1,4 @@
-bool isConvex(const Poly& pts) {
+bool isConvex(const vector<Pt>& pts) {
   int n = sz(pts);
   bool pos = 0, neg = 0;
   fore (i, 0, n) {
