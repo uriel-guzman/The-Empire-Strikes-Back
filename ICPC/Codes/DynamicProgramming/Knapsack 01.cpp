@@ -3,5 +3,5 @@ struct Item {
 };
 
 for (auto& cur : items)
-  fore (w, W + 1, cur.w) // [cur.w, W]
+  for (int w = W; w >= cur.w; w--)
     umax(dp[w], dp[w - cur.w] + cur.cost);
