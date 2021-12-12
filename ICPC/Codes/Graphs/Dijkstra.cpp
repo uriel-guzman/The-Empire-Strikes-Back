@@ -1,21 +1,33 @@
-const int INF = 1e9;
+struct Edge {
+  int v, w;
+};
+
+struct Data {
+  int u;
+  lli d;
+
+  bool operator()(const Data& other) const {
+    return !(d < other.d);
+  }
+};
+
 vector<Edge> graph[N];
 int dist[N];
-int n, m;
 
 void dijkstra(int s) {
   fill_n(dist, n + 1, INF);
-  priority_queue<tuple<int, int>> pq; // {dist, node}
-  pq.emplace(dist[s] = 0, s);
+  priority_queue<Data> pq; // {dist, node}
+  pq.push({s, dist[s] = 0});
+
   while (!pq.empty()) {
-    auto [d, u] = pq.top();
+    auto [u, d] = pq.top();
     pq.pop();
-    if (dist[u] < -d)
+
+    if (dist[u] < d)
       continue;
-    for (auto& e : graph[u])
-      if (dist[u] + e.dist < dist[e.v]) {
-        dist[e.v] = dist[u] + e.dist;
-        pq.emplace(-dist[e.v], e.v);
-      }
+
+    for (auto [v, w] : graph[u])
+      if (umin(dist[v], dist[u] + w))
+        pq.push({v, dist[v]});
   }
 }
