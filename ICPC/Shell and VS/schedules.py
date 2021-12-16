@@ -66,8 +66,8 @@ def getCourses(year, coursesKeysSet, ignoreNRC, virtualCourses):
 
       days = []
       for i in range(h + 1):
-        start = data[i + 11][2:6]
-        end = data[i + 11][7:11]
+        start = int(data[i + 11][2:6]) // 100
+        end = int(data[i + 11][7:11]) // 100
         
         whichDays = []
         for day in data[i + 11][11:22]:
@@ -83,13 +83,14 @@ def getCourses(year, coursesKeysSet, ignoreNRC, virtualCourses):
         classroom = data[i + 11][26 + isDuct : 30 + isDuct]
         
         for day in whichDays:
-          days.append({
-            'start': int(start),
-            'end': int(end),
-            'day': day,
-            'building': building,
-            'classroom': classroom
-          })
+          for hour in range(start, end + 1):
+            days.append({
+              'start': int(hour),
+              'end': int(hour),
+              'day': day,
+              'building': building,
+              'classroom': classroom
+            })
         
       course.update({'days': days})
 
@@ -106,9 +107,8 @@ def generateSchedules(coursesKeys, courses, preferred):
   def getKey(day):
     return frozenset({
       'start': day['start'],
-      'end': day['end'],
       'day': day['day']
-    }.items()) 
+    }.items())
 
   def dfs(pos, currentSchedule):
     if pos == len(coursesKeys):
@@ -179,8 +179,8 @@ def prettySchedule(schedule):
         break
       weekDay += 1
 
-    start = key['start'] // 100
-    end = key['end'] // 100
+    start = key['start']
+    end = key['start'] 
 
     for i in range(start, end + 1):
       day[i - 6][weekDay] = data['nrc'] + data['virtual']
@@ -192,13 +192,13 @@ if __name__ == '__main__':
   # Year to select
   year = "202210"
   # Courses to take
-  coursesKeysSet = {"I7029", "I7027", "I7038", "I7039", "I7030", "I7036"}
+  coursesKeysSet = {"I7036", "I7042", "I7027", "I7038", "I7039", "I7030"}
   # NRC's to ignore
   ignoreNRC = {"153405", "164138", "179961"}
   # Preferred time range and days
   preferred = {
-    'start': 700,
-    'end': 1600,
+    'start': 9,
+    'end': 15,
     'days': "LMIJV",
   }
 
