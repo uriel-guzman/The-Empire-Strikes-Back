@@ -1,8 +1,21 @@
 import requests
+import pprint
 from bs4 import BeautifulSoup
 from tabulate import tabulate
 import pandas as pd
 import json
+
+def filterByPreferredNRC(allCourses, preferredNRC):
+  # Remove all NRC which are NOT in preffered NRC for a certain key
+  for key, courses in allCourses.items():
+    if key in preferredNRC:
+      newCourses = []
+      for course in courses:
+        if course['nrc'] in preferredNRC[key]:
+          newCourses.append(course)
+      allCourses[key] = newCourses
+
+  return allCourses
 
 def groupBySameKey(courses):
   same = dict()
@@ -181,10 +194,19 @@ if __name__ == '__main__':
   preferred = {
     'start': 700,
     'end': 2000,
-    'days': "LMIJVS",
+    'days': "LMIJV",
   }
   
   courses = getCourses(year, coursesKeysSet, ignoreNRC)
+
+  preferredNRC = {
+    "I7039": ["119908", "179959"],
+    "I7035": ["124889"],
+    "I7027": ["131871", "131872", "164160"],
+    "I7038": ["103846", "103847", "174378", "119907"],
+  }
+  courses = filterByPreferredNRC(courses, preferredNRC)
+
   schedules = generateSchedules(list(coursesKeysSet), courses, preferred)
   
   for pos, schedule in enumerate(schedules):
