@@ -11,7 +11,7 @@ def filterByPreferredNRC(allCourses, preferredNRC):
     if key in preferredNRC:
       newCourses = []
       for course in courses:
-        if course['nrc'] in preferredNRC[key]:
+        if course['nrc'] in preferredNRC[key] or len(course['virtual']) > 0:
           newCourses.append(course)
       allCourses[key] = newCourses
 
@@ -29,7 +29,7 @@ def groupBySameKey(courses):
     
   return same
 
-def getCourses(year, coursesKeysSet, ignoreNRC):
+def getCourses(year, coursesKeysSet, ignoreNRC, virtualCourses):
   career = 'INCO'
   url = f'http://consulta.siiau.udg.mx/wco/sspseca.consulta_oferta?ciclop={year}&cup=D&majrp=INCO&crsep=&materiap=&horaip=&horafp=&edifp=&aulap=&ordenp=0&mostrarp=1000'
   
@@ -51,7 +51,8 @@ def getCourses(year, coursesKeysSet, ignoreNRC):
         'credits': data[5],
         'total': data[6],
         'available': data[7],
-        'teacher': data[h + 16].title()
+        'teacher': data[h + 16].title(),
+        'virtual': ""
       }
       
       if course['key'] not in coursesKeysSet:
@@ -59,6 +60,9 @@ def getCourses(year, coursesKeysSet, ignoreNRC):
 
       if course['nrc'] in ignoreNRC:
         continue
+
+      if course['nrc'] in virtualCourses:
+        course['virtual'] = " (Virtual)"
 
       days = []
       for i in range(h + 1):
@@ -166,6 +170,7 @@ def prettySchedule(schedule):
       'key': data['key'], 
       'teacher': data['teacher'], 
       'subject': data['subject'],
+      'virtual': data['virtual'],
     }
     
     weekDay = 0
@@ -178,7 +183,7 @@ def prettySchedule(schedule):
     end = key['end'] // 100
 
     for i in range(start, end + 1):
-      day[i - 6][weekDay] = data['nrc']
+      day[i - 6][weekDay] = data['nrc'] + data['virtual']
   
   print(tabulate(day, tablefmt='fancy_grid'))
   print(tabulate(pd.DataFrame(info).T, headers="keys"))
@@ -187,23 +192,24 @@ if __name__ == '__main__':
   # Year to select
   year = "202210"
   # Courses to take
-  coursesKeysSet = {"I7029", "I7027", "I7035", "I7038", "I7039", "I7030", "I7036"}
+  coursesKeysSet = {"I7029", "I7027", "I7038", "I7039", "I7030", "I7036"}
   # NRC's to ignore
-  ignoreNRC = {"153405", "164138"}
+  ignoreNRC = {"153405", "164138", "179961"}
   # Preferred time range and days
   preferred = {
     'start': 700,
-    'end': 2000,
+    'end': 1600,
     'days': "LMIJV",
   }
-  
-  courses = getCourses(year, coursesKeysSet, ignoreNRC)
+
+  virtualCourses = {"119905", "119906", "103848", "130032", "103860", "103861", "103844", "103845", "119896","92948", "103856"}
+  courses = getCourses(year, coursesKeysSet, ignoreNRC, virtualCourses)
 
   preferredNRC = {
     "I7039": ["119908", "179959"],
     "I7035": ["124889"],
     "I7027": ["131871", "131872", "164160"],
-    "I7038": ["103846", "103847", "174378", "119907"],
+    "I7038": ["103847", "174378"],
   }
   courses = filterByPreferredNRC(courses, preferredNRC)
 
