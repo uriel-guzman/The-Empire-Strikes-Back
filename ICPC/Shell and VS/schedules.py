@@ -49,8 +49,8 @@ def getCourses(year, coursesKeysSet, ignoreNRC, virtualCourses):
         'subject': data[3].capitalize(),
         'section': data[4],
         'credits': data[5],
-        'total': data[6],
-        'available': data[7],
+        'total': int(data[6]),
+        'available': int(data[7]),
         'teacher': data[h + 16].title(),
         'virtual': ""
       }
@@ -101,7 +101,7 @@ def getCourses(year, coursesKeysSet, ignoreNRC, virtualCourses):
 
   return groupBySameKey(coursesList)
 
-def generateSchedules(coursesKeys, courses, preferred):
+def generateSchedules(coursesKeys, courses, preferred, want = -1):
   schedules = []
   
   def getKey(day):
@@ -110,16 +110,20 @@ def generateSchedules(coursesKeys, courses, preferred):
       'day': day['day']
     }.items())
 
-  def dfs(pos, currentSchedule):
-    if pos == len(coursesKeys):
-      schedules.append(currentSchedule.copy())
+  def dfs(pos, currentSchedule, scheduleKeys):
+    if want != -1 and len(scheduleKeys) > want:
       return
 
-    courseKey = coursesKeys[pos]
-    if courseKey not in courses:
-      dfs(pos + 1, currentSchedule)
+    if pos == len(coursesKeys):
+      if want == -1 or len(scheduleKeys) == want:
+        schedules.append(currentSchedule.copy())
       return
-      
+
+    # Ignore this course 
+    dfs(pos + 1, currentSchedule, scheduleKeys)
+    
+    # Try this course
+    courseKey = coursesKeys[pos]  
     for course in courses[courseKey]:
       def updateSchedule(days, operation):
         # Add/Remove this days from the current schedule
@@ -127,9 +131,12 @@ def generateSchedules(coursesKeys, courses, preferred):
           dayKey = getKey(day)
           if operation == +1:
             courseCopy = course.copy()
+            scheduleKeys.add(courseKey)
             courseCopy.update({'key': courseKey})
             currentSchedule[dayKey] = courseCopy
           else:
+            if courseKey in scheduleKeys:
+              scheduleKeys.remove(courseKey)
             if dayKey in currentSchedule:
               currentSchedule.pop(dayKey)
         
@@ -148,12 +155,13 @@ def generateSchedules(coursesKeys, courses, preferred):
       
       if valid(course['days']):
         updateSchedule(course['days'], +1)
-        dfs(pos + 1, currentSchedule)
+        dfs(pos + 1, currentSchedule, scheduleKeys)
         updateSchedule(course['days'], -1)
     return
   
   currentSchedule = dict()
-  dfs(0, currentSchedule)
+  scheduleKeys = set()
+  dfs(0, currentSchedule, scheduleKeys)
   return schedules
 
 def prettySchedule(schedule):
@@ -171,6 +179,7 @@ def prettySchedule(schedule):
       'teacher': data['teacher'], 
       'subject': data['subject'],
       'virtual': data['virtual'],
+      'cupos': str(f"{data['available']}/{data['total']}")
     }
     
     weekDay = 0
@@ -192,13 +201,13 @@ if __name__ == '__main__':
   # Year to select
   year = "202210"
   # Courses to take
-  coursesKeysSet = {"I7036", "I7042", "I7027", "I7038", "I7039", "I7030"}
+  coursesKeysSet = {"I7035", "I7027", "I7038", "I7039", "I7030", "I7036", "I7042", "I7029"}
   # NRC's to ignore
-  ignoreNRC = {"153405", "164138", "179961"}
+  ignoreNRC = {"153405", "164138", "179961", "124889"}
   # Preferred time range and days
   preferred = {
     'start': 9,
-    'end': 15,
+    'end': 16,
     'days': "LMIJV",
   }
 
@@ -206,14 +215,13 @@ if __name__ == '__main__':
   courses = getCourses(year, coursesKeysSet, ignoreNRC, virtualCourses)
 
   preferredNRC = {
-    "I7039": ["119908", "179959"],
-    "I7035": ["124889"],
+    "I7039": ["119908"],
     "I7027": ["131871", "131872", "164160"],
     "I7038": ["103847", "174378"],
   }
   courses = filterByPreferredNRC(courses, preferredNRC)
 
-  schedules = generateSchedules(list(coursesKeysSet), courses, preferred)
+  schedules = generateSchedules(list(coursesKeysSet), courses, preferred, 7)
   
   for pos, schedule in enumerate(schedules):
     print(f"{pos + 1} / {len(schedules)}")
