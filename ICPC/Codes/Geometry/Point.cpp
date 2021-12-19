@@ -61,16 +61,12 @@ struct Pt {
   }
 
   int dir(Pt a, Pt b) const {
-    // where am I on the line directed line ab
+    // where am I on the directed line ab
     return sgn((a - *this).cross(b - *this));
   }
 
   bool operator<(Pt p) const {
     return eq(x, p.x) ? le(y, p.y) : le(x, p.x);
-  }
-
-  bool operator>(Pt p) const {
-    return eq(x, p.x) ? ge(y, p.y) : ge(x, p.x);
   }
 
   bool operator==(Pt p) const {
