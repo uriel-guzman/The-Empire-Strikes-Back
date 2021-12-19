@@ -7,6 +7,7 @@ icpcDir="${user}/The-Empire-Strikes-Back/ICPC"
 alias icpc="cd ${icpcDir}" 
 alias problems="cd ${user}/Problems"
 alias snippets="python3 ${icpcDir}/Shell\ and\ VS/createSnippets.py"
+alias omegaup="python3 ${icpcDir}/Shell\ and\ VS/omegaup.py"
 
 red='\x1B[0;31m'
 green='\x1B[0;32m'
@@ -26,8 +27,10 @@ myPull() {
 }
 
 solve() {
-  open $1.cpp
-  open $1
+  file=$1
+  filename="${file%.*}"
+  open ${filename}.cpp
+  open ${filename}
 }
 
 create() {
@@ -70,36 +73,29 @@ compile() {
     moreFlags=$2
   fi
 
-  alias flags='-Wall -Wextra -Wshadow -fmax-errors=3 -w -mcmodel=medium'
+  alias flags='-Wall -Wextra -Wfatal-errors -Wshadow -w -mcmodel=medium'
   g++-11 --std=c++17 ${moreFlags} ${flags} ${file}.cpp -o ${file}.out 
 }
 
+gogo() {
+  flags=$1
+  file=$2
+  input=$3
+
+  filename="${file%.*}"
+
+  compile ${filename} ${flags}
+  
+  ./${filename}.out < ${input}
+  rm -r ./${filename}.out
+}
+
 run() {
-  # debug cppFile [input]
-  cppFile=$1
-  input=$1
-  if [ $# -ge 2 ]; then
-    input=$2
-  fi
-
-  compile ${cppFile}
-
-  ./${cppFile}.out < ${input}
-  rm -r ./${cppFile}.out
+  gogo "" $1 $2
 }
 
 debug() {
-  # debug cppFile [input]
-  cppFile=$1
-  input=$1
-  if [ $# -ge 2 ]; then
-    input=$2
-  fi
-
-  compile ${cppFile} -DLOCAL
-
-  ./${cppFile}.out < ${input}
-  rm -r ./${cppFile}.out
+  gogo -DLOCAL $1 $2
 } 
 
 random() {
@@ -137,7 +133,7 @@ random() {
 
     printf "Test case #${i}"
 
-    diff -uwi <(./${solution}.out < in) <(./${bruteForceSolution}.out < in) > diff${solution}
+    diff -ywi <(./${solution}.out < in) <(./${bruteForceSolution}.out < in) > diff${solution}
 
     if [[ $? -eq 0 ]]; then
       printf "${green} Accepted ${removeColor}\n"
