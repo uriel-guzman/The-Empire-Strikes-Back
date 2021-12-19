@@ -203,7 +203,7 @@ if __name__ == '__main__':
   # Courses to take
   coursesKeysSet = {"I7035", "I7027", "I7038", "I7039", "I7030", "I7036", "I7042", "I7029"}
   # NRC's to ignore
-  ignoreNRC = {"153405", "164138", "179961", "124889"}
+  ignoreNRC = {"153405", "164138", "179961", "124889", "119905", "119906"}
   # Preferred time range and days
   preferred = {
     'start': 9,
@@ -218,6 +218,7 @@ if __name__ == '__main__':
     "I7039": ["119908"],
     "I7027": ["131871", "131872", "164160"],
     "I7038": ["103847", "174378"],
+    "I7036": ["179961"]
   }
   courses = filterByPreferredNRC(courses, preferredNRC)
 
