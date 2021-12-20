@@ -1,4 +1,4 @@
-ld commonArea(const Cir& c, const vector<Pt>& poly) {
+ld commonArea(Cir c, const vector<Pt>& poly) {
   auto arg = [&](Pt p, Pt q) {
     return atan2(p.cross(q), p.dot(q));
   };
@@ -16,6 +16,6 @@ ld commonArea(const Cir& c, const vector<Pt>& poly) {
   };
   ld sum = 0;
   fore (i, 0, sz(poly))
-    sum += tri(poly[i] - c.o, poly[(i + 1) % sz(poly)] - c.o);
+    sum += tri(poly[i] - c, poly[(i + 1) % sz(poly)] - c);
   return abs(sum / 2);
 }

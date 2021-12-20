@@ -17,7 +17,7 @@ struct Line {
   int intersects(Seg s) {
     if (eq(v.cross(s.v), 0))
       return eq((s.a - a).cross(v), 0) ? INF : 0;
-    return sgn(v.cross(s.a - a)) != sgn(v.cross(s.b - a));
+    return a.dir(b, s.a) != a.dir(b, s.b);
   }
 
   template <class Line>

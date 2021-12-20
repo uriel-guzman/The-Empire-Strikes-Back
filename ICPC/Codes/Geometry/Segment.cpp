@@ -9,10 +9,10 @@ struct Seg {
   }
 
   int intersects(Seg s) {
-    int t1 = sgn(v.cross(s.a - a)), t2 = sgn(v.cross(s.b - a));
-    if (t1 != t2)
-      return sgn(s.v.cross(a - s.a)) != sgn(s.v.cross(b - s.a));
-    return t1 == 0 && (contains(s.a) || contains(s.b) || s.contains(a) || s.contains(b)) ? INF : 0;
+    int d1 = a.dir(b, s.a), d2 = a.dir(b, s.b);
+    if (d1 != d2)
+      return s.a.dir(s.b, a) != s.a.dir(s.b, b);
+    return d1 == 0 && (contains(s.a) || contains(s.b) || s.contains(a) || s.contains(b)) ? INF : 0;
   }
 
   template <class Seg>
