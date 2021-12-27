@@ -8,8 +8,5 @@ pair<T, T> ternary(T lo, T hi, F f) {
     else
       lo = m1;
   }
-  pair<T, T> best = {INF, INF};
-  fore (i, lo, hi + 1)
-    umin(best, {f(i), i});
-  return best;
+  return min({make_pair(f(lo), lo), make_pair(f(lo + 1), lo + 1), make_pair(f(hi), hi)});
 }
