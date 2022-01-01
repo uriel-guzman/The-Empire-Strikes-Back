@@ -60,8 +60,9 @@ erase() {
     rm -r {${begin}..${end}}.cpp 
     rm -r {${begin}..${end}} 
   else
-    rm -r ${begin}.cpp
-    rm -r ${begin}
+    file=${begin}
+    [ ! -e ${file}.cpp ] || rm -r ${file}.cpp
+    [ ! -e ${file} ] || rm -r ${file}
   fi
 }
 
