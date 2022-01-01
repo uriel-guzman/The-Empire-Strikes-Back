@@ -1,3 +1,5 @@
+// Connect special nodes by a minimum spanning tree
+// special nodes [0, k)
 fore (u, k, n)
   fore (a, 0, k)
     umin(dp[u][1 << a], dist[u][a]);
