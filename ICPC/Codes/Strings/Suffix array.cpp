@@ -14,7 +14,7 @@ struct SuffixArray {
       fore (i, 0, n)
         nsa[i] = (sa[i] - k + n) % n, cnt[pos[i]]++;
       partial_sum(all(cnt), cnt.begin());
-      fore (i, n, 0)
+      for (int i = n - 1; i >= 0; i--)
         sa[--cnt[pos[nsa[i]]]] = nsa[i];
       for (int i = 1, cur = 0; i < n; i++) {
         cur += (pos[sa[i]] != pos[sa[i - 1]] || pos[(sa[i] + k) % n] != pos[(sa[i - 1] + k) % n]);

@@ -10,7 +10,7 @@ lli paths = 0;
 int guni(int u, int p = 0, int len = 0) {
   sz[u] = 1;
   depth[u] = len;
-  for (int& v : graph[u])
+  for (auto& v : graph[u])
     if (v != p) {
       sz[u] += guni(v, u, len + 1);
       if (sz[v] > sz[graph[u][0]] || p == graph[u][0])
@@ -34,13 +34,13 @@ void compute(int u, int p, int x, bool op) {
   } else {
     cnt[depth[u]] += x;
   }
-  for (int i = 0; i < sz(graph[u]); i++) // don't change it with a fore!!!
-    if (graph[u][i] != p)
-      compute(graph[u][i], u, x, op);
+  for (auto& v : graph[u])
+    if (v != p)
+      compute(v, u, x, op);
 }
 
 void solve(int u, int p, bool keep = 0) {
-  fore (i, sz(graph[u]), 0)
+  for (int i = sz(graph[u]) - 1; i >= 0; i--)
     if (graph[u][i] != p)
       solve(graph[u][i], u, !i);
 

@@ -18,7 +18,7 @@ struct Fenwick {
 
   int lower_bound(T v) {
     int pos = 0;
-    fore (k, 1 + __lg(sz(fenw)), 0)
+    for (int k = __lg(sz(fenw)); k >= 0; k--)
       if (pos + (1 << k) <= sz(fenw) && fenw[pos + (1 << k) - 1] < v) {
         pos += (1 << k);
         v -= fenw[pos - 1];

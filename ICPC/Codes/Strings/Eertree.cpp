@@ -40,9 +40,8 @@ struct Eertree {
   }
 
   void substringOccurrences() {
-    fore (u, sz(s), 0) {
+    for (int u = sz(s) - 1; u >= 0; u--)
       trie[trie[u].link].occ += trie[u].occ;
-    }
   }
 
   lli occurences(string& s, int u = 0) {

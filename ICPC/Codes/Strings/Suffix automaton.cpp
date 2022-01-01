@@ -59,7 +59,7 @@ struct SuffixAutomaton {
 
   void substringOccurrences() {
     // trie[u].occ = 1, trie[clone].occ = 0
-    vi who(sz(trie) - 1);
+    vector<int> who(sz(trie) - 1);
     iota(all(who), 1);
     sort(all(who), [&](int u, int v) {
       return trie[u].len > trie[v].len;
@@ -80,15 +80,15 @@ struct SuffixAutomaton {
   }
 
   int longestCommonSubstring(string& s, int u = 0) {
-    int mx = 0, clen = 0;
+    int mx = 0, len = 0;
     for (char c : s) {
       while (u && !trie[u].count(c)) {
         u = trie[u].link;
-        clen = trie[u].len;
+        len = trie[u].len;
       }
       if (trie[u].count(c))
-        u = trie[u][c], clen++;
-      mx = max(mx, clen);
+        u = trie[u][c], len++;
+      mx = max(mx, len);
     }
     return mx;
   }

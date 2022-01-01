@@ -13,7 +13,7 @@ sort(all(queries), [&](Query& a, Query& b) {
 });
 
 int l = queries[0].l, r = l - 1;
-for (Query& q : queries) {
+for (auto& q : queries) {
   while (r < q.r)
     add(++r);
   while (r > q.r)
