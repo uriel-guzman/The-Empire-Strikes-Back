@@ -53,6 +53,9 @@ def main():
     return
   
   for path, directories, files in os.walk(icpc):
+    if path.lower().endswith("/tests"):
+      continue
+
     for file in files:
       pathToFile = path + os.sep + file
 
