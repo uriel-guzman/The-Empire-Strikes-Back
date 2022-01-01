@@ -9,7 +9,7 @@ struct MonotoneQueue {
     pref.emplace_back(val, pos);
   }
 
-  void keep(int pos) { // >= pos
+  void trim(int pos) { // >= pos
     while (pref.size() && pref.front().s < pos)
       pref.pop_front();
   }
