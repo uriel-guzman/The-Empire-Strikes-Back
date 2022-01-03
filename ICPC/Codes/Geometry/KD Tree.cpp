@@ -1,45 +1,40 @@
 struct Pt {
-  ld x, y;
-  ld pos(int k) const {
-    return k == 0 ? x : y;
+  // Geometry point mostly
+  ld operator[](int i) const {
+    return i == 0 ? x : y;
   }
 };
 
 struct KDTree {
-// p.pos(0) = x, p.pos(1) = y, p.pos(2) = z
-#define iter Pt* // vector<Pt>::iterator
-  KDTree *left, *right;
   Pt p;
-  ld val;
   int k;
+  KDTree *left, *right;
 
-  KDTree(iter b, iter e, int k = 0) : k(k), left(0), right(0) {
-    int n = e - b;
+  template <class Iter>
+  KDTree(Iter l, Iter r, int k = 0) : k(k), left(0), right(0) {
+    int n = r - l;
     if (n == 1) {
-      p = *b;
+      p = *l;
       return;
     }
-    nth_element(b, b + n / 2, e, [&](Pt a, Pt b) {
-      return a.pos(k) < b.pos(k);
+    nth_element(l, l + n / 2, r, [&](Pt a, Pt b) {
+      return a[k] < b[k];
     });
-    val = (b + n / 2)->pos(k);
-    left = new KDTree(b, b + n / 2, (k + 1) % 2);
-    right = new KDTree(b + n / 2, e, (k + 1) % 2);
+    p = *(l + n / 2);
+    left = new KDTree(l, l + n / 2, k ^ 1);
+    right = new KDTree(l + n / 2, r, k ^ 1);
   }
 
-  pair<ld, Pt> nearest(Pt q) {
-    if (!left && !right) // take care if is needed a different one
-      return make_pair((p - q).norm(), p);
-    pair<ld, Pt> best;
-    if (q.pos(k) <= val) {
-      best = left->nearest(q);
-      if (geq(q.pos(k) + sqrt(best.f), val))
-        best = min(best, right->nearest(q));
-    } else {
-      best = right->nearest(q);
-      if (leq(q.pos(k) - sqrt(best.f), val))
-        best = min(best, left->nearest(q));
-    }
+  pair<ld, Pt> nearest(Pt x) {
+    if (!left && !right)
+      return {(p - x).norm(), p};
+    vector<KDTree*> go = {left, right};
+    auto delta = x[k] - p[k];
+    if (delta > 0)
+      swap(go[0], go[1]);
+    auto best = go[0]->nearest(x);
+    if (best.f > delta * delta)
+      best = min(best, go[1]->nearest(x));
     return best;
   }
 };

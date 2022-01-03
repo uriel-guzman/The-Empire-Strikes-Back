@@ -23,6 +23,14 @@ using vi = vector<int>;
 
 int main() {
   cin.tie(0)->sync_with_stdio(0), cout.tie(0);
-  // solve the problem here D:
   return 0;
 }
+
+/* Please, check the following:
+ * int overflow, array bounds
+ * special cases (n=1?)
+ * do smth instead of nothing and stay organized
+ * write down your ideas
+ * DON'T get stuck on ONE APPROACH!
+ * ASK for HELP from your TEAMMATES
+ */
