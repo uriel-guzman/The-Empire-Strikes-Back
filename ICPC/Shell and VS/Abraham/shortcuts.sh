@@ -75,7 +75,7 @@ compile() {
   fi
 
   alias flags='-Wall -Wextra -Wfatal-errors -Wshadow -w -mcmodel=medium'
-  g++-11 --std=c++17 ${moreFlags} ${flags} ${file}.cpp -o ${file}.out 
+  g++-11 --std=c++17 ${moreFlags} ${flags} ${file}.cpp -o ${file} 
 }
 
 gogo() {
@@ -87,8 +87,7 @@ gogo() {
 
   compile ${filename} ${flags}
   
-  ./${filename}.out < ${input}
-  rm -r ./${filename}.out
+  ./${filename} < ${input}
 }
 
 run() {
@@ -123,7 +122,7 @@ random() {
   generateTestCase() {
     # cpp > py testCaseGenerator
     if [[ -f ${testCaseGenerator}.cpp ]]; then
-      ./${testCaseGenerator}.out > in
+      ./${testCaseGenerator} > in
     else
       python3 ${testCaseGenerator}.py | cat > in 
     fi
@@ -134,7 +133,7 @@ random() {
 
     printf "Test case #${i}"
 
-    diff -ywi <(./${solution}.out < in) <(./${bruteForceSolution}.out < in) > diff${solution}
+    diff -ywi <(./${solution} < in) <(./${bruteForceSolution} < in) > diff${solution}
 
     if [[ $? -eq 0 ]]; then
       printf "${green} Accepted ${removeColor}\n"

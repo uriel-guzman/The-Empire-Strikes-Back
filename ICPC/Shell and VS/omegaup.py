@@ -8,7 +8,11 @@ def main():
 
   def searchFile(filename):
     # Find all files: "filename.*"
-    result = glob.glob("{}.*".format(filename))
+    def valid(file):
+      extension = os.path.splitext(file)[1]
+      return len(extension) > 0
+
+    result = [file for file in glob.glob("{}.*".format(filename)) if valid(file)]
     
     if len(result) == 0:
       print("{} not found".format(filename))
@@ -54,14 +58,16 @@ def main():
     markdown = open("es.markdown", 'a')
 
     markdown.write("# Descripción\n")
-    markdown.write(" Historia del problema\n")
-    markdown.write("# Entrada\n Variables en `rojo`, solo $texto$\n")
-    markdown.write("# Salida\n ¿qué queremos de salida?\n")
-    markdown.write("# Ejemplo\n || input\n || output\n || description \n || end\n")
+    markdown.write(" Historia del problema\n\n")
+    markdown.write("# Entrada\n Variables en `rojo`, solo $texto$\n\n")
+    markdown.write("# Salida\n ¿qué queremos de salida?\n\n")
+    markdown.write("# Ejemplo\n")
+    markdown.write("|| input\n || output\n || description\n || end\n\n")
+    markdown.write("|| input\n || output\n || description\n || end\n\n")
 
     markdown.write("# Límites\n")
-    markdown.write("- \$1 \leq n \leq 10^5$")
-    markdown.write("\n----------\n")
+    markdown.write("- $1 \leq n \leq 10^5$")
+    markdown.write("\n----------\n\n")
 
     if len(testCases) >= 2:
       markdown.write("# Subtareas\n")
