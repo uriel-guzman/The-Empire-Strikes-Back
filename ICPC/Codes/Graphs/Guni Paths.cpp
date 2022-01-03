@@ -40,7 +40,7 @@ void compute(int u, int p, int x, bool op) {
 }
 
 void solve(int u, int p, bool keep = 0) {
-  for (int i = sz(graph[u]) - 1; i >= 0; i--)
+  fore (i, sz(graph[u]), 0)
     if (graph[u][i] != p)
       solve(graph[u][i], u, !i);
 

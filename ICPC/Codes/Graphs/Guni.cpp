@@ -20,7 +20,7 @@ void update(int u, int p, int add, bool skip) {
 }
 
 void solve(int u, int p = -1, bool keep = 0) {
-  for (int i = sz(graph[u]) - 1; i >= 0; i--)
+  fore (i, sz(graph[u]), 0)
     if (graph[u][i] != p)
       solve(graph[u][i], u, !i);
   update(u, p, +1, 1); // add

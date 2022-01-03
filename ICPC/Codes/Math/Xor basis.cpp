@@ -12,7 +12,7 @@ struct XorBasis {
   bool insert(Num x) {
     ++id;
     Num k;
-    for (int i = D - 1; i >= 0; i--)
+    fore (i, D, 0)
       if (x[i]) {
         if (!basis[i].any()) {
           k[i] = 1, from[i] = id, keep[i] = k;
@@ -28,7 +28,7 @@ struct XorBasis {
     // is x in xor-basis set?
     // v ^ (v ^ x) = x
     Num v;
-    for (int i = D - 1; i >= 0; i--)
+    fore (i, D, 0)
       if (x[i]) {
         if (!basis[i].any())
           return nullopt;
@@ -43,7 +43,7 @@ struct XorBasis {
     if (!v)
       return nullopt;
     Num tmp;
-    for (int i = D - 1; i >= 0; i--)
+    fore (i, D, 0)
       if (v.value()[i])
         tmp ^= keep[i];
     vector<int> ans;
@@ -57,7 +57,7 @@ struct XorBasis {
     if (k > tot)
       return nullopt;
     Num v = 0;
-    for (int i = D - 1; i >= 0; i--)
+    fore (i, D, 0)
       if (basis[i]) {
         lli low = tot / 2;
         if ((low < k && v[i] == 0) || (low >= k && v[i]))

@@ -2,7 +2,8 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-#define fore(i, l, r) for (auto i = (l); i < (r); i++)
+#define fore(i, l, r) \
+  for (auto i = (l) - ((l) > (r)); i != (r) - ((l) > (r)); i += 1 - 2 * ((l) > (r)))
 #define sz(x) int(x.size())
 #define all(x) begin(x), end(x)
 #define f first

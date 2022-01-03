@@ -40,7 +40,7 @@ struct Eertree {
   }
 
   void substringOccurrences() {
-    for (int u = sz(s) - 1; u >= 0; u--)
+    fore (u, sz(s), 0)
       trie[trie[u].link].occ += trie[u].occ;
   }
 
