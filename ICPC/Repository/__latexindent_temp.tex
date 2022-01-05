@@ -1,22 +1,156 @@
-\input{Preamble.tex}
+\documentclass[3pt, twocolumn, a4paper, notitlepage, fleqn]{article} % Vertical way
+% \documentclass[6pt, landscape, twocolumn, a4paper, notitlepage, fleqn]{article} % Horizontal way
+\usepackage{hyperref}
+\usepackage[english, activeacute]{babel} %, spanish
+\usepackage[utf8]{inputenc}
+\usepackage{fancyhdr} % Fancy headers
+\usepackage{enumitem} % Enable enumerations
+\usepackage{amsbsy, amssymb, amsmath, mathtools} % Enable math symbols
+\usepackage{ifthen} % To enable some conditional programming in LaTeX
+\usepackage[usenames, dvipsnames]{xcolor} % extra colors
+\usepackage{geometry} % A simple way to change the length and layout of different elements
+\usepackage{lastpage}  % A simple way to go to the last page xd
+\usepackage{listings} % To add code
+\usepackage{graphicx, wrapfig} % To add images
+\usepackage{makeidx} % To make a index easily 
+% \usepackage{xcolor} % Extra colors
+\usepackage[T1]{fontenc} % Accented characters
+\usepackage{inconsolata} % A font type
 
-\begin{document}
-  \tableofcontents
-  % \newpage
-  \input{Setup.tex}
-  \input{Chapters/Data structures.tex}
-  \input{Chapters/Dynamic programming.tex}
-  \input{Chapters/Geometry.tex}
-  \input{Chapters/Point.tex}
-  \input{Chapters/Lines and segments.tex}
-  \input{Chapters/Circle.tex}
-  \input{Chapters/Polygon.tex}
-  \input{Chapters/Graphs.tex}
-  \input{Chapters/Flows.tex}
-  \input{Chapters/Game theory.tex}
-  \input{Chapters/Math.tex}
-  \input{Chapters/Combinatorics.tex}
-  \input{Chapters/Number theory.tex}
-  \input{Chapters/Polynomials.tex}
-  \input{Chapters/Strings.tex}
-\end{document}
+% Table stuff
+\usepackage{colortbl}
+% \usepackage[table,dvipsnames]{xcolor} % work x2 D:?
+
+% Paper limits
+\geometry{
+	a4paper,
+	left = 1cm,
+	right = 1cm,
+	top = 1cm,
+	bottom = 1.5cm
+}
+
+\setlength{\columnseprule}{0.25pt}   % Line at the half of the page
+
+% Personalized colors
+\definecolor{Red}{RGB}{255,0,0}
+\definecolor{Green}{RGB}{0, 157, 161}
+\definecolor{Blue}{RGB}{0, 0, 255}
+\definecolor{LightBlue}{RGB}{51, 51, 255}
+\definecolor{LightBlue2}{RGB}{45, 146, 255}
+\definecolor{Magenta}{RGB}{255, 0, 255}
+\definecolor{Violet}{RGB}{170, 0, 255}
+\definecolor{DarkRed}{RGB}{159, 73, 67}
+\definecolor{Purple}{RGB}{77, 0, 153}
+\definecolor{Orange}{RGB}{255, 128, 0}
+\definecolor{DarkBlue}{RGB}{0, 0, 128}
+\definecolor{Gray}{RGB}{198, 198, 198}
+
+% For code
+\lstset{aboveskip = 4pt}	
+\lstset{belowskip = 3pt}
+
+% Configuration to detect digits
+\newcommand\digitstyle{\color{Red}}
+\makeatletter
+\newcommand{\processDigit}[1]{\ifnum\lst@mode=\lst@Pmode\relax{\digitstyle #1}\else#1\fi}
+\makeatother
+\lstset{literate=
+	{0}{{{\processDigit{0}}}}1
+	{1}{{{\processDigit{1}}}}1
+	{2}{{{\processDigit{2}}}}1
+	{3}{{{\processDigit{3}}}}1
+	{4}{{{\processDigit{4}}}}1
+	{5}{{{\processDigit{5}}}}1
+	{6}{{{\processDigit{6}}}}1
+	{7}{{{\processDigit{7}}}}1
+	{8}{{{\processDigit{8}}}}1
+	{9}{{{\processDigit{9}}}}1,
+	morestring=[b]",
+	morestring=[b]',
+	morecomment=[l]//,	
+}
+
+% Listings configuration
+\lstdefinestyle{mine} {
+	language = C++, 
+	basicstyle = \small\ttfamily, 
+	basewidth = {0.48em, 0.5em},
+	columns = fixed, fontadjust, resetmargins, xleftmargin = 5pt, xrightmargin = 5pt, showstringspaces = false,
+	flexiblecolumns = false, tabsize = 1, breaklines, breakatwhitespace = false, extendedchars = true,
+	% numbers = left, numberstyle = \tiny, stepnumber = 1, numbersep = 5pt,
+	frame = 0, framesep = 0pt,
+	stringstyle = \color{Orange}\ttfamily,
+	commentstyle = \color{Magenta}\ttfamily,
+	keywordstyle = \slshape,
+	keywordstyle = {\color{LightBlue}\bfseries},
+	keywordstyle = [2]{\color{Purple}\bfseries},
+	keywordstyle = [3]{\color{DarkRed}\bfseries},
+	keywordstyle = [4]{\color{Violet}\bfseries},
+	keywordstyle = [5]{\color{BlueGray}\bfseries},
+	keywordstyle = [6]{\color{Red}},
+	keywordstyle = [7]{\color{Blue}},
+	otherkeywords = {},
+	morekeywords = {
+		decltype, ostream, istream, basic_ostream, done, fi, printf, constexpr, then, uint32_t
+	},
+	morekeywords = [2] {
+		map, vi, vector, function, queue, stack, set, multiset, pair, first, second, deque, 
+		numeric_limits, bitset, array, string, iterator, optional
+	},
+	morekeywords = [3] { 
+		fore, LOCAL, LogN
+		A, B, C, D, E, F, G, H, I, J, K, L, M,
+		N, O, P, Q, R, S, T, U, V, W, X, Y, Z,
+		OverEdges, Args, Iter, Complex, ALPHA, MAX,
+	},
+	morekeywords = [4] { 
+		Dsu, MonotoneQueue, Stack, Queue, Sparse, Query, StaticDynamic, Black, Range, 
+		DisjointIntervals, Interval, ITree, CustomHash, OrderedTree, Fenwick, Dyn, Seg, Lazy, Per, Wav, Fun, LiChao, Treap, Node, Splay, Mat, LinkCut,
+		TwoSat, Dinic, Edge, Mcmf, HopcroftKarp, Hungarian, 
+		KmpAutomaton, Hash, Hashing, SuffixArray, SuffixAutomaton, AhoCorasick, Eertree, 
+		DynamicHull, Line, Pt, Cir, Poly, Radial, Update, KDTree,
+		XorBasis, Num, BerlekampMassey, Lagrange, FFT, NTT, FWHT, Modular, Big
+	}, 
+	morekeywords = [5] { 
+		ulli, ull, lli, ld, ii, 
+	},
+	morekeywords = [6]{
+		eq(, neq(, geq(, ge(, le(, leq(,
+		LLONG_MIN, LLONG_MAX, LL, NULL,
+		ON, IN, OUT, OVERLAP, INF, BLOCK, EPS, LIM, PI
+	},
+	morekeywords = [7] {
+		eb, pb, iterator, begin, end, rbegin, rend, at, assign, insert, erase, swap, clear, assert, reverse,
+		emplace, emplace_back, emplace_front, top, push, push_back, push_front, pop, pop_back, pop_front, front, back, empty, resize, all, sz, rank, kth, size, reserve, find, count, less, greater, nth_element, partial_sum, iota,
+		__builtin_popcount, __builtin_parity, __builtin_clz, __builtin_ctz, shuffle, __builtin_bswap64, 
+		cos, sin, sqrtl, acos, min, max, abs, fabs, hypot, lower_bound, upper_bound, __lg, gcd, lcm, 
+		make_pair, uniform_int_distribution, 
+		run, go, test, random, diff, open,
+	},
+}
+
+\lstloadlanguages{C++}
+\lstnewenvironment{code}
+{\vspace{-10pt}}
+{\csname lst@SetFirstLabel\endcsname}
+{\csname lst@SaveFirstLabel\endcsname}
+\lstset {escapechar=@, style=mine}
+
+%%% Macros
+\def\nsection#1{\section{#1}\vspace{-5pt}}
+
+\def\ncomment#1{\vspace{-5pt} \begin{small} #1 \\ \end{small} \vspace{-5pt}}
+
+\newcommand{\comb}[2]{\left( \begin{array}{c} #1 #2 \end{array}\right)}
+
+% \footnotesize
+\def\complexity#1{\texorpdfstring{$\mathcal{O}(#1)$}{O(#1)}}
+
+\newcommand\addfile[2][]{
+	\vspace{-10pt}
+	\lstinputlisting[style=mine, linerange={#1}]{#2}
+}
+
+
+\def\horizontalLine{\vspace{-5pt} \noindent\rule{\textwidth / 2}{0.5pt}}

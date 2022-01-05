@@ -87,46 +87,46 @@
 	keywordstyle = [2]{\color{Purple}\bfseries},
 	keywordstyle = [3]{\color{DarkRed}\bfseries},
 	keywordstyle = [4]{\color{Violet}\bfseries},
-	keywordstyle = [5]{\color{Red}},
-	keywordstyle = [6]{\color{DarkBlue}},
+	keywordstyle = [5]{\color{DarkBlue}\bfseries},
+	keywordstyle = [6]{\color{Red}},
+	keywordstyle = [7]{\color{DarkBlue}},
 	otherkeywords = {},
 	morekeywords = {
 		decltype, ostream, istream, basic_ostream, done, fi, printf, constexpr, then, uint32_t
 	},
 	morekeywords = [2] {
 		map, vi, vector, function, queue, stack, set, multiset, pair, first, second, deque, 
-		numeric_limits, bitset, array, string, iterator
+		numeric_limits, bitset, array, string, iterator, optional
 	},
 	morekeywords = [3] { 
-		fore, LOCAL, ulli, LogN, 
-		ull, lli, ld, ii,
-		N, A, Q, B, C, D, H, K, F, T, P, V, 
-		OverEdges, Args
+		fore, LOCAL, LogN
+		A, B, C, D, E, F, G, H, I, J, K, L, M,
+		N, O, P, Q, R, S, T, U, V, W, X, Y, Z,
+		OverEdges, Args, Iter, Complex, ALPHA, MAX,
 	},
 	morekeywords = [4] { 
 		Dsu, MonotoneQueue, Stack, Queue, Sparse, Query, StaticDynamic, Black, Range, 
-		DisjointIntervals, Interval, ITree, CustomHash, OrderedTree, Fenwick, Dyn, Seg, Lazy, Per, Wav, Fun, LiChao, Treap, Node, Splay, 
-		TwoSat, DynamicConnectivity, Dinic, Edge, Mcmf, HopcroftKarp, Hungarian, 
-		Hash, Hashing, SuffixArray, SuffixAutomaton, AhoCorasick, Eertree, 
+		DisjointIntervals, Interval, ITree, CustomHash, OrderedTree, Fenwick, Dyn, Seg, Lazy, Per, Wav, Fun, LiChao, Treap, Node, Splay, Mat, LinkCut,
+		TwoSat, Dinic, Edge, Mcmf, HopcroftKarp, Hungarian, 
+		KmpAutomaton, Hash, Hashing, SuffixArray, SuffixAutomaton, AhoCorasick, Eertree, 
 		DynamicHull, Line, Pt, Cir, Poly, Radial, Update, KDTree,
-		XorBasis, Num,
+		XorBasis, Num, BerlekampMassey, Lagrange, FFT, NTT, FWHT, Modular, Big
 	}, 
-	morekeywords = [5]{
-		eq, neq, geq, ge, le, leq,
+	morekeywords = [5] { 
+		ulli, ull, lli, ld, ii, 
+	},
+	morekeywords = [6]{
+		eq(, neq(, geq(, ge(, le(, leq(,
 		LLONG_MIN, LLONG_MAX, LL, NULL,
 		ON, IN, OUT, OVERLAP, INF, BLOCK, EPS, LIM, PI
 	},
-	morekeywords = [6] {
-		eb, pb, iter, begin, end, rbegin, rend, at, assign, insert, erase, swap, clear, emplace, emplace_back, 
-		emplace_front, top, push, push_back, push_front, pop, pop_back, pop_front, front, back, empty, resize, all, sz, rank, kth, 
-		size, reserve, find, count, erase, less, greater, __builtin_popcount, __builtin_parity, __builtin_clz, __builtin_ctz, shuffle, 
-		__builtin_bswap64, cos, sin, sqrtl, acos, min, max, abs, fabs, hypot, lower_bound, upper_bound, lsb, __lg, gcd, lcm, 
-		make_pair, uniform_int_distribution, sort, unite, rollback, qwho, qsum, qmax, qmin, add, rem, update, query, pull, push, build, 
-		kth, qsz, split, merge, splitsz, fun, run, go, test, random, diff, open, dot, cross, perp, norm, length, angle, unit, rotate, dir,
-		cuad, contains, intersects, intersection, parallel, projection, reflection, inside, outside, tangency, get, cmp, rank, pos, 
-		either, implies, setVal, solve, near, overlapping, contained, sgn, nth_element, nearest, 
-		newNode, extend, kthSubstring, occurs, queryOccurences, longestCommonSubstring, smallestCyclicShift, leftmost, pushLinks,
-		match, isect, keep,
+	morekeywords = [7] {
+		eb, pb, iterator, begin, end, rbegin, rend, at, assign, insert, erase, swap, clear, assert, reverse,
+		emplace, emplace_back, emplace_front, top, push, push_back, push_front, pop, pop_back, pop_front, front, back, empty, resize, all, sz, rank, kth, size, reserve, find, count, less, greater, nth_element, partial_sum, iota,
+		__builtin_popcount, __builtin_parity, __builtin_clz, __builtin_ctz, shuffle, __builtin_bswap64, 
+		cos, sin, sqrtl, acos, min, max, abs, fabs, hypot, lower_bound, upper_bound, __lg, gcd, lcm, 
+		make_pair, uniform_int_distribution, 
+		run, go, test, random, diff, open,
 	},
 }
 

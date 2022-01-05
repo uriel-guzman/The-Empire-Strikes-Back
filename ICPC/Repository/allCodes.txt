@@ -24,9 +24,10 @@ Wavelet
 Ordered tree
 Treap
 
+All submasks of a mask
 ~Broken profile
 Convex hull trick
-Digit
+Digit dp
 Divide and conquer
 ~Inverse SOS dp
 Knapsack 01
@@ -114,7 +115,9 @@ Factorial
 Factorial mod small prime
 Choose
 Pascal
+Stars and bars
 Lucas
+Burnside lemma
 
 Amount of divisors
 Chinese remainder theorem

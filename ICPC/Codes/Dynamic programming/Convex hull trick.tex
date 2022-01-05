@@ -1,0 +1,3 @@
+$ dp[i] = \min_{j < i}(dp[j] + b[j] * a[i]) $ \\
+$ dp[i][j] = \min_{k < j}(dp[i - 1][k] + b[k] * a[j]) $ \\
+$ b[j] \geq b[j + 1] \text{ optionally } a[i] \leq a[i + 1] $ \\ 
