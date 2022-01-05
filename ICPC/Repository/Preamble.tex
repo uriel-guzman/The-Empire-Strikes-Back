@@ -101,8 +101,7 @@
 		fore, LOCAL, ulli, LogN, 
 		ull, lli, ld, ii,
 		N, A, Q, B, C, D, H, K, F, T, P, V, 
-		df, op, LLONG_MIN, LLONG_MAX, Args,
-		ON, IN, OUT, OVERLAP, INF, BLOCK, EPS, LIM, PI
+		OverEdges, Args
 	},
 	morekeywords = [4] { 
 		Dsu, MonotoneQueue, Stack, Queue, Sparse, Query, StaticDynamic, Black, Range, 
@@ -111,6 +110,11 @@
 		Hash, Hashing, SuffixArray, SuffixAutomaton, AhoCorasick, Eertree, 
 		DynamicHull, Line, Pt, Cir, Poly, Radial, Update, KDTree,
 		XorBasis, Num,
+	}, 
+	morekeywords = [5]{
+		eq, neq, geq, ge, le, leq,
+		LLONG_MIN, LLONG_MAX, LL, NULL,
+		ON, IN, OUT, OVERLAP, INF, BLOCK, EPS, LIM, PI
 	},
 	morekeywords = [6] {
 		eb, pb, iter, begin, end, rbegin, rend, at, assign, insert, erase, swap, clear, emplace, emplace_back, 
@@ -123,9 +127,6 @@
 		either, implies, setVal, solve, near, overlapping, contained, sgn, nth_element, nearest, 
 		newNode, extend, kthSubstring, occurs, queryOccurences, longestCommonSubstring, smallestCyclicShift, leftmost, pushLinks,
 		match, isect, keep,
-	},
-	morekeywords = [5]{
-		LL, NULL, eq, neq, geq, ge, le, leq
 	},
 }
 

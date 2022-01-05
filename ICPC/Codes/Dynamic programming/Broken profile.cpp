@@ -1,4 +1,5 @@
-lli dp[2][1 << N][N]
+lli dp[2][1 << N][N];
+
 dp[0][0][0] = 1;
 
 fore (c, 0, m) {
@@ -20,7 +21,7 @@ fore (c, 0, m) {
     }
   }
 
-  fore (r, 0, n + 1) 
+  fore (r, 0, n + 1)
     fore (mask, 0, 1 << n)
       dp[c & 1][mask][r] = 0;
 }

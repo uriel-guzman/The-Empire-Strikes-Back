@@ -1,0 +1,154 @@
+DSU rollback
+~DSU
+~Foldable deque
+Monotone queue
+Stack queue
+In-Out trick
+Parallel binary search
+Mos
+Hilbert order
+Sqrt decomposition
+Sparse table
+~Disjoint intervals
+~Fenwick 2D offline
+~Fenwick ND
+Fenwick
+~Segtree
+~Lazy segtree
+Dynamic segtree
+Persistent segtree
+Li Chao
+Wavelet
+~Segtree 2D
+~Static to dynamic
+Ordered tree
+Treap
+
+~Broken profile
+Convex hull trick
+Digit
+Divide and conquer
+~Inverse SOS dp
+Knapsack 01
+Knuth
+~Matrix chain multiplication
+Matrix exponentiation
+SOS dp
+~Steiner
+
+Grundy numbers
+
+Circle
+Distance point circle
+Common area circle circle
+Minimum enclosing circle
+
+Geometry
+Radial order
+Sort along line
+
+Line
+Segment
+Projection
+Distance point line
+Distance point segment
+Distance segment segment
+
+Point
+Angle between vectors
+Closest pair of points
+KD Tree
+
+Area polygon
+Perimeter
+Cut polygon line
+Common area circle polygon
+Point in polygon
+Convex hull
+Is convex
+Point in convex polygon
+
+~Bellman Ford
+~Floyd Warshall
+~Cycle
+~Dijkstra
+~Bridges
+~Cutpoints
+Cutpoints and bridges
+Topological sort
+Kosaraju
+Tarjan
+Isomorphism
+Two sat
+LCA
+Virtual tree
+~Dynamic connectivity
+~Euler tour
+~HLD
+Euler-tour + HLD + LCA
+Centroid
+~Guni Paths
+Guni
+Link-Cut tree
+
+~Blossom
+Hopcroft Karp
+Hungarian
+Dinic
+Min-Cost flow
+~Min-Cost flow dijkstra
+
+Bits
+Bitset
+~Fpow
+~Fraction
+~Modular multiplication
+~Modular
+Probability
+Simplex
+Xor basis
+
+Catalan
+Factorial
+~Factorial Mint
+Factorial mod small prime
+Choose
+Pascal
+Lucas
+
+Amount of divisors
+Chinese remainder theorem
+Euclid
+Factorial factors
+~Factorize SQRT
+~GCD
+~Inverse
+~LCM
+Factorize sieve
+Sieve
+Phi
+Phi sieve
+~Prime check
+Miller rabin
+Pollard Rho
+
+Berlekamp Massey
+~Lagrange NOT consecutive points
+Lagrange consecutive points
+FFT
+Fast Walsh Hadamard Transform
+Primitive root
+NTT
+~Polynomial
+
+KMP
+KMP automaton
+Z
+Manacher
+Hash
+Min rotation
+Suffix array
+~Trie
+Aho Corasick
+Eertree
+Suffix automaton

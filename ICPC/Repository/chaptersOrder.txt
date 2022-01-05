@@ -1,0 +1,15 @@
+Data structures
+Dynamic programming
+Geometry
+Point
+Lines and segments
+Circle
+Polygon
+Graphs
+Flows
+Game theory
+Math
+Combinatorics
+Number theory
+Polynomials
+Strings

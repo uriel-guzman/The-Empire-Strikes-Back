@@ -1,35 +1,33 @@
-\nsection{Probability}
-
-\subsection{Conditional} 
+\subsubsection*{Conditional} 
 The event A happens and the event B has already happened
 \[ P(A | B) = \frac{P(A \cap B)}{P(B)} \] \\
 If \textbf{independent} events
 \[ P(A|B) = P(A) , P(B|A) = P(B) \]
 
-\subsection{Bayes theorem}
+\subsubsection*{Bayes theorem}
 \[ P(A|B) = \frac{ P(B | A) \cdot P(A) }{ P(B) } \]
 
-\subsection{Binomial}
+\subsubsection*{Binomial}
 \[ B = {n \choose x} \cdot p^{x} \cdot (1 - p)^{n-x} \]
 $n$	=	number of trials \\
 $x$	=	number of \textbf{success} from $n$ trials \\
 $p$	=	probability of \textbf{success} on a single trial
 
 
-\subsection{Geometric}
+\subsubsection*{Geometric}
 Probability of success at the $nth$-event after failing the others
 \[ G = (1 - p)^{n - 1} \cdot p \]
 $n$	=	number of trials \\
 $p$	=	probability of \emph{success} on a single trial
 
 
-\subsection{Poisson}
+\subsubsection*{Poisson}
 \[ Po = \frac{\lambda ^ k \cdot e ^ {-\lambda}}{k!} \]
 $\lambda$ = number of times an event is expected (occurs / time)  \\
 $k$ = number of occurring events in the limited period of time \\
 
 Example: The event happens 4 times per minute and we want $k$ events to happen in 10 minutes, then $\lambda = 4 \cdot 10 = 40$
 
-\subsection{Expected value}
+\subsubsection*{Expected value}
 \[ E_x = \sum_{\forall x} x \cdot p(x) \]
 

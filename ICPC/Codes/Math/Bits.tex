@@ -1,0 +1,23 @@
+\begin{tabular}{ |p{3cm}|p{5cm}|  }
+  \hline  
+  \rowcolor{LightBlue2} 
+  \multicolumn{2}{|c|}{Bits++} \\
+  \hline
+  \rowcolor{LightBlue2} 
+  Operations on $int$ & Function \\
+  \hline
+  \texttt{x \& -x} & Least significant bit in $x$ \\
+  \rowcolor{Gray} 
+  \texttt{\_\_lg(x)} & Most significant bit in $x$ \\
+  \texttt{c = x\&-x, r = x+c; (((r\^{}x) >> 2)/c) | r} & Next number after $x$ with same number of bits set \\
+  \hline
+
+  \rowcolor{LightBlue2} 
+  \_\_builtin\_ & Function \\
+  \hline 
+  popcount(x) & Amount of 1's in $x$ \\
+  \rowcolor{Gray} 
+  clz(x) & 0's to the \textbf{left} of biggest bit \\
+  ctz(x) & 0's to the \textbf{right} of smallest bit \\
+  \hline
+\end{tabular}

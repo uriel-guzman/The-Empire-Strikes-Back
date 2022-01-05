@@ -10,19 +10,19 @@ struct Frac {
   bool operator<(const Frac& f) const {
     return n * f.d < f.n * d;
   }
-  bool operator>(const Frac& f) const {
-    return n * f.d > f.n * d;
-  }
+
   bool operator==(const Frac& f) const {
     return n == f.n && d == f.d;
   }
+
   bool operator!=(const Frac& f) const {
-    return n != f.n || d != f.d;
+    return !(*this == f);
   }
 
   friend Frac abs(const Frac& f) {
     return Frac(abs(f.n), f.d);
   }
+
   friend ostream& operator<<(ostream& os, const Frac& f) {
     return os << f.n << "/" << f.d;
   }
@@ -30,12 +30,15 @@ struct Frac {
   Frac operator-() const {
     return Frac(-n, d);
   }
+
   double operator()() const {
     return double(n) / double(d);
   }
+
   Frac operator*(const Frac& f) {
     return Frac(n * f.n, d * f.d);
   }
+
   Frac operator/(const Frac& f) {
     return Frac(n * f.d, d * f.n);
   }
