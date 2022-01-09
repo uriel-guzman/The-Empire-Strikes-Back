@@ -78,7 +78,7 @@ compile() {
   g++-11 --std=c++17 ${moreFlags} ${flags} ${file}.cpp -o ${file} 
 }
 
-gogo() {
+go() {
   flags=$1
   file=$2
   input=$3
@@ -91,11 +91,11 @@ gogo() {
 }
 
 run() {
-  gogo "" $1 $2
+  go "" $1 $2
 }
 
 debug() {
-  gogo -DLOCAL $1 $2
+  go -DLOCAL $1 $2
 } 
 
 random() {

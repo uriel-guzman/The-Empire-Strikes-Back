@@ -42,9 +42,6 @@ def main():
     os.mkdir(folderName)
     return folderName
 
-  def copyFile(file, path):
-    return shutil.copyfile(file, os.path.join(path, file))
-
   def readTestCases():
     print("Insert the number of subtasks: ", end = "")
     subtasks = int(input())
@@ -117,23 +114,27 @@ def main():
         os.system("python3 {} < {} > {}".format(solution[1], inputFile, outputFile))
 
     if len(testCases) == 0:
-      for i in range(0, 25):
-        run(i, i)
-    else:
-      for i, numCases in enumerate(testCases):
-        for j in range(0, numCases):
-          testName = j if i == 0 else "subtask{}.{}".format(i, j)
-          run(testName, i)
+      testCases = [25]  
+    
+    cur = 0
+    for i, numTestCases in enumerate(testCases):
+      for j in range(0, numTestCases):
+        run(cur, i)
+        cur += 1
+      
 
-    goToParent()
+  def moveFiles(files, path, keep = True):
+    for file in files:
+      shutil.copyfile(file, os.path.join(path, file))
+      if keep == False:
+        os.system(f"rm {file}")
 
   whereIAm = os.getcwd()
   solution = readFileName("Solution")
   generator = readFileName("Test-case generator")
   folder = createFolder(solution[0])
 
-  copyFile(solution[1], folder)
-  copyFile(generator[1], folder)
+  moveFiles([solution[1], generator[1]], folder)
 
   # Change directory
   os.chdir(folder) 
@@ -141,6 +142,9 @@ def main():
   testCases = readTestCases()
   addStatements(testCases)
   generateTestCases(solution, generator, testCases)
+
+  os.mkdir("solutions")
+  moveFiles([solution[1], generator[1]], "solutions", False)
 
   print("Ready to omegaup")
 
