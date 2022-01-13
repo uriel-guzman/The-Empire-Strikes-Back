@@ -2,7 +2,10 @@ template <const int M>
 struct Modular {
   int v;
   Modular(int a = 0) : v(a) {}
-  Modular(lli a) : v((a < 0 ? M - -a % M : a) % M) {}
+  Modular(lli a) : v(a % M) {
+    if (v < 0)
+      v += M;
+  }
 
   Modular operator+(Modular m) {
     return Modular((v + m.v) % M);
@@ -42,11 +45,6 @@ struct Modular {
 
   friend ostream& operator<<(ostream& os, Modular m) {
     return os << m.v;
-  }
-
-  template <class T>
-  bool operator==(T x) {
-    return v == x;
   }
 
   Modular pow(lli n) {

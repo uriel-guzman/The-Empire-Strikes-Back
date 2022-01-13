@@ -16,7 +16,7 @@ BinPackParameters: false
 BreakBeforeBinaryOperators: false
 BreakBeforeBraces: Attach
 BreakConstructorInitializersBeforeComma: false
-ColumnLimit: 100
+ColumnLimit: 150
 CommentPragmas: '^@atd'
 ConstructorInitializerAllOnOneLineOrOnePerLine: true
 ConstructorInitializerIndentWidth: 4

@@ -4,8 +4,7 @@ struct Mcmf {
     int u, v, inv;
     F cap, flow;
     C cost;
-    Edge(int u, int v, C cost, F cap, int inv)
-        : u(u), v(v), cost(cost), cap(cap), flow(0), inv(inv) {}
+    Edge(int u, int v, C cost, F cap, int inv) : u(u), v(v), cost(cost), cap(cap), flow(0), inv(inv) {}
   };
 
   F EPS = (F)1e-9;

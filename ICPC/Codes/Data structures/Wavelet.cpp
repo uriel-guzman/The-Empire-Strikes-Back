@@ -35,7 +35,6 @@ struct Wav {
       return 0;
     if (x <= lo && hi <= y)
       return r - l + 1;
-    return left->count(amt[l - 1] + 1, amt[r], x, y) +
-           right->count(l - amt[l - 1], r - amt[r], x, y);
+    return left->count(amt[l - 1] + 1, amt[r], x, y) + right->count(l - amt[l - 1], r - amt[r], x, y);
   }
 };
