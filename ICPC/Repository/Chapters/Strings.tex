@@ -1,32 +1,72 @@
 \nsection{Strings}
 
-\subsection{KMP}
-\addfile{../Codes/Strings/KMP.cpp}
+\subsection{KMP }
+\addcode{../Codes/Strings/KMP.cpp}
 
-\subsection{KMP automaton}
-\addfile{../Codes/Strings/KMP automaton.cpp}
+\subsection{KMP automaton \complexity{Alphabet * n}}
+\addcode{../Codes/Strings/KMP automaton.cpp}
 
-\subsection{Z}
-\addfile{../Codes/Strings/Z.cpp}
+\subsection{Z }
+\addcode{../Codes/Strings/Z.cpp}
 
-\subsection{Manacher}
-\addfile{../Codes/Strings/Manacher.cpp}
+\subsection{Manacher }
+\addcode{../Codes/Strings/Manacher.cpp}
 
-\subsection{Hash}
-\addfile{../Codes/Strings/Hash.cpp}
+\subsection{Hash }
+\addcode{../Codes/Strings/Hash.cpp}
 
-\subsection{Min rotation}
-\addfile{../Codes/Strings/Min rotation.cpp}
+\subsection{Min rotation }
+\addcode{../Codes/Strings/Min rotation.cpp}
 
-\subsection{Suffix array}
-\addfile{../Codes/Strings/Suffix array.cpp}
+\subsection{Suffix array \complexity{nlogn}}
 
-\subsection{Aho Corasick}
-\addfile{../Codes/Strings/Aho Corasick.cpp}
+\setlist{nolistsep}
+\begin{itemize}[noitemsep]
+  \item Duplicates 
+  \ncomment{$\sum_{i = 1}^{n}{lcp[i]}$}
 
-\subsection{Eertree}
-\addfile{../Codes/Strings/Eertree.cpp}
+  \item Longest Common Substring of various strings \\
+  Add \emph{notUsed} characters between strings, i.e. $a + \$ + b + \# + c$ \\ 
+  Use two-pointers to find a range $[l, r]$ such that all \emph{notUsed} characters are present, then $query(lcp[l + 1],..,lcp[r])$ for that window is the common length. \\
 
-\subsection{Suffix automaton}
-\input{../Codes/Strings/Suffix automaton.tex}
-\addfile{../Codes/Strings/Suffix automaton.cpp}
+\end{itemize}\addcode{../Codes/Strings/Suffix array.cpp}
+
+\subsection{Aho Corasick \complexity{\sum s_i}}
+\addcode{../Codes/Strings/Aho Corasick.cpp}
+
+\subsection{Eertree \complexity{\sum s_i}}
+\addcode{../Codes/Strings/Eertree.cpp}
+
+\subsection{Suffix automaton \complexity{\sum s_i}}
+
+\vspace{-5pt}
+
+\setlist{nolistsep}
+\begin{itemize}[noitemsep]
+  \item 
+  $sam[u].len- sam[sam[u].link].len$ = distinct strings
+
+  \item Number of different substrings (dp) \complexity{\sum s_i}
+  \begin{gather*}
+    diff(u)=1+\sum_{v \in trie[u]}{diff(v)}
+  \end{gather*}
+
+  \item Total length of all different substrings (2 x dp)
+  \begin{gather*}
+    totLen(u)=\sum_{v \in trie[u]}{diff(v) + totLen(v)}
+  \end{gather*}
+  
+  \item Leftmost occurrence \complexity{|s|}
+  $trie[u].pos = trie[u].len - 1$ \\
+  if it is \textbf{clone} then $trie[clone].pos = trie[q].pos$ 
+  
+  \item All occurrence positions
+  
+  \item Smallest cyclic shift \complexity{|2 * s|}
+  Construct sam of $s + s$, find the lexicographically smallest path of $sz(s)$
+ 
+  \item Shortest non-appearing string \complexity{|s|}
+  \begin{gather*}
+    nonAppearing(u) = \min_{v \in trie[u]}{nonAppearing(v) + 1}
+  \end{gather*}
+\end{itemize}\addcode{../Codes/Strings/Suffix automaton.cpp}

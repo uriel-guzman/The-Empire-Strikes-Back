@@ -137,7 +137,7 @@ Pollard Rho
 
 Berlekamp Massey
 ~Lagrange NOT consecutive points
-Lagrange consecutive points
+Lagrange
 FFT
 Fast Walsh Hadamard Transform
 Primitive root

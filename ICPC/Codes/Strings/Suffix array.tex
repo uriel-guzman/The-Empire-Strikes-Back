@@ -1,0 +1,12 @@
+\complexity{nlogn}
+
+\setlist{nolistsep}
+\begin{itemize}[noitemsep]
+  \item Duplicates 
+  \ncomment{$\sum_{i = 1}^{n}{lcp[i]}$}
+
+  \item Longest Common Substring of various strings \\
+  Add \emph{notUsed} characters between strings, i.e. $a + \$ + b + \# + c$ \\ 
+  Use two-pointers to find a range $[l, r]$ such that all \emph{notUsed} characters are present, then $query(lcp[l + 1],..,lcp[r])$ for that window is the common length. \\
+
+\end{itemize}

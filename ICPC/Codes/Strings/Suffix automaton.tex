@@ -1,3 +1,5 @@
+\complexity{\sum s_i}
+
 \vspace{-5pt}
 
 \setlist{nolistsep}
@@ -5,7 +7,7 @@
   \item 
   $sam[u].len- sam[sam[u].link].len$ = distinct strings
 
-  \item Number of different substrings (dp)
+  \item Number of different substrings (dp) \complexity{\sum s_i}
   \begin{gather*}
     diff(u)=1+\sum_{v \in trie[u]}{diff(v)}
   \end{gather*}
@@ -15,16 +17,16 @@
     totLen(u)=\sum_{v \in trie[u]}{diff(v) + totLen(v)}
   \end{gather*}
   
-  \item Leftmost occurrence
+  \item Leftmost occurrence \complexity{|s|}
   $trie[u].pos = trie[u].len - 1$ \\
   if it is \textbf{clone} then $trie[clone].pos = trie[q].pos$ 
   
   \item All occurrence positions
   
-  \item Smallest cyclic shift 
+  \item Smallest cyclic shift \complexity{|2 * s|}
   Construct sam of $s + s$, find the lexicographically smallest path of $sz(s)$
  
-  \item Shortest non-appearing string
+  \item Shortest non-appearing string \complexity{|s|}
   \begin{gather*}
     nonAppearing(u) = \min_{v \in trie[u]}{nonAppearing(v) + 1}
   \end{gather*}

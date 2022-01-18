@@ -2,6 +2,7 @@ from typing import NamedTuple
 import glob
 import os
 from pprint import pprint
+import math
 
 class Code(NamedTuple):
   name: str
@@ -50,13 +51,13 @@ def getAllCodes(directory):
     # Get the order of the codes inside the book
     # Which codes we DON'T want in our book
     oldList = open(allCodesName, "r")
-    for k, line in enumerate(oldList.readlines()):
+    for pos, line in enumerate(oldList.readlines()):
       line = line[:-1] # Remove endline
       if line.startswith("~"):
         line = line[1:] # Remove ~
         ignore.add(line) 
 
-      order[line] = k
+      order[line] = pos
 
   # Add any new code, it will appear at the beginning of the book (? 
   lastFileOrder = 0
@@ -69,6 +70,9 @@ def getAllCodes(directory):
 
     for file in files:
       name, extension = os.path.splitext(file)
+
+      if startswith(name, ["__latexindent_temp"]):
+        continue
 
       if endswith(extension, [".cpp", ".h", ".txt", ".tex"]):
         fileOrder = order.get(name, -1)
@@ -84,12 +88,12 @@ def getAllCodes(directory):
   # Generate a new list 
   newList = open("newList.txt", "a")
   alreadyWritten = set()
-  for i, code in enumerate(allCodes):
+  for pos, code in enumerate(allCodes):
     if code.name not in alreadyWritten:
       writeln(newList, ("~" if code.name in ignore else "") + code.name)
       alreadyWritten.add(code.name)
 
-    if i + 1 < len(allCodes) and code.path != allCodes[i + 1].path:
+    if pos + 1 < len(allCodes) and code.path != allCodes[pos + 1].path:
       writeln(newList, "")
 
   # Replace current list with the new list
@@ -100,9 +104,26 @@ def getAllCodes(directory):
 def getChaptersOrder():
   chapters = open(chaptersOrderName, 'r')
   order = dict()
-  for k, chapter in enumerate(chapters.readlines()):
-    order[chapter[:-1]] = k
+  for pos, chapter in enumerate(chapters.readlines()):
+    order[chapter[:-1]] = pos
   return order
+
+def getComplexity(code, pathToFile):
+  text = ""
+  if code.extension == ".tex":
+    file = open(f"../{pathToFile}", "r").readlines()
+    if file[0].startswith("\complexity"):
+      # print(code.name, file[0])
+      return file[0].replace("\n", "")
+  return text
+
+def toString(pathToFile, start = -math.inf, end = math.inf):
+  text = ""
+  file = open(f"../{pathToFile}", "r")
+  for pos, line in enumerate(file.readlines()):
+    if start <= pos and pos <= end:
+      text += line
+  return text
 
 def writeBook(allCodes, bookName):
   chaptersOrder = getChaptersOrder()
@@ -122,10 +143,10 @@ def writeBook(allCodes, bookName):
   writeln(book, "  \input{Setup.tex}")
 
   chapter = ""
-  for i, code in enumerate(allCodes):
+  for pos, code in enumerate(allCodes):
     chapterName = os.path.basename(code.path)
     
-    if i == 0 or (i - 1 >= 0 and code.path != allCodes[i - 1].path):
+    if pos == 0 or (pos - 1 >= 0 and code.path != allCodes[pos - 1].path):
       # Create a new chapter 
       chapter = open(f"Chapters/{chapterName}.tex", 'w')
       # print(chapterName)
@@ -134,14 +155,19 @@ def writeBook(allCodes, bookName):
 
     path = code.path[code.path.find("Codes"):] + os.sep + code.name + code.extension
 
-    if i == 0 or (i - 1 >= 0 and allCodes[i - 1].name != code.name):
-      writeln(chapter, f"\n\subsection{{{code.name}}}")
+    complexity = getComplexity(code, path)
+    if pos == 0 or (pos - 1 >= 0 and allCodes[pos - 1].name != code.name):
+      writeln(chapter, f"\n\subsection{{{code.name} {complexity}}}")
 
     if endswith(code.extension, [".cpp", ".h"]):
-      writeln(chapter, f"\\addfile{{../{path}}}")
-    elif endswith(code.extension, [".tex", ".txt"]):
-      writeln(chapter, f"\input{{../{path}}}")
-
+      writeln(chapter, f"\\addcode{{../{path}}}")
+    elif endswith(code.extension, [".txt", ".tex"]):
+      if len(complexity) == 0:
+        writeln(chapter, f"\input{{../{path}}}")
+      else:
+        # Until I find something better, I'll append all latex code :c
+        write(chapter, toString(path, start = 1));
+        
   writeln(book, "\end{document}") 
   return book.name
 

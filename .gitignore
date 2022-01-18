@@ -1,7 +1,8 @@
 # Auto generated files
-__latexident_temp.pdf
-__latexident_temp.*
+*.DS_Store
+.DS_Store
 
+__latexindent_temp.*
 *.aux
 *.fdb_latexmk
 *.fls
