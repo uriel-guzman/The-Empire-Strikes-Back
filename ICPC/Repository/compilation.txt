@@ -1,30 +1,44 @@
-touch a_in{1..9} // make files a_in1, a_in2,..., a_in9
-tee {a..m}.cpp < tem.cpp // "" with tem.cpp like base
-cat > a_in1 // write on file a_in1
-gedit a_in1 // open file a_in1
-rm -r a.cpp // deletes file a.cpp :'(
+touch in{1..9} // make files in1, in2,..., in9
+tee {a..z}.cpp < tem.cpp // make files with tem.cpp
+rm - r a.cpp // deletes file a.cpp :'(
 
-red='\x1B[0;31m'
-green='\x1B[0;32m'
-noColor='\x1B[0m'
-alias flags='-Wall -Wextra -Wshadow -D_GLIBCXX_ASSERTIONS -fmax-errors=3 -O2 -w'
-go() { g++ --std=c++11 $2 ${flags} $1.cpp && ./a.out }
-debug() { go $1 -DLOCAL < $2 } 
-run() { go $1 "" < $2 }
+red = '\x1B[0;31m' 
+green = '\x1B[0;32m' 
+removeColor = '\x1B[0m'
 
-random() { // Make small test cases!!!
-	g++ --std=c++11 $1.cpp -o prog 
-	g++ --std=c++11 gen.cpp -o gen 
-	g++ --std=c++11 brute.cpp -o brute 
-	for ((i = 1; i <= 200; i++)); do
-		printf "Test case #$i"
-		./gen > in
-		diff -uwi <(./prog < in) <(./brute < in) > $1_diff
-		if [[ ! $? -eq 0 ]]; then
-			printf "${red} Wrong answer ${noColor}\n"
-			break
-		else
-			printf "${green} Accepted ${noColor}\n"
-		fi
-	done
+compile() {
+  alias flags='-Wall -Wextra -Wfatal-errors -Wshadow -w -mcmodel=medium' 
+  g++-11 --std=c++17 $2 ${flags} $1.cpp -o $1
+}
+    
+go() {
+  file=$1 
+  name="${file%.*}" 
+  input=$2 
+  moreFlags=$3 
+  compile ${name} ${moreFlags} 
+  ./${name} < ${input}
+}
+
+run() { go $1 $2 "" } 
+debug() { go $1 $2 -DLOCAL }
+
+random() { # Make small test cases!!!
+  file=$1
+  name="${file%.*}" 
+  compile ${name} ""
+  compile gen ""
+  compile brute "" 
+
+  for ((i = 1; i <= 300; i++)); do
+    printf "Test case #${i}"
+    ./gen > tmp
+    diff -ywi <(./name < tmp) <(./brute < tmp) > $nameDiff
+    if [[ $? -eq 0 ]]; then
+      printf "${green} Accepted ${removeColor}\n"
+    else
+      printf "${red} Wrong answer ${removeColor}\n"
+      break
+    fi
+  done
 }

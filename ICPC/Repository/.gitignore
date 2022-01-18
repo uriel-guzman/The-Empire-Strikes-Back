@@ -1,0 +1,11 @@
+# Auto generated files
+__latexident_temp.pdf
+__latexident_temp.*
+
+*.aux
+*.fdb_latexmk
+*.fls
+*.log
+*.out
+*.synctex.gz
+*.toc
