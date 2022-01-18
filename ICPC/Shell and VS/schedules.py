@@ -201,9 +201,9 @@ if __name__ == '__main__':
   # Year to select
   year = "202210"
   # Courses to take
-  coursesKeysSet = {"I7035", "I7027", "I7038", "I7039", "I7030", "I7036", "I7042", "I7029"}
+  coursesKeysSet = {"I7027", "I7030", "I7035", "I7036", "I7038", "I7039", "CC419", "CC420", "ET416", "ET418"}
   # NRC's to ignore
-  ignoreNRC = {"153405", "164138", "179961", "124889", "119905", "119906"}
+  ignoreNRC = {}
   # Preferred time range and days
   preferred = {
     'start': 9,
@@ -211,14 +211,16 @@ if __name__ == '__main__':
     'days': "LMIJV",
   }
 
-  virtualCourses = {"119905", "119906", "103848", "130032", "103860", "103861", "103844", "103845", "119896","92948", "103856"}
+  virtualCourses = {}
   courses = getCourses(year, coursesKeysSet, ignoreNRC, virtualCourses)
 
   preferredNRC = {
-    "I7039": ["119908"],
-    "I7027": ["131871", "131872", "164160"],
-    "I7038": ["103847", "174378"],
-    "I7036": ["179961"]
+    "I7027": ["131871"],
+    "I7030": ["103845"],
+    "I7035": ["131882"],
+    "I7036": ["119905"],
+    "I7038": ["174378"],
+    "I7039": ["103848"],
   }
   courses = filterByPreferredNRC(courses, preferredNRC)
 

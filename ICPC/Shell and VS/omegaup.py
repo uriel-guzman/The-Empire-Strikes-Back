@@ -10,7 +10,7 @@ def main():
     # Find all files: "filename.*"
     def valid(file):
       extension = os.path.splitext(file)[1]
-      return len(extension) > 0
+      return len(extension) > 0 and not extension.endswith(".out")
 
     result = [file for file in glob.glob("{}.*".format(filename)) if valid(file)]
     
