@@ -3,13 +3,16 @@
 The following files determine the order of the topics/chapters in the book.
 
 - ```allCodes.txt```:
-Contains all topics inside ```Codes/...```
-The order inside, will be the final order of the book
-Use ```~Topic``` to don't display it in the book 
-  - DSU rollback (first topic)
-  - ~DSU (not displayed)
-  - ~Foldable deque (not displayed)
-  - Monotone queue (second topic)
+
+  Contains all topics inside ```Codes/...```
+
+  The order inside, will be the final order of the book
+
+  Use ```~Topic``` to don't display it in the book 
+    - DSU rollback (first topic)
+    - ~DSU (not displayed)
+    - ~Foldable deque (not displayed)
+    - Monotone queue (second topic)
 
 - ```chaptersOrder.txt```:
 Contains all chapters, in the order we want to display them in the book 
@@ -22,7 +25,7 @@ If the complexity of the algorithm is needed, add a ```.tex``` file with the sam
  - ```Mos.cpp``` (algorithm)
  - ```Mos.tex``` (LaTeX extra information)
 
-For the .tex file add in the first line the complexity, the other lines could be used to add information about the algorithm.
+For the ```.tex``` file add in the **first** line the complexity, the other lines could be used to add more information about the algorithm.
 
 
 **Generate the book**
