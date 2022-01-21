@@ -1,20 +1,20 @@
 template <class T, class F = less<T>>
 struct MonotoneQueue {
-  deque<pair<T, int>> pref;
+  deque<pair<T, int>> q;
   F f;
 
   void add(int pos, T val) {
-    while (pref.size() && !f(pref.back().f, val))
-      pref.pop_back();
-    pref.emplace_back(val, pos);
+    while (q.size() && !f(q.back().f, val))
+      q.pop_back();
+    q.emplace_back(val, pos);
   }
 
   void trim(int pos) { // >= pos
-    while (pref.size() && pref.front().s < pos)
-      pref.pop_front();
+    while (q.size() && q.front().s < pos)
+      q.pop_front();
   }
 
   T query() {
-    return pref.empty() ? T() : pref.front().f;
+    return q.empty() ? T() : q.front().f;
   }
 };
