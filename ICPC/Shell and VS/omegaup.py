@@ -1,150 +1,164 @@
+from typing import NamedTuple
 import shutil
 import glob
 import os
 
-def main():
-  def goToParent():
+class Code(NamedTuple):
+  name: str
+  file: str
+  extension: str
+
+def goToParent():
     os.chdir(os.path.dirname(os.getcwd()))  
 
-  def searchFile(filename):
-    # Find all files: "filename.*"
-    def valid(file):
-      extension = os.path.splitext(file)[1]
-      return len(extension) > 0 and not extension.endswith(".out")
+def searchFile(filename):
+  # Find all files: "filename.*"
 
-    result = [file for file in glob.glob("{}.*".format(filename)) if valid(file)]
-    
-    if len(result) == 0:
-      print("{} not found".format(filename))
-      exit()
+  def valid(file):
+    extension = os.path.splitext(file)[1]
+    return len(extension) > 0 and not extension.endswith(".out")
 
-    if len(result) > 1:
-      print("There are {} files which match '{}.*', please change the name to something unique :)".format(len(result), filename))
-      exit()
-
-    return result[0]
-
-  def toNameFileExtension(file):  
-    # name, file, extension
-    return [os.path.splitext(file)[0], file, os.path.splitext(file)[1]]
-
-  def readFileName(query): 
-    # Read solution name
-    print("{}: ".format(query), end = "")
-    file = searchFile(input())
-    return toNameFileExtension(file)
-
-  def createFolder(name):
-    # Create folder
-    folderName = "Problem-{}".format(name)
-    if os.path.exists(folderName):
-      shutil.rmtree(folderName)
-    os.mkdir(folderName)
-    return folderName
-
-  def readTestCases():
-    print("Insert the number of subtasks: ", end = "")
-    subtasks = int(input())
-    print("Write down the number of test-cases per subtask: ")
-    return [int(input()) for i in range(0, subtasks)]
-
-  def addStatements(testCases):
-    os.mkdir("statements")
-    os.chdir("statements")
-
-    markdown = open("es.markdown", 'a')
-
-    markdown.write("# Descripción\n")
-    markdown.write(" Historia del problema\n\n")
-    markdown.write("# Entrada\n Variables en `rojo`, solo $texto$\n\n")
-    markdown.write("# Salida\n ¿qué queremos de salida?\n\n")
-    markdown.write("# Ejemplo\n")
-    markdown.write("|| input\n || output\n || description\n || end\n\n")
-    markdown.write("|| input\n || output\n || description\n || end\n\n")
-
-    markdown.write("# Límites\n")
-    markdown.write("- $1 \leq n \leq 10^5$")
-    markdown.write("\n----------\n\n")
-
-    if len(testCases) >= 2:
-      markdown.write("# Subtareas\n")
-
-      totalCases = 0
-      for numCases in testCases:
-        totalCases += numCases
-
-      for pos, numCases in enumerate(testCases):
-        percentage = numCases * 100 / totalCases
-        if pos + 1 < len(testCases):
-          markdown.write("Para un {} % de los casos:\n".format(percentage))
-          markdown.write("- $1 \leq n \leq 10$\n")
-          markdown.write("\n----------\n")
-        else:
-          markdown.write("Para el {} % de los casos restantes, los límites originales.".format(percentage))
-
-    markdown.close()
-    goToParent()
-
-  def generateTestCases(solution, generator, testCases):
-    def compileIfNeeded(file):
-      if file[2] == ".cpp":
-        os.system("g++-11 --std=c++17 {} -o {}.out".format(file[1], file[0]))
+  result = [file for file in glob.glob(f"{filename}.*") if valid(file)]
   
-    os.mkdir("cases")
+  if len(result) == 0:
+    print(f"{filename} not found")
+    exit()
 
-    compileIfNeeded(solution)
-    compileIfNeeded(generator)
+  if len(result) > 1:
+    print(f"There are {len(result)} files which match '{filename}.*', please change the name to something unique :)")
+    exit()
 
-    def run(testName, generatorType):
-      inputFile = "cases/{}.in".format(testName)
-      outputFile = "cases/{}.out".format(testName)
+  return result[0]
 
-      trash = open("trash", 'w')
-      trash.write("{}".format(generatorType))
-      trash.close()
-      
-      if generator[2] == ".cpp":
-        os.system("./{}.out < trash > {}".format(generator[0], inputFile))
+def readFileName(query): 
+  # Read solution name
+  print(f"{query}: ", end = "")
+  file = searchFile(input())
+  # name, file, extension
+  return Code(os.path.splitext(file)[0], file, os.path.splitext(file)[1])
+
+def createFolder(name):
+  # Create folder
+  folderName = f"Problem-{name}"
+  if os.path.exists(folderName):
+    shutil.rmtree(folderName)
+  os.mkdir(folderName)
+  return folderName
+
+def readTestCases():
+  print("Insert the number of subtasks: ", end = "")
+  subtasks = int(input())
+  print("Write down the number of test-cases per subtask: ", end = "")
+  return [int(input()) for i in range(0, subtasks)]
+
+def addStatements(testCases):
+  os.mkdir("statements")
+  os.chdir("statements")
+
+  markdown = open("es.markdown", 'a')
+
+  markdown.write("# Descripción\n")
+  markdown.write(" Historia del problema\n\n")
+  markdown.write("# Entrada\n Variables en `rojo`, solo $texto$\n\n")
+  markdown.write("# Salida\n ¿qué queremos de salida?\n\n")
+  markdown.write("# Ejemplo\n")
+  markdown.write("|| input\n || output\n || description\n || end\n\n")
+  markdown.write("|| input\n || output\n || description\n || end\n\n")
+
+  markdown.write("# Límites\n\n")
+  markdown.write("- $1 \leq n \leq 10^5$")
+  markdown.write("\n\n----------\n\n")
+
+  if len(testCases) >= 2:
+    markdown.write("# Subtareas\n\n")
+
+    totalCases = 0
+    for numCases in testCases:
+      totalCases += numCases
+
+    for pos, numCases in enumerate(testCases):
+      percentage = numCases * 100 / totalCases
+      if pos + 1 < len(testCases):
+        markdown.write(f"Para un {percentage} % de los casos:\n\n")
+        markdown.write("- $1 \leq n \leq 10$\n")
+        markdown.write("\n\n----------\n\n")
       else:
-        os.system("python3 {} < trash > {}".format(generator[1], inputFile))
+        markdown.write(f"Para el {percentage} % de los casos restantes, los límites originales.")
 
-      if solution[2] == ".cpp":
-        os.system("./{}.out < {} > {}".format(solution[0], inputFile, outputFile))
-      else:
-        os.system("python3 {} < {} > {}".format(solution[1], inputFile, outputFile))
+  markdown.close()
+  goToParent()
 
-    if len(testCases) == 0:
-      testCases = [25]  
+def generateTestCases(solution, generator, testCases):
+  def compileIfNeeded(code):
+    if code.extension == ".cpp":
+      os.system(f"g++-11 --std=c++17 {code.file} -o {code.name}.out")
+
+  os.mkdir("cases")
+
+  compileIfNeeded(solution)
+  compileIfNeeded(generator)
+
+  def runCase(name, level):
+    inputFile = f"cases/{name}.in"
+    outputFile = f"cases/{name}.out"
+
+    trash = open("trash", 'w')
+    trash.write(f"{level}")
+    trash.close()
     
-    cur = 0
-    for i, numTestCases in enumerate(testCases):
-      for j in range(0, numTestCases):
-        run(cur, i)
-        cur += 1
-      
+    if generator[2] == ".cpp":
+      os.system(f"./{generator.name}.out < trash > {inputFile}")
+    else:
+      os.system(f"python3 {generator.file} < trash > {inputFile}")
 
-  def moveFiles(files, path, keep = True):
-    for file in files:
-      shutil.copyfile(file, os.path.join(path, file))
-      if keep == False:
-        os.system(f"rm {file}")
+    if solution[2] == ".cpp":
+      os.system(f"./{solution.name}.out < {inputFile} > {outputFile}")
+    else:
+      os.system(f"python3 {solution.file} < {inputFile} > {outputFile}")
 
+  if len(testCases) == 0:
+    testCases = [25]  
+  
+  sumCases = 0
+  for level, numTestCases in enumerate(testCases):
+    for it in range(0, numTestCases):
+      # For grouped cases set name to f"{level + 1}.{it}"
+      # For ungrouped cases set name to sumCases
+      runCase(f"{level + 1}.{it}", level)
+      sumCases += 1
+    
+def moveFiles(files, path, keep = True): 
+  for file in files:
+    shutil.copyfile(file, os.path.join(path, file))
+    if keep == False:
+      os.system(f"rm {file}")
+
+def generateZip(folder):
+  print("Select a name for the zip: ", end = "")
+  problemName = input()
+  os.system(f"zip -r {problemName}.zip {folder}")
+
+def main():
   whereIAm = os.getcwd()
   solution = readFileName("Solution")
   generator = readFileName("Test-case generator")
-  folder = createFolder(solution[0])
+  folder = createFolder(solution.name)
 
-  moveFiles([solution[1], generator[1]], folder)
+  moveFiles([solution.file, generator.file], folder)
 
   # Change directory
   os.chdir(folder) 
 
-  testCases = readTestCases()
+  # testCases can be replaced with an array
+  testCases = readTestCases() # [4, 5] (2 subtasks)
   addStatements(testCases)
   generateTestCases(solution, generator, testCases)
 
   os.mkdir("solutions")
-  moveFiles([solution[1], generator[1]], "solutions", False)
+  moveFiles([solution.file, generator.file], "solutions", False)
+
+  os.chdir(whereIAm)
+  generateZip(folder)
 
   print("Ready to omegaup")
 

@@ -1,18 +1,19 @@
 struct Frac {
-  lli n, d;
+  lli num, den;
+
   Frac(lli a = 0, lli b = 1) {
     lli g = gcd(a, b);
-    n = a / g, d = b / g;
-    if (d < 0)
-      n *= -1, d *= -1;
+    num = a / g, den = b / g;
+    if (den < 0)
+      num *= -1, den *= -1;
   }
 
   bool operator<(const Frac& f) const {
-    return n * f.d < f.n * d;
+    return num * f.den < f.num * den;
   }
 
   bool operator==(const Frac& f) const {
-    return n == f.n && d == f.d;
+    return num == f.num && den == f.den;
   }
 
   bool operator!=(const Frac& f) const {
@@ -20,36 +21,36 @@ struct Frac {
   }
 
   friend Frac abs(const Frac& f) {
-    return Frac(abs(f.n), f.d);
+    return Frac(abs(f.num), f.den);
   }
 
   friend ostream& operator<<(ostream& os, const Frac& f) {
-    return os << f.n << "/" << f.d;
+    return os << f.num << "/" << f.den;
   }
 
   Frac operator-() const {
-    return Frac(-n, d);
+    return Frac(-num, den);
   }
 
   double operator()() const {
-    return double(n) / double(d);
+    return double(num) / double(den);
   }
 
   Frac operator*(const Frac& f) {
-    return Frac(n * f.n, d * f.d);
+    return Frac(num * f.num, den * f.den);
   }
 
   Frac operator/(const Frac& f) {
-    return Frac(n * f.d, d * f.n);
+    return Frac(num * f.den, den * f.num);
   }
 
   Frac operator+(const Frac& f) {
-    lli k = lcm(d, f.d);
-    return Frac(n * (k / d) + f.n * (k / f.d), k);
+    lli k = lcm(den, f.den);
+    return Frac(num * (k / den) + f.num * (k / f.den), k);
   }
 
   Frac operator-(const Frac& f) {
-    lli k = lcm(d, f.d);
-    return Frac(n * (k / d) - f.n * (k / f.d), k);
+    lli k = lcm(den, f.den);
+    return Frac(num * (k / den) - f.num * (k / f.den), k);
   }
 };

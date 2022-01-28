@@ -52,7 +52,7 @@ struct Treap {
     }
   }
 
-  pair<Treap*, Treap*> leftmost(int k) {
+  pair<Treap*, Treap*> leftmost(int k) { // 1-indexed
     return split([&](Treap* n) {
       int sz = n->left->sz + 1;
       if (k >= sz) {
