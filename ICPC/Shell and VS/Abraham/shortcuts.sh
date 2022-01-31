@@ -6,7 +6,7 @@ alias saveMyBash="source ~/.zshenv"
 
 alias icpc="cd ${icpcDir}" 
 alias problems="cd ${user}/Problems"
-alias snippets="python3 ${icpcDir}/Shell\ and\ VS/createSnippets.py"
+alias snippets="python3 ${icpcDir}/Shell\ and\ VS/Abraham/update.py"
 alias omegaup="python3 ${icpcDir}/Shell\ and\ VS/omegaup.py"
 
 templateCode="${icpcDir}/Codes/Misc/Template.cpp"
@@ -56,7 +56,7 @@ erase() {
     begin=$1
     end=$2 
     rm {${begin}..${end}}.cpp
-    rm {${begin}..${end}}  
+    rm {${begin}..${end}}
   else
     # Erase all with prefix $1 and any extension
     pref="${1%.*}"
@@ -73,7 +73,8 @@ compile() {
     moreFlags=$2
   fi
 
-  alias flags='-Wall -Wextra -Wfatal-errors -Wshadow -w -mcmodel=large'
+  # alias flags='-Wall -Wextra -w -mcmodel=large'
+  alias flags=''
   g++-11 --std=c++17 ${moreFlags} ${flags} ${filename}.cpp -o ${filename}.out 
 }
 
@@ -87,6 +88,8 @@ go() {
   compile ${filename} ${flags}
   
   ./${filename}.out < ${input}
+
+  rm ${filename}.out
 }
 
 run() {
