@@ -1,5 +1,6 @@
+// z[i] is the length of the longest substring starting from i which is also a prefix of s
 template <class T>
-vector<int> getZ(T& s) {
+vector<int> zalgorithm(T& s) {
   vector<int> z(sz(s), 0);
   for (int i = 1, l = 0, r = 0; i < sz(s); i++) {
     if (i <= r)
