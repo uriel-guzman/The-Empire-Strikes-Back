@@ -94,7 +94,7 @@ def updateMyClangFormat():
   for line in clangFormat:
     if line[0].isalpha():
       saveSettingsJson[clangFormatPos] += f"{line.strip()}, "
-  saveSettingsJson[clangFormatPos] += "}\"\n"
+  saveSettingsJson[clangFormatPos] += "}\",\n"
     
   print("Settings updated")
 

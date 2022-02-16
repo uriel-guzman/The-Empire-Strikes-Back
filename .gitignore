@@ -10,3 +10,4 @@ __latexindent_temp.*
 *.out
 *.synctex.gz
 *.toc
+.vscode

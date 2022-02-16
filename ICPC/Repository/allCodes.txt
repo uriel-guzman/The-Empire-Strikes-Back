@@ -20,6 +20,7 @@ Persistent segtree
 Li Chao
 Wavelet
 ~Segtree 2D
+~Segtree iterative
 ~Static to dynamic
 Ordered tree
 Treap
@@ -149,6 +150,7 @@ KMP automaton
 Z
 Manacher
 Hash
+~Hash without inverse
 Min rotation
 Suffix array
 ~Trie

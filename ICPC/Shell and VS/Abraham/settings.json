@@ -1,6 +1,7 @@
 {
   "editor.fontSize": 13,
   "editor.tabSize": 2,
+  "window.zoomLevel": 1,
   "editor.scrollbar.verticalScrollbarSize": 0,
   "editor.scrollbar.horizontalScrollbarSize": 0,
   "editor.minimap.enabled": false,
@@ -8,6 +9,7 @@
   "editor.tabCompletion": "on",
   "editor.snippetSuggestions": "inline",
   "editor.suggestSelection": "first",
+  "editor.quickSuggestionsDelay": 1,
   "terminal.explorerKind": "external",
   "workbench.colorTheme": "Ra Silver",
   "editor.tokenColorCustomizations": {
