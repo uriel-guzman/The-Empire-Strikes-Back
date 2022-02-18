@@ -48,8 +48,16 @@ def createFolder(name):
 def readTestCases():
   print("Insert the number of subtasks: ", end = "")
   subtasks = int(input())
-  print("Write down the number of test-cases per subtask: ", end = "")
-  return [int(input()) for i in range(0, subtasks)]
+  print("Write down the number of test-cases per subtask")
+
+  testCases = []
+  percentage = []
+  for i in range(0, subtasks):
+    print(f"Subtask {i+1}: ", end ="")
+    testCases.append(int(input()))
+    percentage.append()
+
+  return testCases
 
 def addStatements(testCases):
   os.mkdir("statements")

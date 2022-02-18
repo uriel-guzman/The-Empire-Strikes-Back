@@ -6,7 +6,7 @@ alias saveMyBash="source ~/.zshenv"
 
 alias icpc="cd ${icpcDir}" 
 alias problems="cd ${user}/Problems"
-alias snippets="python3 ${icpcDir}/Shell\ and\ VS/Abraham/update.py"
+alias update="python3 ${icpcDir}/Shell\ and\ VS/Abraham/update.py"
 alias omegaup="python3 ${icpcDir}/Shell\ and\ VS/omegaup.py"
 
 templateCode="${icpcDir}/Codes/Misc/Template.cpp"
@@ -25,7 +25,7 @@ myPush() {
 
 myPull() {
   git pull origin master
-  snippets
+  update
 }
 
 solve() {
@@ -47,7 +47,7 @@ create() {
     tee $1.cpp < ${templateCode}
     open $1.cpp
     touch in
-  fi
+    fi
 }
 
 erase() {
