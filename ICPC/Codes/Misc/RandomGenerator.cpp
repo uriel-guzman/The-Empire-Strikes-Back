@@ -78,4 +78,44 @@ struct Random {
     }
     return s;
   }
+  
+  template <class W>
+  struct Edge {
+    int from, to;
+    W weight;
+
+    bool operator<(const Edge& other) const {
+      return set<int>({from, to}) < set<int>({other.from, other.to});
+    }
+  };
+  
+  // Creates a graph with weights in range [low, high].
+  template <class T>
+  vector<Edge<T>> getGraph(int numNodes, int numEdges, T low = 1, T high = 1, bool uniqueEdges = false) {
+    if (uniqueEdges) {
+      long long maxNumEdges = 1LL * numNodes * (numNodes - 1) / 2LL;
+      assert(numEdges <= maxNumEdges);
+    }
+    return fillArray<Edge<T>>(numEdges, uniqueEdges, [&]() {
+      Edge<T> edge;
+      auto myPair = getArray<int>(2, 1, numNodes, true);
+      edge.from = myPair[0];
+      edge.to = myPair[1];
+      edge.weight = get<T>(low, high);
+      return edge;
+    });
+  }
+  
+  // Creates a tree with weights in range [low, high].
+  template <class T>
+  vector<Edge<T>> getTree(int numNodes, T low = 1, T high = 1) {
+    int current = 2;
+    return fillArray<Edge<T>>(numNodes - 1, true, [&]() {
+      Edge<T> edge;
+      edge.from = get<int>(1, current - 1);
+      edge.to = current++;
+      edge.weight = get<T>(low, high);
+      return edge;
+    });
+  }
 };
