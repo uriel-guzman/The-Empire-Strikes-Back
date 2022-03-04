@@ -1,3 +1,19 @@
+#pragma GCC optimize("Ofast,unroll-loops,no-stack-protector")
+#include <bits/stdc++.h>
+using namespace std;
+
+#define fore(i, l, r) for (auto i = (l) - ((l) > (r)); i != (r) - ((l) > (r)); i += 1 - 2 * ((l) > (r)))
+#define sz(x) int(x.size())
+#define all(x) begin(x), end(x)
+#define f first
+#define s second
+#define pb push_back
+
+using ld = long double;
+using lli = long long;
+using ii = pair<int, int>;
+using vi = vector<int>;
+
 struct Random {
   mt19937 rng;
 
@@ -120,3 +136,116 @@ struct Random {
     });
   }
 };
+
+using Hash = int; // maybe an arrray<int, 2>
+const int N = 1e5 + 5;
+Hash pw[N], ipw[N];
+
+lli inv(lli a, lli m) {
+  a %= m;
+  assert(a);
+  return a == 1 ? 1 : m - 1LL * inv(m, a) * m / a;
+}
+
+struct Hashing {
+  static constexpr int P = 10166249, M = 1070777777;
+  vector<Hash> h;
+
+  static void init() {
+    const int Q = inv(P, M);
+    pw[0] = ipw[0] = 1;
+    fore (i, 1, N) {
+      pw[i] = 1LL * pw[i - 1] * P % M;
+      ipw[i] = 1LL * ipw[i - 1] * Q % M;
+    }
+  }
+
+  Hashing(string& s) : h(sz(s) + 1, 0) {
+    fore (i, 0, sz(s)) {
+      lli x = s[i] - 'a' + 1;
+      h[i + 1] = (h[i] + x * pw[i]) % M;
+    }
+  }
+
+  Hash query(int l, int r) {
+    return 1LL * (h[r + 1] - h[l] + M) * ipw[l] % M;
+  }
+
+  Hash full() {
+    return h.back();
+  }
+
+  static pair<Hash, int> merge(vector<pair<Hash, int>>& cuts) {
+    pair<Hash, int> ans = {0, 0};
+    fore (i, sz(cuts), 0) {
+      ans.f = (cuts[i].f + 1LL * ans.f * pw[cuts[i].s] % M) % M;
+      ans.s += cuts[i].s;
+    }
+    return ans;
+  }
+};
+
+int main() {
+  cin.tie(0)->sync_with_stdio(0), cout.tie(0);
+
+  Random random;
+  Hashing::init();
+
+  auto queryWorks = [&](int tests) {
+    int n = 100;
+
+    int bad = 0;
+    fore (it, 0, tests) {
+      auto str = random.getString(n, "az");
+      Hashing hash(str);
+
+      fore (l, 0, n) {
+        string tmp = "";
+        fore (r, l, n) {
+          tmp += str[r];
+          auto good = hash.query(l, r);
+          auto brute = Hashing(tmp).full();
+          if (good != brute) {
+            bad++;
+          }
+        }
+      }
+    }
+
+    cout << "Bad query results percentage: " << 100 * bad / double(tests) << " %\n";
+  };
+
+  auto mergeWorks = [&](int tests) {
+    int n = 1000;
+    int k = 100;
+
+    int bad = 0;
+    fore (it, 0, tests) {
+      auto str = random.getString(n, "az");
+      Hashing hash(str);
+
+      string strMerged;
+      vector<pair<Hash, int>> ranges;
+      for (int l : random.getArray(k, 0, n - 1)) {
+        int r = random.get<int>(l, n - 1);
+        int len = r - l + 1;
+        ranges.pb({hash.query(l, r), len});
+        strMerged += str.substr(l, len);
+      }
+
+      auto good = Hashing::merge(ranges).f;
+      auto good2 = hash.merge(ranges).f;
+      auto brute = Hashing(strMerged).full();
+      if (good != brute || good != good2) {
+        bad++;
+      }
+    }
+
+    cout << "Bad merge results percentage: " << 100 * bad / double(tests) << " %\n";
+  };
+
+  queryWorks(100);
+  mergeWorks(1000);
+
+  return 0;
+}

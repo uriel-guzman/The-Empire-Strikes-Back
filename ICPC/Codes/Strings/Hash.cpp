@@ -25,7 +25,7 @@ struct Hashing {
     return 1LL * (h[r + 1] - h[l] + M) * ipw[l] % M;
   }
 
-  friend pair<Hash, int> merge(vector<pair<Hash, int>>& cuts) {
+  static pair<Hash, int> merge(vector<pair<Hash, int>>& cuts) {
     pair<Hash, int> ans = {0, 0};
     fore (i, sz(cuts), 0) {
       ans.f = (cuts[i].f + 1LL * ans.f * pw[cuts[i].s] % M) % M;

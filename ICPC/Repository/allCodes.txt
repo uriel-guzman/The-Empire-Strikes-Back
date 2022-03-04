@@ -150,7 +150,6 @@ KMP automaton
 Z
 Manacher
 Hash
-~Hash without inverse
 Min rotation
 Suffix array
 ~Trie
