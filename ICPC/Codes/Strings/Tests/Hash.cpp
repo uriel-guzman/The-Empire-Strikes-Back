@@ -25,9 +25,6 @@ struct Random {
     assert(n >= 0);
     vector<T> v(n);
     if (unique) {
-      for (auto& x : v)
-        x = g();
-    } else {
       set<T> st;
       for (auto& x : v) {
         do {
@@ -35,6 +32,9 @@ struct Random {
         } while (st.count(x));
         st.insert(x);
       }
+    } else {
+      for (auto& x : v)
+        x = g();
     }
     return v;
   }

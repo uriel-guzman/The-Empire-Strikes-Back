@@ -1,1 +1,9 @@
-\complexity{(n + q) \cdot \sqrt{n} \cdot f}
+\complexity{(n + q) \cdot \sqrt{n}}
+
+Mo's in a tree, extended euler tour tin[u] = ++timer, tout[u] = ++timer 
+
+\begin{itemize}
+\item u = lca(u, v), query(tin[u], tin[v])
+\item $u \neq lca(u, v)$, query(tout[u], tin[v]) + query(tin[lca], tin[lca]) 
+\end{itemize}
+

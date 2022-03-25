@@ -6,16 +6,24 @@
 \subsection{Monotone queue }
 \addcode{../Codes/Data structures/Monotone queue.cpp}
 
-\subsection{Stack queue \complexity{n \cdot f}}
+\subsection{Stack queue \complexity{n}}
 \addcode{../Codes/Data structures/Stack queue.cpp}
 
 \subsection{In-Out trick }
 \addcode{../Codes/Data structures/In-Out trick.cpp}
 
-\subsection{Parallel binary search \complexity{(n + q) \cdot log n \cdot f}}
+\subsection{Parallel binary search \complexity{(n + q) \cdot log n}}
 \addcode{../Codes/Data structures/Parallel binary search.cpp}
 
-\subsection{Mos \complexity{(n + q) \cdot \sqrt{n} \cdot f}}
+\subsection{Mos \complexity{(n + q) \cdot \sqrt{n}}}
+
+Mo's in a tree, extended euler tour tin[u] = ++timer, tout[u] = ++timer 
+
+\begin{itemize}
+\item u = lca(u, v), query(tin[u], tin[v])
+\item $u \neq lca(u, v)$, query(tout[u], tin[v]) + query(tin[lca], tin[lca]) 
+\end{itemize}
+
 \addcode{../Codes/Data structures/Mos.cpp}
 
 \subsection{Hilbert order }

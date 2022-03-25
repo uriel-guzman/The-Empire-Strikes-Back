@@ -1,6 +1,9 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+template <class A, class B, class C>
+basic_ostream<A, B>& operator<<(basic_ostream<A, B>& os, const C& c);
+
 template <class A, class B>
 ostream& operator<<(ostream& os, const pair<A, B>& p) {
   return os << "(" << p.first << ", " << p.second << ")";
@@ -9,8 +12,11 @@ ostream& operator<<(ostream& os, const pair<A, B>& p) {
 template <class A, class B, class C>
 basic_ostream<A, B>& operator<<(basic_ostream<A, B>& os, const C& c) {
   os << "[";
-  for (const auto& x : c)
-    os << ", " + 2 * (&x == &*begin(c)) << x;
+  for (const auto& x : c) {
+    if (&x != &*begin(c))
+      cout << ", ";
+    cout << x;
+  }
   return os << "]";
 }
 
@@ -42,11 +48,5 @@ void print(string s, const H& h, const T&... t) {
     cout << ": " << purple << h << reset << ",";
   print(s.substr(pos + 1), t...);
 }
-
-// #define debug(...)                                    \
-//   {                                                   \
-//     cout << __FUNCTION__ << "(" << __LINE__ << "): "; \
-//     print(string(#__VA_ARGS__) + ",", __VA_ARGS__);   \
-//   }
 
 #define debug(...) print(string(#__VA_ARGS__) + ",", __VA_ARGS__);
