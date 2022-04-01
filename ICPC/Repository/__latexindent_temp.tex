@@ -1,22 +1,26 @@
-\input{Preamble.tex}
+\documentclass{article}
+\usepackage{pdfpages} % To add pdf files
+\usepackage{graphicx, wrapfig} % To add images
+
+\usepackage{geometry} % A simple way to change the length and layout of different elements
+% Paper limits
+\geometry{
+	a4paper,
+	left = 1cm,
+	right = 1cm,
+	top = 3cm,
+	bottom = 1.5cm
+}
 
 \begin{document}
-  \tableofcontents
-  % \newpage
-  \input{Setup.tex}
-  \input{Chapters/Data structures.tex}
-  \input{Chapters/Dynamic programming.tex}
-  \input{Chapters/Geometry.tex}
-  \input{Chapters/Point.tex}
-  \input{Chapters/Lines and segments.tex}
-  \input{Chapters/Circle.tex}
-  \input{Chapters/Polygon.tex}
-  \input{Chapters/Graphs.tex}
-  \input{Chapters/Flows.tex}
-  \input{Chapters/Game theory.tex}
-  \input{Chapters/Math.tex}
-  \input{Chapters/Combinatorics.tex}
-  \input{Chapters/Number theory.tex}
-  \input{Chapters/Polynomials.tex}
-  \input{Chapters/Strings.tex}
-\end{document}
+
+  \includepdf[]{TeamPage.pdf}
+
+  \pagenumbering{arabic} % Reset the counter of pages
+  \includepdf[pages={-}]{Book.pdf}
+
+  % \centering
+  % \includegraphics[width=17cm]{A New Hope.png} \\
+  % {\Huge The end...\\}
+  
+\end{document}  
