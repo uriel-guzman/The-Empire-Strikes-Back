@@ -3,11 +3,17 @@
 \subsection{All submasks of a mask }
 \input{../Codes/Dynamic programming/All submasks of a mask.tex}
 
+\subsection{Broken profile \complexity{n \cdot m \cdot 2^n} with $n \leq m$}
+
+Cuenta todas las maneras en las que puedes acomodar fichas de 1x2 y 2x1 en un tablero $n \cdot m$ \\
+\addcode{../Codes/Dynamic programming/Broken profile.cpp}
+
 \subsection{Convex hull trick \complexity{n^2} $\Rightarrow$ \complexity{n}}
 
 $ dp[i] = \min_{j < i}(dp[j] + b[j] * a[i]) $ \\
 $ dp[i][j] = \min_{k < j}(dp[i - 1][k] + b[k] * a[j]) $ \\
-$ b[j] \geq b[j + 1] \text{ optionally } a[i] \leq a[i + 1] $ \\ \addcode{../Codes/Dynamic programming/Convex hull trick.cpp}
+$ b[j] \geq b[j + 1] \text{ optionally } a[i] \leq a[i + 1] $ \\ 
+\addcode{../Codes/Dynamic programming/Convex hull trick.cpp}
 
 \subsection{Digit dp }
 \input{../Codes/Dynamic programming/Digit dp.tex}
@@ -16,17 +22,25 @@ $ b[j] \geq b[j + 1] \text{ optionally } a[i] \leq a[i + 1] $ \\ \addcode{../Cod
 \subsection{Divide and conquer \complexity{k \cdot n^2} $\Rightarrow$ \complexity{k \cdot nlogn}}
 
 Split the array of size $n$ into $k$ continuous groups. $k \leq n$ \\
-$ cost(a, c) + cost(b, d) \leq cost(a, d) + cost(b, c)$ with $a \leq b \leq c \leq d$ \\\addcode{../Codes/Dynamic programming/Divide and conquer.cpp}
+$ cost(a, c) + cost(b, d) \leq cost(a, d) + cost(b, c)$ with $a \leq b \leq c \leq d$ \\
+\addcode{../Codes/Dynamic programming/Divide and conquer.cpp}
 
 \subsection{Knapsack 01 \complexity{n \cdot MaxW}}
+
 \addcode{../Codes/Dynamic programming/Knapsack 01.cpp}
 
 \subsection{Knuth \complexity{n^3} $\Rightarrow$ \complexity{n^2}}
 
-$ dp[l][r] = \min_{l \leq k \leq r}\{dp[l][k] + dp[k][r]\} + cost(l, r)$ \\\addcode{../Codes/Dynamic programming/Knuth.cpp}
+$ dp[l][r] = \min_{l \leq k \leq r}\{dp[l][k] + dp[k][r]\} + cost(l, r)$ \\
+\addcode{../Codes/Dynamic programming/Knuth.cpp}
 
-\subsection{Matrix exponentiation }
+\subsection{Matrix exponentiation \complexity{n^3 \cdot logn}}
+
+If TLE change \lstinline{Mat} to \lstinline{array<array<T, N>, N>} \\
 \addcode{../Codes/Dynamic programming/Matrix exponentiation.cpp}
 
 \subsection{SOS dp }
 \addcode{../Codes/Dynamic programming/SOS dp.cpp}
+
+\subsection{Inverse SOS dp }
+\addcode{../Codes/Dynamic programming/Inverse SOS dp.cpp}

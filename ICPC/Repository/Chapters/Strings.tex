@@ -1,22 +1,45 @@
 \nsection{Strings}
 
-\subsection{KMP }
+\subsection{KMP \complexity{n}}
+
+\begin{itemize}[noitemsep]
+  \item aaabaab - $[0, 1, 2, 0, 1, 2, 0]$
+  \item abacaba - $[0, 0, 1, 0, 1, 2, 3]$
+\end{itemize}
 \addcode{../Codes/Strings/KMP.cpp}
 
 \subsection{KMP automaton \complexity{Alphabet * n}}
+
 \addcode{../Codes/Strings/KMP automaton.cpp}
 
-\subsection{Z }
+\subsection{Z \complexity{n}}
+
+$z_i$ is the length of the longest substring starting from $i$ which is also a prefix of $s$ string will be in range $[i, i + z_i)$
+
+\begin{itemize}[noitemsep]
+  \item aaabaab - $[0, 2, 1, 0, 2, 1, 0]$
+  \item abacaba - $[0, 0, 1, 0, 3, 0, 1]$
+\end{itemize}
 \addcode{../Codes/Strings/Z.cpp}
 
-\subsection{Manacher }
+\subsection{Manacher \complexity{n}}
+
+\begin{itemize}[noitemsep]
+  \item aaabaab - $[[0, 1, 1, 0, 0, 2, 0], [0, 1, 0, 2, 0, 0, 0]]$
+  \item abacaba - $[[0, 0, 0, 0, 0, 0, 0], [0, 1, 0, 3, 0, 1, 0]]$
+\end{itemize}
 \addcode{../Codes/Strings/Manacher.cpp}
 
 \subsection{Hash }
 \input{../Codes/Strings/Hash.tex}
 \addcode{../Codes/Strings/Hash.cpp}
 
-\subsection{Min rotation }
+\subsection{Min rotation \complexity{n}}
+
+\begin{itemize}[noitemsep]
+  \item baabaaa - $4$
+  \item abacaba - $6$
+\end{itemize}
 \addcode{../Codes/Strings/Min rotation.cpp}
 
 \subsection{Suffix array \complexity{nlogn}}
@@ -30,12 +53,15 @@
   Add \emph{notUsed} characters between strings, i.e. $a + \$ + b + \# + c$ \\ 
   Use two-pointers to find a range $[l, r]$ such that all \emph{notUsed} characters are present, then $query(lcp[l + 1],..,lcp[r])$ for that window is the common length. \\
 
-\end{itemize}\addcode{../Codes/Strings/Suffix array.cpp}
+\end{itemize}
+\addcode{../Codes/Strings/Suffix array.cpp}
 
 \subsection{Aho Corasick \complexity{\sum s_i}}
+
 \addcode{../Codes/Strings/Aho Corasick.cpp}
 
 \subsection{Eertree \complexity{\sum s_i}}
+
 \addcode{../Codes/Strings/Eertree.cpp}
 
 \subsection{Suffix automaton \complexity{\sum s_i}}
@@ -70,4 +96,5 @@
   \begin{gather*}
     nonAppearing(u) = \min_{v \in trie[u]}{nonAppearing(v) + 1}
   \end{gather*}
-\end{itemize}\addcode{../Codes/Strings/Suffix automaton.cpp}
+\end{itemize}
+\addcode{../Codes/Strings/Suffix automaton.cpp}

@@ -3,16 +3,20 @@
 \subsection{DSU rollback }
 \addcode{../Codes/Data structures/DSU rollback.cpp}
 
-\subsection{Monotone queue }
+\subsection{Monotone queue \complexity{n}}
+
 \addcode{../Codes/Data structures/Monotone queue.cpp}
 
 \subsection{Stack queue \complexity{n}}
+
 \addcode{../Codes/Data structures/Stack queue.cpp}
 
 \subsection{In-Out trick }
 \addcode{../Codes/Data structures/In-Out trick.cpp}
 
 \subsection{Parallel binary search \complexity{(n + q) \cdot log n}}
+
+Hay $q$ queries, $n$ updates, se pide encontrar cuándo se cumple cierta condición con un prefijo de updates.
 \addcode{../Codes/Data structures/Parallel binary search.cpp}
 
 \subsection{Mos \complexity{(n + q) \cdot \sqrt{n}}}
@@ -21,12 +25,14 @@ Mo's in a tree, extended euler tour tin[u] = ++timer, tout[u] = ++timer
 
 \begin{itemize}
 \item u = lca(u, v), query(tin[u], tin[v])
-\item $u \neq lca(u, v)$, query(tout[u], tin[v]) + query(tin[lca], tin[lca]) 
+\item u $\neq$ lca(u, v), query(tout[u], tin[v]) + query(tin[lca], tin[lca]) 
 \end{itemize}
+
 
 \addcode{../Codes/Data structures/Mos.cpp}
 
 \subsection{Hilbert order }
+\input{../Codes/Data structures/Hilbert order.tex}
 \addcode{../Codes/Data structures/Hilbert order.cpp}
 
 \subsection{Sqrt decomposition }
@@ -37,6 +43,12 @@ Mo's in a tree, extended euler tour tin[u] = ++timer, tout[u] = ++timer
 
 \subsection{Fenwick }
 \addcode{../Codes/Data structures/Fenwick.cpp}
+
+\subsection{Fenwick 2D offline }
+\addcode{../Codes/Data structures/Fenwick 2D offline.cpp}
+
+\subsection{Lazy segtree }
+\addcode{../Codes/Data structures/Lazy segtree.cpp}
 
 \subsection{Dynamic segtree }
 \addcode{../Codes/Data structures/Dynamic segtree.cpp}
@@ -51,6 +63,7 @@ Mo's in a tree, extended euler tour tin[u] = ++timer, tout[u] = ++timer
 \addcode{../Codes/Data structures/Wavelet.cpp}
 
 \subsection{Ordered tree }
+\input{../Codes/Data structures/Ordered tree.tex}
 \addcode{../Codes/Data structures/Ordered tree.cpp}
 
 \subsection{Treap }

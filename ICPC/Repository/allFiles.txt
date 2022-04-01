@@ -9,12 +9,12 @@ Mos
 Hilbert order
 Sqrt decomposition
 Sparse table
-~Disjoint intervals
-~Fenwick 2D offline
-~Fenwick ND
 Fenwick
+~Disjoint intervals
+Fenwick 2D offline
+~Fenwick ND
 ~Segtree
-~Lazy segtree
+Lazy segtree
 Dynamic segtree
 Persistent segtree
 Li Chao
@@ -26,20 +26,22 @@ Ordered tree
 Treap
 
 All submasks of a mask
-~Broken profile
+Broken profile
 Convex hull trick
 Digit dp
 Divide and conquer
-~Inverse SOS dp
 Knapsack 01
 Knuth
 ~Matrix chain multiplication
 Matrix exponentiation
 SOS dp
+Inverse SOS dp
 ~Steiner
+~SteinerTree
 
 Grundy numbers
 
+Circle tangency
 Circle
 Distance point circle
 Common area circle circle
@@ -49,6 +51,8 @@ Geometry
 Radial order
 Sort along line
 
+Line projection
+Line reflection
 Line
 Segment
 Projection
@@ -72,13 +76,13 @@ Point in convex polygon
 
 ~Bellman Ford
 ~Floyd Warshall
-~Cycle
+Cycle
 ~Dijkstra
 ~Bridges
 ~Cutpoints
 Cutpoints and bridges
-Topological sort
-Kosaraju
+~Topological sort
+~Kosaraju
 Tarjan
 Isomorphism
 Two sat
@@ -93,7 +97,7 @@ Centroid
 Guni
 Link-Cut tree
 
-~Blossom
+Blossom
 Hopcroft Karp
 Hungarian
 Dinic
@@ -105,9 +109,10 @@ Bitset
 ~Fpow
 ~Fraction
 ~Modular multiplication
-~Modular
+Modular
 Probability
 Simplex
+Gauss jordan
 Xor basis
 
 Catalan
