@@ -1,25 +1,11 @@
-/*
- * Maximum matching on general non-weighted graphs
- * Time complexity: O(n^3)
- * Source: https://codeforces.com/blog/entry/92339
- */
-
 struct Blossom {
   int n, m;
-  vi mate, p, d, bl;
-  vector<vi> b, g;
+  vector<int> mate, p, d, bl;
+  vector<vector<int>> b, g;
 
-  Blossom(int n) : n(n) {
-    m = n + n / 2;
-    mate.assign(n, -1);
-    b.resize(m);
-    p.resize(m);
-    d.resize(m);
-    bl.resize(m);
-    g.assign(m, vi(m, -1));
-  }
+  Blossom(int n) : n(n), m(n + n / 2), mate(n, -1), b(m), p(m), d(m), bl(m), g(m, vector<int>(m, -1)) {}
 
-  void addEdge(int u, int v) { // WARNING: 0-indexed!!!!!
+  void add(int u, int v) { // 0-indexed!!!!!
     g[u][v] = u;
     g[v][u] = v;
   }
@@ -137,7 +123,7 @@ struct Blossom {
                 for (int i = 0; i < sz(A); i += 2) {
                   match(A[i], A[i + 1]);
                   if (i + 2 < sz(A))
-                    addEdge(A[i + 1], A[i + 2]);
+                    add(A[i + 1], A[i + 2]);
                 }
               }
               break;

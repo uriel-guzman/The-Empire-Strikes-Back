@@ -1,7 +1,7 @@
 struct AhoCorasick {
   struct Node : map<char, int> {
     int link = 0, up = 0;
-    int cnt = 0, isw = 0;
+    int cnt = 0, isWord = 0;
   };
 
   vector<Node> trie;
@@ -21,7 +21,7 @@ struct AhoCorasick {
         trie[u][c] = newNode();
       u = trie[u][c];
     }
-    trie[u].cnt++, trie[u].isw = 1;
+    trie[u].cnt++, trie[u].isWord = 1;
   }
 
   int next(int u, char c) {
@@ -39,7 +39,7 @@ struct AhoCorasick {
       for (auto& [c, v] : trie[u]) {
         int l = (trie[v].link = u ? next(trie[u].link, c) : 0);
         trie[v].cnt += trie[l].cnt;
-        trie[v].up = trie[l].isw ? l : trie[l].up;
+        trie[v].up = trie[l].isWord ? l : trie[l].up;
         qu.push(v);
       }
     }

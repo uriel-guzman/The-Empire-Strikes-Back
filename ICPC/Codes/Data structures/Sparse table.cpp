@@ -1,6 +1,6 @@
 template <class T, class F = function<T(const T&, const T&)>>
 struct Sparse {
-  vector<T> sp[25];
+  vector<T> sp[21]; // n <= 2^21
   F f;
   int n;
 

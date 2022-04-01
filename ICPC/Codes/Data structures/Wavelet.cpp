@@ -20,6 +20,7 @@ struct Wav {
     right = new Wav(mid + 1, hi, p, e);
   }
 
+  // kth value in [l, r]
   int kth(int l, int r, int k) {
     if (r < l)
       return 0;
@@ -30,6 +31,7 @@ struct Wav {
     return right->kth(l - amt[l - 1], r - amt[r], k - amt[r] + amt[l - 1]);
   }
 
+  // Count all values in [l, r] that are in range [x, y]
   int count(int l, int r, int x, int y) {
     if (r < l || y < x || y < lo || hi < x)
       return 0;

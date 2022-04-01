@@ -19,12 +19,12 @@ struct Modular {
     return Modular((1LL * v * m.v) % M);
   }
 
-  Modular operator/(Modular m) {
-    return *this * m.inv();
-  }
-
   Modular inv() {
     return this->pow(M - 2);
+  }
+
+  Modular operator/(Modular m) {
+    return *this * m.inv();
   }
 
   Modular& operator+=(Modular m) {

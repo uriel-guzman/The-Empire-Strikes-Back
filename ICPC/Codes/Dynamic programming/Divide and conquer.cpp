@@ -1,3 +1,5 @@
+lli dp[2][N];
+
 void solve(int cut, int l, int r, int optl, int optr) {
   if (r < l)
     return;

@@ -1,22 +1,23 @@
-int lo[Q], hi[Q];
-queue<int> solve[N];
+int lo[QUERIES], hi[QUERIES];
+queue<int> solve[UPDATES];
+vector<Update> updates;
 vector<Query> queries;
 
-fore (it, 0, 1 + __lg(N)) {
+fore (it, 0, 1 + __lg(UPDATES)) {
   fore (i, 0, sz(queries))
     if (lo[i] != hi[i]) {
       int mid = (lo[i] + hi[i]) / 2;
       solve[mid].emplace(i);
     }
-  fore (x, 0, n) { // 0th-indexed
-    // simulate
-    while (!solve[x].empty()) {
-      int i = solve[x].front();
-      solve[x].pop();
-      if (can(queries[i]))
-        hi[i] = x;
+  fore (i, 0, sz(updates)) {
+    // add the i-th update, we have a prefix of updates
+    while (!solve[i].empty()) {
+      int qi = solve[i].front();
+      solve[i].pop();
+      if (can(queries[qi]))
+        hi[qi] = i;
       else
-        lo[i] = x + 1;
+        lo[qi] = i + 1;
     }
   }
 }

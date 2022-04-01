@@ -1,0 +1,18 @@
+\complexity{2 \cdot n}
+
+v: true, \lstinline{~v}: false \\
+
+\lstinline{implies(a, b)}: if a then b \\
+\begin{tabular}{ |c |c |c|  }
+\hline 
+a & b &  a => b \\
+\hline 
+F & F  &   T \\
+T & T  &   T \\
+F & T   &  T \\
+T & F  &   F \\
+\hline
+\end{tabular} \\
+
+\lstinline{setVal(a)}: set a = true \\
+\lstinline{setVal(~a)}: set a = false \\

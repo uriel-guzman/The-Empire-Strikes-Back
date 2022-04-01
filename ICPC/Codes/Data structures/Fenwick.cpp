@@ -16,6 +16,7 @@ struct Fenwick {
     return v;
   }
 
+  // First position such that fenwick's sum >= v
   int lower_bound(T v) {
     int pos = 0;
     for (int k = __lg(sz(fenw)); k >= 0; k--)

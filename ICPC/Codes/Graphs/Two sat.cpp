@@ -1,30 +1,20 @@
-// 1-indexed
 struct TwoSat {
   int n;
   vector<vector<int>> imp;
 
-  TwoSat(int k) : n(k + 1), imp(2 * n) {}
+  TwoSat(int k) : n(k + 1), imp(2 * n) {} // 1-indexed
 
-  // a || b
-  void either(int a, int b) {
+  void either(int a, int b) { // a || b
     a = max(2 * a, -1 - 2 * a);
     b = max(2 * b, -1 - 2 * b);
     imp[a ^ 1].pb(b);
     imp[b ^ 1].pb(a);
   }
 
-  // if a then b
-  // a  b   a => b
-  // F  F     T
-  // T  T     T
-  // F  T     T
-  // T  F     F
   void implies(int a, int b) {
     either(~a, b);
   }
 
-  // setVal(a): set a = true
-  // setVal(~a): set a = false
   void setVal(int a) {
     either(a, a);
   }

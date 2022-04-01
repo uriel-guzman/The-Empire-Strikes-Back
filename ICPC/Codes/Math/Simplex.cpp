@@ -1,4 +1,3 @@
-// maximize c^t x s.t. ax <= b, x >= 0
 template <class T>
 pair<T, vector<T>> simplex(vector<vector<T>> a, vector<T> b, vector<T> c) {
   const T EPS = 1e-9;
