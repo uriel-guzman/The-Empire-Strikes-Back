@@ -20,6 +20,16 @@ basic_ostream<A, B>& operator<<(basic_ostream<A, B>& os, const C& c) {
   return os << "]";
 }
 
+template <class A, class B, class... Args>
+basic_ostream<A, B>& operator<<(basic_ostream<A, B>& os, tuple<Args...> const& t) {
+  apply(
+      [&os](auto&&... args) {
+        ((os << args << " "), ...);
+      },
+      t);
+  return os;
+}
+
 void print(string s) {
   cout << endl;
 }
@@ -44,8 +54,9 @@ void print(string s, const H& h, const T&... t) {
     }
     pos++;
   }
-  if (ok)
-    cout << ": " << purple << h << reset << ",";
+  if (ok) {
+    cout << ": " << purple << fixed << setprecision(8) << h << reset << ",";
+  }
   print(s.substr(pos + 1), t...);
 }
 

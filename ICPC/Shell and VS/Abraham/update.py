@@ -81,7 +81,7 @@ def updateMyClangFormat():
 
   clangFormatPos = -1
   for pos, line in enumerate(saveSettingsJson): 
-    if line.lstrip().startswith("\"C_Cpp.clang_format_fallbackStyle\""):
+    if line.lstrip().startswith("\" C_Cpp.clang_format_fallbackStyle\""):
       clangFormatPos = pos
       break
 

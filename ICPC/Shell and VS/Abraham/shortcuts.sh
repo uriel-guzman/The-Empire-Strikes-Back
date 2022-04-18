@@ -47,7 +47,7 @@ create() {
     tee $1.cpp < ${templateCode}
     open $1.cpp
     touch in
-    fi
+  fi
 }
 
 erase() {
@@ -73,8 +73,7 @@ compile() {
     moreFlags=$2
   fi
 
-  # alias flags='-Wall -Wextra -w -mcmodel=large'
-  alias flags=''
+  alias flags='-Wall -Wextra -w -mcmodel=large'
   g++-11 --std=c++17 ${moreFlags} ${flags} ${filename}.cpp -o ${filename}.out 
 }
 
@@ -113,13 +112,9 @@ random() {
     fi
   fi
 
-  compile ${solution} 
+  compile ${generator}
+  compile ${solution}
   compile ${brute}
-
-  if [[ -f ${generator}.cpp ]]; then
-    # C++ version, so first compile it
-    compile ${generator}
-  fi
 
   generateTestCase() {
     # cpp > py generator

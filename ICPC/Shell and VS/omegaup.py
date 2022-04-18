@@ -138,11 +138,11 @@ def generateTestCases(solution, generator, testCases):
         testCases = [25]
 
     sumCases = 0
+    levelName = ["easy", "hard"]
     for level, numTestCases in enumerate(testCases):
-        for it in range(0, numTestCases):
-            # For grouped cases set name to f"{level + 1}.{it}"
+        for it in range(1, numTestCases+1):
             # For ungrouped cases set name to sumCases
-            runCase(f"{sumCases}", level)
+            runCase(f"{levelName[level]}.{it}", level)
             sumCases += 1
 
 
@@ -163,23 +163,23 @@ def main():
     whereIAm = os.getcwd()
     solution = readFileName("Solution")
     generator = readFileName("Test-case generator")
-    folder = createFolder(solution.name)
+    # folder = createFolder(solution.name)
 
-    moveFiles([solution.file, generator.file], folder)
+    # moveFiles([solution.file, generator.file], folder)
 
     # Change directory
-    os.chdir(folder)
+    # os.chdir(folder)
 
     # testCases can be replaced with an array
     testCases = readTestCases()  # [4, 5] (2 subtasks)
-    addStatements(testCases)
+    # addStatements(testCases)
     generateTestCases(solution, generator, testCases)
 
-    os.mkdir("solutions")
-    moveFiles([solution.file, generator.file], "solutions", False)
+    # os.mkdir("solutions")
+    # moveFiles([solution.file, generator.file], "solutions", False)
 
     os.chdir(whereIAm)
-    generateZip(folder)
+    # generateZip(folder)
 
     print("Ready to omegaup")
 
