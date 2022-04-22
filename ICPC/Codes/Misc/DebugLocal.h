@@ -20,6 +20,36 @@ basic_ostream<A, B>& operator<<(basic_ostream<A, B>& os, const C& c) {
   return os << "]";
 }
 
+template <class T, class Container, class Compare>
+ostream& operator<<(ostream& os, priority_queue<T, Container, Compare> pq) {
+  vector<T> v;
+  while (pq.size()) {
+    v.emplace_back(pq.top());
+    pq.pop();
+  }
+  return os << v;
+}
+
+template <class T>
+ostream& operator<<(ostream& os, stack<T> s) {
+  vector<T> v;
+  while (s.size()) {
+    v.emplace_back(s.top());
+    s.pop();
+  }
+  return os << v;
+}
+
+template <class T>
+ostream& operator<<(ostream& os, queue<T> q) {
+  vector<T> v;
+  while (q.size()) {
+    v.emplace_back(q.front());
+    q.pop();
+  }
+  return os << v;
+}
+
 template <class A, class B, class... Args>
 basic_ostream<A, B>& operator<<(basic_ostream<A, B>& os, tuple<Args...> const& t) {
   apply(
