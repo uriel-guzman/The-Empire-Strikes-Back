@@ -1,6 +1,6 @@
-ull mul(ull x, ull y, ull mod) {
-  lli ans = x * y - mod * ull(1.L / mod * x * y);
-  return ans + mod * (ans < 0) - mod * (ans >= lli(mod));
+ull mul(ull x, ull y, ull MOD) {
+  lli ans = x * y - MOD * ull(1.L / MOD * x * y);
+  return ans + MOD * (ans < 0) - MOD * (ans >= lli(MOD));
 }
 
 // use mul(x, y, mod) inside fpow

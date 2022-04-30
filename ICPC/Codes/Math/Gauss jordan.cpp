@@ -1,6 +1,6 @@
 template <class T>
 pair<int, vector<T>> gauss(vector<vector<T>> a, vector<T> b) {
-  const double eps = 1e-6;
+  const double EPS = 1e-6;
   int n = a.size(), m = a[0].size();
   for (int i = 0; i < n; i++)
     a[i].push_back(b[i]);
@@ -10,7 +10,7 @@ pair<int, vector<T>> gauss(vector<vector<T>> a, vector<T> b) {
     for (int i = row; i < n; ++i)
       if (abs(a[i][col]) > abs(a[sel][col]))
         sel = i;
-    if (abs(a[sel][col]) < eps)
+    if (abs(a[sel][col]) < EPS)
       continue;
     for (int i = col; i <= m; i++)
       swap(a[sel][i], a[row][i]);
@@ -32,7 +32,7 @@ pair<int, vector<T>> gauss(vector<vector<T>> a, vector<T> b) {
     T sum = 0;
     for (int j = 0; j < m; j++)
       sum += ans[j] * a[i][j];
-    if (abs(sum - a[i][m]) > eps)
+    if (abs(sum - a[i][m]) > EPS)
       return pair(0, vector<T>());
   }
   for (int i = 0; i < m; i++)

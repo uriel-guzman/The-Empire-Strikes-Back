@@ -1,7 +1,7 @@
 lli choose(int n, int k) {
   if (n < 0 || k < 0 || n < k)
     return 0LL;
-  return fac[n] * ifac[k] % mod * ifac[n - k] % mod;
+  return fac[n] * ifac[k] % MOD * ifac[n - k] % MOD;
 }
 
 lli choose(int n, int k) {
