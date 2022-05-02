@@ -86,9 +86,11 @@ def write(data):
     debug.write(f"\n{data['template']}\n")
     debug.write(
         f"ostream& operator<<(ostream& os, const {data['name']}& tmp) {{ \n")
+    debug.write(f"  os << \"(\";\n")
     for pos, field in enumerate(data['fields']):
         nxt = "" if pos + 1 == len(data['fields']) else "<< \", \""
         debug.write(f"  os << \"{field}: \" << tmp.{field} {nxt};\n")
+    debug.write(f"  os << \")\";\n")
     debug.write("  return os;\n}")
 
 

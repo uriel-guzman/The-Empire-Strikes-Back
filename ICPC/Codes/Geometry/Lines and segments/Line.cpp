@@ -10,13 +10,13 @@ struct Line {
 
   int intersects(Line l) {
     if (eq(v.cross(l.v), 0))
-      return eq((l.a - a).cross(v), 0) ? INF : 0;
+      return eq((l.a - a).cross(v), 0) ? 1e9 : 0;
     return 1;
   }
 
   int intersects(Seg s) {
     if (eq(v.cross(s.v), 0))
-      return eq((s.a - a).cross(v), 0) ? INF : 0;
+      return eq((s.a - a).cross(v), 0) ? 1e9 : 0;
     return a.dir(b, s.a) != a.dir(b, s.b);
   }
 
