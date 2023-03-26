@@ -22,4 +22,14 @@ struct Sparse {
     int k = __lg(r - l + 1);
     return f(sp[k][l], sp[k][r - (1 << k) + 1]);
   }
+
+  T queryBits(int l, int r) {
+    T ans;
+    for (int len = r - l + 1; len; len -= len & -len) {
+      int k = __builtin_ctz(len);
+      ans = f(ans, sp[k][l]);
+      l += (1 << k);
+    }
+    return ans;
+  }
 };

@@ -115,7 +115,6 @@ Simplex
 Gauss jordan
 Xor basis
 
-Catalan
 Factorial
 ~Factorial Mint
 Factorial mod small prime
@@ -161,3 +160,8 @@ Suffix array
 Aho Corasick
 Eertree
 Suffix automaton
+
+Catalan
+Bell numbers
+Stirling numbers
+Stirling numbers 2

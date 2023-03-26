@@ -18,9 +18,9 @@ struct LiChao {
     if (l == r)
       return;
     if (bl != bm)
-      left = left ? (left->add(g), left) : new LiChao(l, m, g);
+      left ? left->add(g) : void(left = new LiChao(l, m, g));
     else
-      right = right ? (right->add(g), right) : new LiChao(m + 1, r, g);
+      right ? right->add(g) : void(right = new LiChao(m + 1, r, g));
   }
 
   lli query(lli x) {

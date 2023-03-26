@@ -1,0 +1,7 @@
+How many ways are of dividing a set of $n$ \textbf{different} objects into $k$ \textbf{nonempty} subsets. $\{{n \atop k} \}$\\
+
+$s2(0, 0) = 1$, $s2(n, 0) = s2(0, n) = 0$ \\
+$s2(n, k) = s2(n -1,k-1) + k \cdot s2(n-1, k)$ \\
+
+$s2(n, k) = \frac{1}{k!} \sum_{i=0}^{k} (-1)^{i} \cdot {\binom {k}{i}} \cdot (k-i)^{n}$ \\
+  

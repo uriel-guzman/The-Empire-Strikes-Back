@@ -64,9 +64,13 @@ void print(string s) {
   cout << endl;
 }
 
+const string resetColor = "\033[0m";
+const string blueColor = "\033[1;34m";
+const string purpleColor = "\033[3;95m";
+const string greenColor = "\033[1;32m";
+
 template <class H, class... T>
 void print(string s, const H& h, const T&... t) {
-  const string reset = "\033[0m", blue = "\033[1;34m", purple = "\033[3;95m";
   int bal = 0, ok = 1, pos = 0;
   while (pos < s.size()) {
     char c = s[pos];
@@ -79,15 +83,15 @@ void print(string s, const H& h, const T&... t) {
     if (c == ',' && bal == 0) {
       string cut = s.substr(0, pos);
       replace(cut.begin(), cut.end(), '\"', char(0));
-      cout << blue << cut << reset;
+      cout << blueColor << cut << resetColor;
       break;
     }
     pos++;
   }
   if (ok) {
-    cout << ": " << purple << fixed << setprecision(8) << h << reset << ",";
+    cout << ": " << purpleColor << fixed << setprecision(2) << h << resetColor << ",";
   }
   print(s.substr(pos + 1), t...);
 }
 
-#define debug(...) print(string(#__VA_ARGS__) + ",", __VA_ARGS__);
+#define debug(...) cout << greenColor << "[" << __LINE__ << "] ", print(string(#__VA_ARGS__) + ",", __VA_ARGS__);

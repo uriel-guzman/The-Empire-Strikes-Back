@@ -126,7 +126,7 @@ def getComplexity(code, pathToFile):
     text = ""
     if code.extension == ".tex":
         file = open(f"../{pathToFile}", "r").readlines()
-        if file[0].startswith("\complexity"):
+        if len(file) and file[0].startswith("\complexity"):
             # print(code.name, file[0])
             return file[0].replace("\n", "")
     return text
@@ -186,12 +186,13 @@ def writeBook(allFiles, bookName):
                 # Until I find something better, I'll append all latex file :c
                 writeln(chapter, toString(path, start=1))
         elif isImage(file.extension):
-            print(file)
+            # print(file)
             # writeln(chapter, "\\begin{figure} \centering")
             writeln(chapter, f"\includegraphics[width=4.5cm]{{../{path}}}")
             # writeln(chapter, f"{file.name}")
             # writeln(chapter, "\end{figure}")
 
+    # writeln(book, f"  \input{{Chapters/Extra.tex}}")
     writeln(book, "\end{document}")
     return book.name
 

@@ -1,0 +1,9 @@
+Count the number of permutations of $n$ elements with $k$ disjoint cycles
+Signed way, $k > 0$ \\
+
+$s(0, 0) = 1$, $s(n, 0) = s(0, n) = 0$ \\
+$s(n, k) = -(n-1) \cdot s(n - 1, k) + s(n - 1, k - 1)$ \\
+
+The unsigned way doesn't have sign $|-(n - 1)|$ \\
+
+The sum of products of the $n \choose k$ subsets of size $k$ of $\{0, 1, ... n -1\}$ is $s(n, n - k)$ \\

@@ -2,7 +2,7 @@ template <class T>
 struct SuffixArray {
   int n;
   T s;
-  vector<int> sa, pos, dp[25];
+  vector<int> sa, pos, sp[25];
 
   SuffixArray(const T& x) : n(sz(x) + 1), s(x), sa(n), pos(n) {
     s.pb(0);
@@ -24,15 +24,15 @@ struct SuffixArray {
       if (pos[sa[n - 1]] >= n - 1)
         break;
     }
-    dp[0].assign(n, 0);
+    sp[0].assign(n, 0);
     for (int i = 0, j = pos[0], k = 0; i < n - 1; ++i, ++k) {
       while (k >= 0 && s[i] != s[sa[j - 1] + k])
-        dp[0][j] = k--, j = pos[sa[j] + 1];
+        sp[0][j] = k--, j = pos[sa[j] + 1];
     }
     for (int k = 1, pw = 1; pw < n; k++, pw <<= 1) {
-      dp[k].assign(n, 0);
+      sp[k].assign(n, 0);
       for (int l = 0; l + pw < n; l++)
-        dp[k][l] = min(dp[k - 1][l], dp[k - 1][l + pw]);
+        sp[k][l] = min(sp[k - 1][l], sp[k - 1][l + pw]);
     }
   }
 
@@ -41,7 +41,7 @@ struct SuffixArray {
       return n - l;
     tie(l, r) = minmax(pos[l], pos[r]);
     int k = __lg(r - l);
-    return min(dp[k][l + 1], dp[k][r - (1 << k) + 1]);
+    return min(sp[k][l + 1], sp[k][r - (1 << k) + 1]);
   }
 
   auto at(int i, int j) {
