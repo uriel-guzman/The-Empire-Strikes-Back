@@ -12,10 +12,9 @@ struct Data {
 };
 
 vector<Edge> graph[N];
-int dist[N];
 
 void dijkstra(int s) {
-  fill_n(dist, n + 1, INF);
+  vector<lli> dist(n + 1, INF);
   priority_queue<Data> pq; // {dist, node}
   pq.push({s, dist[s] = 0});
 

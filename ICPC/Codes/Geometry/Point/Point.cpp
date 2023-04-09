@@ -27,8 +27,8 @@ struct Pt {
 
   ld cross(Pt p) const {
     // 0 if collinear
-    // - if b is to the right of a
-    // + if b is to the left of a
+    // - if p is to the right of a
+    // + if p is to the left of a
     // gives you 2 * area
     return x * p.y - y * p.x;
   }
