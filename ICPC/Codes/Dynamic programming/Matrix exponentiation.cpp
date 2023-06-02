@@ -1,35 +1,29 @@
 template <class T>
-using Mat = vector<vector<T>>;
+struct Mat : vector<vector<T>> {
+  int n, m;
 
-template <class T>
-Mat<T> operator*(Mat<T>& a, Mat<T>& b) {
-  Mat<T> c(sz(a), vector<T>(sz(b[0])));
-  fore (k, 0, sz(a[0]))
-    fore (i, 0, sz(a))
-      fore (j, 0, sz(b[0]))
-        c[i][j] += a[i][k] * b[k][j];
-  return c;
-}
+  Mat(int n, int m) : vector<vector<T>>(n, vector<T>(m)), n(n), m(m) {}
 
-template <class T>
-vector<T> operator*(Mat<T>& a, vector<T>& b) {
-  assert(sz(a[0]) == sz(b));
-  vector<T> c(sz(a), T());
-  fore (i, 0, sz(a))
-    fore (j, 0, sz(b))
-      c[i] += a[i][j] * b[j];
-  return c;
-}
-
-template <class T>
-Mat<T> fpow(Mat<T>& a, lli n) {
-  Mat<T> ans(sz(a), vector<T>(sz(a)));
-  fore (i, 0, sz(a))
-    ans[i][i] = 1;
-  for (; n > 0; n >>= 1) {
-    if (n & 1)
-      ans = ans * a;
-    a = a * a;
+  Mat<T> operator*(const Mat<T>& other) {
+    assert(m == other.n);
+    Mat<T> c(n, other.m);
+    fore (k, 0, m)
+      fore (i, 0, m)
+        fore (j, 0, other.m)
+          c[i][j] += (*this)[i][k] * other[k][j];
+    return c;
   }
-  return ans;
-}
+
+  Mat<T> pow(lli k) {
+    assert(n == m);
+    Mat<T> ans(n, n);
+    fore (i, 0, n)
+      ans[i][i] = 1;
+    for (; k > 0; k >>= 1) {
+      if (k & 1)
+        ans = ans * *this;
+      *this = *this * *this;
+    }
+    return ans;
+  }
+};
