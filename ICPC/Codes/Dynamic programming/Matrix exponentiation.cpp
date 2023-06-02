@@ -8,7 +8,7 @@ struct Mat : vector<vector<T>> {
     assert(m == other.n);
     Mat<T> c(n, other.m);
     fore (k, 0, m)
-      fore (i, 0, m)
+      fore (i, 0, n)
         fore (j, 0, other.m)
           c[i][j] += (*this)[i][k] * other[k][j];
     return c;
