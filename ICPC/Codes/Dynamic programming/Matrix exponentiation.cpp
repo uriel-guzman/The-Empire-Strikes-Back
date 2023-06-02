@@ -6,12 +6,12 @@ struct Mat : vector<vector<T>> {
 
   Mat<T> operator*(const Mat<T>& other) {
     assert(m == other.n);
-    Mat<T> c(n, other.m);
+    Mat<T> ans(n, other.m);
     fore (k, 0, m)
       fore (i, 0, n)
         fore (j, 0, other.m)
-          c[i][j] += (*this)[i][k] * other[k][j];
-    return c;
+          ans[i][j] += (*this)[i][k] * other[k][j];
+    return ans;
   }
 
   Mat<T> pow(lli k) {
