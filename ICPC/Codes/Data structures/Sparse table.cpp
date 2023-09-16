@@ -24,7 +24,7 @@ struct Sparse {
   }
 
   T queryBits(int l, int r) {
-    T ans;
+    T ans = T();
     for (int len = r - l + 1; len; len -= len & -len) {
       int k = __builtin_ctz(len);
       ans = f(ans, sp[k][l]);
