@@ -14,7 +14,7 @@ int lca(int u, int v) {
   if (depth[u] > depth[v])
     swap(u, v);
   fore (k, LogN, 0)
-    if (dep[v] - dep[u] >= (1 << k))
+    if (depth[v] - depth[u] >= (1 << k))
       v = par[k][v];
   if (u == v)
     return u;

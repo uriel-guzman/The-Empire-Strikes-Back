@@ -24,12 +24,12 @@ struct Sparse {
   }
 
   T queryBits(int l, int r) {
-    T ans = T();
+    optional<T> ans;
     for (int len = r - l + 1; len; len -= len & -len) {
       int k = __builtin_ctz(len);
-      ans = f(ans, sp[k][l]);
+      ans = ans ? f(ans.value(), sp[k][l]) : sp[k][l];
       l += (1 << k);
     }
-    return ans;
+    return ans.value();
   }
 };

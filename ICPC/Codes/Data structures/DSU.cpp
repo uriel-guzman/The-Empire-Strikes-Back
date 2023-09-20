@@ -1,7 +1,7 @@
 struct Dsu {
-  vector<int> par;
+  vector<int> par, tot;
 
-  Dsu(int n = 1) : par(n + 1) {
+  Dsu(int n = 1) : par(n + 1), tot(n + 1, 1) {
     iota(all(par), 0);
   }
 
@@ -11,7 +11,12 @@ struct Dsu {
 
   void unite(int u, int v) {
     u = find(u), v = find(v);
-    if (u != v)
+    if (u != v) {
+      if (tot[u] < tot[v])
+        swap(u, v);
+        
+      tot[u] += tot[v];
       par[v] = u;
+    }
   }
 };
