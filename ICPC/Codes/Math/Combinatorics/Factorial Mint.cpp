@@ -6,7 +6,10 @@ Mint fac(int i) {
 }
 
 Mint ifac(int i) {
-  return fac(i).inv();
+  static vector<Mint> dp;
+  while (dp.size() <= i)
+    dp.emplace_back(fac(dp.size()).inv());
+  return dp[i];
 }
 
 Mint choose(int n, int k) {

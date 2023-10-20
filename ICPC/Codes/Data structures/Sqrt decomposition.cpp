@@ -1,5 +1,4 @@
 const int BLOCK = sqrt(N);
-int blo[N]; // blo[i] = i / BLOCK
 
 void update(int i) {}
 

@@ -60,7 +60,7 @@ basic_ostream<A, B>& operator<<(basic_ostream<A, B>& os, tuple<Args...> const& t
   return os;
 }
 
-void print(string s) {
+void pprint(string s) {
   cout << endl;
 }
 
@@ -70,7 +70,7 @@ const string purpleColor = "\033[3;95m";
 const string greenColor = "\033[1;32m";
 
 template <class H, class... T>
-void print(string s, const H& h, const T&... t) {
+void pprint(string s, const H& h, const T&... t) {
   int bal = 0, ok = 1, pos = 0;
   while (pos < s.size()) {
     char c = s[pos];
@@ -91,7 +91,15 @@ void print(string s, const H& h, const T&... t) {
   if (ok) {
     cout << ": " << purpleColor << fixed << setprecision(2) << h << resetColor << ",";
   }
-  print(s.substr(pos + 1), t...);
+  pprint(s.substr(pos + 1), t...);
 }
 
-#define debug(...) cout << greenColor << "[" << __LINE__ << "] ", print(string(#__VA_ARGS__) + ",", __VA_ARGS__);
+#ifdef LINE
+
+#define debug(...) cout << greenColor << "[" << __LINE__ << "] ", pprint(string(#__VA_ARGS__) + ",", __VA_ARGS__);
+
+#else
+
+#define debug(...) pprint(string(#__VA_ARGS__) + ",", __VA_ARGS__);
+
+#endif
