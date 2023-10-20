@@ -10,18 +10,18 @@ Hilbert order
 Sqrt decomposition
 Sparse table
 Fenwick
-~Disjoint intervals
+Disjoint intervals
 Fenwick 2D offline
-~Fenwick ND
+Fenwick ND
 ~Segtree
 Lazy segtree
 Dynamic segtree
 Persistent segtree
 Li Chao
 Wavelet
-~Segtree 2D
+Segtree 2D
 ~Segtree iterative
-~Static to dynamic
+Static to dynamic
 Ordered tree
 Treap
 
@@ -36,8 +36,8 @@ Knuth
 Matrix exponentiation
 SOS dp
 Inverse SOS dp
-~Steiner
-~SteinerTree
+Steiner
+SteinerTree
 
 Grundy numbers
 
@@ -88,12 +88,12 @@ Isomorphism
 Two sat
 LCA
 Virtual tree
-~Dynamic connectivity
+Dynamic connectivity
 ~Euler tour
 ~HLD
 Euler-tour + HLD + LCA
 Centroid
-~Guni Paths
+Guni Paths
 Guni
 Link-Cut tree
 
@@ -106,8 +106,8 @@ Min-Cost flow
 
 Bits
 Bitset
-~Fpow
-~Fraction
+Fpow
+Fraction
 ~Modular multiplication
 Modular
 Probability
@@ -130,7 +130,7 @@ Euclid
 Factorial factors
 ~Factorize SQRT
 ~GCD
-~Inverse
+Inverse
 ~LCM
 Factorize sieve
 Sieve
@@ -156,7 +156,7 @@ Manacher
 Hash
 Min rotation
 Suffix array
-~Trie
+Trie
 Aho Corasick
 Eertree
 Suffix automaton
