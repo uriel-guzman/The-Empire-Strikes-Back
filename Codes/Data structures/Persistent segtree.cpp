@@ -24,14 +24,14 @@ struct Per {
   Per* update(int p, const Args&... args) {
     if (p < l || r < p)
       return this;
-    Per* tmp = new Per(l, r);
+    Per* t = new Per(l, r);
     if (l == r) {
-      tmp->val = T(args...);
-      return tmp;
+      t->val = T(args...);
+      return t;
     }
-    tmp->left = left->update(p, args...);
-    tmp->right = right->update(p, args...);
-    return tmp->pull();
+    t->left = left->update(p, args...);
+    t->right = right->update(p, args...);
+    return t->pull();
   }
 
   T query(int ll, int rr) {
