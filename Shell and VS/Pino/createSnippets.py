@@ -1,6 +1,6 @@
 import os
 
-dirIcpc = r'/Users/pino/Documents/The-Empire-Strikes-Back/ICPC/Codes/'
+dirIcpc = r'/Users/pino/Documents/The-Empire-Strikes-Back/Codes/'
 cppJson = "/Users/pino/Documents/Competitive Programming/.vscode/snippets.code-snippets"
 
 def solve(file, dir, out):
@@ -43,12 +43,12 @@ def main():
 
   out = open(cppJson, "w")
   out.write("{\n")
-
+  # print('wtf')
   for subdir, dirs, files in os.walk(rootdir):
     if subdir.endswith("GeometryIDK") or subdir.endswith("GeometryIDK/InsideStruct"):
       continue
     for file in files:
-      #print os.path.join(subdir, file)
+      # print (os.path.join(subdir, file))
       filepath = subdir + os.sep + file
 
       if filepath.endswith(".cpp"):

@@ -1,5 +1,6 @@
 Steps to use draw.h properly and don't make mistakes using this buggy code.
 
+* You must have installed graphviz (https://graphviz.org/) on your computer.
 * Use only the data structures that exist in this repository, other extern data structures won't work D:
 * Send a lambda function as a parameter to determine which nodes you want to paint in color red (works for all graph and trie-based).
   ```cpp

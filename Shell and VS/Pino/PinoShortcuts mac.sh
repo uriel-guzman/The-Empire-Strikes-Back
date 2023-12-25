@@ -52,7 +52,7 @@ erase() {
 
 compilation() {
 	alias flags='-Wall -Wextra -Wshadow -fmax-errors=3 -w'
-	g++-11 --std=c++17 $2 ${flags} $1.cpp -o $1.out 
+	g++-13 --std=c++17 $2 ${flags} $1.cpp -o $1.out 
 }
 
 debug() {
@@ -209,5 +209,5 @@ omegaup() {
 
 update() {
   git pull origin master
-  python3 /Users/pino/Documents/The-Empire-Strikes-Back/ICPC/Shell\ and\ VS/Pino/createSnippets.py
+  python3 /Users/pino/Documents/The-Empire-Strikes-Back/Shell\ and\ VS/Pino/createSnippets.py
 }
