@@ -20,7 +20,7 @@ void hld(int u, int h) {
       hld(v, v == graph[u][0] ? h : v);
 }
 
-template <bool OverEdges = 0, class F>
+template <bool OverNodes = false, class F>
 void processPath(int u, int v, F f) {
   for (; head[u] != head[v]; v = par[head[v]]) {
     if (depth[head[u]] > depth[head[v]])
@@ -31,8 +31,8 @@ void processPath(int u, int v, F f) {
     swap(u, v);
   if (u != v)
     f(pos[graph[u][0].v], pos[v]);
-  if (OverEdges)
-    f(pos[u], pos[u]);
+  if (OverNodes)
+    f(pos[u], pos[u]); // include lca
 }
 
 void updatePath(int u, int v, lli z) {
