@@ -5,7 +5,7 @@ struct Seg {
   T val;
 
   template <class Arr>
-  Seg(int l, int r, Arr a) : l(l), r(r), left(0), right(0) {
+  Seg(int l, int r, Arr& a) : l(l), r(r), left(0), right(0) {
     if (l == r) {
       val = T(a[l]);
       return;
