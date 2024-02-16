@@ -8,7 +8,7 @@ struct Seg {
   }
 
   template <class Arr>
-  Seg(int l, int r, Arr a) : f(l), n(r - l + 1), tree(2 * n) {
+  Seg(int l, int r, Arr& a) : f(l), n(r - l + 1), tree(2 * n) {
     fore (i, 0, n)
       tree[i + n] = T(a[l + i]);
     fore (i, n, 0)
