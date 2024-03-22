@@ -11,13 +11,9 @@ struct TwoSat {
     imp[b ^ 1].pb(a);
   }
 
-  void implies(int a, int b) {
-    either(~a, b);
-  }
+  void implies(int a, int b) { either(~a, b); }
 
-  void setVal(int a) {
-    either(a, a);
-  }
+  void setVal(int a) { either(a, a); }
 
   optional<vector<int>> solve() {
     int k = sz(imp);
@@ -28,21 +24,17 @@ struct TwoSat {
         if (!id[v])
           dfs(v);
         else
-          while (id[v] < b.back())
-            b.pop_back();
+          while (id[v] < b.back()) b.pop_back();
       }
       if (id[u] == b.back())
-        for (b.pop_back(), ++k; id[u] < sz(s); s.pop_back())
-          id[s.back()] = k;
+        for (b.pop_back(), ++k; id[u] < sz(s); s.pop_back()) id[s.back()] = k;
     };
     vector<int> val(n);
     fore (u, 0, sz(imp))
-      if (!id[u])
-        dfs(u);
+      if (!id[u]) dfs(u);
     fore (u, 0, n) {
       int x = 2 * u;
-      if (id[x] == id[x ^ 1])
-        return nullopt;
+      if (id[x] == id[x ^ 1]) return nullopt;
       val[u] = id[x] < id[x ^ 1];
     }
     return optional(val);

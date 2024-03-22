@@ -22,9 +22,7 @@ struct DynamicConnectivity {
     mp.erase(minmax(u, v));
   }
 
-  void query() {
-    queries.push_back({'?', -1, -1, ++timer});
-  }
+  void query() { queries.push_back({'?', -1, -1, ++timer}); }
 
   void solve(int l, int r) {
     if (l == r) {
@@ -35,19 +33,15 @@ struct DynamicConnectivity {
     int before = sz(dsu.mem);
     for (int i = m + 1; i <= r; i++) {
       Query& q = queries[i];
-      if (q.op == '-' && q.at < l)
-        dsu.unite(q.u, q.v);
+      if (q.op == '-' && q.at < l) dsu.unite(q.u, q.v);
     }
     solve(l, m);
-    while (sz(dsu.mem) > before)
-      dsu.rollback();
+    while (sz(dsu.mem) > before) dsu.rollback();
     for (int i = l; i <= m; i++) {
       Query& q = queries[i];
-      if (q.op == '+' && q.at > r)
-        dsu.unite(q.u, q.v);
+      if (q.op == '+' && q.at > r) dsu.unite(q.u, q.v);
     }
     solve(m + 1, r);
-    while (sz(dsu.mem) > before)
-      dsu.rollback();
+    while (sz(dsu.mem) > before) dsu.rollback();
   }
 };

@@ -10,10 +10,8 @@ struct LinkCut {
     void push() {
       if (rev) {
         swap(left, right);
-        if (left)
-          left->rev ^= 1;
-        if (right)
-          right->rev ^= 1;
+        if (left) left->rev ^= 1;
+        if (right) right->rev ^= 1;
         rev = 0;
       }
     }
@@ -35,8 +33,7 @@ struct LinkCut {
     }
 
     void addVsub(Node* v, lli add) {
-      if (v)
-        vsub += 1LL * add * v->sub;
+      if (v) vsub += 1LL * add * v->sub;
     }
   };
 
@@ -46,14 +43,11 @@ struct LinkCut {
 
   void splay(Node* u) {
     auto assign = [&](Node* u, Node* v, int d) {
-      if (v)
-        v->par = u;
-      if (d >= 0)
-        (d == 0 ? u->left : u->right) = v;
+      if (v) v->par = u;
+      if (d >= 0) (d == 0 ? u->left : u->right) = v;
     };
     auto dir = [&](Node* u) {
-      if (!u->par)
-        return -1;
+      if (!u->par) return -1;
       return u->par->left == u ? 0 : (u->par->right == u ? 1 : -1);
     };
     auto rotate = [&](Node* u) {
@@ -66,11 +60,9 @@ struct LinkCut {
     };
     while (~dir(u)) {
       Node *p = u->par, *g = p->par;
-      if (~dir(p))
-        g->push();
+      if (~dir(p)) g->push();
       p->push(), u->push();
-      if (~dir(p))
-        rotate(dir(p) == dir(u) ? p : u);
+      if (~dir(p)) rotate(dir(p) == dir(u) ? p : u);
       rotate(u);
     }
     u->push(), u->pull();
@@ -107,11 +99,9 @@ struct LinkCut {
   }
 
   int lca(int u, int v) {
-    if (u == v)
-      return u;
+    if (u == v) return u;
     access(u), access(v);
-    if (!a[u].par)
-      return -1;
+    if (!a[u].par) return -1;
     return splay(&a[u]), a[u].par ? -1 : u;
   }
 
@@ -126,8 +116,7 @@ struct LinkCut {
     assert(k >= 0);
     for (;; a[u].push()) {
       int sz = a[u].left->sz;
-      if (sz == k)
-        return access(u), u;
+      if (sz == k) return access(u), u;
       if (sz < k)
         k -= sz + 1, u = u->ch[1];
       else
@@ -153,7 +142,5 @@ struct LinkCut {
     a[u].pull();
   }
 
-  Node& operator[](int u) {
-    return a[u];
-  }
+  Node& operator[](int u) { return a[u]; }
 };

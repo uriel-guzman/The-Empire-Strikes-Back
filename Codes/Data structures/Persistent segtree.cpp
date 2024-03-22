@@ -12,8 +12,7 @@ struct Per {
   }
 
   void build() {
-    if (l == r)
-      return;
+    if (l == r) return;
     int m = (l + r) >> 1;
     (left = new Per(l, m))->build();
     (right = new Per(m + 1, r))->build();
@@ -22,8 +21,7 @@ struct Per {
 
   template <class... Args>
   Per* update(int p, const Args&... args) {
-    if (p < l || r < p)
-      return this;
+    if (p < l || r < p) return this;
     Per* t = new Per(l, r);
     if (l == r) {
       t->val = T(args...);
@@ -35,10 +33,8 @@ struct Per {
   }
 
   T query(int ll, int rr) {
-    if (r < ll || rr < l)
-      return T();
-    if (ll <= l && r <= rr)
-      return val;
+    if (r < ll || rr < l) return T();
+    if (ll <= l && r <= rr) return val;
     return left->query(ll, rr) + right->query(ll, rr);
   }
 };

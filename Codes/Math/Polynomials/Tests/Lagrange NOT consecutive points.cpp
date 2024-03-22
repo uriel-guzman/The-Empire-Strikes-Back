@@ -4,7 +4,9 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-#define fore(i, l, r) for (auto i = (l) - ((l) > (r)); i != (r) - ((l) > (r)); i += 1 - 2 * ((l) > (r)))
+#define fore(i, l, r)                                      \
+  for (auto i = (l) - ((l) > (r)); i != (r) - ((l) > (r)); \
+       i += 1 - 2 * ((l) > (r)))
 #define sz(x) int(x.size())
 #define all(x) begin(x), end(x)
 #define f first
@@ -28,45 +30,25 @@ struct Modular {
   Modular(int a = 0) : v(a) {}
   Modular(lli a) : v((a < 0 ? M - -a % M : a) % M) {}
 
-  Modular operator+(Modular m) {
-    return Modular((v + m.v) % M);
-  }
+  Modular operator+(Modular m) { return Modular((v + m.v) % M); }
 
-  Modular operator-(Modular m) {
-    return Modular((v - m.v + M) % M);
-  }
+  Modular operator-(Modular m) { return Modular((v - m.v + M) % M); }
 
-  Modular operator*(Modular m) {
-    return Modular((1LL * v * m.v) % M);
-  }
+  Modular operator*(Modular m) { return Modular((1LL * v * m.v) % M); }
 
-  Modular operator/(Modular m) {
-    return *this * m.inv();
-  }
+  Modular operator/(Modular m) { return *this * m.inv(); }
 
-  Modular inv() {
-    return this->pow(M - 2);
-  }
+  Modular inv() { return this->pow(M - 2); }
 
-  Modular& operator+=(Modular m) {
-    return *this = *this + m;
-  }
+  Modular& operator+=(Modular m) { return *this = *this + m; }
 
-  Modular& operator-=(Modular m) {
-    return *this = *this - m;
-  }
+  Modular& operator-=(Modular m) { return *this = *this - m; }
 
-  Modular& operator*=(Modular m) {
-    return *this = *this * m;
-  }
+  Modular& operator*=(Modular m) { return *this = *this * m; }
 
-  Modular& operator/=(Modular m) {
-    return *this = *this / m;
-  }
+  Modular& operator/=(Modular m) { return *this = *this / m; }
 
-  friend ostream& operator<<(ostream& os, Modular m) {
-    return os << m.v;
-  }
+  friend ostream& operator<<(ostream& os, Modular m) { return os << m.v; }
 
   template <class T>
   bool operator==(T x) {
@@ -76,8 +58,7 @@ struct Modular {
   Modular pow(lli n) {
     Modular r(1), x = *this;
     for (; n > 0; n >>= 1) {
-      if (n & 1)
-        r = r * x;
+      if (n & 1) r = r * x;
       x = x * x;
     }
     return r;
@@ -90,8 +71,7 @@ T Lagrange(vector<T>& x, vector<T>& y, lli k) { // O(sz(x) ^ 2)
   fore (i, 0, sz(x)) {
     T num = 1, den = 1;
     fore (j, 0, sz(x)) {
-      if (j == i)
-        continue;
+      if (j == i) continue;
       num *= (T(k) - x[j]);
       den *= (x[i] - x[j]);
     }
@@ -113,12 +93,10 @@ void dfs(int u) {
   for (auto v : graph[u]) {
     dfs(v);
 
-    fore (k, 0, N)
-      dp[u][k] *= dp[v][k];
+    fore (k, 0, N) dp[u][k] *= dp[v][k];
   }
 
-  fore (k, 1, N)
-    dp[u][k] += dp[u][k - 1];
+  fore (k, 1, N) dp[u][k] += dp[u][k - 1];
 }
 
 int main() {

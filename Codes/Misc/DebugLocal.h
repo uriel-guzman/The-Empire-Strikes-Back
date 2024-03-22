@@ -13,8 +13,7 @@ template <class A, class B, class C>
 basic_ostream<A, B>& operator<<(basic_ostream<A, B>& os, const C& c) {
   os << "[";
   for (const auto& x : c) {
-    if (&x != &*begin(c))
-      cout << ", ";
+    if (&x != &*begin(c)) cout << ", ";
     cout << x;
   }
   return os << "]";
@@ -51,18 +50,13 @@ ostream& operator<<(ostream& os, queue<T> q) {
 }
 
 template <class A, class B, class... Args>
-basic_ostream<A, B>& operator<<(basic_ostream<A, B>& os, tuple<Args...> const& t) {
-  apply(
-      [&os](auto&&... args) {
-        ((os << args << " "), ...);
-      },
-      t);
+basic_ostream<A, B>& operator<<(basic_ostream<A, B>& os,
+                                tuple<Args...> const& t) {
+  apply([&os](auto&&... args) { ((os << args << " "), ...); }, t);
   return os;
 }
 
-void pprint(string s) {
-  cout << endl;
-}
+void pprint(string s) { cout << endl; }
 
 const string resetColor = "\033[0m";
 const string blueColor = "\033[1;34m";
@@ -74,12 +68,9 @@ void pprint(string s, const H& h, const T&... t) {
   int bal = 0, ok = 1, pos = 0;
   while (pos < s.size()) {
     char c = s[pos];
-    if (c == '\"')
-      ok = 0;
-    if (c == '(')
-      bal++;
-    if (c == ')')
-      bal--;
+    if (c == '\"') ok = 0;
+    if (c == '(') bal++;
+    if (c == ')') bal--;
     if (c == ',' && bal == 0) {
       string cut = s.substr(0, pos);
       replace(cut.begin(), cut.end(), '\"', char(0));
@@ -89,14 +80,17 @@ void pprint(string s, const H& h, const T&... t) {
     pos++;
   }
   if (ok) {
-    cout << ": " << purpleColor << fixed << setprecision(2) << h << resetColor << ",";
+    cout << ": " << purpleColor << fixed << setprecision(2) << h << resetColor
+         << ",";
   }
   pprint(s.substr(pos + 1), t...);
 }
 
 #ifdef LINE
 
-#define debug(...) cout << greenColor << "[" << __LINE__ << "] ", pprint(string(#__VA_ARGS__) + ",", __VA_ARGS__);
+#define debug(...)                               \
+  cout << greenColor << "[" << __LINE__ << "] ", \
+      pprint(string(#__VA_ARGS__) + ",", __VA_ARGS__);
 
 #else
 

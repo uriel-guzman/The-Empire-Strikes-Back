@@ -19,7 +19,8 @@ struct PerTreap {
     pull();
   }
 
-  PerTreap(PerTreap* t) : left(t->left), right(t->right), pri(t->pri), sz(t->sz) {
+  PerTreap(PerTreap* t)
+      : left(t->left), right(t->right), pri(t->pri), sz(t->sz) {
     val = t->val;
   }
 
@@ -66,8 +67,6 @@ struct PerTreap {
   }
 
   auto split(int x) {
-    return split([&](PerTreap* n) {
-      return n->val <= x;
-    });
+    return split([&](PerTreap* n) { return n->val <= x; });
   }
 }* PerTreap::null = new PerTreap;

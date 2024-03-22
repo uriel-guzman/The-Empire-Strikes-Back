@@ -13,7 +13,7 @@ class Code(NamedTuple):
 
 
 # Only MacOS users, sorry :(
-icpcPath = "/Users/*/*/ICPC/Codes/"
+icpcPath = "/Users/pino/Documents/The-Empire-Strikes-Back/Codes"
 chaptersOrderName = "chaptersOrder.txt"
 bookName = "Book.tex"
 allFilesName = "allFiles.txt"
@@ -51,7 +51,8 @@ def startswith(x, prefixes):
 
 
 def isImage(extension):
-    return extension in [".png", ".jpeg", ".jpg"]
+    return False
+    # return extension in [".png", ".jpeg", ".jpg"]
 
 
 def getAllCodes(directory):

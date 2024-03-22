@@ -1,0 +1,14 @@
+compile() {
+  alias flags='-Wall -Wextra -Wfatal-errors -Wshadow -w -mcmodel=medium' 
+  g++-11 --std=c++17 $2 ${flags} $1.cpp -o $1
+}
+
+go() {
+  file=$1 
+  name="${file%.*}" 
+  compile ${name} $3
+  ./${name} < $2
+}
+
+run() { go $1 $2 "" } 
+debug() { go $1 $2 -DLOCAL }

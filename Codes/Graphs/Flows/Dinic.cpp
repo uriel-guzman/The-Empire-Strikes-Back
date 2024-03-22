@@ -36,8 +36,7 @@ struct Dinic {
   }
 
   F dfs(int u, F flow = numeric_limits<F>::max()) {
-    if (flow <= EPS || u == t)
-      return max<F>(0, flow);
+    if (flow <= EPS || u == t) return max<F>(0, flow);
     for (int& i = ptr[u]; i < sz(graph[u]); i++) {
       Edge& e = graph[u][i];
       if (e.cap - e.flow > EPS && dist[u] + 1 == dist[e.v]) {
@@ -56,8 +55,7 @@ struct Dinic {
     F flow = 0;
     while (bfs()) {
       fill(all(ptr), 0);
-      while (F pushed = dfs(s))
-        flow += pushed;
+      while (F pushed = dfs(s)) flow += pushed;
     }
     return flow;
   }

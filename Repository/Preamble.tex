@@ -150,9 +150,27 @@
 % \footnotesize
 \def\complexity#1{\texorpdfstring{$\mathcal{O}(#1)$}{O(#1)}}
 
+% \newcommand\addcode[2][]{
+% 	\vspace{-10pt}
+% 	\lstinputlisting[style=mine, linerange={#1}]{#2}
+% }
+
+% \newcommand\addcode[2][]{
+% 	\vspace{-10pt}
+% 	\lstinputlisting[style=mine]{#2}
+% }
+
+\makeatletter
 \newcommand\addcode[2][]{
 	\vspace{-10pt}
-	\lstinputlisting[style=mine, linerange={#1}]{#2}
+	\def\temp{#1}
+	\ifx\temp\@empty
+		\lstinputlisting[style=mine]{#2}
+	\else
+		\lstinputlisting[style=mine, linerange={#1}]{#2}
+	\fi
 }
+\makeatother
+
 
 \def\horizontalLine{\vspace{-5pt} \noindent\rule{\textwidth / 2}{0.5pt}}

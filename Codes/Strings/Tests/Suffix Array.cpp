@@ -2,7 +2,9 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-#define fore(i, l, r) for (auto i = (l) - ((l) > (r)); i != (r) - ((l) > (r)); i += 1 - 2 * ((l) > (r)))
+#define fore(i, l, r)                                      \
+  for (auto i = (l) - ((l) > (r)); i != (r) - ((l) > (r)); \
+       i += 1 - 2 * ((l) > (r)))
 #define sz(x) int(x.size())
 #define all(x) begin(x), end(x)
 #define f first
@@ -25,8 +27,7 @@ struct Result {
 
   void operator+=(bool flag) {
     total++;
-    if (flag)
-      cnt++;
+    if (flag) cnt++;
   }
 
   Result inv() {
@@ -36,7 +37,8 @@ struct Result {
   }
 
   friend ostream& operator<<(ostream& os, const Result& result) {
-    return os << fixed << setprecision(2) << 100.0 * double(result.cnt) / double(result.total) << "%";
+    return os << fixed << setprecision(2)
+              << 100.0 * double(result.cnt) / double(result.total) << "%";
   }
 };
 
@@ -53,14 +55,11 @@ struct Random {
     if (unique) {
       set<T> st;
       for (auto& x : v) {
-        do {
-          x = g();
-        } while (st.count(x));
+        do { x = g(); } while (st.count(x));
         st.insert(x);
       }
     } else {
-      for (auto& x : v)
-        x = g();
+      for (auto& x : v) x = g();
     }
     return v;
   }
@@ -80,21 +79,23 @@ struct Random {
   template <class T>
   vector<T> getArray(int n, T low, T high, bool unique = false) {
     if (unique)
-      if constexpr (is_integral_v<T>) {
-        assert(high - low + 1 >= n);
-      }
-    return fillArray<T>(n, unique, [&]() {
-      return get<T>(low, high);
-    });
+      if constexpr (is_integral_v<T>) { assert(high - low + 1 >= n); }
+    return fillArray<T>(n, unique, [&]() { return get<T>(low, high); });
   }
 
-  // Returns a vector of strings of size n, with all strings following 'pattern' and of sizes ranging from [minLength, maxLength].
-  vector<string> getStrings(int n, string pattern = "az", int minLength = 1, int maxLength = 10, bool unique = false) {
+  // Returns a vector of strings of size n, with all strings following 'pattern'
+  // and of sizes ranging from [minLength, maxLength].
+  vector<string> getStrings(int n,
+                            string pattern = "az",
+                            int minLength = 1,
+                            int maxLength = 10,
+                            bool unique = false) {
     if (unique) {
       // assert that is possible to generate n different strings
       int letters = 0;
       for (int i = 0; i < pattern.size(); i += 2)
-        letters += pattern[min<int>(i + 1, pattern.size() - 1)] - pattern[i] + 1;
+        letters +=
+            pattern[min<int>(i + 1, pattern.size() - 1)] - pattern[i] + 1;
       long long ways = 1;
       for (int length = minLength; length <= maxLength && ways < n; length++) {
         ways *= letters;
@@ -108,15 +109,17 @@ struct Random {
     });
   }
 
-  // Returns a string of size n following 'pattern'. The 'pattern' needs a pair of elements, it could be multiple pairs, i.e. "acDF15" all strings
-  // will be of characters of the set {[a,c],[D,F],[1,5]}
+  // Returns a string of size n following 'pattern'. The 'pattern' needs a pair
+  // of elements, it could be multiple pairs, i.e. "acDF15" all strings will be
+  // of characters of the set {[a,c],[D,F],[1,5]}
   string getString(int n, string pattern = "az") {
     assert(pattern.size());
     assert(n >= 0);
     string s;
     while (n--) {
       int k = rng() % (pattern.size() / 2);
-      s += get<char>(pattern[2 * k], pattern[min<int>(2 * k + 1, pattern.size() - 1)]);
+      s += get<char>(pattern[2 * k],
+                     pattern[min<int>(2 * k + 1, pattern.size() - 1)]);
     }
     return s;
   }
@@ -133,7 +136,11 @@ struct Random {
 
   // Creates a graph with weights in range [low, high].
   template <class T>
-  vector<Edge<T>> getGraph(int numNodes, int numEdges, T low = 1, T high = 1, bool uniqueEdges = false) {
+  vector<Edge<T>> getGraph(int numNodes,
+                           int numEdges,
+                           T low = 1,
+                           T high = 1,
+                           bool uniqueEdges = false) {
     if (uniqueEdges) {
       long long maxNumEdges = 1LL * numNodes * (numNodes - 1) / 2LL;
       assert(numEdges <= maxNumEdges);
@@ -170,23 +177,20 @@ struct SuffixArray {
 
   SuffixArray(const T& x) : n(sz(x) + 1), s(x), sa(n), pos(n) {
     s.pb(0);
-    fore (i, 0, n)
-      sa[i] = i, pos[i] = s[i];
+    fore (i, 0, n) sa[i] = i, pos[i] = s[i];
     vector<int> nsa(sa), npos(n), cnt(max(260, n), 0);
     for (int k = 0; k < n; k ? k *= 2 : k++) {
       fill(all(cnt), 0);
-      fore (i, 0, n)
-        nsa[i] = (sa[i] - k + n) % n, cnt[pos[i]]++;
+      fore (i, 0, n) nsa[i] = (sa[i] - k + n) % n, cnt[pos[i]]++;
       partial_sum(all(cnt), cnt.begin());
-      for (int i = n - 1; i >= 0; i--)
-        sa[--cnt[pos[nsa[i]]]] = nsa[i];
+      for (int i = n - 1; i >= 0; i--) sa[--cnt[pos[nsa[i]]]] = nsa[i];
       for (int i = 1, cur = 0; i < n; i++) {
-        cur += (pos[sa[i]] != pos[sa[i - 1]] || pos[(sa[i] + k) % n] != pos[(sa[i - 1] + k) % n]);
+        cur += (pos[sa[i]] != pos[sa[i - 1]] ||
+                pos[(sa[i] + k) % n] != pos[(sa[i - 1] + k) % n]);
         npos[sa[i]] = cur;
       }
       pos = npos;
-      if (pos[sa[n - 1]] >= n - 1)
-        break;
+      if (pos[sa[n - 1]] >= n - 1) break;
     }
     dp[0].assign(n, 0);
     for (int i = 0, j = pos[0], k = 0; i < n - 1; ++i, ++k) {
@@ -201,31 +205,25 @@ struct SuffixArray {
   }
 
   int lcp(int l, int r) {
-    if (l == r)
-      return n - l;
+    if (l == r) return n - l;
     tie(l, r) = minmax(pos[l], pos[r]);
     int k = log2(r - l);
     return min(dp[k][l + 1], dp[k][r - (1 << k) + 1]);
   }
 
-  auto at(int i, int j) {
-    return sa[i] + j < n ? s[sa[i] + j] : 'z' + 1;
-  }
+  auto at(int i, int j) { return sa[i] + j < n ? s[sa[i] + j] : 'z' + 1; }
 
   int count(T& t) {
     int l = 0, r = n - 1;
     fore (i, 0, sz(t)) {
       int p = l, q = r;
       for (int k = n; k > 0; k >>= 1) {
-        while (p + k < r && at(p + k, i) < t[i])
-          p += k;
-        while (q - k > l && t[i] < at(q - k, i))
-          q -= k;
+        while (p + k < r && at(p + k, i) < t[i]) p += k;
+        while (q - k > l && t[i] < at(q - k, i)) q -= k;
       }
       l = (at(p, i) == t[i] ? p : p + 1);
       r = (at(q, i) == t[i] ? q : q - 1);
-      if (at(l, i) != t[i] && at(r, i) != t[i] || l > r)
-        return 0;
+      if (at(l, i) != t[i] && at(r, i) != t[i] || l > r) return 0;
     }
     return r - l + 1;
   }
@@ -234,8 +232,7 @@ struct SuffixArray {
     // s[a.f ... a.s] < s[b.f ... b.s]
     int common = lcp(a.f, b.f);
     int szA = a.s - a.f + 1, szB = b.s - b.f + 1;
-    if (common >= min(szA, szB))
-      return tie(szA, a) < tie(szB, b);
+    if (common >= min(szA, szB)) return tie(szA, a) < tie(szB, b);
     return s[a.f + common] < s[b.f + common];
   }
 
@@ -268,9 +265,7 @@ void testSuffixArray() {
     vector<int> order;
     tie(cuts, order) = allCuts(str);
 
-    sort(all(order), [&](int i, int j) {
-      return cuts[i] < cuts[j];
-    });
+    sort(all(order), [&](int i, int j) { return cuts[i] < cuts[j]; });
 
     fore (i, 1, sa.sa.size()) {
       if (sa.sa[i] != order[i - 1]) {
@@ -298,9 +293,7 @@ void testAt() {
     fore (i, 1, sa.sa.size()) {
       int length = str.size() - sa.sa[i];
       result += (length == cuts[i - 1].size());
-      fore (pos, 0, length) {
-        result += (sa.at(i, pos) == cuts[i - 1][pos]);
-      }
+      fore (pos, 0, length) { result += (sa.at(i, pos) == cuts[i - 1][pos]); }
     }
   }
 

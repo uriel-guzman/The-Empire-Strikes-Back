@@ -13,8 +13,7 @@ int guni(int u, int p = 0, int len = 0) {
   for (auto& v : graph[u])
     if (v != p) {
       sz[u] += guni(v, u, len + 1);
-      if (sz[v] > sz[graph[u][0]] || p == graph[u][0])
-        swap(v, graph[u][0]);
+      if (sz[v] > sz[graph[u][0]] || p == graph[u][0]) swap(v, graph[u][0]);
     }
   return sz[u];
 }
@@ -23,9 +22,7 @@ void f(int u) {
   // depth[u] + need == K + 2 * depth[cur]
   // need = K + 2 * depth[cur] - depth[u]
   int need = K + 2 * depth[cur] - depth[u];
-  if (need >= 0) {
-    paths += cnt[need];
-  }
+  if (need >= 0) { paths += cnt[need]; }
 }
 
 void compute(int u, int p, int x, bool op) {
@@ -35,20 +32,19 @@ void compute(int u, int p, int x, bool op) {
     cnt[depth[u]] += x;
   }
   for (auto& v : graph[u])
-    if (v != p)
-      compute(v, u, x, op);
+    if (v != p) compute(v, u, x, op);
 }
 
 void solve(int u, int p, bool keep = 0) {
   fore (i, sz(graph[u]), 0)
-    if (graph[u][i] != p)
-      solve(graph[u][i], u, !i);
+    if (graph[u][i] != p) solve(graph[u][i], u, !i);
 
   cur = u;
   for (int i = 1; i < sz(graph[u]); i++) { // <- don't change it with a fore
     int v = graph[u][i];
     if (v != p) {
-      // Check paths from a node in the subtree of v to any other in the data structure.
+      // Check paths from a node in the subtree of v to any other in the data
+      // structure.
       compute(v, u, +1, 1);
 
       // Update the data structure with subtree of v.
@@ -61,6 +57,5 @@ void solve(int u, int p, bool keep = 0) {
     cnt[depth[u]]++;
   }
 
-  if (!keep)
-    compute(u, p, -1, 0); // remove
+  if (!keep) compute(u, p, -1, 0); // remove
 }

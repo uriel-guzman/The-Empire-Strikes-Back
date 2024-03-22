@@ -6,9 +6,7 @@ struct AhoCorasick {
 
   vector<Node> trie;
 
-  AhoCorasick(int n = 1) {
-    trie.reserve(n), newNode();
-  }
+  AhoCorasick(int n = 1) { trie.reserve(n), newNode(); }
 
   int newNode() {
     trie.pb({});
@@ -17,16 +15,14 @@ struct AhoCorasick {
 
   void insert(string& s, int u = 0) {
     for (char c : s) {
-      if (!trie[u][c])
-        trie[u][c] = newNode();
+      if (!trie[u][c]) trie[u][c] = newNode();
       u = trie[u][c];
     }
     trie[u].cnt++, trie[u].isWord = 1;
   }
 
   int next(int u, char c) {
-    while (u && !trie[u].count(c))
-      u = trie[u].link;
+    while (u && !trie[u].count(c)) u = trie[u].link;
     return trie[u][c];
   }
 
@@ -47,8 +43,7 @@ struct AhoCorasick {
 
   template <class F>
   void goUp(int u, F f) {
-    for (; u != 0; u = trie[u].up)
-      f(u);
+    for (; u != 0; u = trie[u].up) f(u);
   }
 
   int match(string& s, int u = 0) {
@@ -60,7 +55,5 @@ struct AhoCorasick {
     return ans;
   }
 
-  Node& operator[](int u) {
-    return trie[u];
-  }
+  Node& operator[](int u) { return trie[u]; }
 };

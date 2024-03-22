@@ -21,9 +21,7 @@ struct Hashing {
     }
   }
 
-  Hash query(int l, int r) {
-    return 1LL * (h[r + 1] - h[l] + M) * ipw[l] % M;
-  }
+  Hash query(int l, int r) { return 1LL * (h[r + 1] - h[l] + M) * ipw[l] % M; }
 
   static pair<Hash, int> merge(vector<pair<Hash, int>>& cuts) {
     // {Hash, cut´s length}

@@ -5,10 +5,8 @@ bool isConvex(const vector<Pt>& pts) {
     Pt a = pts[(i + 1) % n] - pts[i];
     Pt b = pts[(i + 2) % n] - pts[(i + 1) % n];
     int dir = sgn(a.cross(b));
-    if (dir > 0)
-      pos = 1;
-    if (dir < 0)
-      neg = 1;
+    if (dir > 0) pos = 1;
+    if (dir < 0) neg = 1;
   }
   return !(pos && neg);
 }

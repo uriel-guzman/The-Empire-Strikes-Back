@@ -1,12 +1,10 @@
 ull amountOfDivisors(ull n) {
   ull cnt = 1;
   for (auto p : primes) {
-    if (1LL * p * p * p > n)
-      break;
+    if (1LL * p * p * p > n) break;
     if (n % p == 0) {
       ull k = 0;
-      while (n > 1 && n % p == 0)
-        n /= p, ++k;
+      while (n > 1 && n % p == 0) n /= p, ++k;
       cnt *= (k + 1);
     }
   }

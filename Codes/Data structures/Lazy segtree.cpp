@@ -15,8 +15,7 @@ struct Lazy {
   }
 
   void push() {
-    if (!lazy)
-      return;
+    if (!lazy) return;
     sum += (r - l + 1) * lazy;
     if (l != r) {
       left->lazy += lazy;
@@ -25,14 +24,11 @@ struct Lazy {
     lazy = 0;
   }
 
-  void pull() {
-    sum = left->sum + right->sum;
-  }
+  void pull() { sum = left->sum + right->sum; }
 
   void update(int ll, int rr, lli v) {
     push();
-    if (rr < l || r < ll)
-      return;
+    if (rr < l || r < ll) return;
     if (ll <= l && r <= rr) {
       lazy += v;
       push();
@@ -45,10 +41,8 @@ struct Lazy {
 
   lli query(int ll, int rr) {
     push();
-    if (rr < l || r < ll)
-      return 0;
-    if (ll <= l && r <= rr)
-      return sum;
+    if (rr < l || r < ll) return 0;
+    if (ll <= l && r <= rr) return sum;
     return left->query(ll, rr) + right->query(ll, rr);
   }
 };

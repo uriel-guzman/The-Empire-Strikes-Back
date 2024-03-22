@@ -9,19 +9,16 @@ struct Mat : vector<vector<T>> {
     Mat<T> ans(n, other.m);
     fore (k, 0, m)
       fore (i, 0, n)
-        fore (j, 0, other.m)
-          ans[i][j] += (*this)[i][k] * other[k][j];
+        fore (j, 0, other.m) ans[i][j] += (*this)[i][k] * other[k][j];
     return ans;
   }
 
   Mat<T> pow(lli k) {
     assert(n == m);
     Mat<T> ans(n, n);
-    fore (i, 0, n)
-      ans[i][i] = 1;
+    fore (i, 0, n) ans[i][i] = 1;
     for (; k > 0; k >>= 1) {
-      if (k & 1)
-        ans = ans * *this;
+      if (k & 1) ans = ans * *this;
       *this = *this * *this;
     }
     return ans;

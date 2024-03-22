@@ -15,19 +15,11 @@ $ dp[i][j] = \min_{k < j}(dp[i - 1][k] + b[k] * a[j]) $ \\
 $ b[j] \geq b[j + 1] \text{ optionally } a[i] \leq a[i + 1] $ \\ 
 \addcode{../Codes/Dynamic programming/Convex hull trick.cpp}
 
-\subsection{Digit dp }
-\input{../Codes/Dynamic programming/Digit dp.tex}
-\addcode{../Codes/Dynamic programming/Digit dp.cpp}
-
 \subsection{Divide and conquer \complexity{k \cdot n^2} $\Rightarrow$ \complexity{k \cdot nlogn}}
 
 Split the array of size $n$ into $k$ continuous groups. $k \leq n$ \\
 $ cost(a, c) + cost(b, d) \leq cost(a, d) + cost(b, c)$ with $a \leq b \leq c \leq d$ \\
 \addcode{../Codes/Dynamic programming/Divide and conquer.cpp}
-
-\subsection{Knapsack 01 \complexity{n \cdot MaxW}}
-
-\addcode{../Codes/Dynamic programming/Knapsack 01.cpp}
 
 \subsection{Knuth \complexity{n^3} $\Rightarrow$ \complexity{n^2}}
 
@@ -44,7 +36,3 @@ If TLE change \lstinline{Mat} to \lstinline{array<array<T, N>, N>} \\
 
 \subsection{Inverse SOS dp }
 \addcode{../Codes/Dynamic programming/Inverse SOS dp.cpp}
-
-\subsection{Steiner }
-\addcode{../Codes/Dynamic programming/Steiner.cpp}
-\includegraphics[width=4.5cm]{../Codes/Dynamic programming/SteinerTree.png}

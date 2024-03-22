@@ -23,6 +23,5 @@ fore (c, 0, m) {
     }
 
   fore (r, 0, n + 1)
-    fore (mask, 0, 1 << n)
-      dp[c & 1][r][mask] = 0;
+    fore (mask, 0, 1 << n) dp[c & 1][r][mask] = 0;
 }

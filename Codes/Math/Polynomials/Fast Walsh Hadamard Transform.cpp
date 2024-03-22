@@ -5,15 +5,11 @@ vector<T> FWHT(vector<T> f) {
     for (int i = 0; i < n; i++)
       if (i >> k & 1) {
         int j = i ^ (1 << k);
-        if (op == '^')
-          f[j] += f[i], f[i] = f[j] - 2 * f[i];
-        if (op == '|')
-          f[i] += (inv ? -1 : 1) * f[j];
-        if (op == '&')
-          f[j] += (inv ? -1 : 1) * f[i];
+        if (op == '^') f[j] += f[i], f[i] = f[j] - 2 * f[i];
+        if (op == '|') f[i] += (inv ? -1 : 1) * f[j];
+        if (op == '&') f[j] += (inv ? -1 : 1) * f[i];
       }
   if (op == '^' && inv)
-    for (auto& i : f)
-      i /= n;
+    for (auto& i : f) i /= n;
   return f;
 }

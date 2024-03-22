@@ -5,14 +5,12 @@ struct Fenwick {
   Fenwick(int n) : fenw(n, T()) {} // 0-indexed
 
   void update(int i, T v) {
-    for (; i < sz(fenw); i |= i + 1)
-      fenw[i] += v;
+    for (; i < sz(fenw); i |= i + 1) fenw[i] += v;
   }
 
   T query(int i) {
     T v = T();
-    for (; i >= 0; i &= i + 1, --i)
-      v += fenw[i];
+    for (; i >= 0; i &= i + 1, --i) v += fenw[i];
     return v;
   }
 
