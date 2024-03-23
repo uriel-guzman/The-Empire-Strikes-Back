@@ -38,7 +38,7 @@ Knuth
 Matrix exponentiation
 SOS dp
 Inverse SOS dp
-~Steiner
+Steiner
 ~SteinerTree
 
 Grundy numbers

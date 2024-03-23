@@ -51,8 +51,8 @@ def startswith(x, prefixes):
 
 
 def isImage(extension):
-    return False
-    # return extension in [".png", ".jpeg", ".jpg"]
+    # return False
+    return extension in [".png", ".jpeg", ".jpg"]
 
 
 def getAllCodes(directory):
@@ -187,9 +187,10 @@ def writeBook(allFiles, bookName):
                 # Until I find something better, I'll append all latex file :c
                 writeln(chapter, toString(path, start=1))
         elif isImage(file.extension):
+            continue
             # print(file)
             # writeln(chapter, "\\begin{figure} \centering")
-            writeln(chapter, f"\includegraphics[width=4.5cm]{{../{path}}}")
+            # writeln(chapter, f"\includegraphics[width=4.5cm]{{../{path}}}")
             # writeln(chapter, f"{file.name}")
             # writeln(chapter, "\end{figure}")
 
