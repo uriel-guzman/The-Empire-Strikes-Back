@@ -18,7 +18,8 @@ struct Eertree {
   }
 
   int next(int u) {
-    while (s[sz(s) - trie[u].len - 2] != s.back()) u = trie[u].link;
+    while (s[sz(s) - trie[u].len - 2] != s.back()) 
+      u = trie[u].link;
     return u;
   }
 
@@ -37,7 +38,8 @@ struct Eertree {
   Node& operator[](int u) { return trie[u]; }
 
   void substringOccurrences() {
-    fore (u, sz(s), 0) trie[trie[u].link].occ += trie[u].occ;
+    fore (u, sz(s), 0) 
+      trie[trie[u].link].occ += trie[u].occ;
   }
 
   lli occurences(string& s, int u = 0) {

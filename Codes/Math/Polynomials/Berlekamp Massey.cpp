@@ -1,19 +1,21 @@
 template <class T>
-struct BerlekampMassey {
+struct Berlekamp {
   int n;
   vector<T> s, t, pw[20];
 
   vector<T> combine(vector<T> a, vector<T> b) {
     vector<T> ans(sz(t) * 2 + 1);
     for (int i = 0; i <= sz(t); i++)
-      for (int j = 0; j <= sz(t); j++) ans[i + j] += a[i] * b[j];
+      for (int j = 0; j <= sz(t); j++) 
+        ans[i + j] += a[i] * b[j];
     for (int i = 2 * sz(t); i > sz(t); --i)
-      for (int j = 0; j < sz(t); j++) ans[i - 1 - j] += ans[i] * t[j];
+      for (int j = 0; j < sz(t); j++) 
+        ans[i - 1 - j] += ans[i] * t[j];
     ans.resize(sz(t) + 1);
     return ans;
   }
 
-  BerlekampMassey(const vector<T>& s) : n(sz(s)), t(n), s(s) {
+  Berlekamp(const vector<T>& s) : n(sz(s)), t(n), s(s) {
     vector<T> x(n), tmp;
     t[0] = x[0] = 1;
     T b = 1;

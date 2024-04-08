@@ -38,12 +38,13 @@ struct XorBasis {
   optional<vector<int>> recover(Num x) {
     auto v = find(x);
     if (!v) return nullopt;
-    Num tmp;
+    Num t;
     fore (i, D, 0)
-      if (v.value()[i]) tmp ^= keep[i];
+      if (v.value()[i]) t ^= keep[i];
     vector<int> ans;
-    for (int i = tmp._Find_first(); i < D; i = tmp._Find_next(i))
+    for (int i = t._Find_first(); i < D; i = t._Find_next(i))
       ans.pb(from[i]);
+    
     return ans;
   }
 
@@ -54,7 +55,8 @@ struct XorBasis {
     fore (i, D, 0)
       if (basis[i]) {
         lli low = tot / 2;
-        if ((low < k && v[i] == 0) || (low >= k && v[i])) v ^= basis[i];
+        if ((low < k && v[i] == 0) || (low >= k && v[i])) 
+          v ^= basis[i];
         if (low < k) k -= low;
         tot /= 2;
       }

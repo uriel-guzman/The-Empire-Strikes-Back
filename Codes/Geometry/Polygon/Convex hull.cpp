@@ -1,7 +1,8 @@
 vector<Pt> convexHull(vector<Pt> pts) {
   vector<Pt> hull;
-  sort(all(pts),
-       [&](Pt a, Pt b) { return a.x == b.x ? a.y < b.y : a.x < b.x; });
+  sort(all(pts), [&](Pt a, Pt b) { 
+    return a.x == b.x ? a.y < b.y : a.x < b.x; 
+  });
   pts.erase(unique(all(pts)), pts.end());
   fore (i, 0, sz(pts)) {
     while (sz(hull) >= 2 && hull.back().dir(pts[i], hull[sz(hull) - 2]) < 0)

@@ -3,10 +3,12 @@ struct HopcroftKarp {
   vector<vector<int>> graph;
   vector<int> dist, match;
 
-  HopcroftKarp(int k)
-      : n(k + 1), graph(n), dist(n), match(n, 0) {} // 1-indexed!!
+  HopcroftKarp(int k) : n(k + 1), graph(n), dist(n), 
+                        match(n, 0) {} // 1-indexed!!
 
-  void add(int u, int v) { graph[u].pb(v), graph[v].pb(u); }
+  void add(int u, int v) { 
+    graph[u].pb(v), graph[v].pb(u); 
+  }
 
   bool bfs() {
     queue<int> qu;

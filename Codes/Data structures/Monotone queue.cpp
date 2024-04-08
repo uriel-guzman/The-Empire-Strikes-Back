@@ -1,5 +1,4 @@
 // MonotoneQueue<int, greater<int>> = Max-MonotoneQueue
-
 template <class T, class F = less<T>>
 struct MonotoneQueue {
   deque<pair<T, int>> q;

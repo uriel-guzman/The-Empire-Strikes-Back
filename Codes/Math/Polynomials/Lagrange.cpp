@@ -8,7 +8,8 @@ struct Lagrange {
   }
 
   T operator[](lli k) {
-    for (int i = n - 1; i >= 0; i--) suf[i] = suf[i + 1] * (k - i);
+    for (int i = n - 1; i >= 0; i--) 
+      suf[i] = suf[i + 1] * (k - i);
 
     T pref = 1, val = 0;
     fore (i, 0, n) {

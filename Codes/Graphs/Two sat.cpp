@@ -21,13 +21,14 @@ struct TwoSat {
     function<void(int)> dfs = [&](int u) {
       b.pb(id[u] = sz(s)), s.pb(u);
       for (int v : imp[u]) {
-        if (!id[v])
-          dfs(v);
+        if (!id[v]) dfs(v);
         else
-          while (id[v] < b.back()) b.pop_back();
+          while (id[v] < b.back()) 
+            b.pop_back();
       }
       if (id[u] == b.back())
-        for (b.pop_back(), ++k; id[u] < sz(s); s.pop_back()) id[s.back()] = k;
+        for (b.pop_back(),++k; id[u] < sz(s); s.pop_back()) 
+          id[s.back()] = k;
     };
     vector<int> val(n);
     fore (u, 0, sz(imp))

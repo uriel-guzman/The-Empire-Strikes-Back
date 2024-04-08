@@ -9,7 +9,8 @@ bool miller(ull n) {
   ull k = __builtin_ctzll(n - 1), d = n >> k;
   for (ull p : {2, 325, 9375, 28178, 450775, 9780504, 1795265022}) {
     ull x = fpow(p % n, d, n), i = k;
-    while (x != 1 && x != n - 1 && p % n && i--) x = mul(x, x, n);
+    while (x != 1 && x != n - 1 && p % n && i--) 
+      x = mul(x, x, n);
     if (x != n - 1 && i != k) return 0;
   }
   return 1;

@@ -19,14 +19,16 @@ struct Cir : Pt {
     return le(l, 0) ? IN : eq(l, 0) ? ON : OUT;
   }
 
-  Pt projection(Pt p) { return *this + (p - *this).unit() * r; }
-
-  vector<Pt> tangency(Pt p) {
-    // point outside the circle
+  Pt projection(Pt p) { 
+    return *this + (p - *this).unit() * r; 
+  }
+    
+  vector<Pt> tangency(Pt p) { // point outside the circle
     Pt v = (p - *this).unit() * r;
     ld d2 = (p - *this).norm(), d = sqrt(d2);
     if (leq(d, 0)) return {}; // on circle, no tangent
-    Pt v1 = v * (r / d), v2 = v.perp() * (sqrt(d2 - r * r) / d);
+    Pt v1 = v * (r / d);
+    Pt v2 = v.perp() * (sqrt(d2 - r * r) / d);
     return {*this + v1 - v2, *this + v1 + v2};
   }
 
@@ -47,8 +49,8 @@ struct Cir : Pt {
   template <class Line>
   vector<Pt> intersection(Line l) {
     // for a segment you need to check that the point lies on the segment
-    ld h2 =
-        r * r - l.v.cross(*this - l.a) * l.v.cross(*this - l.a) / l.v.norm();
+    ld h2 = r * r - l.v.cross(*this - l.a) * 
+            l.v.cross(*this - l.a) / l.v.norm();
     Pt p = l.a + l.v * l.v.dot(*this - l.a) / l.v.norm();
     if (eq(h2, 0)) return {p}; // line tangent to circle
     if (le(h2, 0)) return {}; // no intersection

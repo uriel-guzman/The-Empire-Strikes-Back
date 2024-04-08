@@ -1,0 +1,34 @@
+compile() {
+  alias flags='-Wall -Wextra -Wfatal-errors -Wshadow -w -mcmodel=medium' 
+  g++-11 --std=c++17 $2 ${flags} $1.cpp -o $1
+}
+
+go() {
+  file=$1 
+  name="${file%.*}" 
+  compile ${name} $3
+  ./${name} < $2
+}
+
+run() { go $1 $2 "" } 
+debug() { go $1 $2 -DLOCAL }
+
+random() { # Make small test cases!!!
+  red='\x1B[0;31m' green='\x1B[0;31m' removeColor='\x1B[0m'
+  file=$1
+  name="${file%.*}" 
+  compile ${name} ""
+  compile gen ""
+  compile brute "" 
+  for ((i = 1; i <= 300; i++)); do
+    printf "Test case #${i}"
+    ./gen > tmp
+    diff -ywi <(./name < tmp) <(./brute < tmp) > $nameDiff
+    if [[ $? -eq 0 ]]; then
+      printf "${green} Accepted ${removeColor}\n"
+    else
+      printf "${red} Wrong answer ${removeColor}\n"
+      break
+    fi
+  done
+}

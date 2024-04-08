@@ -3,11 +3,8 @@ struct Pt {
   explicit Pt(ld x = 0, ld y = 0) : x(x), y(y) {}
 
   Pt operator+(Pt p) const { return Pt(x + p.x, y + p.y); }
-
   Pt operator-(Pt p) const { return Pt(x - p.x, y - p.y); }
-
   Pt operator*(ld k) const { return Pt(x * k, y * k); }
-
   Pt operator/(ld k) const { return Pt(x / k, y / k); }
 
   ld dot(Pt p) const {
@@ -26,17 +23,14 @@ struct Pt {
   }
 
   ld norm() const { return x * x + y * y; }
-
   ld length() const { return sqrtl(norm()); }
-
   Pt unit() const { return (*this) / length(); }
+  Pt perp() const { return Pt(-y, x); }
 
   ld angle() const {
     ld ang = atan2(y, x);
     return ang + (ang < 0 ? 2 * acos(-1) : 0);
   }
-
-  Pt perp() const { return Pt(-y, x); }
 
   Pt rotate(ld angle) const {
     // counter-clockwise rotation in radians

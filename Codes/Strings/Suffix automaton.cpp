@@ -6,7 +6,9 @@ struct SuffixAutomaton {
   vector<Node> trie;
   int last;
 
-  SuffixAutomaton(int n = 1) { trie.reserve(2 * n), last = newNode(); }
+  SuffixAutomaton(int n = 1) { 
+    trie.reserve(2 * n), last = newNode(); 
+  }
 
   int newNode() {
     trie.pb({});
@@ -59,7 +61,9 @@ struct SuffixAutomaton {
     // trie[u].occ = 1, trie[clone].occ = 0
     vector<int> who(sz(trie) - 1);
     iota(all(who), 1);
-    sort(all(who), [&](int u, int v) { return trie[u].len > trie[v].len; });
+    sort(all(who), [&](int u, int v) { 
+      return trie[u].len > trie[v].len; 
+    });
     for (int u : who) {
       int l = trie[u].link;
       trie[l].occ += trie[u].occ;

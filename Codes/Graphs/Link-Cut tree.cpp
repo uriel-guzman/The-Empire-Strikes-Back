@@ -48,7 +48,8 @@ struct LinkCut {
     };
     auto dir = [&](Node* u) {
       if (!u->par) return -1;
-      return u->par->left == u ? 0 : (u->par->right == u ? 1 : -1);
+      return u->par->left == u ? 0 : 
+             (u->par->right == u ? 1 : -1);
     };
     auto rotate = [&](Node* u) {
       Node *p = u->par, *g = p->par;

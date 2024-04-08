@@ -4,7 +4,7 @@ struct Wav {
   vector<int> amt;
 
   template <class Iter>
-  Wav(int lo, int hi, Iter b, Iter e) : lo(lo), hi(hi) { // array 1-indexed
+  Wav(int lo, int hi, Iter& b, Iter& e) : lo(lo), hi(hi) { // array 1-indexed, check on reference (&)
     if (lo == hi || b == e) return;
     amt.reserve(e - b + 1);
     amt.pb(0);

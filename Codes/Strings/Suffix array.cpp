@@ -10,9 +10,11 @@ struct SuffixArray {
     vector<int> nsa(sa), npos(n), cnt(max(260, n), 0);
     for (int k = 0; k < n; k ? k *= 2 : k++) {
       fill(all(cnt), 0);
-      fore (i, 0, n) nsa[i] = (sa[i] - k + n) % n, cnt[pos[i]]++;
+      fore (i, 0, n) 
+        nsa[i] = (sa[i] - k + n) % n, cnt[pos[i]]++;
       partial_sum(all(cnt), cnt.begin());
-      for (int i = n - 1; i >= 0; i--) sa[--cnt[pos[nsa[i]]]] = nsa[i];
+      for (int i = n - 1; i >= 0; i--) 
+        sa[--cnt[pos[nsa[i]]]] = nsa[i];
       for (int i = 1, cur = 0; i < n; i++) {
         cur += (pos[sa[i]] != pos[sa[i - 1]] ||
                 pos[(sa[i] + k) % n] != pos[(sa[i - 1] + k) % n]);
@@ -22,7 +24,8 @@ struct SuffixArray {
       if (pos[sa[n - 1]] >= n - 1) break;
     }
     sp[0].assign(n, 0);
-    for (int i = 0, j = pos[0], k = 0; i < n - 1; ++i, ++k) {
+    for (int i = 0, j = pos[0], k = 0; i < n - 1; ++i, ++k) 
+    {
       while (k >= 0 && s[i] != s[sa[j - 1] + k])
         sp[0][j] = k--, j = pos[sa[j] + 1];
     }
@@ -40,7 +43,9 @@ struct SuffixArray {
     return min(sp[k][l + 1], sp[k][r - (1 << k) + 1]);
   }
 
-  auto at(int i, int j) { return sa[i] + j < n ? s[sa[i] + j] : 'z' + 1; }
+  auto at(int i, int j) { 
+    return sa[i] + j < n ? s[sa[i] + j] : 'z' + 1;
+  }
 
   int count(T& t) {
     int l = 0, r = n - 1;
@@ -61,7 +66,8 @@ struct SuffixArray {
     // s[a.f ... a.s] < s[b.f ... b.s]
     int common = lcp(a.f, b.f);
     int szA = a.s - a.f + 1, szB = b.s - b.f + 1;
-    if (common >= min(szA, szB)) return tie(szA, a) < tie(szB, b);
+    if (common >= min(szA, szB)) 
+      return tie(szA, a) < tie(szB, b);
     return s[a.f + common] < s[b.f + common];
   }
 };

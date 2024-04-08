@@ -22,7 +22,9 @@ struct DynamicConnectivity {
     mp.erase(minmax(u, v));
   }
 
-  void query() { queries.push_back({'?', -1, -1, ++timer}); }
+  void query() { 
+    queries.push_back({'?', -1, -1, ++timer}); 
+  }
 
   void solve(int l, int r) {
     if (l == r) {

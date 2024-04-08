@@ -4,7 +4,8 @@ int contains(const vector<Pt>& pts, Pt p) {
     Pt a = pts[i], b = pts[(i + 1) % n];
     if (ge(a.y, b.y)) swap(a, b);
     if (Seg(a, b).contains(p)) return ON;
-    rays ^= (leq(a.y, p.y) && le(p.y, b.y) && p.dir(a, b) > 0);
+    rays ^= leq(a.y, p.y) && le(p.y, b.y) &&
+            p.dir(a, b) > 0;
   }
   return rays & 1 ? IN : OUT;
 }

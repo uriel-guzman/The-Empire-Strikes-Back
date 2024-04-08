@@ -36,33 +36,43 @@ void processPath(int u, int v, F f) {
 
 int lca(int u, int v) {
   int last = -1;
-  processPath(u, v, [&](int l, int r) { last = who[l]; });
+  processPath(u, v, [&](int l, int r) {
+    last = who[l];
+  });
   return last;
 }
 
 void updatePath(int u, int v, lli z) {
-  processPath(u, v, [&](int l, int r) { tree->update(l, r, z); });
+  processPath(u, v, [&](int l, int r) {
+    tree->update(l, r, z);
+  });
 }
 
-void updateSubtree(int u, lli z) { tree->update(tin[u], tout[u], z); }
+void updateSubtree(int u, lli z) {
+  tree->update(tin[u], tout[u], z);
+}
 
 lli queryPath(int u, int v) {
   lli sum = 0;
-  processPath(u, v, [&](int l, int r) { sum += tree->query(l, r); });
+  processPath(u, v, [&](int l, int r) {
+    sum += tree->query(l, r);
+  });
   return sum;
 }
 
 lli queryPathWithOrder(int u, int v, int x) {
-  int _lca = lca(u, v);
-  assert(_lca != -1);
+  int _lca = lca(u, v); assert(_lca != -1);
 
   vector<pair<int, int>> firstHalf, secondHalf, ranges;
-  processPath(
-      u, _lca, [&](int l, int r) { firstHalf.push_back(make_pair(r, l)); });
+  processPath(u, _lca, [&] (int l, int r) {
+    firstHalf.push_back(make_pair(r, l));
+  });
 
-  processPath(_lca, v, [&](int l, int r) {
+  processPath(_lca, v, [&] (int l, int r) {
     l += tin[_lca] == l;
-    if (l <= r) { secondHalf.push_back(make_pair(l, r)); }
+    if (l <= r) {
+      secondHalf.push_back(make_pair(l, r));
+    }
   });
   reverse(all(secondHalf));
 
@@ -72,15 +82,18 @@ lli queryPathWithOrder(int u, int v, int x) {
   int who = -1;
   for (auto [begin, end] : ranges) {
     // if begin <= end: left to right, aka. normal
-    // if begin > end: right to left,
+    // if begin > end: right to left, 
     // e.g. begin = 3, end = 1
     // order must go 3, 2, 1
-
-    // e.g. first node in the path(u, v) with value less than or equal to x
-    if ((who = tree->solve(begin, end, x)) != -1) { break; }
+    if ((who = tree->solve(begin, end, x)) != -1) { 
+      // e.g. first node in the path(u, v) with value less than or equal to x
+      break;
+    }
   }
 
   return who;
 }
 
-lli querySubtree(int u) { return tree->query(tin[u], tout[u]); }
+lli querySubtree(int u) {
+  return tree->query(tin[u], tout[u]);
+}
