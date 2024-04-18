@@ -4,8 +4,7 @@
 \input{../Codes/Dynamic programming/All submasks of a mask.tex}
 
 \subsection{Broken profile \complexity{n \cdot m \cdot 2^n} with $n \leq m$}
-
-Cuenta todas las maneras en las que puedes acomodar fichas de 1x2 y 2x1 en un tablero $n \cdot m$ \\
+\input{../Codes/Dynamic programming/Broken profile.tex}
 \addcode{../Codes/Dynamic programming/Broken profile.cpp}
 
 \subsection{Convex hull trick \complexity{n^2} $\Rightarrow$ \complexity{n}}
@@ -23,7 +22,8 @@ $ cost(a, c) + cost(b, d) \leq cost(a, d) + cost(b, c)$ with $a \leq b \leq c \l
 
 \subsection{Knuth \complexity{n^3} $\Rightarrow$ \complexity{n^2}}
 
-$ dp[l][r] = \min_{l \leq k \leq r}\{dp[l][k] + dp[k][r]\} + cost(l, r)$ \\
+\input{../Codes/Dynamic programming/Knuth.tex}
+% $ dp[l][r] = \min_{l \leq k \leq r}\{dp[l][k] + dp[k][r]\} + cost(l, r)$ \\
 \addcode{../Codes/Dynamic programming/Knuth.cpp}
 
 \subsection{Matrix exponentiation \complexity{n^3 \cdot logn}}
@@ -34,8 +34,8 @@ If TLE change \lstinline{Mat} to \lstinline{array<array<T, N>, N>} \\
 \subsection{SOS dp }
 \addcode{../Codes/Dynamic programming/SOS dp.cpp}
 
-\subsection{Inverse SOS dp }
-\addcode{../Codes/Dynamic programming/Inverse SOS dp.cpp}
+% \subsection{Inverse SOS dp }
+% \addcode{../Codes/Dynamic programming/Inverse SOS dp.cpp}
 
-\subsection{Steiner }
-\addcode{../Codes/Dynamic programming/Steiner.cpp}
+% \subsection{Steiner }
+% \addcode{../Codes/Dynamic programming/Steiner.cpp}

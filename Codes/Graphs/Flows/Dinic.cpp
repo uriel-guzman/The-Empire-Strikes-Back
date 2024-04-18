@@ -39,8 +39,7 @@ struct Dinic {
     if (flow <= EPS || u == t) return max<F>(0, flow);
     for (int& i = ptr[u]; i < sz(graph[u]); i++) {
       Edge& e = graph[u][i];
-      if (e.cap - e.flow > EPS && dist[u] + 1 == dist[e.v]) 
-      {
+      if (e.cap - e.flow > EPS && dist[u] + 1 == dist[e.v]) {
         F pushed = dfs(e.v, min<F>(flow, e.cap - e.flow));
         if (pushed > EPS) {
           e.flow += pushed;

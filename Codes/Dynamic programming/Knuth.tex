@@ -1,3 +1,5 @@
-\complexity{n^3} $\Rightarrow$ \complexity{n^2}
+% \complexity{n^3} $\Rightarrow$ \complexity{n^2}
 
 $ dp[l][r] = \min_{l \leq k \leq r}\{dp[l][k] + dp[k][r]\} + cost(l, r)$ \\
+
+$ opt(l, r - 1) \leq opt(l, r) \leq opt(l + 1, r) $ \\

@@ -16,7 +16,6 @@ fore (c, 0, m) {
         dp[c & 1][r + 1][mask & ~(1 << r)] += dp[c & 1][r][mask];
       }
     }
-  fore (r, 0, n + 1) // clear
-    fore (mask, 0, 1 << n) dp[c & 1][r][mask] = 0;
-}
+  memset(dp[c & 1], 0, sizeof(dp[c & 1])); // clear
+} 
 // Answer in dp[m & 1][0][0]

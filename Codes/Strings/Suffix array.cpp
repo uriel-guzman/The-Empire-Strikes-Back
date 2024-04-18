@@ -24,8 +24,7 @@ struct SuffixArray {
       if (pos[sa[n - 1]] >= n - 1) break;
     }
     sp[0].assign(n, 0);
-    for (int i = 0, j = pos[0], k = 0; i < n - 1; ++i, ++k) 
-    {
+    for (int i = 0, j = pos[0], k = 0; i < n - 1; ++i, ++k) {
       while (k >= 0 && s[i] != s[sa[j - 1] + k])
         sp[0][j] = k--, j = pos[sa[j] + 1];
     }
