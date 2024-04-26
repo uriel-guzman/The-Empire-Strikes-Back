@@ -4,8 +4,7 @@ int opt[N][N];
 fore (len, 1, n + 1)
   fore (l, 0, n) {
     int r = l + len - 1;
-    if (r > n - 1)
-      break;
+    if (r > n - 1) break;
     if (len <= 2) {
       dp[l][r] = 0;
       opt[l][r] = l;

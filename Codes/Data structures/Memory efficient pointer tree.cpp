@@ -4,7 +4,7 @@ struct Seg {
   int sum;
 
   template <class Arr>
-  Seg(int l, int r, Arr &a, vector<Seg> &mem) : l(l), r(r), left(0), right(0) {
+  Seg(int l, int r, Arr& a, vector<Seg>& mem) : l(l), r(r), left(0), right(0) {
     if (l == r) {
       sum = a[l];
       return;

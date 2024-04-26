@@ -8,5 +8,7 @@ pair<T, T> ternary(T lo, T hi, F f) {
     else
       lo = m1;
   }
-  return min({make_pair(f(lo), lo), make_pair(f(lo + 1), lo + 1), make_pair(f(hi), hi)});
+  return min({make_pair(f(lo), lo),
+              make_pair(f(lo + 1), lo + 1),
+              make_pair(f(hi), hi)});
 }

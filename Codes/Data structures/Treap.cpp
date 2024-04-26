@@ -14,9 +14,7 @@ struct Treap {
     return this;
   }
 
-  Treap() {
-    left = right = null;
-  }
+  Treap() { left = right = null; }
 
   Treap(int val) : val(val) {
     left = right = null;
@@ -25,8 +23,7 @@ struct Treap {
 
   template <class F>
   pair<Treap*, Treap*> split(const F& leq) { // {<= val, > val}
-    if (this == null)
-      return {null, null};
+    if (this == null) return {null, null};
     push();
     if (leq(this)) {
       auto p = right->split(leq);
@@ -40,10 +37,8 @@ struct Treap {
   }
 
   Treap* merge(Treap* other) {
-    if (this == null)
-      return other;
-    if (other == null)
-      return this;
+    if (this == null) return other;
+    if (other == null) return this;
     push(), other->push();
     if (pri > other->pri) {
       return right = right->merge(other), pull();
@@ -64,9 +59,7 @@ struct Treap {
   }
 
   auto split(int x) {
-    return split([&](Treap* n) {
-      return n->val <= x;
-    });
+    return split([&](Treap* n) { return n->val <= x; });
   }
 
   Treap* insert(int x) {

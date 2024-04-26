@@ -1,8 +1,7 @@
 lli dp[2][N];
 
 void solve(int cut, int l, int r, int optl, int optr) {
-  if (r < l)
-    return;
+  if (r < l) return;
   int mid = (l + r) / 2;
   pair<lli, int> best = {INF, -1};
   fore (p, optl, min(mid, optr) + 1)
@@ -12,7 +11,5 @@ void solve(int cut, int l, int r, int optl, int optr) {
   solve(cut, mid + 1, r, best.s, optr);
 }
 
-fore (i, 1, n + 1)
-  dp[1][i] = cost(1, i);
-fore (cut, 2, k + 1)
-  solve(cut, cut, n, cut, n);
+fore (i, 1, n + 1) dp[1][i] = cost(1, i);
+fore (cut, 2, k + 1) solve(cut, cut, n, cut, n);

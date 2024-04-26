@@ -1,43 +1,45 @@
-DSU rollback
+~DSU rollback
 ~DSU
 ~Foldable deque
-Monotone queue
-Stack queue
-In-Out trick
-Parallel binary search
-Mos
-Hilbert order
-Sqrt decomposition
+~Monotone queue
+~Stack queue
+~In-Out trick
+~Parallel binary search
+~Mos
+~Hilbert order
+~Sqrt decomposition
 Sparse table
-Fenwick
-Disjoint intervals
+~Fenwick
+~Disjoint intervals
 Fenwick 2D offline
-Fenwick ND
+~Fenwick ND
 ~Segtree
-Lazy segtree
-Dynamic segtree
+~Lazy segtree
+~Dynamic segtree
 Persistent segtree
 Li Chao
+~Memory efficient pointer tree
 Wavelet
-Segtree 2D
+~Segtree 2D
 ~Segtree iterative
 Static to dynamic
 Ordered tree
 Treap
+Persistent Treap
 
 All submasks of a mask
 Broken profile
 Convex hull trick
-Digit dp
+~Digit dp
 Divide and conquer
-Knapsack 01
+~Knapsack 01
 Knuth
 ~Matrix chain multiplication
 Matrix exponentiation
 SOS dp
 Inverse SOS dp
 Steiner
-SteinerTree
+~SteinerTree
 
 Grundy numbers
 
@@ -76,7 +78,7 @@ Point in convex polygon
 
 ~Bellman Ford
 ~Floyd Warshall
-Cycle
+~Cycle
 ~Dijkstra
 ~Bridges
 ~Cutpoints
@@ -84,7 +86,7 @@ Cutpoints and bridges
 ~Topological sort
 ~Kosaraju
 Tarjan
-Isomorphism
+~Isomorphism
 Two sat
 LCA
 Virtual tree
@@ -93,11 +95,11 @@ Dynamic connectivity
 ~HLD
 Euler-tour + HLD + LCA
 Centroid
-Guni Paths
+~Guni Paths
 Guni
 Link-Cut tree
 
-Blossom
+~Blossom
 Hopcroft Karp
 Hungarian
 Dinic
@@ -106,12 +108,12 @@ Min-Cost flow
 
 Bits
 Bitset
-Fpow
-Fraction
+~Fpow
+~Fraction
 ~Modular multiplication
-Modular
+~Modular
 Probability
-Simplex
+~Simplex
 Gauss jordan
 Xor basis
 
@@ -127,15 +129,15 @@ Burnside lemma
 Amount of divisors
 Chinese remainder theorem
 Euclid
-Factorial factors
+~Factorial factors
 ~Factorize SQRT
 ~GCD
 Inverse
 ~LCM
-Factorize sieve
-Sieve
+~Factorize sieve
+~Sieve
 Phi
-Phi sieve
+~Phi sieve
 ~Prime check
 Miller rabin
 Pollard Rho
@@ -144,21 +146,22 @@ Berlekamp Massey
 ~Lagrange NOT consecutive points
 Lagrange
 FFT
-Fast Walsh Hadamard Transform
+~Fast Walsh Hadamard Transform
 Primitive root
 NTT
 ~Polynomial
 
 KMP
 KMP automaton
-Z
+~Z
 Manacher
 Hash
 Min rotation
 Suffix array
-Trie
+~Trie
 Aho Corasick
 Eertree
+~Hash Abraham
 Suffix automaton
 
 Catalan

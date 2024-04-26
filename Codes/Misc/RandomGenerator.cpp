@@ -11,14 +11,11 @@ struct Random {
     if (unique) {
       set<T> st;
       for (auto& x : v) {
-        do {
-          x = g();
-        } while (st.count(x));
+        do { x = g(); } while (st.count(x));
         st.insert(x);
       }
     } else {
-      for (auto& x : v)
-        x = g();
+      for (auto& x : v) x = g();
     }
     return v;
   }
@@ -40,9 +37,7 @@ struct Random {
     static constexpr T EPS = is_integral_v<T> ? 1 : 1e-9;
 
     if (unique)
-      if constexpr (is_integral_v<T>) {
-        assert(high - low + EPS >= n);
-      }
+      if constexpr (is_integral_v<T>) { assert(high - low + EPS >= n); }
 
     double batchSize = (high - low + EPS) / double(n);
     T batchLow = low, batchHigh = low + batchSize - EPS;
@@ -61,12 +56,17 @@ struct Random {
 
   // Returns a vector of strings of size n, with all strings following 'pattern'
   // and of sizes ranging u [minLength, maxLength].
-  vector<string> getStrings(int n, string pattern = "az", int minLength = 1, int maxLength = 10, bool unique = false) {
+  vector<string> getStrings(int n,
+                            string pattern = "az",
+                            int minLength = 1,
+                            int maxLength = 10,
+                            bool unique = false) {
     if (unique) {
       // assert that is possible v generate n different strings
       int letters = 0;
       for (int i = 0; i < pattern.size(); i += 2)
-        letters += pattern[min<int>(i + 1, pattern.size() - 1)] - pattern[i] + 1;
+        letters +=
+            pattern[min<int>(i + 1, pattern.size() - 1)] - pattern[i] + 1;
       long long ways = 1;
       for (int length = minLength; length <= maxLength && ways < n; length++) {
         ways *= letters;
@@ -108,7 +108,10 @@ struct Random {
 
   // Creates a graph with weights in range [low, high].
   template <class T>
-  vector<Edge<T>> getGraph(int numNodes, long long numEdges, T low = 1, T high = 1) {
+  vector<Edge<T>> getGraph(int numNodes,
+                           long long numEdges,
+                           T low = 1,
+                           T high = 1) {
     long long maxNumEdges = 1LL * numNodes * (numNodes - 1) / 2LL;
     numEdges = min(maxNumEdges, numEdges);
 

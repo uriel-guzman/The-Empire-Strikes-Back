@@ -38,29 +38,29 @@ struct PerTreap {
 
   PerTreap* pull() {
     sz = left->sz + right->sz + (this != null);
-    fore (i, 0, K) {
-      cnt[i] = left->cnt[i] + right->cnt[i];
-    }
-    if (c != -1)
-      cnt[c]++;
+    fore (i, 0, K) { cnt[i] = left->cnt[i] + right->cnt[i]; }
+    if (c != -1) cnt[c]++;
     return this;
   }
 
-  PerTreap() {
-    left = right = null;
-  }
+  PerTreap() { left = right = null; }
 
   PerTreap(int c) : c(c) {
     left = right = null;
     pull();
   }
 
-  PerTreap(PerTreap* t) : c(t->c), cnt(t->cnt), left(t->left), right(t->right), pri(t->pri), sz(t->sz) {}
+  PerTreap(PerTreap* t)
+      : c(t->c),
+        cnt(t->cnt),
+        left(t->left),
+        right(t->right),
+        pri(t->pri),
+        sz(t->sz) {}
 
   template <class F>
   pair<PerTreap*, PerTreap*> split(const F& leq) { // {<= val, > val}
-    if (this == null)
-      return {null, null};
+    if (this == null) return {null, null};
     push();
     PerTreap* t = new PerTreap(this);
     if (leq(this)) {
@@ -75,10 +75,8 @@ struct PerTreap {
   }
 
   PerTreap* merge(PerTreap* other) {
-    if (this == null)
-      return new PerTreap(other);
-    if (other == null)
-      return new PerTreap(this);
+    if (this == null) return new PerTreap(other);
+    if (other == null) return new PerTreap(this);
     push(), other->push();
     PerTreap* t;
     if (pri > other->pri) {
@@ -103,9 +101,7 @@ struct PerTreap {
   }
 
   void tour() {
-    if (this == null) {
-      return;
-    }
+    if (this == null) { return; }
     left->tour();
     cout << "AGTC"[c];
     right->tour();
@@ -153,9 +149,7 @@ int main() {
     cin >> s;
 
     PerTreap* t = PerTreap::null;
-    for (char c : s) {
-      t = t->merge(new PerTreap(f[c - 'A']));
-    }
+    for (char c : s) { t = t->merge(new PerTreap(f[c - 'A'])); }
     treaps.emplace_back(t);
   }
 
@@ -198,7 +192,8 @@ int main() {
       treaps.emplace_back(t2.f->merge(t1.s));
 
     } else if (op == "MUTATE") {
-      // mutate operation – they take a DNA, number k and one of the bases. Then they replace the base in position k in DNA with that base. also they
+      // mutate operation – they take a DNA, number k and one of the bases. Then
+      // they replace the base in position k in DNA with that base. also they
       // need to know certain characteristics of those DNAs. So they can perform
 
       cin >> id >> k >> m;
@@ -216,7 +211,8 @@ int main() {
       treaps[id] = p1.f->merge(new PerTreap(f[m - 'A']))->merge(p2.s);
 
     } else {
-      // count operation – they take DNA and numbers k1 and k2 (k1 <= k2). This operation should return the number of A, G, T, C bases in DNA[k1..k2].
+      // count operation – they take DNA and numbers k1 and k2 (k1 <= k2). This
+      // operation should return the number of A, G, T, C bases in DNA[k1..k2].
 
       cin >> id >> k >> k2;
 
@@ -228,9 +224,7 @@ int main() {
 
       print(p2.s);
 
-      fore (i, 0, K) {
-        cout << p2.s->cnt[i] << " \n"[i == K - 1];
-      }
+      fore (i, 0, K) { cout << p2.s->cnt[i] << " \n"[i == K - 1]; }
     }
 
     printAll(treaps);

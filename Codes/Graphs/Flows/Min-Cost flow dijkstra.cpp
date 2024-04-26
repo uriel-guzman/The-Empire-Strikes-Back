@@ -4,7 +4,8 @@ struct Mcmf {
     int u, v, inv;
     F cap, flow;
     C cost;
-    Edge(int u, int v, C cost, F cap, int inv) : u(u), v(v), cost(cost), cap(cap), flow(0), inv(inv) {}
+    Edge(int u, int v, C cost, F cap, int inv)
+        : u(u), v(v), cost(cost), cap(cap), flow(0), inv(inv) {}
   };
 
   F EPS = (F)1e-9;
@@ -13,7 +14,8 @@ struct Mcmf {
   vector<Edge*> prev;
   vector<C> cost, pot;
 
-  Mcmf(int n) : n(n), graph(n), cost(n), pot(n, 0), prev(n), s(n - 2), t(n - 1) {}
+  Mcmf(int n)
+      : n(n), graph(n), cost(n), pot(n, 0), prev(n), s(n - 2), t(n - 1) {}
 
   void add(int u, int v, C cost, F cap) {
     graph[u].pb(Edge(u, v, cost, cap, sz(graph[v])));
@@ -22,14 +24,14 @@ struct Mcmf {
 
   bool dijkstra() {
     fill(all(cost), numeric_limits<C>::max());
-    priority_queue<pair<C, int>, vector<pair<C, int>>, greater<pair<C, int>>> pq;
+    priority_queue<pair<C, int>, vector<pair<C, int>>, greater<pair<C, int>>>
+        pq;
     pq.emplace(cost[s] = 0, s);
     while (sz(pq)) {
       C c = pq.top().f;
       int u = pq.top().s;
       pq.pop();
-      if (c != cost[u])
-        continue;
+      if (c != cost[u]) continue;
       for (Edge& e : graph[u])
         if (e.cap - e.flow > EPS)
           if (cost[u] + e.cost + pot[u] - pot[e.v] < cost[e.v]) {
@@ -39,8 +41,7 @@ struct Mcmf {
           }
     }
     fore (u, 0, n)
-      if (cost[u] < numeric_limits<C>::max())
-        pot[u] += cost[u];
+      if (cost[u] < numeric_limits<C>::max()) pot[u] += cost[u];
     return cost[t] != numeric_limits<C>::max();
   }
 

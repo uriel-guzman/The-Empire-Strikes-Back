@@ -27,12 +27,10 @@ void hld(int u) {
 template <bool OverEdges = 0, class F>
 void processPath(int u, int v, F f) {
   for (; nxt[u] != nxt[v]; u = par[nxt[u]]) {
-    if (depth[nxt[u]] < depth[nxt[v]])
-      swap(u, v);
+    if (depth[nxt[u]] < depth[nxt[v]]) swap(u, v);
     f(tin[nxt[u]], tin[u]);
   }
-  if (depth[u] < depth[v])
-    swap(u, v);
+  if (depth[u] < depth[v]) swap(u, v);
   f(tin[v] + OverEdges, tin[u]);
 }
 
@@ -87,9 +85,8 @@ lli queryPathWithOrder(int u, int v, int x) {
     // if begin > end: right to left, 
     // e.g. begin = 3, end = 1
     // order must go 3, 2, 1
-
-    // e.g. first node in the path(u, v) with value less than or equal to x
-    if ((who = tree->solve(begin, end, x)) != -1) {
+    if ((who = tree->solve(begin, end, x)) != -1) { 
+      // e.g. first node in the path(u, v) with value less than or equal to x
       break;
     }
   }
@@ -100,4 +97,3 @@ lli queryPathWithOrder(int u, int v, int x) {
 lli querySubtree(int u) {
   return tree->query(tin[u], tout[u]);
 }
-

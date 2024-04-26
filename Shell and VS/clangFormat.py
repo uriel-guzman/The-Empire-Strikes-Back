@@ -2,7 +2,7 @@ import glob
 import os
 
 # Only MacOS users, sorry :(
-icpcPath = "/Users/*/*/ICPC/Codes/"
+icpcPath = "/Users/pino/Documents/The-Empire-Strikes-Back/Codes"
 
 def main():
   icpc = glob.glob(icpcPath, recursive=True)[0]

@@ -6,8 +6,8 @@ struct SuffixAutomaton {
   vector<Node> trie;
   int last;
 
-  SuffixAutomaton(int n = 1) {
-    trie.reserve(2 * n), last = newNode();
+  SuffixAutomaton(int n = 1) { 
+    trie.reserve(2 * n), last = newNode(); 
   }
 
   int newNode() {
@@ -61,8 +61,8 @@ struct SuffixAutomaton {
     // trie[u].occ = 1, trie[clone].occ = 0
     vector<int> who(sz(trie) - 1);
     iota(all(who), 1);
-    sort(all(who), [&](int u, int v) {
-      return trie[u].len > trie[v].len;
+    sort(all(who), [&](int u, int v) { 
+      return trie[u].len > trie[v].len; 
     });
     for (int u : who) {
       int l = trie[u].link;
@@ -72,8 +72,7 @@ struct SuffixAutomaton {
 
   lli occurences(string& s, int u = 0) {
     for (char c : s) {
-      if (!trie[u].count(c))
-        return 0;
+      if (!trie[u].count(c)) return 0;
       u = trie[u][c];
     }
     return trie[u].occ;
@@ -86,8 +85,7 @@ struct SuffixAutomaton {
         u = trie[u].link;
         len = trie[u].len;
       }
-      if (trie[u].count(c))
-        u = trie[u][c], len++;
+      if (trie[u].count(c)) u = trie[u][c], len++;
       mx = max(mx, len);
     }
     return mx;
@@ -105,14 +103,11 @@ struct SuffixAutomaton {
 
   int leftmost(string& s, int u = 0) {
     for (char c : s) {
-      if (!trie[u].count(c))
-        return -1;
+      if (!trie[u].count(c)) return -1;
       u = trie[u][c];
     }
     return trie[u].pos - sz(s) + 1;
   }
 
-  Node& operator[](int u) {
-    return trie[u];
-  }
+  Node& operator[](int u) { return trie[u]; }
 };

@@ -1,9 +1,7 @@
 struct LiChao {
   struct Fun {
     lli m = 0, c = -INF;
-    lli operator()(lli x) const {
-      return m * x + c;
-    }
+    lli operator()(lli x) const { return m * x + c; }
   } f;
 
   lli l, r;
@@ -13,10 +11,8 @@ struct LiChao {
   void add(Fun& g) {
     lli m = (l + r) >> 1;
     bool bl = g(l) > f(l), bm = g(m) > f(m);
-    if (bm)
-      swap(f, g);
-    if (l == r)
-      return;
+    if (bm) swap(f, g);
+    if (l == r) return;
     if (bl != bm)
       left ? left->add(g) : void(left = new LiChao(l, m, g));
     else
@@ -24,11 +20,9 @@ struct LiChao {
   }
 
   lli query(lli x) {
-    if (l == r)
-      return f(x);
+    if (l == r) return f(x);
     lli m = (l + r) >> 1;
-    if (x <= m)
-      return max(f(x), left ? left->query(x) : -INF);
+    if (x <= m) return max(f(x), left ? left->query(x) : -INF);
     return max(f(x), right ? right->query(x) : -INF);
   }
 };

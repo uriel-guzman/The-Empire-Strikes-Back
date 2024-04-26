@@ -4,9 +4,7 @@ struct FoldableDeque {
   F f;
 
   FoldableDeque(const F& f) : f(f) {}
-  FoldableDeque(const vector<T>& v, const F& f) : f(f) {
-    build(v);
-  }
+  FoldableDeque(const vector<T>& v, const F& f) : f(f) { build(v); }
 
   T query() {
     T ans = pref.size() ? pref.back() : T();
@@ -16,10 +14,8 @@ struct FoldableDeque {
   void build(vector<T> v) {
     l = r = pref = suf = {};
     int n = v.size();
-    for (int i = n / 2; i < n; ++i)
-      push_back(v[i]);
-    for (int i = n / 2; i--;)
-      push_front(v[i]);
+    for (int i = n / 2; i < n; ++i) push_back(v[i]);
+    for (int i = n / 2; i--;) push_front(v[i]);
   }
 
   void push_front(T a) {

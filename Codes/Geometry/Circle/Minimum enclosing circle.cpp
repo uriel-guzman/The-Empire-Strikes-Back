@@ -8,7 +8,7 @@ Cir minEnclosing(vector<Pt>& pts) { // a bunch of points
         if (!c.contains(pts[j])) {
           c = Cir((pts[i] + pts[j]) / 2, (pts[i] - pts[j]).length() / 2);
           fore (k, 0, j)
-            if (!c.contains(pts[k]))
+            if (!c.contains(pts[k])) 
               c = Cir(pts[i], pts[j], pts[k]);
         }
     }

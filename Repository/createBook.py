@@ -13,7 +13,7 @@ class Code(NamedTuple):
 
 
 # Only MacOS users, sorry :(
-icpcPath = "/Users/*/*/ICPC/Codes/"
+icpcPath = "/Users/pino/Documents/The-Empire-Strikes-Back/Codes"
 chaptersOrderName = "chaptersOrder.txt"
 bookName = "Book.tex"
 allFilesName = "allFiles.txt"
@@ -51,6 +51,7 @@ def startswith(x, prefixes):
 
 
 def isImage(extension):
+    # return False
     return extension in [".png", ".jpeg", ".jpg"]
 
 
@@ -186,9 +187,10 @@ def writeBook(allFiles, bookName):
                 # Until I find something better, I'll append all latex file :c
                 writeln(chapter, toString(path, start=1))
         elif isImage(file.extension):
+            continue
             # print(file)
             # writeln(chapter, "\\begin{figure} \centering")
-            writeln(chapter, f"\includegraphics[width=4.5cm]{{../{path}}}")
+            # writeln(chapter, f"\includegraphics[width=4.5cm]{{../{path}}}")
             # writeln(chapter, f"{file.name}")
             # writeln(chapter, "\end{figure}")
 
