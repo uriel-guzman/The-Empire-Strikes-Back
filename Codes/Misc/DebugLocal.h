@@ -13,7 +13,8 @@ template <class A, class B, class C>
 basic_ostream<A, B>& operator<<(basic_ostream<A, B>& os, const C& c) {
   os << "[";
   for (const auto& x : c) {
-    if (&x != &*begin(c)) cout << ", ";
+    if (&x != &*begin(c))
+      cout << ", ";
     cout << x;
   }
   return os << "]";
@@ -56,7 +57,9 @@ basic_ostream<A, B>& operator<<(basic_ostream<A, B>& os,
   return os;
 }
 
-void pprint(string s) { cout << endl; }
+void pprint(string s) {
+  cout << endl;
+}
 
 const string resetColor = "\033[0m";
 const string blueColor = "\033[1;34m";
@@ -68,9 +71,12 @@ void pprint(string s, const H& h, const T&... t) {
   int bal = 0, ok = 1, pos = 0;
   while (pos < s.size()) {
     char c = s[pos];
-    if (c == '\"') ok = 0;
-    if (c == '(') bal++;
-    if (c == ')') bal--;
+    if (c == '\"')
+      ok = 0;
+    if (c == '(')
+      bal++;
+    if (c == ')')
+      bal--;
     if (c == ',' && bal == 0) {
       string cut = s.substr(0, pos);
       replace(cut.begin(), cut.end(), '\"', char(0));

@@ -12,6 +12,16 @@
 
 \addcode{../Codes/Strings/KMP automaton.cpp}
 
+\subsection{Z \complexity{n}}
+
+$z_i$ is the length of the longest substring starting from $i$ which is also a prefix of $s$ string will be in range $[i, i + z_i)$
+
+\begin{itemize}[noitemsep]
+  \item aaabaab - $[0, 2, 1, 0, 2, 1, 0]$
+  \item abacaba - $[0, 0, 1, 0, 3, 0, 1]$
+\end{itemize}
+\addcode{../Codes/Strings/Z.cpp}
+
 \subsection{Manacher \complexity{n}}
 
 \begin{itemize}[noitemsep]
@@ -45,6 +55,9 @@
 
 \end{itemize}
 \addcode{../Codes/Strings/Suffix array.cpp}
+
+\subsection{Trie }
+\addcode{../Codes/Strings/Trie.cpp}
 
 \subsection{Aho Corasick \complexity{\sum s_i}}
 

@@ -13,7 +13,7 @@ class Code(NamedTuple):
 
 
 # Only MacOS users, sorry :(
-icpcPath = "/Users/pino/Documents/The-Empire-Strikes-Back/Codes"
+icpcPath = "/Users/pino/Competitive Programming/The-Empire-Strikes-Back/Codes"
 chaptersOrderName = "chaptersOrder.txt"
 bookName = "Book.tex"
 allFilesName = "allFiles.txt"

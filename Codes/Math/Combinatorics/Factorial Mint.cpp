@@ -11,6 +11,7 @@ Mint ifac(int i) {
 }
 
 Mint choose(int n, int k) {
-  if (n < 0 || k < 0 || n < k) return 0;
+  if (n < 0 || k < 0 || n < k)
+    return 0;
   return fac(n) * ifac(k) * ifac(n - k);
 }

@@ -53,7 +53,9 @@ struct Random {
   template <class T>
   vector<T> getArray(int n, T low, T high, bool unique = false) {
     if (unique)
-      if constexpr (is_integral_v<T>) { assert(high - low + 1 >= n); }
+      if constexpr (is_integral_v<T>) {
+        assert(high - low + 1 >= n);
+      }
     return fillArray<T>(n, unique, [&]() { return get<T>(low, high); });
   }
 
@@ -174,9 +176,13 @@ struct Hashing {
     }
   }
 
-  Hash query(int l, int r) { return 1LL * (h[r + 1] - h[l] + M) * ipw[l] % M; }
+  Hash query(int l, int r) {
+    return 1LL * (h[r + 1] - h[l] + M) * ipw[l] % M;
+  }
 
-  Hash full() { return h.back(); }
+  Hash full() {
+    return h.back();
+  }
 
   static pair<Hash, int> merge(vector<pair<Hash, int>>& cuts) {
     pair<Hash, int> ans = {0, 0};
@@ -208,7 +214,9 @@ int main() {
           tmp += str[r];
           auto good = hash.query(l, r);
           auto brute = Hashing(tmp).full();
-          if (good != brute) { bad++; }
+          if (good != brute) {
+            bad++;
+          }
         }
       }
     }
@@ -238,7 +246,9 @@ int main() {
       auto good = Hashing::merge(ranges).f;
       auto good2 = hash.merge(ranges).f;
       auto brute = Hashing(strMerged).full();
-      if (good != brute || good != good2) { bad++; }
+      if (good != brute || good != good2) {
+        bad++;
+      }
     }
 
     cout << "Bad merge results percentage: " << 100 * bad / double(tests)

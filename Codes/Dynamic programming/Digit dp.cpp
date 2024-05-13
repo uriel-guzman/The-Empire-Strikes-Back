@@ -1,6 +1,7 @@
 #define state [i][x][small][big][nonzero]
 int dp(int i, int x, bool small, bool big, bool nonzero) {
-  if (i == sz(r)) return x % k == 0 && nonzero;
+  if (i == sz(r))
+    return x % k == 0 && nonzero;
   int& ans = mem state;
   if (done state != timer) {
     done state = timer;

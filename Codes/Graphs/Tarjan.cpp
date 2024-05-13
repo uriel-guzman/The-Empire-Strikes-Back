@@ -8,8 +8,10 @@ void tarjan(int u) {
   still[u] = true;
   stk.push(u);
   for (auto& v : graph[u]) {
-    if (!tin[v]) tarjan(v);
-    if (still[v]) fup[u] = min(fup[u], fup[v]);
+    if (!tin[v])
+      tarjan(v);
+    if (still[v])
+      fup[u] = min(fup[u], fup[v]);
   }
   if (fup[u] == tin[u]) {
     int v;

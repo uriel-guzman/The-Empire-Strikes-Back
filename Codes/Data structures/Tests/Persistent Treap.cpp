@@ -38,12 +38,17 @@ struct PerTreap {
 
   PerTreap* pull() {
     sz = left->sz + right->sz + (this != null);
-    fore (i, 0, K) { cnt[i] = left->cnt[i] + right->cnt[i]; }
-    if (c != -1) cnt[c]++;
+    fore (i, 0, K) {
+      cnt[i] = left->cnt[i] + right->cnt[i];
+    }
+    if (c != -1)
+      cnt[c]++;
     return this;
   }
 
-  PerTreap() { left = right = null; }
+  PerTreap() {
+    left = right = null;
+  }
 
   PerTreap(int c) : c(c) {
     left = right = null;
@@ -60,7 +65,8 @@ struct PerTreap {
 
   template <class F>
   pair<PerTreap*, PerTreap*> split(const F& leq) { // {<= val, > val}
-    if (this == null) return {null, null};
+    if (this == null)
+      return {null, null};
     push();
     PerTreap* t = new PerTreap(this);
     if (leq(this)) {
@@ -75,8 +81,10 @@ struct PerTreap {
   }
 
   PerTreap* merge(PerTreap* other) {
-    if (this == null) return new PerTreap(other);
-    if (other == null) return new PerTreap(this);
+    if (this == null)
+      return new PerTreap(other);
+    if (other == null)
+      return new PerTreap(this);
     push(), other->push();
     PerTreap* t;
     if (pri > other->pri) {
@@ -101,7 +109,9 @@ struct PerTreap {
   }
 
   void tour() {
-    if (this == null) { return; }
+    if (this == null) {
+      return;
+    }
     left->tour();
     cout << "AGTC"[c];
     right->tour();
@@ -224,7 +234,9 @@ int main() {
 
       print(p2.s);
 
-      fore (i, 0, K) { cout << p2.s->cnt[i] << " \n"[i == K - 1]; }
+      fore (i, 0, K) {
+        cout << p2.s->cnt[i] << " \n"[i == K - 1];
+      }
     }
 
     printAll(treaps);

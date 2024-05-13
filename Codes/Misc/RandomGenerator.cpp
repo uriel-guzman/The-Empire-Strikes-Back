@@ -37,7 +37,9 @@ struct Random {
     static constexpr T EPS = is_integral_v<T> ? 1 : 1e-9;
 
     if (unique)
-      if constexpr (is_integral_v<T>) { assert(high - low + EPS >= n); }
+      if constexpr (is_integral_v<T>) {
+        assert(high - low + EPS >= n);
+      }
 
     double batchSize = (high - low + EPS) / double(n);
     T batchLow = low, batchHigh = low + batchSize - EPS;
@@ -46,7 +48,8 @@ struct Random {
         T value = get<T>(batchLow, batchHigh);
         batchLow += batchSize;
         batchHigh += batchSize;
-        if (batchHigh + batchSize + EPS >= high) batchHigh = high;
+        if (batchHigh + batchSize + EPS >= high)
+          batchHigh = high;
         return value;
       } else {
         return get<T>(low, high);
@@ -86,7 +89,8 @@ struct Random {
   // {[a,c],[D,F],[1,5]}
   string getString(int n, string pattern = "az") {
     assert(n >= 0);
-    if (pattern.size() % 2) pattern.push_back(pattern.back());
+    if (pattern.size() % 2)
+      pattern.push_back(pattern.back());
     assert(pattern.size());
     string s;
     while (n--) {

@@ -16,18 +16,23 @@ int dfs(int u) {
 void hld(int u, int h) {
   head[u] = h, pos[u] = ++timer, who[timer] = u;
   for (int& v : graph[u])
-    if (v != par[u]) hld(v, v == graph[u][0] ? h : v);
+    if (v != par[u])
+      hld(v, v == graph[u][0] ? h : v);
 }
 
 template <bool OverNodes = false, class F>
 void processPath(int u, int v, F f) {
   for (; head[u] != head[v]; v = par[head[v]]) {
-    if (depth[head[u]] > depth[head[v]]) swap(u, v);
+    if (depth[head[u]] > depth[head[v]])
+      swap(u, v);
     f(pos[head[v]], pos[v]);
   }
-  if (depth[u] > depth[v]) swap(u, v);
-  if (u != v) f(pos[graph[u][0].v], pos[v]);
-  if (OverNodes) f(pos[u], pos[u]); // include lca
+  if (depth[u] > depth[v])
+    swap(u, v);
+  if (u != v)
+    f(pos[graph[u][0].v], pos[v]);
+  if (OverNodes)
+    f(pos[u], pos[u]); // include lca
 }
 
 void updatePath(int u, int v, lli z) {

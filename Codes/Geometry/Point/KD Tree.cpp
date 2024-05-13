@@ -1,6 +1,8 @@
 struct Pt {
   // Geometry point mostly
-  ld operator[](int i) const { return i == 0 ? x : y; }
+  ld operator[](int i) const {
+    return i == 0 ? x : y;
+  }
 };
 
 struct KDTree {
@@ -22,12 +24,15 @@ struct KDTree {
   }
 
   pair<ld, Pt> nearest(Pt x) {
-    if (!left && !right) return {(p - x).norm(), p};
+    if (!left && !right)
+      return {(p - x).norm(), p};
     vector<KDTree*> go = {left, right};
     auto delta = x[k] - p[k];
-    if (delta > 0) swap(go[0], go[1]);
+    if (delta > 0)
+      swap(go[0], go[1]);
     auto best = go[0]->nearest(x);
-    if (best.f > delta * delta) best = min(best, go[1]->nearest(x));
+    if (best.f > delta * delta)
+      best = min(best, go[1]->nearest(x));
     return best;
   }
 };

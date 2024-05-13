@@ -10,4 +10,6 @@ enum { ON = -1, OUT, IN, OVERLAP };
 #define ge(a, b) ((a) - (b) > +EPS)
 #define le(a, b) ((a) - (b) < -EPS)
 
-int sgn(ld a) { return (a > EPS) - (a < -EPS); }
+int sgn(ld a) {
+  return (a > EPS) - (a < -EPS);
+}

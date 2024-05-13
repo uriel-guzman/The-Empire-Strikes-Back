@@ -13,5 +13,7 @@ struct MonotoneQueue {
     while (q.size() && q.front().s < pos) q.pop_front();
   }
 
-  T query() { return q.empty() ? T() : q.front().f; }
+  T query() {
+    return q.empty() ? T() : q.front().f;
+  }
 };

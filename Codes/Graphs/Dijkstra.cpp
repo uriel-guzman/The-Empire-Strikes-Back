@@ -6,7 +6,9 @@ struct Data {
   int u;
   lli d;
 
-  bool operator()(const Data& other) const { return !(d < other.d); }
+  bool operator()(const Data& other) const {
+    return !(d < other.d);
+  }
 };
 
 vector<Edge> graph[N];
@@ -20,9 +22,11 @@ void dijkstra(int s) {
     auto [u, d] = pq.top();
     pq.pop();
 
-    if (dist[u] < d) continue;
+    if (dist[u] < d)
+      continue;
 
     for (auto [v, w] : graph[u])
-      if (umin(dist[v], dist[u] + w)) pq.push({v, dist[v]});
+      if (umin(dist[v], dist[u] + w))
+        pq.push({v, dist[v]});
   }
 }

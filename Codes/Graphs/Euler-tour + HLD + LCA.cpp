@@ -27,25 +27,23 @@ void hld(int u) {
 template <bool OverEdges = 0, class F>
 void processPath(int u, int v, F f) {
   for (; nxt[u] != nxt[v]; u = par[nxt[u]]) {
-    if (depth[nxt[u]] < depth[nxt[v]]) swap(u, v);
+    if (depth[nxt[u]] < depth[nxt[v]])
+      swap(u, v);
     f(tin[nxt[u]], tin[u]);
   }
-  if (depth[u] < depth[v]) swap(u, v);
+  if (depth[u] < depth[v])
+    swap(u, v);
   f(tin[v] + OverEdges, tin[u]);
 }
 
 int lca(int u, int v) {
   int last = -1;
-  processPath(u, v, [&](int l, int r) {
-    last = who[l];
-  });
+  processPath(u, v, [&](int l, int r) { last = who[l]; });
   return last;
 }
 
 void updatePath(int u, int v, lli z) {
-  processPath(u, v, [&](int l, int r) {
-    tree->update(l, r, z);
-  });
+  processPath(u, v, [&](int l, int r) { tree->update(l, r, z); });
 }
 
 void updateSubtree(int u, lli z) {
@@ -54,21 +52,19 @@ void updateSubtree(int u, lli z) {
 
 lli queryPath(int u, int v) {
   lli sum = 0;
-  processPath(u, v, [&](int l, int r) {
-    sum += tree->query(l, r);
-  });
+  processPath(u, v, [&](int l, int r) { sum += tree->query(l, r); });
   return sum;
 }
 
 lli queryPathWithOrder(int u, int v, int x) {
-  int _lca = lca(u, v); assert(_lca != -1);
+  int _lca = lca(u, v);
+  assert(_lca != -1);
 
   vector<pair<int, int>> firstHalf, secondHalf, ranges;
-  processPath(u, _lca, [&] (int l, int r) {
-    firstHalf.push_back(make_pair(r, l));
-  });
+  processPath(
+      u, _lca, [&](int l, int r) { firstHalf.push_back(make_pair(r, l)); });
 
-  processPath(_lca, v, [&] (int l, int r) {
+  processPath(_lca, v, [&](int l, int r) {
     l += tin[_lca] == l;
     if (l <= r) {
       secondHalf.push_back(make_pair(l, r));
@@ -82,10 +78,10 @@ lli queryPathWithOrder(int u, int v, int x) {
   int who = -1;
   for (auto [begin, end] : ranges) {
     // if begin <= end: left to right, aka. normal
-    // if begin > end: right to left, 
+    // if begin > end: right to left,
     // e.g. begin = 3, end = 1
     // order must go 3, 2, 1
-    if ((who = tree->solve(begin, end, x)) != -1) { 
+    if ((who = tree->solve(begin, end, x)) != -1) {
       // e.g. first node in the path(u, v) with value less than or equal to x
       break;
     }

@@ -9,21 +9,28 @@ struct Poly : vector<T> { // NOT fully tested, be careful!
   Poly(Args... args) : vector<T>(args...) {}
 
   friend Poly operator+(Poly a, Poly b) {
-    if (sz(a) < sz(b)) swap(a, b);
-    fore (i, 0, sz(b)) a[i] = a[i] + b[i];
+    if (sz(a) < sz(b))
+      swap(a, b);
+    fore (i, 0, sz(b))
+      a[i] = a[i] + b[i];
     return a.normalize();
   }
 
   friend Poly operator-(Poly a, Poly b) {
-    if (sz(a) < sz(b)) swap(a, b);
-    fore (i, 0, sz(b)) a[i] = a[i] + b[i];
+    if (sz(a) < sz(b))
+      swap(a, b);
+    fore (i, 0, sz(b))
+      a[i] = a[i] + b[i];
     return a.normalize();
   }
 
-  friend Poly operator*(Poly a, Poly b) { return convolution(a, b); }
+  friend Poly operator*(Poly a, Poly b) {
+    return convolution(a, b);
+  }
 
   friend Poly operator*(Poly a, T k) {
-    fore (i, 0, sz(a)) a[i] = a[i] * k;
+    fore (i, 0, sz(a))
+      a[i] = a[i] * k;
     return a;
   }
 
@@ -41,19 +48,25 @@ struct Poly : vector<T> { // NOT fully tested, be careful!
     return {q, a};
   }
 
-  friend Poly operator/(Poly a, Poly b) { return divmod(a, b).f; }
+  friend Poly operator/(Poly a, Poly b) {
+    return divmod(a, b).f;
+  }
 
-  friend Poly operator%(Poly a, Poly b) { return divmod(a, b).s; }
+  friend Poly operator%(Poly a, Poly b) {
+    return divmod(a, b).s;
+  }
 
   friend Poly derivate(Poly a) {
     Poly ans(sz(a) - 1);
-    fore (i, 0, sz(a) - 1) ans[i] = a[i + 1] * T(i + 1);
+    fore (i, 0, sz(a) - 1)
+      ans[i] = a[i + 1] * T(i + 1);
     return ans;
   }
 
   friend Poly integrate(Poly a) {
     Poly ans(sz(a) + 1);
-    fore (i, 1, sz(a) + 1) ans[i] = a[i - 1] / T(i);
+    fore (i, 1, sz(a) + 1)
+      ans[i] = a[i - 1] / T(i);
     return ans;
   }
 
@@ -64,7 +77,8 @@ struct Poly : vector<T> { // NOT fully tested, be careful!
   }
 
   friend Poly inverse(Poly a, int n = -1) { // (1 / poly) with n coeffs
-    if (n == -1) n = sz(a);
+    if (n == -1)
+      n = sz(a);
     Poly r(1, T(1) / a[0]);
     while (sz(r) <= n) {
       int m = 2 * sz(r);
@@ -87,7 +101,8 @@ struct Poly : vector<T> { // NOT fully tested, be careful!
   }
 
   friend Poly exp(Poly a, int n = -1) {
-    if (n == -1) n = sz(a);
+    if (n == -1)
+      n = sz(a);
     assert(a[0] == 0);
     Poly e(1, 1);
     while (sz(e) < n) {
@@ -111,7 +126,8 @@ struct Poly : vector<T> { // NOT fully tested, be careful!
       Poly f = a;
       f.resize(min(n, sz(a)));
       f = f * inverse(r);
-      fore (i, 0, n) r[i] = (r[i] + f[i]) * inv2;
+      fore (i, 0, n)
+        r[i] = (r[i] + f[i]) * inv2;
     }
     return r.resize(sz(a)), r;
   }

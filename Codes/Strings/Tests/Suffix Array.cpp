@@ -27,7 +27,8 @@ struct Result {
 
   void operator+=(bool flag) {
     total++;
-    if (flag) cnt++;
+    if (flag)
+      cnt++;
   }
 
   Result inv() {
@@ -79,7 +80,9 @@ struct Random {
   template <class T>
   vector<T> getArray(int n, T low, T high, bool unique = false) {
     if (unique)
-      if constexpr (is_integral_v<T>) { assert(high - low + 1 >= n); }
+      if constexpr (is_integral_v<T>) {
+        assert(high - low + 1 >= n);
+      }
     return fillArray<T>(n, unique, [&]() { return get<T>(low, high); });
   }
 
@@ -177,11 +180,13 @@ struct SuffixArray {
 
   SuffixArray(const T& x) : n(sz(x) + 1), s(x), sa(n), pos(n) {
     s.pb(0);
-    fore (i, 0, n) sa[i] = i, pos[i] = s[i];
+    fore (i, 0, n)
+      sa[i] = i, pos[i] = s[i];
     vector<int> nsa(sa), npos(n), cnt(max(260, n), 0);
     for (int k = 0; k < n; k ? k *= 2 : k++) {
       fill(all(cnt), 0);
-      fore (i, 0, n) nsa[i] = (sa[i] - k + n) % n, cnt[pos[i]]++;
+      fore (i, 0, n)
+        nsa[i] = (sa[i] - k + n) % n, cnt[pos[i]]++;
       partial_sum(all(cnt), cnt.begin());
       for (int i = n - 1; i >= 0; i--) sa[--cnt[pos[nsa[i]]]] = nsa[i];
       for (int i = 1, cur = 0; i < n; i++) {
@@ -190,7 +195,8 @@ struct SuffixArray {
         npos[sa[i]] = cur;
       }
       pos = npos;
-      if (pos[sa[n - 1]] >= n - 1) break;
+      if (pos[sa[n - 1]] >= n - 1)
+        break;
     }
     dp[0].assign(n, 0);
     for (int i = 0, j = pos[0], k = 0; i < n - 1; ++i, ++k) {
@@ -205,13 +211,16 @@ struct SuffixArray {
   }
 
   int lcp(int l, int r) {
-    if (l == r) return n - l;
+    if (l == r)
+      return n - l;
     tie(l, r) = minmax(pos[l], pos[r]);
     int k = log2(r - l);
     return min(dp[k][l + 1], dp[k][r - (1 << k) + 1]);
   }
 
-  auto at(int i, int j) { return sa[i] + j < n ? s[sa[i] + j] : 'z' + 1; }
+  auto at(int i, int j) {
+    return sa[i] + j < n ? s[sa[i] + j] : 'z' + 1;
+  }
 
   int count(T& t) {
     int l = 0, r = n - 1;
@@ -223,7 +232,8 @@ struct SuffixArray {
       }
       l = (at(p, i) == t[i] ? p : p + 1);
       r = (at(q, i) == t[i] ? q : q - 1);
-      if (at(l, i) != t[i] && at(r, i) != t[i] || l > r) return 0;
+      if (at(l, i) != t[i] && at(r, i) != t[i] || l > r)
+        return 0;
     }
     return r - l + 1;
   }
@@ -232,7 +242,8 @@ struct SuffixArray {
     // s[a.f ... a.s] < s[b.f ... b.s]
     int common = lcp(a.f, b.f);
     int szA = a.s - a.f + 1, szB = b.s - b.f + 1;
-    if (common >= min(szA, szB)) return tie(szA, a) < tie(szB, b);
+    if (common >= min(szA, szB))
+      return tie(szA, a) < tie(szB, b);
     return s[a.f + common] < s[b.f + common];
   }
 
@@ -293,7 +304,9 @@ void testAt() {
     fore (i, 1, sa.sa.size()) {
       int length = str.size() - sa.sa[i];
       result += (length == cuts[i - 1].size());
-      fore (pos, 0, length) { result += (sa.at(i, pos) == cuts[i - 1][pos]); }
+      fore (pos, 0, length) {
+        result += (sa.at(i, pos) == cuts[i - 1][pos]);
+      }
     }
   }
 

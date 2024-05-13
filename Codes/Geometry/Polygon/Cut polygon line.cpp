@@ -8,7 +8,8 @@ vector<Pt> cut(const vector<Pt>& pts, Line l) {
     Seg s(pts[i], pts[j]);
     if (l.intersects(s) == 1) {
       Pt p = l.intersection(s);
-      if (p != pts[i] && p != pts[j]) ans.pb(p);
+      if (p != pts[i] && p != pts[j])
+        ans.pb(p);
     }
   }
   return ans;

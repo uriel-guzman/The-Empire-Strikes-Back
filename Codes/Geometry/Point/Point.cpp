@@ -2,10 +2,18 @@ struct Pt {
   ld x, y;
   explicit Pt(ld x = 0, ld y = 0) : x(x), y(y) {}
 
-  Pt operator+(Pt p) const { return Pt(x + p.x, y + p.y); }
-  Pt operator-(Pt p) const { return Pt(x - p.x, y - p.y); }
-  Pt operator*(ld k) const { return Pt(x * k, y * k); }
-  Pt operator/(ld k) const { return Pt(x / k, y / k); }
+  Pt operator+(Pt p) const {
+    return Pt(x + p.x, y + p.y);
+  }
+  Pt operator-(Pt p) const {
+    return Pt(x - p.x, y - p.y);
+  }
+  Pt operator*(ld k) const {
+    return Pt(x * k, y * k);
+  }
+  Pt operator/(ld k) const {
+    return Pt(x / k, y / k);
+  }
 
   ld dot(Pt p) const {
     // 0 if vectors are orthogonal
@@ -22,10 +30,18 @@ struct Pt {
     return x * p.y - y * p.x;
   }
 
-  ld norm() const { return x * x + y * y; }
-  ld length() const { return sqrtl(norm()); }
-  Pt unit() const { return (*this) / length(); }
-  Pt perp() const { return Pt(-y, x); }
+  ld norm() const {
+    return x * x + y * y;
+  }
+  ld length() const {
+    return sqrtl(norm());
+  }
+  Pt unit() const {
+    return (*this) / length();
+  }
+  Pt perp() const {
+    return Pt(-y, x);
+  }
 
   ld angle() const {
     ld ang = atan2(y, x);
@@ -43,15 +59,23 @@ struct Pt {
     return sgn((a - *this).cross(b - *this));
   }
 
-  bool operator<(Pt p) const { return eq(x, p.x) ? le(y, p.y) : le(x, p.x); }
+  bool operator<(Pt p) const {
+    return eq(x, p.x) ? le(y, p.y) : le(x, p.x);
+  }
 
-  bool operator==(Pt p) const { return eq(x, p.x) && eq(y, p.y); }
+  bool operator==(Pt p) const {
+    return eq(x, p.x) && eq(y, p.y);
+  }
 
-  bool operator!=(Pt p) const { return !(*this == p); }
+  bool operator!=(Pt p) const {
+    return !(*this == p);
+  }
 
   friend ostream& operator<<(ostream& os, const Pt& p) {
     return os << "(" << p.x << ", " << p.y << ")";
   }
 
-  friend istream& operator>>(istream& is, Pt& p) { return is >> p.x >> p.y; }
+  friend istream& operator>>(istream& is, Pt& p) {
+    return is >> p.x >> p.y;
+  }
 };

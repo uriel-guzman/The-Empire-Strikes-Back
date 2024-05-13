@@ -7,8 +7,10 @@ int mex(set<int>& st) {
 }
 
 int grundy(int n) {
-  if (n < 0) return INF;
-  if (n == 0) return 0;
+  if (n < 0)
+    return INF;
+  if (n == 0)
+    return 0;
   int& g = mem[n];
   if (g == -1) {
     set<int> st;

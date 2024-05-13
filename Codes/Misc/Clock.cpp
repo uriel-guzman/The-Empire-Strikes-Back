@@ -3,7 +3,11 @@ struct Clock {
 
   Clock() : start(clock()) {}
 
-  void reset() { *this = Clock(); }
+  void reset() {
+    *this = Clock();
+  }
 
-  unsigned now() { return (clock() - start) * (int)1e3 / CLOCKS_PER_SEC; }
+  unsigned now() {
+    return (clock() - start) * (int)1e3 / CLOCKS_PER_SEC;
+  }
 };

@@ -10,18 +10,21 @@ pair<T, vector<T>> simplex(vector<vector<T>> a, vector<T> b, vector<T> c) {
     swap(p[y], q[x]);
     b[x] /= a[x][y];
     fore (i, 0, m)
-      if (i != y) a[x][i] /= a[x][y];
+      if (i != y)
+        a[x][i] /= a[x][y];
     a[x][y] = 1 / a[x][y];
     fore (i, 0, n)
       if (i != x && abs(a[i][y]) > EPS) {
         b[i] -= a[i][y] * b[x];
         fore (j, 0, m)
-          if (j != y) a[i][j] -= a[i][y] * a[x][j];
+          if (j != y)
+            a[i][j] -= a[i][y] * a[x][j];
         a[i][y] = -a[i][y] * a[x][y];
       }
     sum += c[y] * b[x];
     fore (i, 0, m)
-      if (i != y) c[i] -= c[y] * a[x][i];
+      if (i != y)
+        c[i] -= c[y] * a[x][i];
     c[y] = -c[y] * a[x][y];
   };
 
@@ -29,8 +32,10 @@ pair<T, vector<T>> simplex(vector<vector<T>> a, vector<T> b, vector<T> c) {
     int x = -1, y = -1;
     ld mn = -EPS;
     fore (i, 0, n)
-      if (b[i] < mn) mn = b[i], x = i;
-    if (x < 0) break;
+      if (b[i] < mn)
+        mn = b[i], x = i;
+    if (x < 0)
+      break;
     fore (i, 0, m)
       if (a[x][i] < -EPS) {
         y = i;
@@ -43,17 +48,22 @@ pair<T, vector<T>> simplex(vector<vector<T>> a, vector<T> b, vector<T> c) {
     int x = -1, y = -1;
     ld mx = EPS;
     fore (i, 0, m)
-      if (c[i] > mx) mx = c[i], y = i;
-    if (y < 0) break;
+      if (c[i] > mx)
+        mx = c[i], y = i;
+    if (y < 0)
+      break;
     ld mn = 1e200;
     fore (i, 0, n)
-      if (a[i][y] > EPS && b[i] / a[i][y] < mn) { mn = b[i] / a[i][y], x = i; }
+      if (a[i][y] > EPS && b[i] / a[i][y] < mn) {
+        mn = b[i] / a[i][y], x = i;
+      }
     assert(x >= 0); // c^T x is unbounded
     pivot(x, y);
   }
 
   vector<T> ans(m);
   fore (i, 0, n)
-    if (q[i] < m) ans[q[i]] = b[i];
+    if (q[i] < m)
+      ans[q[i]] = b[i];
   return {sum, ans};
 }

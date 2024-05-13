@@ -1,6 +1,5 @@
 template <class T>
-pair<int,vector<T>> gauss(vector<vector<T>> a, vector<T> b) 
-{
+pair<int, vector<T>> gauss(vector<vector<T>> a, vector<T> b) {
   const double EPS = 1e-6;
   int n = a.size(), m = a[0].size();
   for (int i = 0; i < n; i++) a[i].push_back(b[i]);
@@ -8,31 +7,32 @@ pair<int,vector<T>> gauss(vector<vector<T>> a, vector<T> b)
   for (int col = 0, row = 0; col < m and row < n; col++) {
     int sel = row;
     for (int i = row; i < n; ++i)
-      if (abs(a[i][col]) > abs(a[sel][col])) sel = i;
-    if (abs(a[sel][col]) < EPS) continue;
-    for (int i = col; i <= m; i++) 
-      swap(a[sel][i], a[row][i]);
+      if (abs(a[i][col]) > abs(a[sel][col]))
+        sel = i;
+    if (abs(a[sel][col]) < EPS)
+      continue;
+    for (int i = col; i <= m; i++) swap(a[sel][i], a[row][i]);
     where[col] = row;
 
     for (int i = 0; i < n; i++)
       if (i != row) {
         T c = a[i][col] / a[row][col];
-        for (int j = col; j <= m; j++) 
-          a[i][j] -= a[row][j] * c;
+        for (int j = col; j <= m; j++) a[i][j] -= a[row][j] * c;
       }
     row++;
   }
   vector<T> ans(m, 0);
   for (int i = 0; i < m; i++)
-    if (where[i] != -1) 
+    if (where[i] != -1)
       ans[i] = a[where[i]][m] / a[where[i]][i];
   for (int i = 0; i < n; i++) {
     T sum = 0;
     for (int j = 0; j < m; j++) sum += ans[j] * a[i][j];
-    if (abs(sum - a[i][m]) > EPS) 
+    if (abs(sum - a[i][m]) > EPS)
       return pair(0, vector<T>());
   }
   for (int i = 0; i < m; i++)
-    if (where[i] == -1) return pair(INF, ans);
+    if (where[i] == -1)
+      return pair(INF, ans);
   return pair(1, ans);
 }

@@ -3,7 +3,15 @@ struct Blossom {
   vector<int> mate, p, d, bl;
   vector<vector<int>> b, g;
 
-  Blossom(int n) : n(n), m(n + n / 2), mate(n, -1), b(m), p(m), d(m), bl(m), g(m, vector<int>(m, -1)) {}
+  Blossom(int n)
+      : n(n),
+        m(n + n / 2),
+        mate(n, -1),
+        b(m),
+        p(m),
+        d(m),
+        bl(m),
+        g(m, vector<int>(m, -1)) {}
 
   void add(int u, int v) { // 0-indexed!!!!!
     g[u][v] = u;
@@ -19,8 +27,7 @@ struct Blossom {
   vector<int> trace(int x) {
     vector<int> vx;
     while (true) {
-      while (bl[x] != x)
-        x = bl[x];
+      while (bl[x] != x) x = bl[x];
       if (!vx.empty() && vx.back() == x)
         break;
       vx.pb(x);
@@ -64,7 +71,8 @@ struct Blossom {
       }
       int w = vx.back();
       int i = (sz(A) % 2 == 0 ? find(all(b[z]), g[z][w]) - b[z].begin() : 0);
-      int j = (sz(A) % 2 == 1 ? find(all(b[z]), g[z][A.back()]) - b[z].begin() : 0);
+      int j =
+          (sz(A) % 2 == 1 ? find(all(b[z]), g[z][A.back()]) - b[z].begin() : 0);
       int k = sz(b[z]);
       int dif = (sz(A) % 2 == 0 ? i % 2 == 1 : j % 2 == 0) ? 1 : k - 1;
       while (i != j) {

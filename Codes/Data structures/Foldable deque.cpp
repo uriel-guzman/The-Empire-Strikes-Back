@@ -4,7 +4,9 @@ struct FoldableDeque {
   F f;
 
   FoldableDeque(const F& f) : f(f) {}
-  FoldableDeque(const vector<T>& v, const F& f) : f(f) { build(v); }
+  FoldableDeque(const vector<T>& v, const F& f) : f(f) {
+    build(v);
+  }
 
   T query() {
     T ans = pref.size() ? pref.back() : T();

@@ -1,43 +1,43 @@
 DSU rollback
 DSU
-Foldable deque
-Monotone queue
-Stack queue
-In-Out trick
-Parallel binary search
-Mos
-Hilbert order
-Sqrt decomposition
-Sparse table
-Fenwick
 Disjoint intervals
+Dynamic segtree
 Fenwick 2D offline
 Fenwick ND
-Segtree
+Fenwick
+Foldable deque
+Hilbert order
+In-Out trick
 Lazy segtree
-Dynamic segtree
-Persistent segtree
 Li Chao
 Memory efficient pointer tree
-Wavelet
+Monotone queue
+Mos
+Ordered tree
+Parallel binary search
+Persistent Treap
+Persistent segtree
 Segtree 2D
 Segtree iterative
+Segtree
+Sparse table
+Sqrt decomposition
+Stack queue
 Static to dynamic
-Ordered tree
 Treap
-Persistent Treap
+Wavelet
 
 All submasks of a mask
 Broken profile
 Convex hull trick
 Digit dp
 Divide and conquer
-~Knapsack 01
+Inverse SOS dp
+Knapsack 01
 Knuth
-~Matrix chain multiplication
+Matrix chain multiplication
 Matrix exponentiation
 SOS dp
-Inverse SOS dp
 Steiner
 SteinerTree
 
@@ -45,126 +45,125 @@ Grundy numbers
 
 Circle tangency
 Circle
-Distance point circle
 Common area circle circle
+Distance point circle
 Minimum enclosing circle
 
 Geometry
 Radial order
 Sort along line
 
-Line projection
-Line reflection
-Line
-Segment
-Projection
 Distance point line
 Distance point segment
 Distance segment segment
+Line projection
+Line reflection
+Line
+Projection
+Segment
 
-Point
 Angle between vectors
 Closest pair of points
 KD Tree
+Point
 
 Area polygon
-Perimeter
-Cut polygon line
 Common area circle polygon
-Point in polygon
 Convex hull
+Cut polygon line
 Is convex
+Perimeter
 Point in convex polygon
+Point in polygon
 
 Bellman Ford
-~Floyd Warshall
-Cycle
-~Dijkstra
-~Bridges
-~Cutpoints
-Cutpoints and bridges
-~Topological sort
-Kosaraju
-Tarjan
-Isomorphism
-Two sat
-LCA
-Virtual tree
-Dynamic connectivity
-~Euler tour
-~HLD
-Euler-tour + HLD + LCA
+Bridges
 Centroid
-~Guni Paths
+Cutpoints and bridges
+Cutpoints
+Cycle
+Dijkstra
+Dynamic connectivity
+Euler tour
+Euler-tour + HLD + LCA
+Floyd Warshall
+Guni Paths
 Guni
+HLD
+Isomorphism
+Kosaraju
+LCA
 Link-Cut tree
+Tarjan
+Topological sort
+Two sat
+Virtual tree
 
 Blossom
+Dinic
 Hopcroft Karp
 Hungarian
-Dinic
-Min-Cost flow
 Min-Cost flow dijkstra
+Min-Cost flow
 
 Bits
 Bitset
 Fpow
 Fraction
+Gauss jordan
 Modular multiplication
 Modular
 Probability
 Simplex
-Gauss jordan
 Xor basis
 
-Factorial
+Bell numbers
+Burnside lemma
+Catalan
+Choose
 Factorial Mint
 Factorial mod small prime
-Choose
+Factorial
+Lucas
 Pascal
 Stars and bars
-Lucas
-Burnside lemma
+Stirling numbers 2
+Stirling numbers
 
 Amount of divisors
 Chinese remainder theorem
 Euclid
 Factorial factors
 Factorize SQRT
+Factorize sieve
 GCD
 Inverse
-~LCM
-Factorize sieve
-Sieve
-Phi
-Phi sieve
-Prime check
+LCM
 Miller rabin
+Phi sieve
+Phi
 Pollard Rho
+Prime check
+Sieve
 
 Berlekamp Massey
-Lagrange NOT consecutive points
-Lagrange
 FFT
 Fast Walsh Hadamard Transform
-Primitive root
+Lagrange NOT consecutive points
+Lagrange
 NTT
 Polynomial
+Primitive root
 
-KMP
-KMP automaton
-Z
-Manacher
-Hash
-Min rotation
-Suffix array
-Trie
 Aho Corasick
 Eertree
-~Hash Abraham
+Hash Abraham
+Hash
+KMP automaton
+KMP
+Manacher
+Min rotation
+Suffix array
 Suffix automaton
-
-Catalan
-Bell numbers
-Stirling numbers
-Stirling numbers 2
+Trie
+Z

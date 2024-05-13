@@ -10,7 +10,8 @@ pair<Pt, Pt> closestPairOfPoints(vector<Pt>& pts) {
     auto hi = st.upper_bound(Pt(pts[i].x + ans + EPS, -INF));
     for (auto it = lo; it != hi; ++it) {
       ld d = (pts[i] - *it).length();
-      if (le(d, ans)) ans = d, p = pts[i], q = *it;
+      if (le(d, ans))
+        ans = d, p = pts[i], q = *it;
     }
     st.insert(pts[i]);
   }

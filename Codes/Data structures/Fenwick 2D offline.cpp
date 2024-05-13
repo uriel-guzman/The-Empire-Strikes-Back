@@ -5,12 +5,15 @@ struct Fenwick2D { // add, build then update, query
   vector<int> xs;
   vector<ii> pts;
 
-  void add(int x, int y) { pts.pb({x, y}); }
+  void add(int x, int y) {
+    pts.pb({x, y});
+  }
 
   void build() {
     sort(all(pts));
     for (auto&& [x, y] : pts) {
-      if (xs.empty() || x != xs.back()) xs.pb(x);
+      if (xs.empty() || x != xs.back())
+        xs.pb(x);
       swap(x, y);
     }
     fenw.resize(sz(xs)), ys.resize(sz(xs));
@@ -19,9 +22,11 @@ struct Fenwick2D { // add, build then update, query
       swap(x, y);
       int i = lower_bound(all(xs), x) - xs.begin();
       for (; i < sz(fenw); i |= i + 1)
-        if (ys[i].empty() || y != ys[i].back()) ys[i].pb(y);
+        if (ys[i].empty() || y != ys[i].back())
+          ys[i].pb(y);
     }
-    fore (i, 0, sz(fenw)) fenw[i].resize(sz(ys[i]), T());
+    fore (i, 0, sz(fenw))
+      fenw[i].resize(sz(ys[i]), T());
   }
 
   void update(int x, int y, T v) {

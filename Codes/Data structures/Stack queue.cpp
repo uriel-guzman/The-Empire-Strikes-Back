@@ -17,7 +17,9 @@ struct Stack : vector<T> {
     return x;
   }
 
-  T query() { return s.back(); }
+  T query() {
+    return s.back();
+  }
 };
 
 template <class T, class F = function<T(const T&, const T&)>>
@@ -27,7 +29,9 @@ struct Queue {
 
   Queue(const F& f) : a(f), b(f), f(f) {}
 
-  void push(T x) { b.push(x); }
+  void push(T x) {
+    b.push(x);
+  }
 
   T pop() {
     if (a.empty())
@@ -36,8 +40,10 @@ struct Queue {
   }
 
   T query() {
-    if (a.empty()) return b.query();
-    if (b.empty()) return a.query();
+    if (a.empty())
+      return b.query();
+    if (b.empty())
+      return a.query();
     return f(a.query(), b.query());
   }
 };

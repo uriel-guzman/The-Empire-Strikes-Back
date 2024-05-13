@@ -14,6 +14,7 @@ void bellmandFord(int s) {
           dist[e.v] = dist[e.u] + e.dist;
           any = true;
         }
-    if (!any) break;
+    if (!any)
+      break;
   }
 }

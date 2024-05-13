@@ -26,7 +26,8 @@ struct PerTreap {
 
   template <class F>
   pair<PerTreap*, PerTreap*> split(const F& leq) { // {<= val, > val}
-    if (this == null) return {null, null};
+    if (this == null)
+      return {null, null};
     push();
     PerTreap* t = new PerTreap(this);
     if (leq(this)) {
@@ -41,8 +42,10 @@ struct PerTreap {
   }
 
   PerTreap* merge(PerTreap* other) {
-    if (this == null) return new PerTreap(other);
-    if (other == null) return new PerTreap(this);
+    if (this == null)
+      return new PerTreap(other);
+    if (other == null)
+      return new PerTreap(this);
     push(), other->push();
     PerTreap* t;
     if (pri > other->pri) {

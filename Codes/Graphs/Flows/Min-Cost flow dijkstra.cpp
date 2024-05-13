@@ -31,7 +31,8 @@ struct Mcmf {
       C c = pq.top().f;
       int u = pq.top().s;
       pq.pop();
-      if (c != cost[u]) continue;
+      if (c != cost[u])
+        continue;
       for (Edge& e : graph[u])
         if (e.cap - e.flow > EPS)
           if (cost[u] + e.cost + pot[u] - pot[e.v] < cost[e.v]) {
@@ -41,7 +42,8 @@ struct Mcmf {
           }
     }
     fore (u, 0, n)
-      if (cost[u] < numeric_limits<C>::max()) pot[u] += cost[u];
+      if (cost[u] < numeric_limits<C>::max())
+        pot[u] += cost[u];
     return cost[t] != numeric_limits<C>::max();
   }
 

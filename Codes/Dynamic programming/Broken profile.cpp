@@ -17,5 +17,5 @@ fore (c, 0, m) {
       }
     }
   memset(dp[c & 1], 0, sizeof(dp[c & 1])); // clear
-} 
+}
 // Answer in dp[m & 1][0][0]

@@ -2,9 +2,13 @@ template <class T, int... N>
 struct Fenwick {
   T v = T();
 
-  void update(T v) { this->v += v; }
+  void update(T v) {
+    this->v += v;
+  }
 
-  T query() { return v; }
+  T query() {
+    return v;
+  }
 };
 
 template <class T, int N, int... M>

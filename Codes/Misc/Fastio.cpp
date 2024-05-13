@@ -16,13 +16,16 @@ inline int number() { // x = number()
 
 inline void convert(int x) { // convert(x) then print()
   int i, d = 0;
-  if (x < 0) x = -x, out[ye++] = 45;
+  if (x < 0)
+    x = -x, out[ye++] = 45;
   do { temp[++d] = (x % 10) + 48, x /= 10; } while (x > 0);
   for (i = d; i; i--) out[ye++] = temp[i];
   out[ye++] = 10;
 }
 
-inline void print() { fwrite(out, 1, ye, stdout); }
+inline void print() {
+  fwrite(out, 1, ye, stdout);
+}
 } // namespace fastio
 
 using namespace fastio;

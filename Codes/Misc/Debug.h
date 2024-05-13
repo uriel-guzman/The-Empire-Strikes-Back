@@ -13,18 +13,24 @@ basic_ostream<A, B>& operator<<(basic_ostream<A, B>& os, const C& c) {
   return os << "]";
 }
 
-void print(string s) { cout << endl; }
+void print(string s) {
+  cout << endl;
+}
 
 template <class H, class... T>
 void print(string s, const H& h, const T&... t) {
-  const static string reset = "\033[0m", blue = "\033[1;34m", purple = "\033[3;95m";
+  const static string reset = "\033[0m", blue = "\033[1;34m",
+                      purple = "\033[3;95m";
   bool ok = 1;
   do {
-    if (s[0] == '\"') ok = 0;
-    else cout << blue << s[0] << reset;
+    if (s[0] == '\"')
+      ok = 0;
+    else
+      cout << blue << s[0] << reset;
     s = s.substr(1);
   } while (s.size() && s[0] != ',');
-  if (ok) cout << ": " << purple << h << reset;
+  if (ok)
+    cout << ": " << purple << h << reset;
   print(s, t...);
 }
 

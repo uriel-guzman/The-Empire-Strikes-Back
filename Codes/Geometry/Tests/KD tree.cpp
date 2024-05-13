@@ -36,20 +36,30 @@ enum { ON = -1, OUT, IN, OVERLAP };
 #define ge(a, b) ((a) - (b) > +EPS)
 #define le(a, b) ((a) - (b) < -EPS)
 
-int sgn(ld a) { return (a > EPS) - (a < -EPS); }
+int sgn(ld a) {
+  return (a > EPS) - (a < -EPS);
+}
 
 struct Pt {
   int i;
   ld x, y;
   explicit Pt(ld x = 0, ld y = 0) : x(x), y(y) {}
 
-  Pt operator+(Pt p) const { return Pt(x + p.x, y + p.y); }
+  Pt operator+(Pt p) const {
+    return Pt(x + p.x, y + p.y);
+  }
 
-  Pt operator-(Pt p) const { return Pt(x - p.x, y - p.y); }
+  Pt operator-(Pt p) const {
+    return Pt(x - p.x, y - p.y);
+  }
 
-  Pt operator*(ld k) const { return Pt(x * k, y * k); }
+  Pt operator*(ld k) const {
+    return Pt(x * k, y * k);
+  }
 
-  Pt operator/(ld k) const { return Pt(x / k, y / k); }
+  Pt operator/(ld k) const {
+    return Pt(x / k, y / k);
+  }
 
   ld dot(Pt p) const {
     // 0 if vectors are orthogonal
@@ -66,18 +76,26 @@ struct Pt {
     return x * p.y - y * p.x;
   }
 
-  ld norm() const { return x * x + y * y; }
+  ld norm() const {
+    return x * x + y * y;
+  }
 
-  ld length() const { return sqrtl(norm()); }
+  ld length() const {
+    return sqrtl(norm());
+  }
 
-  Pt unit() const { return (*this) / length(); }
+  Pt unit() const {
+    return (*this) / length();
+  }
 
   ld angle() const {
     ld ang = atan2(y, x);
     return ang + (ang < 0 ? 2 * acos(-1) : 0);
   }
 
-  Pt perp() const { return Pt(-y, x); }
+  Pt perp() const {
+    return Pt(-y, x);
+  }
 
   Pt rotate(ld angle) const {
     // counter-clockwise rotation in radians
@@ -90,19 +108,29 @@ struct Pt {
     return sgn((a - *this).cross(b - *this));
   }
 
-  bool operator<(Pt p) const { return eq(x, p.x) ? le(y, p.y) : le(x, p.x); }
+  bool operator<(Pt p) const {
+    return eq(x, p.x) ? le(y, p.y) : le(x, p.x);
+  }
 
-  bool operator==(Pt p) const { return eq(x, p.x) && eq(y, p.y); }
+  bool operator==(Pt p) const {
+    return eq(x, p.x) && eq(y, p.y);
+  }
 
-  bool operator!=(Pt p) const { return !(*this == p); }
+  bool operator!=(Pt p) const {
+    return !(*this == p);
+  }
 
   friend ostream& operator<<(ostream& os, const Pt& p) {
     return os << "(" << p.x << ", " << p.y << ")";
   }
 
-  friend istream& operator>>(istream& is, Pt& p) { return is >> p.x >> p.y; }
+  friend istream& operator>>(istream& is, Pt& p) {
+    return is >> p.x >> p.y;
+  }
 
-  ld operator[](int i) const { return i == 0 ? x : y; }
+  ld operator[](int i) const {
+    return i == 0 ? x : y;
+  }
 };
 
 struct KDTree {
@@ -125,14 +153,17 @@ struct KDTree {
 
   pair<ld, Pt> nearest(Pt x) {
     if (!left && !right) {
-      if (x.i == p.i) return {INF, x};
+      if (x.i == p.i)
+        return {INF, x};
       return {(p - x).norm(), p};
     }
     vector<KDTree*> go = {left, right};
     auto delta = x[k] - p[k];
-    if (delta > 0) swap(go[0], go[1]);
+    if (delta > 0)
+      swap(go[0], go[1]);
     pair<ld, Pt> best = go[0]->nearest(x);
-    if (best.f > delta * delta) best = min(best, go[1]->nearest(x));
+    if (best.f > delta * delta)
+      best = min(best, go[1]->nearest(x));
     return best;
   }
 };

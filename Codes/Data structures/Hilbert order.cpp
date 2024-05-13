@@ -1,5 +1,6 @@
 lli hilbert(int x, int y, int pw = 21, int rot = 0) {
-  if (pw == 0) return 0;
+  if (pw == 0)
+    return 0;
   int hpw = 1 << (pw - 1);
   int k = ((x < hpw ? y < hpw ? 0 : 3 : y < hpw ? 1 : 2) + rot) & 3;
   const int d[4] = {3, 0, 0, 1};
